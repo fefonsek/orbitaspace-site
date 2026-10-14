@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="galeria" class="level2">
 <h2 data-anchor-id="galeria">Galeria</h2>
 <p>Clique numa tela para ampliar.</p>
-<p><a href="img/00_capa.jpg?v=70ba480a" class="lightbox" data-gallery="telas" data-glightbox="description: .lightbox-desc-1;"><img src="img/00_capa.jpg?v=70ba480a" class="capa-projeto img-fluid" alt="Capa do painel Radar de Absenteísmo"></a></p>
+<p><a href="img/00_capa.jpg?v=70ba480a" class="lightbox" data-glightbox="description: .lightbox-desc-1;" data-gallery="telas"><img src="img/00_capa.jpg?v=70ba480a" class="capa-projeto img-fluid" alt="Capa do painel Radar de Absenteísmo"></a></p>
 <div class="galeria">
 <figure class="figure"><a href="img/01_visao_executiva.jpg?v=c4a95dd4" class="lightbox" data-gallery="telas" data-description="1. Visão Executiva: como está o absenteísmo e onde agir primeiro?"><img src="img/01_visao_executiva_mini.jpg?v=f81fd44d" alt="1. Visão Executiva: como está o absenteísmo e onde agir primeiro?" loading="lazy" width="800" height="450" class="figure-img"></a><figcaption>1. Visão Executiva: como está o absenteísmo e onde agir primeiro?</figcaption></figure>
 <figure class="figure"><a href="img/02_evolucao_temporal.jpg?v=e4cdd679" class="lightbox" data-gallery="telas" data-description="2. Evolução Temporal: quando acontece e para onde vai?"><img src="img/02_evolucao_temporal_mini.jpg?v=a6f457ad" alt="2. Evolução Temporal: quando acontece e para onde vai?" loading="lazy" width="800" height="450" class="figure-img"></a><figcaption>2. Evolução Temporal: quando acontece e para onde vai?</figcaption></figure>
@@ -240,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 <li><em>Exigir evidência antes de alarmar.</em> Uma área só aparece como crítica se o desvio for grande <strong>e</strong> estatisticamente consistente (escore z da frequência de eventos). Uma equipe de seis pessoas com um afastamento longo não dispara alerta.</li>
 <li><em>Testar as associações óbvias.</em> Um modelo binomial negativo, ajustado por unidade, departamento, turno, idade, sexo, tempo de casa e ano, separou o que se sustenta (turno da noite, tempo de casa, unidade) do que não se sustenta (tamanho da equipe, sexo).</li>
 </ol>
-<p><strong>O relatório como código.</strong> As páginas do painel não foram montadas arrastando visuais. Uma especificação única descreve cada visual (posição, campos, medidas e a pergunta que ele responde), e um script em Python gera o relatório no formato de projeto do Power BI e a documentação a partir dela. Assim documento e painel não divergem. Um script de auditoria confere que toda medida usada existe no modelo e que os números citados batem com a base.</p>
+<p><strong>O relatório como código.</strong> Uma especificação única descreve cada visual (posição, campos, medidas e a pergunta que ele responde). A partir dela, um script em Python gerou a primeira versão do relatório, no formato de projeto do Power BI, da documentação e dos wireframes. Depois, o painel foi refinado no Power BI Desktop. Um script de auditoria continua conferindo que toda medida usada existe no modelo e que os números citados batem com a base.</p>
 <p><strong>Privacidade como requisito.</strong> Sem nome, CPF ou e-mail; motivos de saúde só agregados; grupos com menos de 10 pessoas suprimidos; segurança em nível de linha por unidade e por gestor; e um aviso explícito de que o painel não serve para punir ninguém.</p>
 <p><a href="https://github.com/fefonsek/radar-absenteismo" class="btn btn-outline-primary">Ver o repositório no GitHub</a></p>
 </section>

@@ -77,7 +77,7 @@ Haz clic en una pantalla para ampliarla.
 2. *Exigir evidencia antes de alarmar.* Un área solo aparece como crítica si la desviación es grande **y** estadísticamente consistente (puntaje z de la frecuencia de eventos). Un equipo de seis personas con una sola ausencia larga no dispara una alerta.
 3. *Poner a prueba las asociaciones obvias.* Un modelo binomial negativo, ajustado por unidad, departamento, turno, edad, sexo, antigüedad y año, separó lo que se sostiene (turno nocturno, antigüedad, unidad) de lo que no (tamaño del equipo, sexo).
 
-**El informe como código.** Las páginas del tablero no se armaron arrastrando visuales. Una especificación única describe cada visual (posición, campos, medidas y la pregunta que responde), y un script en Python genera a partir de ella el informe en el formato de proyecto de Power BI y la documentación. Así, documentación y tablero no se contradicen. Un script de auditoría verifica que cada medida usada exista en el modelo y que los números citados coincidan con la base.
+**El informe como código.** Una especificación única describe cada visual (posición, campos, medidas y la pregunta que responde). A partir de ella, un script en Python generó la primera versión del informe, en el formato de proyecto de Power BI, de la documentación y de los wireframes. Después, el tablero se refinó en Power BI Desktop. Un script de auditoría sigue verificando que cada medida usada exista en el modelo y que los números citados coincidan con la base.
 
 **La privacidad como requisito.** Sin nombre, documento de identidad ni correo; motivos de salud solo agregados; grupos de menos de 10 personas suprimidos; seguridad a nivel de fila por unidad y por líder; y un aviso explícito de que el tablero no sirve para sancionar a nadie.
 

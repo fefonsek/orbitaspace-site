@@ -75,7 +75,7 @@ Clique numa tela para ampliar.
 2. *Exigir evidência antes de alarmar.* Uma área só aparece como crítica se o desvio for grande **e** estatisticamente consistente (escore z da frequência de eventos). Uma equipe de seis pessoas com um afastamento longo não dispara alerta.
 3. *Testar as associações óbvias.* Um modelo binomial negativo, ajustado por unidade, departamento, turno, idade, sexo, tempo de casa e ano, separou o que se sustenta (turno da noite, tempo de casa, unidade) do que não se sustenta (tamanho da equipe, sexo).
 
-**O relatório como código.** As páginas do painel não foram montadas arrastando visuais. Uma especificação única descreve cada visual (posição, campos, medidas e a pergunta que ele responde), e um script em Python gera o relatório no formato de projeto do Power BI e a documentação a partir dela. Assim documento e painel não divergem. Um script de auditoria confere que toda medida usada existe no modelo e que os números citados batem com a base.
+**O relatório como código.** Uma especificação única descreve cada visual (posição, campos, medidas e a pergunta que ele responde). A partir dela, um script em Python gerou a primeira versão do relatório, no formato de projeto do Power BI, da documentação e dos wireframes. Depois, o painel foi refinado no Power BI Desktop. Um script de auditoria continua conferindo que toda medida usada existe no modelo e que os números citados batem com a base.
 
 **Privacidade como requisito.** Sem nome, CPF ou e-mail; motivos de saúde só agregados; grupos com menos de 10 pessoas suprimidos; segurança em nível de linha por unidade e por gestor; e um aviso explícito de que o painel não serve para punir ninguém.
 
