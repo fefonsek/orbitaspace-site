@@ -281,6 +281,31 @@ Radar de Ausentismo
 </div>
 </div></a>
 </div>
+<div class="g-col-1" data-index="1" data-categories="UiUyQ0VzdGFkJUMzJUFEc3RpY2ElMkNDdWVzdGlvbmFyaW8=">
+<a href="../projetos/caso-tcc-rotatividade/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../projetos/caso-tcc-rotatividade/img/capa.png?v=1c3bedec" class="thumbnail-image card-img" style="height: 150px;" alt="Gráfico del efecto de cada factor en la intención de dejar la empresa">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Rotación en supermercados: consultoría estadística para una tesis de grado
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RXN0YWQlQzMlQURzdGljYQ=='); return false;">Estadística</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q3Vlc3Rpb25hcmlv'); return false;">Cuestionario</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Caso en portugués. Consultoría ficticia para una tesis de Administración: limpieza, confiabilidad, análisis factorial y regresión con errores robustos, en R.</p>
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
 </div></main> <!-- /main -->
@@ -288,7 +313,8 @@ Radar de Ausentismo
 // 1. Seletor PT | ES | EN: aponta cada idioma para a versão correspondente
 //    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
 //    Sem versão correspondente, leva para o blog do idioma (se estamos no
-//    blog) ou para a página inicial.
+//    blog), para a lista de projetos (se estamos num projeto que só existe
+//    em português) ou para a página inicial.
 // 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
@@ -297,8 +323,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
   var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
+  var projetos = { PT: "/projetos.html", ES: "/es/proyectos.html", EN: "/en/projects.html" };
   var atual = document.documentElement.lang;
   var noBlog = /\/blog(\/|\.html)/.test(location.pathname);
+  var noProjeto = /^\/projetos\//.test(location.pathname);
   var CHAVE_FAIXA = "orbita-faixa-idioma";
 
   function lembrar() {
@@ -309,7 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
     if (alt) return new URL(alt.href).pathname;
     if (codigos[rotulo] === atual) return location.pathname;
-    return noBlog ? blog[rotulo] : inicio[rotulo];
+    if (noBlog) return blog[rotulo];
+    return noProjeto ? projetos[rotulo] : inicio[rotulo];
   }
 
   // 1. Seletor

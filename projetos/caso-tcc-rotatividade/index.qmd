@@ -1,0 +1,564 @@
+---
+title: "Rotatividade em supermercados: consultoria estatística para um TCC"
+subtitle: "Do arquivo do Google Forms às tabelas do trabalho, com cada decisão explicada."
+description: "Caso fictício de consultoria para um TCC de Administração: limpeza do questionário, confiabilidade, fatorial exploratória, testes não paramétricos e regressão com erros robustos, em R."
+image: img/capa.png
+image-alt: "Gráfico do efeito de cada fator na intenção de sair da empresa"
+categories: [R, Estatística, Questionário, TCC]
+# Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Ver o código R"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+::: aviso-dados
+**Dados fictícios.** O aluno, os supermercados e as 230 respostas não existem. Os dados foram simulados em R com padrões programados, para fins de demonstração, e receberam de propósito problemas comuns em questionários online. Os resultados mostram o método de trabalho; não são uma descoberta sobre supermercados reais.
+
+[Baixar as respostas brutas (CSV)](dados/respostas_brutas.csv){download="respostas_brutas.csv"} · [Baixar o dicionário das perguntas (CSV)](dados/dicionario.csv){download="dicionario.csv"}
+:::
+
+```{r}
+#| label: preparo
+#| code-summary: "Pacotes, formato dos números e tema dos gráficos"
+library(tidyverse)
+library(psych)
+library(gtsummary)
+library(rstatix)
+library(sandwich)
+library(lmtest)
+library(car)
+library(patchwork)
+library(knitr)
+
+# Números no padrão brasileiro: vírgula decimal.
+br <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",", big.mark = ".")
+# Espaço inseparável (\u00a0) para "< 0,001" e o intervalo de confiança não quebrarem de linha.
+p_tab <- function(p) ifelse(p < 0.001, "<\u00a00,001", br(p, 3))
+p_txt <- function(p) ifelse(p < 0.001, "p\u00a0<\u00a00,001", paste0("p\u00a0=\u00a0", br(p, 3)))
+ic_txt <- function(li, ls) paste0("[", br(li), ";\u00a0", br(ls), "]")
+
+# Paleta da marca, só tons frios.
+cor <- c(profundo = "#1a1a2e", azul = "#3473C0", medio = "#7a90c4",
+         lavanda = "#cacfee", cinza = "#4a4a63", grade = "#e4e6ef")
+theme_set(
+  theme_minimal(base_family = "Montserrat", base_size = 12) +
+    theme(text = element_text(colour = cor[["profundo"]]),
+          axis.text = element_text(colour = cor[["cinza"]]),
+          panel.grid.minor = element_blank(),
+          panel.grid.major = element_line(colour = cor[["grade"]], linewidth = 0.4),
+          plot.background = element_blank(), panel.background = element_blank(),
+          strip.text = element_text(face = "bold", hjust = 0, colour = cor[["profundo"]]),
+          plot.title.position = "plot", legend.position = "top")
+)
+theme_gtsummary_language("pt", decimal.mark = ",", big.mark = ".")
+```
+
+## O pedido
+
+Um aluno de Administração estava terminando o TCC *Liderança, reconhecimento e intenção de rotatividade em funcionários de supermercados do Centro-Oeste mineiro*. Ele aplicou um questionário pelo Google Forms em lojas da região: perguntas de perfil e 20 frases para responder de 1 (discordo totalmente) a 5 (concordo totalmente), em cinco blocos.
+
+| Bloco | Itens | Exemplo de frase |
+|---|:-:|---|
+| Liderança | 5 | "Meu supervisor me trata com respeito." |
+| Reconhecimento | 4 | "Recebo elogios pelo meu trabalho." |
+| Remuneração percebida | 4 | "Meu salário é justo pelo trabalho que faço." |
+| Equilíbrio trabalho e vida | 4 | "Consigo planejar minhas folgas com antecedência." |
+| Intenção de rotatividade | 3 | "Pretendo procurar outro emprego nos próximos 12 meses." |
+
+O projeto tinha quatro hipóteses:
+
+- **H1.** Uma liderança mais bem avaliada reduz a intenção de sair.
+- **H2.** Mais reconhecimento reduz a intenção de sair.
+- **H3.** Uma remuneração mais bem avaliada reduz a intenção de sair, com efeito menor que H1 e H2.
+- **H4.** Mais equilíbrio entre trabalho e vida reduz a intenção de sair.
+
+Ele tinha a planilha exportada do Forms e a orientação de "fazer a parte estatística". Precisava saber o que rodar, em que ordem, como conferir se podia confiar nos resultados e como relatar tudo no trabalho.
+
+## O que eu fiz
+
+### 1. Limpeza
+
+```{r}
+#| label: leitura
+bruto <- read_csv("dados/respostas_brutas.csv", show_col_types = FALSE)
+dic <- read_csv("dados/dicionario.csv", show_col_types = FALSE)
+
+# O Forms exporta o texto inteiro da pergunta como nome da coluna;
+# o dicionário troca cada um por um código curto (LID1, REC2...).
+names(bruto) <- dic$codigo[match(names(bruto), dic$coluna)]
+itens <- filter(dic, construto != "Perfil") |>
+  mutate(enunciado = str_match(coluna, "\\[(.*)\\]$")[, 2])
+cod <- itens$codigo
+blocos <- split(cod, substr(cod, 1, 3))
+
+brancos <- function(df) rowSums(is.na(select(df, all_of(cod))))
+iguais <- function(df) apply(select(df, all_of(cod)), 1, sd, na.rm = TRUE) == 0
+
+passo1 <- filter(bruto, aceite == "Sim")
+passo2 <- filter(passo1, brancos(passo1) <= 4)      # até 20% dos 20 itens em branco
+passo3 <- filter(passo2, !iguais(passo2))           # mesma resposta nos 20 itens
+
+fluxo <- tibble(
+  Etapa = c("Respostas recebidas", "Sem aceite do termo de consentimento",
+            "Mais de 20% dos itens em branco", "Mesma resposta em todos os itens",
+            "Respostas válidas"),
+  Excluídas = c("", nrow(bruto) - nrow(passo1), nrow(passo1) - nrow(passo2),
+                nrow(passo2) - nrow(passo3), ""),
+  Restam = c(nrow(bruto), nrow(passo1), nrow(passo2), nrow(passo3), nrow(passo3))
+)
+n_validas <- nrow(passo3)
+celulas_brancas <- sum(is.na(select(passo3, all_of(cod))))
+```
+
+Das `r nrow(bruto)` respostas recebidas, `r n_validas` seguiram para a análise. Cada exclusão tem um motivo que pode ser escrito no método do TCC:
+
+```{r}
+#| label: tbl-fluxo
+#| echo: false
+#| tbl-cap: "Da exportação do Forms às respostas válidas"
+kable(fluxo, align = c("l", "c", "c"))
+```
+
+Quem responde tudo igual, inclusive o item invertido da liderança ("Meu supervisor **raramente** me dá retorno"), está dizendo ao mesmo tempo que o supervisor dá e não dá retorno: sinal de que não leu as frases.
+
+Nas respostas válidas sobraram `r celulas_brancas` itens em branco espalhados (`r br(100 * celulas_brancas / (n_validas * 20), 1)`% das células). A regra foi simples e está escrita no relatório: **o escore de cada bloco é a média dos itens respondidos, desde que haja no máximo 1 item em branco por bloco.** Duas pessoas deixaram 2 itens de Equilíbrio em branco e ficaram sem esse escore.
+
+A faixa etária era um campo de texto livre, e cada pessoa escreveu de um jeito. Uma regra de texto juntou as grafias:
+
+```{r}
+#| label: faixa-etaria
+padronizar_faixa <- function(x) {
+  case_when(str_detect(x, "18") ~ "18 a 24",
+            str_detect(x, "25") ~ "25 a 34",
+            str_detect(x, "35") ~ "35 a 44",
+            str_detect(x, "45") ~ "45 ou mais")
+}
+grafias <- passo3 |>
+  mutate(padronizada = padronizar_faixa(faixa_etaria)) |>
+  group_by(Padronizada = padronizada) |>
+  summarise(`Como foi escrita` = paste0('"', sort(unique(faixa_etaria)), '"', collapse = ", "),
+            Pessoas = n())
+
+# Base final: faixa padronizada, item invertido recodificado (1 vira 5, 2 vira 4...).
+d <- passo3 |>
+  mutate(faixa_etaria = padronizar_faixa(faixa_etaria),
+         LID3 = 6L - LID3,
+         turno_grupo = if_else(turno == "Noite", "Noturno", "Diurno"),
+         tempo_casa = factor(tempo_casa, c("Até 1 ano", "De 1 a 3 anos", "De 3 a 5 anos", "Mais de 5 anos")))
+stopifnot(!anyNA(d$faixa_etaria))
+```
+
+```{r}
+#| label: tbl-grafias
+#| echo: false
+#| tbl-cap: "Faixa etária: grafias encontradas e categoria final"
+kable(grafias, align = c("l", "l", "c"))
+```
+
+### 2. Perfil da amostra
+
+```{r}
+#| label: tbl-perfil
+#| tbl-cap: "Perfil das respostas válidas"
+d |>
+  mutate(faixa_etaria = factor(faixa_etaria),
+         escolaridade = factor(escolaridade, c("Ensino fundamental", "Ensino médio",
+                                               "Superior incompleto", "Superior completo")),
+         turno = factor(turno, c("Manhã", "Tarde", "Noite"))) |>
+  select(Sexo = sexo, `Faixa etária` = faixa_etaria, Escolaridade = escolaridade,
+         Função = funcao, Turno = turno, `Tempo de casa` = tempo_casa) |>
+  tbl_summary(statistic = all_categorical() ~ "{n} ({p}%)") |>
+  modify_header(label = "**Característica**", stat_0 = "**n (%)**") |>
+  modify_footnote(everything() ~ NA) |>
+  as_kable()
+```
+
+### 3. Confiabilidade das escalas
+
+Antes de somar frases num escore, é preciso mostrar que elas medem a mesma coisa. Usei dois indicadores: o **alfa de Cronbach**, que o orientador e a banca esperam ver, e o **ômega**, que é mais adequado quando as frases não pesam todas igual no construto. Acima de 0,70 é o patamar usual.
+
+```{r}
+#| label: confiabilidade
+confiab <- function(cols) {
+  x <- select(d, all_of(cols))
+  c(alfa = suppressWarnings(psych::alpha(x)$total$raw_alpha),
+    omega = suppressWarnings(psych::omega(x, nfactors = 1, plot = FALSE)$omega.tot))
+}
+nomes <- c(LID = "Liderança", REC = "Reconhecimento", REM = "Remuneração percebida",
+           EQU = "Equilíbrio trabalho e vida", INT = "Intenção de rotatividade")
+rem_sem4 <- c("REM1", "REM2", "REM3")
+conf <- bind_rows(
+  lapply(names(blocos), function(b) c(Bloco = nomes[[b]], Itens = length(blocos[[b]]), confiab(blocos[[b]]))),
+  c(Bloco = "Remuneração percebida, sem REM4", Itens = 3, confiab(rem_sem4))
+) |>
+  mutate(across(c(alfa, omega), as.numeric)) |>
+  arrange(match(Bloco, c(nomes[c("LID", "REC", "REM")], "Remuneração percebida, sem REM4",
+                          nomes[c("EQU", "INT")])))
+
+# Correlação de cada item de Remuneração com o total dos outros três.
+r_rem <- psych::alpha(select(d, all_of(blocos$REM)))$item.stats$r.drop
+names(r_rem) <- blocos$REM
+alfa_rem <- conf$alfa[conf$Bloco == "Remuneração percebida"]
+alfa_sem4 <- conf$alfa[conf$Bloco == "Remuneração percebida, sem REM4"]
+```
+
+```{r}
+#| label: tbl-confiabilidade
+#| echo: false
+#| tbl-cap: "Alfa de Cronbach e ômega de cada bloco"
+conf |>
+  transmute(Bloco, Itens, Alfa = br(alfa), Ômega = br(omega)) |>
+  kable(align = c("l", "c", "c", "c"))
+```
+
+Quatro blocos passaram com folga. Remuneração ficou em `r br(alfa_rem)` por causa de um item: "Recebo o vale-transporte em dia" (REM4) quase não acompanha os outros três (correlação de `r br(r_rem[["REM4"]])` com o total deles, contra `r br(min(r_rem[rem_sem4]))` ou mais nos demais). Faz sentido: ele mede a pontualidade de um benefício, não se o salário parece justo. Sem ele, o alfa sobe para `r br(alfa_sem4)`. **REM4 saiu do escore de Remuneração**, e o TCC registra essa decisão e o motivo.
+
+### 4. Análise fatorial exploratória
+
+A fatorial confere se as 20 frases se agrupam nos cinco blocos que o questionário previa. Como as respostas são ordinais (1 a 5), usei a **correlação policórica**, que trata cada resposta como uma faixa de uma escala contínua e não supõe que a distância entre "1" e "2" seja igual à distância entre "4" e "5".
+
+```{r}
+#| label: fatorial
+x_itens <- select(d, all_of(cod))
+pc <- suppressWarnings(polychoric(x_itens)$rho)
+kmo <- KMO(pc)$MSA
+bartlett <- cortest.bartlett(pc, n = nrow(d))
+fe <- suppressWarnings(fa(x_itens, nfactors = 5, cor = "poly", rotate = "oblimin", fm = "minres"))
+
+cargas <- unclass(fe$loadings)
+# Dá a cada fator o nome do bloco cujos itens carregam mais nele.
+dominante <- sapply(seq_len(ncol(cargas)), function(f) {
+  names(which.max(tapply(abs(cargas[, f]), substr(rownames(cargas), 1, 3), mean)))
+})
+colnames(cargas) <- nomes[dominante]
+cargas <- cargas[, nomes]
+carga_rem4 <- max(abs(cargas["REM4", ]))
+```
+
+O **KMO** foi `r br(kmo)` (acima de 0,80 é considerado muito bom) e o **teste de Bartlett** deu χ²(`r bartlett$df`) = `r br(bartlett$chisq, 1)`, `r p_txt(bartlett$p.value)`: as correlações entre as frases são fortes o bastante para uma fatorial. Com cinco fatores e rotação oblíqua (os construtos podem se correlacionar), cada frase carregou no seu bloco, com uma exceção já conhecida: **REM4 não carregou em nenhum fator** (maior carga de `r br(carga_rem4)`), confirmando a decisão da confiabilidade.
+
+```{r}
+#| label: tbl-cargas
+#| echo: false
+#| tbl-cap: "Cargas fatoriais (correlação policórica, rotação oblimin); cargas abaixo de 0,30 omitidas"
+tab_cargas <- as_tibble(cargas, rownames = "Item") |>
+  mutate(across(-Item, \(v) if_else(abs(v) < 0.30, "", br(v))))
+names(tab_cargas) <- c("Item", "Lid.", "Rec.", "Rem.", "Equ.", "Int.")
+kable(tab_cargas, align = c("l", rep("c", 5)))
+```
+
+### 5. Escores e comparações entre grupos
+
+```{r}
+#| label: escores
+escore <- function(cols) {
+  m <- as.matrix(select(d, all_of(cols)))
+  if_else(rowSums(is.na(m)) <= 1, rowMeans(m, na.rm = TRUE), NA_real_)
+}
+d <- d |>
+  mutate(LID = escore(blocos$LID), REC = escore(blocos$REC), REM = escore(rem_sem4),
+         EQU = escore(blocos$EQU), INT = escore(blocos$INT))
+```
+
+Escores de escalas Likert costumam ser assimétricos e com valores repetidos, então comparei a intenção de sair entre grupos com testes não paramétricos, sempre com o **tamanho de efeito**, que diz se a diferença é grande ou só estatisticamente detectável.
+
+```{r}
+#| label: comparacoes
+mw <- wilcox_test(d, INT ~ turno_grupo)
+mw_r <- wilcox_effsize(d, INT ~ turno_grupo)
+kw <- kruskal_test(d, INT ~ tempo_casa)
+kw_e <- kruskal_effsize(d, INT ~ tempo_casa)
+dunn <- dunn_test(d, INT ~ tempo_casa, p.adjust.method = "holm")
+dunn_novato <- filter(dunn, group1 == "Até 1 ano", p.adj < 0.05)
+
+resumo_grupos <- function(var) {
+  d |> group_by(Grupo = as.character(.data[[var]])) |>
+    summarise(n = n(), Mediana = br(median(INT)),
+              `Intervalo interquartil` = paste(br(quantile(INT, .25)), "a", br(quantile(INT, .75))))
+}
+```
+
+- **Turno.** Quem trabalha à noite tem intenção de sair maior (Mann-Whitney, `r p_txt(mw$p)`, r = `r br(mw_r$effsize)`, efeito `r if_else(mw_r$effsize < 0.3, "pequeno", "moderado")`).
+- **Tempo de casa.** As faixas diferem (Kruskal-Wallis, H(`r kw$df`) = `r br(kw$statistic, 1)`, `r p_txt(kw$p)`, ε² = `r br(kw_e$effsize, 3)`, efeito pequeno). Nas comparações dois a dois (Dunn, com correção de Holm), a diferença que se sustenta é entre "até 1 ano" e `r paste0('"', str_to_lower(dunn_novato$group2), '"', collapse = " e ")`; as demais comparações não foram significativas.
+
+```{r}
+#| label: tbl-grupos
+#| echo: false
+#| tbl-cap: "Intenção de rotatividade (escore de 1 a 5) por turno e por tempo de casa"
+bind_rows(resumo_grupos("turno_grupo"), resumo_grupos("tempo_casa")) |>
+  kable(align = c("l", "c", "c", "c"))
+```
+
+### 6. Correlações
+
+```{r}
+#| label: correlacoes
+ct <- corr.test(select(d, LID, REC, REM, EQU, INT), method = "spearman", adjust = "none")
+rho <- ct$r
+mat <- matrix(br(rho), nrow(rho), dimnames = list(nomes, c("Lid.", "Rec.", "Rem.", "Equ.", "Int.")))
+mat[upper.tri(mat, diag = TRUE)] <- ""
+rho_int <- rho["INT", c("LID", "REC", "REM", "EQU")]
+p_int <- ct$p["INT", c("LID", "REC", "REM", "EQU")]
+```
+
+A correlação de Spearman (adequada para escores ordinais) mostra os quatro blocos associados à intenção de sair, todos no sentido esperado (`r p_txt(max(p_int))` ou menor). Os próprios blocos também se correlacionam entre si, o que importa para o próximo passo.
+
+```{r}
+#| label: tbl-correlacoes
+#| echo: false
+#| tbl-cap: "Correlações de Spearman entre os escores (N varia de 210 a 212 conforme os brancos)"
+kable(as_tibble(mat, rownames = "Bloco"), align = c("l", rep("c", 5)))
+```
+
+### 7. Regressão múltipla
+
+A correlação olha um fator por vez. Para testar as hipóteses, a pergunta é outra: **quanto cada fator pesa quando os outros estão no mesmo modelo?** Usei regressão linear múltipla com os quatro escores padronizados (para que os efeitos fiquem comparáveis) e três controles: turno noturno, até 1 ano de casa e sexo.
+
+```{r}
+#| label: regressao
+dm <- d |>
+  transmute(INT = INT, LID = LID, REC = REC, REM = REM, EQU = EQU,
+            noturno = as.numeric(turno == "Noite"),
+            novato = as.numeric(tempo_casa == "Até 1 ano"),
+            feminino = as.numeric(sexo == "Feminino")) |>
+  drop_na() |>
+  mutate(across(c(INT, LID, REC, REM, EQU), \(v) as.numeric(scale(v))))
+modelo <- lm(INT ~ LID + REC + REM + EQU + noturno + novato + feminino, data = dm)
+
+# Pressupostos
+vifs <- vif(modelo)
+bp <- bptest(modelo)
+sw <- shapiro.test(residuals(modelo))
+cook_max <- max(cooks.distance(modelo))
+
+# Erros-padrão robustos (HC3): protegem os testes se a variância dos resíduos não for constante.
+rob <- coeftest(modelo, vcov. = vcovHC(modelo, type = "HC3"))
+ic <- coefci(modelo, vcov. = vcovHC(modelo, type = "HC3"))
+resultado <- tibble(termo = rownames(rob), beta = rob[, 1], ep = rob[, 2], p = rob[, 4],
+                    li = ic[, 1], ls = ic[, 2]) |>
+  filter(termo != "(Intercept)") |>
+  mutate(rotulo = c(LID = "Liderança", REC = "Reconhecimento", REM = "Remuneração percebida",
+                    EQU = "Equilíbrio trabalho e vida", noturno = "Turno noturno",
+                    novato = "Até 1 ano de casa", feminino = "Sexo feminino")[termo])
+r2 <- summary(modelo)$r.squared
+r2a <- summary(modelo)$adj.r.squared
+f <- summary(modelo)$fstatistic
+b <- setNames(resultado$beta, resultado$termo)
+pv <- setNames(resultado$p, resultado$termo)
+
+# H3 diz que o efeito da remuneração é menor: testa se os coeficientes são iguais.
+igual_lid <- linearHypothesis(modelo, "REM = LID", vcov. = vcovHC(modelo, type = "HC3"))
+igual_rec <- linearHypothesis(modelo, "REM = REC", vcov. = vcovHC(modelo, type = "HC3"))
+teste_f <- function(h) paste0("F(", h$Df[2], ", ", h$Res.Df[2], ") = ", br(h$F[2]), ", ", p_txt(h$`Pr(>F)`[2]))
+menor_confirmado <- igual_lid$`Pr(>F)`[2] < 0.05 && igual_rec$`Pr(>F)`[2] < 0.05
+# O texto da página foi escrito para o caso em que a diferença não se confirma.
+stopifnot(!menor_confirmado)
+```
+
+Antes de ler os coeficientes, chequei os pressupostos:
+
+- **Multicolinearidade:** maior VIF de `r br(max(vifs))`, longe do limite usual de 5. Os blocos se correlacionam, mas não a ponto de se confundirem.
+- **Variância dos resíduos:** teste de Breusch-Pagan com `r p_txt(bp$p.value)`. `r if_else(bp$p.value < 0.05, "Há sinal de variância não constante, e por isso os testes usam erros-padrão robustos (HC3).", "Sem sinal forte de variância não constante; mesmo assim os testes usam erros-padrão robustos (HC3), que custam pouco e protegem o resultado.")`
+- **Normalidade dos resíduos:** Shapiro-Wilk com `r p_txt(sw$p.value)`. `r if_else(sw$p.value < 0.05, "Com mais de 200 casos, um desvio leve não compromete os testes dos coeficientes.", "Sem desvio relevante.")`
+- **Casos influentes:** maior distância de Cook de `r br(cook_max)`, bem abaixo de 1. Nenhuma resposta sozinha muda o resultado.
+
+O modelo explica `r br(100 * r2, 0)`% da variação da intenção de sair (R² ajustado = `r br(r2a)`, N = `r nrow(dm)`).
+
+A H3 diz que o efeito da remuneração é **menor** que os de liderança e reconhecimento. Olhar os β não basta: é preciso testar se a diferença entre eles é real. O teste de igualdade de coeficientes (com a mesma correção HC3) não confirmou a diferença: `r teste_f(igual_lid)` contra liderança e `r teste_f(igual_rec)` contra reconhecimento.
+
+## O que os dados mostraram
+
+```{r}
+#| label: fig-likert
+#| fig-cap: "Distribuição das respostas aos 20 itens, como foram dadas (LID3 ainda não recodificado)"
+#| fig-alt: "Barras divergentes com a proporção de discordância e concordância em cada um dos 20 itens, agrupados por bloco. Remuneração tem mais discordância; LID3, o item invertido, tem padrão oposto aos outros itens de liderança."
+#| fig-width: 8
+#| fig-height: 12
+rotulos_itens <- setNames(paste0(itens$codigo, if_else(itens$invertido == "sim", " (invertido)", ""), ": ",
+                                 itens$enunciado), itens$codigo)
+niveis <- c("Discordo totalmente", "Discordo", "Nem concordo nem discordo", "Concordo", "Concordo totalmente")
+cores_likert <- setNames(c("#6a4fa3", "#b9aee0", "#d9dbe1", "#9dbde8", cor[["azul"]]), niveis)
+
+# Barras divergentes: a resposta neutra fica metade de cada lado do zero.
+lik <- passo3 |>
+  select(all_of(cod)) |>
+  pivot_longer(everything(), names_to = "codigo", values_to = "resposta") |>
+  drop_na() |>
+  count(codigo, resposta) |>
+  group_by(codigo) |>
+  complete(resposta = 1:5, fill = list(n = 0)) |>
+  arrange(resposta, .by_group = TRUE) |>
+  mutate(p = n / sum(n),
+         inicio = -(p[1] + p[2] + p[3] / 2) + lag(cumsum(p), default = 0),
+         fim = inicio + p, meio = (inicio + fim) / 2) |>
+  ungroup() |>
+  mutate(nivel = factor(niveis[resposta], niveis),
+         bloco = factor(nomes[substr(codigo, 1, 3)], nomes),
+         item = factor(rotulos_itens[codigo], rev(rotulos_itens)))
+totais <- lik |>
+  group_by(item, bloco) |>
+  summarise(discorda = sum(p[resposta <= 2]), concorda = sum(p[resposta >= 4]), .groups = "drop")
+pct <- function(x) paste0(round(100 * x), "%")
+
+ggplot(lik, aes(y = item)) +
+  geom_segment(aes(x = inicio, xend = fim, yend = item, colour = nivel), linewidth = 7) +
+  geom_vline(xintercept = 0, colour = "white", linewidth = 0.6) +
+  geom_text(data = filter(lik, p >= 0.12), aes(x = meio, label = pct(p)), size = 3, family = "Montserrat",
+            colour = if_else(filter(lik, p >= 0.12)$resposta %in% c(1, 5), "white", cor[["profundo"]])) +
+  geom_text(data = totais, aes(x = -0.82, label = pct(discorda)), hjust = 1, size = 2.8,
+            family = "Montserrat", colour = cor[["cinza"]]) +
+  geom_text(data = totais, aes(x = 0.82, label = pct(concorda)), hjust = 0, size = 2.8,
+            family = "Montserrat", colour = cor[["cinza"]]) +
+  facet_grid(rows = vars(bloco), scales = "free_y", space = "free_y", labeller = label_wrap_gen(14)) +
+  scale_colour_manual(values = cores_likert, drop = FALSE) +
+  scale_x_continuous(limits = c(-0.92, 0.92), breaks = c(-0.5, 0, 0.5), labels = \(x) pct(abs(x))) +
+  scale_y_discrete(labels = label_wrap_gen(40)) +
+  guides(colour = guide_legend(nrow = 2, byrow = TRUE, override.aes = list(linewidth = 4))) +
+  labs(x = NULL, y = NULL, colour = NULL) +
+  theme(strip.text.y = element_text(angle = 0, hjust = 0, face = "bold"),
+        axis.text.y = element_text(size = 10, colour = cor[["profundo"]], lineheight = 0.95),
+        legend.text = element_text(size = 10), legend.justification = "left", legend.location = "plot",
+        panel.grid.major.y = element_blank(), panel.spacing.y = unit(10, "pt"))
+```
+
+- **Remuneração é o ponto mais mal avaliado.** O REM4 destoa dos outros três itens do bloco, o mesmo padrão que a confiabilidade e a fatorial apontaram.
+- **O item invertido funciona:** LID3 tem o padrão oposto ao dos outros itens de liderança, como deveria.
+
+```{r}
+#| label: fig-grupos
+#| fig-cap: "Intenção de rotatividade por turno e por tempo de casa"
+#| fig-alt: "Dois gráficos de caixa. À esquerda, o turno noturno tem intenção de sair maior que o diurno. À direita, a faixa de até 1 ano de casa tem a intenção mais alta entre as quatro faixas de tempo de casa."
+#| fig-width: 9
+#| fig-height: 4.6
+caixa <- function(var, destaque, titulo, subtitulo, eixo_y = "Intenção de sair (1 a 5)") {
+  ggplot(d, aes(x = .data[[var]], y = INT)) +
+    geom_boxplot(aes(fill = .data[[var]] == destaque), width = 0.55, outlier.shape = NA,
+                 colour = cor[["profundo"]], linewidth = 0.4, alpha = 0.85) +
+    geom_jitter(width = 0.14, height = 0.06, size = 1.3, alpha = 0.35, colour = cor[["profundo"]]) +
+    scale_fill_manual(values = c(`TRUE` = cor[["azul"]], `FALSE` = cor[["lavanda"]]), guide = "none") +
+    scale_y_continuous(limits = c(0.85, 5.15), breaks = 1:5) +
+    scale_x_discrete(labels = label_wrap_gen(10)) +
+    labs(title = titulo, subtitle = subtitulo, x = NULL, y = eixo_y) +
+    theme(plot.title = element_text(face = "bold", size = 12),
+          plot.subtitle = element_text(size = 10, colour = cor[["cinza"]]),
+          panel.grid.major.x = element_blank())
+}
+caixa("turno_grupo", "Noturno", "Turno",
+      paste0("Mann-Whitney, ", p_txt(mw$p), "; r = ", br(mw_r$effsize))) +
+  caixa("tempo_casa", "Até 1 ano", "Tempo de casa",
+        paste0("Kruskal-Wallis, ", p_txt(kw$p), "; ε² = ", br(kw_e$effsize, 3)), eixo_y = NULL) +
+  plot_layout(widths = c(1, 2))
+```
+
+- **A noite e o primeiro ano pesam.** Quem trabalha à noite e quem tem até 1 ano de casa pensa mais em sair, e os dois efeitos continuam no modelo de regressão, mesmo com os outros fatores controlados.
+
+```{r}
+#| label: fig-coeficientes
+#| fig-cap: "Efeito de cada fator na intenção de sair, com os demais fatores fixos (β e intervalo de confiança de 95% com erros robustos)"
+#| fig-alt: "Pontos com intervalos de confiança. Liderança, reconhecimento e remuneração ficam à esquerda do zero, com remuneração mais perto dele. Equilíbrio trabalho e vida fica sobre o zero. Turno noturno e até 1 ano de casa ficam à direita do zero; sexo feminino cruza o zero."
+#| fig-width: 9
+#| fig-height: 4.6
+grafico_coef <- function(base = 12, rotulo = 3.6) {
+  resultado |>
+    mutate(rotulo = factor(rotulo, rev(rotulo)),
+           grupo = if_else(p < 0.05, "Efeito detectado (p < 0,05)", "Sem efeito detectado")) |>
+    ggplot(aes(x = beta, y = rotulo, colour = grupo)) +
+    geom_vline(xintercept = 0, colour = cor[["cinza"]], linewidth = 0.5, linetype = "dashed") +
+    geom_errorbar(aes(xmin = li, xmax = ls), width = 0, linewidth = 1.6) +
+    geom_point(size = 3.6, shape = 21, fill = "white", stroke = 2) +
+    geom_text(aes(label = br(beta)), vjust = -1.1, size = rotulo, family = "Montserrat",
+              colour = cor[["profundo"]], show.legend = FALSE) +
+    scale_colour_manual(values = c("Efeito detectado (p < 0,05)" = cor[["azul"]],
+                                   "Sem efeito detectado" = cor[["medio"]])) +
+    scale_x_continuous(labels = \(x) br(x)) +
+    labs(x = "Efeito na intenção de sair (em desvios-padrão)", y = NULL, colour = NULL) +
+    theme_minimal(base_family = "Montserrat", base_size = base) +
+    theme(text = element_text(colour = cor[["profundo"]]),
+          axis.text.y = element_text(colour = cor[["profundo"]]),
+          panel.grid.minor = element_blank(), panel.grid.major.y = element_blank(),
+          panel.grid.major.x = element_line(colour = cor[["grade"]], linewidth = 0.4),
+          plot.background = element_blank(), panel.background = element_blank(),
+          legend.position = "top", legend.justification = "left")
+}
+grafico_coef()
+
+# A mesma figura, maior, vira a capa do projeto na listagem e no compartilhamento.
+dir.create("img", showWarnings = FALSE)
+ggsave("img/capa.png", grafico_coef(base = 15, rotulo = 4.6) + theme(plot.margin = margin(30, 40, 30, 30)),
+       width = 1200, height = 675, units = "px", dpi = 110, device = ragg::agg_png, bg = "white")
+```
+
+- **Liderança e reconhecimento são os dois fatores mais fortes** (β = `r br(b[["LID"]])` e `r br(b[["REC"]])`). Remuneração também reduz a intenção (β = `r br(b[["REM"]])`). A estimativa é menor, mas o teste não confirmou a diferença: com esta amostra, não dá para afirmar que remuneração pesa menos.
+- **Equilíbrio entre trabalho e vida é o resultado que mais ensina.** Na correlação simples ele aparece associado à intenção de sair (ρ = `r br(rho_int[["EQU"]])`), mas no modelo o efeito vai a zero (β = `r br(b[["EQU"]])`, `r p_txt(pv[["EQU"]])`). Equilíbrio anda junto com liderança e reconhecimento: onde o supervisor é bom, as folgas costumam ser planejadas. Sozinho, ele "pega emprestado" o efeito dos outros.
+
+```{r}
+#| label: hipoteses
+decisao <- function(ok) if_else(ok, "Suportada", "Não suportada")
+# H3 tem duas partes: reduz (testada pelo β) e com efeito menor (testada pela igualdade de coeficientes).
+hip <- tibble(
+  Hipótese = c("H1. Liderança reduz a intenção", "H2. Reconhecimento reduz a intenção",
+               "H3. Remuneração reduz, com efeito menor", "H4. Equilíbrio reduz a intenção"),
+  termo = c("LID", "REC", "REM", "EQU")
+) |>
+  left_join(resultado, by = "termo") |>
+  mutate(ok = beta < 0 & p < 0.05,
+         `β` = br(beta), `IC 95%` = ic_txt(li, ls), p = p_tab(p),
+         Resultado = if_else(termo == "REM" & ok & !menor_confirmado, "Parcialmente suportada", decisao(ok)))
+```
+
+```{r}
+#| label: tbl-hipoteses
+#| echo: false
+#| tbl-cap: "Teste das hipóteses (regressão múltipla, erros-padrão robustos HC3)"
+hip |> select(Hipótese, `β`, `IC 95%`, p, Resultado) |> kable(align = c("l", "c", "c", "c", "l"))
+```
+
+## Como isso entra no TCC
+
+O aluno recebe as tabelas no formato da APA, que a maioria dos cursos aceita, e um exemplo de como relatar os números. A tabela abaixo é a que vai para o capítulo de resultados:
+
+```{r}
+#| label: tbl-apa
+#| echo: false
+#| tbl-cap: "Regressão linear múltipla da intenção de rotatividade"
+resultado |>
+  transmute(Preditor = rotulo, `β` = br(beta), EP = br(ep),
+            `IC 95%` = ic_txt(li, ls), p = p_tab(p)) |>
+  kable(align = c("l", "c", "c", "c", "c"))
+```
+
+*Nota.* N = `r nrow(dm)`. Escores e variável dependente padronizados; turno noturno, até 1 ano de casa e sexo feminino codificados como 0 ou 1. EP: erro-padrão robusto (HC3). R² = `r br(r2)`; R² ajustado = `r br(r2a)`; F(`r f[["numdf"]]`, `r f[["dendf"]]`) = `r br(f[["value"]], 1)`, `r p_txt(pf(f[["value"]], f[["numdf"]], f[["dendf"]], lower.tail = FALSE))`.
+
+::: destaque-suave
+**Exemplo de relato.** Este parágrafo mostra quais números entram e em que ordem. A redação do TCC, a discussão dos resultados e as conclusões são do aluno.
+
+> Para testar as hipóteses, estimou-se uma regressão linear múltipla com erros-padrão robustos (HC3), tendo a intenção de rotatividade como variável dependente. O modelo explicou `r br(100 * r2, 0)`% da variância (R² ajustado = `r br(r2a)`). A percepção de liderança (β = `r br(b[["LID"]])`, `r p_txt(pv[["LID"]])`) e o reconhecimento (β = `r br(b[["REC"]])`, `r p_txt(pv[["REC"]])`) associaram-se negativamente à intenção, sustentando H1 e H2. A remuneração percebida também apresentou associação negativa (β = `r br(b[["REM"]])`, `r p_txt(pv[["REM"]])`). Embora a estimativa seja menor que as de liderança e reconhecimento, testes de igualdade de coeficientes não indicaram diferença significativa (`r teste_f(igual_lid)` e `r teste_f(igual_rec)`, respectivamente); assim, H3 foi parcialmente suportada. O equilíbrio entre trabalho e vida não apresentou associação após o controle das demais variáveis (β = `r br(b[["EQU"]])`, `r p_txt(pv[["EQU"]])`); H4 não foi suportada.
+:::
+
+## O que o aluno recebe
+
+- **O relatório completo em Quarto**, com o código e as saídas de cada passo. Se a base mudar (por exemplo, respostas que chegam depois), basta rodar de novo.
+- **O script R comentado e a base limpa**, para o aluno e o orientador conferirem.
+- **As tabelas no formato da APA**, prontas para colar no Word.
+- **Uma explicação em linguagem simples de cada teste:** por que foi escolhido, o que o resultado quer dizer e quais são os limites. Serve para escrever o método e para a defesa.
+- **Uma reunião para repassar os resultados** e as perguntas que a banca costuma fazer sobre a parte estatística.
+
+O trabalho é do aluno. Eu faço a análise e explico; a redação, a interpretação e as conclusões são dele.
+
+::: cta-final
+## Tem um questionário para analisar?
+
+Pode ser TCC, dissertação ou pesquisa interna da empresa. Me mande o projeto e a planilha das respostas, e eu digo o que dá para fazer e como.
+
+[Fale comigo](../../contato.qmd){.btn .btn-primary}
+:::

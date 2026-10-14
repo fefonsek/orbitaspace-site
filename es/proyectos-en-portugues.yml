@@ -1,0 +1,8 @@
+# Proyectos que solo existen en portugués: aparecen como tarjeta en la
+# lista de proyectos en español y llevan a la página en portugués.
+- title: "Rotación en supermercados: consultoría estadística para una tesis de grado"
+  description: "Caso en portugués. Consultoría ficticia para una tesis de Administración: limpieza, confiabilidad, análisis factorial y regresión con errores robustos, en R."
+  path: /projetos/caso-tcc-rotatividade/index.html
+  image: /projetos/caso-tcc-rotatividade/img/capa.png
+  image-alt: "Gráfico del efecto de cada factor en la intención de dejar la empresa"
+  categories: [R, Estadística, Cuestionario]

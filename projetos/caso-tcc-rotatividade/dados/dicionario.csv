@@ -1,0 +1,29 @@
+﻿"codigo","coluna","construto","invertido"
+"data_hora","Carimbo de data/hora","Perfil",
+"aceite","Você leu o termo de consentimento e aceita participar da pesquisa?","Perfil",
+"sexo","Sexo","Perfil",
+"faixa_etaria","Qual é a sua faixa etária?","Perfil",
+"escolaridade","Escolaridade","Perfil",
+"funcao","Função","Perfil",
+"turno","Turno de trabalho","Perfil",
+"tempo_casa","Há quanto tempo trabalha nesta empresa?","Perfil",
+"LID1","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor me trata com respeito.]","Liderança","não"
+"LID2","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor explica com clareza o que espera de mim.]","Liderança","não"
+"LID3","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor raramente me dá retorno sobre o meu trabalho.]","Liderança","sim"
+"LID4","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Posso contar com meu supervisor quando tenho um problema no trabalho.]","Liderança","não"
+"LID5","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor distribui as tarefas de forma justa.]","Liderança","não"
+"REC1","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Quando faço um bom trabalho, alguém percebe.]","Reconhecimento","não"
+"REC2","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Recebo elogios pelo meu trabalho.]","Reconhecimento","não"
+"REC3","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Sinto que meu esforço é valorizado pela empresa.]","Reconhecimento","não"
+"REC4","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [A empresa reconhece quem se dedica mais.]","Reconhecimento","não"
+"REM1","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu salário é justo pelo trabalho que faço.]","Remuneração percebida","não"
+"REM2","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu salário é compatível com o de outros supermercados da região.]","Remuneração percebida","não"
+"REM3","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Estou satisfeito com a minha remuneração.]","Remuneração percebida","não"
+"REM4","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Recebo o vale-transporte em dia.]","Remuneração percebida","não"
+"EQU1","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu horário me permite cuidar da minha vida pessoal.]","Equilíbrio trabalho e vida","não"
+"EQU2","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Consigo planejar minhas folgas com antecedência.]","Equilíbrio trabalho e vida","não"
+"EQU3","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [O trabalho raramente atrapalha meus compromissos familiares.]","Equilíbrio trabalho e vida","não"
+"EQU4","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Saio do trabalho no horário previsto.]","Equilíbrio trabalho e vida","não"
+"INT1","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Penso com frequência em sair desta empresa.]","Intenção de rotatividade","não"
+"INT2","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Pretendo procurar outro emprego nos próximos 12 meses.]","Intenção de rotatividade","não"
+"INT3","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Se surgir uma oferta parecida em outro lugar, eu saio.]","Intenção de rotatividade","não"

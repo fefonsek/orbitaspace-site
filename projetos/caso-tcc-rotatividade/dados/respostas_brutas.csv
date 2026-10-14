@@ -1,0 +1,231 @@
+﻿"Carimbo de data/hora","Você leu o termo de consentimento e aceita participar da pesquisa?","Sexo","Qual é a sua faixa etária?","Escolaridade","Função","Turno de trabalho","Há quanto tempo trabalha nesta empresa?","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor me trata com respeito.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor explica com clareza o que espera de mim.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor raramente me dá retorno sobre o meu trabalho.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Posso contar com meu supervisor quando tenho um problema no trabalho.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu supervisor distribui as tarefas de forma justa.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Quando faço um bom trabalho, alguém percebe.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Recebo elogios pelo meu trabalho.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Sinto que meu esforço é valorizado pela empresa.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [A empresa reconhece quem se dedica mais.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu salário é justo pelo trabalho que faço.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu salário é compatível com o de outros supermercados da região.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Estou satisfeito com a minha remuneração.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Recebo o vale-transporte em dia.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Meu horário me permite cuidar da minha vida pessoal.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Consigo planejar minhas folgas com antecedência.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [O trabalho raramente atrapalha meus compromissos familiares.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Saio do trabalho no horário previsto.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Penso com frequência em sair desta empresa.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Pretendo procurar outro emprego nos próximos 12 meses.]","Avalie as frases de 1 (discordo totalmente) a 5 (concordo totalmente) [Se surgir uma oferta parecida em outro lugar, eu saio.]"
+"03/08/2026 12:43:39","Sim","Masculino","35 a 44","Ensino médio","Atendimento","Manhã","De 3 a 5 anos",1,1,5,1,2,1,1,1,,2,3,2,5,2,2,2,1,4,3,4
+"03/08/2026 13:10:30","Sim","Masculino","35 a 44","Ensino fundamental","Açougue e padaria","Noite","De 1 a 3 anos",5,5,2,5,5,3,2,2,2,4,3,1,3,4,4,3,5,2,2,2
+"03/08/2026 13:23:01","Sim","Masculino","18 a 24 anos","Superior completo","Operador(a) de caixa","Manhã","De 1 a 3 anos",4,5,,3,5,2,3,3,3,2,2,2,2,4,1,3,2,3,4,4
+"03/08/2026 13:31:02","Sim","Feminino","18-24","Superior completo","Depósito","Manhã","De 1 a 3 anos",4,4,,4,5,4,3,4,4,3,3,3,3,5,3,4,4,3,2,3
+"03/08/2026 15:20:35","Sim","Feminino","35-44","Superior completo","Atendimento","Tarde","Mais de 5 anos",2,2,3,1,3,1,2,3,3,5,5,5,3,5,5,4,5,4,3,4
+"03/08/2026 17:26:24","Sim","Masculino","18-24","Ensino médio","Atendimento","Manhã","De 1 a 3 anos",3,3,5,3,1,2,2,1,3,5,4,4,3,3,3,3,4,4,3,4
+"03/08/2026 18:20:08","Sim","Feminino","de 18 a 24","Ensino médio","Depósito","Tarde","Até 1 ano",4,3,3,2,3,4,2,2,1,2,1,2,3,2,3,4,3,5,5,5
+"03/08/2026 22:10:32","Sim","Feminino","25 a 34","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",3,4,3,3,4,4,4,4,4,4,3,3,4,1,1,3,2,3,2,3
+"03/08/2026 23:51:51","Sim","Masculino","35 a 44","Ensino médio","Atendimento","Tarde","Até 1 ano",3,2,3,1,2,1,1,1,1,1,1,1,3,3,3,3,4,5,5,5
+"04/08/2026 00:48:15","Sim","Feminino","35 a 44 anos","Ensino fundamental","Operador(a) de caixa","Tarde","Até 1 ano",3,5,2,4,3,5,4,5,3,4,3,4,3,,3,,4,1,1,1
+"04/08/2026 04:29:54","Sim","Feminino","Mais de 45","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",4,4,2,4,3,1,2,3,1,3,3,3,2,3,2,3,2,4,5,5
+"04/08/2026 08:26:33","Sim","Masculino","45 ou mais","Ensino médio","Depósito","Manhã","Até 1 ano",2,3,2,4,3,3,4,3,4,1,1,3,3,2,1,3,3,2,3,2
+"04/08/2026 09:08:27","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"04/08/2026 10:08:37","Sim","Masculino","35-44","Ensino médio","Operador(a) de caixa","Tarde","De 3 a 5 anos",2,4,3,3,3,3,2,1,1,1,1,2,2,1,2,2,1,5,4,4
+"04/08/2026 10:41:34","Sim","Feminino","de 18 a 24","Superior incompleto","Açougue e padaria","Tarde","Até 1 ano",5,3,3,3,4,4,3,4,4,2,1,3,3,2,3,2,2,3,3,3
+"04/08/2026 13:08:10","Sim","Feminino","De 25 a 34","Ensino fundamental","Operador(a) de caixa","Manhã","De 1 a 3 anos",4,2,3,4,4,4,3,,3,2,3,3,4,4,4,3,4,2,3,3
+"04/08/2026 15:01:46","Sim","Masculino","18 a 24","Ensino fundamental","Operador(a) de caixa","Tarde","Mais de 5 anos",3,4,3,4,4,4,5,4,5,3,3,4,5,3,,2,5,2,1,1
+"05/08/2026 02:13:19","Sim","Masculino","35 a 44","Superior completo","Depósito","Noite","Até 1 ano",1,3,3,3,3,4,2,4,4,,1,3,4,3,4,4,5,5,4,3
+"05/08/2026 02:53:02","Sim","Masculino","18 a 24 anos","Ensino médio","Repositor(a)","Manhã","Mais de 5 anos",3,4,2,3,4,2,3,2,3,4,2,3,5,3,3,4,4,3,3,4
+"05/08/2026 02:55:07","Sim","Masculino","De 25 a 34","Superior incompleto","Açougue e padaria","Manhã","De 3 a 5 anos",,2,4,2,3,2,2,2,2,1,1,1,1,2,2,2,2,4,5,4
+"05/08/2026 04:00:24","Sim","Masculino","25 á 34","Ensino médio","Açougue e padaria","Manhã","De 3 a 5 anos",4,3,3,3,3,3,3,2,2,4,4,4,4,4,2,3,3,3,2,
+"05/08/2026 09:18:15","Sim","Feminino","25 á 34","Ensino médio","Operador(a) de caixa","Tarde","De 1 a 3 anos",5,3,1,3,4,4,3,4,3,2,2,3,3,2,4,1,4,3,3,3
+"05/08/2026 11:18:01","Sim","Masculino","35-44","Superior incompleto","Açougue e padaria","Tarde","Até 1 ano",3,4,3,2,4,5,4,5,5,2,3,4,5,3,4,5,4,2,2,1
+"05/08/2026 11:45:49","Sim","Masculino","45 anos ou mais","Ensino médio","Depósito","Tarde","De 1 a 3 anos",5,5,1,5,5,5,3,3,4,4,4,4,4,3,4,3,5,2,3,2
+"05/08/2026 16:39:16","Sim","Feminino","25-34","Ensino médio","Repositor(a)","Noite","De 3 a 5 anos",4,3,2,2,4,1,1,1,4,3,2,2,4,2,3,4,3,4,4,5
+"05/08/2026 18:49:31","Sim","Feminino","45 ou mais","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",4,4,4,3,3,2,3,2,2,3,2,3,4,4,4,3,3,,3,3
+"05/08/2026 21:35:07","Sim","Feminino","de 18 a 24","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",3,2,3,2,2,2,3,2,,2,2,3,3,2,3,2,2,4,3,
+"06/08/2026 02:37:48","Sim","Feminino","35-44","Ensino fundamental","Depósito","Tarde","Até 1 ano",3,2,4,3,4,3,3,4,2,2,3,2,4,3,2,2,2,4,4,5
+"06/08/2026 05:22:11","Sim","Masculino","25-34","Ensino médio","Repositor(a)","Manhã","Até 1 ano",5,5,2,4,4,4,2,4,4,3,2,3,5,3,2,4,2,3,3,4
+"06/08/2026 08:21:52","Sim","Feminino","25 á 34","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",3,3,3,3,4,2,3,3,2,3,2,3,4,3,2,3,2,3,4,4
+"06/08/2026 14:38:33","Sim","Prefiro não informar","35-44","Ensino médio","Repositor(a)","Noite","Até 1 ano",2,3,3,3,3,3,2,1,,3,4,3,2,4,2,1,3,4,3,4
+"06/08/2026 16:21:02","Sim","Feminino","25 a 34","Ensino médio","Repositor(a)","Tarde","De 1 a 3 anos",4,4,2,4,3,4,5,4,5,3,3,3,3,,3,2,3,1,1,3
+"06/08/2026 17:08:26","Sim","Feminino","25-34","Ensino médio","Atendimento","Manhã","Até 1 ano",5,4,3,5,5,5,3,4,5,4,3,2,5,4,5,5,4,2,2,2
+"06/08/2026 19:09:31","Sim","Masculino","35-44","Ensino fundamental","Repositor(a)","Tarde","Até 1 ano",3,4,3,3,3,3,5,4,4,3,3,3,4,3,3,3,4,3,3,3
+"06/08/2026 20:31:40","Sim","Masculino","18 - 24 anos","Ensino médio","Operador(a) de caixa","Tarde","De 1 a 3 anos",5,5,2,3,4,3,5,5,2,4,4,4,4,3,2,4,4,1,1,1
+"06/08/2026 20:55:39","Sim","Masculino","De 25 a 34","Ensino médio","Operador(a) de caixa","Noite","De 1 a 3 anos",4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+"06/08/2026 22:45:46","Sim","Masculino","35-44","Ensino médio","Repositor(a)","Noite","Até 1 ano",2,3,4,2,2,1,2,1,1,3,2,3,3,3,2,3,2,4,4,5
+"06/08/2026 23:48:43","Sim","Feminino","Mais de 45","Superior completo","Repositor(a)","Noite","De 1 a 3 anos",3,4,2,4,3,3,3,3,3,2,2,2,2,5,5,5,5,4,3,4
+"07/08/2026 04:29:06","Sim","Masculino","35 A 44","Ensino médio","Operador(a) de caixa","Tarde","De 3 a 5 anos",3,2,,3,2,4,3,3,4,4,5,4,4,3,2,4,1,3,4,4
+"07/08/2026 06:21:08","Sim","Feminino","Mais de 45","Ensino médio","Atendimento","Manhã","De 3 a 5 anos",5,5,1,5,5,4,5,5,3,2,2,2,2,4,4,3,3,3,2,2
+"07/08/2026 08:44:56","Sim","Feminino","18 a 24","Superior incompleto","Atendimento","Tarde","Até 1 ano",5,3,2,3,5,3,1,3,3,5,5,5,4,2,3,2,4,4,3,4
+"07/08/2026 09:07:12","Sim","Feminino","De 25 a 34","Ensino médio","Depósito","Noite","De 1 a 3 anos",4,1,4,2,3,3,3,2,3,5,3,3,3,3,3,3,3,4,4,4
+"07/08/2026 10:33:59","Sim","Feminino","25 a 34","Ensino fundamental","Açougue e padaria","Manhã","De 3 a 5 anos",3,3,4,2,5,3,5,3,2,2,1,2,5,3,3,2,4,4,4,4
+"07/08/2026 11:15:09","Sim","Feminino","35 A 44","Ensino médio","Operador(a) de caixa","Noite","Mais de 5 anos",4,4,3,4,4,3,2,5,4,3,3,4,5,3,4,4,4,1,2,2
+"07/08/2026 12:19:58","Sim","Feminino","de 18 a 24","Superior incompleto","Operador(a) de caixa","Manhã","De 1 a 3 anos",3,1,5,2,3,1,3,3,3,4,3,3,5,4,2,3,3,4,4,4
+"07/08/2026 18:03:29","Sim","Masculino","25 a 34","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",4,3,4,3,3,3,3,3,3,1,2,1,3,4,3,4,3,3,3,2
+"07/08/2026 18:18:54","Sim","Masculino","Mais de 45","Ensino fundamental","Depósito","Tarde","De 1 a 3 anos",5,4,2,3,5,3,4,3,3,3,4,3,3,,3,4,3,3,4,2
+"08/08/2026 02:08:20","Sim","Feminino","25 a 34 anos","Ensino médio","Depósito","Manhã","De 1 a 3 anos",3,5,2,3,4,5,3,5,4,5,5,5,2,2,2,4,3,2,2,3
+"08/08/2026 08:16:58","Sim","Feminino","18 a 24 anos","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",4,2,2,4,4,4,4,4,2,4,4,5,2,,2,3,3,5,3,4
+"08/08/2026 12:09:58","Sim","Feminino","25-34","Ensino médio","Atendimento","Noite","Mais de 5 anos",4,4,2,4,4,2,3,1,2,2,2,3,4,3,4,3,2,4,4,4
+"08/08/2026 14:02:46","Sim","Masculino","25 a 34 anos","Superior incompleto","Atendimento","Manhã","De 3 a 5 anos",5,5,3,4,3,5,,4,4,2,2,2,4,4,5,4,5,3,2,2
+"08/08/2026 17:44:31","Sim","Masculino","35 A 44","Ensino médio","Operador(a) de caixa","Tarde","De 1 a 3 anos",3,4,2,5,3,4,5,3,3,3,3,4,4,4,3,4,4,2,3,3
+"08/08/2026 18:24:11","Sim","Masculino","25 á 34","Ensino médio","Repositor(a)","Tarde","Mais de 5 anos",3,4,2,4,3,4,4,5,4,3,3,2,2,3,3,3,3,4,2,3
+"08/08/2026 20:25:06","Sim","Masculino","25-34","Ensino médio","Depósito","Tarde","Mais de 5 anos",4,5,1,5,5,3,3,3,3,4,3,4,5,3,2,4,4,3,2,4
+"08/08/2026 22:02:12","Sim","Masculino","De 25 a 34","Superior incompleto","Repositor(a)","Noite","Mais de 5 anos",3,2,3,4,,3,3,,2,2,2,,,3,3,2,4,3,3,
+"09/08/2026 01:57:10","Sim","Feminino","35-44","Ensino médio","Depósito","Noite","De 1 a 3 anos",4,4,2,5,5,5,5,5,4,4,3,4,5,3,4,3,4,2,3,4
+"09/08/2026 09:01:45","Sim","Masculino","25 a 34","Ensino médio","Atendimento","Manhã","De 3 a 5 anos",4,3,2,4,4,3,3,3,3,5,2,4,4,2,1,2,2,2,2,3
+"09/08/2026 11:28:06","Sim","Feminino","18-24","Ensino fundamental","Operador(a) de caixa","Manhã","Até 1 ano",3,3,3,4,3,3,3,3,3,,5,5,4,3,3,3,4,3,4,3
+"09/08/2026 17:22:08","Sim","Feminino","45 ou mais","Superior incompleto","Operador(a) de caixa","Manhã","De 3 a 5 anos",4,4,3,3,4,3,3,3,3,3,2,3,2,4,5,4,4,2,1,1
+"09/08/2026 22:29:55","Sim","Feminino","25 a 34 anos","Ensino fundamental","Operador(a) de caixa","Tarde","Mais de 5 anos",2,4,2,3,4,4,2,2,4,3,3,1,4,5,5,5,4,3,4,4
+"10/08/2026 04:16:01","Sim","Masculino","45 anos ou mais","Ensino médio","Atendimento","Manhã","Mais de 5 anos",2,2,3,2,3,3,3,3,2,3,2,1,3,3,3,2,4,2,1,
+"10/08/2026 07:55:42","Sim","Masculino","18 - 24 anos","Ensino médio","Repositor(a)","Tarde","De 1 a 3 anos",4,3,1,5,5,2,4,3,3,2,1,1,,4,2,2,3,3,2,3
+"10/08/2026 08:35:22","Sim","Feminino","25 a 34","Ensino médio","Atendimento","Tarde","Até 1 ano",5,5,1,4,5,3,,2,3,3,4,3,4,3,4,3,5,3,2,
+"10/08/2026 11:19:18","Sim","Feminino","25-34","Ensino fundamental","Repositor(a)","Manhã","Mais de 5 anos",4,3,1,2,3,5,2,3,2,3,2,1,4,5,5,4,4,2,3,3
+"10/08/2026 11:26:19","Sim","Feminino","18 a 24 anos","Ensino médio","Açougue e padaria","Manhã","De 1 a 3 anos",4,4,3,3,3,4,3,4,3,3,2,4,4,4,4,3,5,3,4,3
+"10/08/2026 12:35:59","Sim","Feminino","35-44","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",4,4,2,4,4,5,4,5,5,2,4,3,3,4,5,5,4,1,1,2
+"10/08/2026 15:49:31","Sim","Feminino","35 A 44","Ensino médio","Repositor(a)","Manhã","Mais de 5 anos",4,4,2,4,4,4,3,4,4,4,2,3,5,3,4,4,4,1,2,2
+"10/08/2026 18:45:22","Sim","Masculino","35 a 44 anos","Superior incompleto","Depósito","Manhã","De 3 a 5 anos",2,2,,2,2,2,3,2,4,3,2,3,2,4,2,2,2,3,3,3
+"11/08/2026 02:07:56","Sim","Feminino","45 ou mais","Ensino médio","Depósito","Noite","De 1 a 3 anos",5,5,1,4,5,5,2,4,3,4,4,4,3,3,3,5,4,3,2,2
+"11/08/2026 04:49:09","Sim","Feminino","25 a 34","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",4,4,3,4,5,5,3,4,3,3,3,,5,2,2,4,3,2,2,2
+"11/08/2026 05:41:19","Sim","Feminino","de 18 a 24","Ensino médio","Repositor(a)","Manhã","Até 1 ano",4,3,2,3,4,4,5,3,3,2,3,4,3,3,4,3,4,2,2,4
+"11/08/2026 07:02:16","Sim","Masculino","35 a 44 anos","Ensino médio","Repositor(a)","Manhã","De 1 a 3 anos",3,4,3,2,4,1,3,2,4,2,2,2,4,2,2,2,3,3,4,4
+"11/08/2026 07:25:48","Sim","Prefiro não informar","45+","Superior completo","Repositor(a)","Tarde","De 1 a 3 anos",4,5,2,4,3,4,4,3,4,3,3,2,4,3,4,4,5,1,2,3
+"11/08/2026 08:10:01","Sim","Masculino","18 a 24 anos","Superior completo","Repositor(a)","Noite","De 3 a 5 anos",4,4,2,2,4,3,3,5,3,3,3,4,5,4,5,3,3,,4,3
+"11/08/2026 13:51:22","Sim","Masculino","25-34","Ensino fundamental","Repositor(a)","Tarde","De 3 a 5 anos",3,4,2,4,5,3,3,,4,1,3,4,3,3,4,3,3,2,4,2
+"11/08/2026 14:40:04","Sim","Feminino","45+","Ensino fundamental","Repositor(a)","Manhã","De 3 a 5 anos",5,4,2,5,,,2,2,4,2,,3,5,,5,5,4,2,2,
+"11/08/2026 16:05:47","Sim","Masculino","18-24","Ensino médio","Repositor(a)","Tarde","Mais de 5 anos",4,4,1,3,4,2,2,2,1,3,3,2,2,4,4,4,4,3,4,3
+"11/08/2026 16:10:18","Sim","Feminino","25 á 34","Superior incompleto","Repositor(a)","Noite","De 1 a 3 anos",2,3,5,2,4,3,4,3,3,2,1,1,3,1,2,2,2,5,3,4
+"11/08/2026 20:53:26","Sim","Feminino","18-24","Superior completo","Depósito","Manhã","Até 1 ano",4,4,4,4,4,3,2,4,2,4,4,3,4,3,2,2,2,2,3,3
+"11/08/2026 21:22:38","Sim","Feminino","De 25 a 34","Ensino médio","Operador(a) de caixa","Tarde","De 3 a 5 anos",5,2,2,4,3,2,3,1,3,2,3,2,5,3,1,2,3,4,3,3
+"11/08/2026 21:41:07","Sim","Masculino","35 A 44","Ensino médio","Repositor(a)","Manhã","Até 1 ano",5,5,1,5,4,4,5,5,5,2,2,2,5,4,4,2,4,4,3,2
+"12/08/2026 00:47:46","Sim","Feminino","45 ou mais","Ensino médio","Depósito","Noite","De 3 a 5 anos",5,5,1,5,4,4,4,4,4,1,3,2,3,4,5,5,5,1,1,1
+"12/08/2026 02:04:15","Sim","Masculino","18 a 24 anos","Ensino médio","Atendimento","Manhã","Mais de 5 anos",5,4,3,4,,5,4,5,3,4,4,3,4,5,5,5,5,1,1,3
+"12/08/2026 04:51:28","Sim","Feminino","18 a 24 anos","Ensino médio","Repositor(a)","Manhã","Mais de 5 anos",4,2,2,2,4,3,2,3,2,3,2,5,4,4,5,4,5,4,4,4
+"12/08/2026 05:55:11","Sim","Feminino","45 anos ou mais","Ensino fundamental","Operador(a) de caixa","Tarde","De 1 a 3 anos",5,4,2,4,3,3,2,3,2,2,2,3,5,3,3,3,3,3,2,3
+"12/08/2026 07:44:48","Sim","Masculino","de 18 a 24","Superior completo","Repositor(a)","Manhã","Até 1 ano",3,2,3,2,3,2,1,2,,3,3,2,4,1,2,3,3,4,3,4
+"12/08/2026 08:05:33","Sim","Masculino","de 18 a 24","Superior incompleto","Açougue e padaria","Tarde","De 1 a 3 anos",5,4,1,4,4,4,4,3,4,2,3,2,2,4,2,3,4,2,3,2
+"12/08/2026 13:49:26","Sim","Masculino","35 a 44","Ensino médio","Operador(a) de caixa","Tarde","De 3 a 5 anos",3,3,2,4,5,3,,4,3,3,3,1,3,3,3,3,5,2,1,2
+"12/08/2026 14:46:27","Sim","Masculino","18 - 24 anos","Superior incompleto","Repositor(a)","Manhã","De 3 a 5 anos",3,3,2,3,4,2,4,3,3,4,3,4,4,4,3,4,4,2,2,3
+"12/08/2026 15:35:30","Sim","Masculino","35 a 44 anos","Superior incompleto","Operador(a) de caixa","Noite","Até 1 ano",4,,2,,,,4,5,4,3,,3,,5,,5,4,4,3,3
+"12/08/2026 17:30:54","Sim","Feminino","45+","Ensino médio","Depósito","Noite","Mais de 5 anos",4,4,1,5,5,5,5,4,4,3,3,4,4,3,3,3,3,1,2,1
+"12/08/2026 18:01:30","Sim","Feminino","18 a 24 anos","Superior completo","Operador(a) de caixa","Manhã","De 1 a 3 anos",5,5,1,5,,5,5,5,4,4,2,4,5,4,3,4,5,1,2,3
+"12/08/2026 20:32:16","Sim","Feminino","25 a 34","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",2,2,3,4,2,4,4,3,4,3,4,4,3,3,3,4,4,3,2,
+"12/08/2026 21:10:50","Sim","Masculino","45 ou mais","Ensino médio","Operador(a) de caixa","Manhã","Mais de 5 anos",5,5,1,5,4,5,4,5,4,3,2,4,5,4,4,3,4,2,2,2
+"12/08/2026 22:52:15","Sim","Masculino","25 a 34 anos","Ensino médio","Açougue e padaria","Manhã","De 3 a 5 anos",3,3,2,4,3,4,4,5,5,4,4,3,4,5,5,5,5,3,,4
+"12/08/2026 23:17:23","Sim","Feminino","35 a 44","Superior incompleto","Atendimento","Noite","Até 1 ano",4,4,,4,4,3,4,3,2,,3,2,3,4,4,5,4,3,4,3
+"13/08/2026 00:04:49","Sim","Feminino","35 a 44","Ensino médio","Operador(a) de caixa","Manhã","Até 1 ano",3,3,3,4,3,2,1,3,3,3,2,2,5,5,4,5,5,5,4,5
+"13/08/2026 09:30:43","Sim","Feminino","25 a 34 anos","Superior completo","Depósito","Manhã","Mais de 5 anos",3,3,2,2,5,5,5,3,5,3,3,4,4,4,4,5,3,2,3,1
+"13/08/2026 11:33:08","Sim","Feminino","35 a 44","Ensino médio","Atendimento","Manhã","De 3 a 5 anos",4,5,2,5,3,4,5,,3,5,3,4,3,5,4,3,5,3,3,2
+"13/08/2026 12:38:47","Sim","Feminino","18 a 24 anos","Ensino médio","Operador(a) de caixa","Manhã","De 1 a 3 anos",,,3,3,3,4,,,3,,4,3,,4,,4,5,,1,
+"13/08/2026 16:47:55","Sim","Prefiro não informar","De 25 a 34","Ensino médio","Depósito","Noite","De 3 a 5 anos",4,2,3,3,3,4,4,4,2,3,1,1,5,4,4,3,2,4,4,4
+"13/08/2026 20:29:12","Sim","Masculino","18 a 24","Superior completo","Atendimento","Tarde","Mais de 5 anos",5,5,1,5,5,5,4,5,5,4,4,5,4,5,5,5,5,1,2,3
+"13/08/2026 22:44:02","Sim","Masculino","35-44","Ensino médio","Atendimento","Noite","De 1 a 3 anos",4,4,2,3,4,3,3,1,3,3,1,2,4,2,3,2,4,4,3,5
+"13/08/2026 23:59:52","Sim","Masculino","De 25 a 34","Ensino médio","Repositor(a)","Manhã","De 3 a 5 anos",3,3,5,1,3,3,1,3,3,3,3,3,3,3,2,1,3,3,4,4
+"14/08/2026 01:13:56","Sim","Feminino","45+","Ensino fundamental","Açougue e padaria","Tarde","Mais de 5 anos",2,2,5,2,2,2,2,4,2,2,2,3,3,1,2,1,3,5,4,3
+"14/08/2026 03:04:06","Sim","Feminino","25-34","Superior completo","Operador(a) de caixa","Manhã","Mais de 5 anos",4,3,2,3,4,5,5,5,5,5,2,4,4,2,1,1,1,2,1,2
+"14/08/2026 05:39:34","Sim","Masculino","35 a 44 anos","Ensino médio","Repositor(a)","Manhã","De 3 a 5 anos",5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+"14/08/2026 13:18:07","Sim","Feminino","18 - 24 anos","Ensino médio","Atendimento","Manhã","Mais de 5 anos",2,2,3,4,3,3,1,2,1,1,1,2,5,2,2,2,2,3,4,4
+"14/08/2026 13:29:12","Sim","Masculino","18-24","Ensino médio","Operador(a) de caixa","Noite","Até 1 ano",3,3,3,3,2,3,3,4,2,3,2,3,3,3,2,3,4,3,4,4
+"14/08/2026 14:35:03","Sim","Feminino","35 a 44","Ensino fundamental","Repositor(a)","Tarde","De 1 a 3 anos",2,2,3,3,4,3,2,2,3,3,2,3,3,1,1,1,1,4,,4
+"14/08/2026 20:37:17","Sim","Masculino","35 A 44","Ensino médio","Operador(a) de caixa","Noite","Até 1 ano",5,4,2,4,3,5,3,4,4,,2,2,4,2,3,2,1,3,3,3
+"15/08/2026 00:01:53","Sim","Feminino","25 a 34 anos","Superior completo","Depósito","Manhã","Até 1 ano",4,2,4,4,2,4,5,4,4,2,3,2,2,3,3,2,3,3,3,5
+"15/08/2026 00:57:21","Sim","Masculino","De 25 a 34","Superior completo","Operador(a) de caixa","Manhã","Até 1 ano",4,4,1,5,4,3,3,3,3,1,1,,2,2,4,5,4,4,2,5
+"15/08/2026 01:00:58","Sim","Feminino","25 a 34","Ensino médio","Operador(a) de caixa","Manhã","Até 1 ano",3,2,5,2,3,2,3,2,3,4,3,3,,4,2,3,4,3,3,3
+"15/08/2026 01:55:00","Sim","Masculino","25 a 34","Superior incompleto","Operador(a) de caixa","Manhã","De 3 a 5 anos",3,2,2,4,3,4,5,3,3,4,4,5,5,4,3,5,3,2,3,4
+"15/08/2026 10:54:19","Sim","Feminino","35 A 44","Ensino médio","Repositor(a)","Noite","Até 1 ano",5,5,1,5,5,4,5,,4,3,3,5,3,4,4,3,4,2,3,3
+"15/08/2026 12:01:40","Sim","Feminino","25 a 34","Ensino médio","Depósito","Tarde","De 1 a 3 anos",3,3,3,4,5,5,4,3,5,1,,2,1,3,3,2,2,3,3,3
+"15/08/2026 14:08:11","Sim","Feminino","De 25 a 34","Superior incompleto","Depósito","Tarde","De 3 a 5 anos",,,2,3,,,2,1,2,,1,3,2,3,2,,3,4,3,
+"15/08/2026 14:20:44","Sim","Feminino","25 a 34","Ensino médio","Açougue e padaria","Manhã","Mais de 5 anos",4,4,2,3,4,2,3,4,4,3,4,4,2,1,2,3,3,3,1,3
+"15/08/2026 14:39:37","Sim","Masculino","35 a 44","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",3,2,1,4,4,3,2,1,1,5,4,4,4,3,3,3,3,2,1,2
+"15/08/2026 19:30:38","Sim","Masculino","De 25 a 34","Superior completo","Repositor(a)","Noite","De 1 a 3 anos",3,3,2,2,4,3,2,2,1,3,3,4,4,3,,4,2,,1,3
+"15/08/2026 21:16:53","Sim","Masculino","35-44","Ensino médio","Atendimento","Noite","De 1 a 3 anos",2,2,5,4,4,2,1,3,1,2,3,2,4,1,2,2,4,3,4,4
+"16/08/2026 00:52:46","Sim","Masculino","25 a 34 anos","Superior incompleto","Açougue e padaria","Tarde","Mais de 5 anos",4,4,2,3,4,4,3,4,4,3,3,,5,5,3,3,4,2,3,3
+"16/08/2026 02:04:36","Sim","Feminino","18 a 24 anos","Ensino médio","Açougue e padaria","Noite","De 1 a 3 anos",3,3,3,4,3,3,3,4,3,5,5,5,5,4,2,3,2,3,2,2
+"16/08/2026 02:14:36","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"16/08/2026 04:02:00","Sim","Feminino","25 a 34 anos","Ensino médio","Repositor(a)","Noite","Até 1 ano",3,3,3,5,2,2,2,3,1,2,1,1,5,4,3,4,5,5,5,4
+"16/08/2026 06:29:49","Sim","Masculino","25 a 34","Superior completo","Operador(a) de caixa","Manhã","Até 1 ano",1,2,3,3,3,,1,3,3,2,3,3,4,4,5,1,4,5,4,5
+"16/08/2026 06:40:34","Sim","Masculino","25-34","Ensino médio","Depósito","Tarde","Até 1 ano",3,3,5,2,2,4,4,4,4,3,3,2,2,3,3,3,3,2,2,2
+"16/08/2026 08:40:54","Sim","Prefiro não informar","18 a 24 anos","Ensino médio","Repositor(a)","Tarde","De 1 a 3 anos",3,5,1,5,5,4,5,4,3,4,3,3,4,3,3,5,3,2,1,1
+"16/08/2026 09:45:17","Sim","Masculino","35 a 44","Ensino médio","Depósito","Manhã","De 1 a 3 anos",2,2,4,1,2,2,1,2,2,2,2,2,3,1,1,1,1,3,5,5
+"16/08/2026 18:15:25","Sim","Feminino","35 a 44","Ensino fundamental","Repositor(a)","Noite","De 1 a 3 anos",4,3,2,4,5,5,5,5,5,,2,3,3,5,5,5,5,4,2,3
+"16/08/2026 21:55:10","Sim","Feminino","35 a 44 anos","Ensino médio","Açougue e padaria","Noite","Até 1 ano",5,4,,3,5,1,2,3,2,1,1,1,5,5,5,5,4,4,4,3
+"16/08/2026 23:00:12","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"17/08/2026 02:28:46","Sim","Masculino","25 a 34 anos","Ensino médio","Repositor(a)","Tarde","Até 1 ano",3,4,3,3,4,3,5,3,3,3,4,4,3,,4,3,,3,3,2
+"17/08/2026 04:12:48","Sim","Prefiro não informar","35 a 44 anos","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",2,2,2,3,2,3,2,3,4,1,1,2,3,4,4,3,5,4,3,3
+"17/08/2026 08:51:13","Sim","Feminino","25 a 34","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",,4,2,2,3,3,2,3,2,2,1,3,3,1,3,4,4,4,3,3
+"17/08/2026 09:47:09","Sim","Masculino","25-34","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",2,3,3,3,2,3,3,4,3,3,3,4,3,3,2,3,1,4,4,2
+"17/08/2026 13:25:18","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"17/08/2026 13:50:40","Sim","Feminino","Mais de 45","Ensino médio","Atendimento","Noite","Até 1 ano",1,4,2,3,3,3,3,4,3,5,5,5,3,3,2,3,3,3,4,4
+"17/08/2026 14:14:51","Sim","Masculino","35 a 44","Superior incompleto","Atendimento","Manhã","De 1 a 3 anos",3,3,2,4,4,5,4,4,5,3,3,4,4,4,3,5,4,1,1,2
+"17/08/2026 16:45:03","Sim","Feminino","De 25 a 34","Ensino médio","Operador(a) de caixa","Manhã","Até 1 ano",3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+"17/08/2026 20:04:25","Sim","Feminino","18-24","Superior incompleto","Depósito","Noite","De 1 a 3 anos",5,5,1,5,5,5,4,3,3,2,2,1,5,3,3,4,3,1,2,3
+"18/08/2026 04:20:22","Sim","Feminino","25 a 34","Ensino médio","Repositor(a)","Noite","De 1 a 3 anos",5,4,1,4,3,4,5,4,5,3,,3,2,3,2,4,2,3,3,2
+"18/08/2026 13:52:36","Sim","Feminino","25 a 34 anos","Superior completo","Operador(a) de caixa","Tarde","Mais de 5 anos",4,3,2,3,3,3,3,3,3,1,1,,5,4,4,2,3,4,4,3
+"18/08/2026 14:27:41","Sim","Feminino","25 a 34 anos","Ensino médio","Repositor(a)","Noite","De 3 a 5 anos",5,4,2,3,5,2,1,4,2,4,4,4,2,3,3,3,3,2,3,2
+"18/08/2026 14:35:51","Sim","Feminino","25 a 34","Superior completo","Repositor(a)","Manhã","Até 1 ano",,2,4,3,3,3,1,2,2,2,1,2,3,1,2,4,3,5,5,4
+"18/08/2026 19:25:25","Sim","Feminino","25 a 34","Ensino médio","Operador(a) de caixa","Tarde","Mais de 5 anos",1,2,3,2,3,2,2,2,,3,3,3,4,2,3,2,5,3,3,2
+"18/08/2026 21:25:28","Sim","Masculino","18 - 24 anos","Superior incompleto","Atendimento","Tarde","De 1 a 3 anos",5,3,2,4,5,3,1,,3,2,2,4,4,3,2,4,3,1,2,
+"18/08/2026 22:51:18","Sim","Masculino","45 ou mais","Ensino médio","Operador(a) de caixa","Tarde","Até 1 ano",,4,2,,3,,,3,3,4,2,5,3,,,3,2,1,2,2
+"18/08/2026 23:14:13","Sim","Masculino","de 18 a 24","Ensino médio","Operador(a) de caixa","Manhã","Até 1 ano",5,2,1,5,4,2,1,3,1,1,1,2,2,1,1,4,,3,3,4
+"18/08/2026 23:46:32","Sim","Masculino","45 anos ou mais","Superior completo","Atendimento","Manhã","Até 1 ano",3,3,4,3,3,3,4,5,5,5,3,5,3,5,5,5,5,2,2,2
+"19/08/2026 02:19:43","Sim","Feminino","25-34","Ensino médio","Operador(a) de caixa","Noite","Até 1 ano",4,3,3,2,2,1,1,2,1,2,2,2,4,3,2,3,2,5,5,5
+"19/08/2026 03:15:39","Sim","Feminino","De 25 a 34","Ensino fundamental","Operador(a) de caixa","Noite","Mais de 5 anos",2,2,4,2,2,1,1,1,1,1,1,1,1,2,1,1,2,5,5,4
+"19/08/2026 04:40:46","Sim","Feminino","18 - 24 anos","Ensino médio","Açougue e padaria","Noite","De 3 a 5 anos",3,1,3,3,3,5,5,5,4,3,3,3,5,4,3,4,2,4,4,5
+"19/08/2026 05:30:25","Sim","Masculino","35-44","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",2,4,2,4,3,3,4,3,3,1,2,3,4,2,2,2,5,3,3,3
+"19/08/2026 12:14:44","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"19/08/2026 18:13:22","Sim","Feminino","25 á 34","Ensino fundamental","Açougue e padaria","Manhã","Até 1 ano",2,3,3,2,4,2,2,4,3,1,2,2,3,2,4,4,2,4,4,3
+"19/08/2026 19:11:45","Sim","Masculino","45+","Ensino fundamental","Açougue e padaria","Tarde","Mais de 5 anos",2,1,5,1,3,2,2,2,1,1,1,1,4,2,2,2,4,3,2,4
+"19/08/2026 23:12:11","Sim","Feminino","35 A 44","Ensino médio","Repositor(a)","Manhã","De 1 a 3 anos",3,3,5,3,3,1,1,1,2,2,2,2,3,3,5,2,2,2,2,3
+"20/08/2026 02:53:08","Sim","Feminino","25 a 34 anos","Superior incompleto","Repositor(a)","Noite","Até 1 ano",5,4,1,4,,3,3,3,2,4,3,2,2,4,3,3,3,4,3,5
+"20/08/2026 11:11:36","Sim","Masculino","25 a 34 anos","Superior incompleto","Depósito","Tarde","Até 1 ano",3,3,3,4,3,2,2,2,3,2,4,4,4,3,3,4,4,3,3,3
+"20/08/2026 12:18:18","Sim","Feminino","18 - 24 anos","Superior incompleto","Repositor(a)","Noite","De 3 a 5 anos",3,2,3,3,3,3,2,3,2,3,4,4,5,2,2,1,2,3,3,3
+"20/08/2026 18:14:08","Sim","Feminino","De 25 a 34","Superior incompleto","Operador(a) de caixa","Manhã","Até 1 ano",3,3,2,3,2,2,3,2,2,3,3,3,4,4,2,3,1,5,4,5
+"20/08/2026 21:38:01","Sim","Masculino","25 á 34","Ensino médio","Repositor(a)","Noite","Até 1 ano",,2,1,4,3,1,2,1,1,1,2,3,5,3,3,3,2,4,4,4
+"21/08/2026 01:34:44","Sim","Feminino","De 25 a 34","Ensino médio","Repositor(a)","Tarde","Até 1 ano",3,4,2,4,4,3,4,2,2,2,2,3,4,3,1,2,2,1,2,2
+"21/08/2026 04:24:13","Sim","Feminino","25 a 34","Ensino médio","Repositor(a)","Manhã","De 1 a 3 anos",3,3,2,4,4,5,3,5,4,4,3,5,4,5,4,4,5,1,2,3
+"21/08/2026 11:58:16","Sim","Masculino","18 a 24 anos","Superior incompleto","Açougue e padaria","Tarde","De 1 a 3 anos",3,4,4,3,3,3,3,3,4,3,2,2,3,,2,4,4,3,3,2
+"21/08/2026 14:28:02","Sim","Feminino","De 25 a 34","Ensino médio","Operador(a) de caixa","Tarde","De 3 a 5 anos",3,4,2,3,3,3,2,5,4,2,2,3,2,2,4,3,5,2,2,2
+"21/08/2026 19:52:15","Sim","Masculino","25-34","Ensino médio","Depósito","Noite","Até 1 ano",1,2,4,1,1,3,2,3,3,4,2,3,3,2,1,2,2,4,4,5
+"21/08/2026 21:58:36","Sim","Masculino","25 a 34","Ensino médio","Repositor(a)","Tarde","Mais de 5 anos",3,3,3,3,2,5,4,4,3,3,3,3,1,4,2,2,2,2,2,4
+"22/08/2026 01:12:20","Sim","Masculino","18 a 24","Ensino médio","Depósito","Manhã","Até 1 ano",5,5,1,5,5,5,5,5,5,4,2,5,5,4,,4,4,1,2,1
+"22/08/2026 03:40:00","Sim","Feminino","25 á 34","Superior incompleto","Repositor(a)","Manhã","De 1 a 3 anos",2,1,5,1,4,3,3,3,2,4,3,3,4,3,2,3,3,2,2,2
+"22/08/2026 14:05:51","Sim","Masculino","25 a 34","Superior completo","Operador(a) de caixa","Tarde","Até 1 ano",3,5,2,4,4,4,5,3,3,2,2,2,3,4,3,3,4,4,2,2
+"22/08/2026 14:21:23","Sim","Masculino","35 a 44","Superior incompleto","Atendimento","Noite","De 1 a 3 anos",4,3,3,4,3,,3,5,4,4,4,5,2,4,3,5,5,2,2,3
+"22/08/2026 16:19:57","Sim","Feminino","18 - 24 anos","Ensino médio","Repositor(a)","Noite","De 3 a 5 anos",4,3,4,4,5,5,,4,5,2,2,3,2,4,4,4,3,,3,3
+"22/08/2026 20:13:32","Sim","Masculino","18 a 24","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",5,4,3,3,4,4,,4,5,3,3,2,2,3,3,3,3,1,2,2
+"22/08/2026 20:27:18","Sim","Feminino","18-24","Ensino médio","Atendimento","Tarde","Mais de 5 anos",3,3,3,3,3,1,1,2,2,2,3,3,4,3,3,3,5,3,4,4
+"22/08/2026 23:59:06","Sim","Masculino","de 18 a 24","Superior incompleto","Repositor(a)","Manhã","Até 1 ano",4,4,2,5,5,3,,3,4,2,3,2,5,5,4,4,5,4,3,3
+"23/08/2026 01:00:26","Sim","Feminino","25 a 34 anos","Superior completo","Atendimento","Tarde","Mais de 5 anos",4,,3,4,2,5,3,3,2,4,,4,4,3,3,2,3,4,3,3
+"23/08/2026 01:40:28","Sim","Feminino","25 a 34","Ensino médio","Depósito","Manhã","De 1 a 3 anos",4,2,4,2,4,2,2,2,2,4,3,3,4,3,4,2,4,3,2,3
+"23/08/2026 02:34:33","Sim","Masculino","25-34","Ensino médio","Depósito","Manhã","Mais de 5 anos",2,2,2,3,2,4,4,4,4,2,4,,3,2,3,2,4,3,4,4
+"23/08/2026 13:56:42","Sim","Feminino","25 a 34 anos","Ensino médio","Atendimento","Manhã","De 1 a 3 anos",4,4,1,4,3,5,5,5,4,4,3,4,4,3,4,4,5,2,3,3
+"23/08/2026 18:00:16","Sim","Feminino","35 a 44 anos","Ensino médio","Depósito","Manhã","De 1 a 3 anos",3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+"23/08/2026 18:08:19","Sim","Masculino","25-34","Superior completo","Depósito","Tarde","De 1 a 3 anos",4,5,1,4,4,5,5,5,4,5,4,5,4,3,2,5,4,1,1,2
+"23/08/2026 18:34:11","Sim","Masculino","35 a 44 anos","Superior completo","Atendimento","Noite","De 1 a 3 anos",,5,2,5,3,4,3,3,5,3,3,2,4,4,4,5,5,2,2,1
+"23/08/2026 19:21:12","Sim","Masculino","18-24","Ensino fundamental","Atendimento","Tarde","De 3 a 5 anos",5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+"23/08/2026 20:32:33","Sim","Masculino","25 a 34 anos","Superior completo","Açougue e padaria","Tarde","Até 1 ano",,2,,,2,3,3,1,3,3,3,,,4,3,3,2,,3,
+"23/08/2026 20:52:18","Sim","Masculino","de 18 a 24","Ensino médio","Operador(a) de caixa","Manhã","De 1 a 3 anos",2,5,2,4,3,2,2,3,2,,3,3,3,3,3,3,3,2,2,3
+"23/08/2026 22:25:53","Sim","Masculino","de 18 a 24","Ensino médio","Operador(a) de caixa","Tarde","Mais de 5 anos",3,4,4,2,4,2,4,3,3,3,2,1,4,3,1,3,3,4,3,3
+"24/08/2026 07:03:54","Sim","Feminino","18 a 24","Ensino médio","Depósito","Noite","De 1 a 3 anos",3,3,3,,5,2,2,4,4,3,4,4,2,3,2,5,3,2,2,3
+"24/08/2026 08:47:03","Sim","Masculino","45 ou mais","Ensino médio","Atendimento","Tarde","Mais de 5 anos",3,4,2,3,3,1,3,2,1,3,3,3,4,4,4,5,4,2,3,2
+"24/08/2026 09:20:08","Sim","Masculino","De 25 a 34","Superior incompleto","Repositor(a)","Noite","De 3 a 5 anos",3,4,3,3,3,2,3,3,2,2,,2,4,4,4,3,5,2,4,4
+"24/08/2026 10:37:42","Sim","Feminino","35 A 44","Superior incompleto","Atendimento","Tarde","De 3 a 5 anos",3,3,3,2,3,4,3,4,3,3,3,1,4,4,2,3,4,3,2,3
+"24/08/2026 11:01:45","Sim","Masculino","18-24","Ensino fundamental","Açougue e padaria","Noite","Até 1 ano",4,2,2,4,5,4,5,4,4,1,1,3,4,4,3,5,5,4,4,5
+"24/08/2026 11:10:20","Sim","Feminino","De 25 a 34","Ensino médio","Repositor(a)","Tarde","De 1 a 3 anos",3,3,2,3,3,2,2,3,5,1,2,3,2,5,4,5,4,2,1,4
+"24/08/2026 13:38:51","Sim","Masculino","18-24","Ensino médio","Repositor(a)","Manhã","Até 1 ano",,4,2,3,3,3,3,3,2,2,2,3,3,2,2,3,3,4,3,4
+"24/08/2026 15:22:13","Sim","Masculino","18 a 24 anos","Superior incompleto","Operador(a) de caixa","Tarde","Até 1 ano",4,4,2,3,4,3,5,4,3,3,3,4,4,3,2,2,5,2,1,
+"24/08/2026 15:24:33","Sim","Feminino","De 25 a 34","Ensino médio","Açougue e padaria","Noite","De 3 a 5 anos",4,2,3,5,3,3,2,3,,2,4,4,3,4,3,4,4,1,3,4
+"24/08/2026 19:07:59","Sim","Feminino","18-24","Ensino médio","Repositor(a)","Tarde","De 3 a 5 anos",4,3,3,3,3,2,4,3,4,2,2,2,2,5,5,5,5,3,3,4
+"24/08/2026 20:17:54","Não",,,,,,,,,,,,,,,,,,,,,,,,,,
+"24/08/2026 21:53:55","Sim","Masculino","35-44","Superior completo","Operador(a) de caixa","Noite","De 1 a 3 anos",3,2,4,3,3,3,3,3,3,1,1,1,3,3,3,3,3,3,3,4
+"25/08/2026 00:12:35","Sim","Masculino","25-34","Ensino médio","Operador(a) de caixa","Noite","Até 1 ano",2,2,4,2,3,2,2,2,3,2,2,3,3,5,5,4,5,4,5,4
+"25/08/2026 01:22:35","Sim","Feminino","45+","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",2,2,4,2,3,3,2,3,2,2,3,3,2,3,2,5,3,1,2,2
+"25/08/2026 04:06:37","Sim","Prefiro não informar","18 - 24 anos","Ensino fundamental","Operador(a) de caixa","Manhã","Até 1 ano",1,2,5,2,3,2,2,2,2,3,2,3,4,1,1,2,2,3,3,4
+"25/08/2026 04:21:55","Sim","Feminino","35 a 44 anos","Ensino médio","Açougue e padaria","Noite","Até 1 ano",3,4,2,3,4,5,3,4,4,5,4,,2,,5,3,3,4,5,5
+"25/08/2026 05:44:26","Sim","Masculino","35-44","Ensino fundamental","Operador(a) de caixa","Manhã","Até 1 ano",4,4,2,3,4,4,3,3,3,5,5,5,3,3,2,2,3,3,3,3
+"25/08/2026 11:41:06","Sim","Feminino","De 25 a 34","Ensino médio","Repositor(a)","Tarde","Até 1 ano",4,3,3,3,2,3,2,2,2,2,2,2,4,3,2,3,3,3,3,2
+"25/08/2026 14:50:53","Sim","Feminino","18 a 24 anos","Ensino fundamental","Operador(a) de caixa","Noite","De 1 a 3 anos",2,1,4,2,3,4,4,2,1,4,4,4,4,4,3,3,3,5,3,4
+"25/08/2026 15:09:10","Sim","Masculino","35-44","Ensino fundamental","Açougue e padaria","Tarde","Mais de 5 anos",5,3,2,5,4,3,3,3,2,3,4,4,2,5,3,2,3,3,3,4
+"25/08/2026 21:07:21","Sim","Masculino","25 a 34","Ensino médio","Açougue e padaria","Manhã","Até 1 ano",2,3,3,2,2,5,4,4,4,5,3,4,5,,5,5,5,4,5,4
+"25/08/2026 21:08:12","Sim","Feminino","25 a 34 anos","Ensino médio","Açougue e padaria","Noite","Mais de 5 anos",3,4,3,1,3,3,2,2,3,4,2,2,5,4,4,4,4,4,3,5
+"25/08/2026 23:41:42","Sim","Masculino","18-24","Ensino médio","Repositor(a)","Manhã","De 1 a 3 anos",3,4,3,4,5,4,3,3,2,3,2,2,4,2,1,2,2,2,1,2
+"26/08/2026 01:03:52","Sim","Feminino","De 25 a 34","Ensino fundamental","Operador(a) de caixa","Tarde","De 1 a 3 anos",4,3,1,4,4,4,4,5,5,2,2,3,5,5,3,3,3,1,2,2
+"26/08/2026 03:18:41","Sim","Feminino","25 a 34","Ensino médio","Depósito","Noite","De 3 a 5 anos",4,4,4,3,4,3,2,1,3,2,2,3,3,4,3,3,3,5,4,3
+"26/08/2026 03:18:58","Sim","Masculino","de 18 a 24","Ensino médio","Operador(a) de caixa","Noite","De 3 a 5 anos",2,1,5,3,1,3,4,3,3,4,4,4,2,3,4,4,3,3,4,5
+"26/08/2026 05:02:44","Sim","Feminino","35-44","Ensino médio","Repositor(a)","Manhã","De 3 a 5 anos",2,4,2,4,3,4,5,4,3,4,4,3,5,2,3,2,2,1,2,1
+"26/08/2026 07:31:30","Sim","Feminino","25-34","Ensino médio","Açougue e padaria","Noite","De 3 a 5 anos",4,1,4,2,2,2,2,1,1,3,1,2,2,1,1,1,3,3,5,
+"26/08/2026 10:08:36","Sim","Feminino","25 a 34 anos","Ensino fundamental","Repositor(a)","Tarde","De 3 a 5 anos",3,4,3,2,4,2,2,2,2,3,2,2,4,2,2,3,2,5,4,5
+"26/08/2026 10:46:35","Sim","Feminino","18 - 24 anos","Ensino médio","Depósito","Manhã","De 1 a 3 anos",3,4,2,3,4,3,2,4,4,2,2,1,3,4,3,4,4,4,3,3
+"26/08/2026 20:01:20","Sim","Masculino","de 18 a 24","Superior incompleto","Operador(a) de caixa","Noite","Mais de 5 anos",5,5,1,4,5,5,4,4,4,3,3,4,5,5,,5,5,3,,3
+"26/08/2026 21:12:12","Sim","Masculino","Mais de 45","Ensino médio","Operador(a) de caixa","Noite","Mais de 5 anos",3,3,3,2,2,2,4,3,3,2,,3,2,3,3,3,4,3,4,3
+"27/08/2026 00:22:04","Sim","Feminino","35 A 44","Ensino médio","Atendimento","Tarde","Até 1 ano",3,4,3,4,3,3,3,3,4,2,2,1,5,3,3,3,4,3,3,2
+"27/08/2026 02:11:00","Sim","Feminino","18 - 24 anos","Superior incompleto","Açougue e padaria","Manhã","Até 1 ano",2,3,4,2,3,2,2,2,3,4,4,3,4,5,4,4,3,4,3,4
+"27/08/2026 02:44:04","Sim","Feminino","25-34","Ensino médio","Depósito","Manhã","De 1 a 3 anos",2,2,3,2,2,1,1,2,1,3,2,4,5,3,2,4,3,5,5,5
+"27/08/2026 06:21:16","Sim","Feminino","18-24","Ensino médio","Atendimento","Noite","Até 1 ano",3,2,3,1,4,3,3,4,2,5,4,5,3,2,3,1,2,2,2,3
+"27/08/2026 14:28:32","Sim","Feminino","25 á 34","Ensino médio","Operador(a) de caixa","Manhã","De 3 a 5 anos",3,3,2,2,3,5,4,5,5,1,2,2,3,3,2,3,2,3,3,3
+"27/08/2026 17:45:31","Sim","Masculino","de 18 a 24","Ensino médio","Repositor(a)","Noite","De 3 a 5 anos",5,5,2,3,3,3,5,4,5,2,3,4,4,4,4,5,5,3,4,3
+"28/08/2026 07:00:28","Sim","Masculino","18 a 24","Ensino médio","Açougue e padaria","Tarde","De 1 a 3 anos",2,4,3,,4,4,3,5,4,1,2,1,3,3,4,5,5,5,3,3
+"28/08/2026 07:11:52","Sim","Feminino","45+","Superior incompleto","Operador(a) de caixa","Manhã","Até 1 ano",3,3,3,4,4,4,4,5,3,4,3,3,3,3,4,4,2,,3,2
+"28/08/2026 07:50:09","Sim","Feminino","35 a 44","Ensino médio","Atendimento","Tarde","Mais de 5 anos",3,3,4,1,4,2,1,1,1,2,2,2,4,5,3,4,3,3,4,4

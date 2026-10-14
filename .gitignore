@@ -10,7 +10,7 @@ assets/img/felipe-original.jpeg
 /.quarto/
 **/*.quarto_ipynb
 **/*_files/
-/_freeze/
+# _freeze/ fica no Git: guarda o resultado do código R e evita rodar o R a cada render.
 
 # Python
 __pycache__/

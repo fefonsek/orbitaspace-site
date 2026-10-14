@@ -273,7 +273,8 @@ ul.task-list li input[type="checkbox"] {
 // 1. Seletor PT | ES | EN: aponta cada idioma para a versão correspondente
 //    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
 //    Sem versão correspondente, leva para o blog do idioma (se estamos no
-//    blog) ou para a página inicial.
+//    blog), para a lista de projetos (se estamos num projeto que só existe
+//    em português) ou para a página inicial.
 // 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
@@ -282,8 +283,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
   var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
+  var projetos = { PT: "/projetos.html", ES: "/es/proyectos.html", EN: "/en/projects.html" };
   var atual = document.documentElement.lang;
   var noBlog = /\/blog(\/|\.html)/.test(location.pathname);
+  var noProjeto = /^\/projetos\//.test(location.pathname);
   var CHAVE_FAIXA = "orbita-faixa-idioma";
 
   function lembrar() {
@@ -294,7 +297,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
     if (alt) return new URL(alt.href).pathname;
     if (codigos[rotulo] === atual) return location.pathname;
-    return noBlog ? blog[rotulo] : inicio[rotulo];
+    if (noBlog) return blog[rotulo];
+    return noProjeto ? projetos[rotulo] : inicio[rotulo];
   }
 
   // 1. Seletor

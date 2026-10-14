@@ -15,6 +15,9 @@ project:
     # A foto original fica só na pasta de origem; o site usa os recortes.
     - "!assets/img/felipe-original.jpeg"
     - projetos/radar-absenteismo/img/
+    # Caso TCC: capa gerada pela página e dados fictícios para download.
+    - projetos/caso-tcc-rotatividade/img/
+    - projetos/caso-tcc-rotatividade/dados/
   post-render: scripts/aviso_render.py
 
 profile:

@@ -3,7 +3,9 @@ title: "Proyectos"
 description: "Proyectos de datos de Orbita Space: tableros en Power BI, análisis estadístico e indicadores."
 traducao: projetos
 listing:
-  contents: "proyectos/*/index.qmd"
+  contents:
+    - "proyectos/*/index.qmd"
+    - "proyectos-en-portugues.yml"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

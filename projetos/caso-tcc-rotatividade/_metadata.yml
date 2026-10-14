@@ -1,0 +1,5 @@
+# Esta pasta tem código R. Com freeze: auto, o Quarto só roda o R de novo
+# quando o index.qmd muda; nos outros renders ele reaproveita o resultado
+# guardado em _freeze/ (que vai para o Git).
+execute:
+  freeze: auto

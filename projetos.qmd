@@ -3,7 +3,10 @@ title: "Projetos"
 description: "Projetos de dados da Orbita Space: painéis em Power BI, análise estatística e indicadores."
 traducao: projetos
 listing:
-  contents: "projetos/*/index.qmd"
+  # Ordem da grade: o Radar primeiro. Projeto novo entra nesta lista.
+  contents:
+    - "projetos/radar-absenteismo/index.qmd"
+    - "projetos/caso-tcc-rotatividade/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]
