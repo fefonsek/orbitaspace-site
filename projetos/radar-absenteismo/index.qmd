@@ -9,7 +9,7 @@ traducao: radar
 # Seções ocultas até existirem o vídeo e o repositório do painel.
 # Para reativar, troque false por true (veja o README).
 mostrar-video: false
-mostrar-repositorio: false
+mostrar-repositorio: true
 lightbox: true
 galeria-pasta: img
 galeria:
@@ -80,7 +80,7 @@ Clique numa tela para ampliar.
 **Privacidade como requisito.** Sem nome, CPF ou e-mail; motivos de saúde só agregados; grupos com menos de 10 pessoas suprimidos; segurança em nível de linha por unidade e por gestor; e um aviso explícito de que o painel não serve para punir ninguém.
 
 ::: {.content-visible when-meta="mostrar-repositorio"}
-[[LINK DO REPOSITÓRIO]]{.marcador-link}
+[Ver o repositório no GitHub](https://github.com/fefonsek/radar-absenteismo){.btn .btn-outline-primary}
 :::
 
 ## O que este projeto demonstra

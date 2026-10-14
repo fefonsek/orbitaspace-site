@@ -9,7 +9,7 @@ traducao: radar
 # Seções ocultas até existirem o vídeo e o repositório do painel.
 # Para reativar, troque false por true (veja o README).
 mostrar-video: false
-mostrar-repositorio: false
+mostrar-repositorio: true
 lightbox: true
 galeria-pasta: ../../../projetos/radar-absenteismo/img
 galeria:
@@ -82,7 +82,7 @@ Haz clic en una pantalla para ampliarla.
 **La privacidad como requisito.** Sin nombre, documento de identidad ni correo; motivos de salud solo agregados; grupos de menos de 10 personas suprimidos; seguridad a nivel de fila por unidad y por líder; y un aviso explícito de que el tablero no sirve para sancionar a nadie.
 
 ::: {.content-visible when-meta="mostrar-repositorio"}
-[[LINK DO REPOSITÓRIO]]{.marcador-link}
+[Ver el repositorio en GitHub](https://github.com/fefonsek/radar-absenteismo){.btn .btn-outline-primary}
 :::
 
 ## Lo que demuestra este proyecto
