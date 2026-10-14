@@ -1,0 +1,100 @@
+---
+title: "Radar de Absenteísmo"
+subtitle: "Um painel de absenteísmo que separa sinal de ruído, sem expor pessoas."
+description: "Painel em Power BI que mostra por que uma taxa de absenteísmo estável escondia uma piora localizada. Modelagem, 97 medidas DAX e análise estatística."
+image: img/compartilhamento.jpg
+image-alt: "Capa do painel Radar de Absenteísmo"
+categories: [Power BI, DAX, Estatística, People Analytics]
+traducao: radar
+# Seções ocultas até existirem o vídeo e o repositório do painel.
+# Para reativar, troque false por true (veja o README).
+mostrar-video: false
+mostrar-repositorio: false
+lightbox: true
+galeria-pasta: img
+galeria:
+  - arquivo: 01_visao_executiva
+    legenda: "1. Visão Executiva: como está o absenteísmo e onde agir primeiro?"
+  - arquivo: 02_evolucao_temporal
+    legenda: "2. Evolução Temporal: quando acontece e para onde vai?"
+  - arquivo: 03_areas_criticas
+    legenda: "3. Áreas Críticas: quais áreas fogem do padrão, e isso é real ou acaso?"
+  - arquivo: 04_perfil_afastamentos
+    legenda: "4. Perfil dos Afastamentos: muitas ausências curtas ou poucas longas?"
+  - arquivo: 05_analise_grupos
+    legenda: "5. Análise de Grupos: quais perfis se ausentam de forma diferente, sem expor ninguém?"
+  - arquivo: 06_diagnostico
+    legenda: "6. Diagnóstico: qual é a história e o que investigar?"
+  - arquivo: 07_qualidade
+    legenda: "7. Qualidade e Metodologia: posso confiar nestes números?"
+---
+
+::: aviso-dados
+**Dados fictícios.** A empresa (Vallora Logística S.A.), suas unidades, gestores e funcionários não existem. Construí a base do zero, em Python, para reproduzir problemas que aparecem em bases reais. Nenhum número desta página descreve uma organização real.
+:::
+
+::: {.content-visible when-meta="mostrar-video"}
+::: video-marcador
+[VÍDEO AQUI]
+:::
+:::
+
+## O problema
+
+Um operador logístico com quatro centros de distribuição e cerca de 1.250 pessoas acompanhava o absenteísmo por um único número mensal. Em dois anos ele não se mexeu: 3,77% em 2024 e 3,77% em 2025. Para a diretoria, o tema estava sob controle.
+
+Os gerentes de operação discordavam. Falavam em mais horas extras para cobrir faltas no turno da noite e em mais acidentes com gente recém-contratada. O número estava certo e a percepção também; faltava um jeito de ver as duas coisas juntas.
+
+## O que o painel mostrou
+
+- **A estabilidade era aritmética.** O fim de um surto de doenças infecciosas e menos afastamentos longos compensaram uma alta de 8% nas demais ausências de curta duração.
+- **A piora tinha endereço.** Em duas equipes do turno da noite de Duque de Caxias, uma de Separação e outra de Expedição, a taxa de curta duração foi de 3,5% para 6,5% a partir de abril de 2025. O resto da unidade e a noite das outras unidades não mudaram. As duas equipes tinham trocado de supervisor semanas antes: uma pista para investigar, não uma conclusão.
+- **A noite pesa mais em toda a empresa** (razão de taxas ajustada de 1,31), e recém-admitidos faltam 1,8 vez mais.
+- **Poucos eventos concentram muitas horas:** 1,6% dos eventos respondem por 34% das horas perdidas.
+- **Uma associação aparente era falsa.** Equipes grandes pareciam faltar mais, mas a única equipe muito grande era noturna. Separando por turno, o efeito some.
+
+## Galeria
+
+Clique numa tela para ampliar.
+
+![](img/00_capa.jpg){.capa-projeto group="telas" description="Capa" fig-alt="Capa do painel Radar de Absenteísmo"}
+
+{{< galeria >}}
+
+## Como foi construído
+
+**Os dados.** Treze tabelas no formato de exportação de um ERP brasileiro: cadastro pseudonimizado de 1.826 pessoas, jornada prevista dia a dia (662 mil linhas) e 13,6 mil eventos de ausência. Registrar a jornada prevista de cada dia é o que permite calcular a taxa em horas tratando direito atrasos, jornadas parciais, férias e admissões no meio do mês. Também injetei 146 defeitos típicos de extração (duplicidades, datas invertidas, chaves órfãs, grafias diferentes) para que o tratamento tivesse algo concreto a resolver.
+
+**O tratamento.** 26 consultas em Power Query limpam e validam a base. Uma página do painel mostra o que foi corrigido e quanto, para o leitor saber se pode confiar nos números.
+
+**O modelo.** Esquema estrela com três tabelas fato de grãos diferentes (jornada, ausência por dia e evento) e 97 medidas DAX, organizadas por tema.
+
+**A estatística.** Três escolhas definem o projeto:
+
+1. *Decompor antes de comparar.* A taxa total é sempre separada em curta duração (até 15 dias, a parte que o gestor influencia) e longa duração (afastamentos acompanhados pela saúde ocupacional).
+2. *Exigir evidência antes de alarmar.* Uma área só aparece como crítica se o desvio for grande **e** estatisticamente consistente (escore z da frequência de eventos). Uma equipe de seis pessoas com um afastamento longo não dispara alerta.
+3. *Testar as associações óbvias.* Um modelo binomial negativo, ajustado por unidade, departamento, turno, idade, sexo, tempo de casa e ano, separou o que se sustenta (turno da noite, tempo de casa, unidade) do que não se sustenta (tamanho da equipe, sexo).
+
+**O relatório como código.** As páginas do painel não foram montadas arrastando visuais. Uma especificação única descreve cada visual (posição, campos, medidas e a pergunta que ele responde), e um script em Python gera o relatório no formato de projeto do Power BI e a documentação a partir dela. Assim documento e painel não divergem. Um script de auditoria confere que toda medida usada existe no modelo e que os números citados batem com a base.
+
+**Privacidade como requisito.** Sem nome, CPF ou e-mail; motivos de saúde só agregados; grupos com menos de 10 pessoas suprimidos; segurança em nível de linha por unidade e por gestor; e um aviso explícito de que o painel não serve para punir ninguém.
+
+::: {.content-visible when-meta="mostrar-repositorio"}
+[[LINK DO REPOSITÓRIO]]{.marcador-link}
+:::
+
+## O que este projeto demonstra
+
+- **Entender o negócio antes de abrir o Power BI:** a pergunta certa era "onde a taxa piorou", não "qual é a taxa".
+- **Modelagem dimensional e DAX** em uma base com grãos diferentes e regras de cálculo que fazem diferença no resultado.
+- **Estatística aplicada a decisões:** decomposição, testes de consistência e controle de fatores de confusão, sem confundir associação com causa.
+- **Design e comunicação:** cada página responde uma pergunta, com status sempre acompanhado de rótulo e paleta sóbria.
+- **Governança e privacidade:** regras documentadas, qualidade dos dados visível e proteção de grupos pequenos.
+
+::: cta-final
+## Quer este painel com os dados da sua empresa?
+
+A mesma estrutura funciona com a exportação do seu sistema de folha ou de ponto. Me conte como os dados estão hoje e eu digo o que dá para fazer.
+
+[Fale comigo](../../contato.qmd){.btn .btn-primary}
+:::

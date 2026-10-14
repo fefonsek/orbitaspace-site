@@ -1,0 +1,464 @@
+/*-- scss:defaults --*/
+
+// Paleta fefonsek / Orbita Space: só tons frios.
+$azul-profundo: #1a1a2e;
+$azul-medio: #3473C0;
+// Azul Médio dá 4,39:1 sobre o creme, abaixo do AA (4,5:1) para texto
+// comum. Nos links de texto usamos um tom levemente mais escuro (4,85:1).
+$azul-link: #2f6cb6;
+$azul-suave: #7a90c4;
+$lavanda: #cacfee;
+$creme: #f6f4f1;
+$branco: #ffffff;
+
+// Cores semânticas do Bootstrap remapeadas para não surgir vermelho,
+// laranja, amarelo ou verde em nenhum componente.
+$primary: $azul-medio;
+$secondary: $azul-suave;
+$info: $azul-medio;
+$success: $azul-medio;
+$warning: $azul-suave;
+$danger: $azul-profundo;
+$light: $creme;
+$dark: $azul-profundo;
+
+$callout-color-note: $azul-medio;
+$callout-color-tip: $azul-suave;
+$callout-color-important: $azul-profundo;
+$callout-color-caution: $azul-suave;
+$callout-color-warning: $azul-profundo;
+
+$body-bg: $creme;
+$body-color: $azul-profundo;
+$link-color: $azul-link;
+$link-hover-color: $azul-profundo;
+$link-decoration: underline;
+
+$font-family-sans-serif: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-weight-light: 300;
+$font-weight-base: 300;
+$font-weight-bold: 600;
+$font-size-root: 17px;
+$line-height-base: 1.7;
+$headings-font-weight: 600;
+$headings-color: $azul-profundo;
+$headings-line-height: 1.25;
+
+$navbar-bg: $azul-profundo;
+$navbar-fg: $branco;
+$navbar-hl: $lavanda;
+$footer-bg: $azul-profundo;
+$footer-fg: $lavanda;
+
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-color: $lavanda;
+$hr-border-color: $lavanda;
+
+$btn-font-weight: 500;
+$btn-padding-y: 0.65rem;
+$btn-padding-x: 1.4rem;
+
+// Texto secundário (datas, legendas): 7,9:1 sobre o creme.
+$text-muted: #4a4a63;
+
+$code-color: $azul-profundo;
+$code-bg: rgba($lavanda, 0.45);
+
+/*-- scss:rules --*/
+
+// Tipografia: títulos SemiBold, subtítulos Medium, corpo Light.
+h1, h2, .h1, .h2 { font-weight: 600; letter-spacing: -0.01em; }
+h3, h4, h5, h6, .h3, .h4, .h5, .h6,
+.subtitle, .lead, .description { font-weight: 500; }
+strong, b { font-weight: 600; }
+h2 { margin-top: 2.75rem; margin-bottom: 1rem; }
+h3 { margin-top: 2rem; }
+p, li { max-width: 72ch; }
+
+::selection { background: $lavanda; color: $azul-profundo; }
+
+// Navbar e rodapé escuros.
+.navbar {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  .navbar-brand img { max-height: 36px; }
+  .navbar-title { font-weight: 600; letter-spacing: 0.01em; }
+  .nav-link { font-weight: 400; }
+  .nav-link.active { font-weight: 500; }
+  .navbar-brand-container { max-width: none; }
+
+  // Seletor de idioma PT | ES | EN (classes aplicadas por assets/html/idiomas.html).
+  .nav-idioma .nav-link {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: rgba($branco, 0.75);
+  }
+  .nav-idioma .nav-link.idioma-atual {
+    color: $branco;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: $lavanda;
+    text-underline-offset: 0.35em;
+  }
+  @media (min-width: 992px) {
+    .nav-idioma .nav-link { padding-left: 0.45rem; padding-right: 0.45rem; }
+    .nav-idioma + .nav-idioma::before {
+      content: "|";
+      color: rgba($lavanda, 0.5);
+      align-self: center;
+    }
+    .nav-idioma { display: flex; }
+  }
+  @media (max-width: 991.98px) {
+    // No menu recolhido do celular os três idiomas ficam numa linha só.
+    .navbar-nav:has(.nav-idioma) { flex-direction: row; gap: 1rem; }
+  }
+  .navbar-title { overflow: visible; text-overflow: clip; }
+}
+
+.nav-footer {
+  font-size: 0.9rem;
+  border-top: none;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  a { color: $branco; }
+  a:hover { color: $lavanda; }
+}
+
+// Botões.
+.btn { border-radius: 999px; text-decoration: none; }
+.btn-primary { color: $branco; }
+.btn-outline-primary {
+  color: $azul-link;
+  border-color: $azul-medio;
+  background: $branco;
+  &:hover { color: $branco; }
+}
+
+// Cartões: brancos sobre o creme, borda lavanda.
+.cartao {
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  padding: 1.75rem;
+  height: 100%;
+  h3 { margin-top: 0; font-size: 1.2rem; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.destaque-suave {
+  background: rgba($lavanda, 0.35);
+  border-left: 3px solid $azul-suave;
+  border-radius: 0 $border-radius $border-radius 0;
+  padding: 1rem 1.25rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $azul-profundo;
+  background: $lavanda;
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+}
+
+// Página inicial.
+// O detalhe geométrico passa da largura do conteúdo; recorta só na borda da tela.
+#quarto-content { overflow-x: clip; }
+
+.hero {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  // Geometria do logo como detalhe sutil, à direita.
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -6rem;
+    width: 30rem;
+    height: 30rem;
+    transform: translateY(-50%);
+    background: url("/assets/img/logo-original.png") center / contain no-repeat;
+    opacity: 0.09;
+    pointer-events: none;
+  }
+  > * { position: relative; z-index: 1; }
+  h1 { font-size: clamp(2.1rem, 5vw, 3.1rem); margin-bottom: 0.5rem; }
+  .hero-titulo {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    font-weight: 500;
+    color: $azul-link;
+    margin-bottom: 1.5rem;
+  }
+  .hero-frase { font-size: 1.15rem; max-width: 40rem; }
+  .botoes { margin-top: 2rem; }
+}
+
+.botoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+
+// Projeto em destaque: imagem e texto lado a lado (empilha no celular).
+.destaque-projeto {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  padding: 1.5rem;
+  img { width: 100%; height: auto; border-radius: $border-radius; display: block; }
+  h3 { margin-top: 0.5rem; }
+  p:last-child { margin-bottom: 0; }
+}
+
+// Títulos de todos os cartões (Início, Serviços, listagens): SemiBold em Azul Profundo.
+.cartao h3, .cartao h3 a,
+.servico > h2,
+.destaque-projeto h3,
+.quarto-grid-item .card-title,
+.quarto-listing .quarto-post .listing-title,
+.quarto-listing .quarto-post .listing-title a {
+  font-weight: 600;
+  color: $azul-profundo;
+}
+.cartao h3 a { text-decoration: none; }
+.cartao h3 a:hover { text-decoration: underline; }
+.mais { font-weight: 500; }
+// O link "Ver serviços" vem num parágrafo logo depois da grade de cartões.
+.grade + p { margin-top: 1.75rem; }
+
+// Aviso de dados fictícios e nota de idioma das telas.
+// O Quarto zera a margem do primeiro título da página, então o espaço até
+// "O problema" vem daqui: 2,25rem abaixo do aviso (PT) ou abaixo da linha de
+// idioma (ES/EN), que continua a 0,5rem do aviso.
+.aviso-dados { @extend .destaque-suave; margin: 1.5rem 0 2.25rem; }
+.aviso-dados + p:has(> .nota-idioma) { margin-top: -1.75rem; margin-bottom: 2.25rem; }
+.nota-idioma { font-size: 0.875rem; color: $text-muted; }
+
+// Marcador provisório do vídeo.
+.video-marcador {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($lavanda, 0.35);
+  border: 2px dashed $azul-suave;
+  border-radius: $border-radius-lg;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 1.5rem 0 2rem;
+}
+
+.marcador-link {
+  display: inline-block;
+  font-weight: 600;
+  border: 2px dashed $azul-suave;
+  border-radius: $border-radius;
+  padding: 0.35rem 0.85rem;
+}
+
+// Galeria de telas (miniaturas que abrem em tamanho grande no lightbox).
+.galeria {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  margin: 1.25rem 0 0.5rem;
+  figure { margin: 0; }
+  a { display: block; text-decoration: none; }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    border: 1px solid $lavanda;
+    transition: border-color 0.15s ease;
+  }
+  a:hover img, a:focus-visible img { border-color: $azul-medio; }
+  figcaption { font-size: 0.85rem; color: $text-muted; margin-top: 0.4rem; line-height: 1.45; }
+}
+
+.capa-projeto img { border-radius: $border-radius-lg; border: 1px solid $lavanda; }
+
+// Serviços: "para quem / o que entrego / como trabalho".
+.servico {
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  padding: 2rem;
+  margin: 1.5rem 0 2rem;
+  > h2 { margin-top: 0; font-size: 1.5rem; }
+  h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; color: $azul-link; margin-top: 1.5rem; }
+  ul { padding-left: 1.2rem; }
+}
+
+// Chamada final para o contato.
+.cta-final {
+  background: $azul-profundo;
+  color: $branco;
+  border-radius: $border-radius-lg;
+  padding: 2.25rem 2rem;
+  margin: 3rem 0 1rem;
+  h2, h3 { color: $branco; margin-top: 0; }
+  p { color: $lavanda; }
+  .btn-primary { background: $branco; border-color: $branco; color: $azul-profundo; }
+  .btn-primary:hover { background: $lavanda; border-color: $lavanda; }
+}
+
+// Contato: dois cartões grandes.
+.contato-canal {
+  @extend .cartao;
+  .rotulo { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: $text-muted; }
+  a { font-size: 1.15rem; font-weight: 500; }
+  .copiar-email { margin-top: 0.25rem; min-width: 9rem; }
+  .rotulo + .dica, p:has(> .dica) { margin-top: -0.6rem; }
+  .dica { display: block; font-size: 0.85rem; color: $text-muted; }
+}
+// Cartão inteiro clicável (WhatsApp, LinkedIn, GitHub): o link usa
+// .stretched-link do Bootstrap, que cobre o cartão todo.
+.contato-canal:has(.stretched-link) {
+  position: relative;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  &:hover, &:focus-within {
+    border-color: $azul-medio;
+    box-shadow: 0 0 0 1px $azul-medio;
+  }
+}
+// E-mail: só quebra depois do "@", e só se não couber (<wbr> entre os dois trechos).
+.email span { white-space: nowrap; }
+// ".grade.contato-canais" para vencer a regra geral de .grade, definida mais abaixo.
+.grade.contato-canais {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+  margin-bottom: 2.25rem;
+  .contato-canal { padding: 1.25rem 1.5rem; }
+}
+
+// Fotos: ao lado da abertura no Sobre (empilha no celular) e avatar no Contato.
+.sobre-abertura {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.75rem;
+  p { margin: 0; }
+}
+.foto-sobre, .avatar { display: block; height: auto; border: 1px solid $lavanda; }
+.foto-sobre { width: 100%; border-radius: $border-radius-lg; }
+.avatar { width: 120px; border-radius: 50%; margin-bottom: 1.25rem; }
+
+// Faixa que sugere o idioma do navegador (assets/html/idiomas.html).
+.faixa-idioma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: $lavanda;
+  color: $azul-profundo;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  p { margin: 0; max-width: none; text-align: center; }
+  a { color: $azul-profundo; font-weight: 600; white-space: nowrap; }
+}
+.faixa-fechar {
+  flex: none;
+  background: none;
+  border: 0;
+  border-radius: $border-radius;
+  color: $azul-profundo;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  &:hover, &:focus-visible { background: rgba($branco, 0.6); }
+}
+
+// Listagens do Quarto (projetos e blog).
+.quarto-grid-item.card {
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  .card-img-top img, img.card-img-top { border-bottom: 1px solid $lavanda; }
+  .card-title { font-weight: 600; color: $azul-profundo; }
+}
+.quarto-grid-item.card:hover { border-color: $azul-suave; }
+.listing-categories .listing-category,
+.quarto-category {
+  background: rgba($lavanda, 0.6);
+  border: none;
+  color: $azul-profundo;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.15rem 0.65rem;
+}
+.quarto-post {
+  border-bottom: 1px solid $lavanda;
+  .listing-title { font-weight: 600; }
+  .thumbnail img { border-radius: $border-radius; border: 1px solid $lavanda; }
+}
+
+// Blog sem posts no idioma: a frase só aparece se a listagem estiver vazia.
+.sem-posts { display: none; }
+main:not(:has(.quarto-post)) .sem-posts { display: block; }
+
+.feed-rss { font-size: 0.9rem; }
+
+// Tabelas (envolvidas por assets/lua/tabelas.lua): rolam sozinhas se não couberem.
+.tabela-rolavel {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+  > table { margin-bottom: 0; }
+}
+@media (max-width: 575.98px) {
+  .tabela-rolavel > table { font-size: 0.85rem; }
+  .tabela-rolavel > table > :not(caption) > * > * { padding: 0.45rem 0.3rem; }
+}
+
+// Cartões das listagens (Projetos): imagem sempre em 16:9, inteira em qualquer largura.
+.quarto-grid-item .card-img-top,
+.quarto-grid-item .card-img-top img,
+.quarto-grid-item img.card-img-top {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+// A "description" de cada página é para buscadores e redes sociais; na
+// página ela repetiria o texto de abertura.
+#title-block-header .description { display: none; }
+#title-block-header .quarto-categories .quarto-category {
+  border: none;
+  opacity: 1;
+  color: $azul-profundo;
+  background: rgba($lavanda, 0.6);
+}
+.quarto-listing .quarto-post .listing-title,
+.quarto-listing .quarto-post h3.listing-title { font-weight: 600; font-size: 1.3rem; }
+
+.cta-final h2 { border-bottom: none; padding-bottom: 0; }
+.secao > .mais { display: inline-block; margin-top: 1.25rem; }
+
+.secao { padding: 2.5rem 0; }
+.secao > h2:first-child { margin-top: 0; }
+
+.grade {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+@media (max-width: 767.98px) {
+  .hero { padding: 2.5rem 0 2rem; }
+  .hero::after { width: 18rem; height: 18rem; right: -7rem; top: 2rem; transform: none; }
+  h2 { margin-top: 2rem; }
+  .destaque-projeto { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.1rem; }
+  .servico { padding: 1.4rem; }
+  .cta-final { padding: 1.75rem 1.4rem; }
+  .sobre-abertura { grid-template-columns: 1fr; gap: 1.25rem; }
+  .foto-sobre { max-width: 14rem; }
+}

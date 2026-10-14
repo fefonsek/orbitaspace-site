@@ -1,0 +1,71 @@
+---
+title: "Serviços"
+description: "Serviços da Orbita Space: painéis em Power BI, análise estatística para TCC, dissertação e tese, e consultoria em indicadores. Atendimento remoto, orçamento sob consulta."
+traducao: servicos
+---
+
+Três frentes de trabalho, todas com o mesmo cuidado: entender a pergunta antes de mexer nos dados e entregar algo que você consiga usar e manter depois.
+
+::: servico
+## Painéis em Power BI {#paineis}
+
+### Para quem é
+
+Empresas e áreas que já têm dados (ERP, planilhas, sistemas de ponto, APIs) e querem acompanhar o que importa sem montar relatório à mão todo mês.
+
+### O que eu entrego
+
+- Modelo de dados organizado, com as medidas em DAX documentadas.
+- Tratamento e atualização dos dados em Power Query.
+- Painel desenhado para a decisão: poucas páginas, cada uma respondendo uma pergunta.
+- Documentação das regras de cálculo, para que o número não dependa de mim.
+
+### Como eu trabalho
+
+Começo pelas perguntas que o painel precisa responder e pelas fontes de dados disponíveis. Mostro um primeiro protótipo cedo, ajusto com quem vai usar e só então refino o visual. Já construí painéis de jornada de trabalho com alertas de excesso de horas, de indicadores jurídicos com dados vindos por API, de infrações da frota e de inventário de EPIs.
+:::
+
+::: servico
+## Análise estatística para pesquisas acadêmicas {#pesquisas}
+
+### Para quem é
+
+Estudantes e pesquisadores de graduação, mestrado e doutorado que precisam analisar dados de TCC, dissertação ou tese, em qualquer área.
+
+### O que eu entrego
+
+- Escolha dos métodos adequados à pergunta e ao tipo de dado.
+- Análise feita em R ou Python, com o código entregue.
+- Tabelas e gráficos prontos para o texto, no padrão exigido.
+- Explicação dos resultados em linguagem clara, para você defender o trabalho com segurança.
+
+### Como eu trabalho
+
+Primeiro leio o projeto e entendo o objetivo e as hipóteses. Combinamos o plano de análise antes de rodar qualquer coisa. Você acompanha cada etapa e pode perguntar o que quiser; a pesquisa continua sendo sua.
+:::
+
+::: servico
+## Consultoria em indicadores {#indicadores}
+
+### Para quem é
+
+Empresas em que cada área calcula o mesmo indicador de um jeito, ou que acompanham muitos números e não sabem quais orientam decisões.
+
+### O que eu entrego
+
+- Definição dos KPIs: o que medir e por quê.
+- Ficha de cada indicador, com fórmula, fonte, periodicidade, meta e responsável.
+- Regras de governança: quem pode mudar uma definição e como as mudanças são registradas.
+
+### Como eu trabalho
+
+Converso com quem produz e com quem usa os números, levanto o que já existe e proponho um conjunto enxuto. Na Prumo Engenharia, fiz curadoria e governança de indicadores de várias áreas; é desse trabalho que vem o método.
+:::
+
+::: cta-final
+## Orçamento sob consulta
+
+Me conte o que você precisa e eu respondo com uma proposta.
+
+[Fale comigo](contato.qmd){.btn .btn-primary}
+:::

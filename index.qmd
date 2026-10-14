@@ -1,0 +1,63 @@
+---
+traducao: inicio
+pagetitle: "Orbita Space · Felipe Fonseca, Consultor de Dados"
+description: "Orbita Space, consultoria de dados de Felipe Fonseca em Formiga, MG. Painéis em Power BI, análise estatística para pesquisas acadêmicas e consultoria em indicadores, com atendimento remoto."
+page-layout: full
+title-block-banner: false
+---
+
+::: {.hero .container-lg}
+# Orbita Space
+
+[por Felipe Fonseca · Consultor de Dados | Estatística e BI]{.hero-titulo}
+
+[Ajudo empresas e pesquisadores a sair da planilha com números soltos e chegar a uma resposta clara: um painel que mostra onde agir, uma análise que se sustenta numa banca, um indicador que todo mundo calcula do mesmo jeito.]{.hero-frase}
+
+::: botoes
+[Ver projetos](projetos.qmd){.btn .btn-primary}
+[Fale comigo](contato.qmd){.btn .btn-outline-primary}
+:::
+:::
+
+::: {.secao .container-lg}
+## Em destaque
+
+::: destaque-projeto
+[![](projetos/radar-absenteismo/img/00_capa_mini.jpg){fig-alt="Capa do painel Radar de Absenteísmo"}](projetos/radar-absenteismo/index.qmd)
+
+::: {}
+[Projeto · Power BI]{.etiqueta}
+
+### Radar de Absenteísmo
+
+A taxa de absenteísmo de uma empresa ficou em 3,77% por dois anos seguidos, e a diretoria concluiu que estava tudo sob controle. Este painel em Power BI mostra que a estabilidade era só aritmética: uma piora concentrada em duas equipes do turno da noite estava escondida por uma melhora em outras frentes.
+
+Empresa e dados fictícios; método, modelagem e análise reais.
+
+[Ver o projeto](projetos/radar-absenteismo/index.qmd){.btn .btn-primary}
+:::
+:::
+:::
+
+::: {.secao .container-lg}
+## O que eu faço
+
+::: grade
+::: cartao
+### [Painéis em Power BI](servicos.qmd#paineis)
+Do dado bruto ao painel publicado: modelagem, DAX, Power Query, design e documentação.
+:::
+
+::: cartao
+### [Análise estatística para pesquisas acadêmicas](servicos.qmd#pesquisas)
+Planejamento, análise e interpretação dos resultados de TCC, dissertação e tese.
+:::
+
+::: cartao
+### [Consultoria em indicadores](servicos.qmd#indicadores)
+Definir o que medir, como calcular e quem responde por cada número.
+:::
+:::
+
+[Ver serviços](servicos.qmd){.mais}
+:::

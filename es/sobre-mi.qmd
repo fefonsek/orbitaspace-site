@@ -1,0 +1,39 @@
+---
+title: "Sobre mí"
+description: "Quién está detrás de Orbita Space: Felipe Fonseca, estadístico (UFOP) y estudiante de maestría en Administración (IFMG). Experiencia en Power BI, DAX, R, Python y gobernanza de indicadores."
+traducao: sobre
+---
+
+::: sobre-abertura
+![](../assets/img/felipe-800.jpg){.foto-sobre fig-alt="Foto de Felipe Fonseca" width="800" height="800"}
+
+Soy estadístico, egresado de la Universidad Federal de Ouro Preto (UFOP), y estudiante de la Maestría Profesional en Administración del Instituto Federal de Minas Gerais (IFMG). Trabajo con datos porque me gusta el momento en que un número deja de ser solo un número y empieza a orientar una decisión.
+:::
+
+## Experiencia
+
+Fui Analista de Datos en Prumo Engenharia, donde desarrollé tableros en Power BI, modelos en DAX y M y la gobernanza de los indicadores de la empresa. Algunos trabajos de esa etapa:
+
+- tablero de seguimiento de la jornada laboral, con horas trabajadas y alertas de exceso;
+- indicadores del departamento jurídico, como litigiosidad y tasa de éxito, con datos recibidos por API;
+- seguimiento de las infracciones de los conductores de la flota;
+- inventario de equipos de protección personal (EPP);
+- migración de la plataforma de BI de la empresa;
+- informes analíticos en Quarto y R, como un análisis de la tasa de permanencia del personal y una auditoría de pagos de beneficios;
+- curaduría y gobernanza de indicadores.
+
+## Herramientas
+
+Power BI, DAX, Power Query, Python, R, Excel y Quarto.
+
+## Idiomas
+
+Portugués nativo, español fluido, inglés avanzado.
+
+## Dónde estoy
+
+Vivo en Formiga, Minas Gerais (Brasil), y trabajo en forma remota con clientes de Brasil y de otros países.
+
+::: botoes
+[Escríbeme](contacto.qmd){.btn .btn-primary}
+:::

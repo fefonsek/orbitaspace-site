@@ -1,0 +1,14 @@
+---
+title: "Proyectos"
+description: "Proyectos de datos de Orbita Space: tableros en Power BI, análisis estadístico e indicadores."
+traducao: projetos
+listing:
+  contents: "proyectos/*/index.qmd"
+  type: grid
+  grid-columns: 2
+  fields: [image, title, description, categories]
+  sort: false
+  categories: false
+---
+
+Trabajos que puedo mostrar completos. Los proyectos hechos para empresas quedan fuera por confidencialidad; por eso los ejemplos de esta página usan datos ficticios, construidos para reproducir problemas reales.

@@ -1,0 +1,19 @@
+---
+title: "Blog"
+description: "The Orbita Space blog: writing by Felipe Fonseca on KPIs, Power BI and statistics applied to decisions."
+traducao: blog
+image: ../assets/img/compartilhamento-site.jpg
+listing:
+  contents: blog/posts
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories, image]
+  categories: false
+  feed: true
+---
+
+Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.
+
+::: sem-posts
+For now, posts are only available in Portuguese. [See the Portuguese blog](../blog.html)
+:::

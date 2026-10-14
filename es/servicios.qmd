@@ -1,0 +1,72 @@
+---
+title: "Servicios"
+description: "Servicios de Orbita Space: tableros en Power BI, análisis estadístico para tesis de grado, maestría y doctorado, y consultoría en indicadores. Atención remota, presupuesto a pedido."
+traducao: servicos
+image: ../assets/img/compartilhamento-site.jpg
+---
+
+Tres líneas de trabajo con el mismo cuidado: entender la pregunta antes de tocar los datos y entregar algo que puedas usar y mantener después.
+
+::: servico
+## Tableros en Power BI {#tableros}
+
+### Para quién es
+
+Empresas y áreas que ya tienen datos (ERP, hojas de cálculo, sistemas de asistencia, API) y quieren seguir lo que importa sin armar informes a mano cada mes.
+
+### Qué entrego
+
+- Modelo de datos ordenado, con las medidas DAX documentadas.
+- Limpieza y actualización de los datos en Power Query.
+- Tablero diseñado para decidir: pocas páginas, cada una responde una pregunta.
+- Documentación de las reglas de cálculo, para que el número no dependa de mí.
+
+### Cómo trabajo
+
+Empiezo por las preguntas que el tablero tiene que responder y por las fuentes de datos disponibles. Muestro un primer prototipo pronto, lo ajusto con quienes lo van a usar y solo entonces pulo el diseño. Ya construí tableros de jornada laboral con alertas de exceso de horas, de indicadores jurídicos con datos recibidos por API, de infracciones de la flota y de inventario de equipos de protección personal (EPP).
+:::
+
+::: servico
+## Análisis estadístico para investigaciones académicas {#investigaciones}
+
+### Para quién es
+
+Estudiantes e investigadores de grado, maestría y doctorado que necesitan analizar los datos de su tesis, en cualquier área.
+
+### Qué entrego
+
+- Elección de los métodos adecuados a la pregunta y al tipo de dato.
+- Análisis hecho en R o Python, con el código incluido.
+- Tablas y gráficos listos para el texto, en el formato que se exija.
+- Explicación de los resultados en lenguaje claro, para que defiendas el trabajo con seguridad.
+
+### Cómo trabajo
+
+Primero leo el proyecto y entiendo el objetivo y las hipótesis. Acordamos el plan de análisis antes de correr cualquier cosa. Acompañas cada etapa y puedes preguntar lo que quieras; la investigación sigue siendo tuya.
+:::
+
+::: servico
+## Consultoría en indicadores {#indicadores}
+
+### Para quién es
+
+Empresas donde cada área calcula el mismo indicador a su manera, o que siguen muchos números sin saber cuáles orientan decisiones.
+
+### Qué entrego
+
+- Definición de los KPI: qué medir y por qué.
+- Ficha técnica de cada indicador, con fórmula, fuente, periodicidad, meta y responsable.
+- Reglas de gobernanza: quién puede cambiar una definición y cómo se registran los cambios.
+
+### Cómo trabajo
+
+Converso con quienes producen y con quienes usan los números, reviso lo que ya existe y propongo un conjunto acotado. En Prumo Engenharia hice la curaduría y la gobernanza de indicadores de varias áreas; de ese trabajo viene el método.
+:::
+
+::: cta-final
+## Presupuesto a pedido
+
+Cuéntame qué necesitas y te respondo con una propuesta.
+
+[Escríbeme](contacto.qmd){.btn .btn-primary}
+:::

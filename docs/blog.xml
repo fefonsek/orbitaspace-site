@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Orbita Space</title>
+<link>https://orbitaspace.com.br/blog.html</link>
+<atom:link href="https://orbitaspace.com.br/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Blog da Orbita Space: textos de Felipe Fonseca sobre indicadores, Power BI e estatística aplicada a decisões.</description>
+<image>
+<url>https://orbitaspace.com.br/assets/img/compartilhamento-site.jpg</url>
+<title>Orbita Space</title>
+<link>https://orbitaspace.com.br/blog.html</link>
+</image>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Wed, 14 Oct 2026 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quando a taxa de absenteísmo estável esconde uma piora</title>
+  <link>https://orbitaspace.com.br/blog/posts/taxa-estavel-esconde-piora/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Você já deve ter visto esta cena. Fecha o ano, a taxa de absenteísmo sai igual à do ano anterior, alguém escreve “estável” no relatório e o assunto sai da pauta. Faz sentido: se o número não mudou, por que gastar tempo com ele?</p>
+<p>Porque um número parado pode ser a soma de coisas andando em direções opostas.</p>
+<p>No <a href="../../../projetos/radar-absenteismo/index.html">Radar de Absenteísmo</a>, um painel que construí sobre uma empresa fictícia, a taxa foi de 3,772% em 2024 para 3,774% em 2025. Uma diferença de dois milésimos de ponto percentual. Se o relatório parasse aí, a conclusão seria “nada mudou”. Mas mudou bastante coisa.</p>
+<section id="separe-o-que-o-gestor-controla-do-que-ele-não-controla" class="level2">
+<h2 data-anchor-id="separe-o-que-o-gestor-controla-do-que-ele-não-controla">Separe o que o gestor controla do que ele não controla</h2>
+<p>O primeiro passo é dividir a taxa em duas partes:</p>
+<ul>
+<li><strong>curta duração:</strong> ausências de até 15 dias, como faltas, atestados curtos e atrasos. É a parte que a liderança do dia a dia consegue influenciar;</li>
+<li><strong>longa duração:</strong> afastamentos acima de 15 dias, que costumam ser acompanhados caso a caso pela saúde ocupacional.</li>
+</ul>
+<p>Feita a divisão, o “estável” se desfaz. A curta duração subiu 0,055 ponto percentual (de 2,45% para 2,51%). A longa caiu praticamente o mesmo tanto, 0,052 ponto (de 1,32% para 1,27%). Uma anulou a outra.</p>
+</section>
+<section id="depois-olhe-dentro-da-curta-duração" class="level2">
+<h2 data-anchor-id="depois-olhe-dentro-da-curta-duração">Depois, olhe dentro da curta duração</h2>
+<p>Ainda dá para ir mais fundo. Em 2024 houve um surto de doenças infecciosas entre fevereiro e maio, que inflou as ausências curtas daquele ano. Em 2025 o surto não se repetiu, e esse grupo de motivos caiu 0,113 ponto.</p>
+<p>Ou seja: a curta duração só não subiu mais porque o ano anterior tinha sido atípico. Tirando as doenças infecciosas da conta, <strong>as demais ausências de curta duração subiram 0,17 ponto percentual, uma alta de 8%</strong>.</p>
+<p>Resumindo o que o número “estável” escondia:</p>
+<div class="tabela-rolavel">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th style="text-align: right;">2024</th>
+<th style="text-align: right;">2025</th>
+<th style="text-align: right;">Variação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Taxa total</td>
+<td style="text-align: right;">3,77%</td>
+<td style="text-align: right;">3,77%</td>
+<td style="text-align: right;">+0,002 p.p.</td>
+</tr>
+<tr class="even">
+<td>Longa duração</td>
+<td style="text-align: right;">1,32%</td>
+<td style="text-align: right;">1,27%</td>
+<td style="text-align: right;">−0,052 p.p.</td>
+</tr>
+<tr class="odd">
+<td>Curta duração</td>
+<td style="text-align: right;">2,45%</td>
+<td style="text-align: right;">2,51%</td>
+<td style="text-align: right;">+0,055 p.p.</td>
+</tr>
+<tr class="even">
+<td>Curta, só doenças infecciosas</td>
+<td style="text-align: right;">0,435%</td>
+<td style="text-align: right;">0,322%</td>
+<td style="text-align: right;">−0,113 p.p.</td>
+</tr>
+<tr class="odd">
+<td>Curta, demais motivos</td>
+<td style="text-align: right;">2,02%</td>
+<td style="text-align: right;">2,18%</td>
+<td style="text-align: right;">+0,17 p.p. (+8%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A melhora veio de fatores que a gestão não controla: uma epidemia que passou e afastamentos longos, que oscilam muito com poucos casos. A piora estava justamente na parte que a gestão controla.</p>
+</section>
+<section id="o-que-eu-faria-com-isso" class="level2">
+<h2 data-anchor-id="o-que-eu-faria-com-isso">O que eu faria com isso</h2>
+<p>Duas mudanças simples no jeito de reportar:</p>
+<ol type="1">
+<li><strong>Usar a taxa de curta duração como indicador de gestão das lideranças.</strong> É ela que responde a ações de supervisão, escala e integração de novos funcionários.</li>
+<li><strong>Nunca apresentar a taxa total sozinha.</strong> Sempre decomposta em curta e longa duração, de preferência com os grandes grupos de motivo ao lado.</li>
+</ol>
+</section>
+<section id="um-cuidado" class="level2">
+<h2 data-anchor-id="um-cuidado">Um cuidado</h2>
+<p>Decompor mostra de onde vem a variação, não por que ela aconteceu. Saber que a curta duração subiu 8% fora das doenças infecciosas é o começo da investigação, não o fim. No caso do Radar, o passo seguinte mostrou que a piora estava concentrada em duas equipes do turno da noite; mas isso é assunto para outro texto.</p>
+<p>Se você acompanha absenteísmo na sua empresa, vale o exercício: pegue a taxa dos dois últimos anos e separe curta e longa duração. Pode ser que o seu “estável” também esteja escondendo alguma coisa.</p>
+<hr>
+<p><em>Os dados deste texto são fictícios, gerados para o projeto Radar de Absenteísmo. <a href="../../../projetos/radar-absenteismo/index.html">Ver o projeto</a></em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Absenteísmo</category>
+  <category>Indicadores</category>
+  <category>Estatística</category>
+  <guid>https://orbitaspace.com.br/blog/posts/taxa-estavel-esconde-piora/</guid>
+  <pubDate>Wed, 14 Oct 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://orbitaspace.com.br/projetos/radar-absenteismo/img/02_evolucao_temporal_mini.jpg?v=a6f457ad" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

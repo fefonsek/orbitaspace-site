@@ -1,0 +1,41 @@
+---
+title: "Contato"
+description: "Fale com a Orbita Space por WhatsApp, e-mail ou LinkedIn."
+traducao: contato
+---
+
+![](assets/img/felipe-240.jpg){.avatar fig-alt="Foto de Felipe Fonseca" width="240" height="240"}
+
+Pode me chamar no WhatsApp ou por e-mail. Conte em poucas linhas o que você precisa, de onde vêm os dados e qual é o prazo; com isso já consigo dizer se posso ajudar e como.
+
+::: {.grade .contato-canais}
+::: contato-canal
+[WhatsApp]{.rotulo}
+
+[Clique para abrir a conversa]{.dica}
+
+[+55 37 98412-9390](https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pelo%20site%20da%20Orbita%20Space.){.stretched-link}
+:::
+
+::: contato-canal
+[E-mail]{.rotulo}
+
+<a class="email" href="mailto:felipe.fonseca@orbitaspace.com.br"><span>felipe.fonseca@</span><wbr><span>orbitaspace.com.br</span></a>
+
+<button type="button" class="btn btn-outline-primary btn-sm copiar-email" data-email="felipe.fonseca@orbitaspace.com.br" data-copiado="Copiado" aria-live="polite">Copiar e-mail</button>
+:::
+
+::: contato-canal
+[LinkedIn]{.rotulo}
+
+[linkedin.com/in/fpzfonseca](https://www.linkedin.com/in/fpzfonseca){.stretched-link}
+:::
+
+::: contato-canal
+[GitHub]{.rotulo}
+
+[github.com/fefonsek](https://github.com/fefonsek){.stretched-link}
+:::
+:::
+
+Atendo remotamente, no Brasil e no exterior, em português, espanhol ou inglês.

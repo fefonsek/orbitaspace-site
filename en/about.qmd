@@ -1,0 +1,39 @@
+---
+title: "About"
+description: "The person behind Orbita Space: Felipe Fonseca, statistician (UFOP) and master's student in Administration (IFMG). Experience with Power BI, DAX, R, Python and KPI governance."
+traducao: sobre
+---
+
+::: sobre-abertura
+![](../assets/img/felipe-800.jpg){.foto-sobre fig-alt="Photo of Felipe Fonseca" width="800" height="800"}
+
+I hold a bachelor's degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master's Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision.
+:::
+
+## Experience
+
+I was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company's KPI governance. Some of the work from that period:
+
+- a working hours monitoring dashboard, with hours worked and overtime alerts;
+- legal department KPIs, such as litigation volume and success rate, with data received through an API;
+- monitoring of traffic violations by fleet drivers;
+- personal protective equipment (PPE) inventory;
+- migration of the company's BI platform;
+- analytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;
+- KPI curation and governance.
+
+## Tools
+
+Power BI, DAX, Power Query, Python, R, Excel and Quarto.
+
+## Languages
+
+Native Portuguese, fluent Spanish, advanced English.
+
+## Where I am
+
+I live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.
+
+::: botoes
+[Get in touch](contact.qmd){.btn .btn-primary}
+:::

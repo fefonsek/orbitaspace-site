@@ -1,0 +1,38 @@
+# Perfil español (/es/).
+
+project:
+  render:
+    - "es/"
+
+# lang: definido em es/_metadata.yml
+
+website:
+  title: "Orbita Space"
+  description: "Orbita Space: consultoría de datos de Felipe Fonseca. Tableros en Power BI, análisis estadístico e indicadores."
+  navbar:
+    logo-href: /es/index.html
+    logo-alt: "Orbita Space, página de inicio"
+    left:
+      - href: es/index.qmd
+        text: Inicio
+      - href: es/proyectos.qmd
+        text: Proyectos
+      - href: es/servicios.qmd
+        text: Servicios
+      - href: es/sobre-mi.qmd
+        text: Sobre mí
+      - href: es/blog.qmd
+        text: Blog
+      - href: es/contacto.qmd
+        text: Contacto
+    right:
+      - href: /index.html
+        text: PT
+      - href: es/index.qmd
+        text: ES
+      - href: /en/index.html
+        text: EN
+  page-footer:
+    background: "#1a1a2e"
+    left: "© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil"
+    right: "[WhatsApp](https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.) · [Correo](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek)"

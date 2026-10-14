@@ -1,0 +1,16 @@
+---
+title: "Blog"
+description: "Blog da Orbita Space: textos de Felipe Fonseca sobre indicadores, Power BI e estatística aplicada a decisões."
+traducao: blog
+listing:
+  contents: blog/posts
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories, image]
+  categories: false
+  feed: true
+---
+
+Notas sobre indicadores, Power BI e estatística aplicada, escritas a partir de problemas que encontro no trabalho.
+
+[Assinar o feed RSS](blog.xml){.feed-rss}

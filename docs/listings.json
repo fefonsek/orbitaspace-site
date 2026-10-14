@@ -1,0 +1,12 @@
+[
+  {
+    "listing": "/en/blog.html",
+    "items": []
+  },
+  {
+    "listing": "/en/projects.html",
+    "items": [
+      "/en/projects/absenteeism-radar/index.html"
+    ]
+  }
+]

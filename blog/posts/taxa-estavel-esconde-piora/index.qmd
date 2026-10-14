@@ -1,0 +1,59 @@
+---
+title: "Quando a taxa de absenteísmo estável esconde uma piora"
+description: "Uma taxa de absenteísmo parada em 3,77% por dois anos parecia boa notícia. Decompondo, a parte que o gestor controla tinha piorado 8%."
+date: 2026-10-14
+categories: [Absenteísmo, Indicadores, Estatística]
+image: ../../../projetos/radar-absenteismo/img/02_evolucao_temporal_mini.jpg
+image-alt: "Tela de evolução temporal do painel Radar de Absenteísmo"
+draft: false
+---
+
+Você já deve ter visto esta cena. Fecha o ano, a taxa de absenteísmo sai igual à do ano anterior, alguém escreve "estável" no relatório e o assunto sai da pauta. Faz sentido: se o número não mudou, por que gastar tempo com ele?
+
+Porque um número parado pode ser a soma de coisas andando em direções opostas.
+
+No [Radar de Absenteísmo](../../../projetos/radar-absenteismo/index.qmd), um painel que construí sobre uma empresa fictícia, a taxa foi de 3,772% em 2024 para 3,774% em 2025. Uma diferença de dois milésimos de ponto percentual. Se o relatório parasse aí, a conclusão seria "nada mudou". Mas mudou bastante coisa.
+
+## Separe o que o gestor controla do que ele não controla
+
+O primeiro passo é dividir a taxa em duas partes:
+
+- **curta duração:** ausências de até 15 dias, como faltas, atestados curtos e atrasos. É a parte que a liderança do dia a dia consegue influenciar;
+- **longa duração:** afastamentos acima de 15 dias, que costumam ser acompanhados caso a caso pela saúde ocupacional.
+
+Feita a divisão, o "estável" se desfaz. A curta duração subiu 0,055 ponto percentual (de 2,45% para 2,51%). A longa caiu praticamente o mesmo tanto, 0,052 ponto (de 1,32% para 1,27%). Uma anulou a outra.
+
+## Depois, olhe dentro da curta duração
+
+Ainda dá para ir mais fundo. Em 2024 houve um surto de doenças infecciosas entre fevereiro e maio, que inflou as ausências curtas daquele ano. Em 2025 o surto não se repetiu, e esse grupo de motivos caiu 0,113 ponto.
+
+Ou seja: a curta duração só não subiu mais porque o ano anterior tinha sido atípico. Tirando as doenças infecciosas da conta, **as demais ausências de curta duração subiram 0,17 ponto percentual, uma alta de 8%**.
+
+Resumindo o que o número "estável" escondia:
+
+| Componente | 2024 | 2025 | Variação |
+|---|---:|---:|---:|
+| Taxa total | 3,77% | 3,77% | +0,002 p.p. |
+| Longa duração | 1,32% | 1,27% | −0,052 p.p. |
+| Curta duração | 2,45% | 2,51% | +0,055 p.p. |
+| Curta, só doenças infecciosas | 0,435% | 0,322% | −0,113 p.p. |
+| Curta, demais motivos | 2,02% | 2,18% | +0,17 p.p. (+8%) |
+
+A melhora veio de fatores que a gestão não controla: uma epidemia que passou e afastamentos longos, que oscilam muito com poucos casos. A piora estava justamente na parte que a gestão controla.
+
+## O que eu faria com isso
+
+Duas mudanças simples no jeito de reportar:
+
+1. **Usar a taxa de curta duração como indicador de gestão das lideranças.** É ela que responde a ações de supervisão, escala e integração de novos funcionários.
+2. **Nunca apresentar a taxa total sozinha.** Sempre decomposta em curta e longa duração, de preferência com os grandes grupos de motivo ao lado.
+
+## Um cuidado
+
+Decompor mostra de onde vem a variação, não por que ela aconteceu. Saber que a curta duração subiu 8% fora das doenças infecciosas é o começo da investigação, não o fim. No caso do Radar, o passo seguinte mostrou que a piora estava concentrada em duas equipes do turno da noite; mas isso é assunto para outro texto.
+
+Se você acompanha absenteísmo na sua empresa, vale o exercício: pegue a taxa dos dois últimos anos e separe curta e longa duração. Pode ser que o seu "estável" também esteja escondendo alguma coisa.
+
+---
+
+*Os dados deste texto são fictícios, gerados para o projeto Radar de Absenteísmo. [Ver o projeto](../../../projetos/radar-absenteismo/index.qmd)*

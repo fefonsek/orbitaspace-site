@@ -1,0 +1,41 @@
+---
+title: "Contact"
+description: "Get in touch with Orbita Space by WhatsApp, email or LinkedIn."
+traducao: contato
+---
+
+![](../assets/img/felipe-240.jpg){.avatar fig-alt="Photo of Felipe Fonseca" width="240" height="240"}
+
+You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.
+
+::: {.grade .contato-canais}
+::: contato-canal
+[WhatsApp]{.rotulo}
+
+[Click to start a chat]{.dica}
+
+[+55 37 98412-9390](https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.){.stretched-link}
+:::
+
+::: contato-canal
+[Email]{.rotulo}
+
+<a class="email" href="mailto:felipe.fonseca@orbitaspace.com.br"><span>felipe.fonseca@</span><wbr><span>orbitaspace.com.br</span></a>
+
+<button type="button" class="btn btn-outline-primary btn-sm copiar-email" data-email="felipe.fonseca@orbitaspace.com.br" data-copiado="Copied" aria-live="polite">Copy email</button>
+:::
+
+::: contato-canal
+[LinkedIn]{.rotulo}
+
+[linkedin.com/in/fpzfonseca](https://www.linkedin.com/in/fpzfonseca){.stretched-link}
+:::
+
+::: contato-canal
+[GitHub]{.rotulo}
+
+[github.com/fefonsek](https://github.com/fefonsek){.stretched-link}
+:::
+:::
+
+I work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English.

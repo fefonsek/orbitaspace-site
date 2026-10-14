@@ -1,0 +1,72 @@
+---
+title: "Services"
+description: "Orbita Space services: Power BI dashboards, statistical analysis for theses and dissertations, and KPI consulting. Remote work, pricing on request."
+traducao: servicos
+image: ../assets/img/compartilhamento-site.jpg
+---
+
+Three lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards.
+
+::: servico
+## Power BI dashboards {#dashboards}
+
+### Who it is for
+
+Companies and teams that already have data (ERP, spreadsheets, timekeeping systems, APIs) and want to track what matters without building reports by hand every month.
+
+### What I deliver
+
+- A clean data model, with documented DAX measures.
+- Data preparation and refresh in Power Query.
+- A dashboard designed for decisions: a few pages, each answering one question.
+- Documentation of the calculation rules, so the numbers do not depend on me.
+
+### How I work
+
+I start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory.
+:::
+
+::: servico
+## Statistical analysis for academic research {#research}
+
+### Who it is for
+
+Undergraduate, master's and doctoral students and researchers who need to analyze the data for a thesis or dissertation, in any field.
+
+### What I deliver
+
+- The right methods for your question and your type of data.
+- Analysis done in R or Python, with the code included.
+- Tables and charts ready for the text, in the required format.
+- A plain-language explanation of the results, so you can defend your work with confidence.
+
+### How I work
+
+First I read your proposal and understand the goal and the hypotheses. We agree on the analysis plan before running anything. You follow every step and can ask anything you like; the research stays yours.
+:::
+
+::: servico
+## KPI consulting {#kpis}
+
+### Who it is for
+
+Companies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.
+
+### What I deliver
+
+- KPI definitions: what to measure and why.
+- A definition sheet for each KPI, with formula, source, frequency, target and owner.
+- Governance rules: who can change a definition and how changes are recorded.
+
+### How I work
+
+I talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.
+:::
+
+::: cta-final
+## Pricing on request
+
+Tell me what you need and I will reply with a proposal.
+
+[Get in touch](contact.qmd){.btn .btn-primary}
+:::

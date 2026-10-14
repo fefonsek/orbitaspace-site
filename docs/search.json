@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "en/services.html",
+    "href": "en/services.html",
+    "title": "Services",
+    "section": "",
+    "text": "Three lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards."
+  },
+  {
+    "objectID": "en/services.html#dashboards",
+    "href": "en/services.html#dashboards",
+    "title": "Services",
+    "section": "Power BI dashboards",
+    "text": "Power BI dashboards\n\nWho it is for\nCompanies and teams that already have data (ERP, spreadsheets, timekeeping systems, APIs) and want to track what matters without building reports by hand every month.\n\n\nWhat I deliver\n\nA clean data model, with documented DAX measures.\nData preparation and refresh in Power Query.\nA dashboard designed for decisions: a few pages, each answering one question.\nDocumentation of the calculation rules, so the numbers do not depend on me.\n\n\n\nHow I work\nI start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory."
+  },
+  {
+    "objectID": "en/services.html#research",
+    "href": "en/services.html#research",
+    "title": "Services",
+    "section": "Statistical analysis for academic research",
+    "text": "Statistical analysis for academic research\n\nWho it is for\nUndergraduate, master’s and doctoral students and researchers who need to analyze the data for a thesis or dissertation, in any field.\n\n\nWhat I deliver\n\nThe right methods for your question and your type of data.\nAnalysis done in R or Python, with the code included.\nTables and charts ready for the text, in the required format.\nA plain-language explanation of the results, so you can defend your work with confidence.\n\n\n\nHow I work\nFirst I read your proposal and understand the goal and the hypotheses. We agree on the analysis plan before running anything. You follow every step and can ask anything you like; the research stays yours."
+  },
+  {
+    "objectID": "en/services.html#kpis",
+    "href": "en/services.html#kpis",
+    "title": "Services",
+    "section": "KPI consulting",
+    "text": "KPI consulting\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from."
+  },
+  {
+    "objectID": "en/services.html#pricing-on-request",
+    "href": "en/services.html#pricing-on-request",
+    "title": "Services",
+    "section": "Pricing on request",
+    "text": "Pricing on request\nTell me what you need and I will reply with a proposal.\nGet in touch"
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html",
+    "href": "en/projects/absenteeism-radar/index.html",
+    "title": "Absenteeism Radar",
+    "section": "",
+    "text": "Fictional data. The company (Vallora Logística S.A.), its sites, managers and employees do not exist. I built the dataset from scratch in Python to reproduce problems found in real data. No number on this page describes a real organization.\nThe dashboard screenshots are in Portuguese, the project’s original language."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#the-problem",
+    "href": "en/projects/absenteeism-radar/index.html#the-problem",
+    "title": "Absenteeism Radar",
+    "section": "The problem",
+    "text": "The problem\nA logistics operator with four distribution centers and about 1,250 people tracked absenteeism with a single monthly number. Over two years it did not move: 3.77% in 2024 and 3.77% in 2025. As far as leadership was concerned, the issue was under control.\nOperations managers disagreed. They talked about more overtime to cover night-shift absences and more accidents among new hires. The number was right, and so was the perception; what was missing was a way to see both at once."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
+    "href": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
+    "title": "Absenteeism Radar",
+    "section": "What the dashboard showed",
+    "text": "What the dashboard showed\n\nThe stability was arithmetic. The end of an infectious disease outbreak and fewer long-term absences offset an 8% rise in all other short-term absences.\nThe rise had an address. In two night-shift teams at the Duque de Caxias site, one in Picking and one in Shipping (Separação e Expedição), the short-term rate went from 3.5% to 6.5% starting in April 2025. The rest of that site and the night shift at the other sites did not change. Both teams had changed supervisors a few weeks earlier: a lead worth investigating, not a conclusion.\nThe night shift has a higher rate across the whole company (adjusted rate ratio of 1.31), and new hires are absent 1.8 times as often.\nA few events account for many hours: 1.6% of events make up 34% of lost hours.\nOne apparent association was spurious. Large teams seemed to have more absences, but the only very large team worked nights. Once you split by shift, the effect disappears."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#gallery",
+    "href": "en/projects/absenteeism-radar/index.html#gallery",
+    "title": "Absenteeism Radar",
+    "section": "Gallery",
+    "text": "Gallery\nClick a screen to enlarge it.\n\n\n1. Executive overview: where does absenteeism stand, and where should we act first?\n2. Trends over time: when does it happen, and where is it heading?\n3. Critical areas: which areas stand out, and is it real or chance?\n4. Absence profile: many short absences or a few long ones?\n5. Group analysis: which groups are absent differently, without exposing anyone?\n6. Diagnosis: what is the story, and what should we investigate?\n7. Data quality and methodology: can I trust these numbers?"
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#how-it-was-built",
+    "href": "en/projects/absenteeism-radar/index.html#how-it-was-built",
+    "title": "Absenteeism Radar",
+    "section": "How it was built",
+    "text": "How it was built\nThe data. Thirteen tables in the export format of a Brazilian ERP: pseudonymized records for 1,826 people, scheduled hours for every day (662 thousand rows) and 13.6 thousand absence events. Recording each day’s scheduled hours is what makes it possible to calculate the rate in hours and handle late arrivals, part-time schedules, vacations and mid-month hires correctly. I also injected 146 typical extraction defects (duplicates, reversed dates, orphan keys, inconsistent spellings) so the data cleaning had something concrete to solve.\nThe cleaning. 26 Power Query queries clean and validate the data. One dashboard page shows what was fixed and how much, so readers know whether they can trust the numbers.\nThe model. A star schema with three fact tables at different grains (scheduled hours, absence per day and absence event) and 97 DAX measures, organized by topic.\nThe statistics. Three choices define the project:\n\nBreak it down before comparing. The total rate is always split into short-term (up to 15 days, the part a line manager can influence) and long-term (absences managed by occupational health).\nRequire evidence before raising an alarm. An area is flagged as critical only if the deviation is large and statistically consistent (z-score of event frequency). A six-person team with one long absence does not trigger an alert.\nTest the obvious associations. A negative binomial model, adjusted for site, department, shift, age, sex, tenure and year, separated what holds up (night shift, tenure, site) from what does not (team size, sex).\n\nThe report as code. The dashboard pages were not built by dragging visuals around. A single specification describes every visual (position, fields, measures and the question it answers), and a Python script generates both the report, in Power BI’s project format, and the documentation from it. That way the documentation and the dashboard never drift apart. An audit script checks that every measure used exists in the model and that every number quoted matches the data.\nPrivacy as a requirement. No names, national ID numbers or email addresses; health reasons only in aggregate; groups smaller than 10 people suppressed; row-level security by site and by manager; and an explicit note that the dashboard is not meant for disciplinary use."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
+    "href": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
+    "title": "Absenteeism Radar",
+    "section": "What this project demonstrates",
+    "text": "What this project demonstrates\n\nUnderstanding the business before opening Power BI: the right question was “where did the rate get worse”, not “what is the rate”.\nDimensional modeling and DAX on data with different grains and calculation rules that change the result.\nStatistics applied to decisions: decomposition, consistency tests and control for confounding, without mistaking association for cause.\nDesign and communication: each page answers one question, status is always labeled and the palette is restrained.\nGovernance and privacy: documented rules, visible data quality and protection for small groups."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
+    "href": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
+    "title": "Absenteeism Radar",
+    "section": "Want this dashboard with your company’s data?",
+    "text": "Want this dashboard with your company’s data?\nThe same structure works with an export from your payroll or time-and-attendance system. Tell me what your data looks like today and I will tell you what can be done.\nGet in touch"
+  },
+  {
+    "objectID": "en/contact.html",
+    "href": "en/contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.\n\n\nWhatsApp\nClick to start a chat\n+55 37 98412-9390\n\n\nEmail\nfelipe.fonseca@orbitaspace.com.br\n\nCopy email\n\n\n\nLinkedIn\nlinkedin.com/in/fpzfonseca\n\n\nGitHub\ngithub.com/fefonsek\n\n\nI work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English."
+  },
+  {
+    "objectID": "en/about.html",
+    "href": "en/about.html",
+    "title": "About",
+    "section": "",
+    "text": "I hold a bachelor’s degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master’s Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision."
+  },
+  {
+    "objectID": "en/about.html#experience",
+    "href": "en/about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nI was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company’s KPI governance. Some of the work from that period:\n\na working hours monitoring dashboard, with hours worked and overtime alerts;\nlegal department KPIs, such as litigation volume and success rate, with data received through an API;\nmonitoring of traffic violations by fleet drivers;\npersonal protective equipment (PPE) inventory;\nmigration of the company’s BI platform;\nanalytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;\nKPI curation and governance."
+  },
+  {
+    "objectID": "en/about.html#tools",
+    "href": "en/about.html#tools",
+    "title": "About",
+    "section": "Tools",
+    "text": "Tools\nPower BI, DAX, Power Query, Python, R, Excel and Quarto."
+  },
+  {
+    "objectID": "en/about.html#languages",
+    "href": "en/about.html#languages",
+    "title": "About",
+    "section": "Languages",
+    "text": "Languages\nNative Portuguese, fluent Spanish, advanced English."
+  },
+  {
+    "objectID": "en/about.html#where-i-am",
+    "href": "en/about.html#where-i-am",
+    "title": "About",
+    "section": "Where I am",
+    "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
+  },
+  {
+    "objectID": "en/blog.html",
+    "href": "en/blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "en/index.html",
+    "href": "en/index.html",
+    "title": "Orbita Space",
+    "section": "",
+    "text": "by Felipe Fonseca · Data Consultant | Statistics and BI\nI help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.\n\nSee projects Get in touch"
+  },
+  {
+    "objectID": "en/index.html#featured-project",
+    "href": "en/index.html#featured-project",
+    "title": "Orbita Space",
+    "section": "Featured project",
+    "text": "Featured project\n\n\n\nProject · Power BI\n\nAbsenteeism Radar\nA company’s absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.\nFictional company and data; real method, modeling and analysis.\nSee the project"
+  },
+  {
+    "objectID": "en/index.html#what-i-do",
+    "href": "en/index.html#what-i-do",
+    "title": "Orbita Space",
+    "section": "What I do",
+    "text": "What I do\n\n\nPower BI dashboards\nFrom raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.\n\n\nStatistical analysis for academic research\nPlanning, analysis and interpretation of results for undergraduate theses, master’s theses and doctoral dissertations.\n\n\nKPI consulting\nDeciding what to measure, how to calculate it and who owns each number.\n\n\nSee services"
+  },
+  {
+    "objectID": "en/projects.html",
+    "href": "en/projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism Radar\n\n\n\nPower BI\n\nDAX\n\nStatistics\n\nPeople Analytics\n\n\n\nA Power BI dashboard that shows why a stable absenteeism rate was hiding a localized rise. Dimensional modeling, 97 DAX measures and statistical analysis.\n\n\n\n\n\nNo matching items"
+  }
+]

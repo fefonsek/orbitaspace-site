@@ -1,0 +1,3 @@
+# O idioma fica aqui, e não em _quarto-es.yml: na raiz do projeto o
+# Quarto confunde "es" com o caminho da pasta es/ e grava lang="../es".
+lang: es

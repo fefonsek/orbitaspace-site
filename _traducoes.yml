@@ -1,0 +1,35 @@
+# Páginas equivalentes nos três idiomas.
+# Cada página indica no cabeçalho a sua chave (ex.: "traducao: projetos").
+# O filtro assets/lua/traducoes.lua usa esta tabela para gerar os links
+# hreflang e o seletor PT | ES | EN aponta para eles.
+# Um post do blog só entra aqui se tiver tradução; sem entrada, o seletor
+# leva para o blog do outro idioma.
+
+inicio:
+  pt: /index.html
+  es: /es/index.html
+  en: /en/index.html
+projetos:
+  pt: /projetos.html
+  es: /es/proyectos.html
+  en: /en/projects.html
+radar:
+  pt: /projetos/radar-absenteismo/index.html
+  es: /es/proyectos/radar-ausentismo/index.html
+  en: /en/projects/absenteeism-radar/index.html
+servicos:
+  pt: /servicos.html
+  es: /es/servicios.html
+  en: /en/services.html
+sobre:
+  pt: /sobre.html
+  es: /es/sobre-mi.html
+  en: /en/about.html
+blog:
+  pt: /blog.html
+  es: /es/blog.html
+  en: /en/blog.html
+contato:
+  pt: /contato.html
+  es: /es/contacto.html
+  en: /en/contact.html

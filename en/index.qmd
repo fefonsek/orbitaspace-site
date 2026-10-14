@@ -1,0 +1,63 @@
+---
+traducao: inicio
+pagetitle: "Orbita Space · Felipe Fonseca, Data Consultant"
+description: "Orbita Space is Felipe Fonseca's data consultancy, based in Brazil. Power BI dashboards, statistical analysis for theses and dissertations, and KPI consulting, all done remotely."
+page-layout: full
+title-block-banner: false
+---
+
+::: {.hero .container-lg}
+# Orbita Space
+
+[by Felipe Fonseca · Data Consultant | Statistics and BI]{.hero-titulo}
+
+[I help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.]{.hero-frase}
+
+::: botoes
+[See projects](projects.qmd){.btn .btn-primary}
+[Get in touch](contact.qmd){.btn .btn-outline-primary}
+:::
+:::
+
+::: {.secao .container-lg}
+## Featured project
+
+::: destaque-projeto
+[![](../projetos/radar-absenteismo/img/00_capa_mini.jpg){fig-alt="Cover of the Absenteeism Radar dashboard"}](projects/absenteeism-radar/index.qmd)
+
+::: {}
+[Project · Power BI]{.etiqueta}
+
+### Absenteeism Radar
+
+A company's absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.
+
+Fictional company and data; real method, modeling and analysis.
+
+[See the project](projects/absenteeism-radar/index.qmd){.btn .btn-primary}
+:::
+:::
+:::
+
+::: {.secao .container-lg}
+## What I do
+
+::: grade
+::: cartao
+### [Power BI dashboards](services.qmd#dashboards)
+From raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.
+:::
+
+::: cartao
+### [Statistical analysis for academic research](services.qmd#research)
+Planning, analysis and interpretation of results for undergraduate theses, master's theses and doctoral dissertations.
+:::
+
+::: cartao
+### [KPI consulting](services.qmd#kpis)
+Deciding what to measure, how to calculate it and who owns each number.
+:::
+:::
+
+[See services](services.qmd){.mais}
+:::

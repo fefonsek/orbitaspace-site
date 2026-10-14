@@ -1,0 +1,51 @@
+# Configuração comum aos três idiomas.
+# O que muda por idioma (lang, navbar, rodapé, páginas) fica em
+# _quarto-pt.yml, _quarto-es.yml e _quarto-en.yml.
+# Para gerar o site completo, use .\render.ps1 (não "quarto render").
+
+project:
+  type: website
+  output-dir: docs
+  resources:
+    # Domínio próprio do GitHub Pages: precisa estar em docs/CNAME.
+    - CNAME
+    # Faz o GitHub Pages servir docs/ como está, sem processar com Jekyll.
+    - .nojekyll
+    - assets/img/
+    # A foto original fica só na pasta de origem; o site usa os recortes.
+    - "!assets/img/felipe-original.jpeg"
+    - projetos/radar-absenteismo/img/
+  post-render: scripts/aviso_render.py
+
+profile:
+  default: pt
+
+website:
+  site-url: https://orbitaspace.com.br
+  favicon: assets/img/favicon-32.png
+  open-graph: true
+  # Imagem de compartilhamento padrão; a página do Radar usa a capa do painel.
+  image: assets/img/compartilhamento-site.jpg
+  navbar:
+    logo: assets/img/logo-branco.png
+    background: "#1a1a2e"
+    foreground: "#ffffff"
+    pinned: false
+    search: false
+
+format:
+  html:
+    theme: assets/css/orbita.scss
+    highlight-style: monochrome
+    toc: false
+    smooth-scroll: true
+    anchor-sections: false
+    include-in-header: assets/html/head.html
+    include-after-body: assets/html/idiomas.html
+
+filters:
+  - assets/lua/traducoes.lua
+  - assets/lua/tabelas.lua
+
+shortcodes:
+  - assets/lua/galeria.lua

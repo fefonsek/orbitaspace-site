@@ -1,0 +1,38 @@
+# O repositório é público. Fica de fora tudo que não é o site em si.
+
+# Rascunhos de texto para revisão
+_rascunhos/
+
+# Foto original: o site usa só os recortes gerados por scripts/preparar_imagens.py
+assets/img/felipe-original.jpeg
+
+# Cache e arquivos intermediários do Quarto
+/.quarto/
+**/*.quarto_ipynb
+**/*_files/
+/_freeze/
+
+# Python
+__pycache__/
+*.pyc
+
+# R e RStudio (histórico de comandos e sessão, gravados automaticamente)
+.Rhistory
+.RData
+.Rproj.user/
+
+# Páginas de teste que os scripts de captura criam por alguns segundos em docs/
+docs/_*.html
+
+# Arquivos temporários e de sistema
+*.tmp
+*.bak
+*.log
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Configurações locais de editor
+.vscode/
+.idea/
