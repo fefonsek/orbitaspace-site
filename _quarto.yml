@@ -25,6 +25,11 @@ project:
     - es/proyectos/gobernanza-indicadores/img/
     - en/projects/kpi-governance/img/
     - projetos/governanca-indicadores/dados/
+    # Caso Auditoria: capa, relatório em PDF e lista de casos para baixar. As
+    # tabelas brutas (dados/) e o gabarito do gerador não são publicados.
+    - projetos/auditoria-alimentacao/img/
+    - projetos/auditoria-alimentacao/relatorio/relatorio.pdf
+    - projetos/auditoria-alimentacao/resultados/casos_revisar.csv
   post-render: scripts/aviso_render.py
 
 profile:

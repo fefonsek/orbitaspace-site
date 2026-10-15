@@ -5,7 +5,7 @@ traducao: servicos
 image: ../assets/img/compartilhamento-site.jpg
 ---
 
-Three lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards.
+Four lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards.
 
 ::: servico
 ## Power BI dashboards {#dashboards}
@@ -67,6 +67,27 @@ Companies where each department calculates the same KPI its own way, or that tra
 I talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.
 
 {{< ver-projetos indicadores >}}
+:::
+
+::: servico
+## Data reports and audits {#reports}
+
+### Who it is for
+
+Companies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.
+
+### What I deliver
+
+- An analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.
+- A list of cases to review, ranked by risk and by amount.
+- Practical recommendations and KPIs to keep track of the problem afterward.
+- The analysis code, so you can rerun the report whenever you want.
+
+### How I work
+
+I start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process.
+
+{{< ver-projetos relatorios >}}
 :::
 
 ::: cta-final

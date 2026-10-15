@@ -4,7 +4,7 @@
     "href": "en/services.html",
     "title": "Services",
     "section": "",
-    "text": "Three lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards."
+    "text": "Four lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards."
   },
   {
     "objectID": "en/services.html#dashboards",
@@ -26,6 +26,13 @@
     "title": "Services",
     "section": "KPI consulting",
     "text": "KPI consulting\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.\nSee KPI projects"
+  },
+  {
+    "objectID": "en/services.html#reports",
+    "href": "en/services.html#reports",
+    "title": "Services",
+    "section": "Data reports and audits",
+    "text": "Data reports and audits\n\nWho it is for\nCompanies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.\n\n\nWhat I deliver\n\nAn analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.\nA list of cases to review, ranked by risk and by amount.\nPractical recommendations and KPIs to keep track of the problem afterward.\nThe analysis code, so you can rerun the report whenever you want.\n\n\n\nHow I work\nI start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process."
   },
   {
     "objectID": "en/services.html#pricing-on-request",

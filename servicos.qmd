@@ -4,7 +4,7 @@ description: "Serviços da Orbita Space: painéis em Power BI, análise estatís
 traducao: servicos
 ---
 
-Três frentes de trabalho, todas com o mesmo cuidado: entender a pergunta antes de mexer nos dados e entregar algo que você consiga usar e manter depois.
+Quatro frentes de trabalho, todas com o mesmo cuidado: entender a pergunta antes de mexer nos dados e entregar algo que você consiga usar e manter depois.
 
 ::: servico
 ## Painéis em Power BI {#paineis}
@@ -66,6 +66,27 @@ Empresas em que cada área calcula o mesmo indicador de um jeito, ou que acompan
 Converso com quem produz e com quem usa os números, levanto o que já existe e proponho um conjunto enxuto. Na Prumo Engenharia, fiz curadoria e governança de indicadores de várias áreas; é desse trabalho que vem o método.
 
 {{< ver-projetos indicadores >}}
+:::
+
+::: servico
+## Relatórios e auditorias de dados {#relatorios}
+
+### Para quem é
+
+Empresas que precisam de uma resposta precisa sobre um problema concreto: um custo que subiu sem explicação, um benefício pago fora da regra, um processo que perde dinheiro em algum ponto. Também para quem já tem um painel e quer ir além dele numa pergunta específica.
+
+### O que eu entrego
+
+- Relatório analítico em HTML e PDF, com números, gráficos e conclusões escritos para quem decide.
+- Lista de casos para revisão, ordenada por risco e por valor.
+- Recomendações práticas e indicadores para acompanhar o problema depois.
+- O código da análise, para repetir o relatório quando quiser.
+
+### Como eu trabalho
+
+Começo entendendo a regra do negócio e de onde vêm os dados. Cruzo as bases, confiro cada regra e separo o que é erro objetivo do que só merece uma segunda olhada. Antes de apontar qualquer valor, valido as conclusões com quem conhece o processo.
+
+{{< ver-projetos relatorios >}}
 :::
 
 ::: cta-final

@@ -5,7 +5,7 @@ traducao: servicos
 image: ../assets/img/compartilhamento-site.jpg
 ---
 
-Tres líneas de trabajo con el mismo cuidado: entender la pregunta antes de tocar los datos y entregar algo que puedas usar y mantener después.
+Cuatro líneas de trabajo con el mismo cuidado: entender la pregunta antes de tocar los datos y entregar algo que puedas usar y mantener después.
 
 ::: servico
 ## Tableros en Power BI {#tableros}
@@ -67,6 +67,27 @@ Empresas donde cada área calcula el mismo indicador a su manera, o que siguen m
 Converso con quienes producen y con quienes usan los números, reviso lo que ya existe y propongo un conjunto acotado. En Prumo Engenharia hice la curaduría y la gobernanza de indicadores de varias áreas; de ese trabajo viene el método.
 
 {{< ver-projetos indicadores >}}
+:::
+
+::: servico
+## Informes y auditorías de datos {#informes}
+
+### Para quién es
+
+Empresas que necesitan una respuesta precisa sobre un problema concreto: un costo que subió sin explicación, un beneficio pagado fuera de la regla, un proceso que pierde dinero en algún punto. También para quienes ya tienen un tablero y quieren ir más allá en una pregunta específica.
+
+### Qué entrego
+
+- Informe analítico en HTML y PDF, con números, gráficos y conclusiones escritos para quien decide.
+- Lista de casos para revisión, ordenada por riesgo y por valor.
+- Recomendaciones prácticas e indicadores para seguir el problema después.
+- El código del análisis, para repetir el informe cuando quieras.
+
+### Cómo trabajo
+
+Empiezo por entender la regla del negocio y de dónde vienen los datos. Cruzo las bases, reviso cada regla y separo lo que es un error objetivo de lo que solo merece una segunda mirada. Antes de señalar cualquier valor, valido las conclusiones con quienes conocen el proceso.
+
+{{< ver-projetos relatorios >}}
 :::
 
 ::: cta-final

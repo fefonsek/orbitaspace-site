@@ -1,0 +1,6 @@
+# O relatório em PDF é um projeto à parte: o site não o renderiza como página.
+# O render.ps1 gera relatorio.pdf aqui, e o site publica só o PDF.
+project:
+  type: default
+execute:
+  freeze: false

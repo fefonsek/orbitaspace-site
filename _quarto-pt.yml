@@ -5,6 +5,8 @@ project:
     - "*.qmd"
     - "!es/"
     - "!en/"
+    # O relatório em PDF do caso Auditoria é um projeto à parte (render.ps1).
+    - "!projetos/auditoria-alimentacao/relatorio/"
 
 lang: pt-BR
 

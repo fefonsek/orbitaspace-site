@@ -2,7 +2,8 @@
 --
 -- Cada projeto diz no cabeçalho a que frente pertence (pode ser mais de uma):
 --   frente: [paineis]
--- As chaves são as mesmas nas três línguas: paineis, pesquisas, indicadores.
+-- As chaves são as mesmas nas três línguas: paineis, pesquisas, indicadores,
+-- relatorios.
 --
 -- Shortcodes:
 --   {{< frentes >}}             na página de Projetos: fileira de botões
@@ -15,7 +16,7 @@
 --
 -- Projeto sem "frente" ou com uma chave desconhecida interrompe o render.
 
-local FRENTES = { "paineis", "pesquisas", "indicadores" }
+local FRENTES = { "paineis", "pesquisas", "indicadores", "relatorios" }
 
 -- Pasta dos projetos e página de Projetos de cada idioma.
 local IDIOMAS = {
@@ -31,10 +32,12 @@ local TEXTOS = {
     paineis = "Painéis em Power BI",
     pesquisas = "Análise estatística para pesquisas acadêmicas",
     indicadores = "Consultoria em indicadores",
+    relatorios = "Relatórios e auditorias de dados",
     ver = {
       paineis = "Ver projetos de painéis",
       pesquisas = "Ver projetos de pesquisa",
       indicadores = "Ver projetos de indicadores",
+      relatorios = "Ver relatórios e auditorias",
     },
   },
   es = {
@@ -43,10 +46,12 @@ local TEXTOS = {
     paineis = "Tableros en Power BI",
     pesquisas = "Análisis estadístico para investigaciones académicas",
     indicadores = "Consultoría en indicadores",
+    relatorios = "Informes y auditorías de datos",
     ver = {
       paineis = "Ver proyectos de tableros",
       pesquisas = "Ver proyectos de investigación",
       indicadores = "Ver proyectos de indicadores",
+      relatorios = "Ver informes y auditorías",
     },
   },
   en = {
@@ -55,10 +60,12 @@ local TEXTOS = {
     paineis = "Power BI dashboards",
     pesquisas = "Statistical analysis for academic research",
     indicadores = "KPI consulting",
+    relatorios = "Data reports and audits",
     ver = {
       paineis = "See dashboard projects",
       pesquisas = "See research projects",
       indicadores = "See KPI projects",
+      relatorios = "See reports and audits",
     },
   },
 }
@@ -117,7 +124,7 @@ local function projetos(lang)
         local chave = pandoc.utils.stringify(item)
         if not conhecida(chave) then
           error("frentes.lua: frente '" .. chave .. "' desconhecida em " .. IDIOMAS[lang].pasta .. "/" .. pasta
-            .. " (use paineis, pesquisas ou indicadores)")
+            .. " (use paineis, pesquisas, indicadores ou relatorios)")
         end
         table.insert(mapa[pasta], chave)
         usadas[chave] = true

@@ -8,6 +8,7 @@ listing:
     - "projetos/radar-absenteismo/index.qmd"
     - "projetos/caso-tcc-rotatividade/index.qmd"
     - "projetos/governanca-indicadores/index.qmd"
+    - "projetos/auditoria-alimentacao/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

@@ -1,0 +1,388 @@
+---
+title: "Auditoria do benefício de alimentação em campo"
+description: "Um ano de recargas de alimentação cruzado com o diário de campo e o cadastro. Quanto foi pago fora da regra, onde e por quê."
+image: img/capa.png
+image-alt: "Capa do caso: auditoria do benefício de alimentação em campo da Fiorena Redes Elétricas, com o gráfico do valor pago por dia em campo em 2025"
+categories: [Auditoria, R, Quarto, Benefícios]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
+frente: [relatorios]
+# Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Ver o código R"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números desta página vêm de resultados/auditoria.rds, gravado por
+# scripts/auditoria.R, e de resultados/conferencia.rds, gravado por
+# scripts/conferir.R (a comparação com o que o gerador plantou).
+caso <- "."
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/auditoria.R"))
+aud <- ler_auditoria(caso)
+conf <- aud$conferencia
+
+valor_de <- function(tab, chave, col = "valor") tab[[col]][tab[[1]] == chave]
+concl <- \(k, col = "valor") valor_de(aud$conclusoes, k, col)
+indevido <- concl("Indevido")
+s <- aud$salto
+regras <- aud$regras
+
+# Achados.
+dup_ate_julho <- sum(aud$dup_mes$valor[aud$dup_mes$mes <= "2025-07"])
+dup_depois <- sum(aud$dup_mes$valor[aud$dup_mes$mes >= "2025-08"])
+ferias_5 <- with(aud$ferias_dia, 100 * sum(n[dia_do_periodo <= 5]) / sum(n))
+bases_jantar <- head(aud$jantar_base, 2)
+jantar_duas <- 100 * sum(bases_jantar$valor) / sum(aud$jantar_base$valor)
+nome_base <- \(b) paste("Base", substr(b, 2, 2))
+meses_fora <- aud$base_mes |> filter(fora_da_faixa)
+
+# Conferência com o gabarito do gerador.
+plantados <- sum(conf$deteccao$plantados)
+encontrados <- sum(conf$deteccao$encontrados)
+falsos_alarmes <- sum(conf$falsos_alarmes$n)
+casos_parecem <- conf$casos_falsos |> summarise(across(-c(falso, grupo_acima_da_faixa), sum))
+parecem_total <- sum(casos_parecem)
+parecem_atencao <- sum(casos_parecem$`Atenção`)
+stopifnot("a auditoria achou todos os defeitos plantados" = encontrados == plantados,
+          "só as duas bases do jantar sem pernoite ficam acima da faixa" = all(meses_fora$base %in% bases_jantar$base))
+```
+
+::: aviso-dados
+**Caso fictício.** A Fiorena Redes Elétricas S.A., suas bases, pessoas e lançamentos não existem. Os dados foram gerados do zero por um script em R, com regras de benefício inventadas e defeitos de tamanho conhecido. O método é real.
+
+[Baixar o relatório (PDF)](relatorio/relatorio.pdf){download="auditoria-alimentacao.pdf"} · [Baixar os casos para revisar (CSV)](resultados/casos_revisar.csv){download="casos_revisar.csv"}
+:::
+
+## A pergunta
+
+A controladoria da Fiorena viu o valor pago em alimentação por dia de equipe em campo subir de `r reais_exato(s$h1)` no primeiro semestre de 2025 para `r reais_exato(s$h2)` no segundo, `r pct(s$pct)` a mais, sem reajuste de valor e sem mudança no tipo de serviço. A pergunta era simples: quanto disso é gasto legítimo e quanto foi pago fora da regra?
+
+::: so-computador
+```{r}
+#| label: mensal
+#| echo: false
+#| fig-cap: "Valor pago em alimentação por dia de equipe em campo, mês a mês, em 2025. A linha tracejada é o mesmo valor sem o que a auditoria classificou como indevido. A marca em agosto é a troca do sistema de recarga."
+#| fig-alt: "Duas linhas mês a mês. O valor pago sobe de cerca de 205 reais em janeiro para perto de 250 reais em dezembro, com um salto em agosto. A linha sem o indevido sobe menos e fica abaixo da outra a partir de agosto."
+#| fig-width: 9
+#| fig-height: 4
+#| lightbox:
+#|   group: computador
+grafico_mensal(aud)
+salvar_capa(aud, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: mensal-celular
+#| echo: false
+#| fig-cap: "Valor pago em alimentação por dia de equipe em campo, mês a mês, em 2025. A linha tracejada é o mesmo valor sem o que a auditoria classificou como indevido. A marca em agosto é a troca do sistema de recarga."
+#| fig-alt: "Duas linhas mês a mês. O valor pago sobe de cerca de 205 reais em janeiro para perto de 250 reais em dezembro, com um salto em agosto. A linha sem o indevido sobe menos e fica abaixo da outra a partir de agosto."
+#| fig-width: 4.5
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_mensal(aud, celular = TRUE)
+```
+:::
+
+`r explica_julho(aud)`
+
+Cada eletricista recebe no cartão de alimentação uma recarga por dia em campo. A recarga é lançada pela base, aprovada pelo supervisor e paga sem cruzamento automático com o diário de campo nem com o cadastro de férias e afastamentos. Ninguém tinha olhado os 12 meses de lançamentos juntos.
+
+A auditoria respondeu três perguntas, nessa ordem:
+
+1. Quanto foi pago fora de uma regra objetiva (duplicidade, acima do teto, pessoa que não estava trabalhando)?
+2. Quanto foi pago sem lastro: sem registro de equipe em campo naquele dia, ou com justificativa que não explica nada?
+3. Onde isso se concentra, e por quê?
+
+## A regra e os dados
+
+A regra do benefício:
+
+- Almoço de `r reais_exato(regras$valor[["Almoço"]])` por dia em campo.
+- Jantar de `r reais_exato(regras$valor[["Jantar"]])`, só quando o diário de campo registra pernoite da equipe.
+- Extra de até `r reais_exato(regras$valor[["Extra"]])`, só com uma das justificativas da lista: "`r tolower(regras$justificativas[1])`" ou "`r tolower(regras$justificativas[2])`".
+- Teto de `r reais_exato(regras$teto)` por pessoa por dia, somando tudo, e no máximo uma recarga de cada tipo por dia.
+- Só para quem está ativo, fora de férias e afastamentos, e numa equipe que esteve em campo naquele dia.
+
+Foram auditadas `r num(aud$recargas)` recargas de 2025, no total de `r reais(aud$total)`, pagas a `r num(aud$pessoas)` pessoas de `r num(aud$bases)` bases, cruzadas com `r num(aud$dias_equipe)` registros de equipe em campo no diário, com o cadastro e com as férias e afastamentos do RH.
+
+## Método
+
+Cada recarga passa pelas mesmas verificações e termina numa de quatro conclusões. A auditoria separa o que é erro objetivo, que pode ser cobrado, do que só merece uma segunda olhada da base; ela não tira conclusão sobre a intenção de ninguém.
+
+1. **Preparar.** Usar o dia trabalhado, e não a data em que a recarga foi lançada, e ligar cada recarga ao cadastro, às ausências e à equipe da pessoa naquele dia.
+2. **Conferir as regras objetivas.** Duplicidade, pessoa fora do trabalho, jantar sem pernoite, extra sem justificativa e soma do dia acima do teto. No teto, só o excedente conta como indevido.
+3. **Conferir o lastro.** A equipe estava em campo naquele dia? A justificativa do extra é válida, vaga ou ausente? Um dicionário de termos aceita erros de digitação, para "deslocamneto acima de 300km" contar como válida.
+4. **Comparar com o esperado.** Para cada base e mês, o valor por dia em campo é comparado com o das outras bases no mesmo mês. Fica fora da faixa esperada o grupo que se afasta muito mais do que as bases costumam se afastar umas das outras (o critério de Tukey, no código).
+5. **Pontuar o risco.** Um ponto para cada sinal: regra violada, sem lastro de campo, justificativa vaga ou ausente, base e mês acima da faixa.
+6. **Concluir.** Cada recarga recebe uma das quatro conclusões abaixo.
+
+```{r}
+#| label: tabela-conclusoes-dados
+#| include: false
+regras_conclusao <- tribble(
+  ~conclusao, ~quando, ~acao,
+  "Indevido", "Violou uma regra objetiva", "Estornar ou recuperar, conforme a política da empresa e com apoio do RH e do jurídico",
+  "Revisar", "Nenhuma regra violada, mas sem lastro de campo ou com dois sinais ou mais", "A base confirma ou corrige em até 15 dias",
+  "Atenção", "Um sinal só, sem regra violada", "Entra na amostra do próximo mês",
+  "Regular", "Nenhum sinal", "Nada a fazer"
+)
+nomes_conclusao <- c("Conclusão", "Quando", "O que fazer")
+```
+
+::: so-computador
+```{r}
+#| label: tabela-conclusoes
+#| echo: false
+tabela(regras_conclusao, nomes_conclusao)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: tabela-conclusoes-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(regras_conclusao, nomes_conclusao))
+```
+:::
+
+```{r}
+#| label: etapa-1-preparar
+#| eval: false
+#| code-summary: "Ver o código R da etapa 1: preparar"
+```
+
+```{r}
+#| label: etapa-2-regras
+#| eval: false
+#| code-summary: "Ver o código R da etapa 2: regras objetivas"
+```
+
+```{r}
+#| label: etapa-3-lastro
+#| eval: false
+#| code-summary: "Ver o código R da etapa 3: lastro"
+```
+
+```{r}
+#| label: etapa-4-esperado
+#| eval: false
+#| code-summary: "Ver o código R da etapa 4: faixa esperada"
+```
+
+```{r}
+#| label: etapa-5-score
+#| eval: false
+#| code-summary: "Ver o código R da etapa 5: score de risco"
+```
+
+```{r}
+#| label: etapa-6-concluir
+#| eval: false
+#| code-summary: "Ver o código R da etapa 6: conclusão"
+```
+
+## Resultado
+
+Do valor pago no ano, `r reais(indevido)` (`r pct(concl("Indevido", "pct"))`) foram indevidos, e outros `r reais(concl("Revisar"))` (`r pct(concl("Revisar", "pct"))`) precisam de confirmação da base.
+
+::: so-computador
+```{r}
+#| label: conclusoes
+#| echo: false
+#| fig-cap: "O valor pago em 2025, dividido nas quatro conclusões da auditoria."
+#| fig-alt: "Uma barra horizontal com o valor do ano. Indevido, Revisar e Atenção ocupam juntos pouco mais de um décimo da barra; o resto é Regular."
+#| fig-width: 9
+#| fig-height: 1.9
+#| lightbox:
+#|   group: computador
+grafico_conclusoes(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: conclusoes-celular
+#| echo: false
+#| fig-cap: "O valor pago em 2025, dividido nas quatro conclusões da auditoria."
+#| fig-alt: "Uma barra horizontal com o valor do ano. Indevido, Revisar e Atenção ocupam juntos pouco mais de um décimo da barra; o resto é Regular."
+#| fig-width: 4.5
+#| fig-height: 2.6
+#| lightbox:
+#|   group: celular
+grafico_conclusoes(aud, celular = TRUE)
+```
+:::
+
+- **Indevido** é o que violou uma regra objetiva e pode ser cobrado.
+- **Revisar** é quase todo formado por recargas sem lastro de campo: `r reais(valor_de(aud$revisar, "Sem lastro de campo"))` em `r num(valor_de(aud$revisar, "Sem lastro de campo", "recargas"))` recargas lançadas em dias em que a equipe não aparece no diário. Pode ser falha do diário, e não da recarga; por isso a base confirma antes de qualquer cobrança.
+- **Atenção não é acusação.** Das `r num(concl("Atenção", "recargas"))` recargas em Atenção, `r num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))` estão lá só porque a base e o mês ficaram acima da faixa esperada; a recarga em si cumpre a regra. Entre elas estão `r num(parecem_atencao)` lançamentos que só pareciam erro (lançados um ou dois dias depois, pernoite registrado com atraso, justificativa com erro de digitação). As outras `r num(valor_de(aud$atencao, "Justificativa vaga", "recargas"))` têm justificativa vaga, como "ajuste" ou "conforme combinado".
+
+### O indevido por tipo de defeito
+
+::: so-computador
+```{r}
+#| label: defeitos
+#| echo: false
+#| fig-cap: "Valor indevido em 2025 por tipo de defeito. No teto, só o excedente acima do limite diário."
+#| fig-alt: "Barras horizontais do maior para o menor. Duplicidade, em azul, é o maior defeito, seguido de jantar sem pernoite, pessoa fora do trabalho, acima do teto e extra sem justificativa."
+#| fig-width: 9
+#| fig-height: 3.2
+#| lightbox:
+#|   group: computador
+grafico_defeitos(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: defeitos-celular
+#| echo: false
+#| fig-cap: "Valor indevido em 2025 por tipo de defeito. No teto, só o excedente acima do limite diário."
+#| fig-alt: "Barras horizontais do maior para o menor. Duplicidade, em azul, é o maior defeito, seguido de jantar sem pernoite, pessoa fora do trabalho, acima do teto e extra sem justificativa."
+#| fig-width: 4.5
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_defeitos(aud, celular = TRUE)
+```
+:::
+
+### O que explica o salto do segundo semestre
+
+O valor por dia em campo subiu `r reais_exato(s$total, 2)`. Desse aumento, `r reais_exato(s$indevido, 2)` (`r pct(100 * s$indevido / s$total, 0)`) vieram de pagamentos indevidos. Outros `r reais_exato(s$jantar, 2)` (`r pct(100 * s$jantar / s$total, 0)`) vieram de mais jantares legítimos, porque os pernoites passaram de `r pct(100 * s$pernoite_h1)` para `r pct(100 * s$pernoite_h2)` dos dias em campo. O resto, `r reais_exato(s$outros, 2)`, acompanha os pernoites, nos extras.
+
+## Onde e por quê
+
+- **A troca de sistema em agosto criou duplicidades.** Até julho, elas somam `r reais(dup_ate_julho)`; de agosto a dezembro, `r reais(dup_depois)`. O sistema novo aceita duas recargas do mesmo tipo para a mesma pessoa no mesmo dia.
+- **O cadastro chega atrasado.** `r pct(ferias_5, 0)` das recargas pagas a quem estava de férias caíram nos cinco primeiros dias do período: a base só fica sabendo das férias depois que elas começaram.
+- **Duas bases pagam jantar sem pernoite.** A `r nome_base(bases_jantar$base[1])` e a `r nome_base(bases_jantar$base[2])` concentram `r pct(jantar_duas, 0)` do jantar sem pernoite, e são as únicas com meses acima da faixa esperada: `r num(bases_jantar$meses_fora[1])` meses na primeira e `r num(bases_jantar$meses_fora[2])` na segunda.
+
+::: so-computador
+```{r}
+#| label: faixa
+#| echo: false
+#| fig-cap: "Valor pago por dia de equipe em campo, por base e mês, contra a faixa esperada (área cinza). Os pontos azuis são os meses acima da faixa."
+#| fig-alt: "Oito pequenos gráficos, um por base. Em seis bases a linha fica dentro da faixa cinza o ano todo. Nas bases 3 e 6, em azul, a linha passa acima da faixa em três meses cada."
+#| fig-width: 9
+#| fig-height: 4.6
+#| lightbox:
+#|   group: computador
+grafico_faixa(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: faixa-celular
+#| echo: false
+#| fig-cap: "Valor pago por dia de equipe em campo, por base e mês, contra a faixa esperada (área cinza). Os pontos azuis são os meses acima da faixa."
+#| fig-alt: "Oito pequenos gráficos, um por base. Em seis bases a linha fica dentro da faixa cinza o ano todo. Nas bases 3 e 6, em azul, a linha passa acima da faixa em três meses cada."
+#| fig-width: 4.5
+#| fig-height: 7.5
+#| lightbox:
+#|   group: celular
+grafico_faixa(aud, celular = TRUE)
+```
+:::
+
+## Casos para revisar
+
+A lista completa tem `r num(aud$casos)` recargas classificadas como Indevido ou Revisar, ordenadas por conclusão, risco e valor, e pode ser baixada no topo da página. Abaixo, primeiro as `r num(sum(aud$top_revisar$conclusao == "Indevido"))` pessoas com maior valor indevido (só a parte indevida de cada recarga) e depois as `r num(sum(aud$top_revisar$conclusao == "Revisar"))` com maior valor para revisar.
+
+::: so-computador
+```{r}
+#| label: top-revisar
+#| echo: false
+tabela(top_revisar_fmt(aud), nomes_top, alinhar_top)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: top-revisar-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(top_revisar_fmt(aud), nomes_top))
+```
+:::
+
+## Como saber que a auditoria acertou
+
+Como os dados deste caso foram gerados por script, foi possível conferir a auditoria contra o que o gerador plantou: ela encontrou os `r num(plantados)` defeitos plantados, sem exceção, e nenhum dos `r num(parecem_total)` lançamentos que só pareciam erro virou Indevido ou Revisar. A auditoria não lê o gabarito; um script separado compara os dois no fim. Com dados reais não existe gabarito, e essa conferência é feita com a base: uma amostra de casos de cada conclusão é revisada com quem conhece o processo antes de o relatório ser fechado.
+
+## Recomendações
+
+Cada achado vira uma correção no processo, para o problema não voltar no ano seguinte.
+
+```{r}
+#| label: recomendacoes-dados
+#| include: false
+recomendacoes <- tribble(
+  ~achado, ~correcao, ~responsavel,
+  "Duplicidade depois da troca de sistema", "Bloqueio no sistema de uma recarga por tipo, pessoa e dia", "TI e fornecedor do cartão",
+  "Cadastro atrasado", "Lista diária de férias, afastamentos e desligamentos enviada ao sistema de recarga", "RH",
+  "Jantar sem pernoite", "Jantar só liberado quando o diário registra pernoite", "Operação e supervisores das bases",
+  "Acima do teto", "Teto diário aplicado pelo próprio sistema", "TI",
+  "Justificativa vaga", "Justificativa escolhida numa lista fechada, não digitada", "Controladoria",
+  "Valores já pagos como indevido", "Estorno ou recuperação conforme a política da empresa", "RH, com apoio do jurídico"
+)
+nomes_recomendacoes <- c("Achado", "Correção recomendada", "Responsável")
+```
+
+::: so-computador
+```{r}
+#| label: recomendacoes
+#| echo: false
+tabela(recomendacoes, nomes_recomendacoes)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: recomendacoes-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(recomendacoes, nomes_recomendacoes))
+```
+:::
+
+A auditoria também deixa três indicadores para acompanhar todo mês:
+
+- **Taxa de recargas indevidas:** valor indevido ÷ valor pago, com meta abaixo de 0,5%.
+- **Cobertura de lastro:** recargas com equipe registrada em campo ÷ total de recargas, com meta acima de 99%.
+- **Valor por dia em campo:** por base, contra a faixa esperada.
+
+## O que o caso demonstra
+
+- **Cruzar bases que ninguém cruzava.** O erro não estava em nenhuma base sozinha, e sim na falta de conferência entre o cartão, o diário de campo e o RH.
+- **Separar erro objetivo de suspeita.** Só o que viola uma regra vai para cobrança; o resto vai para a base confirmar, sem acusar ninguém.
+- **Um número que explica o problema.** O salto do segundo semestre foi dividido entre o que é indevido e o que é legítimo, em vez de virar uma ordem genérica de corte de gastos.
+- **Um relatório que se repete.** O código fica com a empresa, e o mesmo relatório roda no ano seguinte com os dados novos.
+
+::: cta-final
+## Sua empresa paga algum benefício, reembolso ou adicional sem cruzar com outra base?
+
+Me conte como funciona hoje e eu digo o que dá para conferir.
+
+[Fale comigo](../../contato.qmd){.btn .btn-primary}
+:::

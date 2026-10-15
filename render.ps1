@@ -72,6 +72,40 @@ foreach ($congelado in "_freeze\$indicadores", "_freeze\es\proyectos\gobernanza-
     }
 }
 
+# 0c. Caso Auditoria: a auditoria (scripts/auditoria.R) e a conferência com o
+#     gabarito do gerador (scripts/conferir.R) rodam só quando os dados ou os
+#     scripts mudaram; o relatório em PDF (relatorio/, projeto à parte, em
+#     Typst) é refeito quando os resultados, o relatório ou os gráficos mudaram.
+#     Os dados não são gerados de novo aqui: para isso, rode o gerar_dados.R.
+$auditoria = "projetos\auditoria-alimentacao"
+$rdsAud = "$auditoria\resultados\auditoria.rds"
+$fontesAud = @(Get-ChildItem "$auditoria\dados\*") + @(Get-Item "$auditoria\scripts\auditoria.R", "$auditoria\scripts\conferir.R")
+if (-not (Test-Path $rdsAud) -or ($fontesAud | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsAud).LastWriteTime })) {
+    $rscript = Get-ChildItem "$env:ProgramFiles\R\R-*\bin\Rscript.exe" -ErrorAction SilentlyContinue |
+        Sort-Object FullName | Select-Object -Last 1
+    if (-not $rscript) { Write-Host "Rscript não encontrado em $env:ProgramFiles\R." -ForegroundColor Red; exit 1 }
+    Write-Host "`n=== Caso Auditoria: rodando a auditoria e a conferência ===" -ForegroundColor Cyan
+    foreach ($script in "auditoria.R", "conferir.R") {
+        & $rscript.FullName "$auditoria\scripts\$script"
+        if ($LASTEXITCODE -ne 0) { Write-Host "Falha em $script do caso Auditoria." -ForegroundColor Red; exit 1 }
+    }
+}
+$pdfAud = "$auditoria\relatorio\relatorio.pdf"
+$fontesPdf = Get-Item "$auditoria\resultados\auditoria.rds", "$auditoria\resultados\conferencia.rds",
+    "$auditoria\relatorio\relatorio.qmd", "$auditoria\scripts\apresentacao.R"
+if (-not (Test-Path $pdfAud) -or ($fontesPdf | Where-Object { $_.LastWriteTime -gt (Get-Item $pdfAud).LastWriteTime })) {
+    Write-Host "`n=== Caso Auditoria: gerando o relatório em PDF ===" -ForegroundColor Cyan
+    quarto render "$auditoria\relatorio\relatorio.qmd"
+    if ($LASTEXITCODE -ne 0) { Write-Host "Falha ao gerar o relatório em PDF do caso Auditoria." -ForegroundColor Red; exit 1 }
+}
+$ultimaAud = (Get-ChildItem "$auditoria\resultados\*", "$auditoria\scripts\*" |
+    Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
+$jsonAud = "_freeze\$auditoria\index\execute-results\html.json"
+if ((Test-Path $jsonAud) -and (Get-Item $jsonAud).LastWriteTime -lt $ultimaAud) {
+    Remove-Item "_freeze\$auditoria" -Recurse -Force
+    Write-Host "Caso Auditoria: _freeze\$auditoria descartado; a página será refeita."
+}
+
 # 1. Limpa a saída anterior (assim páginas removidas não ficam esquecidas).
 if (Test-Path docs) { Remove-Item docs -Recurse -Force }
 
