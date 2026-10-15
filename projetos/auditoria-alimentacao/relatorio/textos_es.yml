@@ -1,0 +1,66 @@
+# Texto del informe en PDF, en español. Los trechos entre llaves son R,
+# completados con los valores del .rds (ver relatorio.qmd y scripts/apresentacao.R).
+
+titulo: "Auditoría del beneficio de alimentación en campo"
+subtitulo: "Fiorena Redes Elétricas S.A. · Recargas de enero a diciembre de 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Caso ficticio: empresa, personas y datos ficticios. El método es real."
+de: "de"
+
+s_resumo: "Resumen"
+resumo: |
+  La contraloría pidió una respuesta a una pregunta: el valor pagado en alimentación por día de cuadrilla en campo subió un {pct(s$pct)} del primer al segundo semestre de 2025; ¿cuánto de eso es gasto legítimo y cuánto se pagó fuera de la regla?
+
+  - Se auditaron {num(aud$recargas)} recargas, por un total de {reais(aud$total)}.
+  - **{reais_exato(concl("Indevido"))} ({pct(concl("Indevido", "pct"))}) se pagaron fuera de una regla objetiva** y se pueden revertir o recuperar.
+  - {reais_exato(concl("Revisar"))} ({pct(concl("Revisar", "pct"))}) no tienen respaldo en el diario de campo y necesitan confirmación de la base.
+  - Lo indebido explica el {pct(100 * s$indevido / s$total, 0)} del salto del segundo semestre; el {pct(100 * s$jantar / s$total, 0)} vino de más pernoctes, que son legítimos.
+  - El mayor defecto es la duplicidad creada por el cambio del sistema de recargas en agosto.
+
+s_regra: "La regla auditada"
+regra: |
+  Almuerzo de {reais_exato(regras$valor[["Almoço"]])} por día en campo; cena de {reais_exato(regras$valor[["Jantar"]])} solo con pernocte registrado en el diario; extra de hasta {reais_exato(regras$valor[["Extra"]])} solo con una justificación de la lista ("{tx$justificativas[1]}" o "{tx$justificativas[2]}"); tope de {reais_exato(regras$teto)} por persona por día; una recarga de cada tipo por día; solo para quien está activo, fuera de vacaciones y ausencias, en una cuadrilla en campo ese día.
+
+  Las recargas se cruzaron con {num(aud$dias_equipe)} registros de cuadrillas en campo en el diario, con el registro de {num(aud$pessoas)} personas y con las vacaciones y ausencias de RR. HH.
+
+s_metodo: "Método"
+metodo: |
+  1. **Preparar:** usar el día trabajado, y no la fecha del registro, y vincular cada recarga con el registro de personal, las ausencias y el diario de campo.
+  2. **Reglas objetivas:** duplicidad, persona fuera de servicio, cena sin pernocte, extra sin justificación y tope diario (solo el excedente es indebido).
+  3. **Respaldo:** ¿la cuadrilla estaba en campo? ¿La justificación del extra es válida, vaga o falta (con tolerancia a errores de tipeo)?
+  4. **Esperado:** cada base y mes se compara con las otras bases en el mismo mes; queda fuera del rango el grupo que se aleja mucho más de lo normal (criterio de Tukey sobre el valor por día en campo dividido por la mediana de las bases en el mes, con al menos 15 días de cuadrilla en el grupo).
+  5. **Puntaje de riesgo:** un punto por señal (regla violada, sin respaldo, justificación vaga o ausente, base y mes por encima del rango).
+  6. **Conclusión:** Indebido (regla violada), Revisar (sin respaldo o dos señales o más), Atención (una señal), Conforme (ninguna).
+
+s_resultados: "Resultados"
+resultados: |
+  Revisar está formado casi todo por recargas sin respaldo de campo ({reais(valor_de(aud$revisar, "Sem lastro de campo"))}). Atención no es una acusación: {num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))} de las {num(concl("Atenção", "recargas"))} recargas en Atención están ahí solo porque la base y el mes quedaron por encima del rango; la recarga en sí cumple la regla.
+
+s_defeitos: "Lo indebido por tipo de defecto"
+s_salto: "El salto del segundo semestre"
+salto: |
+  El valor por día en campo pasó de {reais_exato(s$h1, 2)} a {reais_exato(s$h2, 2)}. Del aumento de {reais_exato(s$total, 2)}, {reais_exato(s$indevido, 2)} vinieron de pagos indebidos y {reais_exato(s$jantar, 2)} de más cenas legítimas (los pernoctes pasaron del {pct(100 * s$pernoite_h1)} al {pct(100 * s$pernoite_h2)} de los días en campo); el resto, {reais_exato(s$outros, 2)}, vino de los extras que acompañan a los pernoctes.
+
+s_achados: "Hallazgos"
+achados: |
+  - **Cambio de sistema en agosto.** Duplicidades de {reais_exato(dup_ate_julho)} hasta julio y de {reais_exato(dup_depois)} de agosto a diciembre.
+  - **Registro de personal con atraso.** El {pct(ferias_5, 0)} de las recargas pagadas durante vacaciones cayeron en los cinco primeros días del período.
+  - **Cena sin pernocte en dos bases.** La {nome_base(bases_jantar$base[1])} y la {nome_base(bases_jantar$base[2])} concentran el {pct(jantar_duas, 0)} de las cenas sin pernocte y son las únicas bases con meses por encima del rango esperado.
+
+s_casos: "Casos a revisar"
+casos: |
+  La lista completa ({num(aud$casos)} recargas clasificadas como Indebido o Revisar) acompaña este informe en CSV. Primero, las {num(sum(aud$top_revisar$conclusao == "Indevido"))} personas con mayor valor indebido (solo la parte indebida de cada recarga); después, las {num(sum(aud$top_revisar$conclusao == "Revisar"))} con mayor valor a revisar:
+
+legenda_motivos:
+  "Jantar sem pernoite": "Sin pernocte = cena sin pernocte"
+  "Sem lastro de campo": "Sin respaldo = sin respaldo de campo"
+  "Pessoa fora do trabalho": "Fuera de servicio = persona fuera de servicio"
+  "Extra sem justificativa": "Extra s/ justif. = extra sin justificación"
+
+s_recomendacoes: "Recomendaciones"
+indicadores: |
+  Indicadores para seguir todos los meses: tasa de recargas indebidas (meta por debajo del 0,5% del valor pagado), cobertura de respaldo (meta por encima del 99% de las recargas con cuadrilla registrada en campo) y valor por día en campo por base, frente al rango esperado.
+
+s_nota: "Nota sobre los datos"
+nota: |
+  Este es un caso de demostración: la empresa, las personas y los registros son ficticios, generados por un script con defectos de tamaño conocido. Por eso fue posible verificar que la auditoría encontró los {num(plantados)} defectos plantados y que ninguno de los {num(parecem_total)} registros que solo parecían error terminó como Indebido o Revisar. Con datos reales, esa verificación se hace con la base, revisando una muestra de cada conclusión con quienes conocen el proceso.

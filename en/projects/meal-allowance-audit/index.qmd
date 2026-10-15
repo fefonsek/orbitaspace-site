@@ -1,0 +1,340 @@
+---
+title: "Field meal allowance audit"
+description: "A year of meal-card top-ups cross-checked against the field log and the HR roster. How much was paid outside the rules, where and why."
+image: img/capa.png
+image-alt: "Case cover: field meal allowance audit at Fiorena Redes Elétricas, with the chart of the amount paid per field day in 2025"
+categories: [Audit, R, Quarto, Benefits]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
+frente: [relatorios]
+traducao: auditoria
+# Tapping a chart opens it full screen (on phones the charts are small).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the R code"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números vêm dos mesmos resultados da versão em português; os textos
+# curtos e os formatos do inglês, de scripts/rotulos.R. Em inglês, frase não
+# começa com número: as frases foram escritas para isso não acontecer.
+caso <- "../../../projetos/auditoria-alimentacao"
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/auditoria.R"))
+aud <- ler_auditoria(caso, "en")
+tx <- aud$tx
+preparar_texto(aud)
+```
+
+::: aviso-dados
+**Fictional case.** Fiorena Redes Elétricas S.A., its bases, people and records do not exist. The data were generated from scratch by an R script, with made-up allowance rules and defects of known size. The method is real.
+
+[Download the report (PDF)](../../../projetos/auditoria-alimentacao/relatorio/relatorio-en.pdf){download="meal-allowance-audit.pdf"} · [Download the cases to review (CSV)](../../../projetos/auditoria-alimentacao/resultados/casos_revisar_en.csv){download="cases_to_review.csv"}
+:::
+
+[The comments in the R code are in Portuguese, the case's original language.]{.nota-idioma}
+
+## The question
+
+Fiorena's financial control team saw the meal allowance paid per crew-day in the field rise from `r reais_exato(s$h1)` in the first half of 2025 to `r reais_exato(s$h2)` in the second, `r pct(s$pct)` more, with no change in the allowance amounts or in the type of work. The question was simple: how much of that is legitimate spending, and how much was paid outside the rules?
+
+::: so-computador
+```{r}
+#| label: mensal
+#| echo: false
+#| fig-cap: "Meal allowance paid per crew-day in the field, month by month, in 2025. The dashed line is the same amount without what the audit classified as improper. The mark in August is the switch to a new top-up system."
+#| fig-alt: "Two monthly lines. The amount paid rises from about 205 reais in January to nearly 250 reais in December, with a jump in August. The line without improper payments rises less and stays below the other from August on."
+#| fig-width: 9
+#| fig-height: 4
+#| lightbox:
+#|   group: computador
+grafico_mensal(aud)
+salvar_capa(aud, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: mensal-celular
+#| echo: false
+#| fig-cap: "Meal allowance paid per crew-day in the field, month by month, in 2025. The dashed line is the same amount without what the audit classified as improper. The mark in August is the switch to a new top-up system."
+#| fig-alt: "Two monthly lines. The amount paid rises from about 205 reais in January to nearly 250 reais in December, with a jump in August. The line without improper payments rises less and stays below the other from August on."
+#| fig-width: 4.5
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_mensal(aud, celular = TRUE)
+```
+:::
+
+`r explica_julho(aud)`
+
+Each lineworker gets one top-up on their meal card per day in the field. The base enters the top-up, the supervisor approves it, and it is paid with no automatic check against the field log or the vacation and leave records. Nobody had looked at all 12 months of records together.
+
+The audit answered three questions, in this order:
+
+1. How much was paid outside an objective rule (duplicates, over the cap, people who were not working)?
+2. How much was paid with no support: no record of the crew in the field that day, or a justification that explains nothing?
+3. Where is it concentrated, and why?
+
+## The rule and the data
+
+The allowance rule:
+
+- Lunch of `r reais_exato(regras$valor[["Almoço"]])` per day in the field.
+- Dinner of `r reais_exato(regras$valor[["Jantar"]])`, only when the field log records an overnight stay for the crew.
+- Extra of up to `r reais_exato(regras$valor[["Extra"]])`, only with one of the listed justifications: "`r tx$justificativas[1]`" or "`r tx$justificativas[2]`".
+- Cap of `r reais_exato(regras$teto)` per person per day, all included, and at most one top-up of each type per day.
+- Only for people who are active, not on vacation or leave, and on a crew that was in the field that day.
+
+The audit covered `r num(aud$recargas)` top-ups from 2025, totaling `r reais(aud$total)`, paid to `r num(aud$pessoas)` people at `r num(aud$bases)` bases, cross-checked against `r num(aud$dias_equipe)` crew-in-the-field records in the log, the HR roster, and HR's vacation and leave records.
+
+## Method
+
+Every top-up goes through the same checks and ends up in one of four conclusions. The audit separates objective errors, which can be recovered, from what only deserves a second look from the base; it draws no conclusion about anyone's intent.
+
+1. **Prepare.** Use the day worked, not the date the top-up was entered, and link each top-up to the HR roster, to leave records and to the person's crew that day.
+2. **Check the objective rules.** Duplicates, person not on duty, dinner with no overnight stay, extra with no justification, and a daily total over the cap. For the cap, only the excess counts as improper.
+3. **Check the support.** Was the crew in the field that day? Is the justification for the extra valid, vague or missing? A term dictionary tolerates typos, so that "deslocamneto acima de 300km" (misspelled, in Portuguese) still counts as valid.
+4. **Compare with what is expected.** For each base and month, the amount per field day is compared with the other bases in the same month. A group falls outside the expected range when it strays much further than bases usually stray from one another (Tukey's criterion, in the code).
+5. **Score the risk.** One point for each signal: rule broken, no field record, vague or missing justification, base and month above the range.
+6. **Conclude.** Each top-up gets one of the four conclusions below.
+
+::: so-computador
+```{r}
+#| label: tabela-conclusoes
+#| echo: false
+tabela(tx$tabela_conclusoes, tx$nomes_conclusoes)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: tabela-conclusoes-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(tx$tabela_conclusoes, tx$nomes_conclusoes))
+```
+:::
+
+```{r}
+#| label: etapa-1-preparar
+#| eval: false
+#| code-summary: "Show the R code for step 1: prepare"
+```
+
+```{r}
+#| label: etapa-2-regras
+#| eval: false
+#| code-summary: "Show the R code for step 2: objective rules"
+```
+
+```{r}
+#| label: etapa-3-lastro
+#| eval: false
+#| code-summary: "Show the R code for step 3: support"
+```
+
+```{r}
+#| label: etapa-4-esperado
+#| eval: false
+#| code-summary: "Show the R code for step 4: expected range"
+```
+
+```{r}
+#| label: etapa-5-score
+#| eval: false
+#| code-summary: "Show the R code for step 5: risk score"
+```
+
+```{r}
+#| label: etapa-6-concluir
+#| eval: false
+#| code-summary: "Show the R code for step 6: conclusion"
+```
+
+## Results
+
+Of the amount paid in the year, `r reais(indevido)` (`r pct(concl("Indevido", "pct"))`) was improper, and another `r reais(concl("Revisar"))` (`r pct(concl("Revisar", "pct"))`) needs confirmation from the base.
+
+::: so-computador
+```{r}
+#| label: conclusoes
+#| echo: false
+#| fig-cap: "The amount paid in 2025, split into the audit's four conclusions."
+#| fig-alt: "A horizontal bar with the year's total. Improper, Review and Watch together take up a little more than a tenth of the bar; the rest is Compliant."
+#| fig-width: 9
+#| fig-height: 1.9
+#| lightbox:
+#|   group: computador
+grafico_conclusoes(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: conclusoes-celular
+#| echo: false
+#| fig-cap: "The amount paid in 2025, split into the audit's four conclusions."
+#| fig-alt: "A horizontal bar with the year's total. Improper, Review and Watch together take up a little more than a tenth of the bar; the rest is Compliant."
+#| fig-width: 4.5
+#| fig-height: 2.6
+#| lightbox:
+#|   group: celular
+grafico_conclusoes(aud, celular = TRUE)
+```
+:::
+
+- **Improper** is what broke an objective rule and can be recovered.
+- **Review** is made up almost entirely of top-ups with no field record: `r reais(valor_de(aud$revisar, "Sem lastro de campo"))` in `r num(valor_de(aud$revisar, "Sem lastro de campo", "recargas"))` top-ups entered on days when the crew does not appear in the log. It may be a gap in the log rather than in the top-up; that is why the base confirms before anything is recovered.
+- **Watch is not an accusation.** Of the `r num(concl("Atenção", "recargas"))` top-ups in Watch, `r num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))` are there only because their base and month were above the expected range; the top-up itself follows the rule. Among them are `r num(parecem_atencao)` records that only looked like errors (entered one or two days late, overnight stay logged late, justification with a typo). The other `r num(valor_de(aud$atencao, "Justificativa vaga", "recargas"))` have a vague justification, such as "ajuste" (adjustment) or "conforme combinado" (as agreed).
+
+### Improper payments by type of defect
+
+::: so-computador
+```{r}
+#| label: defeitos
+#| echo: false
+#| fig-cap: "Improper amount in 2025 by type of defect. For the cap, only the excess over the daily limit."
+#| fig-alt: "Horizontal bars from largest to smallest. Duplicates, in blue, is the largest defect, followed by dinner with no overnight stay, person not on duty, over the cap and extra with no justification."
+#| fig-width: 9
+#| fig-height: 3.2
+#| lightbox:
+#|   group: computador
+grafico_defeitos(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: defeitos-celular
+#| echo: false
+#| fig-cap: "Improper amount in 2025 by type of defect. For the cap, only the excess over the daily limit."
+#| fig-alt: "Horizontal bars from largest to smallest. Duplicates, in blue, is the largest defect, followed by dinner with no overnight stay, person not on duty, over the cap and extra with no justification."
+#| fig-width: 4.5
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_defeitos(aud, celular = TRUE)
+```
+:::
+
+### What explains the jump in the second half
+
+The amount per field day rose by `r reais_exato(s$total, 2)`. Of that increase, `r reais_exato(s$indevido, 2)` (`r pct(100 * s$indevido / s$total, 0)`) came from improper payments. Another `r reais_exato(s$jantar, 2)` (`r pct(100 * s$jantar / s$total, 0)`) came from more legitimate dinners, because overnight stays went from `r pct(100 * s$pernoite_h1)` to `r pct(100 * s$pernoite_h2)` of field days. The remaining `r reais_exato(s$outros, 2)` came from the extras that come with overnight stays.
+
+## Where and why
+
+- **The August system switch created duplicates.** Through July they add up to `r reais(dup_ate_julho)`; from August to December, `r reais(dup_depois)`. The new system accepts two top-ups of the same type for the same person on the same day.
+- **The HR roster arrives late.** Of the top-ups paid to people on vacation, `r pct(ferias_5, 0)` fell in the first five days of the vacation period: the base only learns about the vacation after it has started.
+- **Two bases pay dinner with no overnight stay.** `r nome_base(bases_jantar$base[1])` and `r nome_base(bases_jantar$base[2])` account for `r pct(jantar_duas, 0)` of dinners with no overnight stay, and they are the only bases with months above the expected range: `r num(bases_jantar$meses_fora[1])` months at the first and `r num(bases_jantar$meses_fora[2])` at the second.
+
+::: so-computador
+```{r}
+#| label: faixa
+#| echo: false
+#| fig-cap: "Amount paid per crew-day in the field, by base and month, against the expected range (gray area). Blue points are the months above the range."
+#| fig-alt: "Eight small charts, one per base. At six bases the line stays inside the gray range all year. At bases 3 and 6, in blue, the line goes above the range in three months each."
+#| fig-width: 9
+#| fig-height: 4.6
+#| lightbox:
+#|   group: computador
+grafico_faixa(aud)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: faixa-celular
+#| echo: false
+#| fig-cap: "Amount paid per crew-day in the field, by base and month, against the expected range (gray area). Blue points are the months above the range."
+#| fig-alt: "Eight small charts, one per base. At six bases the line stays inside the gray range all year. At bases 3 and 6, in blue, the line goes above the range in three months each."
+#| fig-width: 4.5
+#| fig-height: 7.5
+#| lightbox:
+#|   group: celular
+grafico_faixa(aud, celular = TRUE)
+```
+:::
+
+## Cases to review
+
+The full list has `r num(aud$casos)` top-ups classified as Improper or Review, sorted by conclusion, risk and amount, and can be downloaded at the top of the page. Below, first the `r num(sum(aud$top_revisar$conclusao == "Indevido"))` people with the largest improper amount (only the improper part of each top-up), then the `r num(sum(aud$top_revisar$conclusao == "Revisar"))` with the largest amount to review.
+
+::: so-computador
+```{r}
+#| label: top-revisar
+#| echo: false
+tabela(top_revisar_fmt(aud), tx$nomes_top, alinhar_top)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: top-revisar-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(top_revisar_fmt(aud), tx$nomes_top))
+```
+:::
+
+## How we know the audit got it right
+
+Because the data for this case were generated by a script, the audit could be checked against what the generator planted: it found all `r num(plantados)` planted defects, and none of the `r num(parecem_total)` records that only looked like errors ended up as Improper or Review. The audit does not read the answer key; a separate script compares the two at the end. Real data have no answer key, and that check is done with the base: a sample of cases from each conclusion is reviewed with people who know the process before the report is closed.
+
+## Recommendations
+
+Each finding becomes a fix in the process, so the problem does not come back the following year.
+
+::: so-computador
+```{r}
+#| label: recomendacoes
+#| echo: false
+tabela(tx$recomendacoes, tx$nomes_recomendacoes)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: recomendacoes-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(tx$recomendacoes, tx$nomes_recomendacoes))
+```
+:::
+
+The audit also leaves three KPIs to track every month:
+
+- **Improper top-up rate:** improper amount ÷ amount paid, with a target below 0.5%.
+- **Field record coverage:** top-ups with the crew recorded in the field ÷ total top-ups, with a target above 99%.
+- **Amount per field day:** by base, against the expected range.
+
+## What this case demonstrates
+
+- **Cross-checking sources nobody cross-checked.** The error was not in any single source, but in the lack of checks between the card, the field log and HR.
+- **Separating objective errors from suspicion.** Only what breaks a rule goes to recovery; the rest goes back to the base to confirm, without accusing anyone.
+- **A number that explains the problem.** The jump in the second half was split into what is improper and what is legitimate, instead of turning into a blanket order to cut costs.
+- **A report that can be rerun.** The code stays with the company, and the same report runs the following year with new data.
+
+::: cta-final
+## Does your company pay a benefit, reimbursement or allowance without cross-checking it against another source?
+
+Tell me how it works today and I will tell you what can be checked.
+
+[Get in touch](../../contact.qmd){.btn .btn-primary}
+:::

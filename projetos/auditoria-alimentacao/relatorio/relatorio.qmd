@@ -1,10 +1,10 @@
 ---
-title: "Auditoria do benefício de alimentação em campo"
-subtitle: "Fiorena Redes Elétricas S.A. · Recargas de janeiro a dezembro de 2025"
-author: "Felipe Fonseca · Orbita Space"
-date: "2026-10-15"
-date-format: "D [de] MMMM [de] YYYY"
-lang: pt-BR
+# Relatório em PDF do caso Auditoria, nas três línguas. O mesmo arquivo gera
+# relatorio.pdf (PT), relatorio-es.pdf e relatorio-en.pdf; o render.ps1 passa
+# a língua com -P idioma:es. O texto corrido fica em textos_<idioma>.yml, com
+# trechos de R entre chaves que o glue preenche (todos os números vêm do .rds).
+params:
+  idioma: pt
 format:
   typst:
     papersize: a4
@@ -21,11 +21,13 @@ format:
         #show heading: set text(fill: rgb("#1a1a2e"), weight: "bold")
         #show link: set text(fill: rgb("#3473C0"))
         #set table(stroke: (x, y) => if y == 0 { (bottom: 0.6pt + rgb("#4a4a63")) } else { (bottom: 0.3pt + rgb("#d5d7e0")) })
+        // O texto do rodapé e o "de"/"of" da numeração vêm da língua: o corpo
+        // do documento grava os dois nestes states.
         #set page(footer: context [
           #set text(size: 7.5pt, fill: rgb("#8b8fa3"))
-          Caso fictício: empresa, pessoas e dados fictícios. O método é real.
+          #state("rodape", "").final()
           #h(1fr)
-          #counter(page).display("1 de 1", both: true)
+          #counter(page).display("1 " + state("de", "de").final() + " 1", both: true)
         ])
 execute:
   echo: false
@@ -47,49 +49,62 @@ library(knitr)
 # funções de scripts/apresentacao.R. Ele é gerado à parte (relatorio/ tem o
 # seu próprio _quarto.yml) pelo render.ps1, e a página só aponta para o PDF.
 caso <- ".."
+source(file.path(caso, "scripts/rotulos.R"))
 source(file.path(caso, "scripts/apresentacao.R"))
-aud <- ler_auditoria(caso)
-conf <- aud$conferencia
-valor_de <- function(tab, chave, col = "valor") tab[[col]][tab[[1]] == chave]
-concl <- \(k, col = "valor") valor_de(aud$conclusoes, k, col)
-s <- aud$salto
-regras <- aud$regras
-dup_ate_julho <- sum(aud$dup_mes$valor[aud$dup_mes$mes <= "2025-07"])
-dup_depois <- sum(aud$dup_mes$valor[aud$dup_mes$mes >= "2025-08"])
-ferias_5 <- with(aud$ferias_dia, 100 * sum(n[dia_do_periodo <= 5]) / sum(n))
-bases_jantar <- head(aud$jantar_base, 2)
-jantar_duas <- 100 * sum(bases_jantar$valor) / sum(aud$jantar_base$valor)
-nome_base <- \(b) paste("Base", substr(b, 2, 2))
-plantados <- sum(conf$deteccao$plantados)
-parecem <- conf$casos_falsos |> summarise(across(-c(falso, grupo_acima_da_faixa), sum))
+aud <- ler_auditoria(caso, params$idioma)
+tx <- aud$tx
+preparar_texto(aud)
+t <- yaml::read_yaml(sprintf("textos_%s.yml", params$idioma))
+# Preenche os trechos {…} do texto com os valores calculados.
+amb <- environment()
+f <- function(x) glue::glue(x, .envir = amb, .trim = FALSE)
+bloco <- function(x) cat(f(x), "\n", sep = "")
+typst <- function(x) cat("```{=typst}\n", x, "\n```\n", sep = "")
+# Texto dentro de [...] no Typst: só os caracteres especiais precisam de escape.
+esc_typst <- function(x) gsub("([#$*_@<>\\[\\]\\\\])", "\\\\\\1", x, perl = TRUE)
 ```
 
-# Resumo
+```{r}
+#| output: asis
+# Cabeçalho, rodapé e língua do documento (hifenização, aspas).
+typst(paste0(
+  '#set text(lang: "', params$idioma, '")\n',
+  '#state("rodape").update("', t$rodape, '")\n',
+  '#state("de").update("', t$de, '")\n',
+  '#align(center)[\n',
+  '  #text(size: 17pt, weight: "bold")[', esc_typst(t$titulo), ']\n',
+  '  #v(0.2em)\n',
+  '  #text(size: 12.5pt, weight: "bold")[', esc_typst(t$subtitulo), ']\n',
+  '  #v(1.2em)\n',
+  '  ', esc_typst(t$autor), '\n',
+  '  #v(1.2em)\n',
+  '  ', esc_typst(tx$data_longa("2026-10-15")), '\n',
+  ']\n',
+  '#v(0.6em)'))
+```
 
-A controladoria pediu uma resposta para uma pergunta: o valor pago em alimentação por dia de equipe em campo subiu `r pct(s$pct)` do primeiro para o segundo semestre de 2025; quanto disso é gasto legítimo e quanto foi pago fora da regra?
+# `r t$s_resumo`
 
-- Foram auditadas `r num(aud$recargas)` recargas, no total de `r reais(aud$total)`.
-- **`r reais_exato(concl("Indevido"))` (`r pct(concl("Indevido", "pct"))`) foram pagos fora de uma regra objetiva** e podem ser estornados ou recuperados.
-- `r reais_exato(concl("Revisar"))` (`r pct(concl("Revisar", "pct"))`) não têm lastro no diário de campo e precisam de confirmação da base.
-- O indevido explica `r pct(100 * s$indevido / s$total, 0)` do salto do segundo semestre; `r pct(100 * s$jantar / s$total, 0)` vieram de mais pernoites, que são legítimos.
-- O maior defeito é a duplicidade criada pela troca do sistema de recarga em agosto.
+```{r}
+#| output: asis
+bloco(t$resumo)
+```
 
-# A regra auditada
+# `r t$s_regra`
 
-Almoço de `r reais_exato(regras$valor[["Almoço"]])` por dia em campo; jantar de `r reais_exato(regras$valor[["Jantar"]])` só com pernoite registrado no diário; extra de até `r reais_exato(regras$valor[["Extra"]])` só com justificativa da lista ("`r regras$justificativas[1]`" ou "`r regras$justificativas[2]`"); teto de `r reais_exato(regras$teto)` por pessoa por dia; uma recarga de cada tipo por dia; só para quem está ativo, fora de férias e afastamentos, numa equipe em campo naquele dia.
+```{r}
+#| output: asis
+bloco(t$regra)
+```
 
-As recargas foram cruzadas com `r num(aud$dias_equipe)` registros de equipe em campo no diário, com o cadastro de `r num(aud$pessoas)` pessoas e com as férias e afastamentos do RH.
+# `r t$s_metodo`
 
-# Método
+```{r}
+#| output: asis
+bloco(t$metodo)
+```
 
-1. **Preparar:** usar o dia trabalhado, e não a data do lançamento, e ligar cada recarga ao cadastro, às ausências e ao diário de campo.
-2. **Regras objetivas:** duplicidade, pessoa fora do trabalho, jantar sem pernoite, extra sem justificativa e teto diário (só o excedente é indevido).
-3. **Lastro:** a equipe estava em campo? A justificativa do extra é válida, vaga ou ausente (com tolerância a erro de digitação)?
-4. **Esperado:** cada base e mês comparados com as outras bases no mesmo mês; fica fora da faixa o grupo que se afasta muito mais do que o normal (critério de Tukey sobre o valor por dia em campo dividido pela mediana das bases no mês, com pelo menos 15 dias de equipe no grupo).
-5. **Score de risco:** um ponto por sinal (regra violada, sem lastro, justificativa vaga ou ausente, base e mês acima da faixa).
-6. **Conclusão:** Indevido (regra violada), Revisar (sem lastro ou dois sinais ou mais), Atenção (um sinal), Regular (nenhum).
-
-# Resultados
+# `r t$s_resultados`
 
 ```{r}
 #| fig-width: 7
@@ -99,13 +114,17 @@ grafico_conclusoes(aud)
 
 ```{r}
 aud$conclusoes |>
-  transmute(conclusao = as.character(conclusao), recargas = num(recargas), valor = reais_exato(valor), pct = pct(pct)) |>
-  tabela(c("Conclusão", "Recargas", "Valor", "% do valor"), c("l", "r", "r", "r"))
+  transmute(conclusao = traduzir(conclusao, tx$conclusoes), recargas = num(recargas),
+            valor = reais_exato(valor), pct = pct(pct)) |>
+  tabela(tx$nomes_tabela_pdf, c("l", "r", "r", "r"))
 ```
 
-Revisar é quase todo formado por recargas sem lastro de campo (`r reais_exato(valor_de(aud$revisar, "Sem lastro de campo"))`). Atenção não é acusação: `r num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))` das `r num(concl("Atenção", "recargas"))` recargas em Atenção estão lá só porque a base e o mês ficaram acima da faixa; a recarga em si cumpre a regra.
+```{r}
+#| output: asis
+bloco(t$resultados)
+```
 
-## Indevido por tipo de defeito
+## `r t$s_defeitos`
 
 ```{r}
 #| fig-width: 7
@@ -113,7 +132,7 @@ Revisar é quase todo formado por recargas sem lastro de campo (`r reais_exato(v
 grafico_defeitos(aud)
 ```
 
-## O salto do segundo semestre
+## `r t$s_salto`
 
 ```{r}
 #| fig-width: 7
@@ -121,15 +140,18 @@ grafico_defeitos(aud)
 grafico_mensal(aud)
 ```
 
-O valor por dia em campo passou de `r reais_exato(s$h1, 2)` para `r reais_exato(s$h2, 2)`. Do aumento de `r reais_exato(s$total, 2)`, `r reais_exato(s$indevido, 2)` vieram de pagamentos indevidos e `r reais_exato(s$jantar, 2)` de mais jantares legítimos (os pernoites passaram de `r pct(100 * s$pernoite_h1)` para `r pct(100 * s$pernoite_h2)` dos dias em campo); o resto, `r reais_exato(s$outros, 2)`, veio dos extras que acompanham os pernoites.
+```{r}
+#| output: asis
+bloco(t$salto)
+cat(explica_julho(aud), "\n", sep = "")
+```
 
-`r explica_julho(aud)`
+# `r t$s_achados`
 
-# Achados
-
-- **Troca de sistema em agosto.** Duplicidades de `r reais_exato(dup_ate_julho)` até julho e de `r reais_exato(dup_depois)` de agosto a dezembro.
-- **Cadastro atrasado.** `r pct(ferias_5, 0)` das recargas pagas em férias caíram nos cinco primeiros dias do período.
-- **Jantar sem pernoite em duas bases.** `r nome_base(bases_jantar$base[1])` e `r nome_base(bases_jantar$base[2])` concentram `r pct(jantar_duas, 0)` do jantar sem pernoite e são as únicas bases com meses acima da faixa esperada.
+```{r}
+#| output: asis
+bloco(t$achados)
+```
 
 ```{r}
 #| fig-width: 7
@@ -137,55 +159,65 @@ O valor por dia em campo passou de `r reais_exato(s$h1, 2)` para `r reais_exato(
 grafico_faixa(aud)
 ```
 
-# Casos para revisar
-
-A lista completa (`r num(aud$casos)` recargas classificadas como Indevido ou Revisar) acompanha este relatório em CSV. Primeiro, as `r num(sum(aud$top_revisar$conclusao == "Indevido"))` pessoas com maior valor indevido (só a parte indevida de cada recarga); depois, as `r num(sum(aud$top_revisar$conclusao == "Revisar"))` com maior valor para revisar:
+# `r t$s_casos`
 
 ```{r}
-# No PDF, o motivo vai em rótulo curto, para a tabela não quebrar linha.
-curto <- c("Duplicidade" = "Duplicidade", "Jantar sem pernoite" = "Sem pernoite",
-           "Pessoa fora do trabalho" = "Fora do trabalho", "Acima do teto" = "Acima do teto",
-           "Extra sem justificativa" = "Extra s/ justif.", "Sem lastro de campo" = "Sem lastro")
-casos_pdf <- top_revisar_fmt(aud) |> mutate(motivo = coalesce(unname(curto[motivo]), motivo))
-```
-
-```{=typst}
-// Só esta tabela fica um ponto menor, para o relatório caber em 4 páginas.
-#show table: set text(size: 8.5pt)
-```
-
-```{r}
-tabela(casos_pdf, nomes_top, alinhar_top)
-```
-
-```{=typst}
-#show table: set text(size: 9.5pt)
+#| output: asis
+bloco(t$casos)
 ```
 
 ```{r}
 #| output: asis
-usados <- unique(top_revisar_fmt(aud)$motivo)
-cat("```{=typst}\n#text(size: 8pt, fill: rgb(\"#4a4a63\"))[Motivo: ",
-    paste0(curto[usados], " = ", tolower(usados), collapse = "; "), ".]\n```\n", sep = "")
+# Só esta tabela fica um ponto menor, para o relatório caber em 4 páginas; o
+# motivo vai em rótulo curto, para não quebrar linha.
+typst("#show table: set text(size: 8.5pt)")
 ```
 
-# Recomendações
-
-| Achado | Correção recomendada | Responsável |
-|---|---|---|
-| Duplicidade depois da troca de sistema | Bloqueio no sistema de uma recarga por tipo, pessoa e dia | TI e fornecedor do cartão |
-| Cadastro atrasado | Lista diária de férias, afastamentos e desligamentos enviada ao sistema de recarga | RH |
-| Jantar sem pernoite | Jantar só liberado quando o diário registra pernoite | Operação e supervisores das bases |
-| Acima do teto | Teto diário aplicado pelo próprio sistema | TI |
-| Justificativa vaga | Justificativa escolhida numa lista fechada, não digitada | Controladoria |
-| Valores já pagos como indevido | Estorno ou recuperação conforme a política da empresa | RH, com apoio do jurídico |
-
-Indicadores para acompanhar todo mês: taxa de recargas indevidas (meta abaixo de 0,5% do valor pago), cobertura de lastro (meta acima de 99% das recargas com equipe registrada em campo) e valor por dia em campo por base, contra a faixa esperada.
-
-```{=typst}
-#v(-0.6em)
+```{r}
+#| output: asis
+# Tabela de casos em Typst direto, com colunas automáticas: a tabela do
+# Markdown fixa larguras em percentuais e quebra o motivo em duas linhas.
+casos_pdf <- top_revisar_fmt(aud, curto = TRUE)
+celula <- \(x) paste0("[", esc_typst(gsub(" ", "~", x)), "]")
+alinhamento <- paste0("(", paste(ifelse(alinhar_top == "r", "right", "left"), collapse = ", "), ")")
+typst(paste0(
+  "#table(columns: ", ncol(casos_pdf), ", align: ", alinhamento, ", inset: (x: 5pt, y: 4.5pt),\n",
+  "  ", paste(celula(tx$nomes_top), collapse = ", "), ",\n",
+  paste0("  ", apply(casos_pdf, 1, \(l) paste(celula(l), collapse = ", ")), ",", collapse = "\n"),
+  "\n)"))
 ```
 
-# Nota sobre os dados
+```{r}
+#| output: asis
+typst("#show table: set text(size: 9.5pt)")
+# Linha de legenda com os rótulos curtos que aparecem na tabela.
+usados <- unique(aud$top_revisar$motivo)
+explicar <- unlist(t$legenda_motivos[intersect(usados, names(t$legenda_motivos))])
+if (length(explicar)) {
+  typst(paste0('#text(size: 8pt, fill: rgb("#4a4a63"))[', esc_typst(tx$legenda_motivo), ": ",
+               esc_typst(paste(explicar, collapse = "; ")), ".]"))
+}
+```
 
-Este é um caso de demonstração: a empresa, as pessoas e os lançamentos são fictícios, gerados por script com defeitos de tamanho conhecido. Por isso foi possível conferir que a auditoria encontrou os `r num(plantados)` defeitos plantados e que nenhum dos `r num(sum(parecem))` lançamentos que só pareciam erro virou Indevido ou Revisar. Com dados reais, essa conferência é feita com a base, revisando uma amostra de cada conclusão com quem conhece o processo.
+# `r t$s_recomendacoes`
+
+```{r}
+tabela(tx$recomendacoes, tx$nomes_recomendacoes)
+```
+
+```{r}
+#| output: asis
+bloco(t$indicadores)
+typst("#v(-0.6em)")
+```
+
+# `r t$s_nota`
+
+```{r}
+#| output: asis
+bloco(t$nota)
+# O relatório precisa caber em 4 páginas: se passar, o Typst para com erro e o
+# render.ps1 também.
+typst(paste0('#context { if counter(page).final().first() > 4 { panic("',
+             "relatório em ", params$idioma, ' passou de 4 páginas") } }'))
+```

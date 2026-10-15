@@ -32,7 +32,7 @@
     "href": "en/services.html#reports",
     "title": "Services",
     "section": "Data reports and audits",
-    "text": "Data reports and audits\n\nWho it is for\nCompanies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.\n\n\nWhat I deliver\n\nAn analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.\nA list of cases to review, ranked by risk and by amount.\nPractical recommendations and KPIs to keep track of the problem afterward.\nThe analysis code, so you can rerun the report whenever you want.\n\n\n\nHow I work\nI start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process."
+    "text": "Data reports and audits\n\nWho it is for\nCompanies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.\n\n\nWhat I deliver\n\nAn analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.\nA list of cases to review, ranked by risk and by amount.\nPractical recommendations and KPIs to keep track of the problem afterward.\nThe analysis code, so you can rerun the report whenever you want.\n\n\n\nHow I work\nI start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process.\nSee reports and audits"
   },
   {
     "objectID": "en/services.html#pricing-on-request",
@@ -89,125 +89,6 @@
     "title": "Employee turnover in supermarkets: statistical consulting for an undergraduate thesis",
     "section": "Have a survey to analyze?",
     "text": "Have a survey to analyze?\nIt could be an undergraduate thesis, a master’s thesis or an internal company survey. Send me the project and the spreadsheet of responses, and I will tell you what can be done and how.\nGet in touch"
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html",
-    "href": "en/projects/absenteeism-radar/index.html",
-    "title": "Absenteeism Radar",
-    "section": "",
-    "text": "Fictional data. The company (Vallora Logística S.A.), its sites, managers and employees do not exist. I built the dataset from scratch in Python to reproduce problems found in real data. No number on this page describes a real organization.\nThe dashboard screenshots are in Portuguese, the project’s original language."
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#the-problem",
-    "href": "en/projects/absenteeism-radar/index.html#the-problem",
-    "title": "Absenteeism Radar",
-    "section": "The problem",
-    "text": "The problem\nA logistics operator with four distribution centers and about 1,250 people tracked absenteeism with a single monthly number. Over two years it did not move: 3.77% in 2024 and 3.77% in 2025. As far as leadership was concerned, the issue was under control.\nOperations managers disagreed. They talked about more overtime to cover night-shift absences and more accidents among new hires. The number was right, and so was the perception; what was missing was a way to see both at once."
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
-    "href": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
-    "title": "Absenteeism Radar",
-    "section": "What the dashboard showed",
-    "text": "What the dashboard showed\n\nThe stability was arithmetic. The end of an infectious disease outbreak and fewer long-term absences offset an 8% rise in all other short-term absences.\nThe rise had an address. In two night-shift teams at the Duque de Caxias site, one in Picking and one in Shipping (Separação e Expedição), the short-term rate went from 3.5% to 6.5% starting in April 2025. The rest of that site and the night shift at the other sites did not change. Both teams had changed supervisors a few weeks earlier: a lead worth investigating, not a conclusion.\nThe night shift has a higher rate across the whole company (adjusted rate ratio of 1.31), and new hires are absent 1.8 times as often.\nA few events account for many hours: 1.6% of events make up 34% of lost hours.\nOne apparent association was spurious. Large teams seemed to have more absences, but the only very large team worked nights. Once you split by shift, the effect disappears."
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#gallery",
-    "href": "en/projects/absenteeism-radar/index.html#gallery",
-    "title": "Absenteeism Radar",
-    "section": "Gallery",
-    "text": "Gallery\nClick a screen to enlarge it.\n\n\n1. Executive overview: where does absenteeism stand, and where should we act first?\n2. Trends over time: when does it happen, and where is it heading?\n3. Critical areas: which areas stand out, and is it real or chance?\n4. Absence profile: many short absences or a few long ones?\n5. Group analysis: which groups are absent differently, without exposing anyone?\n6. Diagnosis: what is the story, and what should we investigate?\n7. Data quality and methodology: can I trust these numbers?"
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#how-it-was-built",
-    "href": "en/projects/absenteeism-radar/index.html#how-it-was-built",
-    "title": "Absenteeism Radar",
-    "section": "How it was built",
-    "text": "How it was built\nThe data. Thirteen tables in the export format of a Brazilian ERP: pseudonymized records for 1,826 people, scheduled hours for every day (662 thousand rows) and 13.6 thousand absence events. Recording each day’s scheduled hours is what makes it possible to calculate the rate in hours and handle late arrivals, part-time schedules, vacations and mid-month hires correctly. I also injected 146 typical extraction defects (duplicates, reversed dates, orphan keys, inconsistent spellings) so the data cleaning had something concrete to solve.\nThe cleaning. 26 Power Query queries clean and validate the data. One dashboard page shows what was fixed and how much, so readers know whether they can trust the numbers.\nThe model. A star schema with three fact tables at different grains (scheduled hours, absence per day and absence event) and 97 DAX measures, organized by topic.\nThe statistics. Three choices define the project:\n\nBreak it down before comparing. The total rate is always split into short-term (up to 15 days, the part a line manager can influence) and long-term (absences managed by occupational health).\nRequire evidence before raising an alarm. An area is flagged as critical only if the deviation is large and statistically consistent (z-score of event frequency). A six-person team with one long absence does not trigger an alert.\nTest the obvious associations. A negative binomial model, adjusted for site, department, shift, age, sex, tenure and year, separated what holds up (night shift, tenure, site) from what does not (team size, sex).\n\nThe report as code. A single specification describes every visual (position, fields, measures and the question it answers). From it, a Python script generated the first version of the report, in Power BI’s project format, along with the documentation and the wireframes. The dashboard was then refined in Power BI Desktop. An audit script still checks that every measure used exists in the model and that every number quoted matches the data.\nPrivacy as a requirement. No names, national ID numbers or email addresses; health reasons only in aggregate; groups smaller than 10 people suppressed; row-level security by site and by manager; and an explicit note that the dashboard is not meant for disciplinary use.\nView the repository on GitHub"
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
-    "href": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
-    "title": "Absenteeism Radar",
-    "section": "What this project demonstrates",
-    "text": "What this project demonstrates\n\nUnderstanding the business before opening Power BI: the right question was “where did the rate get worse”, not “what is the rate”.\nDimensional modeling and DAX on data with different grains and calculation rules that change the result.\nStatistics applied to decisions: decomposition, consistency tests and control for confounding, without mistaking association for cause.\nDesign and communication: each page answers one question, status is always labeled and the palette is restrained.\nGovernance and privacy: documented rules, visible data quality and protection for small groups."
-  },
-  {
-    "objectID": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
-    "href": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
-    "title": "Absenteeism Radar",
-    "section": "Want this dashboard with your company’s data?",
-    "text": "Want this dashboard with your company’s data?\nThe same structure works with an export from your payroll or time-and-attendance system. Tell me what your data looks like today and I will tell you what can be done.\nGet in touch"
-  },
-  {
-    "objectID": "en/contact.html",
-    "href": "en/contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.\n\n\nWhatsApp\nClick to start a chat\n+55 37 98412-9390\n\n\nEmail\nfelipe.fonseca@orbitaspace.com.br\n\nCopy email\n\n\n\nLinkedIn\nlinkedin.com/in/fpzfonseca\n\n\nGitHub\ngithub.com/fefonsek\n\n\nI work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English."
-  },
-  {
-    "objectID": "en/about.html",
-    "href": "en/about.html",
-    "title": "About",
-    "section": "",
-    "text": "I hold a bachelor’s degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master’s Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision."
-  },
-  {
-    "objectID": "en/about.html#experience",
-    "href": "en/about.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience\nI was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company’s KPI governance. Some of the work from that period:\n\na working hours monitoring dashboard, with hours worked and overtime alerts;\nlegal department KPIs, such as litigation volume and success rate, with data received through an API;\nmonitoring of traffic violations by fleet drivers;\npersonal protective equipment (PPE) inventory;\nmigration of the company’s BI platform;\nanalytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;\nKPI curation and governance."
-  },
-  {
-    "objectID": "en/about.html#tools",
-    "href": "en/about.html#tools",
-    "title": "About",
-    "section": "Tools",
-    "text": "Tools\nPower BI, DAX, Power Query, Python, R, Excel and Quarto."
-  },
-  {
-    "objectID": "en/about.html#languages",
-    "href": "en/about.html#languages",
-    "title": "About",
-    "section": "Languages",
-    "text": "Languages\nNative Portuguese, fluent Spanish, advanced English."
-  },
-  {
-    "objectID": "en/about.html#where-i-am",
-    "href": "en/about.html#where-i-am",
-    "title": "About",
-    "section": "Where I am",
-    "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
-  },
-  {
-    "objectID": "en/blog.html",
-    "href": "en/blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "en/index.html",
-    "href": "en/index.html",
-    "title": "Orbita Space",
-    "section": "",
-    "text": "by Felipe Fonseca · Data Consultant | Statistics and BI\nI help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.\n\nSee projects Get in touch"
-  },
-  {
-    "objectID": "en/index.html#featured-project",
-    "href": "en/index.html#featured-project",
-    "title": "Orbita Space",
-    "section": "Featured project",
-    "text": "Featured project\n\n\n\nProject · Power BI\n\nAbsenteeism Radar\nA company’s absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.\nFictional company and data; real method, modeling and analysis.\nSee the project"
-  },
-  {
-    "objectID": "en/index.html#what-i-do",
-    "href": "en/index.html#what-i-do",
-    "title": "Orbita Space",
-    "section": "What I do",
-    "text": "What I do\n\n\nPower BI dashboards\nFrom raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.\n\n\nStatistical analysis for academic research\nPlanning, analysis and interpretation of results for undergraduate theses, master’s theses and doctoral dissertations.\n\n\nKPI consulting\nDeciding what to measure, how to calculate it and who owns each number.\n\n\nSee services"
   },
   {
     "objectID": "en/projects/kpi-governance/index.html",
@@ -287,10 +168,206 @@
     "text": "Does your company argue about which number is right before discussing what to do about it?\nTell me how your KPIs are calculated today and I will tell you where to start.\nGet in touch"
   },
   {
+    "objectID": "en/index.html",
+    "href": "en/index.html",
+    "title": "Orbita Space",
+    "section": "",
+    "text": "by Felipe Fonseca · Data Consultant | Statistics and BI\nI help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.\n\nSee projects Get in touch"
+  },
+  {
+    "objectID": "en/index.html#featured-project",
+    "href": "en/index.html#featured-project",
+    "title": "Orbita Space",
+    "section": "Featured project",
+    "text": "Featured project\n\n\n\nProject · Power BI\n\nAbsenteeism Radar\nA company’s absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.\nFictional company and data; real method, modeling and analysis.\nSee the project"
+  },
+  {
+    "objectID": "en/index.html#what-i-do",
+    "href": "en/index.html#what-i-do",
+    "title": "Orbita Space",
+    "section": "What I do",
+    "text": "What I do\n\n\nPower BI dashboards\nFrom raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.\n\n\nStatistical analysis for academic research\nPlanning, analysis and interpretation of results for undergraduate theses, master’s theses and doctoral dissertations.\n\n\nKPI consulting\nDeciding what to measure, how to calculate it and who owns each number.\n\n\nSee services"
+  },
+  {
+    "objectID": "en/blog.html",
+    "href": "en/blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "en/about.html",
+    "href": "en/about.html",
+    "title": "About",
+    "section": "",
+    "text": "I hold a bachelor’s degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master’s Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision."
+  },
+  {
+    "objectID": "en/about.html#experience",
+    "href": "en/about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nI was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company’s KPI governance. Some of the work from that period:\n\na working hours monitoring dashboard, with hours worked and overtime alerts;\nlegal department KPIs, such as litigation volume and success rate, with data received through an API;\nmonitoring of traffic violations by fleet drivers;\npersonal protective equipment (PPE) inventory;\nmigration of the company’s BI platform;\nanalytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;\nKPI curation and governance."
+  },
+  {
+    "objectID": "en/about.html#tools",
+    "href": "en/about.html#tools",
+    "title": "About",
+    "section": "Tools",
+    "text": "Tools\nPower BI, DAX, Power Query, Python, R, Excel and Quarto."
+  },
+  {
+    "objectID": "en/about.html#languages",
+    "href": "en/about.html#languages",
+    "title": "About",
+    "section": "Languages",
+    "text": "Languages\nNative Portuguese, fluent Spanish, advanced English."
+  },
+  {
+    "objectID": "en/about.html#where-i-am",
+    "href": "en/about.html#where-i-am",
+    "title": "About",
+    "section": "Where I am",
+    "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
+  },
+  {
+    "objectID": "en/contact.html",
+    "href": "en/contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.\n\n\nWhatsApp\nClick to start a chat\n+55 37 98412-9390\n\n\nEmail\nfelipe.fonseca@orbitaspace.com.br\n\nCopy email\n\n\n\nLinkedIn\nlinkedin.com/in/fpzfonseca\n\n\nGitHub\ngithub.com/fefonsek\n\n\nI work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html",
+    "href": "en/projects/absenteeism-radar/index.html",
+    "title": "Absenteeism Radar",
+    "section": "",
+    "text": "Fictional data. The company (Vallora Logística S.A.), its sites, managers and employees do not exist. I built the dataset from scratch in Python to reproduce problems found in real data. No number on this page describes a real organization.\nThe dashboard screenshots are in Portuguese, the project’s original language."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#the-problem",
+    "href": "en/projects/absenteeism-radar/index.html#the-problem",
+    "title": "Absenteeism Radar",
+    "section": "The problem",
+    "text": "The problem\nA logistics operator with four distribution centers and about 1,250 people tracked absenteeism with a single monthly number. Over two years it did not move: 3.77% in 2024 and 3.77% in 2025. As far as leadership was concerned, the issue was under control.\nOperations managers disagreed. They talked about more overtime to cover night-shift absences and more accidents among new hires. The number was right, and so was the perception; what was missing was a way to see both at once."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
+    "href": "en/projects/absenteeism-radar/index.html#what-the-dashboard-showed",
+    "title": "Absenteeism Radar",
+    "section": "What the dashboard showed",
+    "text": "What the dashboard showed\n\nThe stability was arithmetic. The end of an infectious disease outbreak and fewer long-term absences offset an 8% rise in all other short-term absences.\nThe rise had an address. In two night-shift teams at the Duque de Caxias site, one in Picking and one in Shipping (Separação e Expedição), the short-term rate went from 3.5% to 6.5% starting in April 2025. The rest of that site and the night shift at the other sites did not change. Both teams had changed supervisors a few weeks earlier: a lead worth investigating, not a conclusion.\nThe night shift has a higher rate across the whole company (adjusted rate ratio of 1.31), and new hires are absent 1.8 times as often.\nA few events account for many hours: 1.6% of events make up 34% of lost hours.\nOne apparent association was spurious. Large teams seemed to have more absences, but the only very large team worked nights. Once you split by shift, the effect disappears."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#gallery",
+    "href": "en/projects/absenteeism-radar/index.html#gallery",
+    "title": "Absenteeism Radar",
+    "section": "Gallery",
+    "text": "Gallery\nClick a screen to enlarge it.\n\n\n1. Executive overview: where does absenteeism stand, and where should we act first?\n2. Trends over time: when does it happen, and where is it heading?\n3. Critical areas: which areas stand out, and is it real or chance?\n4. Absence profile: many short absences or a few long ones?\n5. Group analysis: which groups are absent differently, without exposing anyone?\n6. Diagnosis: what is the story, and what should we investigate?\n7. Data quality and methodology: can I trust these numbers?"
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#how-it-was-built",
+    "href": "en/projects/absenteeism-radar/index.html#how-it-was-built",
+    "title": "Absenteeism Radar",
+    "section": "How it was built",
+    "text": "How it was built\nThe data. Thirteen tables in the export format of a Brazilian ERP: pseudonymized records for 1,826 people, scheduled hours for every day (662 thousand rows) and 13.6 thousand absence events. Recording each day’s scheduled hours is what makes it possible to calculate the rate in hours and handle late arrivals, part-time schedules, vacations and mid-month hires correctly. I also injected 146 typical extraction defects (duplicates, reversed dates, orphan keys, inconsistent spellings) so the data cleaning had something concrete to solve.\nThe cleaning. 26 Power Query queries clean and validate the data. One dashboard page shows what was fixed and how much, so readers know whether they can trust the numbers.\nThe model. A star schema with three fact tables at different grains (scheduled hours, absence per day and absence event) and 97 DAX measures, organized by topic.\nThe statistics. Three choices define the project:\n\nBreak it down before comparing. The total rate is always split into short-term (up to 15 days, the part a line manager can influence) and long-term (absences managed by occupational health).\nRequire evidence before raising an alarm. An area is flagged as critical only if the deviation is large and statistically consistent (z-score of event frequency). A six-person team with one long absence does not trigger an alert.\nTest the obvious associations. A negative binomial model, adjusted for site, department, shift, age, sex, tenure and year, separated what holds up (night shift, tenure, site) from what does not (team size, sex).\n\nThe report as code. A single specification describes every visual (position, fields, measures and the question it answers). From it, a Python script generated the first version of the report, in Power BI’s project format, along with the documentation and the wireframes. The dashboard was then refined in Power BI Desktop. An audit script still checks that every measure used exists in the model and that every number quoted matches the data.\nPrivacy as a requirement. No names, national ID numbers or email addresses; health reasons only in aggregate; groups smaller than 10 people suppressed; row-level security by site and by manager; and an explicit note that the dashboard is not meant for disciplinary use.\nView the repository on GitHub"
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
+    "href": "en/projects/absenteeism-radar/index.html#what-this-project-demonstrates",
+    "title": "Absenteeism Radar",
+    "section": "What this project demonstrates",
+    "text": "What this project demonstrates\n\nUnderstanding the business before opening Power BI: the right question was “where did the rate get worse”, not “what is the rate”.\nDimensional modeling and DAX on data with different grains and calculation rules that change the result.\nStatistics applied to decisions: decomposition, consistency tests and control for confounding, without mistaking association for cause.\nDesign and communication: each page answers one question, status is always labeled and the palette is restrained.\nGovernance and privacy: documented rules, visible data quality and protection for small groups."
+  },
+  {
+    "objectID": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
+    "href": "en/projects/absenteeism-radar/index.html#want-this-dashboard-with-your-companys-data",
+    "title": "Absenteeism Radar",
+    "section": "Want this dashboard with your company’s data?",
+    "text": "Want this dashboard with your company’s data?\nThe same structure works with an export from your payroll or time-and-attendance system. Tell me what your data looks like today and I will tell you what can be done.\nGet in touch"
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html",
+    "href": "en/projects/meal-allowance-audit/index.html",
+    "title": "Field meal allowance audit",
+    "section": "",
+    "text": "Fictional case. Fiorena Redes Elétricas S.A., its bases, people and records do not exist. The data were generated from scratch by an R script, with made-up allowance rules and defects of known size. The method is real.\nDownload the report (PDF) · Download the cases to review (CSV)\nThe comments in the R code are in Portuguese, the case’s original language."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#the-question",
+    "href": "en/projects/meal-allowance-audit/index.html#the-question",
+    "title": "Field meal allowance audit",
+    "section": "The question",
+    "text": "The question\nFiorena’s financial control team saw the meal allowance paid per crew-day in the field rise from R$ 219 in the first half of 2025 to R$ 239 in the second, 9.5% more, with no change in the allowance amounts or in the type of work. The question was simple: how much of that is legitimate spending, and how much was paid outside the rules?\n\n\n\n\n\n\n\n\n\n\nMeal allowance paid per crew-day in the field, month by month, in 2025. The dashed line is the same amount without what the audit classified as improper. The mark in August is the switch to a new top-up system.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeal allowance paid per crew-day in the field, month by month, in 2025. The dashed line is the same amount without what the audit classified as improper. The mark in August is the switch to a new top-up system.\n\n\n\n\n\nThe July dip has a cause in the data: July and January are the months with the most people on vacation (in July, 81 lineworkers per business day, against 37 in the median month), and each crew went out with 3.5 people, against 3.8 in the median. The amount per person in the field did not fall: it stayed between R$ 58 and R$ 60 from January to July.\nEach lineworker gets one top-up on their meal card per day in the field. The base enters the top-up, the supervisor approves it, and it is paid with no automatic check against the field log or the vacation and leave records. Nobody had looked at all 12 months of records together.\nThe audit answered three questions, in this order:\n\nHow much was paid outside an objective rule (duplicates, over the cap, people who were not working)?\nHow much was paid with no support: no record of the crew in the field that day, or a justification that explains nothing?\nWhere is it concentrated, and why?"
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#the-rule-and-the-data",
+    "href": "en/projects/meal-allowance-audit/index.html#the-rule-and-the-data",
+    "title": "Field meal allowance audit",
+    "section": "The rule and the data",
+    "text": "The rule and the data\nThe allowance rule:\n\nLunch of R$ 52 per day in the field.\nDinner of R$ 44, only when the field log records an overnight stay for the crew.\nExtra of up to R$ 24, only with one of the listed justifications: “travel of more than 300 km” or “workday extended by more than 2 hours”.\nCap of R$ 120 per person per day, all included, and at most one top-up of each type per day.\nOnly for people who are active, not on vacation or leave, and on a crew that was in the field that day.\n\nThe audit covered 155,909 top-ups from 2025, totaling R$ 7.63 million, paid to 649 people at 8 bases, cross-checked against 33,254 crew-in-the-field records in the log, the HR roster, and HR’s vacation and leave records."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#method",
+    "href": "en/projects/meal-allowance-audit/index.html#method",
+    "title": "Field meal allowance audit",
+    "section": "Method",
+    "text": "Method\nEvery top-up goes through the same checks and ends up in one of four conclusions. The audit separates objective errors, which can be recovered, from what only deserves a second look from the base; it draws no conclusion about anyone’s intent.\n\nPrepare. Use the day worked, not the date the top-up was entered, and link each top-up to the HR roster, to leave records and to the person’s crew that day.\nCheck the objective rules. Duplicates, person not on duty, dinner with no overnight stay, extra with no justification, and a daily total over the cap. For the cap, only the excess counts as improper.\nCheck the support. Was the crew in the field that day? Is the justification for the extra valid, vague or missing? A term dictionary tolerates typos, so that “deslocamneto acima de 300km” (misspelled, in Portuguese) still counts as valid.\nCompare with what is expected. For each base and month, the amount per field day is compared with the other bases in the same month. A group falls outside the expected range when it strays much further than bases usually stray from one another (Tukey’s criterion, in the code).\nScore the risk. One point for each signal: rule broken, no field record, vague or missing justification, base and month above the range.\nConclude. Each top-up gets one of the four conclusions below.\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion\nWhen\nWhat to do\n\n\n\n\nImproper\nBroke an objective rule\nReverse or recover, according to company policy and with support from HR and legal\n\n\nReview\nNo rule broken, but no field record, or two signals or more\nThe base confirms or corrects it within 15 days\n\n\nWatch\nA single signal, no rule broken\nGoes into next month’s sample\n\n\nCompliant\nNo signal\nNothing to do\n\n\n\n\n\n\n\n\n\nImproperWhen: Broke an objective ruleWhat to do: Reverse or recover, according to company policy and with support from HR and legalReviewWhen: No rule broken, but no field record, or two signals or moreWhat to do: The base confirms or corrects it within 15 daysWatchWhen: A single signal, no rule brokenWhat to do: Goes into next month's sampleCompliantWhen: No signalWhat to do: Nothing to do\n\n\n\n\nShow the R code for step 1: prepare\n# O que vale é o dia de referência (o dia trabalhado), e não a data em que a\n# recarga foi lançada. Cada recarga é ligada ao cadastro, às ausências e à\n# equipe da pessoa naquele dia no diário de campo.\nrecargas &lt;- read_csv(\"dados/recargas.csv.gz\", show_col_types = FALSE, na = \"\",\n                     col_types = cols(justificativa = \"c\"))\ndiario &lt;- read_csv(\"dados/diario_campo.csv\", show_col_types = FALSE)\ncadastro &lt;- read_csv(\"dados/cadastro.csv\", show_col_types = FALSE, na = \"\")\nausencias &lt;- read_csv(\"dados/ausencias.csv\", show_col_types = FALSE)\n\nbase_auditoria &lt;- recargas |&gt;\n  mutate(dia = dia_referencia) |&gt;\n  left_join(cadastro |&gt; select(matricula, equipe, admissao, desligamento), \"matricula\") |&gt;\n  left_join(ausencias |&gt; select(matricula, tipo_ausencia = tipo, inicio, fim),\n            join_by(matricula, between(dia, inicio, fim))) |&gt;\n  left_join(diario |&gt; transmute(equipe, dia = data, em_campo = TRUE, pernoite = pernoite == \"sim\"),\n            c(\"equipe\", \"dia\")) |&gt;\n  mutate(em_campo = coalesce(em_campo, FALSE))\n\n\n\n\nShow the R code for step 2: objective rules\n# Regras objetivas: cada violação pode ser cobrada. No teto, só o excedente\n# conta como indevido; ele é calculado depois de tirar o que já é indevido por\n# outra regra, para não contar o mesmo real duas vezes.\nnormalizar &lt;- function(x) {\n  x &lt;- tolower(iconv(coalesce(x, \"\"), to = \"ASCII//TRANSLIT\"))\n  x &lt;- gsub(\"([0-9])\\\\s*km\", \"\\\\1 km\", x)\n  x &lt;- gsub(\"([0-9])\\\\s*h\\\\b\", \"\\\\1 horas\", x)\n  trimws(gsub(\"[^a-z0-9 ]\", \" \", gsub(\"\\\\s+\", \" \", x)))\n}\n# Dicionário com tolerância a erro de digitação: a justificativa vale se\n# estiver a até 15% de distância (em letras) de uma das frases da regra.\nclassificar_justificativa &lt;- function(x) {\n  n &lt;- normalizar(x)\n  validas &lt;- normalizar(JUSTIFICATIVAS_VALIDAS)\n  dist &lt;- adist(n, validas, partial = FALSE) / outer(nchar(n), nchar(validas), pmax)\n  case_when(n == \"\" ~ \"ausente\",\n            apply(dist, 1, min) &lt;= 0.15 ~ \"válida\",\n            TRUE ~ \"vaga\")\n}\n\n# Cada texto diferente é classificado uma vez só.\ntextos &lt;- unique(coalesce(base_auditoria$justificativa[base_auditoria$tipo == \"Extra\"], \"\"))\nclasses &lt;- classificar_justificativa(textos)\n\nauditada &lt;- base_auditoria |&gt;\n  mutate(justificativa_classe = if_else(tipo == \"Extra\", classes[match(coalesce(justificativa, \"\"), textos)], NA)) |&gt;\n  arrange(matricula, dia, tipo, data_recarga, id) |&gt;\n  group_by(matricula, dia, tipo) |&gt;\n  mutate(duplicidade = row_number() &gt; 1) |&gt;\n  ungroup() |&gt;\n  mutate(\n    fora_do_trabalho = dia &lt; admissao | (!is.na(desligamento) & dia &gt; desligamento) | !is.na(tipo_ausencia),\n    jantar_sem_pernoite = tipo == \"Jantar\" & !coalesce(pernoite, FALSE),\n    extra_sem_justificativa = tipo == \"Extra\" & justificativa_classe == \"ausente\",\n    motivo_regra = case_when(duplicidade ~ \"Duplicidade\",\n                             fora_do_trabalho ~ \"Pessoa fora do trabalho\",\n                             jantar_sem_pernoite ~ \"Jantar sem pernoite\",\n                             extra_sem_justificativa ~ \"Extra sem justificativa\"),\n    valor_indevido = if_else(is.na(motivo_regra), 0, valor)\n  )\n\n# Teto diário: soma do que não é indevido por outra regra; o excedente sai\n# primeiro do extra, depois do jantar.\nordem_corte &lt;- c(\"Extra\" = 1, \"Jantar\" = 2, \"Almoço\" = 3)\nauditada &lt;- auditada |&gt;\n  mutate(restante = valor - valor_indevido, corte = ordem_corte[tipo]) |&gt;\n  group_by(matricula, dia) |&gt;\n  mutate(excedente_dia = pmax(sum(restante) - TETO, 0)) |&gt;\n  arrange(corte, .by_group = TRUE) |&gt;\n  mutate(antes = cumsum(restante) - restante,\n         acima_do_teto = pmin(restante, pmax(excedente_dia - antes, 0))) |&gt;\n  ungroup() |&gt;\n  mutate(valor_indevido = valor_indevido + acima_do_teto,\n         motivo_regra = if_else(is.na(motivo_regra) & acima_do_teto &gt; 0, \"Acima do teto\", motivo_regra),\n         regra = !is.na(motivo_regra)) |&gt;\n  select(-restante, -corte, -excedente_dia, -antes)\n\n\n\n\nShow the R code for step 3: support\n# A equipe estava em campo naquele dia? A justificativa do extra é válida,\n# vaga ou ausente?\nauditada &lt;- auditada |&gt;\n  mutate(sem_lastro = !em_campo,\n         justificativa_fraca = tipo == \"Extra\" & justificativa_classe %in% c(\"vaga\", \"ausente\"))\n\n\n\n\nShow the R code for step 4: expected range\n# Valor pago por dia de equipe em campo, por base e mês. Como o nível geral\n# muda de um mês para outro (mais pernoites no segundo semestre), cada base é\n# comparada com a mediana das bases no mesmo mês; a faixa esperada desse\n# índice vem do critério de Tukey sobre todos os grupos com pelo menos 15 dias\n# de equipe em campo. Como a auditoria procura pagamento a mais, só ficar\n# acima da faixa conta como sinal de risco; abaixo dela, o grupo só é anotado.\ndias_campo &lt;- diario |&gt;\n  mutate(mes = format(data, \"%Y-%m\")) |&gt;\n  count(base, mes, name = \"dias_equipe\")\nbase_mes &lt;- auditada |&gt;\n  mutate(mes = format(dia, \"%Y-%m\")) |&gt;\n  group_by(base, mes) |&gt;\n  summarise(valor = sum(valor), .groups = \"drop\") |&gt;\n  left_join(dias_campo, c(\"base\", \"mes\")) |&gt;\n  mutate(valor_dia = valor / dias_equipe) |&gt;\n  group_by(mes) |&gt;\n  mutate(mediana_mes = median(valor_dia), indice = valor_dia / mediana_mes) |&gt;\n  ungroup()\nvalidos &lt;- base_mes |&gt; filter(dias_equipe &gt;= 15)\nq &lt;- quantile(validos$indice, c(0.25, 0.75))\nfaixa &lt;- c(q[[1]] - 1.5 * diff(q), q[[2]] + 1.5 * diff(q))\nbase_mes &lt;- base_mes |&gt;\n  mutate(faixa_min = faixa[1] * mediana_mes, faixa_max = faixa[2] * mediana_mes,\n         abaixo_da_faixa = dias_equipe &gt;= 15 & indice &lt; faixa[1],\n         fora_da_faixa = dias_equipe &gt;= 15 & indice &gt; faixa[2])\nauditada &lt;- auditada |&gt;\n  mutate(mes = format(dia, \"%Y-%m\")) |&gt;\n  left_join(base_mes |&gt; select(base, mes, fora_da_faixa), c(\"base\", \"mes\")) |&gt;\n  mutate(fora_da_faixa = coalesce(fora_da_faixa, FALSE))\n\n\n\n\nShow the R code for step 5: risk score\n# Um ponto para cada sinal, de 0 a 4.\nauditada &lt;- auditada |&gt;\n  mutate(score = regra + sem_lastro + justificativa_fraca + fora_da_faixa,\n         score_sem_regra = score - regra)\n\n\n\n\nShow the R code for step 6: conclusion\n# Indevido: violou uma regra objetiva. Revisar: sem regra violada, mas sem\n# lastro de campo ou com score de 2 ou mais. Atenção: score 1. Regular: 0.\n# Numa recarga que passou do teto só em parte, o excedente é Indevido e o\n# resto recebe a conclusão que teria sem essa regra.\nconcluir &lt;- function(sem_lastro, score) {\n  case_when(sem_lastro | score &gt;= 2 ~ \"Revisar\", score == 1 ~ \"Atenção\", TRUE ~ \"Regular\")\n}\nauditada &lt;- auditada |&gt;\n  mutate(conclusao = if_else(regra, \"Indevido\", concluir(sem_lastro, score)),\n         conclusao_resto = concluir(sem_lastro, score_sem_regra),\n         valor_resto = valor - valor_indevido)\nNIVEIS &lt;- c(\"Indevido\", \"Revisar\", \"Atenção\", \"Regular\")"
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#results",
+    "href": "en/projects/meal-allowance-audit/index.html#results",
+    "title": "Field meal allowance audit",
+    "section": "Results",
+    "text": "Results\nOf the amount paid in the year, R$ 305 thousand (4.0%) was improper, and another R$ 235 thousand (3.1%) needs confirmation from the base.\n\n\n\n\n\n\n\n\n\n\nThe amount paid in 2025, split into the audit’s four conclusions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe amount paid in 2025, split into the audit’s four conclusions.\n\n\n\n\n\n\nImproper is what broke an objective rule and can be recovered.\nReview is made up almost entirely of top-ups with no field record: R$ 234 thousand in 4,500 top-ups entered on days when the crew does not appear in the log. It may be a gap in the log rather than in the top-up; that is why the base confirms before anything is recovered.\nWatch is not an accusation. Of the 8,686 top-ups in Watch, 7,925 are there only because their base and month were above the expected range; the top-up itself follows the rule. Among them are 1,072 records that only looked like errors (entered one or two days late, overnight stay logged late, justification with a typo). The other 872 have a vague justification, such as “ajuste” (adjustment) or “conforme combinado” (as agreed).\n\n\nImproper payments by type of defect\n\n\n\n\n\n\n\n\n\n\nImproper amount in 2025 by type of defect. For the cap, only the excess over the daily limit.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImproper amount in 2025 by type of defect. For the cap, only the excess over the daily limit.\n\n\n\n\n\n\n\nWhat explains the jump in the second half\nThe amount per field day rose by R$ 20.86. Of that increase, R$ 10.21 (49%) came from improper payments. Another R$ 8.51 (41%) came from more legitimate dinners, because overnight stays went from 11.5% to 16.8% of field days. The remaining R$ 2.14 came from the extras that come with overnight stays."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#where-and-why",
+    "href": "en/projects/meal-allowance-audit/index.html#where-and-why",
+    "title": "Field meal allowance audit",
+    "section": "Where and why",
+    "text": "Where and why\n\nThe August system switch created duplicates. Through July they add up to R$ 6 thousand; from August to December, R$ 112 thousand. The new system accepts two top-ups of the same type for the same person on the same day.\nThe HR roster arrives late. Of the top-ups paid to people on vacation, 100% fell in the first five days of the vacation period: the base only learns about the vacation after it has started.\nTwo bases pay dinner with no overnight stay. Base 3 and Base 6 account for 100% of dinners with no overnight stay, and they are the only bases with months above the expected range: 3 months at the first and 3 at the second.\n\n\n\n\n\n\n\n\n\n\n\nAmount paid per crew-day in the field, by base and month, against the expected range (gray area). Blue points are the months above the range.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAmount paid per crew-day in the field, by base and month, against the expected range (gray area). Blue points are the months above the range."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#cases-to-review",
+    "href": "en/projects/meal-allowance-audit/index.html#cases-to-review",
+    "title": "Field meal allowance audit",
+    "section": "Cases to review",
+    "text": "Cases to review\nThe full list has 12,033 top-ups classified as Improper or Review, sorted by conclusion, risk and amount, and can be downloaded at the top of the page. Below, first the 5 people with the largest improper amount (only the improper part of each top-up), then the 5 with the largest amount to review.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion\nEmployee ID\nBase\nPeriod\nTop-ups\nAmount\nReason\n\n\n\n\nImproper\nF6561\nBase 3\nJan 6 to Dec 17, 2025\n40\nR$ 1,692\nDinner, no overnight stay\n\n\nImproper\nF5109\nBase 3\nFeb 24 to Dec 11, 2025\n40\nR$ 1,684\nDinner, no overnight stay\n\n\nImproper\nF5730\nBase 6\nMar 27 to Dec 31, 2025\n37\nR$ 1,616\nDinner, no overnight stay\n\n\nImproper\nF4119\nBase 6\nApr 22 to Dec 26, 2025\n37\nR$ 1,580\nDinner, no overnight stay\n\n\nImproper\nF5573\nBase 3\nJan 23 to Dec 29, 2025\n37\nR$ 1,568\nDinner, no overnight stay\n\n\nReview\nF3012\nBase 2\nJan 13 to Dec 29, 2025\n18\nR$ 936\nNo field record\n\n\nReview\nF8211\nBase 6\nJan 23 to Dec 31, 2025\n18\nR$ 936\nNo field record\n\n\nReview\nF1355\nBase 6\nJan 8 to Dec 23, 2025\n18\nR$ 872\nNo field record\n\n\nReview\nF6862\nBase 6\nJan 15 to Dec 16, 2025\n17\nR$ 852\nNo field record\n\n\nReview\nF1035\nBase 2\nJan 27 to Dec 29, 2025\n16\nR$ 832\nNo field record\n\n\n\n\n\n\n\n\n\nImproperEmployee ID: F6561Base: Base 3Period: Jan 6 to Dec 17, 2025Top-ups: 40Amount: R$ 1,692Reason: Dinner, no overnight stayImproperEmployee ID: F5109Base: Base 3Period: Feb 24 to Dec 11, 2025Top-ups: 40Amount: R$ 1,684Reason: Dinner, no overnight stayImproperEmployee ID: F5730Base: Base 6Period: Mar 27 to Dec 31, 2025Top-ups: 37Amount: R$ 1,616Reason: Dinner, no overnight stayImproperEmployee ID: F4119Base: Base 6Period: Apr 22 to Dec 26, 2025Top-ups: 37Amount: R$ 1,580Reason: Dinner, no overnight stayImproperEmployee ID: F5573Base: Base 3Period: Jan 23 to Dec 29, 2025Top-ups: 37Amount: R$ 1,568Reason: Dinner, no overnight stayReviewEmployee ID: F3012Base: Base 2Period: Jan 13 to Dec 29, 2025Top-ups: 18Amount: R$ 936Reason: No field recordReviewEmployee ID: F8211Base: Base 6Period: Jan 23 to Dec 31, 2025Top-ups: 18Amount: R$ 936Reason: No field recordReviewEmployee ID: F1355Base: Base 6Period: Jan 8 to Dec 23, 2025Top-ups: 18Amount: R$ 872Reason: No field recordReviewEmployee ID: F6862Base: Base 6Period: Jan 15 to Dec 16, 2025Top-ups: 17Amount: R$ 852Reason: No field recordReviewEmployee ID: F1035Base: Base 2Period: Jan 27 to Dec 29, 2025Top-ups: 16Amount: R$ 832Reason: No field record"
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#how-we-know-the-audit-got-it-right",
+    "href": "en/projects/meal-allowance-audit/index.html#how-we-know-the-audit-got-it-right",
+    "title": "Field meal allowance audit",
+    "section": "How we know the audit got it right",
+    "text": "How we know the audit got it right\nBecause the data for this case were generated by a script, the audit could be checked against what the generator planted: it found all 12,905 planted defects, and none of the 19,885 records that only looked like errors ended up as Improper or Review. The audit does not read the answer key; a separate script compares the two at the end. Real data have no answer key, and that check is done with the base: a sample of cases from each conclusion is reviewed with people who know the process before the report is closed."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#recommendations",
+    "href": "en/projects/meal-allowance-audit/index.html#recommendations",
+    "title": "Field meal allowance audit",
+    "section": "Recommendations",
+    "text": "Recommendations\nEach finding becomes a fix in the process, so the problem does not come back the following year.\n\n\n\n\n\n\n\n\n\n\n\n\nFinding\nRecommended fix\nOwner\n\n\n\n\nDuplicates after the system switch\nSystem block allowing one top-up per type, person and day\nIT and the card provider\n\n\nLate HR roster\nDaily list of vacations, leaves and terminations sent to the top-up system\nHR\n\n\nDinner with no overnight stay\nDinner released only when the field log records an overnight stay\nOperations and base supervisors\n\n\nOver the cap\nDaily cap enforced by the system itself\nIT\n\n\nVague justification\nJustification picked from a closed list, not typed in\nFinancial control\n\n\nAmounts already paid as improper\nReversal or recovery according to company policy\nHR, with support from legal\n\n\n\n\n\n\n\n\n\nDuplicates after the system switchRecommended fix: System block allowing one top-up per type, person and dayOwner: IT and the card providerLate HR rosterRecommended fix: Daily list of vacations, leaves and terminations sent to the top-up systemOwner: HRDinner with no overnight stayRecommended fix: Dinner released only when the field log records an overnight stayOwner: Operations and base supervisorsOver the capRecommended fix: Daily cap enforced by the system itselfOwner: ITVague justificationRecommended fix: Justification picked from a closed list, not typed inOwner: Financial controlAmounts already paid as improperRecommended fix: Reversal or recovery according to company policyOwner: HR, with support from legal\n\n\nThe audit also leaves three KPIs to track every month:\n\nImproper top-up rate: improper amount ÷ amount paid, with a target below 0.5%.\nField record coverage: top-ups with the crew recorded in the field ÷ total top-ups, with a target above 99%.\nAmount per field day: by base, against the expected range."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#what-this-case-demonstrates",
+    "href": "en/projects/meal-allowance-audit/index.html#what-this-case-demonstrates",
+    "title": "Field meal allowance audit",
+    "section": "What this case demonstrates",
+    "text": "What this case demonstrates\n\nCross-checking sources nobody cross-checked. The error was not in any single source, but in the lack of checks between the card, the field log and HR.\nSeparating objective errors from suspicion. Only what breaks a rule goes to recovery; the rest goes back to the base to confirm, without accusing anyone.\nA number that explains the problem. The jump in the second half was split into what is improper and what is legitimate, instead of turning into a blanket order to cut costs.\nA report that can be rerun. The code stays with the company, and the same report runs the following year with new data."
+  },
+  {
+    "objectID": "en/projects/meal-allowance-audit/index.html#does-your-company-pay-a-benefit-reimbursement-or-allowance-without-cross-checking-it-against-another-source",
+    "href": "en/projects/meal-allowance-audit/index.html#does-your-company-pay-a-benefit-reimbursement-or-allowance-without-cross-checking-it-against-another-source",
+    "title": "Field meal allowance audit",
+    "section": "Does your company pay a benefit, reimbursement or allowance without cross-checking it against another source?",
+    "text": "Does your company pay a benefit, reimbursement or allowance without cross-checking it against another source?\nTell me how it works today and I will tell you what can be checked.\nGet in touch"
+  },
+  {
     "objectID": "en/projects.html",
     "href": "en/projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.\n\nAll\nPower BI dashboards\nStatistical analysis for academic research\nKPI consulting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism Radar\n\n\n\nPower BI\n\nDAX\n\nStatistics\n\nPeople Analytics\n\n\n\nA Power BI dashboard that shows why a stable absenteeism rate was hiding a localized rise. Dimensional modeling, 97 DAX measures and statistical analysis.\n\n\n\n\n\n\n\n\n\n\n\n\nEmployee turnover in supermarkets: statistical consulting for an undergraduate thesis\n\n\n\nR\n\nStatistics\n\nSurvey\n\nThesis\n\n\n\nFictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.\n\n\n\n\n\n\n\n\n\n\n\n\nOne number, three answers: KPI governance at Vallora Logística\n\n\n\nKPI governance\n\nKPIs\n\nManagement\n\nR\n\n\n\nThree departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.\n\n\n\n\n\nNo matching items"
+    "text": "Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.\n\nAll\nPower BI dashboards\nStatistical analysis for academic research\nKPI consulting\nData reports and audits\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism Radar\n\n\n\nPower BI\n\nDAX\n\nStatistics\n\nPeople Analytics\n\n\n\nA Power BI dashboard that shows why a stable absenteeism rate was hiding a localized rise. Dimensional modeling, 97 DAX measures and statistical analysis.\n\n\n\n\n\n\n\n\n\n\n\n\nEmployee turnover in supermarkets: statistical consulting for an undergraduate thesis\n\n\n\nR\n\nStatistics\n\nSurvey\n\nThesis\n\n\n\nFictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.\n\n\n\n\n\n\n\n\n\n\n\n\nOne number, three answers: KPI governance at Vallora Logística\n\n\n\nKPI governance\n\nKPIs\n\nManagement\n\nR\n\n\n\nThree departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.\n\n\n\n\n\n\n\n\n\n\n\n\nField meal allowance audit\n\n\n\nAudit\n\nR\n\nQuarto\n\nBenefits\n\n\n\nA year of meal-card top-ups cross-checked against the field log and the HR roster. How much was paid outside the rules, where and why.\n\n\n\n\n\nNo matching items"
   }
 ]

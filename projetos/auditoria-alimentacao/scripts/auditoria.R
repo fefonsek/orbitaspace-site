@@ -236,7 +236,7 @@ casos <- auditada |>
   filter(conclusao %in% c("Indevido", "Revisar")) |>
   mutate(motivo = case_when(!is.na(motivo_regra) ~ motivo_regra,
                             sem_lastro ~ "Sem lastro de campo",
-                            justificativa_fraca & fora_da_faixa ~ "Justificativa vaga em base e mês fora da faixa",
+                            justificativa_fraca & fora_da_faixa ~ "Justificativa vaga em base e mês acima da faixa",
                             TRUE ~ "Score 2 ou mais"),
          valor_em_risco = if_else(conclusao == "Indevido", valor_indevido, valor)) |>
   arrange(factor(conclusao, NIVEIS), desc(score), desc(valor_em_risco), id) |>

@@ -72,38 +72,62 @@ foreach ($congelado in "_freeze\$indicadores", "_freeze\es\proyectos\gobernanza-
     }
 }
 
-# 0c. Caso Auditoria: a auditoria (scripts/auditoria.R) e a conferência com o
-#     gabarito do gerador (scripts/conferir.R) rodam só quando os dados ou os
-#     scripts mudaram; o relatório em PDF (relatorio/, projeto à parte, em
-#     Typst) é refeito quando os resultados, o relatório ou os gráficos mudaram.
+# 0c. Caso Auditoria (PT, ES e EN): a auditoria (scripts/auditoria.R), a
+#     conferência com o gabarito do gerador (scripts/conferir.R) e os CSVs de
+#     casos traduzidos (scripts/traduzir_casos.R) rodam só quando os dados ou
+#     os scripts mudaram. O relatório em PDF (relatorio/, projeto à parte, em
+#     Typst) é refeito nas três línguas quando os resultados, os textos ou os
+#     gráficos mudaram; se algum passar de 4 páginas, o Typst para com erro e
+#     o render também. O PT é gerado por último: o render de uma língua apaga
+#     a saída padrão (relatorio.pdf) do mesmo arquivo.
 #     Os dados não são gerados de novo aqui: para isso, rode o gerar_dados.R.
 $auditoria = "projetos\auditoria-alimentacao"
 $rdsAud = "$auditoria\resultados\auditoria.rds"
-$fontesAud = @(Get-ChildItem "$auditoria\dados\*") + @(Get-Item "$auditoria\scripts\auditoria.R", "$auditoria\scripts\conferir.R")
-if (-not (Test-Path $rdsAud) -or ($fontesAud | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsAud).LastWriteTime })) {
+$fontesAud = @(Get-ChildItem "$auditoria\dados\*") + @(Get-Item "$auditoria\scripts\auditoria.R",
+    "$auditoria\scripts\conferir.R", "$auditoria\scripts\traduzir_casos.R", "$auditoria\scripts\rotulos.R")
+$csvTraduzidos = "$auditoria\resultados\casos_revisar_es.csv", "$auditoria\resultados\casos_revisar_en.csv"
+$faltaCsv = $csvTraduzidos | Where-Object { -not (Test-Path $_) }
+if ($faltaCsv -or -not (Test-Path $rdsAud) -or ($fontesAud | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsAud).LastWriteTime })) {
     $rscript = Get-ChildItem "$env:ProgramFiles\R\R-*\bin\Rscript.exe" -ErrorAction SilentlyContinue |
         Sort-Object FullName | Select-Object -Last 1
     if (-not $rscript) { Write-Host "Rscript não encontrado em $env:ProgramFiles\R." -ForegroundColor Red; exit 1 }
-    Write-Host "`n=== Caso Auditoria: rodando a auditoria e a conferência ===" -ForegroundColor Cyan
-    foreach ($script in "auditoria.R", "conferir.R") {
+    Write-Host "`n=== Caso Auditoria: rodando a auditoria, a conferência e os CSVs traduzidos ===" -ForegroundColor Cyan
+    foreach ($script in "auditoria.R", "conferir.R", "traduzir_casos.R") {
         & $rscript.FullName "$auditoria\scripts\$script"
         if ($LASTEXITCODE -ne 0) { Write-Host "Falha em $script do caso Auditoria." -ForegroundColor Red; exit 1 }
     }
 }
-$pdfAud = "$auditoria\relatorio\relatorio.pdf"
-$fontesPdf = Get-Item "$auditoria\resultados\auditoria.rds", "$auditoria\resultados\conferencia.rds",
-    "$auditoria\relatorio\relatorio.qmd", "$auditoria\scripts\apresentacao.R"
-if (-not (Test-Path $pdfAud) -or ($fontesPdf | Where-Object { $_.LastWriteTime -gt (Get-Item $pdfAud).LastWriteTime })) {
-    Write-Host "`n=== Caso Auditoria: gerando o relatório em PDF ===" -ForegroundColor Cyan
-    quarto render "$auditoria\relatorio\relatorio.qmd"
-    if ($LASTEXITCODE -ne 0) { Write-Host "Falha ao gerar o relatório em PDF do caso Auditoria." -ForegroundColor Red; exit 1 }
+$fontesPdf = @(Get-Item "$auditoria\resultados\auditoria.rds", "$auditoria\resultados\conferencia.rds",
+    "$auditoria\relatorio\relatorio.qmd", "$auditoria\scripts\apresentacao.R", "$auditoria\scripts\rotulos.R") +
+    @(Get-ChildItem "$auditoria\relatorio\textos_*.yml")
+$pdfs = [ordered]@{ es = "relatorio-es.pdf"; en = "relatorio-en.pdf"; pt = "relatorio.pdf" }
+$refazerPdf = $false
+foreach ($arquivo in $pdfs.Values) {
+    $pdf = "$auditoria\relatorio\$arquivo"
+    if (-not (Test-Path $pdf) -or ($fontesPdf | Where-Object { $_.LastWriteTime -gt (Get-Item $pdf).LastWriteTime })) { $refazerPdf = $true }
+}
+if ($refazerPdf) {
+    # O --output grava na pasta de onde o quarto é chamado: por isso o render
+    # roda de dentro de relatorio/.
+    Push-Location "$auditoria\relatorio"
+    foreach ($idioma in $pdfs.Keys) {
+        Write-Host "`n=== Caso Auditoria: gerando o relatório em PDF ($idioma) ===" -ForegroundColor Cyan
+        quarto render relatorio.qmd -P "idioma:$idioma" --output $pdfs[$idioma]
+        if ($LASTEXITCODE -ne 0) {
+            Pop-Location
+            Write-Host "Falha ao gerar o relatório em PDF ($idioma) do caso Auditoria." -ForegroundColor Red; exit 1
+        }
+    }
+    Pop-Location
 }
 $ultimaAud = (Get-ChildItem "$auditoria\resultados\*", "$auditoria\scripts\*" |
     Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
-$jsonAud = "_freeze\$auditoria\index\execute-results\html.json"
-if ((Test-Path $jsonAud) -and (Get-Item $jsonAud).LastWriteTime -lt $ultimaAud) {
-    Remove-Item "_freeze\$auditoria" -Recurse -Force
-    Write-Host "Caso Auditoria: _freeze\$auditoria descartado; a página será refeita."
+foreach ($congelado in "_freeze\$auditoria", "_freeze\es\proyectos\auditoria-alimentacion", "_freeze\en\projects\meal-allowance-audit") {
+    $jsonAud = "$congelado\index\execute-results\html.json"
+    if ((Test-Path $jsonAud) -and (Get-Item $jsonAud).LastWriteTime -lt $ultimaAud) {
+        Remove-Item $congelado -Recurse -Force
+        Write-Host "Caso Auditoria: $congelado descartado; a página será refeita."
+    }
 }
 
 # 1. Limpa a saída anterior (assim páginas removidas não ficam esquecidas).

@@ -28,8 +28,14 @@ project:
     # Caso Auditoria: capa, relatório em PDF e lista de casos para baixar. As
     # tabelas brutas (dados/) e o gabarito do gerador não são publicados.
     - projetos/auditoria-alimentacao/img/
+    - es/proyectos/auditoria-alimentacion/img/
+    - en/projects/meal-allowance-audit/img/
     - projetos/auditoria-alimentacao/relatorio/relatorio.pdf
+    - projetos/auditoria-alimentacao/relatorio/relatorio-es.pdf
+    - projetos/auditoria-alimentacao/relatorio/relatorio-en.pdf
     - projetos/auditoria-alimentacao/resultados/casos_revisar.csv
+    - projetos/auditoria-alimentacao/resultados/casos_revisar_es.csv
+    - projetos/auditoria-alimentacao/resultados/casos_revisar_en.csv
   post-render: scripts/aviso_render.py
 
 profile:

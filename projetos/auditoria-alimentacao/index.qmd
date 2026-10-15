@@ -6,6 +6,7 @@ image-alt: "Capa do caso: auditoria do benefício de alimentação em campo da F
 categories: [Auditoria, R, Quarto, Benefícios]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
 frente: [relatorios]
+traducao: auditoria
 # Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
 lightbox: true
 format:
@@ -32,35 +33,12 @@ library(knitr)
 # scripts/auditoria.R, e de resultados/conferencia.rds, gravado por
 # scripts/conferir.R (a comparação com o que o gerador plantou).
 caso <- "."
+source(file.path(caso, "scripts/rotulos.R"))
 source(file.path(caso, "scripts/apresentacao.R"))
 read_chunk(file.path(caso, "scripts/auditoria.R"))
-aud <- ler_auditoria(caso)
-conf <- aud$conferencia
-
-valor_de <- function(tab, chave, col = "valor") tab[[col]][tab[[1]] == chave]
-concl <- \(k, col = "valor") valor_de(aud$conclusoes, k, col)
-indevido <- concl("Indevido")
-s <- aud$salto
-regras <- aud$regras
-
-# Achados.
-dup_ate_julho <- sum(aud$dup_mes$valor[aud$dup_mes$mes <= "2025-07"])
-dup_depois <- sum(aud$dup_mes$valor[aud$dup_mes$mes >= "2025-08"])
-ferias_5 <- with(aud$ferias_dia, 100 * sum(n[dia_do_periodo <= 5]) / sum(n))
-bases_jantar <- head(aud$jantar_base, 2)
-jantar_duas <- 100 * sum(bases_jantar$valor) / sum(aud$jantar_base$valor)
-nome_base <- \(b) paste("Base", substr(b, 2, 2))
-meses_fora <- aud$base_mes |> filter(fora_da_faixa)
-
-# Conferência com o gabarito do gerador.
-plantados <- sum(conf$deteccao$plantados)
-encontrados <- sum(conf$deteccao$encontrados)
-falsos_alarmes <- sum(conf$falsos_alarmes$n)
-casos_parecem <- conf$casos_falsos |> summarise(across(-c(falso, grupo_acima_da_faixa), sum))
-parecem_total <- sum(casos_parecem)
-parecem_atencao <- sum(casos_parecem$`Atenção`)
-stopifnot("a auditoria achou todos os defeitos plantados" = encontrados == plantados,
-          "só as duas bases do jantar sem pernoite ficam acima da faixa" = all(meses_fora$base %in% bases_jantar$base))
+aud <- ler_auditoria(caso, "pt")
+tx <- aud$tx
+preparar_texto(aud)
 ```
 
 ::: aviso-dados
@@ -118,7 +96,7 @@ A regra do benefício:
 
 - Almoço de `r reais_exato(regras$valor[["Almoço"]])` por dia em campo.
 - Jantar de `r reais_exato(regras$valor[["Jantar"]])`, só quando o diário de campo registra pernoite da equipe.
-- Extra de até `r reais_exato(regras$valor[["Extra"]])`, só com uma das justificativas da lista: "`r tolower(regras$justificativas[1])`" ou "`r tolower(regras$justificativas[2])`".
+- Extra de até `r reais_exato(regras$valor[["Extra"]])`, só com uma das justificativas da lista: "`r tx$justificativas[1]`" ou "`r tx$justificativas[2]`".
 - Teto de `r reais_exato(regras$teto)` por pessoa por dia, somando tudo, e no máximo uma recarga de cada tipo por dia.
 - Só para quem está ativo, fora de férias e afastamentos, e numa equipe que esteve em campo naquele dia.
 
@@ -135,24 +113,11 @@ Cada recarga passa pelas mesmas verificações e termina numa de quatro conclus�
 5. **Pontuar o risco.** Um ponto para cada sinal: regra violada, sem lastro de campo, justificativa vaga ou ausente, base e mês acima da faixa.
 6. **Concluir.** Cada recarga recebe uma das quatro conclusões abaixo.
 
-```{r}
-#| label: tabela-conclusoes-dados
-#| include: false
-regras_conclusao <- tribble(
-  ~conclusao, ~quando, ~acao,
-  "Indevido", "Violou uma regra objetiva", "Estornar ou recuperar, conforme a política da empresa e com apoio do RH e do jurídico",
-  "Revisar", "Nenhuma regra violada, mas sem lastro de campo ou com dois sinais ou mais", "A base confirma ou corrige em até 15 dias",
-  "Atenção", "Um sinal só, sem regra violada", "Entra na amostra do próximo mês",
-  "Regular", "Nenhum sinal", "Nada a fazer"
-)
-nomes_conclusao <- c("Conclusão", "Quando", "O que fazer")
-```
-
 ::: so-computador
 ```{r}
 #| label: tabela-conclusoes
 #| echo: false
-tabela(regras_conclusao, nomes_conclusao)
+tabela(tx$tabela_conclusoes, tx$nomes_conclusoes)
 ```
 :::
 
@@ -161,7 +126,7 @@ tabela(regras_conclusao, nomes_conclusao)
 #| label: tabela-conclusoes-cartoes
 #| echo: false
 #| output: asis
-cat(cartoes(regras_conclusao, nomes_conclusao))
+cat(cartoes(tx$tabela_conclusoes, tx$nomes_conclusoes))
 ```
 :::
 
@@ -313,7 +278,7 @@ A lista completa tem `r num(aud$casos)` recargas classificadas como Indevido ou 
 ```{r}
 #| label: top-revisar
 #| echo: false
-tabela(top_revisar_fmt(aud), nomes_top, alinhar_top)
+tabela(top_revisar_fmt(aud), tx$nomes_top, alinhar_top)
 ```
 :::
 
@@ -322,7 +287,7 @@ tabela(top_revisar_fmt(aud), nomes_top, alinhar_top)
 #| label: top-revisar-cartoes
 #| echo: false
 #| output: asis
-cat(cartoes(top_revisar_fmt(aud), nomes_top))
+cat(cartoes(top_revisar_fmt(aud), tx$nomes_top))
 ```
 :::
 
@@ -334,26 +299,11 @@ Como os dados deste caso foram gerados por script, foi possível conferir a audi
 
 Cada achado vira uma correção no processo, para o problema não voltar no ano seguinte.
 
-```{r}
-#| label: recomendacoes-dados
-#| include: false
-recomendacoes <- tribble(
-  ~achado, ~correcao, ~responsavel,
-  "Duplicidade depois da troca de sistema", "Bloqueio no sistema de uma recarga por tipo, pessoa e dia", "TI e fornecedor do cartão",
-  "Cadastro atrasado", "Lista diária de férias, afastamentos e desligamentos enviada ao sistema de recarga", "RH",
-  "Jantar sem pernoite", "Jantar só liberado quando o diário registra pernoite", "Operação e supervisores das bases",
-  "Acima do teto", "Teto diário aplicado pelo próprio sistema", "TI",
-  "Justificativa vaga", "Justificativa escolhida numa lista fechada, não digitada", "Controladoria",
-  "Valores já pagos como indevido", "Estorno ou recuperação conforme a política da empresa", "RH, com apoio do jurídico"
-)
-nomes_recomendacoes <- c("Achado", "Correção recomendada", "Responsável")
-```
-
 ::: so-computador
 ```{r}
 #| label: recomendacoes
 #| echo: false
-tabela(recomendacoes, nomes_recomendacoes)
+tabela(tx$recomendacoes, tx$nomes_recomendacoes)
 ```
 :::
 
@@ -362,7 +312,7 @@ tabela(recomendacoes, nomes_recomendacoes)
 #| label: recomendacoes-cartoes
 #| echo: false
 #| output: asis
-cat(cartoes(recomendacoes, nomes_recomendacoes))
+cat(cartoes(tx$recomendacoes, tx$nomes_recomendacoes))
 ```
 :::
 

@@ -43,8 +43,8 @@ faz parte do script.
 
 ## O que o `render.ps1` faz
 
-1. Atualiza o caso TCC e o caso Indicadores, se for preciso (veja "Caso TCC"
-   e "Caso Indicadores" abaixo).
+1. Atualiza os casos TCC, Indicadores e Auditoria, se for preciso (veja as
+   seções de cada caso abaixo).
 2. Apaga `docs/` uma única vez, no início.
 3. Renderiza os perfis `pt`, `es` e `en` com `--no-clean`, para que um idioma
    não apague a saída dos outros.
@@ -149,6 +149,39 @@ do Radar para o site. Ele roda sozinho no passo 0b do `render.ps1`, só quando
 o CSV não existe ou quando a base do Radar ou o script mudaram; sem a pasta do
 Radar, o render usa o CSV que já está no site. Se os dados ou os scripts do
 caso mudam, o `render.ps1` descarta o `_freeze/` das três páginas.
+
+## Caso Auditoria (benefício de alimentação em campo)
+
+O caso existe em três línguas: `projetos/auditoria-alimentacao/`,
+`es/proyectos/auditoria-alimentacion/` e `en/projects/meal-allowance-audit/`,
+ligadas pela chave `auditoria` do `_traducoes.yml`, na frente `relatorios`. Os
+dados, os scripts e os resultados ficam só na pasta em português. O roteiro
+aprovado está em `_rascunhos/caso_auditoria_roteiro.md`, e os rascunhos das
+traduções, em `_rascunhos/caso_auditoria_es.md` e `_en.md`.
+
+- `scripts/gerar_dados.R` gera as cinco tabelas fictícias em `dados/` (com
+  semente fixa; `recargas.csv.gz` compactado) e o gabarito do que plantou em
+  `resultados/gabarito.csv.gz`. Não roda no render: rode à mão se precisar
+  gerar os dados de novo.
+- `scripts/auditoria.R` aplica as seis etapas do método, sem ler o gabarito,
+  e grava `resultados/auditoria.rds`, `classificacao.rds` e
+  `casos_revisar.csv`. `scripts/conferir.R` compara o resultado com o
+  gabarito (`conferencia.rds`). `scripts/traduzir_casos.R` grava
+  `casos_revisar_es.csv` e `_en.csv`.
+- `scripts/rotulos.R` tem os formatos e os textos curtos das três línguas;
+  `scripts/apresentacao.R`, os gráficos, as tabelas e a capa.
+- O relatório em PDF é um projeto Quarto à parte em `relatorio/` (Typst): um
+  só `relatorio.qmd` com o parâmetro `idioma` e o texto em
+  `textos_pt.yml`, `textos_es.yml` e `textos_en.yml`. Ele gera
+  `relatorio.pdf`, `relatorio-es.pdf` e `relatorio-en.pdf`, e para com erro
+  se algum passar de 4 páginas.
+
+O passo 0c do `render.ps1` roda a auditoria, a conferência e os CSVs
+traduzidos quando os dados ou os scripts mudaram, refaz os três PDFs quando
+os resultados, os textos ou os gráficos mudaram (o PT por último, porque o
+render de uma língua apaga a saída padrão do arquivo) e descarta o `_freeze/`
+das três páginas. As tabelas brutas e o gabarito não são publicados; o site
+publica só os PDFs e os CSVs de casos.
 
 ## Estrutura
 

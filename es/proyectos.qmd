@@ -8,6 +8,7 @@ listing:
     - "proyectos/radar-ausentismo/index.qmd"
     - "proyectos/tesis-rotacion/index.qmd"
     - "proyectos/gobernanza-indicadores/index.qmd"
+    - "proyectos/auditoria-alimentacion/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

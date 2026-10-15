@@ -1,0 +1,67 @@
+# Text of the PDF report, in English. Parts in braces are R, filled in with
+# the values in the .rds (see relatorio.qmd and scripts/apresentacao.R).
+# A sentence never opens with a number: those sentences are rearranged.
+
+titulo: "Field meal allowance audit"
+subtitulo: "Fiorena Redes Elétricas S.A. · Top-ups from January to December 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Fictional case: fictional company, people and data. The method is real."
+de: "of"
+
+s_resumo: "Summary"
+resumo: |
+  Financial control asked for an answer to one question: the meal allowance paid per crew-day in the field rose {pct(s$pct)} from the first to the second half of 2025; how much of that is legitimate spending, and how much was paid outside the rules?
+
+  - The audit covered {num(aud$recargas)} top-ups, totaling {reais(aud$total)}.
+  - **A total of {reais_exato(concl("Indevido"))} ({pct(concl("Indevido", "pct"))}) was paid outside an objective rule** and can be reversed or recovered.
+  - Another {reais_exato(concl("Revisar"))} ({pct(concl("Revisar", "pct"))}) has no support in the field log and needs confirmation from the base.
+  - Improper payments explain {pct(100 * s$indevido / s$total, 0)} of the jump in the second half; {pct(100 * s$jantar / s$total, 0)} came from more overnight stays, which are legitimate.
+  - The largest defect is the duplicates created by the August switch to a new top-up system.
+
+s_regra: "The rule audited"
+regra: |
+  Lunch of {reais_exato(regras$valor[["Almoço"]])} per day in the field; dinner of {reais_exato(regras$valor[["Jantar"]])} only with an overnight stay recorded in the log; extra of up to {reais_exato(regras$valor[["Extra"]])} only with a listed justification ("{tx$justificativas[1]}" or "{tx$justificativas[2]}"); cap of {reais_exato(regras$teto)} per person per day; one top-up of each type per day; only for people who are active, not on vacation or leave, on a crew in the field that day.
+
+  The top-ups were cross-checked against {num(aud$dias_equipe)} crew-in-the-field records in the log, the HR roster of {num(aud$pessoas)} people, and HR's vacation and leave records.
+
+s_metodo: "Method"
+metodo: |
+  1. **Prepare:** use the day worked, not the entry date, and link each top-up to the HR roster, leave records and the field log.
+  2. **Objective rules:** duplicates, person not on duty, dinner with no overnight stay, extra with no justification, and the daily cap (only the excess is improper).
+  3. **Support:** was the crew in the field? Is the justification for the extra valid, vague or missing (with tolerance for typos)?
+  4. **Expected:** each base and month compared with the other bases in the same month; a group falls outside the range when it strays much further than normal (Tukey's criterion on the amount per field day divided by the median of the bases that month, with at least 15 crew-days in the group).
+  5. **Risk score:** one point per signal (rule broken, no field record, vague or missing justification, base and month above the range).
+  6. **Conclusion:** Improper (rule broken), Review (no field record, or two signals or more), Watch (one signal), Compliant (none).
+
+s_resultados: "Results"
+resultados: |
+  Review is made up almost entirely of top-ups with no field record ({reais(valor_de(aud$revisar, "Sem lastro de campo"))}). Watch is not an accusation: {num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))} of the {num(concl("Atenção", "recargas"))} top-ups in Watch are there only because their base and month were above the range; the top-up itself follows the rule.
+
+s_defeitos: "Improper payments by type of defect"
+s_salto: "The jump in the second half"
+salto: |
+  The amount per field day went from {reais_exato(s$h1, 2)} to {reais_exato(s$h2, 2)}. Of the {reais_exato(s$total, 2)} increase, {reais_exato(s$indevido, 2)} came from improper payments and {reais_exato(s$jantar, 2)} from more legitimate dinners (overnight stays went from {pct(100 * s$pernoite_h1)} to {pct(100 * s$pernoite_h2)} of field days); the remaining {reais_exato(s$outros, 2)} came from the extras that come with overnight stays.
+
+s_achados: "Findings"
+achados: |
+  - **August system switch.** Duplicates of {reais_exato(dup_ate_julho)} through July and {reais_exato(dup_depois)} from August to December.
+  - **Late HR roster.** Of the top-ups paid during vacations, {pct(ferias_5, 0)} fell in the first five days of the period.
+  - **Dinner with no overnight stay at two bases.** {nome_base(bases_jantar$base[1])} and {nome_base(bases_jantar$base[2])} account for {pct(jantar_duas, 0)} of dinners with no overnight stay and are the only bases with months above the expected range.
+
+s_casos: "Cases to review"
+casos: |
+  The full list ({num(aud$casos)} top-ups classified as Improper or Review) comes with this report as a CSV file. First, the {num(sum(aud$top_revisar$conclusao == "Indevido"))} people with the largest improper amount (only the improper part of each top-up); then, the {num(sum(aud$top_revisar$conclusao == "Revisar"))} with the largest amount to review:
+
+legenda_motivos:
+  "Jantar sem pernoite": "No overnight = dinner with no overnight stay"
+  "Sem lastro de campo": "No field record = no record of the crew in the field"
+  "Pessoa fora do trabalho": "Not on duty = person not on duty"
+  "Extra sem justificativa": "Extra, no just. = extra with no justification"
+
+s_recomendacoes: "Recommendations"
+indicadores: |
+  KPIs to track every month: improper top-up rate (target below 0.5% of the amount paid), field record coverage (target above 99% of top-ups with the crew recorded in the field) and amount per field day by base, against the expected range.
+
+s_nota: "Note on the data"
+nota: |
+  This is a demonstration case: the company, the people and the records are fictional, generated by a script with defects of known size. That made it possible to check that the audit found all {num(plantados)} planted defects and that none of the {num(parecem_total)} records that only looked like errors ended up as Improper or Review. With real data, that check is done with the base, by reviewing a sample of each conclusion with people who know the process.

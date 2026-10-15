@@ -1,0 +1,67 @@
+# Texto do relatório em PDF, em português. Trechos entre chaves são R,
+# preenchidos com os valores do .rds (ver relatorio.qmd e scripts/apresentacao.R).
+
+titulo: "Auditoria do benefício de alimentação em campo"
+subtitulo: "Fiorena Redes Elétricas S.A. · Recargas de janeiro a dezembro de 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Caso fictício: empresa, pessoas e dados fictícios. O método é real."
+de: "de"
+
+s_resumo: "Resumo"
+resumo: |
+  A controladoria pediu uma resposta para uma pergunta: o valor pago em alimentação por dia de equipe em campo subiu {pct(s$pct)} do primeiro para o segundo semestre de 2025; quanto disso é gasto legítimo e quanto foi pago fora da regra?
+
+  - Foram auditadas {num(aud$recargas)} recargas, no total de {reais(aud$total)}.
+  - **{reais_exato(concl("Indevido"))} ({pct(concl("Indevido", "pct"))}) foram pagos fora de uma regra objetiva** e podem ser estornados ou recuperados.
+  - {reais_exato(concl("Revisar"))} ({pct(concl("Revisar", "pct"))}) não têm lastro no diário de campo e precisam de confirmação da base.
+  - O indevido explica {pct(100 * s$indevido / s$total, 0)} do salto do segundo semestre; {pct(100 * s$jantar / s$total, 0)} vieram de mais pernoites, que são legítimos.
+  - O maior defeito é a duplicidade criada pela troca do sistema de recarga em agosto.
+
+s_regra: "A regra auditada"
+regra: |
+  Almoço de {reais_exato(regras$valor[["Almoço"]])} por dia em campo; jantar de {reais_exato(regras$valor[["Jantar"]])} só com pernoite registrado no diário; extra de até {reais_exato(regras$valor[["Extra"]])} só com justificativa da lista ("{tx$justificativas[1]}" ou "{tx$justificativas[2]}"); teto de {reais_exato(regras$teto)} por pessoa por dia; uma recarga de cada tipo por dia; só para quem está ativo, fora de férias e afastamentos, numa equipe em campo naquele dia.
+
+  As recargas foram cruzadas com {num(aud$dias_equipe)} registros de equipe em campo no diário, com o cadastro de {num(aud$pessoas)} pessoas e com as férias e afastamentos do RH.
+
+s_metodo: "Método"
+metodo: |
+  1. **Preparar:** usar o dia trabalhado, e não a data do lançamento, e ligar cada recarga ao cadastro, às ausências e ao diário de campo.
+  2. **Regras objetivas:** duplicidade, pessoa fora do trabalho, jantar sem pernoite, extra sem justificativa e teto diário (só o excedente é indevido).
+  3. **Lastro:** a equipe estava em campo? A justificativa do extra é válida, vaga ou ausente (com tolerância a erro de digitação)?
+  4. **Esperado:** cada base e mês comparados com as outras bases no mesmo mês; fica fora da faixa o grupo que se afasta muito mais do que o normal (critério de Tukey sobre o valor por dia em campo dividido pela mediana das bases no mês, com pelo menos 15 dias de equipe no grupo).
+  5. **Score de risco:** um ponto por sinal (regra violada, sem lastro, justificativa vaga ou ausente, base e mês acima da faixa).
+  6. **Conclusão:** Indevido (regra violada), Revisar (sem lastro ou dois sinais ou mais), Atenção (um sinal), Regular (nenhum).
+
+s_resultados: "Resultados"
+resultados: |
+  Revisar é quase todo formado por recargas sem lastro de campo ({reais(valor_de(aud$revisar, "Sem lastro de campo"))}). Atenção não é acusação: {num(valor_de(aud$atencao, "Base e mês acima da faixa", "recargas"))} das {num(concl("Atenção", "recargas"))} recargas em Atenção estão lá só porque a base e o mês ficaram acima da faixa; a recarga em si cumpre a regra.
+
+s_defeitos: "Indevido por tipo de defeito"
+s_salto: "O salto do segundo semestre"
+salto: |
+  O valor por dia em campo passou de {reais_exato(s$h1, 2)} para {reais_exato(s$h2, 2)}. Do aumento de {reais_exato(s$total, 2)}, {reais_exato(s$indevido, 2)} vieram de pagamentos indevidos e {reais_exato(s$jantar, 2)} de mais jantares legítimos (os pernoites passaram de {pct(100 * s$pernoite_h1)} para {pct(100 * s$pernoite_h2)} dos dias em campo); o resto, {reais_exato(s$outros, 2)}, veio dos extras que acompanham os pernoites.
+
+s_achados: "Achados"
+achados: |
+  - **Troca de sistema em agosto.** Duplicidades de {reais_exato(dup_ate_julho)} até julho e de {reais_exato(dup_depois)} de agosto a dezembro.
+  - **Cadastro atrasado.** {pct(ferias_5, 0)} das recargas pagas em férias caíram nos cinco primeiros dias do período.
+  - **Jantar sem pernoite em duas bases.** {nome_base(bases_jantar$base[1])} e {nome_base(bases_jantar$base[2])} concentram {pct(jantar_duas, 0)} do jantar sem pernoite e são as únicas bases com meses acima da faixa esperada.
+
+s_casos: "Casos para revisar"
+casos: |
+  A lista completa ({num(aud$casos)} recargas classificadas como Indevido ou Revisar) acompanha este relatório em CSV. Primeiro, as {num(sum(aud$top_revisar$conclusao == "Indevido"))} pessoas com maior valor indevido (só a parte indevida de cada recarga); depois, as {num(sum(aud$top_revisar$conclusao == "Revisar"))} com maior valor para revisar:
+
+# Explicação dos rótulos curtos da tabela de casos (chave: motivo em PT).
+legenda_motivos:
+  "Jantar sem pernoite": "Sem pernoite = jantar sem pernoite"
+  "Sem lastro de campo": "Sem lastro = sem lastro de campo"
+  "Pessoa fora do trabalho": "Fora do trabalho = pessoa fora do trabalho"
+  "Extra sem justificativa": "Extra s/ justif. = extra sem justificativa"
+
+s_recomendacoes: "Recomendações"
+indicadores: |
+  Indicadores para acompanhar todo mês: taxa de recargas indevidas (meta abaixo de 0,5% do valor pago), cobertura de lastro (meta acima de 99% das recargas com equipe registrada em campo) e valor por dia em campo por base, contra a faixa esperada.
+
+s_nota: "Nota sobre os dados"
+nota: |
+  Este é um caso de demonstração: a empresa, as pessoas e os lançamentos são fictícios, gerados por script com defeitos de tamanho conhecido. Por isso foi possível conferir que a auditoria encontrou os {num(plantados)} defeitos plantados e que nenhum dos {num(parecem_total)} lançamentos que só pareciam erro virou Indevido ou Revisar. Com dados reais, essa conferência é feita com a base, revisando uma amostra de cada conclusão com quem conhece o processo.

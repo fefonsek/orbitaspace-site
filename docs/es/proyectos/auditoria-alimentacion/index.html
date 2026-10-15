@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Un año de recargas de alimentación cruzado con el diario de campo y el registro de personal. Cuánto se pagó fuera de la regla, dónde y por qué.">
+
+<title>Auditoría del beneficio de alimentación en campo · Orbita Space</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/img/favicon-32.png?v=adc3fc4c" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f63de89ea0248cce814fe3306880b159.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png?v=f2b429e3">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;display=swap">
+<link rel="alternate" hreflang="pt-BR" href="https://orbitaspace.com.br/projetos/auditoria-alimentacao/index.html">
+<link rel="alternate" hreflang="x-default" href="https://orbitaspace.com.br/projetos/auditoria-alimentacao/index.html">
+<link rel="alternate" hreflang="es" href="https://orbitaspace.com.br/es/proyectos/auditoria-alimentacion/index.html">
+<link rel="alternate" hreflang="en" href="https://orbitaspace.com.br/en/projects/meal-allowance-audit/index.html">
+
+
+<meta property="og:title" content="Auditoría del beneficio de alimentación en campo · Orbita Space">
+<meta property="og:description" content="Un año de recargas de alimentación cruzado con el diario de campo y el registro de personal. Cuánto se pagó fuera de la regla, dónde y por qué.">
+<meta property="og:image" content="https://orbitaspace.com.br/es/proyectos/auditoria-alimentacion/img/capa.png?v=f28b1769">
+<meta property="og:site_name" content="Orbita Space">
+<meta property="og:image:height" content="675">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Portada del caso: auditoría del beneficio de alimentación en campo de Fiorena Redes Elétricas, con el gráfico del valor pagado por día en campo en 2025">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../es/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, página de inicio" class="navbar-logo light-content">
+    <img src="../../../assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, página de inicio" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../es/index.html">
+    <span class="navbar-title">Orbita Space</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/proyectos.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/servicios.html"> 
+<span class="menu-text">Servicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/sobre-mi.html"> 
+<span class="menu-text">Sobre mí</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/contacto.html"> 
+<span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">PT</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/index.html"> 
+<span class="menu-text">EN</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Auditoría del beneficio de alimentación en campo</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Auditoría</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Beneficios</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Un año de recargas de alimentación cruzado con el diario de campo y el registro de personal. Cuánto se pagó fuera de la regla, dónde y por qué.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="aviso-dados">
+<p><strong>Caso ficticio.</strong> Fiorena Redes Elétricas S.A., sus bases, personas y registros no existen. Los datos se generaron desde cero con un script en R, con reglas de beneficio inventadas y defectos de tamaño conocido. El método es real.</p>
+<p><a href="../../../projetos/auditoria-alimentacao/relatorio/relatorio-es.pdf" download="auditoria-alimentacion.pdf">Descargar el informe (PDF)</a> · <a href="../../../projetos/auditoria-alimentacao/resultados/casos_revisar_es.csv" download="casos_a_revisar.csv">Descargar los casos a revisar (CSV)</a></p>
+</div>
+<p><span class="nota-idioma">Los comentarios del código R están en portugués, el idioma original del caso.</span></p>
+<section id="la-pregunta" class="level2">
+<h2 data-anchor-id="la-pregunta">La pregunta</h2>
+<p>La contraloría de Fiorena vio que el valor pagado en alimentación por día de cuadrilla en campo subió de R$&nbsp;219 en el primer semestre de 2025 a R$&nbsp;239 en el segundo, un 9,5% más, sin reajuste de valores ni cambios en el tipo de servicio. La pregunta era simple: ¿cuánto de eso es gasto legítimo y cuánto se pagó fuera de la regla?</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/mensal-1.png?v=964dd212" class="lightbox" data-gallery="computador" title="Valor pagado en alimentación por día de cuadrilla en campo, mes a mes, en 2025. La línea punteada es el mismo valor sin lo que la auditoría clasificó como indebido. La marca en agosto es el cambio del sistema de recargas."><img src="index_files/figure-html/mensal-1.png?v=964dd212" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Dos líneas mes a mes. El valor pagado sube de unos 205 reales en enero a cerca de 250 reales en diciembre, con un salto en agosto. La línea sin lo indebido sube menos y queda por debajo de la otra desde agosto." width="864"></a></p>
+</figure>
+</div>
+<figcaption>Valor pagado en alimentación por día de cuadrilla en campo, mes a mes, en 2025. La línea punteada es el mismo valor sin lo que la auditoría clasificó como indebido. La marca en agosto es el cambio del sistema de recargas.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/mensal-celular-1.png?v=0deffd17" class="lightbox" data-gallery="celular" title="Valor pagado en alimentación por día de cuadrilla en campo, mes a mes, en 2025. La línea punteada es el mismo valor sin lo que la auditoría clasificó como indebido. La marca en agosto es el cambio del sistema de recargas."><img src="index_files/figure-html/mensal-celular-1.png?v=0deffd17" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Dos líneas mes a mes. El valor pagado sube de unos 205 reales en enero a cerca de 250 reales en diciembre, con un salto en agosto. La línea sin lo indebido sube menos y queda por debajo de la otra desde agosto." width="432"></a></p>
+</figure>
+</div>
+<figcaption>Valor pagado en alimentación por día de cuadrilla en campo, mes a mes, en 2025. La línea punteada es el mismo valor sin lo que la auditoría clasificó como indebido. La marca en agosto es el cambio del sistema de recargas.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>La caída de julio tiene una causa en los datos: julio y enero son los meses con más personas de vacaciones (en julio, 81 electricistas por día hábil, frente a 37 en la mediana del año), y cada cuadrilla salió a campo con 3,5 personas, frente a 3,8 en la mediana. El valor por persona en campo no bajó: se mantuvo entre R$&nbsp;58 y R$&nbsp;60 de enero a julio.</p>
+<p>Cada electricista recibe en la tarjeta de alimentación una recarga por día en campo. La recarga la registra la base, la aprueba el supervisor y se paga sin cruce automático con el diario de campo ni con el registro de vacaciones y ausencias. Nadie había mirado juntos los 12 meses de registros.</p>
+<p>La auditoría respondió tres preguntas, en este orden:</p>
+<ol type="1">
+<li>¿Cuánto se pagó fuera de una regla objetiva (duplicidad, por encima del tope, persona que no estaba trabajando)?</li>
+<li>¿Cuánto se pagó sin respaldo: sin registro de la cuadrilla en campo ese día, o con una justificación que no explica nada?</li>
+<li>¿Dónde se concentra, y por qué?</li>
+</ol>
+</section>
+<section id="la-regla-y-los-datos" class="level2">
+<h2 data-anchor-id="la-regla-y-los-datos">La regla y los datos</h2>
+<p>La regla del beneficio:</p>
+<ul>
+<li>Almuerzo de R$&nbsp;52 por día en campo.</li>
+<li>Cena de R$&nbsp;44, solo cuando el diario de campo registra pernocte de la cuadrilla.</li>
+<li>Extra de hasta R$&nbsp;24, solo con una de las justificaciones de la lista: “desplazamiento de más de 300 km” o “jornada extendida en más de 2 horas”.</li>
+<li>Tope de R$&nbsp;120 por persona por día, sumando todo, y como máximo una recarga de cada tipo por día.</li>
+<li>Solo para quien está activo, fuera de vacaciones y ausencias, y en una cuadrilla que estuvo en campo ese día.</li>
+</ul>
+<p>Se auditaron 155.909 recargas de 2025, por un total de R$&nbsp;7,63&nbsp;millones, pagadas a 649 personas de 8 bases, cruzadas con 33.254 registros de cuadrillas en campo en el diario, con el registro de personal y con las vacaciones y ausencias de RR. HH.</p>
+</section>
+<section id="método" class="level2">
+<h2 data-anchor-id="método">Método</h2>
+<p>Cada recarga pasa por las mismas verificaciones y termina en una de cuatro conclusiones. La auditoría separa lo que es un error objetivo, que se puede recuperar, de lo que solo merece una segunda mirada de la base; no saca conclusiones sobre la intención de nadie.</p>
+<ol type="1">
+<li><strong>Preparar.</strong> Usar el día trabajado, y no la fecha en que se registró la recarga, y vincular cada recarga con el registro de personal, las ausencias y la cuadrilla de la persona ese día.</li>
+<li><strong>Revisar las reglas objetivas.</strong> Duplicidad, persona fuera de servicio, cena sin pernocte, extra sin justificación y suma del día por encima del tope. En el tope, solo el excedente cuenta como indebido.</li>
+<li><strong>Revisar el respaldo.</strong> ¿La cuadrilla estaba en campo ese día? ¿La justificación del extra es válida, vaga o falta? Un diccionario de términos acepta errores de tipeo, para que “deslocamneto acima de 300km” (con error, en portugués) cuente como válida.</li>
+<li><strong>Comparar con lo esperado.</strong> Para cada base y mes, el valor por día en campo se compara con el de las otras bases en el mismo mes. Queda fuera del rango esperado el grupo que se aleja mucho más de lo que las bases suelen alejarse entre sí (el criterio de Tukey, en el código).</li>
+<li><strong>Puntuar el riesgo.</strong> Un punto por cada señal: regla violada, sin respaldo de campo, justificación vaga o ausente, base y mes por encima del rango.</li>
+<li><strong>Concluir.</strong> Cada recarga recibe una de las cuatro conclusiones de abajo.</li>
+</ol>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 41%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conclusión</th>
+<th>Cuándo</th>
+<th>Qué hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indebido</td>
+<td>Violó una regla objetiva</td>
+<td>Revertir o recuperar, según la política de la empresa y con apoyo de RR. HH. y del área legal</td>
+</tr>
+<tr class="even">
+<td>Revisar</td>
+<td>Ninguna regla violada, pero sin respaldo de campo o con dos señales o más</td>
+<td>La base confirma o corrige en un plazo de 15 días</td>
+</tr>
+<tr class="odd">
+<td>Atención</td>
+<td>Una sola señal, sin regla violada</td>
+<td>Entra en la muestra del mes siguiente</td>
+</tr>
+<tr class="even">
+<td>Conforme</td>
+<td>Ninguna señal</td>
+<td>Nada que hacer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cartoes-lista"><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Cuándo:</span> Violó una regla objetiva</p><p><span class="cartao-rotulo">Qué hacer:</span> Revertir o recuperar, según la política de la empresa y con apoyo de RR. HH. y del área legal</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Cuándo:</span> Ninguna regla violada, pero sin respaldo de campo o con dos señales o más</p><p><span class="cartao-rotulo">Qué hacer:</span> La base confirma o corrige en un plazo de 15 días</p></div><div class="cartao-linha"><p class="cartao-titulo">Atención</p><p><span class="cartao-rotulo">Cuándo:</span> Una sola señal, sin regla violada</p><p><span class="cartao-rotulo">Qué hacer:</span> Entra en la muestra del mes siguiente</p></div><div class="cartao-linha"><p class="cartao-titulo">Conforme</p><p><span class="cartao-rotulo">Cuándo:</span> Ninguna señal</p><p><span class="cartao-rotulo">Qué hacer:</span> Nada que hacer</p></div></div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 1: preparar</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O que vale é o dia de referência (o dia trabalhado), e não a data em que a</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># recarga foi lançada. Cada recarga é ligada ao cadastro, às ausências e à</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># equipe da pessoa naquele dia no diário de campo.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>recargas <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/recargas.csv.gz"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>, <span class="at">na =</span> <span class="st">""</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">justificativa =</span> <span class="st">"c"</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/diario_campo.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>cadastro <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/cadastro.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>, <span class="at">na =</span> <span class="st">""</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ausencias <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados/ausencias.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>base_auditoria <span class="ot">&lt;-</span> recargas <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dia =</span> dia_referencia) <span class="sc">|&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(cadastro <span class="sc">|&gt;</span> <span class="fu">select</span>(matricula, equipe, admissao, desligamento), <span class="st">"matricula"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ausencias <span class="sc">|&gt;</span> <span class="fu">select</span>(matricula, <span class="at">tipo_ausencia =</span> tipo, inicio, fim),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">join_by</span>(matricula, <span class="fu">between</span>(dia, inicio, fim))) <span class="sc">|&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(diario <span class="sc">|&gt;</span> <span class="fu">transmute</span>(equipe, <span class="at">dia =</span> data, <span class="at">em_campo =</span> <span class="cn">TRUE</span>, <span class="at">pernoite =</span> pernoite <span class="sc">==</span> <span class="st">"sim"</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(<span class="st">"equipe"</span>, <span class="st">"dia"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">em_campo =</span> <span class="fu">coalesce</span>(em_campo, <span class="cn">FALSE</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 2: reglas objetivas</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regras objetivas: cada violação pode ser cobrada. No teto, só o excedente</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conta como indevido; ele é calculado depois de tirar o que já é indevido por</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># outra regra, para não contar o mesmo real duas vezes.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>normalizar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">tolower</span>(<span class="fu">iconv</span>(<span class="fu">coalesce</span>(x, <span class="st">""</span>), <span class="at">to =</span> <span class="st">"ASCII//TRANSLIT"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"([0-9])</span><span class="sc">\\</span><span class="st">s*km"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">1 km"</span>, x)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"([0-9])</span><span class="sc">\\</span><span class="st">s*h</span><span class="sc">\\</span><span class="st">b"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">1 horas"</span>, x)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">trimws</span>(<span class="fu">gsub</span>(<span class="st">"[^a-z0-9 ]"</span>, <span class="st">" "</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>, <span class="st">" "</span>, x)))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dicionário com tolerância a erro de digitação: a justificativa vale se</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># estiver a até 15% de distância (em letras) de uma das frases da regra.</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>classificar_justificativa <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">normalizar</span>(x)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  validas <span class="ot">&lt;-</span> <span class="fu">normalizar</span>(JUSTIFICATIVAS_VALIDAS)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  dist <span class="ot">&lt;-</span> <span class="fu">adist</span>(n, validas, <span class="at">partial =</span> <span class="cn">FALSE</span>) <span class="sc">/</span> <span class="fu">outer</span>(<span class="fu">nchar</span>(n), <span class="fu">nchar</span>(validas), pmax)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(n <span class="sc">==</span> <span class="st">""</span> <span class="sc">~</span> <span class="st">"ausente"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="fu">apply</span>(dist, <span class="dv">1</span>, min) <span class="sc">&lt;=</span> <span class="fl">0.15</span> <span class="sc">~</span> <span class="st">"válida"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"vaga"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Cada texto diferente é classificado uma vez só.</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>textos <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">coalesce</span>(base_auditoria<span class="sc">$</span>justificativa[base_auditoria<span class="sc">$</span>tipo <span class="sc">==</span> <span class="st">"Extra"</span>], <span class="st">""</span>))</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>classes <span class="ot">&lt;-</span> <span class="fu">classificar_justificativa</span>(textos)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> base_auditoria <span class="sc">|&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">justificativa_classe =</span> <span class="fu">if_else</span>(tipo <span class="sc">==</span> <span class="st">"Extra"</span>, classes[<span class="fu">match</span>(<span class="fu">coalesce</span>(justificativa, <span class="st">""</span>), textos)], <span class="cn">NA</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(matricula, dia, tipo, data_recarga, id) <span class="sc">|&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(matricula, dia, tipo) <span class="sc">|&gt;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">duplicidade =</span> <span class="fu">row_number</span>() <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">fora_do_trabalho =</span> dia <span class="sc">&lt;</span> admissao <span class="sc">|</span> (<span class="sc">!</span><span class="fu">is.na</span>(desligamento) <span class="sc">&amp;</span> dia <span class="sc">&gt;</span> desligamento) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.na</span>(tipo_ausencia),</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">jantar_sem_pernoite =</span> tipo <span class="sc">==</span> <span class="st">"Jantar"</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">coalesce</span>(pernoite, <span class="cn">FALSE</span>),</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra_sem_justificativa =</span> tipo <span class="sc">==</span> <span class="st">"Extra"</span> <span class="sc">&amp;</span> justificativa_classe <span class="sc">==</span> <span class="st">"ausente"</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">motivo_regra =</span> <span class="fu">case_when</span>(duplicidade <span class="sc">~</span> <span class="st">"Duplicidade"</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>                             fora_do_trabalho <span class="sc">~</span> <span class="st">"Pessoa fora do trabalho"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>                             jantar_sem_pernoite <span class="sc">~</span> <span class="st">"Jantar sem pernoite"</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>                             extra_sem_justificativa <span class="sc">~</span> <span class="st">"Extra sem justificativa"</span>),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">valor_indevido =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(motivo_regra), <span class="dv">0</span>, valor)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Teto diário: soma do que não é indevido por outra regra; o excedente sai</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># primeiro do extra, depois do jantar.</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>ordem_corte <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Extra"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Jantar"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Almoço"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">restante =</span> valor <span class="sc">-</span> valor_indevido, <span class="at">corte =</span> ordem_corte[tipo]) <span class="sc">|&gt;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(matricula, dia) <span class="sc">|&gt;</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">excedente_dia =</span> <span class="fu">pmax</span>(<span class="fu">sum</span>(restante) <span class="sc">-</span> TETO, <span class="dv">0</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(corte, <span class="at">.by_group =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">antes =</span> <span class="fu">cumsum</span>(restante) <span class="sc">-</span> restante,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>         <span class="at">acima_do_teto =</span> <span class="fu">pmin</span>(restante, <span class="fu">pmax</span>(excedente_dia <span class="sc">-</span> antes, <span class="dv">0</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">valor_indevido =</span> valor_indevido <span class="sc">+</span> acima_do_teto,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>         <span class="at">motivo_regra =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(motivo_regra) <span class="sc">&amp;</span> acima_do_teto <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Acima do teto"</span>, motivo_regra),</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>         <span class="at">regra =</span> <span class="sc">!</span><span class="fu">is.na</span>(motivo_regra)) <span class="sc">|&gt;</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>restante, <span class="sc">-</span>corte, <span class="sc">-</span>excedente_dia, <span class="sc">-</span>antes)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 3: respaldo</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A equipe estava em campo naquele dia? A justificativa do extra é válida,</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vaga ou ausente?</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sem_lastro =</span> <span class="sc">!</span>em_campo,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">justificativa_fraca =</span> tipo <span class="sc">==</span> <span class="st">"Extra"</span> <span class="sc">&amp;</span> justificativa_classe <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"vaga"</span>, <span class="st">"ausente"</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 4: rango esperado</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor pago por dia de equipe em campo, por base e mês. Como o nível geral</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># muda de um mês para outro (mais pernoites no segundo semestre), cada base é</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># comparada com a mediana das bases no mesmo mês; a faixa esperada desse</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># índice vem do critério de Tukey sobre todos os grupos com pelo menos 15 dias</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># de equipe em campo. Como a auditoria procura pagamento a mais, só ficar</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># acima da faixa conta como sinal de risco; abaixo dela, o grupo só é anotado.</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>dias_campo <span class="ot">&lt;-</span> diario <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mes =</span> <span class="fu">format</span>(data, <span class="st">"%Y-%m"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(base, mes, <span class="at">name =</span> <span class="st">"dias_equipe"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>base_mes <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mes =</span> <span class="fu">format</span>(dia, <span class="st">"%Y-%m"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(base, mes) <span class="sc">|&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">valor =</span> <span class="fu">sum</span>(valor), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(dias_campo, <span class="fu">c</span>(<span class="st">"base"</span>, <span class="st">"mes"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">valor_dia =</span> valor <span class="sc">/</span> dias_equipe) <span class="sc">|&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mes) <span class="sc">|&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mediana_mes =</span> <span class="fu">median</span>(valor_dia), <span class="at">indice =</span> valor_dia <span class="sc">/</span> mediana_mes) <span class="sc">|&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>validos <span class="ot">&lt;-</span> base_mes <span class="sc">|&gt;</span> <span class="fu">filter</span>(dias_equipe <span class="sc">&gt;=</span> <span class="dv">15</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">quantile</span>(validos<span class="sc">$</span>indice, <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>faixa <span class="ot">&lt;-</span> <span class="fu">c</span>(q[[<span class="dv">1</span>]] <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> <span class="fu">diff</span>(q), q[[<span class="dv">2</span>]] <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> <span class="fu">diff</span>(q))</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>base_mes <span class="ot">&lt;-</span> base_mes <span class="sc">|&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">faixa_min =</span> faixa[<span class="dv">1</span>] <span class="sc">*</span> mediana_mes, <span class="at">faixa_max =</span> faixa[<span class="dv">2</span>] <span class="sc">*</span> mediana_mes,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">abaixo_da_faixa =</span> dias_equipe <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">&amp;</span> indice <span class="sc">&lt;</span> faixa[<span class="dv">1</span>],</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">fora_da_faixa =</span> dias_equipe <span class="sc">&gt;=</span> <span class="dv">15</span> <span class="sc">&amp;</span> indice <span class="sc">&gt;</span> faixa[<span class="dv">2</span>])</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mes =</span> <span class="fu">format</span>(dia, <span class="st">"%Y-%m"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(base_mes <span class="sc">|&gt;</span> <span class="fu">select</span>(base, mes, fora_da_faixa), <span class="fu">c</span>(<span class="st">"base"</span>, <span class="st">"mes"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fora_da_faixa =</span> <span class="fu">coalesce</span>(fora_da_faixa, <span class="cn">FALSE</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 5: puntaje de riesgo</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Um ponto para cada sinal, de 0 a 4.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score =</span> regra <span class="sc">+</span> sem_lastro <span class="sc">+</span> justificativa_fraca <span class="sc">+</span> fora_da_faixa,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">score_sem_regra =</span> score <span class="sc">-</span> regra)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver el código R de la etapa 6: conclusión</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Indevido: violou uma regra objetiva. Revisar: sem regra violada, mas sem</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lastro de campo ou com score de 2 ou mais. Atenção: score 1. Regular: 0.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Numa recarga que passou do teto só em parte, o excedente é Indevido e o</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># resto recebe a conclusão que teria sem essa regra.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>concluir <span class="ot">&lt;-</span> <span class="cf">function</span>(sem_lastro, score) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(sem_lastro <span class="sc">|</span> score <span class="sc">&gt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Revisar"</span>, score <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Atenção"</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Regular"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>auditada <span class="ot">&lt;-</span> auditada <span class="sc">|&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">conclusao =</span> <span class="fu">if_else</span>(regra, <span class="st">"Indevido"</span>, <span class="fu">concluir</span>(sem_lastro, score)),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">conclusao_resto =</span> <span class="fu">concluir</span>(sem_lastro, score_sem_regra),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">valor_resto =</span> valor <span class="sc">-</span> valor_indevido)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>NIVEIS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Indevido"</span>, <span class="st">"Revisar"</span>, <span class="st">"Atenção"</span>, <span class="st">"Regular"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="resultado" class="level2">
+<h2 data-anchor-id="resultado">Resultado</h2>
+<p>Del valor pagado en el año, R$&nbsp;305&nbsp;mil (4,0%) fueron indebidos, y otros R$&nbsp;235&nbsp;mil (3,1%) necesitan confirmación de la base.</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/conclusoes-1.png?v=82365dac" class="lightbox" data-gallery="computador" title="El valor pagado en 2025, dividido en las cuatro conclusiones de la auditoría."><img src="index_files/figure-html/conclusoes-1.png?v=82365dac" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Una barra horizontal con el valor del año. Indebido, Revisar y Atención ocupan juntos poco más de una décima parte de la barra; el resto es Conforme." width="864"></a></p>
+</figure>
+</div>
+<figcaption>El valor pagado en 2025, dividido en las cuatro conclusiones de la auditoría.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/conclusoes-celular-1.png?v=e26b6fc3" class="lightbox" data-gallery="celular" title="El valor pagado en 2025, dividido en las cuatro conclusiones de la auditoría."><img src="index_files/figure-html/conclusoes-celular-1.png?v=e26b6fc3" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Una barra horizontal con el valor del año. Indebido, Revisar y Atención ocupan juntos poco más de una décima parte de la barra; el resto es Conforme." width="432"></a></p>
+</figure>
+</div>
+<figcaption>El valor pagado en 2025, dividido en las cuatro conclusiones de la auditoría.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Indebido</strong> es lo que violó una regla objetiva y se puede recuperar.</li>
+<li><strong>Revisar</strong> está formado casi todo por recargas sin respaldo de campo: R$&nbsp;234&nbsp;mil en 4.500 recargas registradas en días en que la cuadrilla no aparece en el diario. Puede ser una falla del diario, y no de la recarga; por eso la base confirma antes de cualquier recuperación.</li>
+<li><strong>Atención no es una acusación.</strong> De las 8.686 recargas en Atención, 7.925 están ahí solo porque la base y el mes quedaron por encima del rango esperado; la recarga en sí cumple la regla. Entre ellas hay 1.072 registros que solo parecían error (registrados uno o dos días después, pernocte anotado con atraso, justificación con error de tipeo). Las otras 872 tienen una justificación vaga, como “ajuste” o “conforme combinado” (según lo acordado).</li>
+</ul>
+<section id="lo-indebido-por-tipo-de-defecto" class="level3">
+<h3 data-anchor-id="lo-indebido-por-tipo-de-defecto">Lo indebido por tipo de defecto</h3>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/defeitos-1.png?v=ccf299b5" class="lightbox" data-gallery="computador" title="Valor indebido en 2025 por tipo de defecto. En el tope, solo el excedente por encima del límite diario."><img src="index_files/figure-html/defeitos-1.png?v=ccf299b5" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Barras horizontales de mayor a menor. Duplicidad, en azul, es el mayor defecto, seguido de cena sin pernocte, persona fuera de servicio, por encima del tope y extra sin justificación." width="864"></a></p>
+</figure>
+</div>
+<figcaption>Valor indebido en 2025 por tipo de defecto. En el tope, solo el excedente por encima del límite diario.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/defeitos-celular-1.png?v=4610bbd6" class="lightbox" data-gallery="celular" title="Valor indebido en 2025 por tipo de defecto. En el tope, solo el excedente por encima del límite diario."><img src="index_files/figure-html/defeitos-celular-1.png?v=4610bbd6" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Barras horizontales de mayor a menor. Duplicidad, en azul, es el mayor defecto, seguido de cena sin pernocte, persona fuera de servicio, por encima del tope y extra sin justificación." width="432"></a></p>
+</figure>
+</div>
+<figcaption>Valor indebido en 2025 por tipo de defecto. En el tope, solo el excedente por encima del límite diario.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="qué-explica-el-salto-del-segundo-semestre" class="level3">
+<h3 data-anchor-id="qué-explica-el-salto-del-segundo-semestre">Qué explica el salto del segundo semestre</h3>
+<p>El valor por día en campo subió R$&nbsp;20,86. De ese aumento, R$&nbsp;10,21 (49%) vinieron de pagos indebidos. Otros R$&nbsp;8,51 (41%) vinieron de más cenas legítimas, porque los pernoctes pasaron del 11,5% al 16,8% de los días en campo. El resto, R$&nbsp;2,14, acompaña a los pernoctes, en los extras.</p>
+</section>
+</section>
+<section id="dónde-y-por-qué" class="level2">
+<h2 data-anchor-id="dónde-y-por-qué">Dónde y por qué</h2>
+<ul>
+<li><strong>El cambio de sistema en agosto creó duplicidades.</strong> Hasta julio suman R$&nbsp;6&nbsp;mil; de agosto a diciembre, R$&nbsp;112&nbsp;mil. El sistema nuevo acepta dos recargas del mismo tipo para la misma persona el mismo día.</li>
+<li><strong>El registro de personal llega con atraso.</strong> El 100% de las recargas pagadas a personas de vacaciones cayeron en los cinco primeros días del período: la base se entera de las vacaciones después de que empezaron.</li>
+<li><strong>Dos bases pagan cena sin pernocte.</strong> La Base 3 y la Base 6 concentran el 100% de las cenas sin pernocte, y son las únicas con meses por encima del rango esperado: 3 meses en la primera y 3 en la segunda.</li>
+</ul>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/faixa-1.png?v=f1b3bac6" class="lightbox" data-gallery="computador" title="Valor pagado por día de cuadrilla en campo, por base y mes, frente al rango esperado (área gris). Los puntos azules son los meses por encima del rango."><img src="index_files/figure-html/faixa-1.png?v=f1b3bac6" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Ocho gráficos pequeños, uno por base. En seis bases la línea queda dentro del rango gris todo el año. En las bases 3 y 6, en azul, la línea pasa por encima del rango en tres meses cada una." width="864"></a></p>
+</figure>
+</div>
+<figcaption>Valor pagado por día de cuadrilla en campo, por base y mes, frente al rango esperado (área gris). Los puntos azules son los meses por encima del rango.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/faixa-celular-1.png?v=6ade7f81" class="lightbox" data-gallery="celular" title="Valor pagado por día de cuadrilla en campo, por base y mes, frente al rango esperado (área gris). Los puntos azules son los meses por encima del rango."><img src="index_files/figure-html/faixa-celular-1.png?v=6ade7f81" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Ocho gráficos pequeños, uno por base. En seis bases la línea queda dentro del rango gris todo el año. En las bases 3 y 6, en azul, la línea pasa por encima del rango en tres meses cada una." width="432"></a></p>
+</figure>
+</div>
+<figcaption>Valor pagado por día de cuadrilla en campo, por base y mes, frente al rango esperado (área gris). Los puntos azules son los meses por encima del rango.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="casos-a-revisar" class="level2">
+<h2 data-anchor-id="casos-a-revisar">Casos a revisar</h2>
+<p>La lista completa tiene 12.033 recargas clasificadas como Indebido o Revisar, ordenadas por conclusión, riesgo y valor, y se puede descargar al inicio de la página. Abajo, primero las 5 personas con mayor valor indebido (solo la parte indebida de cada recarga) y después las 5 con mayor valor a revisar.</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 26%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Conclusión</th>
+<th style="text-align: left;">Matrícula</th>
+<th style="text-align: left;">Base</th>
+<th style="text-align: left;">Período</th>
+<th style="text-align: right;">Recargas</th>
+<th style="text-align: right;">Valor</th>
+<th style="text-align: left;">Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Indebido</td>
+<td style="text-align: left;">F6561</td>
+<td style="text-align: left;">Base&nbsp;3</td>
+<td style="text-align: left;">06/01/2025 a 17/12/2025</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">R$&nbsp;1.692</td>
+<td style="text-align: left;">Cena sin pernocte</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indebido</td>
+<td style="text-align: left;">F5109</td>
+<td style="text-align: left;">Base&nbsp;3</td>
+<td style="text-align: left;">24/02/2025 a 11/12/2025</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">R$&nbsp;1.684</td>
+<td style="text-align: left;">Cena sin pernocte</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Indebido</td>
+<td style="text-align: left;">F5730</td>
+<td style="text-align: left;">Base&nbsp;6</td>
+<td style="text-align: left;">27/03/2025 a 31/12/2025</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">R$&nbsp;1.616</td>
+<td style="text-align: left;">Cena sin pernocte</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indebido</td>
+<td style="text-align: left;">F4119</td>
+<td style="text-align: left;">Base&nbsp;6</td>
+<td style="text-align: left;">22/04/2025 a 26/12/2025</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">R$&nbsp;1.580</td>
+<td style="text-align: left;">Cena sin pernocte</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Indebido</td>
+<td style="text-align: left;">F5573</td>
+<td style="text-align: left;">Base&nbsp;3</td>
+<td style="text-align: left;">23/01/2025 a 29/12/2025</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">R$&nbsp;1.568</td>
+<td style="text-align: left;">Cena sin pernocte</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Revisar</td>
+<td style="text-align: left;">F3012</td>
+<td style="text-align: left;">Base&nbsp;2</td>
+<td style="text-align: left;">13/01/2025 a 29/12/2025</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">R$&nbsp;936</td>
+<td style="text-align: left;">Sin respaldo de campo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Revisar</td>
+<td style="text-align: left;">F8211</td>
+<td style="text-align: left;">Base&nbsp;6</td>
+<td style="text-align: left;">23/01/2025 a 31/12/2025</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">R$&nbsp;936</td>
+<td style="text-align: left;">Sin respaldo de campo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Revisar</td>
+<td style="text-align: left;">F1355</td>
+<td style="text-align: left;">Base&nbsp;6</td>
+<td style="text-align: left;">08/01/2025 a 23/12/2025</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">R$&nbsp;872</td>
+<td style="text-align: left;">Sin respaldo de campo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Revisar</td>
+<td style="text-align: left;">F6862</td>
+<td style="text-align: left;">Base&nbsp;6</td>
+<td style="text-align: left;">15/01/2025 a 16/12/2025</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">R$&nbsp;852</td>
+<td style="text-align: left;">Sin respaldo de campo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Revisar</td>
+<td style="text-align: left;">F1035</td>
+<td style="text-align: left;">Base&nbsp;2</td>
+<td style="text-align: left;">27/01/2025 a 29/12/2025</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">R$&nbsp;832</td>
+<td style="text-align: left;">Sin respaldo de campo</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cartoes-lista"><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Matrícula:</span> F6561</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;3</p><p><span class="cartao-rotulo">Período:</span> 06/01/2025 a 17/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 40</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;1.692</p><p><span class="cartao-rotulo">Motivo:</span> Cena sin pernocte</p></div><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Matrícula:</span> F5109</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;3</p><p><span class="cartao-rotulo">Período:</span> 24/02/2025 a 11/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 40</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;1.684</p><p><span class="cartao-rotulo">Motivo:</span> Cena sin pernocte</p></div><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Matrícula:</span> F5730</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;6</p><p><span class="cartao-rotulo">Período:</span> 27/03/2025 a 31/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 37</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;1.616</p><p><span class="cartao-rotulo">Motivo:</span> Cena sin pernocte</p></div><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Matrícula:</span> F4119</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;6</p><p><span class="cartao-rotulo">Período:</span> 22/04/2025 a 26/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 37</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;1.580</p><p><span class="cartao-rotulo">Motivo:</span> Cena sin pernocte</p></div><div class="cartao-linha"><p class="cartao-titulo">Indebido</p><p><span class="cartao-rotulo">Matrícula:</span> F5573</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;3</p><p><span class="cartao-rotulo">Período:</span> 23/01/2025 a 29/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 37</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;1.568</p><p><span class="cartao-rotulo">Motivo:</span> Cena sin pernocte</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Matrícula:</span> F3012</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;2</p><p><span class="cartao-rotulo">Período:</span> 13/01/2025 a 29/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 18</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;936</p><p><span class="cartao-rotulo">Motivo:</span> Sin respaldo de campo</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Matrícula:</span> F8211</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;6</p><p><span class="cartao-rotulo">Período:</span> 23/01/2025 a 31/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 18</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;936</p><p><span class="cartao-rotulo">Motivo:</span> Sin respaldo de campo</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Matrícula:</span> F1355</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;6</p><p><span class="cartao-rotulo">Período:</span> 08/01/2025 a 23/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 18</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;872</p><p><span class="cartao-rotulo">Motivo:</span> Sin respaldo de campo</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Matrícula:</span> F6862</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;6</p><p><span class="cartao-rotulo">Período:</span> 15/01/2025 a 16/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 17</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;852</p><p><span class="cartao-rotulo">Motivo:</span> Sin respaldo de campo</p></div><div class="cartao-linha"><p class="cartao-titulo">Revisar</p><p><span class="cartao-rotulo">Matrícula:</span> F1035</p><p><span class="cartao-rotulo">Base:</span> Base&nbsp;2</p><p><span class="cartao-rotulo">Período:</span> 27/01/2025 a 29/12/2025</p><p><span class="cartao-rotulo">Recargas:</span> 16</p><p><span class="cartao-rotulo">Valor:</span> R$&nbsp;832</p><p><span class="cartao-rotulo">Motivo:</span> Sin respaldo de campo</p></div></div>
+</div>
+</div>
+</section>
+<section id="cómo-saber-que-la-auditoría-acertó" class="level2">
+<h2 data-anchor-id="cómo-saber-que-la-auditoría-acertó">Cómo saber que la auditoría acertó</h2>
+<p>Como los datos de este caso se generaron con un script, fue posible comparar la auditoría con lo que el generador plantó: encontró los 12.905 defectos plantados, sin excepción, y ninguno de los 19.885 registros que solo parecían error terminó como Indebido o Revisar. La auditoría no lee la clave de respuestas; un script aparte compara las dos cosas al final. Con datos reales no existe una clave de respuestas, y esa verificación se hace con la base: una muestra de casos de cada conclusión se revisa con quienes conocen el proceso antes de cerrar el informe.</p>
+</section>
+<section id="recomendaciones" class="level2">
+<h2 data-anchor-id="recomendaciones">Recomendaciones</h2>
+<p>Cada hallazgo se convierte en una corrección del proceso, para que el problema no vuelva al año siguiente.</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 51%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hallazgo</th>
+<th>Corrección recomendada</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Duplicidad después del cambio de sistema</td>
+<td>Bloqueo en el sistema de una recarga por tipo, persona y día</td>
+<td>TI y proveedor de la tarjeta</td>
+</tr>
+<tr class="even">
+<td>Registro de personal con atraso</td>
+<td>Lista diaria de vacaciones, ausencias y desvinculaciones enviada al sistema de recargas</td>
+<td>RR. HH.</td>
+</tr>
+<tr class="odd">
+<td>Cena sin pernocte</td>
+<td>Cena habilitada solo cuando el diario registra pernocte</td>
+<td>Operaciones y supervisores de las bases</td>
+</tr>
+<tr class="even">
+<td>Por encima del tope</td>
+<td>Tope diario aplicado por el propio sistema</td>
+<td>TI</td>
+</tr>
+<tr class="odd">
+<td>Justificación vaga</td>
+<td>Justificación elegida de una lista cerrada, no escrita a mano</td>
+<td>Contraloría</td>
+</tr>
+<tr class="even">
+<td>Valores ya pagados como indebidos</td>
+<td>Reversión o recuperación según la política de la empresa</td>
+<td>RR. HH., con apoyo del área legal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cartoes-lista"><div class="cartao-linha"><p class="cartao-titulo">Duplicidad después del cambio de sistema</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Bloqueo en el sistema de una recarga por tipo, persona y día</p><p><span class="cartao-rotulo">Responsable:</span> TI y proveedor de la tarjeta</p></div><div class="cartao-linha"><p class="cartao-titulo">Registro de personal con atraso</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Lista diaria de vacaciones, ausencias y desvinculaciones enviada al sistema de recargas</p><p><span class="cartao-rotulo">Responsable:</span> RR. HH.</p></div><div class="cartao-linha"><p class="cartao-titulo">Cena sin pernocte</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Cena habilitada solo cuando el diario registra pernocte</p><p><span class="cartao-rotulo">Responsable:</span> Operaciones y supervisores de las bases</p></div><div class="cartao-linha"><p class="cartao-titulo">Por encima del tope</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Tope diario aplicado por el propio sistema</p><p><span class="cartao-rotulo">Responsable:</span> TI</p></div><div class="cartao-linha"><p class="cartao-titulo">Justificación vaga</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Justificación elegida de una lista cerrada, no escrita a mano</p><p><span class="cartao-rotulo">Responsable:</span> Contraloría</p></div><div class="cartao-linha"><p class="cartao-titulo">Valores ya pagados como indebidos</p><p><span class="cartao-rotulo">Corrección recomendada:</span> Reversión o recuperación según la política de la empresa</p><p><span class="cartao-rotulo">Responsable:</span> RR. HH., con apoyo del área legal</p></div></div>
+</div>
+</div>
+<p>La auditoría también deja tres indicadores para seguir todos los meses:</p>
+<ul>
+<li><strong>Tasa de recargas indebidas:</strong> valor indebido ÷ valor pagado, con meta por debajo del 0,5%.</li>
+<li><strong>Cobertura de respaldo:</strong> recargas con cuadrilla registrada en campo ÷ total de recargas, con meta por encima del 99%.</li>
+<li><strong>Valor por día en campo:</strong> por base, frente al rango esperado.</li>
+</ul>
+</section>
+<section id="lo-que-demuestra-el-caso" class="level2">
+<h2 data-anchor-id="lo-que-demuestra-el-caso">Lo que demuestra el caso</h2>
+<ul>
+<li><strong>Cruzar bases que nadie cruzaba.</strong> El error no estaba en ninguna base por sí sola, sino en la falta de verificación entre la tarjeta, el diario de campo y RR. HH.</li>
+<li><strong>Separar el error objetivo de la sospecha.</strong> Solo lo que viola una regla va a recuperación; el resto va a la base para que lo confirme, sin acusar a nadie.</li>
+<li><strong>Un número que explica el problema.</strong> El salto del segundo semestre se dividió entre lo indebido y lo legítimo, en lugar de convertirse en una orden genérica de recorte de gastos.</li>
+<li><strong>Un informe que se vuelve a ejecutar.</strong> El código queda en la empresa, y el mismo informe se ejecuta el año siguiente con los datos nuevos.</li>
+</ul>
+</section>
+<section id="tu-empresa-paga-algún-beneficio-reembolso-o-adicional-sin-cruzarlo-con-otra-base" class="level2 cta-final">
+<h2 data-anchor-id="tu-empresa-paga-algún-beneficio-reembolso-o-adicional-sin-cruzarlo-con-otra-base">¿Tu empresa paga algún beneficio, reembolso o adicional sin cruzarlo con otra base?</h2>
+<p>Cuéntame cómo funciona hoy y te digo qué se puede verificar.</p>
+<p><a href="../../../es/contacto.html" class="btn btn-primary">Escríbeme</a></p>
+</section>
+
+
+
+</main> <!-- /main -->
+<script>
+// 1. Seletor PT | ES | EN: aponta cada idioma para a versão correspondente
+//    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
+//    Sem versão correspondente, leva para o blog do idioma (se estamos no
+//    blog), para a lista de projetos (se estamos num projeto que só existe
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
+// 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
+//    está em outra língua, sugere a versão no idioma do navegador. Nunca
+//    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
+// 3. Botão "Copiar e-mail" da página de contato.
+document.addEventListener("DOMContentLoaded", function () {
+  var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
+  var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
+  var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
+  var projetos = { PT: "/projetos.html", ES: "/es/proyectos.html", EN: "/en/projects.html" };
+  var atual = document.documentElement.lang;
+  var noBlog = /\/blog(\/|\.html)/.test(location.pathname);
+  var noProjeto = /^\/projetos\//.test(location.pathname);
+  var CHAVE_FAIXA = "orbita-faixa-idioma";
+
+  function lembrar() {
+    try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
+  }
+
+  function caminho(rotulo) {
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
+    if (alt) return new URL(alt.href).pathname;
+    if (codigos[rotulo] === atual) return location.pathname;
+    if (noBlog) return blog[rotulo];
+    return noProjeto ? projetos[rotulo] : inicio[rotulo];
+  }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
+
+  // 1. Seletor
+  document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
+    var rotulo = link.textContent.trim();
+    if (!codigos[rotulo]) return;
+    var item = link.closest(".nav-item");
+    if (item) item.classList.add("nav-idioma");
+    link.classList.remove("active");
+    link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
+    link.hreflang = codigos[rotulo];
+    link.addEventListener("click", lembrar);
+    if (codigos[rotulo] === atual) {
+      link.classList.add("idioma-atual");
+      link.setAttribute("aria-current", "true");
+    }
+  });
+
+  // 2. Faixa de idioma
+  (function faixaIdioma() {
+    try {
+      if (localStorage.getItem(CHAVE_FAIXA)) return;
+    } catch (e) {}
+    var preferido = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    var textos = {
+      es: { rotulo: "ES", frase: "Este sitio también está en español.", link: "Ver en español", fechar: "Cerrar" },
+      en: { rotulo: "EN", frase: "This site is also available in English.", link: "View in English", fechar: "Close" }
+    };
+    var t = textos[preferido];
+    if (!t || atual.slice(0, 2) === preferido) return;
+
+    var faixa = document.createElement("div");
+    faixa.className = "faixa-idioma";
+    faixa.lang = preferido;
+    faixa.setAttribute("role", "region");
+    faixa.setAttribute("aria-label", t.link);
+
+    var texto = document.createElement("p");
+    texto.appendChild(document.createTextNode(t.frase + " "));
+    var link = document.createElement("a");
+    link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
+    link.hreflang = preferido;
+    link.textContent = t.link;
+    link.addEventListener("click", lembrar);
+    texto.appendChild(link);
+
+    var fechar = document.createElement("button");
+    fechar.type = "button";
+    fechar.className = "faixa-fechar";
+    fechar.setAttribute("aria-label", t.fechar);
+    fechar.innerHTML = "&times;";
+    fechar.addEventListener("click", function () {
+      faixa.remove();
+      lembrar();
+    });
+
+    faixa.appendChild(texto);
+    faixa.appendChild(fechar);
+    document.body.insertBefore(faixa, document.body.firstChild);
+  })();
+
+  // 3. Copiar e-mail
+  document.querySelectorAll(".copiar-email").forEach(function (botao) {
+    var original = botao.textContent;
+    botao.addEventListener("click", function () {
+      var email = botao.getAttribute("data-email");
+      var copiado = function () {
+        botao.textContent = botao.getAttribute("data-copiado");
+        setTimeout(function () { botao.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(copiado, function () {});
+      } else {
+        var campo = document.createElement("textarea");
+        campo.value = email;
+        campo.setAttribute("readonly", "");
+        campo.style.position = "absolute";
+        campo.style.left = "-9999px";
+        document.body.appendChild(campo);
+        campo.select();
+        try { if (document.execCommand("copy")) copiado(); } catch (e) {}
+        campo.remove();
+      }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orbitaspace\.com\.br");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><a href="https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.">WhatsApp</a> · <a href="mailto:felipe.fonseca@orbitaspace.com.br">Correo</a> · <a href="https://www.linkedin.com/in/fpzfonseca">LinkedIn</a> · <a href="https://github.com/fefonsek">GitHub</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
