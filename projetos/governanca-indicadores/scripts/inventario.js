@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var linhas = Array.prototype.slice.call(bloco.querySelectorAll("tbody tr"));
     var contagem = bloco.querySelector(".inventario-contagem");
     var total = contagem.getAttribute("data-total");
+    // Modelo do idioma, por exemplo "{n} de {total} indicadores".
+    var modelo = contagem.getAttribute("data-modelo");
 
     function normalizar(texto) {
-      return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
     function aplicar() {
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         linha.hidden = !ok;
         if (ok) visiveis++;
       });
-      contagem.textContent = visiveis + " de " + total + " indicadores";
+      contagem.textContent = modelo.replace("{n}", visiveis).replace("{total}", total);
     }
 
     busca.addEventListener("input", aplicar);

@@ -64,10 +64,12 @@ if (Test-Path $baseRadar) {
 }
 $ultimaMudanca = (Get-ChildItem "$indicadores\dados\*", "$indicadores\scripts\*" |
     Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
-$json = "_freeze\$indicadores\index\execute-results\html.json"
-if ((Test-Path $json) -and (Get-Item $json).LastWriteTime -lt $ultimaMudanca) {
-    Remove-Item "_freeze\$indicadores" -Recurse -Force
-    Write-Host "Caso Indicadores: _freeze\$indicadores descartado; a página será refeita."
+foreach ($congelado in "_freeze\$indicadores", "_freeze\es\proyectos\gobernanza-indicadores", "_freeze\en\projects\kpi-governance") {
+    $json = "$congelado\index\execute-results\html.json"
+    if ((Test-Path $json) -and (Get-Item $json).LastWriteTime -lt $ultimaMudanca) {
+        Remove-Item $congelado -Recurse -Force
+        Write-Host "Caso Indicadores: $congelado descartado; a página será refeita."
+    }
 }
 
 # 1. Limpa a saída anterior (assim páginas removidas não ficam esquecidas).

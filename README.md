@@ -112,10 +112,13 @@ Os termos usados nas traduções ficam em `_rascunhos/glossario_pt_es_en.md`.
 
 ## Caso Indicadores (governança de indicadores)
 
-O caso "Um número, três respostas" fica em `projetos/governanca-indicadores/`
-e por enquanto existe **só em português**; as versões em espanhol e inglês
-ainda faltam (quando entrarem, ganham uma chave em `_traducoes.yml`, como o
-TCC). O roteiro aprovado está em `_rascunhos/caso_indicadores_roteiro.md`.
+O caso "Um número, três respostas" existe em três línguas:
+`projetos/governanca-indicadores/`, `es/proyectos/gobernanza-indicadores/` e
+`en/projects/kpi-governance/`, ligadas pela chave `indicadores` do
+`_traducoes.yml`. Os dados e os scripts ficam só na pasta em português; as
+páginas em ES e EN leem os mesmos arquivos. O roteiro aprovado está em
+`_rascunhos/caso_indicadores_roteiro.md`, e os rascunhos das traduções em
+`_rascunhos/caso_indicadores_es.md` e `_en.md`.
 
 Como no TCC, o texto da página não tem nenhum número digitado: tudo vem dos
 arquivos de `dados/` e é conferido por `stopifnot` antes de a página sair.
@@ -132,6 +135,12 @@ arquivos de `dados/` e é conferido por `stopifnot` antes de a página sair.
 - `scripts/apresentacao.R` desenha os gráficos (com uma versão para o
   celular), as partes em HTML e a capa; `scripts/inventario.js` faz a busca
   e os filtros do inventário.
+- `scripts/rotulos.R` tem os formatos de número e de data e os rótulos curtos
+  de cada língua (como o do TCC); os textos dos dados em espanhol e inglês
+  (inventário, fichas, critérios, RACI, versões, definições) ficam em
+  `scripts/textos_es.yml` e `textos_en.yml`, presos às chaves dos arquivos em
+  português. Em inglês, número que abre a frase sai por extenso
+  (`tx$extenso(n, inicio = TRUE)`).
 
 O `agregar_radar.R` lê a base do Radar de Absenteísmo **só para leitura**, na
 pasta `data/raw` do projeto `radar-absenteismo-powerbi` ao lado do site (ou no
@@ -139,7 +148,7 @@ caminho de `ORBITA_ORIGEM_PAINEL`), nunca lê `_privado/` e nunca copia arquivo
 do Radar para o site. Ele roda sozinho no passo 0b do `render.ps1`, só quando
 o CSV não existe ou quando a base do Radar ou o script mudaram; sem a pasta do
 Radar, o render usa o CSV que já está no site. Se os dados ou os scripts do
-caso mudam, o `render.ps1` descarta o `_freeze/` da página.
+caso mudam, o `render.ps1` descarta o `_freeze/` das três páginas.
 
 ## Estrutura
 

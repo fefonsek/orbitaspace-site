@@ -6,6 +6,7 @@ image-alt: "Capa do caso: um número, três respostas, governança de indicadore
 categories: [Governança de indicadores, KPIs, Gestão, R]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
 frente: [indicadores]
+traducao: indicadores
 # Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
 lightbox: true
 format:
@@ -32,9 +33,11 @@ library(knitr)
 # mês, foram agregadas da base do Radar por scripts/agregar_radar.R.
 caso <- "."
 source(file.path(caso, "scripts/dados.R"))
+source(file.path(caso, "scripts/rotulos.R"))
 source(file.path(caso, "scripts/apresentacao.R"))
 read_chunk(file.path(caso, "scripts/agregar_radar.R"))
-ind <- ler_caso(caso)
+tx <- rotulos("pt", caso)
+ind <- localizar(ler_caso(caso), tx)
 
 # Mês discutido na reunião que abre a história.
 reuniao <- "2025-06"
@@ -45,7 +48,7 @@ fora_da_diretoria <- ind$n - dir
 # esta checagem garante que os números dela continuam certos.
 cabecalho <- rmarkdown::yaml_front_matter(file.path(caso, "index.qmd"))
 stopifnot("a descrição do cartão precisa citar os totais do inventário" =
-            grepl(paste(ind$n, "indicadores viraram", dir), cabecalho$description))
+            grepl(tx$descricao(ind$n, dir), cabecalho$description, fixed = TRUE))
 ```
 
 ::: aviso-dados
@@ -56,7 +59,7 @@ stopifnot("a descrição do cartão precisa citar os totais do inventário" =
 
 ## A história
 
-Na reunião de resultados de julho de 2025, a Vallora ouviu três taxas de absenteísmo para junho. O RH mostrou `r pct(ind$mes("rh", reuniao))`, a Operação `r pct(ind$mes("operacao", reuniao))`, o Financeiro `r pct(ind$mes("financeiro", reuniao))`, e a reunião gastou meia hora discutindo qual estava certa.
+Na reunião de resultados de julho de 2025, a Vallora ouviu três taxas de absenteísmo para junho. O RH mostrou `r tx$pct(ind$mes("rh", reuniao))`, a Operação `r tx$pct(ind$mes("operacao", reuniao))`, o Financeiro `r tx$pct(ind$mes("financeiro", reuniao))`, e a reunião gastou meia hora discutindo qual estava certa.
 
 ::: so-computador
 ```{r}
@@ -89,9 +92,9 @@ grafico_taxas(ind, reuniao, celular = TRUE)
 
 Nenhuma estava errada. Cada área calculava o que precisava para o seu trabalho e chamava o resultado pelo mesmo nome. O problema não era de conta, era de governança: ninguém tinha escrito o que "taxa de absenteísmo" significava na empresa, nem quem decidia isso.
 
-A cena se repetiu nos meses seguintes, e em dezembro a diretoria pediu um levantamento de todos os indicadores que circulavam nas apresentações mensais. Apareceram `r ind$n`, vindos de `r extenso(ind$n_areas, feminino = TRUE)` áreas, e só `r ind$situacao[["Bem definido"]]` estavam bem definidos. O trabalho durou cinco semanas, em quatro etapas:
+A cena se repetiu nos meses seguintes, e em dezembro a diretoria pediu um levantamento de todos os indicadores que circulavam nas apresentações mensais. Apareceram `r ind$n`, vindos de `r tx$extenso(ind$n_areas, feminino = TRUE)` áreas, e só `r ind$situacao[["Bem definido"]]` estavam bem definidos. O trabalho durou cinco semanas, em quatro etapas:
 
-1. Entrevistas com quem produz e com quem usa os números, nas `r extenso(ind$n_areas, feminino = TRUE)` áreas.
+1. Entrevistas com quem produz e com quem usa os números, nas `r tx$extenso(ind$n_areas, feminino = TRUE)` áreas.
 2. Inventário e diagnóstico de cada indicador.
 3. Fichas técnicas dos indicadores que vão à diretoria.
 4. Regras de governança: quem propõe, quem aprova, como uma mudança fica registrada.
@@ -107,7 +110,7 @@ As três taxas saem da mesma base e respondem perguntas diferentes. A decisão f
 cat(definicoes_html(ind))
 ```
 
-- **Operação.** A Operação conta o dia inteiro mesmo quando a ausência é um atraso, o que empurra a taxa para cima, mas tira da escala quem está afastado há mais de 15 dias, o que puxa para baixo. No saldo, fica um pouco abaixo do RH. Em `r extenso(length(ind$ope_acima))` dos `r nrow(ind$mensal)` meses (`r lista_meses(ind$ope_acima)`), a conta virou: nos meses com poucos afastamentos longos, pesa mais contar o dia inteiro, e a Operação passa o RH.
+- **Operação.** A Operação conta o dia inteiro mesmo quando a ausência é um atraso, o que empurra a taxa para cima, mas tira da escala quem está afastado há mais de 15 dias, o que puxa para baixo. No saldo, fica um pouco abaixo do RH. Em `r tx$extenso(length(ind$ope_acima))` dos `r nrow(ind$mensal)` meses (`r tx$lista_meses(ind$ope_acima)`), a conta virou: nos meses com poucos afastamentos longos, pesa mais contar o dia inteiro, e a Operação passa o RH.
 - **Financeiro.** Tira as faltas e os atrasos, que são descontados do salário, e o que o INSS paga a partir do 16º dia de afastamento. Por isso fica bem abaixo das outras duas.
 
 ```{r}
@@ -123,21 +126,13 @@ Dos `r ind$n` indicadores, `r dir` vão à reunião da diretoria, `r ind$destino
 ```{r}
 #| label: situacao
 #| echo: false
-ind$criterios |>
-  filter(grupo == "situacao") |>
-  mutate(quantos = as.vector(ind$situacao[nome])) |>
-  select(nome, criterio, quantos) |>
-  tabela(c("Situação encontrada", "Critério", "Quantos"), c("l", "l", "r"))
+tabela_criterios(ind, "situacao")
 ```
 
 ```{r}
 #| label: destino
 #| echo: false
-ind$criterios |>
-  filter(grupo == "destino") |>
-  mutate(quantos = as.vector(ind$destino[nome])) |>
-  select(nome, criterio, quantos) |>
-  tabela(c("Destino", "O que significa", "Quantos"), c("l", "l", "r"))
+tabela_criterios(ind, "destino")
 ```
 
 ::: so-computador
@@ -184,7 +179,7 @@ tabela_inventario(ind)
 
 ## Árvore de indicadores
 
-### `r dir` indicadores, `r extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, uma meta
+### `r dir` indicadores, `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, uma meta
 
 ```{r}
 #| label: arvore
@@ -194,7 +189,7 @@ pilares_html(ind,
              base = "Base: fichas técnicas, Comitê de indicadores e registro de versões")
 ```
 
-Cada indicador da diretoria responde a um dos `r extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, e o prefixo do código (`r paste(unique(substr(map_chr(ind$fichas, "codigo"), 1, 3)), collapse = ", ")`) diz qual.
+Cada indicador da diretoria responde a um dos `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, e o prefixo do código (`r paste(unique(substr(map_chr(ind$fichas, "codigo"), 1, 3)), collapse = ", ")`) diz qual.
 
 ## Fichas técnicas
 
@@ -220,9 +215,7 @@ R executa, A aprova e responde, C é consultado, I é informado.
 ```{r}
 #| label: raci
 #| echo: false
-ind$raci |>
-  mutate(across(everything(), \(x) coalesce(x, ""))) |>
-  tabela(c("Atividade", "Dono do indicador", "Analista de BI", "Comitê", "Diretoria"), c("l", "c", "c", "c", "c"))
+tabela_raci(ind)
 ```
 :::
 
@@ -249,7 +242,7 @@ cat(raci_cartoes(ind))
 ```{r}
 #| label: versoes
 #| echo: false
-tabela(ind$versoes, c("Data", "Indicador", "Versão", "Mudança", "Motivo"))
+tabela_versoes(ind)
 ```
 :::
 
@@ -264,7 +257,7 @@ cat(versoes_cartoes(ind))
 
 ## Resultado
 
-A reunião mensal trocou `r extenso(ind$n_areas, feminino = TRUE)` apresentações e `r ind$n` números por uma página com `r dir` indicadores, cada um com dono presente para explicá-lo. Quando a Operação fala da sua taxa, ela agora tem outro nome, e a discussão de julho não se repete. O Radar de Absenteísmo passou a usar a definição oficial PES-01.
+A reunião mensal trocou `r tx$extenso(ind$n_areas, feminino = TRUE)` apresentações e `r ind$n` números por uma página com `r dir` indicadores, cada um com dono presente para explicá-lo. Quando a Operação fala da sua taxa, ela agora tem outro nome, e a discussão de julho não se repete. O Radar de Absenteísmo passou a usar a definição oficial PES-01.
 
 ## O que o caso demonstra
 

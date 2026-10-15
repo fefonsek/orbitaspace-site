@@ -1,0 +1,276 @@
+---
+title: "One number, three answers: KPI governance at Vallora Logística"
+description: "Three departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule."
+image: img/capa.png
+image-alt: "Case cover: one number, three answers, KPI governance at Vallora Logística, with the chart of the three absenteeism rates"
+categories: [KPI governance, KPIs, Management, R]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [indicadores]
+traducao: indicadores
+# Tapping a chart opens it full screen (on phones the charts are small).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the R code"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números vêm dos mesmos arquivos da versão em português; os textos dos
+# dados, de scripts/textos_en.yml (ver scripts/rotulos.R). Em inglês, número
+# que abre a frase vai por extenso: tx$extenso(n, inicio = TRUE).
+caso <- "../../../projetos/governanca-indicadores"
+source(file.path(caso, "scripts/dados.R"))
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/agregar_radar.R"))
+tx <- rotulos("en", caso)
+ind <- localizar(ler_caso(caso), tx)
+
+reuniao <- "2025-06"
+dir <- ind$destino[["Diretoria"]]
+fora_da_diretoria <- ind$n - dir
+
+cabecalho <- rmarkdown::yaml_front_matter("index.qmd")
+stopifnot("a descrição do cartão precisa citar os totais do inventário" =
+            grepl(tx$descricao(ind$n, dir), cabecalho$description, fixed = TRUE))
+```
+
+::: aviso-dados
+**Fictional case.** Vallora Logística S.A., its departments, people and KPIs do not exist. The three absenteeism rates were calculated from the fictional dataset of the [Absenteeism Radar](../absenteeism-radar/index.qmd); the inventory, the definition sheets and the rules were written for this case. The method is real.
+
+[Download the three monthly rates (CSV)](../../../projetos/governanca-indicadores/dados/taxa_tres_definicoes.csv){download="taxa_tres_definicoes.csv"} · [Download the KPI inventory (CSV)](../../../projetos/governanca-indicadores/dados/inventario.csv){download="inventario.csv"}
+:::
+
+[The CSV files and the comments in the R code are in Portuguese, the case's original language.]{.nota-idioma}
+
+## The story
+
+At the July 2025 results meeting, Vallora heard three absenteeism rates for June. HR showed `r tx$pct(ind$mes("rh", reuniao))`, Operations `r tx$pct(ind$mes("operacao", reuniao))` and Finance `r tx$pct(ind$mes("financeiro", reuniao))`, and the meeting spent half an hour arguing about which one was right.
+
+::: so-computador
+```{r}
+#| label: taxas
+#| echo: false
+#| fig-cap: "Absenteeism rate calculated each department's way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting."
+#| fig-alt: "Three monthly lines. HR, in blue, stays above Operations almost all the time; Finance runs well below both. In June 2025, marked by the July meeting line, the three are far apart."
+#| fig-width: 9
+#| fig-height: 4.4
+#| lightbox:
+#|   group: computador
+grafico_taxas(ind, reuniao)
+salvar_capa(ind, reuniao, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: taxas-celular
+#| echo: false
+#| fig-cap: "Absenteeism rate calculated each department's way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting."
+#| fig-alt: "Three monthly lines. HR, in blue, stays above Operations almost all the time; Finance runs well below both. In June 2025, marked by the July meeting line, the three are far apart."
+#| fig-width: 4.5
+#| fig-height: 4.4
+#| lightbox:
+#|   group: celular
+grafico_taxas(ind, reuniao, celular = TRUE)
+```
+:::
+
+None of them was wrong. Each department calculated what it needed for its own work and gave the result the same name. The problem was not arithmetic, it was governance: nobody had written down what "absenteeism rate" meant at the company, or who got to decide.
+
+The scene repeated itself over the following months, and in December leadership asked for an inventory of every KPI that circulated in the monthly presentations. `r tx$extenso(ind$n, inicio = TRUE)` turned up, from `r tx$extenso(ind$n_areas)` departments, and only `r ind$situacao[["Bem definido"]]` were well defined. The work took five weeks, in four stages:
+
+1. Interviews with the people who produce the numbers and the people who use them, in all `r tx$extenso(ind$n_areas)` departments.
+2. Inventory and diagnosis of each KPI.
+3. Definition sheets for the KPIs that go to leadership.
+4. Governance rules: who proposes, who approves, how a change is recorded.
+
+## The divergence: three calculations, one name
+
+The three rates come from the same data and answer different questions. The decision was to keep all three, each with its own name, and reserve "Absenteeism rate" for HR's definition, which is the same as the Radar's.
+
+```{r}
+#| label: definicoes-tabela
+#| echo: false
+#| output: asis
+cat(definicoes_html(ind))
+```
+
+- **Operations.** Operations counts the whole day even when the absence is a late arrival, which pushes the rate up, but takes anyone absent for more than 15 days off the schedule, which pulls it down. On balance, it lands a little below HR. In `r tx$extenso(length(ind$ope_acima))` of the `r nrow(ind$mensal)` months (`r tx$lista_meses(ind$ope_acima)`), the balance flipped: in months with few long-term absences, counting the whole day weighs more, and Operations comes out above HR.
+- **Finance.** It leaves out unexcused absences and late arrivals that are docked from pay, and whatever INSS pays from day 16 of a leave. That is why it runs well below the other two. In Brazil, the employer pays the first 15 days of sick or injury leave; from day 16 on, the social security agency (INSS) pays.
+
+```{r}
+#| label: definicoes
+#| eval: false
+#| code-summary: "Show the R code for the three definitions"
+```
+
+## Diagnosis: from `r ind$n` to `r dir`
+
+Of the `r ind$n` KPIs, `r dir` go to the leadership meeting, `r ind$destino[["Gestão da área"]]` stay with the departments and `r ind$destino[["Unificado"]] + ind$destino[["Descontinuado"]]` leave the presentations, merged or discontinued. Each KPI was given a status and a destination, using the criteria below.
+
+```{r}
+#| label: situacao
+#| echo: false
+tabela_criterios(ind, "situacao")
+```
+
+```{r}
+#| label: destino
+#| echo: false
+tabela_criterios(ind, "destino")
+```
+
+::: so-computador
+```{r}
+#| label: fluxo
+#| echo: false
+#| fig-cap: "Where each KPI came from and where it went. The width of each band is the number of KPIs."
+#| fig-alt: "Flow diagram with the six statuses on the left and the four destinations on the right. The bands that reach Leadership, in blue, come mostly from Well defined and Inconsistent."
+#| fig-width: 9
+#| fig-height: 5.2
+#| lightbox:
+#|   group: computador
+grafico_fluxo(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: fluxo-celular
+#| echo: false
+#| fig-cap: "Where each KPI came from and where it went. The width of each band is the number of KPIs."
+#| fig-alt: "Flow diagram with the six statuses on the left and the four destinations on the right. The bands that reach Leadership, in blue, come mostly from Well defined and Inconsistent."
+#| fig-width: 4.5
+#| fig-height: 6.4
+#| lightbox:
+#|   group: celular
+grafico_fluxo(ind, celular = TRUE)
+```
+:::
+
+To go to leadership, a KPI has to pass three questions: it is tied to a company objective, someone in leadership makes a decision with it, and it moves enough from one month to the next to deserve the meeting.
+
+The most instructive case is "Days without accidents". It looks positive, but it rewards not reporting accidents; the Accident frequency rate measures the same thing without that incentive.
+
+## Inventory: the `r ind$n` KPIs
+
+Only `r ind$situacao[["Bem definido"]]` of the `r ind$n` KPIs were well defined. The table shows the full inventory, with search and filters by department, status and destination.
+
+```{r}
+#| label: inventario
+#| echo: false
+tabela_inventario(ind)
+```
+
+## KPI tree
+
+### `r tx$extenso(dir, inicio = TRUE)` KPIs, `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objectives, one goal
+
+```{r}
+#| label: arvore
+#| echo: false
+pilares_html(ind,
+             meta = "2026 goal: grow with healthy margins without missing delivery dates",
+             base = "Foundation: definition sheets, KPI committee and version log")
+```
+
+Each leadership KPI answers to one of the `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objectives, and the code prefix (`r paste(unique(substr(map_chr(ind$fichas, "codigo"), 1, 3)), collapse = ", ")`) tells you which. The codes keep their Portuguese initials, as in the original project.
+
+## Definition sheets
+
+Each of the `r dir` leadership KPIs got a definition sheet with the same fields. The Absenteeism rate sheet is already open, as the model; the others open with a click.
+
+```{r}
+#| label: fichas
+#| echo: false
+fichas_html(ind)
+```
+
+Two details that show the method: Warehouse occupancy has no "higher is better", because a warehouse that is too full jams the operation; and 90-day turnover only closes three months after hiring, so the sheet says so, and nobody asks for the number before it exists.
+
+## Governance: who decides what each number means
+
+No definition changes without a request, a test and an approval on record. The decision belongs to a KPI committee: the financial controller chairs it, the owners of the `r dir` KPIs take part, and the BI analyst keeps the minutes. It meets once a month, for 30 minutes, only when there are requests in the queue.
+
+### Roles (RACI matrix)
+
+R does the work, A approves and answers for it, C is consulted, I is informed.
+
+::: so-computador
+```{r}
+#| label: raci
+#| echo: false
+tabela_raci(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: raci-cartoes
+#| echo: false
+#| output: asis
+cat(raci_cartoes(ind))
+```
+:::
+
+### How a definition changes
+
+1. The owner opens a request: what changes, why, and from when.
+2. BI recalculates the last 12 months under the new rule and shows the difference.
+3. The committee approves, rejects or asks for changes at its next meeting.
+4. Once approved, BI updates the definition sheet, bumps the version and logs the change.
+5. The history is recalculated; when that is not possible, the break is marked on the chart.
+
+### Version log (example)
+
+::: so-computador
+```{r}
+#| label: versoes
+#| echo: false
+tabela_versoes(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: versoes-cartoes
+#| echo: false
+#| output: asis
+cat(versoes_cartoes(ind))
+```
+:::
+
+## Results
+
+The monthly meeting traded `r tx$extenso(ind$n_areas)` presentations and `r ind$n` numbers for a single page with `r dir` KPIs, each with its owner in the room to explain it. When Operations talks about its rate, it now goes by another name, and the July argument does not happen again. The Absenteeism Radar now uses the official PES-01 definition.
+
+## What this case demonstrates
+
+- **Separating the math from the governance.** A divergence is rarely a calculation error; it is almost always the lack of a written definition and of someone who decides.
+- **Cutting without deleting.** `r tx$extenso(fora_da_diretoria, inicio = TRUE)` KPIs left the leadership meeting, and no department lost information it needs.
+- **Definition sheets that answer the questions that start arguments:** what goes in, what stays out, whether higher is better, when the number closes.
+- **Changes on record**, so that today's number stays comparable with last year's.
+- **A bridge to BI.** The definition sheets become the DAX measures and the dashboard's data dictionary, and the dashboard stops hiding rules.
+
+::: cta-final
+## Does your company argue about which number is right before discussing what to do about it?
+
+Tell me how your KPIs are calculated today and I will tell you where to start.
+
+[Get in touch](../../contact.qmd){.btn .btn-primary}
+:::

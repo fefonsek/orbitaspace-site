@@ -25,7 +25,7 @@
     "href": "en/services.html#kpis",
     "title": "Services",
     "section": "KPI consulting",
-    "text": "KPI consulting\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from."
+    "text": "KPI consulting\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.\nSee KPI projects"
   },
   {
     "objectID": "en/services.html#pricing-on-request",
@@ -84,76 +84,6 @@
     "text": "Have a survey to analyze?\nIt could be an undergraduate thesis, a master’s thesis or an internal company survey. Send me the project and the spreadsheet of responses, and I will tell you what can be done and how.\nGet in touch"
   },
   {
-    "objectID": "en/index.html",
-    "href": "en/index.html",
-    "title": "Orbita Space",
-    "section": "",
-    "text": "by Felipe Fonseca · Data Consultant | Statistics and BI\nI help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.\n\nSee projects Get in touch"
-  },
-  {
-    "objectID": "en/index.html#featured-project",
-    "href": "en/index.html#featured-project",
-    "title": "Orbita Space",
-    "section": "Featured project",
-    "text": "Featured project\n\n\n\nProject · Power BI\n\nAbsenteeism Radar\nA company’s absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.\nFictional company and data; real method, modeling and analysis.\nSee the project"
-  },
-  {
-    "objectID": "en/index.html#what-i-do",
-    "href": "en/index.html#what-i-do",
-    "title": "Orbita Space",
-    "section": "What I do",
-    "text": "What I do\n\n\nPower BI dashboards\nFrom raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.\n\n\nStatistical analysis for academic research\nPlanning, analysis and interpretation of results for undergraduate theses, master’s theses and doctoral dissertations.\n\n\nKPI consulting\nDeciding what to measure, how to calculate it and who owns each number.\n\n\nSee services"
-  },
-  {
-    "objectID": "en/blog.html",
-    "href": "en/blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "en/about.html",
-    "href": "en/about.html",
-    "title": "About",
-    "section": "",
-    "text": "I hold a bachelor’s degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master’s Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision."
-  },
-  {
-    "objectID": "en/about.html#experience",
-    "href": "en/about.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience\nI was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company’s KPI governance. Some of the work from that period:\n\na working hours monitoring dashboard, with hours worked and overtime alerts;\nlegal department KPIs, such as litigation volume and success rate, with data received through an API;\nmonitoring of traffic violations by fleet drivers;\npersonal protective equipment (PPE) inventory;\nmigration of the company’s BI platform;\nanalytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;\nKPI curation and governance."
-  },
-  {
-    "objectID": "en/about.html#tools",
-    "href": "en/about.html#tools",
-    "title": "About",
-    "section": "Tools",
-    "text": "Tools\nPower BI, DAX, Power Query, Python, R, Excel and Quarto."
-  },
-  {
-    "objectID": "en/about.html#languages",
-    "href": "en/about.html#languages",
-    "title": "About",
-    "section": "Languages",
-    "text": "Languages\nNative Portuguese, fluent Spanish, advanced English."
-  },
-  {
-    "objectID": "en/about.html#where-i-am",
-    "href": "en/about.html#where-i-am",
-    "title": "About",
-    "section": "Where I am",
-    "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
-  },
-  {
-    "objectID": "en/contact.html",
-    "href": "en/contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.\n\n\nWhatsApp\nClick to start a chat\n+55 37 98412-9390\n\n\nEmail\nfelipe.fonseca@orbitaspace.com.br\n\nCopy email\n\n\n\nLinkedIn\nlinkedin.com/in/fpzfonseca\n\n\nGitHub\ngithub.com/fefonsek\n\n\nI work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English."
-  },
-  {
     "objectID": "en/projects/absenteeism-radar/index.html",
     "href": "en/projects/absenteeism-radar/index.html",
     "title": "Absenteeism Radar",
@@ -203,10 +133,157 @@
     "text": "Want this dashboard with your company’s data?\nThe same structure works with an export from your payroll or time-and-attendance system. Tell me what your data looks like today and I will tell you what can be done.\nGet in touch"
   },
   {
+    "objectID": "en/contact.html",
+    "href": "en/contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "You can reach me on WhatsApp or by email. Tell me in a few lines what you need, where the data comes from and what your deadline is; that is enough for me to say whether I can help and how.\n\n\nWhatsApp\nClick to start a chat\n+55 37 98412-9390\n\n\nEmail\nfelipe.fonseca@orbitaspace.com.br\n\nCopy email\n\n\n\nLinkedIn\nlinkedin.com/in/fpzfonseca\n\n\nGitHub\ngithub.com/fefonsek\n\n\nI work remotely with clients in Brazil and abroad, in Portuguese, Spanish or English."
+  },
+  {
+    "objectID": "en/about.html",
+    "href": "en/about.html",
+    "title": "About",
+    "section": "",
+    "text": "I hold a bachelor’s degree in Statistics from the Federal University of Ouro Preto (UFOP) and I am a student in the Professional Master’s Program in Administration at the Federal Institute of Minas Gerais (IFMG). I work with data because I like the moment when a number stops being just a number and starts guiding a decision."
+  },
+  {
+    "objectID": "en/about.html#experience",
+    "href": "en/about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nI was a Data Analyst at Prumo Engenharia, where I built Power BI dashboards and DAX and M models, and set up the company’s KPI governance. Some of the work from that period:\n\na working hours monitoring dashboard, with hours worked and overtime alerts;\nlegal department KPIs, such as litigation volume and success rate, with data received through an API;\nmonitoring of traffic violations by fleet drivers;\npersonal protective equipment (PPE) inventory;\nmigration of the company’s BI platform;\nanalytical reports in Quarto and R, such as an employee retention analysis and an audit of benefit payments;\nKPI curation and governance."
+  },
+  {
+    "objectID": "en/about.html#tools",
+    "href": "en/about.html#tools",
+    "title": "About",
+    "section": "Tools",
+    "text": "Tools\nPower BI, DAX, Power Query, Python, R, Excel and Quarto."
+  },
+  {
+    "objectID": "en/about.html#languages",
+    "href": "en/about.html#languages",
+    "title": "About",
+    "section": "Languages",
+    "text": "Languages\nNative Portuguese, fluent Spanish, advanced English."
+  },
+  {
+    "objectID": "en/about.html#where-i-am",
+    "href": "en/about.html#where-i-am",
+    "title": "About",
+    "section": "Where I am",
+    "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
+  },
+  {
+    "objectID": "en/blog.html",
+    "href": "en/blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "en/index.html",
+    "href": "en/index.html",
+    "title": "Orbita Space",
+    "section": "",
+    "text": "by Felipe Fonseca · Data Consultant | Statistics and BI\nI help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way.\n\nSee projects Get in touch"
+  },
+  {
+    "objectID": "en/index.html#featured-project",
+    "href": "en/index.html#featured-project",
+    "title": "Orbita Space",
+    "section": "Featured project",
+    "text": "Featured project\n\n\n\nProject · Power BI\n\nAbsenteeism Radar\nA company’s absenteeism rate stayed at 3.77% for two years in a row, and leadership concluded the issue was under control. This Power BI dashboard shows that the stability was just arithmetic: a sharp rise in two night-shift teams was being masked by improvements elsewhere.\nFictional company and data; real method, modeling and analysis.\nSee the project"
+  },
+  {
+    "objectID": "en/index.html#what-i-do",
+    "href": "en/index.html#what-i-do",
+    "title": "Orbita Space",
+    "section": "What I do",
+    "text": "What I do\n\n\nPower BI dashboards\nFrom raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.\n\n\nStatistical analysis for academic research\nPlanning, analysis and interpretation of results for undergraduate theses, master’s theses and doctoral dissertations.\n\n\nKPI consulting\nDeciding what to measure, how to calculate it and who owns each number.\n\n\nSee services"
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html",
+    "href": "en/projects/kpi-governance/index.html",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "",
+    "text": "Fictional case. Vallora Logística S.A., its departments, people and KPIs do not exist. The three absenteeism rates were calculated from the fictional dataset of the Absenteeism Radar; the inventory, the definition sheets and the rules were written for this case. The method is real.\nDownload the three monthly rates (CSV) · Download the KPI inventory (CSV)\nThe CSV files and the comments in the R code are in Portuguese, the case’s original language."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#the-story",
+    "href": "en/projects/kpi-governance/index.html#the-story",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "The story",
+    "text": "The story\nAt the July 2025 results meeting, Vallora heard three absenteeism rates for June. HR showed 4.38%, Operations 3.54% and Finance 2.15%, and the meeting spent half an hour arguing about which one was right.\n\n\n\n\n\n\n\n\n\n\nAbsenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting.\n\n\n\n\n\nNone of them was wrong. Each department calculated what it needed for its own work and gave the result the same name. The problem was not arithmetic, it was governance: nobody had written down what “absenteeism rate” meant at the company, or who got to decide.\nThe scene repeated itself over the following months, and in December leadership asked for an inventory of every KPI that circulated in the monthly presentations. Forty turned up, from six departments, and only 13 were well defined. The work took five weeks, in four stages:\n\nInterviews with the people who produce the numbers and the people who use them, in all six departments.\nInventory and diagnosis of each KPI.\nDefinition sheets for the KPIs that go to leadership.\nGovernance rules: who proposes, who approves, how a change is recorded."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#the-divergence-three-calculations-one-name",
+    "href": "en/projects/kpi-governance/index.html#the-divergence-three-calculations-one-name",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "The divergence: three calculations, one name",
+    "text": "The divergence: three calculations, one name\nThe three rates come from the same data and answer different questions. The decision was to keep all three, each with its own name, and reserve “Absenteeism rate” for HR’s definition, which is the same as the Radar’s.\n\nHROperationsFinanceQuestion it answersHow much of the contracted time was lost?How many scheduled shifts went uncovered?How much do we pay for hours not worked?NumeratorAbsence hours of every type, including long-term absencesScheduled days with any absence, including late arrivals or early departures of more than 10 minutesAbsence hours paid by the company: doctor's notes, the first 15 days of sick or injury leave, and statutory leaveDenominatorScheduled working hoursScheduled days (people absent for more than 15 days come off the schedule)Scheduled working hoursUnitHoursDaysHours2024 value3.77%3.55%2.19%2025 value3.77%3.48%2.12%Name after the projectAbsenteeism rate (official, goes to leadership)Schedule absence rate (managed by Operations)Cost of paid hours not worked (managed by Finance)HRQuestion it answersHow much of the contracted time was lost?NumeratorAbsence hours of every type, including long-term absencesDenominatorScheduled working hoursUnitHours2024 value3.77%2025 value3.77%Name after the projectAbsenteeism rate (official, goes to leadership)OperationsQuestion it answersHow many scheduled shifts went uncovered?NumeratorScheduled days with any absence, including late arrivals or early departures of more than 10 minutesDenominatorScheduled days (people absent for more than 15 days come off the schedule)UnitDays2024 value3.55%2025 value3.48%Name after the projectSchedule absence rate (managed by Operations)FinanceQuestion it answersHow much do we pay for hours not worked?NumeratorAbsence hours paid by the company: doctor's notes, the first 15 days of sick or injury leave, and statutory leaveDenominatorScheduled working hoursUnitHours2024 value2.19%2025 value2.12%Name after the projectCost of paid hours not worked (managed by Finance)\n\n\nOperations. Operations counts the whole day even when the absence is a late arrival, which pushes the rate up, but takes anyone absent for more than 15 days off the schedule, which pulls it down. On balance, it lands a little below HR. In four of the 24 months (January and February 2024, September and November 2025), the balance flipped: in months with few long-term absences, counting the whole day weighs more, and Operations comes out above HR.\nFinance. It leaves out unexcused absences and late arrivals that are docked from pay, and whatever INSS pays from day 16 of a leave. That is why it runs well below the other two. In Brazil, the employer pays the first 15 days of sick or injury leave; from day 16 on, the social security agency (INSS) pays.\n\n\n\nShow the R code for the three definitions\n# Tipos da base: 1 atestado médico, 2 consulta ou exame (parcial), 3 acidente\n# de trabalho, 4 afastamento do INSS, 5 falta injustificada, 6 atraso ou saída\n# antecipada, 7 licença legal (CLT art. 473), 8 acompanhamento de dependente,\n# 9 licença maternidade/paternidade (dias já fora da jornada no Radar).\n# RH: horas de ausência dos tipos que contam no Radar ÷ horas previstas.\nrh &lt;- ausencias |&gt; filter(considera_taxa == 1)\n\n# Operação: dias escalados com qualquer ausência (atraso ou saída antecipada só\n# acima de 10 minutos) ÷ dias escalados. Quem está afastado há mais de 15 dias\n# (do 16º dia de um evento longo em diante) sai da escala, no numerador e no\n# denominador.\nafastado &lt;- ausencias |&gt; filter(dias_corridos &gt; 15, dia_do_evento &gt; 15) |&gt; distinct(id_funcionario, data)\nescala &lt;- jornada |&gt; anti_join(afastado, c(\"id_funcionario\", \"data\"))\ndias_com_ausencia &lt;- escala |&gt;\n  semi_join(filter(ausencias, id_tipo_ausencia != 6 | horas_ausencia * 60 &gt; 10), c(\"id_funcionario\", \"data\"))\n\n# Financeiro: horas pagas pela empresa ÷ horas previstas. Entram atestados e\n# acidentes de até 15 dias, consultas, licenças legais e os 15 primeiros dias\n# dos afastamentos longos por doença ou acidente (tipos 1, 3 e 4), que a empresa\n# paga por lei. Ficam fora faltas e atrasos (descontados), o que o INSS paga e\n# o acompanhamento de dependente.\npagas &lt;- ausencias |&gt;\n  filter(id_tipo_ausencia == 7 |\n           (id_tipo_ausencia %in% c(1, 2, 3) & dias_corridos &lt;= 15) |\n           (id_tipo_ausencia %in% c(1, 3, 4) & dias_corridos &gt; 15 & dia_do_evento &lt;= 15))"
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#diagnosis-from-40-to-14",
+    "href": "en/projects/kpi-governance/index.html#diagnosis-from-40-to-14",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Diagnosis: from 40 to 14",
+    "text": "Diagnosis: from 40 to 14\nOf the 40 KPIs, 14 go to the leadership meeting, 14 stay with the departments and 12 leave the presentations, merged or discontinued. Each KPI was given a status and a destination, using the criteria below.\n\n\n\n\n\n\n\n\n\n\n\nStatus found\nCriterion\nCount\n\n\n\n\nWell defined\nWritten formula, single source, an owner, and used in some decision\n13\n\n\nInconsistent\nSame name, different calculations across departments or sites\n7\n\n\nDuplicate\nDifferent names for the same measure, or one is a slice of the other\n7\n\n\nPoorly designed\nVolume with no reference point, a slice treated as a KPI, or the wrong incentive\n6\n\n\nUnused\nNot part of any decision recorded in the minutes in the last six months\n4\n\n\nNo owner\nNobody answers for the result or the calculation\n3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDestination\nWhat it means\nCount\n\n\n\n\nLeadership\nGoes to the monthly meeting, with a full definition sheet, a target and an owner\n14\n\n\nDepartment level\nThe department tracks it with a short definition sheet; it goes to leadership only by exception\n14\n\n\nMerged\nBecomes part of another KPI or a breakdown of it\n6\n\n\nDiscontinued\nLeaves the presentations; the data remain available\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere each KPI came from and where it went. The width of each band is the number of KPIs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere each KPI came from and where it went. The width of each band is the number of KPIs.\n\n\n\n\n\nTo go to leadership, a KPI has to pass three questions: it is tied to a company objective, someone in leadership makes a decision with it, and it moves enough from one month to the next to deserve the meeting.\nThe most instructive case is “Days without accidents”. It looks positive, but it rewards not reporting accidents; the Accident frequency rate measures the same thing without that incentive."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#inventory-the-40-kpis",
+    "href": "en/projects/kpi-governance/index.html#inventory-the-40-kpis",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Inventory: the 40 KPIs",
+    "text": "Inventory: the 40 KPIs\nOnly 13 of the 40 KPIs were well defined. The table shows the full inventory, with search and filters by department, status and destination.\n\n\n\nAll departmentsFinanceHROHSOperationsQualitySalesAll statusesWell definedInconsistentDuplicatePoorly designedUnusedNo ownerAll destinationsLeadershipDepartment levelMergedDiscontinued\n40 of 40 KPIs\n\n\n\n\n\n#\nKPI (as it was called)\nDepartment\nStatus\nDestination\nNote\nSheet\n\n\n\n\n1\nEBITDA margin\nFinance\nWell defined\nLeadership\n\nFIN-01\n\n\n2\nLogistics cost per order\nFinance\nInconsistent\nLeadership\nOperations left freight out of the cost\nFIN-02\n\n\n3\nBudget vs. actual expenses\nFinance\nWell defined\nLeadership\n\nFIN-03\n\n\n4\nOverdue receivables\nFinance\nWell defined\nLeadership\n\nFIN-04\n\n\n5\nCost of paid hours not worked\nFinance\nInconsistent\nDepartment level\nWas called absenteeism\n\n\n\n6\nOvertime cost\nFinance\nDuplicate\nMerged\nGoes into the Overtime sheet\n\n\n\n7\nRevenue per m²\nFinance\nNo owner\nDiscontinued\n\n\n\n\n8\nEnergy cost per pallet\nFinance\nUnused\nDiscontinued\n\n\n\n\n9\nOTIF by invoice\nSales\nInconsistent\nMerged\nMerged into OTIF by order\n\n\n\n10\nCustomer NPS\nSales\nWell defined\nLeadership\n\nCLI-02\n\n\n11\nCustomer complaints\nSales\nPoorly designed\nLeadership\nA count with no base; becomes complaints per thousand orders\nCLI-03\n\n\n12\nComplaint response time\nSales\nWell defined\nDepartment level\n\n\n\n\n13\nActive customers\nSales\nPoorly designed\nDepartment level\nVolume, no target\n\n\n\n14\nAverage ticket per customer\nSales\nUnused\nDiscontinued\n\n\n\n\n15\nOTIF by order\nOperations\nInconsistent\nLeadership\nBecomes the official OTIF\nCLI-01\n\n\n16\nPicking productivity\nOperations\nWell defined\nLeadership\n\nOPE-01\n\n\n17\nInventory accuracy\nOperations\nWell defined\nLeadership\n\nOPE-02\n\n\n18\nPicking errors\nOperations\nWell defined\nLeadership\n\nOPE-03\n\n\n19\nWarehouse occupancy\nOperations\nInconsistent\nLeadership\nEach DC measured it in positions or in m²\nOPE-04\n\n\n20\nDamage rate\nOperations\nDuplicate\nDepartment level\nAbsorbs the damage figures from Quality\n\n\n\n21\nOrders shipped per day\nOperations\nPoorly designed\nDepartment level\nVolume, no target\n\n\n\n22\nAverage dock time\nOperations\nWell defined\nDepartment level\n\n\n\n\n23\nSchedule absences\nOperations\nInconsistent\nDepartment level\nWas called absenteeism\n\n\n\n24\nOperations overtime\nOperations\nDuplicate\nMerged\nGoes into the Overtime sheet\n\n\n\n25\nOrders per employee\nOperations\nDuplicate\nDiscontinued\nRepeats picking productivity\n\n\n\n26\nNight team productivity\nOperations\nPoorly designed\nMerged\nA slice; becomes a shift filter\n\n\n\n27\nCustomer-reported damage\nQuality\nDuplicate\nMerged\nGoes into the damage rate\n\n\n\n28\nInternal audits completed\nQuality\nUnused\nDiscontinued\n\n\n\n\n29\nAbsenteeism rate\nHR\nInconsistent\nLeadership\nBecomes the official definition\nPES-01\n\n\n30\nAbsenteeism from doctor's notes\nHR\nDuplicate\nMerged\nBecomes a breakdown of the official rate\n\n\n\n31\nOvertime percentage\nHR\nDuplicate\nDepartment level\nSingle Overtime sheet\n\n\n\n32\nTurnover\nHR\nWell defined\nDepartment level\n\n\n\n\n33\n90-day turnover\nHR\nNo owner\nLeadership\nCalculated by hand, only now and then\nPES-02\n\n\n34\nHeadcount\nHR\nPoorly designed\nDepartment level\nVolume, no target\n\n\n\n35\nTraining hours per person\nHR\nWell defined\nDepartment level\n\n\n\n\n36\nAverage time to hire\nHR\nNo owner\nDepartment level\n\n\n\n\n37\nAccident frequency rate\nOHS\nWell defined\nLeadership\n\nPES-03\n\n\n38\nAccident severity rate\nOHS\nWell defined\nDepartment level\n\n\n\n\n39\nDays without accidents\nOHS\nPoorly designed\nDiscontinued\nRewards not reporting accidents\n\n\n\n40\nSafety inspections completed\nOHS\nUnused\nDepartment level\nGets a target and stays with OHS"
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#kpi-tree",
+    "href": "en/projects/kpi-governance/index.html#kpi-tree",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "KPI tree",
+    "text": "KPI tree\n\nFourteen KPIs, four objectives, one goal\n\n\n\n2026 goal: grow with healthy margins without missing delivery dates\nFinanceGrow with healthy marginsFIN-01 EBITDA marginFIN-02 Logistics cost per orderFIN-03 Budget vs. actual expensesFIN-04 Overdue receivables\nCustomersDeliver on timeCLI-01 OTIFCLI-02 Customer NPSCLI-03 Complaints per thousand orders\nOperationsAccuracy and efficiencyOPE-01 Picking productivityOPE-02 Inventory accuracyOPE-03 Picking errorsOPE-04 Warehouse occupancy\nPeopleAttendance and safetyPES-01 Absenteeism ratePES-02 90-day turnoverPES-03 Accident frequency rate\nFoundation: definition sheets, KPI committee and version log\n\n\n\nEach leadership KPI answers to one of the four objectives, and the code prefix (FIN, CLI, OPE, PES) tells you which. The codes keep their Portuguese initials, as in the original project."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#definition-sheets",
+    "href": "en/projects/kpi-governance/index.html#definition-sheets",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Definition sheets",
+    "text": "Definition sheets\nEach of the 14 leadership KPIs got a definition sheet with the same fields. The Absenteeism rate sheet is already open, as the model; the others open with a click.\n\n\nFinance: grow with healthy margins\nFIN-01 EBITDA marginEBITDA ÷ net revenue × 100\nCodeFIN-01Question it answersHow much of revenue is left after operating costs and expenses?Linked objectiveFinance: grow with healthy marginsFormulaEBITDA ÷ net revenue × 100NumeratorEBITDA for the month (earnings before interest, taxes, depreciation and amortization)DenominatorNet service revenue for the monthExcluded from bothNon-recurring revenue and expenses, recorded separately and explained in the month's noteStandard breakdownsSite and service line (warehousing and transportation)SourceERP (accounting)FrequencyMonthly, published by the 8th business day, after the accounting closePolarityHigher is betterTarget and thresholds2026 budget target; green at or above target, yellow up to 1 point below, red below thatOwner of the resultFinance and administration directorCalculated byFinancial control analystDecision it supportsReview prices and contracts with below-average marginsRelated KPIsLogistics cost per order, Budget vs. actual expensesVersion1.0, in effect since January 2026\nFIN-02 Logistics cost per order(Warehousing + freight) ÷ orders shipped\nCodeFIN-02Question it answersHow much does it cost, on average, to store and deliver an order?Linked objectiveFinance: grow with healthy marginsFormula(Warehousing + freight) ÷ orders shippedNumeratorWarehousing cost (staff, rent, energy, equipment) plus freight paid in the monthDenominatorOrders shipped in the monthExcluded from bothOrders canceled before picking and freight reimbursed by the customerStandard breakdownsSite, customer and order size bandSourceERP and WMSFrequencyMonthlyPolarityLower is betterTarget and thresholdsUp to the budgeted cost per order; green up to budget, yellow up to 5% above, red above thatOwner of the resultFinancial controllerCalculated byFinancial control analystDecision it supportsWhere to renegotiate freight and where to review warehouse productivityRelated KPIsEBITDA margin, Picking productivity, OTIFVersion1.0, in effect since January 2026\nFIN-03 Budget vs. actual expensesActual expenses ÷ budgeted expenses × 100\nCodeFIN-03Question it answersAre expenses moving at the pace of the budget?Linked objectiveFinance: grow with healthy marginsFormulaActual expenses ÷ budgeted expenses × 100NumeratorActual expenses for the month, on an accrual basisDenominatorBudgeted expenses for the monthExcluded from bothCapital expenditure (capex), which is tracked separatelyStandard breakdownsDepartment, cost center and type of expenseSourceERPFrequencyMonthlyPolarityClose to 100%Target and thresholdsBetween 97% and 103%; yellow up to 5 points outside the range, red beyond thatOwner of the resultFinancial controllerCalculated byFinancial control analystDecision it supportsWhich departments need to explain the variance and revise the full-year forecastRelated KPIsEBITDA marginVersion1.0, in effect since January 2026\nFIN-04 Overdue receivablesMore than 30 days overdue ÷ total receivables × 100\nCodeFIN-04Question it answersHow much of what we are owed is more than 30 days overdue?Linked objectiveFinance: grow with healthy marginsFormulaMore than 30 days overdue ÷ total receivables × 100NumeratorInvoices more than 30 days overdue on the last day of the monthDenominatorTotal receivables on the last day of the monthExcluded from bothInvoices in litigation, tracked separatelyStandard breakdownsCustomer and days-overdue band (31 to 60, 61 to 90, more than 90)SourceERP (accounts receivable)FrequencyMonthlyPolarityLower is betterTarget and thresholdsUp to 2%; yellow up to 3%, red aboveOwner of the resultFinancial controllerCalculated byFinancial analystDecision it supportsWhen to put a customer on hold and renegotiate termsRelated KPIsEBITDA marginVersion1.0, in effect since January 2026\nCustomers: deliver on time\nCLI-01 OTIFOrders delivered on time and in full ÷ orders shipped × 100\nCodeCLI-01Question it answersHow many orders reached the customer on time and in full?Linked objectiveCustomers: deliver on timeFormulaOrders delivered on time and in full ÷ orders shipped × 100NumeratorOrders delivered by the agreed date with no missing itemsDenominatorOrders shipped in the monthExcluded from bothOrders canceled by the customer (since version 1.1)Standard breakdownsSite, customer, carrier and reason for the miss (timing or completeness)SourceWMS and TMSFrequencyMonthlyPolarityHigher is betterTarget and thresholds95%; green from 95%, yellow from 92%, red belowOwner of the resultOperations managerCalculated byBI analystDecision it supportsWhich customers and carriers need an action planRelated KPIsComplaints per thousand orders, Picking errorsVersion1.1, in effect since February 2026\nCLI-02 Customer NPS% promoters minus % detractors\nCodeCLI-02Question it answersWould customers recommend Vallora?Linked objectiveCustomers: deliver on timeFormula% promoters minus % detractorsNumeratorPromoters (scores of 9 and 10) minus detractors (scores of 0 to 6), in percentage pointsDenominatorValid responses to the quarter's surveyExcluded from bothResponses without a score and customers with less than three months under contractStandard breakdownsCustomer segment and the site that serves itSourceCustomer surveyFrequencyQuarterlyPolarityHigher is betterTarget and thresholds50 points; yellow from 40, red belowOwner of the resultSales managerCalculated bySales analystDecision it supportsWhich accounts get a visit and an improvement planRelated KPIsOTIF, Complaints per thousand ordersVersion1.0, in effect since January 2026\nCLI-03 Complaints per thousand ordersValid complaints ÷ orders shipped × 1,000\nCodeCLI-03Question it answersHow often does an order lead to a valid complaint?Linked objectiveCustomers: deliver on timeFormulaValid complaints ÷ orders shipped × 1,000NumeratorComplaints logged in the CRM and judged valid in the monthDenominatorOrders shipped in the monthExcluded from bothComplaints judged invalid and requests for informationStandard breakdownsReason for the complaint, customer and siteSourceCRM and WMSFrequencyMonthlyPolarityLower is betterTarget and thresholdsUp to 3 per thousand orders; yellow up to 5, red aboveOwner of the resultSales managerCalculated byBI analystDecision it supportsWhich reasons to tackle first, together with OperationsRelated KPIsOTIF, Picking errors, Customer NPSVersion1.0, in effect since January 2026\nOperations: accuracy and efficiency\nOPE-01 Picking productivityLines picked ÷ hours worked in picking\nCodeOPE-01Question it answersHow many order lines does picking deliver per hour worked?Linked objectiveOperations: accuracy and efficiencyFormulaLines picked ÷ hours worked in pickingNumeratorOrder lines picked and checked in the monthDenominatorHours actually worked by the picking team, including overtimeExcluded from bothTraining hours and inventory-count hoursStandard breakdownsSite, shift and order type (each picks or full cases)SourceWMS and time-and-attendanceFrequencyMonthlyPolarityHigher is betterTarget and thresholdsEach site's standard, reviewed once a year; yellow up to 10% below, red below thatOwner of the resultOperations managerCalculated byBI analystDecision it supportsSize the schedule and prioritize layout improvementsRelated KPIsPicking errors, Logistics cost per order, Absenteeism rateVersion1.0, in effect since January 2026\nOPE-02 Inventory accuracyPositions with no discrepancy ÷ positions counted × 100\nCodeOPE-02Question it answersDoes the stock in the system match what is on the shelf?Linked objectiveOperations: accuracy and efficiencyFormulaPositions with no discrepancy ÷ positions counted × 100NumeratorPositions counted in cycle counting with no item or quantity discrepancyDenominatorPositions counted in the monthExcluded from bothPositions blocked for receiving or shipping on the day of the countStandard breakdownsSite, warehouse zone and ABC classSourceWMS (cycle counting)FrequencyMonthlyPolarityHigher is betterTarget and thresholds99.5%; yellow from 99%, red belowOwner of the resultOperations managerCalculated byInventory analystDecision it supportsWhere to recount and where to review the slotting processRelated KPIsPicking errors, OTIFVersion1.0, in effect since January 2026\nOPE-03 Picking errorsLines with errors ÷ lines picked, in parts per million\nCodeOPE-03Question it answersHow many lines go out with the wrong item or quantity?Linked objectiveOperations: accuracy and efficiencyFormulaLines with errors ÷ lines picked, in parts per millionNumeratorLines with errors caught at checking or reported by the customerDenominatorLines picked in the monthExcluded from bothDiscrepancies caused by the customer's product dataStandard breakdownsSite, shift and where the error was caught (checking or customer)SourceWMS and complaintsFrequencyMonthlyPolarityLower is betterTarget and thresholdsUp to 500 parts per million; yellow up to 800, red aboveOwner of the resultOperations managerCalculated byBI analystDecision it supportsWhere to reinforce training and checkingRelated KPIsPicking productivity, Complaints per thousand ordersVersion1.0, in effect since January 2026\nOPE-04 Warehouse occupancyPallet positions occupied ÷ pallet positions available × 100\nCodeOPE-04Question it answersHow much of the storage capacity is in use?Linked objectiveOperations: accuracy and efficiencyFormulaPallet positions occupied ÷ pallet positions available × 100NumeratorPallet positions occupied on the last day of the monthDenominatorPallet positions available, excluding those blocked for maintenanceExcluded from bothFloor-stacking areas, measured in m² and tracked separatelyStandard breakdownsSite and position type (pallet racking or picking)SourceWMSFrequencyMonthlyPolarityWithin a rangeTarget and thresholdsBetween 80% and 88%; yellow between 75% and 80% or between 88% and 92%, red outside thatOwner of the resultOperations managerCalculated byBI analystDecision it supportsWhen to look for extra space or take on a new customerRelated KPIsPicking productivity, Logistics cost per orderVersion1.0, in effect since January 2026\nPeople: attendance and safety\nPES-01 Absenteeism rateAbsence hours ÷ scheduled hours × 100\nCodePES-01Question it answersHow much of the contracted time did the company lose to absences?Linked objectivePeople: attendance and safetyFormulaAbsence hours ÷ scheduled hours × 100NumeratorAbsence hours of every type: unexcused absences, doctor's notes, long-term absences, late arrivals and early departures, based on the day's scheduled hoursDenominatorScheduled hours of everyone who was active that dayExcluded from bothVacation, days off, holidays, days before hiring and after terminationStandard breakdownsShort-term (up to 15 days) and long-term; absence type; site, shift, department and tenure (up to 90 days)SourceTime-and-attendance system (schedules and clock-ins) and payroll (long-term absences)FrequencyMonthly, published by the 5th business dayPolarityLower is betterTarget and thresholds3.5% target for 2026; green up to 3.5%, yellow up to 4.0%, red aboveOwner of the resultHR manager; each DC manager answers for their siteCalculated byBI analystDecision it supportsWhere to investigate first and when to open an action plan for a teamRelated KPIsSchedule absence rate, Cost of paid hours not worked, OvertimeVersion1.1, in effect since March 2026 (see the version log)\nPES-02 90-day turnoverNew hires who left before 90 days ÷ new hires in the month × 100\nCodePES-02Question it answersHow many new hires leave before completing 90 days?Linked objectivePeople: attendance and safetyFormulaNew hires who left before 90 days ÷ new hires in the month × 100NumeratorPeople hired in the reference month who left before completing 90 daysDenominatorPeople hired in the reference monthExcluded from bothTemporary contracts and apprentices, tracked separatelyStandard breakdownsSite, role, shift and reason for leaving (resignation or dismissal)SourcePayrollFrequencyMonthly, with a 3-month lagPolarityLower is betterTarget and thresholdsUp to 15%; yellow up to 20%, red aboveOwner of the resultHR managerCalculated byHR analystDecision it supportsReview recruiting and onboarding at the sites and roles most affectedRelated KPIsAbsenteeism rate, Accident frequency rateVersion1.0, in effect since January 2026\nPES-03 Accident frequency rateLost-time accidents × 1,000,000 ÷ hours worked\nCodePES-03Question it answersHow often does someone get hurt and need time off?Linked objectivePeople: attendance and safetyFormulaLost-time accidents × 1,000,000 ÷ hours workedNumeratorWork accidents with at least one day of absence, reported on the official accident form (CAT)DenominatorHours actually worked in the month, including overtimeExcluded from bothCommuting accidents, tracked separatelyStandard breakdownsSite, shift, department and tenureSourceOHS and time-and-attendanceFrequencyMonthlyPolarityLower is betterTarget and thresholds20% reduction from the 2025 average; yellow up to the 2025 average, red aboveOwner of the resultOHS coordinatorCalculated bySafety technicianDecision it supportsWhere to focus safety inspections and trainingRelated KPIsAbsenteeism rate, 90-day turnoverVersion1.0, in effect since January 2026\n\n\nTwo details that show the method: Warehouse occupancy has no “higher is better”, because a warehouse that is too full jams the operation; and 90-day turnover only closes three months after hiring, so the sheet says so, and nobody asks for the number before it exists."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#governance-who-decides-what-each-number-means",
+    "href": "en/projects/kpi-governance/index.html#governance-who-decides-what-each-number-means",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Governance: who decides what each number means",
+    "text": "Governance: who decides what each number means\nNo definition changes without a request, a test and an approval on record. The decision belongs to a KPI committee: the financial controller chairs it, the owners of the 14 KPIs take part, and the BI analyst keeps the minutes. It meets once a month, for 30 minutes, only when there are requests in the queue.\n\nRoles (RACI matrix)\nR does the work, A approves and answers for it, C is consulted, I is informed.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nActivity\nKPI owner\nBI analyst\nCommittee\nLeadership\n\n\n\n\nPropose a new KPI or a change of definition\nR\nC\nA\nI\n\n\nMeasure the impact of the change\nC\nR\nA\n\n\n\nApprove or reject the change\nC\nC\nR and A\nI\n\n\nUpdate the definition sheet and the version log\nI\nR\nA\n\n\n\nCalculate and publish every month\nC\nR and A\n\nI\n\n\nExplain the result and the action plan\nR and A\nC\n\nI\n\n\nReview the whole set once a year\nC\nR\nA\nC\n\n\nDiscontinue a KPI\nC\nR\nA\nI\n\n\n\n\n\n\n\n\n\nPropose a new KPI or a change of definitionOwner R · BI C · Committee A · Leadership IMeasure the impact of the changeOwner C · BI R · Committee AApprove or reject the changeOwner C · BI C · Committee R and A · Leadership IUpdate the definition sheet and the version logOwner I · BI R · Committee ACalculate and publish every monthOwner C · BI R and A · Leadership IExplain the result and the action planOwner R and A · BI C · Leadership IReview the whole set once a yearOwner C · BI R · Committee A · Leadership CDiscontinue a KPIOwner C · BI R · Committee A · Leadership I\n\n\n\n\nHow a definition changes\n\nThe owner opens a request: what changes, why, and from when.\nBI recalculates the last 12 months under the new rule and shows the difference.\nThe committee approves, rejects or asks for changes at its next meeting.\nOnce approved, BI updates the definition sheet, bumps the version and logs the change.\nThe history is recalculated; when that is not possible, the break is marked on the chart.\n\n\n\nVersion log (example)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nKPI\nVersion\nChange\nReason\n\n\n\n\nMarch 2026\nPES-01 Absenteeism rate\n1.1\nNew breakdown by tenure (up to 90 days)\nThe Radar showed that new hires are absent more often\n\n\nFebruary 2026\nCLI-01 OTIF\n1.1\nOrders canceled by the customer leave the denominator\nThey counted as an Operations failure\n\n\nJanuary 2026\nAll 14 leadership KPIs\n1.0\nFirst version of the definition sheets\nGovernance project\n\n\n\n\n\n\n\n\n\nMarch 2026 · version 1.1PES-01 Absenteeism rateNew breakdown by tenure (up to 90 days)Reason: The Radar showed that new hires are absent more oftenFebruary 2026 · version 1.1CLI-01 OTIFOrders canceled by the customer leave the denominatorReason: They counted as an Operations failureJanuary 2026 · version 1.0All 14 leadership KPIsFirst version of the definition sheetsReason: Governance project"
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#results",
+    "href": "en/projects/kpi-governance/index.html#results",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Results",
+    "text": "Results\nThe monthly meeting traded six presentations and 40 numbers for a single page with 14 KPIs, each with its owner in the room to explain it. When Operations talks about its rate, it now goes by another name, and the July argument does not happen again. The Absenteeism Radar now uses the official PES-01 definition."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#what-this-case-demonstrates",
+    "href": "en/projects/kpi-governance/index.html#what-this-case-demonstrates",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "What this case demonstrates",
+    "text": "What this case demonstrates\n\nSeparating the math from the governance. A divergence is rarely a calculation error; it is almost always the lack of a written definition and of someone who decides.\nCutting without deleting. Twenty-six KPIs left the leadership meeting, and no department lost information it needs.\nDefinition sheets that answer the questions that start arguments: what goes in, what stays out, whether higher is better, when the number closes.\nChanges on record, so that today’s number stays comparable with last year’s.\nA bridge to BI. The definition sheets become the DAX measures and the dashboard’s data dictionary, and the dashboard stops hiding rules."
+  },
+  {
+    "objectID": "en/projects/kpi-governance/index.html#does-your-company-argue-about-which-number-is-right-before-discussing-what-to-do-about-it",
+    "href": "en/projects/kpi-governance/index.html#does-your-company-argue-about-which-number-is-right-before-discussing-what-to-do-about-it",
+    "title": "One number, three answers: KPI governance at Vallora Logística",
+    "section": "Does your company argue about which number is right before discussing what to do about it?",
+    "text": "Does your company argue about which number is right before discussing what to do about it?\nTell me how your KPIs are calculated today and I will tell you where to start.\nGet in touch"
+  },
+  {
     "objectID": "en/projects.html",
     "href": "en/projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.\n\nAll\nPower BI dashboards\nStatistical analysis for academic research\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism Radar\n\n\n\nPower BI\n\nDAX\n\nStatistics\n\nPeople Analytics\n\n\n\nA Power BI dashboard that shows why a stable absenteeism rate was hiding a localized rise. Dimensional modeling, 97 DAX measures and statistical analysis.\n\n\n\n\n\n\n\n\n\n\n\n\nEmployee turnover in supermarkets: statistical consulting for an undergraduate thesis\n\n\n\nR\n\nStatistics\n\nSurvey\n\nThesis\n\n\n\nFictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.\n\n\n\n\n\nNo matching items"
+    "text": "Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.\n\nAll\nPower BI dashboards\nStatistical analysis for academic research\nKPI consulting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsenteeism Radar\n\n\n\nPower BI\n\nDAX\n\nStatistics\n\nPeople Analytics\n\n\n\nA Power BI dashboard that shows why a stable absenteeism rate was hiding a localized rise. Dimensional modeling, 97 DAX measures and statistical analysis.\n\n\n\n\n\n\n\n\n\n\n\n\nEmployee turnover in supermarkets: statistical consulting for an undergraduate thesis\n\n\n\nR\n\nStatistics\n\nSurvey\n\nThesis\n\n\n\nFictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.\n\n\n\n\n\n\n\n\n\n\n\n\nOne number, three answers: KPI governance at Vallora Logística\n\n\n\nKPI governance\n\nKPIs\n\nManagement\n\nR\n\n\n\nThree departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.\n\n\n\n\n\nNo matching items"
   }
 ]

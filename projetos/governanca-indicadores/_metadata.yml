@@ -1,4 +1,4 @@
-# Caso Indicadores (por enquanto só em PT). Com freeze: auto, o Quarto só roda
+# Caso Indicadores (PT, ES e EN). Com freeze: auto, o Quarto só roda
 # o R desta página de novo quando o index.qmd muda; nos outros renders
 # reaproveita o resultado guardado em _freeze/ (que vai para o Git). Quando os
 # dados ou os scripts mudam, o render.ps1 descarta esse resultado sozinho.

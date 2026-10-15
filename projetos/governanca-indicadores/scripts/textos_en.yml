@@ -1,0 +1,343 @@
+# Caso Indicadores: textos dos dados em inglês. As chaves são as dos
+# arquivos em português de dados/ (número do indicador, código da ficha,
+# nome em PT); os números continuam vindo dos dados. Ver scripts/rotulos.R.
+
+areas:
+  Financeiro: Finance
+  Comercial: Sales
+  Operação: Operations
+  Qualidade: Quality
+  RH: HR
+  SESMT: OHS
+
+situacoes:
+  Bem definido: [Well defined, "Written formula, single source, an owner, and used in some decision"]
+  Divergente: [Inconsistent, "Same name, different calculations across departments or sites"]
+  Duplicado: [Duplicate, "Different names for the same measure, or one is a slice of the other"]
+  Mal formulado: [Poorly designed, "Volume with no reference point, a slice treated as a KPI, or the wrong incentive"]
+  Sem uso: [Unused, "Not part of any decision recorded in the minutes in the last six months"]
+  Sem dono: [No owner, "Nobody answers for the result or the calculation"]
+
+destinos:
+  Diretoria: [Leadership, "Goes to the monthly meeting, with a full definition sheet, a target and an owner"]
+  Gestão da área: [Department level, "The department tracks it with a short definition sheet; it goes to leadership only by exception"]
+  Unificado: [Merged, "Becomes part of another KPI or a breakdown of it"]
+  Descontinuado: [Discontinued, "Leaves the presentations; the data remain available"]
+
+pilares:
+  Finanças: [Finance, Grow with healthy margins]
+  Clientes: [Customers, Deliver on time]
+  Operação: [Operations, Accuracy and efficiency]
+  Pessoas: [People, Attendance and safety]
+
+# número do indicador: [nome, observação]
+inventario:
+  1: [EBITDA margin, ""]
+  2: [Logistics cost per order, Operations left freight out of the cost]
+  3: [Budget vs. actual expenses, ""]
+  4: [Overdue receivables, ""]
+  5: [Cost of paid hours not worked, Was called absenteeism]
+  6: [Overtime cost, Goes into the Overtime sheet]
+  7: [Revenue per m², ""]
+  8: [Energy cost per pallet, ""]
+  9: [OTIF by invoice, Merged into OTIF by order]
+  10: [Customer NPS, ""]
+  11: [Customer complaints, "A count with no base; becomes complaints per thousand orders"]
+  12: [Complaint response time, ""]
+  13: [Active customers, "Volume, no target"]
+  14: [Average ticket per customer, ""]
+  15: [OTIF by order, Becomes the official OTIF]
+  16: [Picking productivity, ""]
+  17: [Inventory accuracy, ""]
+  18: [Picking errors, ""]
+  19: [Warehouse occupancy, Each DC measured it in positions or in m²]
+  20: [Damage rate, Absorbs the damage figures from Quality]
+  21: [Orders shipped per day, "Volume, no target"]
+  22: [Average dock time, ""]
+  23: [Schedule absences, Was called absenteeism]
+  24: [Operations overtime, Goes into the Overtime sheet]
+  25: [Orders per employee, Repeats picking productivity]
+  26: [Night team productivity, "A slice; becomes a shift filter"]
+  27: [Customer-reported damage, Goes into the damage rate]
+  28: [Internal audits completed, ""]
+  29: [Absenteeism rate, Becomes the official definition]
+  30: [Absenteeism from doctor's notes, Becomes a breakdown of the official rate]
+  31: [Overtime percentage, Single Overtime sheet]
+  32: [Turnover, ""]
+  33: [90-day turnover, "Calculated by hand, only now and then"]
+  34: [Headcount, "Volume, no target"]
+  35: [Training hours per person, ""]
+  36: [Average time to hire, ""]
+  37: [Accident frequency rate, ""]
+  38: [Accident severity rate, ""]
+  39: [Days without accidents, Rewards not reporting accidents]
+  40: [Safety inspections completed, Gets a target and stays with OHS]
+
+# Campos de texto de cada ficha (código, pilar e objetivo vêm dos dados).
+fichas:
+  FIN-01:
+    indicador: EBITDA margin
+    pergunta: How much of revenue is left after operating costs and expenses?
+    formula: EBITDA ÷ net revenue × 100
+    numerador: EBITDA for the month (earnings before interest, taxes, depreciation and amortization)
+    denominador: Net service revenue for the month
+    fora: Non-recurring revenue and expenses, recorded separately and explained in the month's note
+    quebras: Site and service line (warehousing and transportation)
+    fonte: ERP (accounting)
+    periodicidade: Monthly, published by the 8th business day, after the accounting close
+    polaridade: Higher is better
+    meta: 2026 budget target; green at or above target, yellow up to 1 point below, red below that
+    dono: Finance and administration director
+    responsavel_calculo: Financial control analyst
+    decisao: Review prices and contracts with below-average margins
+    relacionados: Logistics cost per order, Budget vs. actual expenses
+    versao: 1.0, in effect since January 2026
+  FIN-02:
+    indicador: Logistics cost per order
+    pergunta: How much does it cost, on average, to store and deliver an order?
+    formula: (Warehousing + freight) ÷ orders shipped
+    numerador: Warehousing cost (staff, rent, energy, equipment) plus freight paid in the month
+    denominador: Orders shipped in the month
+    fora: Orders canceled before picking and freight reimbursed by the customer
+    quebras: Site, customer and order size band
+    fonte: ERP and WMS
+    periodicidade: Monthly
+    polaridade: Lower is better
+    meta: Up to the budgeted cost per order; green up to budget, yellow up to 5% above, red above that
+    dono: Financial controller
+    responsavel_calculo: Financial control analyst
+    decisao: Where to renegotiate freight and where to review warehouse productivity
+    relacionados: EBITDA margin, Picking productivity, OTIF
+    versao: 1.0, in effect since January 2026
+  FIN-03:
+    indicador: Budget vs. actual expenses
+    pergunta: Are expenses moving at the pace of the budget?
+    formula: Actual expenses ÷ budgeted expenses × 100
+    numerador: Actual expenses for the month, on an accrual basis
+    denominador: Budgeted expenses for the month
+    fora: Capital expenditure (capex), which is tracked separately
+    quebras: Department, cost center and type of expense
+    fonte: ERP
+    periodicidade: Monthly
+    polaridade: Close to 100%
+    meta: Between 97% and 103%; yellow up to 5 points outside the range, red beyond that
+    dono: Financial controller
+    responsavel_calculo: Financial control analyst
+    decisao: Which departments need to explain the variance and revise the full-year forecast
+    relacionados: EBITDA margin
+    versao: 1.0, in effect since January 2026
+  FIN-04:
+    indicador: Overdue receivables
+    pergunta: How much of what we are owed is more than 30 days overdue?
+    formula: More than 30 days overdue ÷ total receivables × 100
+    numerador: Invoices more than 30 days overdue on the last day of the month
+    denominador: Total receivables on the last day of the month
+    fora: Invoices in litigation, tracked separately
+    quebras: Customer and days-overdue band (31 to 60, 61 to 90, more than 90)
+    fonte: ERP (accounts receivable)
+    periodicidade: Monthly
+    polaridade: Lower is better
+    meta: Up to 2%; yellow up to 3%, red above
+    dono: Financial controller
+    responsavel_calculo: Financial analyst
+    decisao: When to put a customer on hold and renegotiate terms
+    relacionados: EBITDA margin
+    versao: 1.0, in effect since January 2026
+  CLI-01:
+    indicador: OTIF
+    pergunta: How many orders reached the customer on time and in full?
+    formula: Orders delivered on time and in full ÷ orders shipped × 100
+    numerador: Orders delivered by the agreed date with no missing items
+    denominador: Orders shipped in the month
+    fora: Orders canceled by the customer (since version 1.1)
+    quebras: Site, customer, carrier and reason for the miss (timing or completeness)
+    fonte: WMS and TMS
+    periodicidade: Monthly
+    polaridade: Higher is better
+    meta: 95%; green from 95%, yellow from 92%, red below
+    dono: Operations manager
+    responsavel_calculo: BI analyst
+    decisao: Which customers and carriers need an action plan
+    relacionados: Complaints per thousand orders, Picking errors
+    versao: 1.1, in effect since February 2026
+  CLI-02:
+    indicador: Customer NPS
+    pergunta: Would customers recommend Vallora?
+    formula: "% promoters minus % detractors"
+    numerador: Promoters (scores of 9 and 10) minus detractors (scores of 0 to 6), in percentage points
+    denominador: Valid responses to the quarter's survey
+    fora: Responses without a score and customers with less than three months under contract
+    quebras: Customer segment and the site that serves it
+    fonte: Customer survey
+    periodicidade: Quarterly
+    polaridade: Higher is better
+    meta: 50 points; yellow from 40, red below
+    dono: Sales manager
+    responsavel_calculo: Sales analyst
+    decisao: Which accounts get a visit and an improvement plan
+    relacionados: OTIF, Complaints per thousand orders
+    versao: 1.0, in effect since January 2026
+  CLI-03:
+    indicador: Complaints per thousand orders
+    pergunta: How often does an order lead to a valid complaint?
+    formula: Valid complaints ÷ orders shipped × 1,000
+    numerador: Complaints logged in the CRM and judged valid in the month
+    denominador: Orders shipped in the month
+    fora: Complaints judged invalid and requests for information
+    quebras: Reason for the complaint, customer and site
+    fonte: CRM and WMS
+    periodicidade: Monthly
+    polaridade: Lower is better
+    meta: Up to 3 per thousand orders; yellow up to 5, red above
+    dono: Sales manager
+    responsavel_calculo: BI analyst
+    decisao: Which reasons to tackle first, together with Operations
+    relacionados: OTIF, Picking errors, Customer NPS
+    versao: 1.0, in effect since January 2026
+  OPE-01:
+    indicador: Picking productivity
+    pergunta: How many order lines does picking deliver per hour worked?
+    formula: Lines picked ÷ hours worked in picking
+    numerador: Order lines picked and checked in the month
+    denominador: Hours actually worked by the picking team, including overtime
+    fora: Training hours and inventory-count hours
+    quebras: Site, shift and order type (each picks or full cases)
+    fonte: WMS and time-and-attendance
+    periodicidade: Monthly
+    polaridade: Higher is better
+    meta: Each site's standard, reviewed once a year; yellow up to 10% below, red below that
+    dono: Operations manager
+    responsavel_calculo: BI analyst
+    decisao: Size the schedule and prioritize layout improvements
+    relacionados: Picking errors, Logistics cost per order, Absenteeism rate
+    versao: 1.0, in effect since January 2026
+  OPE-02:
+    indicador: Inventory accuracy
+    pergunta: Does the stock in the system match what is on the shelf?
+    formula: Positions with no discrepancy ÷ positions counted × 100
+    numerador: Positions counted in cycle counting with no item or quantity discrepancy
+    denominador: Positions counted in the month
+    fora: Positions blocked for receiving or shipping on the day of the count
+    quebras: Site, warehouse zone and ABC class
+    fonte: WMS (cycle counting)
+    periodicidade: Monthly
+    polaridade: Higher is better
+    meta: 99.5%; yellow from 99%, red below
+    dono: Operations manager
+    responsavel_calculo: Inventory analyst
+    decisao: Where to recount and where to review the slotting process
+    relacionados: Picking errors, OTIF
+    versao: 1.0, in effect since January 2026
+  OPE-03:
+    indicador: Picking errors
+    pergunta: How many lines go out with the wrong item or quantity?
+    formula: Lines with errors ÷ lines picked, in parts per million
+    numerador: Lines with errors caught at checking or reported by the customer
+    denominador: Lines picked in the month
+    fora: Discrepancies caused by the customer's product data
+    quebras: Site, shift and where the error was caught (checking or customer)
+    fonte: WMS and complaints
+    periodicidade: Monthly
+    polaridade: Lower is better
+    meta: Up to 500 parts per million; yellow up to 800, red above
+    dono: Operations manager
+    responsavel_calculo: BI analyst
+    decisao: Where to reinforce training and checking
+    relacionados: Picking productivity, Complaints per thousand orders
+    versao: 1.0, in effect since January 2026
+  OPE-04:
+    indicador: Warehouse occupancy
+    pergunta: How much of the storage capacity is in use?
+    formula: Pallet positions occupied ÷ pallet positions available × 100
+    numerador: Pallet positions occupied on the last day of the month
+    denominador: Pallet positions available, excluding those blocked for maintenance
+    fora: Floor-stacking areas, measured in m² and tracked separately
+    quebras: Site and position type (pallet racking or picking)
+    fonte: WMS
+    periodicidade: Monthly
+    polaridade: Within a range
+    meta: Between 80% and 88%; yellow between 75% and 80% or between 88% and 92%, red outside that
+    dono: Operations manager
+    responsavel_calculo: BI analyst
+    decisao: When to look for extra space or take on a new customer
+    relacionados: Picking productivity, Logistics cost per order
+    versao: 1.0, in effect since January 2026
+  PES-01:
+    indicador: Absenteeism rate
+    pergunta: How much of the contracted time did the company lose to absences?
+    formula: Absence hours ÷ scheduled hours × 100
+    numerador: "Absence hours of every type: unexcused absences, doctor's notes, long-term absences, late arrivals and early departures, based on the day's scheduled hours"
+    denominador: Scheduled hours of everyone who was active that day
+    fora: Vacation, days off, holidays, days before hiring and after termination
+    quebras: Short-term (up to 15 days) and long-term; absence type; site, shift, department and tenure (up to 90 days)
+    fonte: Time-and-attendance system (schedules and clock-ins) and payroll (long-term absences)
+    periodicidade: Monthly, published by the 5th business day
+    polaridade: Lower is better
+    meta: 3.5% target for 2026; green up to 3.5%, yellow up to 4.0%, red above
+    dono: HR manager; each DC manager answers for their site
+    responsavel_calculo: BI analyst
+    decisao: Where to investigate first and when to open an action plan for a team
+    relacionados: Schedule absence rate, Cost of paid hours not worked, Overtime
+    versao: 1.1, in effect since March 2026 (see the version log)
+  PES-02:
+    indicador: 90-day turnover
+    pergunta: How many new hires leave before completing 90 days?
+    formula: New hires who left before 90 days ÷ new hires in the month × 100
+    numerador: People hired in the reference month who left before completing 90 days
+    denominador: People hired in the reference month
+    fora: Temporary contracts and apprentices, tracked separately
+    quebras: Site, role, shift and reason for leaving (resignation or dismissal)
+    fonte: Payroll
+    periodicidade: Monthly, with a 3-month lag
+    polaridade: Lower is better
+    meta: Up to 15%; yellow up to 20%, red above
+    dono: HR manager
+    responsavel_calculo: HR analyst
+    decisao: Review recruiting and onboarding at the sites and roles most affected
+    relacionados: Absenteeism rate, Accident frequency rate
+    versao: 1.0, in effect since January 2026
+  PES-03:
+    indicador: Accident frequency rate
+    pergunta: How often does someone get hurt and need time off?
+    formula: Lost-time accidents × 1,000,000 ÷ hours worked
+    numerador: Work accidents with at least one day of absence, reported on the official accident form (CAT)
+    denominador: Hours actually worked in the month, including overtime
+    fora: Commuting accidents, tracked separately
+    quebras: Site, shift, department and tenure
+    fonte: OHS and time-and-attendance
+    periodicidade: Monthly
+    polaridade: Lower is better
+    meta: 20% reduction from the 2025 average; yellow up to the 2025 average, red above
+    dono: OHS coordinator
+    responsavel_calculo: Safety technician
+    decisao: Where to focus safety inspections and training
+    relacionados: Absenteeism rate, 90-day turnover
+    versao: 1.0, in effect since January 2026
+
+# Atividades da RACI, na ordem de dados/raci.csv; e as letras combinadas.
+raci:
+  - Propose a new KPI or a change of definition
+  - Measure the impact of the change
+  - Approve or reject the change
+  - Update the definition sheet and the version log
+  - Calculate and publish every month
+  - Explain the result and the action plan
+  - Review the whole set once a year
+  - Discontinue a KPI
+raci_letras:
+  R e A: R and A
+
+# Linhas do registro de versões, na ordem de dados/versoes.csv.
+versoes:
+  - [March 2026, PES-01 Absenteeism rate, New breakdown by tenure (up to 90 days), The Radar showed that new hires are absent more often]
+  - [February 2026, CLI-01 OTIF, Orders canceled by the customer leave the denominator, They counted as an Operations failure]
+  - [January 2026, All 14 leadership KPIs, First version of the definition sheets, Governance project]
+
+# Tabela das três definições, na ordem de dados/definicoes.csv:
+# [campo, RH, Operação, Financeiro]
+definicoes:
+  - [Question it answers, How much of the contracted time was lost?, How many scheduled shifts went uncovered?, How much do we pay for hours not worked?]
+  - [Numerator, "Absence hours of every type, including long-term absences", "Scheduled days with any absence, including late arrivals or early departures of more than 10 minutes", "Absence hours paid by the company: doctor's notes, the first 15 days of sick or injury leave, and statutory leave"]
+  - [Denominator, Scheduled working hours, Scheduled days (people absent for more than 15 days come off the schedule), Scheduled working hours]
+  - [Unit, Hours, Days, Hours]
+  - [Name after the project, "**Absenteeism rate** (official, goes to leadership)", Schedule absence rate (managed by Operations), Cost of paid hours not worked (managed by Finance)]

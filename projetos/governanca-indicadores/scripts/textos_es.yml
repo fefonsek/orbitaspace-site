@@ -1,0 +1,343 @@
+# Caso Indicadores: textos dos dados em espanhol. As chaves são as dos
+# arquivos em português de dados/ (número do indicador, código da ficha,
+# nome em PT); os números continuam vindo dos dados. Ver scripts/rotulos.R.
+
+areas:
+  Financeiro: Finanzas
+  Comercial: Comercial
+  Operação: Operaciones
+  Qualidade: Calidad
+  RH: RR. HH.
+  SESMT: SST
+
+situacoes:
+  Bem definido: [Bien definido, "Fórmula escrita, fuente única, dueño y uso en alguna decisión"]
+  Divergente: [Divergente, "Mismo nombre, cálculos distintos entre áreas o unidades"]
+  Duplicado: [Duplicado, "Nombres distintos para la misma medida, o uno es un recorte del otro"]
+  Mal formulado: [Mal formulado, "Volumen sin referencia, recorte tratado como indicador o incentivo equivocado"]
+  Sem uso: [Sin uso, "No apareció en ninguna decisión registrada en acta en los últimos seis meses"]
+  Sem dono: [Sin dueño, "Nadie responde por el resultado ni por el cálculo"]
+
+destinos:
+  Diretoria: [Dirección, "Va a la reunión mensual, con ficha completa, meta y dueño"]
+  Gestão da área: [Gestión del área, "El área lo sigue con una ficha simplificada; sube a la dirección solo por excepción"]
+  Unificado: [Unificado, "Pasa a ser parte de otro indicador o un desglose de él"]
+  Descontinuado: [Discontinuado, "Sale de las presentaciones; la base sigue disponible"]
+
+pilares:
+  Finanças: [Finanzas, Crecer con margen]
+  Clientes: [Clientes, Entregar a tiempo]
+  Operação: [Operación, Precisión y eficiencia]
+  Pessoas: [Personas, Presencia y seguridad]
+
+# número do indicador: [nome, observação]
+inventario:
+  1: [Margen EBITDA, ""]
+  2: [Costo logístico por pedido, Operaciones dejaba el flete fuera del costo]
+  3: [Presupuesto vs. real de gastos, ""]
+  4: [Morosidad, ""]
+  5: [Costo de horas pagadas no trabajadas, Se llamaba ausentismo]
+  6: [Costo de horas extra, Entra en la ficha de Horas extra]
+  7: [Ingreso por m², ""]
+  8: [Costo de energía por pallet, ""]
+  9: [OTIF por factura, Unificado en el OTIF por pedido]
+  10: [NPS de clientes, ""]
+  11: [Reclamos de clientes, "Conteo sin base; pasa a reclamos por cada mil pedidos"]
+  12: [Tiempo de respuesta a reclamos, ""]
+  13: [Clientes activos, "Volumen, sin meta"]
+  14: [Ticket promedio por cliente, ""]
+  15: [OTIF por pedido, Pasa a ser el OTIF oficial]
+  16: [Productividad de preparación de pedidos, ""]
+  17: [Exactitud de inventario, ""]
+  18: [Errores de preparación, ""]
+  19: [Ocupación del almacén, Cada CD medía en posiciones o en m²]
+  20: [Índice de averías, Absorbe las averías de Calidad]
+  21: [Pedidos despachados por día, "Volumen, sin meta"]
+  22: [Tiempo promedio en muelle, ""]
+  23: [Ausencias en la programación, Se llamaba ausentismo]
+  24: [Horas extra de la operación, Entra en la ficha de Horas extra]
+  25: [Pedidos por colaborador, Repite la productividad de preparación]
+  26: [Productividad del equipo nocturno, "Recorte; pasa a ser un filtro por turno"]
+  27: [Averías reportadas por clientes, Entra en el índice de averías]
+  28: [Auditorías internas realizadas, ""]
+  29: [Tasa de ausentismo, Pasa a ser la definición oficial]
+  30: [Ausentismo por certificado médico, Pasa a ser un desglose de la tasa oficial]
+  31: [Porcentaje de horas extra, Ficha única de Horas extra]
+  32: [Rotación de personal, ""]
+  33: [Rotación a 90 días, "Se calculaba a mano, solo a veces"]
+  34: [Dotación, "Volumen, sin meta"]
+  35: [Horas de capacitación por persona, ""]
+  36: [Tiempo promedio de contratación, ""]
+  37: [Tasa de frecuencia de accidentes, ""]
+  38: [Tasa de gravedad de accidentes, ""]
+  39: [Días sin accidentes, Premia no registrar el accidente]
+  40: [Inspecciones de seguridad realizadas, Recibe meta y queda en SST]
+
+# Campos de texto de cada ficha (código, pilar e objetivo vêm dos dados).
+fichas:
+  FIN-01:
+    indicador: Margen EBITDA
+    pergunta: ¿Cuánto de los ingresos queda después de los costos y gastos de la operación?
+    formula: EBITDA ÷ ingresos netos × 100
+    numerador: EBITDA del mes (resultado antes de intereses, impuestos, depreciación y amortización)
+    denominador: Ingresos netos por servicios del mes
+    fora: Ingresos y gastos no recurrentes, registrados aparte y explicados en la nota del mes
+    quebras: Unidad y línea de servicio (almacenamiento y transporte)
+    fonte: ERP (contabilidad)
+    periodicidade: Mensual, publicada hasta el 8.º día hábil, después del cierre contable
+    polaridade: Mayor es mejor
+    meta: Meta del presupuesto de 2026; verde en la meta o por encima, amarillo hasta 1 punto por debajo, rojo por debajo de eso
+    dono: Director de administración y finanzas
+    responsavel_calculo: Analista de contraloría
+    decisao: Revisar precios y contratos con margen por debajo del promedio
+    relacionados: Costo logístico por pedido, Presupuesto vs. real de gastos
+    versao: 1.0, vigente desde enero de 2026
+  FIN-02:
+    indicador: Costo logístico por pedido
+    pergunta: ¿Cuánto cuesta, en promedio, almacenar y entregar un pedido?
+    formula: (Almacenamiento + flete) ÷ pedidos despachados
+    numerador: Costo de almacenamiento (personal, alquiler, energía, equipos) más el flete pagado en el mes
+    denominador: Pedidos despachados en el mes
+    fora: Pedidos cancelados antes de la preparación y fletes reembolsados por el cliente
+    quebras: Unidad, cliente y rango de tamaño del pedido
+    fonte: ERP y WMS
+    periodicidade: Mensual
+    polaridade: Menor es mejor
+    meta: Hasta el costo presupuestado por pedido; verde hasta lo presupuestado, amarillo hasta 5% por encima, rojo por encima de eso
+    dono: Gerente de contraloría
+    responsavel_calculo: Analista de contraloría
+    decisao: Dónde renegociar fletes y dónde revisar la productividad del almacén
+    relacionados: Margen EBITDA, Productividad de preparación de pedidos, OTIF
+    versao: 1.0, vigente desde enero de 2026
+  FIN-03:
+    indicador: Presupuesto vs. real de gastos
+    pergunta: ¿Los gastos avanzan al ritmo del presupuesto?
+    formula: Gastos reales ÷ gastos presupuestados × 100
+    numerador: Gastos reales del mes, por el criterio de devengado
+    denominador: Gastos presupuestados para el mes
+    fora: Inversiones (capex), que tienen seguimiento propio
+    quebras: Área, centro de costo y naturaleza del gasto
+    fonte: ERP
+    periodicidade: Mensual
+    polaridade: Cerca de 100%
+    meta: Entre 97% y 103%; amarillo hasta 5 puntos fuera del rango, rojo más allá de eso
+    dono: Gerente de contraloría
+    responsavel_calculo: Analista de contraloría
+    decisao: Qué áreas tienen que explicar el desvío y revisar la proyección del año
+    relacionados: Margen EBITDA
+    versao: 1.0, vigente desde enero de 2026
+  FIN-04:
+    indicador: Morosidad
+    pergunta: ¿Cuánto de lo que tenemos por cobrar está vencido hace más de 30 días?
+    formula: Vencido hace más de 30 días ÷ cartera por cobrar × 100
+    numerador: Documentos vencidos hace más de 30 días al último día del mes
+    denominador: Cartera total por cobrar al último día del mes
+    fora: Documentos en disputa judicial, con seguimiento aparte
+    quebras: Cliente y rango de atraso (31 a 60, 61 a 90, más de 90 días)
+    fonte: ERP (cuentas por cobrar)
+    periodicidade: Mensual
+    polaridade: Menor es mejor
+    meta: Hasta 2%; amarillo hasta 3%, rojo por encima
+    dono: Gerente de contraloría
+    responsavel_calculo: Analista financiero
+    decisao: Cuándo suspender la atención a un cliente y renegociar plazos
+    relacionados: Margen EBITDA
+    versao: 1.0, vigente desde enero de 2026
+  CLI-01:
+    indicador: OTIF
+    pergunta: ¿Cuántos pedidos llegaron al cliente a tiempo y completos?
+    formula: Pedidos entregados a tiempo y completos ÷ pedidos despachados × 100
+    numerador: Pedidos entregados hasta la fecha acordada y sin ítems faltantes
+    denominador: Pedidos despachados en el mes
+    fora: Pedidos cancelados por el cliente (desde la versión 1.1)
+    quebras: Unidad, cliente, transportista y motivo de la falla (plazo o integridad)
+    fonte: WMS y TMS
+    periodicidade: Mensual
+    polaridade: Mayor es mejor
+    meta: 95%; verde desde 95%, amarillo desde 92%, rojo por debajo
+    dono: Gerente de operaciones
+    responsavel_calculo: Analista de BI
+    decisao: Qué clientes y transportistas necesitan un plan de acción
+    relacionados: Reclamos por cada mil pedidos, Errores de preparación
+    versao: 1.1, vigente desde febrero de 2026
+  CLI-02:
+    indicador: NPS de clientes
+    pergunta: ¿Los clientes recomendarían a Vallora?
+    formula: "% de promotores menos % de detractores"
+    numerador: Promotores (notas 9 y 10) menos detractores (notas 0 a 6), en puntos porcentuales
+    denominador: Respuestas válidas de la encuesta del trimestre
+    fora: Respuestas sin nota y clientes con menos de tres meses de contrato
+    quebras: Segmento de cliente y unidad que lo atiende
+    fonte: Encuesta a clientes
+    periodicidade: Trimestral
+    polaridade: Mayor es mejor
+    meta: 50 puntos; amarillo desde 40, rojo por debajo
+    dono: Gerente comercial
+    responsavel_calculo: Analista comercial
+    decisao: Qué cuentas reciben visita y plan de mejora
+    relacionados: OTIF, Reclamos por cada mil pedidos
+    versao: 1.0, vigente desde enero de 2026
+  CLI-03:
+    indicador: Reclamos por cada mil pedidos
+    pergunta: ¿Con qué frecuencia un pedido genera un reclamo procedente?
+    formula: Reclamos procedentes ÷ pedidos despachados × 1.000
+    numerador: Reclamos registrados en el CRM y considerados procedentes en el mes
+    denominador: Pedidos despachados en el mes
+    fora: Reclamos improcedentes y pedidos de información
+    quebras: Motivo del reclamo, cliente y unidad
+    fonte: CRM y WMS
+    periodicidade: Mensual
+    polaridade: Menor es mejor
+    meta: Hasta 3 por cada mil pedidos; amarillo hasta 5, rojo por encima
+    dono: Gerente comercial
+    responsavel_calculo: Analista de BI
+    decisao: Qué motivos atacar primero, junto con Operaciones
+    relacionados: OTIF, Errores de preparación, NPS de clientes
+    versao: 1.0, vigente desde enero de 2026
+  OPE-01:
+    indicador: Productividad de preparación de pedidos
+    pergunta: ¿Cuántas líneas de pedido prepara el equipo por hora trabajada?
+    formula: Líneas preparadas ÷ horas trabajadas en preparación
+    numerador: Líneas de pedido preparadas y verificadas en el mes
+    denominador: Horas efectivamente trabajadas por el equipo de preparación, incluidas las horas extra
+    fora: Horas de capacitación y de inventario
+    quebras: Unidad, turno y tipo de pedido (fraccionado o caja cerrada)
+    fonte: WMS y control de asistencia
+    periodicidade: Mensual
+    polaridade: Mayor es mejor
+    meta: Estándar de cada unidad, revisado una vez al año; amarillo hasta 10% por debajo, rojo por debajo de eso
+    dono: Gerente de operaciones
+    responsavel_calculo: Analista de BI
+    decisao: Dimensionar la programación y priorizar mejoras de layout
+    relacionados: Errores de preparación, Costo logístico por pedido, Tasa de ausentismo
+    versao: 1.0, vigente desde enero de 2026
+  OPE-02:
+    indicador: Exactitud de inventario
+    pergunta: ¿El stock del sistema coincide con lo que está en la estantería?
+    formula: Posiciones sin diferencias ÷ posiciones contadas × 100
+    numerador: Posiciones contadas en el inventario cíclico sin diferencia de ítem ni de cantidad
+    denominador: Posiciones contadas en el mes
+    fora: Posiciones bloqueadas para recepción o despacho el día del conteo
+    quebras: Unidad, zona del almacén y curva ABC
+    fonte: WMS (inventario cíclico)
+    periodicidade: Mensual
+    polaridade: Mayor es mejor
+    meta: 99,5%; amarillo desde 99%, rojo por debajo
+    dono: Gerente de operaciones
+    responsavel_calculo: Analista de inventario
+    decisao: Dónde volver a contar y dónde revisar el proceso de ubicación
+    relacionados: Errores de preparación, OTIF
+    versao: 1.0, vigente desde enero de 2026
+  OPE-03:
+    indicador: Errores de preparación
+    pergunta: ¿Cuántas líneas salen con el ítem o la cantidad equivocada?
+    formula: Líneas con error ÷ líneas preparadas, en partes por millón
+    numerador: Líneas con error detectadas en la verificación o reclamadas por el cliente
+    denominador: Líneas preparadas en el mes
+    fora: Diferencias causadas por el catálogo del cliente
+    quebras: Unidad, turno y etapa en que se detectó el error (verificación o cliente)
+    fonte: WMS y reclamos
+    periodicidade: Mensual
+    polaridade: Menor es mejor
+    meta: Hasta 500 partes por millón; amarillo hasta 800, rojo por encima
+    dono: Gerente de operaciones
+    responsavel_calculo: Analista de BI
+    decisao: Dónde reforzar la capacitación y la verificación
+    relacionados: Productividad de preparación de pedidos, Reclamos por cada mil pedidos
+    versao: 1.0, vigente desde enero de 2026
+  OPE-04:
+    indicador: Ocupación del almacén
+    pergunta: ¿Cuánto de la capacidad de almacenamiento está en uso?
+    formula: Posiciones de pallet ocupadas ÷ posiciones de pallet disponibles × 100
+    numerador: Posiciones de pallet ocupadas el último día del mes
+    denominador: Posiciones de pallet disponibles, sin las bloqueadas por mantenimiento
+    fora: Zonas de almacenamiento a piso, medidas en m² y con seguimiento aparte
+    quebras: Unidad y tipo de posición (rack o picking)
+    fonte: WMS
+    periodicidade: Mensual
+    polaridade: Dentro de un rango
+    meta: Entre 80% y 88%; amarillo entre 75% y 80% o entre 88% y 92%, rojo fuera de eso
+    dono: Gerente de operaciones
+    responsavel_calculo: Analista de BI
+    decisao: Cuándo buscar espacio extra o aceptar un cliente nuevo
+    relacionados: Productividad de preparación de pedidos, Costo logístico por pedido
+    versao: 1.0, vigente desde enero de 2026
+  PES-01:
+    indicador: Tasa de ausentismo
+    pergunta: ¿Cuánto del tiempo contratado perdió la empresa por ausencias?
+    formula: Horas de ausencia ÷ horas previstas × 100
+    numerador: "Horas de ausencia de todos los tipos: faltas, certificados médicos, ausencias de larga duración, llegadas tarde y salidas anticipadas, según la jornada prevista del día"
+    denominador: Horas previstas en la jornada de quienes estaban activos ese día
+    fora: Vacaciones, días libres, feriados, días antes de la contratación y después de la desvinculación
+    quebras: Corta duración (hasta 15 días) y larga duración; tipo de ausencia; unidad, turno, departamento y antigüedad (hasta 90 días)
+    fonte: Sistema de control de asistencia (jornada y marcaciones) y nómina (ausencias de larga duración)
+    periodicidade: Mensual, publicada hasta el 5.º día hábil
+    polaridade: Menor es mejor
+    meta: Meta de 3,5% en 2026; verde hasta 3,5%, amarillo hasta 4,0%, rojo por encima
+    dono: Gerente de RR. HH.; cada gerente de CD responde por su unidad
+    responsavel_calculo: Analista de BI
+    decisao: Dónde investigar primero y cuándo abrir un plan de acción por equipo
+    relacionados: Tasa de ausencia en la programación, Costo de horas pagadas no trabajadas, Horas extra
+    versao: 1.1, vigente desde marzo de 2026 (ver el registro de versiones)
+  PES-02:
+    indicador: Rotación a 90 días
+    pergunta: ¿Cuántas de las personas contratadas se van antes de cumplir 90 días?
+    formula: Contratados que salieron antes de 90 días ÷ contratados en el mes × 100
+    numerador: Personas contratadas en el mes de referencia que se desvincularon antes de cumplir 90 días
+    denominador: Personas contratadas en el mes de referencia
+    fora: Contratos temporales y aprendices, con seguimiento aparte
+    quebras: Unidad, cargo, turno y motivo de la salida (renuncia o despido)
+    fonte: Nómina
+    periodicidade: Mensual, con 3 meses de desfase
+    polaridade: Menor es mejor
+    meta: Hasta 15%; amarillo hasta 20%, rojo por encima
+    dono: Gerente de RR. HH.
+    responsavel_calculo: Analista de RR. HH.
+    decisao: Revisar el reclutamiento y la inducción en las unidades y los cargos más afectados
+    relacionados: Tasa de ausentismo, Tasa de frecuencia de accidentes
+    versao: 1.0, vigente desde enero de 2026
+  PES-03:
+    indicador: Tasa de frecuencia de accidentes
+    pergunta: ¿Con qué frecuencia alguien se accidenta y necesita ausentarse?
+    formula: Accidentes con ausencia × 1.000.000 ÷ horas trabajadas
+    numerador: Accidentes de trabajo con ausencia de al menos un día, con aviso oficial de accidente (CAT)
+    denominador: Horas efectivamente trabajadas en el mes, incluidas las horas extra
+    fora: Accidentes en el trayecto, con seguimiento aparte
+    quebras: Unidad, turno, departamento y antigüedad
+    fonte: SST y control de asistencia
+    periodicidade: Mensual
+    polaridade: Menor es mejor
+    meta: Reducción de 20% sobre el promedio de 2025; amarillo hasta el promedio de 2025, rojo por encima
+    dono: Coordinador de SST
+    responsavel_calculo: Técnico de seguridad
+    decisao: Dónde concentrar inspecciones y capacitaciones de seguridad
+    relacionados: Tasa de ausentismo, Rotación a 90 días
+    versao: 1.0, vigente desde enero de 2026
+
+# Atividades da RACI, na ordem de dados/raci.csv; e as letras combinadas.
+raci:
+  - Proponer un indicador nuevo o un cambio de definición
+  - Medir el impacto del cambio
+  - Aprobar o rechazar el cambio
+  - Actualizar la ficha y el registro de versiones
+  - Calcular y publicar cada mes
+  - Explicar el resultado y el plan de acción
+  - Revisar el conjunto una vez al año
+  - Discontinuar un indicador
+raci_letras:
+  R e A: R y A
+
+# Linhas do registro de versões, na ordem de dados/versoes.csv.
+versoes:
+  - [Marzo de 2026, PES-01 Tasa de ausentismo, Nuevo desglose por antigüedad (hasta 90 días), El Radar mostró que el personal recién contratado falta más]
+  - [Febrero de 2026, CLI-01 OTIF, Los pedidos cancelados por el cliente salen del denominador, Contaban como falla de Operaciones]
+  - [Enero de 2026, Los 14 de la dirección, Primera versión de las fichas, Proyecto de gobernanza]
+
+# Tabela das três definições, na ordem de dados/definicoes.csv:
+# [campo, RH, Operação, Financeiro]
+definicoes:
+  - [Pregunta que responde, ¿Cuánto del tiempo contratado se perdió?, ¿Cuántos puestos de la programación quedaron sin cubrir?, ¿Cuánto pagamos por horas no trabajadas?]
+  - [Numerador, "Horas de ausencia de todos los tipos, incluidas las ausencias de larga duración", "Días programados con cualquier ausencia, incluida la llegada tarde o salida anticipada de más de 10 minutos", "Horas de ausencia pagadas por la empresa: certificados médicos, los primeros 15 días de ausencias por enfermedad o accidente y licencias legales"]
+  - [Denominador, Horas previstas en la jornada, Días programados (quien lleva más de 15 días de ausencia sale de la programación), Horas previstas en la jornada]
+  - [Unidad, Horas, Días, Horas]
+  - [Nombre después del proyecto, "**Tasa de ausentismo** (oficial, llega a la dirección)", Tasa de ausencia en la programación (gestión de Operaciones), Costo de horas pagadas no trabajadas (gestión de Finanzas)]

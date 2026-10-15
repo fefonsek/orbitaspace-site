@@ -2,25 +2,7 @@
 # A página só mostra números que saem daqui; nada é digitado no index.qmd.
 # Se alguma checagem falhar, o render para com a mensagem da checagem.
 
-## ---- formatos ----
-num <- function(x, d = 2) formatC(x, format = "f", digits = d, big.mark = ".", decimal.mark = ",")
-pct <- function(x, d = 2) paste0(num(x, d), "%")
-extenso <- function(n, feminino = FALSE) {
-  nomes <- c("um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez")
-  if (feminino) nomes[1:2] <- c("uma", "duas")
-  if (n >= 1 && n <= 10) nomes[n] else num(n, 0)
-}
-meses_pt <- c("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
-              "agosto", "setembro", "outubro", "novembro", "dezembro")
-# "2025-06" -> "junho de 2025"
-mes_extenso <- function(m) paste(meses_pt[as.integer(substr(m, 6, 7))], "de", substr(m, 1, 4))
-# c("2024-01", "2024-02", "2025-09") -> "janeiro e fevereiro de 2024, setembro de 2025"
-lista_meses <- function(m) {
-  juntar <- function(x) if (length(x) == 1) x else paste(paste(head(x, -1), collapse = ", "), "e", tail(x, 1))
-  por_ano <- split(m, substr(m, 1, 4))
-  paste(vapply(names(por_ano), \(a) paste(juntar(meses_pt[as.integer(substr(por_ano[[a]], 6, 7))]), "de", a),
-               character(1)), collapse = ", ")
-}
+# Os formatos de número e de data de cada idioma ficam em scripts/rotulos.R.
 
 ## ---- leitura ----
 ler_caso <- function(caso = ".") {
@@ -40,7 +22,7 @@ ler_caso <- function(caso = ".") {
   mensal <- taxas |> select(mes, definicao, taxa) |> pivot_wider(names_from = definicao, values_from = taxa)
 
   ind <- list(
-    inventario = inventario, criterios = criterios, fichas = fichas,
+    caso = caso, inventario = inventario, criterios = criterios, fichas = fichas,
     definicoes = read_csv(arq("definicoes.csv"), show_col_types = FALSE),
     raci = read_csv(arq("raci.csv"), show_col_types = FALSE, na = ""),
     versoes = read_csv(arq("versoes.csv"), show_col_types = FALSE, col_types = cols(.default = "c")),

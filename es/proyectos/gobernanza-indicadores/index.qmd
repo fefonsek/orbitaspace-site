@@ -1,0 +1,275 @@
+---
+title: "Un número, tres respuestas: gobernanza de indicadores en Vallora Logística"
+description: "Tres áreas, tres tasas de ausentismo para el mismo mes. Cómo 40 indicadores se convirtieron en 14, cada uno con ficha, dueño y regla de cambio."
+image: img/capa.png
+image-alt: "Portada del caso: un número, tres respuestas, gobernanza de indicadores en Vallora Logística, con el gráfico de las tres tasas de ausentismo"
+categories: [Gobernanza de indicadores, KPI, Gestión, R]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [indicadores]
+traducao: indicadores
+# Tocar un gráfico lo abre en pantalla completa (en el celular quedan pequeños).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Ver el código R"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números vêm dos mesmos arquivos da versão em português; os textos dos
+# dados, de scripts/textos_es.yml (ver scripts/rotulos.R).
+caso <- "../../../projetos/governanca-indicadores"
+source(file.path(caso, "scripts/dados.R"))
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/agregar_radar.R"))
+tx <- rotulos("es", caso)
+ind <- localizar(ler_caso(caso), tx)
+
+reuniao <- "2025-06"
+dir <- ind$destino[["Diretoria"]]
+fora_da_diretoria <- ind$n - dir
+
+cabecalho <- rmarkdown::yaml_front_matter("index.qmd")
+stopifnot("a descrição do cartão precisa citar os totais do inventário" =
+            grepl(tx$descricao(ind$n, dir), cabecalho$description, fixed = TRUE))
+```
+
+::: aviso-dados
+**Caso ficticio.** Vallora Logística S.A., sus áreas, personas e indicadores no existen. Las tres tasas de ausentismo se calcularon en la base ficticia del [Radar de Ausentismo](../radar-ausentismo/index.qmd); el inventario, las fichas y las reglas se escribieron para este caso. El método es real.
+
+[Descargar las tres tasas mes a mes (CSV)](../../../projetos/governanca-indicadores/dados/taxa_tres_definicoes.csv){download="taxa_tres_definicoes.csv"} · [Descargar el inventario de indicadores (CSV)](../../../projetos/governanca-indicadores/dados/inventario.csv){download="inventario.csv"}
+:::
+
+[Los archivos CSV y los comentarios del código R están en portugués, el idioma original del caso.]{.nota-idioma}
+
+## La historia
+
+En la reunión de resultados de julio de 2025, Vallora escuchó tres tasas de ausentismo para junio. RR. HH. mostró `r tx$pct(ind$mes("rh", reuniao))`, Operaciones `r tx$pct(ind$mes("operacao", reuniao))` y Finanzas `r tx$pct(ind$mes("financeiro", reuniao))`, y la reunión pasó media hora discutiendo cuál era la correcta.
+
+::: so-computador
+```{r}
+#| label: taxas
+#| echo: false
+#| fig-cap: "Tasa de ausentismo calculada a la manera de cada área, de enero de 2024 a diciembre de 2025. La línea vertical marca junio de 2025, el mes que se discutió en la reunión de julio."
+#| fig-alt: "Tres líneas mes a mes. La de RR. HH., en azul, queda casi siempre por encima de la de Operaciones; la de Finanzas, muy por debajo de las dos. En junio de 2025, marcado por la línea de la reunión de julio, las tres están separadas."
+#| fig-width: 9
+#| fig-height: 4.4
+#| lightbox:
+#|   group: computador
+grafico_taxas(ind, reuniao)
+salvar_capa(ind, reuniao, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: taxas-celular
+#| echo: false
+#| fig-cap: "Tasa de ausentismo calculada a la manera de cada área, de enero de 2024 a diciembre de 2025. La línea vertical marca junio de 2025, el mes que se discutió en la reunión de julio."
+#| fig-alt: "Tres líneas mes a mes. La de RR. HH., en azul, queda casi siempre por encima de la de Operaciones; la de Finanzas, muy por debajo de las dos. En junio de 2025, marcado por la línea de la reunión de julio, las tres están separadas."
+#| fig-width: 4.5
+#| fig-height: 4.4
+#| lightbox:
+#|   group: celular
+grafico_taxas(ind, reuniao, celular = TRUE)
+```
+:::
+
+Ninguna estaba equivocada. Cada área calculaba lo que necesitaba para su trabajo y le daba al resultado el mismo nombre. El problema no era de cálculo, era de gobernanza: nadie había escrito qué significaba "tasa de ausentismo" en la empresa, ni quién lo decidía.
+
+La escena se repitió en los meses siguientes, y en diciembre la dirección pidió un relevamiento de todos los indicadores que circulaban en las presentaciones mensuales. Aparecieron `r ind$n`, de `r tx$extenso(ind$n_areas, feminino = TRUE)` áreas, y solo `r ind$situacao[["Bem definido"]]` estaban bien definidos. El trabajo duró cinco semanas, en cuatro etapas:
+
+1. Entrevistas con quienes producen y con quienes usan los números, en las `r tx$extenso(ind$n_areas, feminino = TRUE)` áreas.
+2. Inventario y diagnóstico de cada indicador.
+3. Fichas técnicas de los indicadores que llegan a la dirección.
+4. Reglas de gobernanza: quién propone, quién aprueba y cómo queda registrado un cambio.
+
+## La divergencia: tres cálculos para un nombre
+
+Las tres tasas salen de la misma base y responden preguntas distintas. La decisión fue mantener las tres, cada una con nombre propio, y reservar "Tasa de ausentismo" para la definición de RR. HH., que es la misma del Radar.
+
+```{r}
+#| label: definicoes-tabela
+#| echo: false
+#| output: asis
+cat(definicoes_html(ind))
+```
+
+- **Operaciones.** Operaciones cuenta el día entero aunque la ausencia sea una llegada tarde, lo que empuja la tasa hacia arriba, pero saca de la programación a quien lleva más de 15 días ausente, lo que la empuja hacia abajo. En el saldo, queda un poco por debajo de RR. HH. En `r tx$extenso(length(ind$ope_acima))` de los `r nrow(ind$mensal)` meses (`r tx$lista_meses(ind$ope_acima)`), la cuenta se invirtió: en los meses con pocas ausencias de larga duración pesa más contar el día entero, y Operaciones supera a RR. HH.
+- **Finanzas.** Quita las faltas y las llegadas tarde, que se descuentan del sueldo, y lo que paga el INSS desde el día 16 de ausencia. Por eso queda muy por debajo de las otras dos. En Brasil, la empresa paga los primeros 15 días de una ausencia por enfermedad o accidente; a partir del día 16, quien paga es la seguridad social (INSS).
+
+```{r}
+#| label: definicoes
+#| eval: false
+#| code-summary: "Ver el código R de las tres definiciones"
+```
+
+## Diagnóstico: de `r ind$n` a `r dir`
+
+De los `r ind$n` indicadores, `r dir` llegan a la reunión de dirección, `r ind$destino[["Gestão da área"]]` quedan en manos de las áreas y `r ind$destino[["Unificado"]] + ind$destino[["Descontinuado"]]` salen de las presentaciones, unificados o discontinuados. Cada indicador recibió una situación y un destino, con los criterios de abajo.
+
+```{r}
+#| label: situacao
+#| echo: false
+tabela_criterios(ind, "situacao")
+```
+
+```{r}
+#| label: destino
+#| echo: false
+tabela_criterios(ind, "destino")
+```
+
+::: so-computador
+```{r}
+#| label: fluxo
+#| echo: false
+#| fig-cap: "De dónde salió cada indicador y adónde fue. El grosor de cada franja es la cantidad de indicadores."
+#| fig-alt: "Diagrama de flujo con las seis situaciones a la izquierda y los cuatro destinos a la derecha. Las franjas que llegan a Dirección, en azul, salen sobre todo de Bien definido y de Divergente."
+#| fig-width: 9
+#| fig-height: 5.2
+#| lightbox:
+#|   group: computador
+grafico_fluxo(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: fluxo-celular
+#| echo: false
+#| fig-cap: "De dónde salió cada indicador y adónde fue. El grosor de cada franja es la cantidad de indicadores."
+#| fig-alt: "Diagrama de flujo con las seis situaciones a la izquierda y los cuatro destinos a la derecha. Las franjas que llegan a Dirección, en azul, salen sobre todo de Bien definido y de Divergente."
+#| fig-width: 4.5
+#| fig-height: 6.4
+#| lightbox:
+#|   group: celular
+grafico_fluxo(ind, celular = TRUE)
+```
+:::
+
+Para llegar a la dirección, el indicador tiene que pasar tres preguntas: está ligado a un objetivo de la empresa, alguien de la dirección decide algo con él, y cambia lo suficiente de un mes a otro como para merecer la reunión.
+
+El caso más didáctico es "Días sin accidentes". Parece positivo, pero premia no registrar el accidente; la Tasa de frecuencia de accidentes mide el mismo tema sin ese incentivo.
+
+## Inventario: los `r ind$n` indicadores
+
+Solo `r ind$situacao[["Bem definido"]]` de los `r ind$n` indicadores estaban bien definidos. La tabla trae el inventario completo, con búsqueda y filtros por área, situación y destino.
+
+```{r}
+#| label: inventario
+#| echo: false
+tabela_inventario(ind)
+```
+
+## Árbol de indicadores
+
+### `r dir` indicadores, `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, una meta
+
+```{r}
+#| label: arvore
+#| echo: false
+pilares_html(ind,
+             meta = "Meta 2026: crecer con margen sin perder los plazos de entrega",
+             base = "Base: fichas técnicas, Comité de indicadores y registro de versiones")
+```
+
+Cada indicador de la dirección responde a uno de los `r tx$extenso(length(unique(map_chr(ind$fichas, "pilar"))))` objetivos, y el prefijo del código (`r paste(unique(substr(map_chr(ind$fichas, "codigo"), 1, 3)), collapse = ", ")`) dice cuál. Los códigos conservan las iniciales en portugués, como en el proyecto original.
+
+## Fichas técnicas
+
+Cada uno de los `r dir` indicadores de la dirección recibió una ficha con los mismos campos. La ficha de la Tasa de ausentismo ya aparece abierta, como modelo; las demás se abren con un clic.
+
+```{r}
+#| label: fichas
+#| echo: false
+fichas_html(ind)
+```
+
+Dos detalles que muestran el método: la Ocupación del almacén no tiene "mayor es mejor", porque un almacén demasiado lleno traba la operación; y la Rotación a 90 días solo cierra tres meses después de la contratación, así que la ficha lo dice para que nadie exija el número antes de tiempo.
+
+## Gobernanza: quién decide qué es cada número
+
+Ninguna definición cambia sin pedido, prueba y aprobación registrados. Quien decide es un Comité de indicadores: el gerente de contraloría coordina, los dueños de los `r dir` indicadores participan y el analista de BI lleva la secretaría. Se reúne mes a mes, durante 30 minutos, solo cuando hay pedidos en la fila.
+
+### Roles (matriz RACI)
+
+R ejecuta, A aprueba y rinde cuentas, C es consultado, I es informado.
+
+::: so-computador
+```{r}
+#| label: raci
+#| echo: false
+tabela_raci(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: raci-cartoes
+#| echo: false
+#| output: asis
+cat(raci_cartoes(ind))
+```
+:::
+
+### Cómo cambia una definición
+
+1. El dueño abre el pedido: qué cambia, por qué y desde cuándo.
+2. BI recalcula los últimos 12 meses con la regla nueva y muestra la diferencia.
+3. El comité aprueba, rechaza o pide ajustes en la reunión siguiente.
+4. Una vez aprobado, BI actualiza la ficha, sube la versión y registra el cambio.
+5. La serie histórica se recalcula; cuando no se puede, el quiebre queda marcado en el gráfico.
+
+### Registro de versiones (ejemplo)
+
+::: so-computador
+```{r}
+#| label: versoes
+#| echo: false
+tabela_versoes(ind)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: versoes-cartoes
+#| echo: false
+#| output: asis
+cat(versoes_cartoes(ind))
+```
+:::
+
+## Resultado
+
+La reunión mensual cambió `r tx$extenso(ind$n_areas, feminino = TRUE)` presentaciones y `r ind$n` números por una página con `r dir` indicadores, cada uno con su dueño presente para explicarlo. Cuando Operaciones habla de su tasa, ahora la llama por otro nombre, y la discusión de julio no se repite. El Radar de Ausentismo pasó a usar la definición oficial PES-01.
+
+## Lo que demuestra el caso
+
+- **Separar el cálculo de la gobernanza.** Una divergencia rara vez es un error de cálculo; casi siempre es la falta de una definición escrita y de alguien que decida.
+- **Recortar sin borrar.** `r fora_da_diretoria` indicadores salieron de la reunión de dirección, y ningún área perdió la información que necesita.
+- **Fichas que responden las preguntas que generan discusiones:** qué entra, qué queda fuera, si mayor es mejor, cuándo cierra el número.
+- **Cambios con registro**, para que el número de hoy siga siendo comparable con el del año pasado.
+- **Puente con BI.** Las fichas se convierten en las medidas DAX y en el diccionario del tablero, y el tablero deja de tener reglas ocultas.
+
+::: cta-final
+## ¿En tu empresa se discute qué número es el correcto antes de discutir qué hacer con él?
+
+Cuéntame cómo se calculan hoy los indicadores y te digo por dónde empezar.
+
+[Escríbeme](../../contacto.qmd){.btn .btn-primary}
+:::

@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Three departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.">
+
+<title>One number, three answers: KPI governance at Vallora Logística · Orbita Space</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/img/favicon-32.png?v=adc3fc4c" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-cb2ef95b3f220c7735b7c8b76939b518.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="apple-touch-icon" href="../../../assets/img/apple-touch-icon.png?v=f2b429e3">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;display=swap">
+<link rel="alternate" hreflang="pt-BR" href="https://orbitaspace.com.br/projetos/governanca-indicadores/index.html">
+<link rel="alternate" hreflang="x-default" href="https://orbitaspace.com.br/projetos/governanca-indicadores/index.html">
+<link rel="alternate" hreflang="es" href="https://orbitaspace.com.br/es/proyectos/gobernanza-indicadores/index.html">
+<link rel="alternate" hreflang="en" href="https://orbitaspace.com.br/en/projects/kpi-governance/index.html">
+
+
+<meta property="og:title" content="One number, three answers: KPI governance at Vallora Logística · Orbita Space">
+<meta property="og:description" content="Three departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.">
+<meta property="og:image" content="https://orbitaspace.com.br/en/projects/kpi-governance/img/capa.png?v=e54ef660">
+<meta property="og:site_name" content="Orbita Space">
+<meta property="og:image:height" content="675">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Case cover: one number, three answers, KPI governance at Vallora Logística, with the chart of the three absenteeism rates">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../en/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, home page" class="navbar-logo light-content">
+    <img src="../../../assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, home page" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../en/index.html">
+    <span class="navbar-title">Orbita Space</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/services.html"> 
+<span class="menu-text">Services</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">PT</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../en/index.html"> 
+<span class="menu-text">EN</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">One number, three answers: KPI governance at Vallora Logística</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">KPI governance</div>
+    <div class="quarto-category">KPIs</div>
+    <div class="quarto-category">Management</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Three departments, three absenteeism rates for the same month. How 40 KPIs became 14, each with a definition sheet, an owner and a change rule.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="aviso-dados">
+<p><strong>Fictional case.</strong> Vallora Logística S.A., its departments, people and KPIs do not exist. The three absenteeism rates were calculated from the fictional dataset of the <a href="../../../en/projects/absenteeism-radar/index.html">Absenteeism Radar</a>; the inventory, the definition sheets and the rules were written for this case. The method is real.</p>
+<p><a href="../../../projetos/governanca-indicadores/dados/taxa_tres_definicoes.csv" download="taxa_tres_definicoes.csv">Download the three monthly rates (CSV)</a> · <a href="../../../projetos/governanca-indicadores/dados/inventario.csv" download="inventario.csv">Download the KPI inventory (CSV)</a></p>
+</div>
+<p><span class="nota-idioma">The CSV files and the comments in the R code are in Portuguese, the case’s original language.</span></p>
+<section id="the-story" class="level2">
+<h2 data-anchor-id="the-story">The story</h2>
+<p>At the July 2025 results meeting, Vallora heard three absenteeism rates for June. HR showed 4.38%, Operations 3.54% and Finance 2.15%, and the meeting spent half an hour arguing about which one was right.</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/taxas-1.png?v=67f00d70" class="lightbox" data-gallery="computador" title="Absenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting."><img src="index_files/figure-html/taxas-1.png?v=67f00d70" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Three monthly lines. HR, in blue, stays above Operations almost all the time; Finance runs well below both. In June 2025, marked by the July meeting line, the three are far apart." width="864"></a></p>
+</figure>
+</div>
+<figcaption>Absenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/taxas-celular-1.png?v=6d54044d" class="lightbox" data-gallery="celular" title="Absenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting."><img src="index_files/figure-html/taxas-celular-1.png?v=6d54044d" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Three monthly lines. HR, in blue, stays above Operations almost all the time; Finance runs well below both. In June 2025, marked by the July meeting line, the three are far apart." width="432"></a></p>
+</figure>
+</div>
+<figcaption>Absenteeism rate calculated each department’s way, from January 2024 to December 2025. The vertical line marks June 2025, the month discussed at the July meeting.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>None of them was wrong. Each department calculated what it needed for its own work and gave the result the same name. The problem was not arithmetic, it was governance: nobody had written down what “absenteeism rate” meant at the company, or who got to decide.</p>
+<p>The scene repeated itself over the following months, and in December leadership asked for an inventory of every KPI that circulated in the monthly presentations. Forty turned up, from six departments, and only 13 were well defined. The work took five weeks, in four stages:</p>
+<ol type="1">
+<li>Interviews with the people who produce the numbers and the people who use them, in all six departments.</li>
+<li>Inventory and diagnosis of each KPI.</li>
+<li>Definition sheets for the KPIs that go to leadership.</li>
+<li>Governance rules: who proposes, who approves, how a change is recorded.</li>
+</ol>
+</section>
+<section id="the-divergence-three-calculations-one-name" class="level2">
+<h2 data-anchor-id="the-divergence-three-calculations-one-name">The divergence: three calculations, one name</h2>
+<p>The three rates come from the same data and answer different questions. The decision was to keep all three, each with its own name, and reserve “Absenteeism rate” for HR’s definition, which is the same as the Radar’s.</p>
+<div class="cell" data-layout-align="center">
+<div class="definicoes"><div class="tabela-rolavel definicoes-tabela"><table class="table" data-quarto-disable-processing="true"><thead><tr><th></th><th>HR</th><th>Operations</th><th>Finance</th></tr></thead><tbody><tr><td>Question it answers</td><td>How much of the contracted time was lost?</td><td>How many scheduled shifts went uncovered?</td><td>How much do we pay for hours not worked?</td></tr><tr><td>Numerator</td><td>Absence hours of every type, including long-term absences</td><td>Scheduled days with any absence, including late arrivals or early departures of more than 10 minutes</td><td>Absence hours paid by the company: doctor's notes, the first 15 days of sick or injury leave, and statutory leave</td></tr><tr><td>Denominator</td><td>Scheduled working hours</td><td>Scheduled days (people absent for more than 15 days come off the schedule)</td><td>Scheduled working hours</td></tr><tr><td>Unit</td><td>Hours</td><td>Days</td><td>Hours</td></tr><tr><td>2024 value</td><td>3.77%</td><td>3.55%</td><td>2.19%</td></tr><tr><td>2025 value</td><td>3.77%</td><td>3.48%</td><td>2.12%</td></tr><tr><td>Name after the project</td><td><strong>Absenteeism rate</strong> (official, goes to leadership)</td><td>Schedule absence rate (managed by Operations)</td><td>Cost of paid hours not worked (managed by Finance)</td></tr></tbody></table></div><div class="definicoes-blocos"><div class="definicao-bloco definicao-oficial"><p class="definicao-nome">HR</p><dl><dt>Question it answers</dt><dd>How much of the contracted time was lost?</dd><dt>Numerator</dt><dd>Absence hours of every type, including long-term absences</dd><dt>Denominator</dt><dd>Scheduled working hours</dd><dt>Unit</dt><dd>Hours</dd><dt>2024 value</dt><dd>3.77%</dd><dt>2025 value</dt><dd>3.77%</dd><dt>Name after the project</dt><dd><strong>Absenteeism rate</strong> (official, goes to leadership)</dd></dl></div><div class="definicao-bloco"><p class="definicao-nome">Operations</p><dl><dt>Question it answers</dt><dd>How many scheduled shifts went uncovered?</dd><dt>Numerator</dt><dd>Scheduled days with any absence, including late arrivals or early departures of more than 10 minutes</dd><dt>Denominator</dt><dd>Scheduled days (people absent for more than 15 days come off the schedule)</dd><dt>Unit</dt><dd>Days</dd><dt>2024 value</dt><dd>3.55%</dd><dt>2025 value</dt><dd>3.48%</dd><dt>Name after the project</dt><dd>Schedule absence rate (managed by Operations)</dd></dl></div><div class="definicao-bloco"><p class="definicao-nome">Finance</p><dl><dt>Question it answers</dt><dd>How much do we pay for hours not worked?</dd><dt>Numerator</dt><dd>Absence hours paid by the company: doctor's notes, the first 15 days of sick or injury leave, and statutory leave</dd><dt>Denominator</dt><dd>Scheduled working hours</dd><dt>Unit</dt><dd>Hours</dd><dt>2024 value</dt><dd>2.19%</dd><dt>2025 value</dt><dd>2.12%</dd><dt>Name after the project</dt><dd>Cost of paid hours not worked (managed by Finance)</dd></dl></div></div></div>
+</div>
+<ul>
+<li><strong>Operations.</strong> Operations counts the whole day even when the absence is a late arrival, which pushes the rate up, but takes anyone absent for more than 15 days off the schedule, which pulls it down. On balance, it lands a little below HR. In four of the 24 months (January and February 2024, September and November 2025), the balance flipped: in months with few long-term absences, counting the whole day weighs more, and Operations comes out above HR.</li>
+<li><strong>Finance.</strong> It leaves out unexcused absences and late arrivals that are docked from pay, and whatever INSS pays from day 16 of a leave. That is why it runs well below the other two. In Brazil, the employer pays the first 15 days of sick or injury leave; from day 16 on, the social security agency (INSS) pays.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Show the R code for the three definitions</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tipos da base: 1 atestado médico, 2 consulta ou exame (parcial), 3 acidente</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de trabalho, 4 afastamento do INSS, 5 falta injustificada, 6 atraso ou saída</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># antecipada, 7 licença legal (CLT art. 473), 8 acompanhamento de dependente,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 9 licença maternidade/paternidade (dias já fora da jornada no Radar).</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># RH: horas de ausência dos tipos que contam no Radar ÷ horas previstas.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>rh <span class="ot">&lt;-</span> ausencias <span class="sc">|&gt;</span> <span class="fu">filter</span>(considera_taxa <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Operação: dias escalados com qualquer ausência (atraso ou saída antecipada só</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># acima de 10 minutos) ÷ dias escalados. Quem está afastado há mais de 15 dias</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># (do 16º dia de um evento longo em diante) sai da escala, no numerador e no</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># denominador.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>afastado <span class="ot">&lt;-</span> ausencias <span class="sc">|&gt;</span> <span class="fu">filter</span>(dias_corridos <span class="sc">&gt;</span> <span class="dv">15</span>, dia_do_evento <span class="sc">&gt;</span> <span class="dv">15</span>) <span class="sc">|&gt;</span> <span class="fu">distinct</span>(id_funcionario, data)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>escala <span class="ot">&lt;-</span> jornada <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(afastado, <span class="fu">c</span>(<span class="st">"id_funcionario"</span>, <span class="st">"data"</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>dias_com_ausencia <span class="ot">&lt;-</span> escala <span class="sc">|&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(<span class="fu">filter</span>(ausencias, id_tipo_ausencia <span class="sc">!=</span> <span class="dv">6</span> <span class="sc">|</span> horas_ausencia <span class="sc">*</span> <span class="dv">60</span> <span class="sc">&gt;</span> <span class="dv">10</span>), <span class="fu">c</span>(<span class="st">"id_funcionario"</span>, <span class="st">"data"</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Financeiro: horas pagas pela empresa ÷ horas previstas. Entram atestados e</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># acidentes de até 15 dias, consultas, licenças legais e os 15 primeiros dias</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># dos afastamentos longos por doença ou acidente (tipos 1, 3 e 4), que a empresa</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># paga por lei. Ficam fora faltas e atrasos (descontados), o que o INSS paga e</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># o acompanhamento de dependente.</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>pagas <span class="ot">&lt;-</span> ausencias <span class="sc">|&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id_tipo_ausencia <span class="sc">==</span> <span class="dv">7</span> <span class="sc">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>           (id_tipo_ausencia <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> dias_corridos <span class="sc">&lt;=</span> <span class="dv">15</span>) <span class="sc">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>           (id_tipo_ausencia <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>) <span class="sc">&amp;</span> dias_corridos <span class="sc">&gt;</span> <span class="dv">15</span> <span class="sc">&amp;</span> dia_do_evento <span class="sc">&lt;=</span> <span class="dv">15</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="diagnosis-from-40-to-14" class="level2">
+<h2 data-anchor-id="diagnosis-from-40-to-14">Diagnosis: from 40 to 14</h2>
+<p>Of the 40 KPIs, 14 go to the leadership meeting, 14 stay with the departments and 12 leave the presentations, merged or discontinued. Each KPI was given a status and a destination, using the criteria below.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 78%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Status found</th>
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Well defined</td>
+<td style="text-align: left;">Written formula, single source, an owner, and used in some decision</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inconsistent</td>
+<td style="text-align: left;">Same name, different calculations across departments or sites</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duplicate</td>
+<td style="text-align: left;">Different names for the same measure, or one is a slice of the other</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Poorly designed</td>
+<td style="text-align: left;">Volume with no reference point, a slice treated as a KPI, or the wrong incentive</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unused</td>
+<td style="text-align: left;">Not part of any decision recorded in the minutes in the last six months</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No owner</td>
+<td style="text-align: left;">Nobody answers for the result or the calculation</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 80%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Destination</th>
+<th style="text-align: left;">What it means</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Leadership</td>
+<td style="text-align: left;">Goes to the monthly meeting, with a full definition sheet, a target and an owner</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Department level</td>
+<td style="text-align: left;">The department tracks it with a short definition sheet; it goes to leadership only by exception</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Merged</td>
+<td style="text-align: left;">Becomes part of another KPI or a breakdown of it</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Discontinued</td>
+<td style="text-align: left;">Leaves the presentations; the data remain available</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/fluxo-1.png?v=374e4485" class="lightbox" data-gallery="computador" title="Where each KPI came from and where it went. The width of each band is the number of KPIs."><img src="index_files/figure-html/fluxo-1.png?v=374e4485" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Flow diagram with the six statuses on the left and the four destinations on the right. The bands that reach Leadership, in blue, come mostly from Well defined and Inconsistent." width="864"></a></p>
+</figure>
+</div>
+<figcaption>Where each KPI came from and where it went. The width of each band is the number of KPIs.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/fluxo-celular-1.png?v=88ccdada" class="lightbox" data-gallery="celular" title="Where each KPI came from and where it went. The width of each band is the number of KPIs."><img src="index_files/figure-html/fluxo-celular-1.png?v=88ccdada" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Flow diagram with the six statuses on the left and the four destinations on the right. The bands that reach Leadership, in blue, come mostly from Well defined and Inconsistent." width="432"></a></p>
+</figure>
+</div>
+<figcaption>Where each KPI came from and where it went. The width of each band is the number of KPIs.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>To go to leadership, a KPI has to pass three questions: it is tied to a company objective, someone in leadership makes a decision with it, and it moves enough from one month to the next to deserve the meeting.</p>
+<p>The most instructive case is “Days without accidents”. It looks positive, but it rewards not reporting accidents; the Accident frequency rate measures the same thing without that incentive.</p>
+</section>
+<section id="inventory-the-40-kpis" class="level2">
+<h2 data-anchor-id="inventory-the-40-kpis">Inventory: the 40 KPIs</h2>
+<p>Only 13 of the 40 KPIs were well defined. The table shows the full inventory, with search and filters by department, status and destination.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display no-overflow-x">
+<div class="inventario">
+<div class="inventario-filtros"><input type="search" class="form-control" placeholder="Search KPIs or notes" aria-label="Search the inventory"><select class="form-select" data-filtro="area" aria-label="Filter by department"><option value="">All departments</option><option value="Finance">Finance</option><option value="HR">HR</option><option value="OHS">OHS</option><option value="Operations">Operations</option><option value="Quality">Quality</option><option value="Sales">Sales</option></select><select class="form-select" data-filtro="situacao" aria-label="Filter by status"><option value="">All statuses</option><option value="Well defined">Well defined</option><option value="Inconsistent">Inconsistent</option><option value="Duplicate">Duplicate</option><option value="Poorly designed">Poorly designed</option><option value="Unused">Unused</option><option value="No owner">No owner</option></select><select class="form-select" data-filtro="destino" aria-label="Filter by destination"><option value="">All destinations</option><option value="Leadership">Leadership</option><option value="Department level">Department level</option><option value="Merged">Merged</option><option value="Discontinued">Discontinued</option></select></div>
+<p class="inventario-contagem" aria-live="polite" data-total="40" data-modelo="{n} of {total} KPIs">40 of 40 KPIs</p>
+<div class="tabela-rolavel">
+<div class="tabela-rolavel">
+<table class="table caption-top table-sm table-striped small">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">KPI (as it was called)</th>
+<th data-quarto-table-cell-role="th">Department</th>
+<th data-quarto-table-cell-role="th">Status</th>
+<th data-quarto-table-cell-role="th">Destination</th>
+<th data-quarto-table-cell-role="th">Note</th>
+<th data-quarto-table-cell-role="th">Sheet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" data-area="Finance" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">1</td>
+<td class="inv-nome">EBITDA margin</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">FIN-01</td>
+</tr>
+<tr class="even" data-area="Finance" data-situacao="Inconsistent" data-destino="Leadership">
+<td class="inv-numero">2</td>
+<td class="inv-nome">Logistics cost per order</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">Operations left freight out of the cost</td>
+<td class="inv-ficha" data-rotulo="Sheet">FIN-02</td>
+</tr>
+<tr class="odd" data-area="Finance" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">3</td>
+<td class="inv-nome">Budget vs. actual expenses</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">FIN-03</td>
+</tr>
+<tr class="even" data-area="Finance" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">4</td>
+<td class="inv-nome">Overdue receivables</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">FIN-04</td>
+</tr>
+<tr class="odd" data-area="Finance" data-situacao="Inconsistent" data-destino="Department level">
+<td class="inv-numero">5</td>
+<td class="inv-nome">Cost of paid hours not worked</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Was called absenteeism</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Finance" data-situacao="Duplicate" data-destino="Merged">
+<td class="inv-numero">6</td>
+<td class="inv-nome">Overtime cost</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">Goes into the Overtime sheet</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Finance" data-situacao="No owner" data-destino="Discontinued">
+<td class="inv-numero">7</td>
+<td class="inv-nome">Revenue per m²</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">No owner</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Finance" data-situacao="Unused" data-destino="Discontinued">
+<td class="inv-numero">8</td>
+<td class="inv-nome">Energy cost per pallet</td>
+<td class="inv-area">Finance</td>
+<td class="inv-situacao">Unused</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Sales" data-situacao="Inconsistent" data-destino="Merged">
+<td class="inv-numero">9</td>
+<td class="inv-nome">OTIF by invoice</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">Merged into OTIF by order</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Sales" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">10</td>
+<td class="inv-nome">Customer NPS</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">CLI-02</td>
+</tr>
+<tr class="odd" data-area="Sales" data-situacao="Poorly designed" data-destino="Leadership">
+<td class="inv-numero">11</td>
+<td class="inv-nome">Customer complaints</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">A count with no base; becomes complaints per thousand orders</td>
+<td class="inv-ficha" data-rotulo="Sheet">CLI-03</td>
+</tr>
+<tr class="even" data-area="Sales" data-situacao="Well defined" data-destino="Department level">
+<td class="inv-numero">12</td>
+<td class="inv-nome">Complaint response time</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Sales" data-situacao="Poorly designed" data-destino="Department level">
+<td class="inv-numero">13</td>
+<td class="inv-nome">Active customers</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Volume, no target</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Sales" data-situacao="Unused" data-destino="Discontinued">
+<td class="inv-numero">14</td>
+<td class="inv-nome">Average ticket per customer</td>
+<td class="inv-area">Sales</td>
+<td class="inv-situacao">Unused</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Inconsistent" data-destino="Leadership">
+<td class="inv-numero">15</td>
+<td class="inv-nome">OTIF by order</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">Becomes the official OTIF</td>
+<td class="inv-ficha" data-rotulo="Sheet">CLI-01</td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">16</td>
+<td class="inv-nome">Picking productivity</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">OPE-01</td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">17</td>
+<td class="inv-nome">Inventory accuracy</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">OPE-02</td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">18</td>
+<td class="inv-nome">Picking errors</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">OPE-03</td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Inconsistent" data-destino="Leadership">
+<td class="inv-numero">19</td>
+<td class="inv-nome">Warehouse occupancy</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">Each DC measured it in positions or in m²</td>
+<td class="inv-ficha" data-rotulo="Sheet">OPE-04</td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Duplicate" data-destino="Department level">
+<td class="inv-numero">20</td>
+<td class="inv-nome">Damage rate</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Absorbs the damage figures from Quality</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Poorly designed" data-destino="Department level">
+<td class="inv-numero">21</td>
+<td class="inv-nome">Orders shipped per day</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Volume, no target</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Well defined" data-destino="Department level">
+<td class="inv-numero">22</td>
+<td class="inv-nome">Average dock time</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Inconsistent" data-destino="Department level">
+<td class="inv-numero">23</td>
+<td class="inv-nome">Schedule absences</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Was called absenteeism</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Duplicate" data-destino="Merged">
+<td class="inv-numero">24</td>
+<td class="inv-nome">Operations overtime</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">Goes into the Overtime sheet</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Operations" data-situacao="Duplicate" data-destino="Discontinued">
+<td class="inv-numero">25</td>
+<td class="inv-nome">Orders per employee</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs">Repeats picking productivity</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Operations" data-situacao="Poorly designed" data-destino="Merged">
+<td class="inv-numero">26</td>
+<td class="inv-nome">Night team productivity</td>
+<td class="inv-area">Operations</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">A slice; becomes a shift filter</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="Quality" data-situacao="Duplicate" data-destino="Merged">
+<td class="inv-numero">27</td>
+<td class="inv-nome">Customer-reported damage</td>
+<td class="inv-area">Quality</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">Goes into the damage rate</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="Quality" data-situacao="Unused" data-destino="Discontinued">
+<td class="inv-numero">28</td>
+<td class="inv-nome">Internal audits completed</td>
+<td class="inv-area">Quality</td>
+<td class="inv-situacao">Unused</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="HR" data-situacao="Inconsistent" data-destino="Leadership">
+<td class="inv-numero">29</td>
+<td class="inv-nome">Absenteeism rate</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Inconsistent</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">Becomes the official definition</td>
+<td class="inv-ficha" data-rotulo="Sheet">PES-01</td>
+</tr>
+<tr class="even" data-area="HR" data-situacao="Duplicate" data-destino="Merged">
+<td class="inv-numero">30</td>
+<td class="inv-nome">Absenteeism from doctor's notes</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Merged</td>
+<td class="inv-obs">Becomes a breakdown of the official rate</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="HR" data-situacao="Duplicate" data-destino="Department level">
+<td class="inv-numero">31</td>
+<td class="inv-nome">Overtime percentage</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Duplicate</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Single Overtime sheet</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="HR" data-situacao="Well defined" data-destino="Department level">
+<td class="inv-numero">32</td>
+<td class="inv-nome">Turnover</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="HR" data-situacao="No owner" data-destino="Leadership">
+<td class="inv-numero">33</td>
+<td class="inv-nome">90-day turnover</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">No owner</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs">Calculated by hand, only now and then</td>
+<td class="inv-ficha" data-rotulo="Sheet">PES-02</td>
+</tr>
+<tr class="even" data-area="HR" data-situacao="Poorly designed" data-destino="Department level">
+<td class="inv-numero">34</td>
+<td class="inv-nome">Headcount</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Volume, no target</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="HR" data-situacao="Well defined" data-destino="Department level">
+<td class="inv-numero">35</td>
+<td class="inv-nome">Training hours per person</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="HR" data-situacao="No owner" data-destino="Department level">
+<td class="inv-numero">36</td>
+<td class="inv-nome">Average time to hire</td>
+<td class="inv-area">HR</td>
+<td class="inv-situacao">No owner</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="OHS" data-situacao="Well defined" data-destino="Leadership">
+<td class="inv-numero">37</td>
+<td class="inv-nome">Accident frequency rate</td>
+<td class="inv-area">OHS</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino destino-diretoria">Leadership</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet">PES-03</td>
+</tr>
+<tr class="even" data-area="OHS" data-situacao="Well defined" data-destino="Department level">
+<td class="inv-numero">38</td>
+<td class="inv-nome">Accident severity rate</td>
+<td class="inv-area">OHS</td>
+<td class="inv-situacao">Well defined</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs"></td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="odd" data-area="OHS" data-situacao="Poorly designed" data-destino="Discontinued">
+<td class="inv-numero">39</td>
+<td class="inv-nome">Days without accidents</td>
+<td class="inv-area">OHS</td>
+<td class="inv-situacao">Poorly designed</td>
+<td class="inv-destino">Discontinued</td>
+<td class="inv-obs">Rewards not reporting accidents</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+<tr class="even" data-area="OHS" data-situacao="Unused" data-destino="Department level">
+<td class="inv-numero">40</td>
+<td class="inv-nome">Safety inspections completed</td>
+<td class="inv-area">OHS</td>
+<td class="inv-situacao">Unused</td>
+<td class="inv-destino">Department level</td>
+<td class="inv-obs">Gets a target and stays with OHS</td>
+<td class="inv-ficha" data-rotulo="Sheet"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<script>
+// Busca e filtros do inventário (área, situação, destino). Sem JavaScript,
+// a tabela aparece inteira e os filtros ficam escondidos.
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".inventario").forEach(function (bloco) {
+    var busca = bloco.querySelector('input[type="search"]');
+    var filtros = Array.prototype.slice.call(bloco.querySelectorAll("select[data-filtro]"));
+    var linhas = Array.prototype.slice.call(bloco.querySelectorAll("tbody tr"));
+    var contagem = bloco.querySelector(".inventario-contagem");
+    var total = contagem.getAttribute("data-total");
+    // Modelo do idioma, por exemplo "{n} de {total} indicadores".
+    var modelo = contagem.getAttribute("data-modelo");
+
+    function normalizar(texto) {
+      return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function aplicar() {
+      var termo = normalizar(busca.value.trim());
+      var visiveis = 0;
+      linhas.forEach(function (linha) {
+        var ok = filtros.every(function (f) {
+          return !f.value || linha.getAttribute("data-" + f.getAttribute("data-filtro")) === f.value;
+        }) && (!termo || normalizar(linha.textContent).indexOf(termo) >= 0);
+        linha.hidden = !ok;
+        if (ok) visiveis++;
+      });
+      contagem.textContent = modelo.replace("{n}", visiveis).replace("{total}", total);
+    }
+
+    busca.addEventListener("input", aplicar);
+    filtros.forEach(function (f) { f.addEventListener("change", aplicar); });
+    bloco.classList.add("inventario-ativo");
+  });
+});
+</script>
+</div>
+</div>
+</section>
+<section id="kpi-tree" class="level2">
+<h2 data-anchor-id="kpi-tree">KPI tree</h2>
+<section id="fourteen-kpis-four-objectives-one-goal" class="level3">
+<h3 data-anchor-id="fourteen-kpis-four-objectives-one-goal">Fourteen KPIs, four objectives, one goal</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="arvore">
+<p class="arvore-meta">2026 goal: grow with healthy margins without missing delivery dates</p>
+<div class="arvore-pilares"><div class="pilar"><p class="pilar-nome">Finance</p><p class="pilar-objetivo">Grow with healthy margins</p><ul><li><span>FIN-01</span> EBITDA margin</li><li><span>FIN-02</span> Logistics cost per order</li><li><span>FIN-03</span> Budget vs. actual expenses</li><li><span>FIN-04</span> Overdue receivables</li></ul></div>
+<div class="pilar"><p class="pilar-nome">Customers</p><p class="pilar-objetivo">Deliver on time</p><ul><li><span>CLI-01</span> OTIF</li><li><span>CLI-02</span> Customer NPS</li><li><span>CLI-03</span> Complaints per thousand orders</li></ul></div>
+<div class="pilar"><p class="pilar-nome">Operations</p><p class="pilar-objetivo">Accuracy and efficiency</p><ul><li><span>OPE-01</span> Picking productivity</li><li><span>OPE-02</span> Inventory accuracy</li><li><span>OPE-03</span> Picking errors</li><li><span>OPE-04</span> Warehouse occupancy</li></ul></div>
+<div class="pilar"><p class="pilar-nome">People</p><p class="pilar-objetivo">Attendance and safety</p><ul><li><span>PES-01</span> Absenteeism rate</li><li><span>PES-02</span> 90-day turnover</li><li><span>PES-03</span> Accident frequency rate</li></ul></div></div>
+<p class="arvore-base">Foundation: definition sheets, KPI committee and version log</p>
+</div>
+</div>
+</div>
+<p>Each leadership KPI answers to one of the four objectives, and the code prefix (FIN, CLI, OPE, PES) tells you which. The codes keep their Portuguese initials, as in the original project.</p>
+</section>
+</section>
+<section id="definition-sheets" class="level2">
+<h2 data-anchor-id="definition-sheets">Definition sheets</h2>
+<p>Each of the 14 leadership KPIs got a definition sheet with the same fields. The Absenteeism rate sheet is already open, as the model; the others open with a click.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="fichas-grupo"><h3>Finance: grow with healthy margins</h3>
+<details class="ficha"><summary><span class="ficha-codigo">FIN-01</span> <span class="ficha-nome">EBITDA margin</span><span class="ficha-resumo">EBITDA ÷ net revenue × 100</span></summary>
+<dl><dt>Code</dt><dd>FIN-01</dd><dt>Question it answers</dt><dd>How much of revenue is left after operating costs and expenses?</dd><dt>Linked objective</dt><dd>Finance: grow with healthy margins</dd><dt>Formula</dt><dd>EBITDA ÷ net revenue × 100</dd><dt>Numerator</dt><dd>EBITDA for the month (earnings before interest, taxes, depreciation and amortization)</dd><dt>Denominator</dt><dd>Net service revenue for the month</dd><dt>Excluded from both</dt><dd>Non-recurring revenue and expenses, recorded separately and explained in the month's note</dd><dt>Standard breakdowns</dt><dd>Site and service line (warehousing and transportation)</dd><dt>Source</dt><dd>ERP (accounting)</dd><dt>Frequency</dt><dd>Monthly, published by the 8th business day, after the accounting close</dd><dt>Polarity</dt><dd>Higher is better</dd><dt>Target and thresholds</dt><dd>2026 budget target; green at or above target, yellow up to 1 point below, red below that</dd><dt>Owner of the result</dt><dd>Finance and administration director</dd><dt>Calculated by</dt><dd>Financial control analyst</dd><dt>Decision it supports</dt><dd>Review prices and contracts with below-average margins</dd><dt>Related KPIs</dt><dd>Logistics cost per order, Budget vs. actual expenses</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">FIN-02</span> <span class="ficha-nome">Logistics cost per order</span><span class="ficha-resumo">(Warehousing + freight) ÷ orders shipped</span></summary>
+<dl><dt>Code</dt><dd>FIN-02</dd><dt>Question it answers</dt><dd>How much does it cost, on average, to store and deliver an order?</dd><dt>Linked objective</dt><dd>Finance: grow with healthy margins</dd><dt>Formula</dt><dd>(Warehousing + freight) ÷ orders shipped</dd><dt>Numerator</dt><dd>Warehousing cost (staff, rent, energy, equipment) plus freight paid in the month</dd><dt>Denominator</dt><dd>Orders shipped in the month</dd><dt>Excluded from both</dt><dd>Orders canceled before picking and freight reimbursed by the customer</dd><dt>Standard breakdowns</dt><dd>Site, customer and order size band</dd><dt>Source</dt><dd>ERP and WMS</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>Up to the budgeted cost per order; green up to budget, yellow up to 5% above, red above that</dd><dt>Owner of the result</dt><dd>Financial controller</dd><dt>Calculated by</dt><dd>Financial control analyst</dd><dt>Decision it supports</dt><dd>Where to renegotiate freight and where to review warehouse productivity</dd><dt>Related KPIs</dt><dd>EBITDA margin, Picking productivity, OTIF</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">FIN-03</span> <span class="ficha-nome">Budget vs. actual expenses</span><span class="ficha-resumo">Actual expenses ÷ budgeted expenses × 100</span></summary>
+<dl><dt>Code</dt><dd>FIN-03</dd><dt>Question it answers</dt><dd>Are expenses moving at the pace of the budget?</dd><dt>Linked objective</dt><dd>Finance: grow with healthy margins</dd><dt>Formula</dt><dd>Actual expenses ÷ budgeted expenses × 100</dd><dt>Numerator</dt><dd>Actual expenses for the month, on an accrual basis</dd><dt>Denominator</dt><dd>Budgeted expenses for the month</dd><dt>Excluded from both</dt><dd>Capital expenditure (capex), which is tracked separately</dd><dt>Standard breakdowns</dt><dd>Department, cost center and type of expense</dd><dt>Source</dt><dd>ERP</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Close to 100%</dd><dt>Target and thresholds</dt><dd>Between 97% and 103%; yellow up to 5 points outside the range, red beyond that</dd><dt>Owner of the result</dt><dd>Financial controller</dd><dt>Calculated by</dt><dd>Financial control analyst</dd><dt>Decision it supports</dt><dd>Which departments need to explain the variance and revise the full-year forecast</dd><dt>Related KPIs</dt><dd>EBITDA margin</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">FIN-04</span> <span class="ficha-nome">Overdue receivables</span><span class="ficha-resumo">More than 30 days overdue ÷ total receivables × 100</span></summary>
+<dl><dt>Code</dt><dd>FIN-04</dd><dt>Question it answers</dt><dd>How much of what we are owed is more than 30 days overdue?</dd><dt>Linked objective</dt><dd>Finance: grow with healthy margins</dd><dt>Formula</dt><dd>More than 30 days overdue ÷ total receivables × 100</dd><dt>Numerator</dt><dd>Invoices more than 30 days overdue on the last day of the month</dd><dt>Denominator</dt><dd>Total receivables on the last day of the month</dd><dt>Excluded from both</dt><dd>Invoices in litigation, tracked separately</dd><dt>Standard breakdowns</dt><dd>Customer and days-overdue band (31 to 60, 61 to 90, more than 90)</dd><dt>Source</dt><dd>ERP (accounts receivable)</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>Up to 2%; yellow up to 3%, red above</dd><dt>Owner of the result</dt><dd>Financial controller</dd><dt>Calculated by</dt><dd>Financial analyst</dd><dt>Decision it supports</dt><dd>When to put a customer on hold and renegotiate terms</dd><dt>Related KPIs</dt><dd>EBITDA margin</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details></div>
+<div class="fichas-grupo"><h3>Customers: deliver on time</h3>
+<details class="ficha"><summary><span class="ficha-codigo">CLI-01</span> <span class="ficha-nome">OTIF</span><span class="ficha-resumo">Orders delivered on time and in full ÷ orders shipped × 100</span></summary>
+<dl><dt>Code</dt><dd>CLI-01</dd><dt>Question it answers</dt><dd>How many orders reached the customer on time and in full?</dd><dt>Linked objective</dt><dd>Customers: deliver on time</dd><dt>Formula</dt><dd>Orders delivered on time and in full ÷ orders shipped × 100</dd><dt>Numerator</dt><dd>Orders delivered by the agreed date with no missing items</dd><dt>Denominator</dt><dd>Orders shipped in the month</dd><dt>Excluded from both</dt><dd>Orders canceled by the customer (since version 1.1)</dd><dt>Standard breakdowns</dt><dd>Site, customer, carrier and reason for the miss (timing or completeness)</dd><dt>Source</dt><dd>WMS and TMS</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Higher is better</dd><dt>Target and thresholds</dt><dd>95%; green from 95%, yellow from 92%, red below</dd><dt>Owner of the result</dt><dd>Operations manager</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>Which customers and carriers need an action plan</dd><dt>Related KPIs</dt><dd>Complaints per thousand orders, Picking errors</dd><dt>Version</dt><dd>1.1, in effect since February 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">CLI-02</span> <span class="ficha-nome">Customer NPS</span><span class="ficha-resumo">% promoters minus % detractors</span></summary>
+<dl><dt>Code</dt><dd>CLI-02</dd><dt>Question it answers</dt><dd>Would customers recommend Vallora?</dd><dt>Linked objective</dt><dd>Customers: deliver on time</dd><dt>Formula</dt><dd>% promoters minus % detractors</dd><dt>Numerator</dt><dd>Promoters (scores of 9 and 10) minus detractors (scores of 0 to 6), in percentage points</dd><dt>Denominator</dt><dd>Valid responses to the quarter's survey</dd><dt>Excluded from both</dt><dd>Responses without a score and customers with less than three months under contract</dd><dt>Standard breakdowns</dt><dd>Customer segment and the site that serves it</dd><dt>Source</dt><dd>Customer survey</dd><dt>Frequency</dt><dd>Quarterly</dd><dt>Polarity</dt><dd>Higher is better</dd><dt>Target and thresholds</dt><dd>50 points; yellow from 40, red below</dd><dt>Owner of the result</dt><dd>Sales manager</dd><dt>Calculated by</dt><dd>Sales analyst</dd><dt>Decision it supports</dt><dd>Which accounts get a visit and an improvement plan</dd><dt>Related KPIs</dt><dd>OTIF, Complaints per thousand orders</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">CLI-03</span> <span class="ficha-nome">Complaints per thousand orders</span><span class="ficha-resumo">Valid complaints ÷ orders shipped × 1,000</span></summary>
+<dl><dt>Code</dt><dd>CLI-03</dd><dt>Question it answers</dt><dd>How often does an order lead to a valid complaint?</dd><dt>Linked objective</dt><dd>Customers: deliver on time</dd><dt>Formula</dt><dd>Valid complaints ÷ orders shipped × 1,000</dd><dt>Numerator</dt><dd>Complaints logged in the CRM and judged valid in the month</dd><dt>Denominator</dt><dd>Orders shipped in the month</dd><dt>Excluded from both</dt><dd>Complaints judged invalid and requests for information</dd><dt>Standard breakdowns</dt><dd>Reason for the complaint, customer and site</dd><dt>Source</dt><dd>CRM and WMS</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>Up to 3 per thousand orders; yellow up to 5, red above</dd><dt>Owner of the result</dt><dd>Sales manager</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>Which reasons to tackle first, together with Operations</dd><dt>Related KPIs</dt><dd>OTIF, Picking errors, Customer NPS</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details></div>
+<div class="fichas-grupo"><h3>Operations: accuracy and efficiency</h3>
+<details class="ficha"><summary><span class="ficha-codigo">OPE-01</span> <span class="ficha-nome">Picking productivity</span><span class="ficha-resumo">Lines picked ÷ hours worked in picking</span></summary>
+<dl><dt>Code</dt><dd>OPE-01</dd><dt>Question it answers</dt><dd>How many order lines does picking deliver per hour worked?</dd><dt>Linked objective</dt><dd>Operations: accuracy and efficiency</dd><dt>Formula</dt><dd>Lines picked ÷ hours worked in picking</dd><dt>Numerator</dt><dd>Order lines picked and checked in the month</dd><dt>Denominator</dt><dd>Hours actually worked by the picking team, including overtime</dd><dt>Excluded from both</dt><dd>Training hours and inventory-count hours</dd><dt>Standard breakdowns</dt><dd>Site, shift and order type (each picks or full cases)</dd><dt>Source</dt><dd>WMS and time-and-attendance</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Higher is better</dd><dt>Target and thresholds</dt><dd>Each site's standard, reviewed once a year; yellow up to 10% below, red below that</dd><dt>Owner of the result</dt><dd>Operations manager</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>Size the schedule and prioritize layout improvements</dd><dt>Related KPIs</dt><dd>Picking errors, Logistics cost per order, Absenteeism rate</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">OPE-02</span> <span class="ficha-nome">Inventory accuracy</span><span class="ficha-resumo">Positions with no discrepancy ÷ positions counted × 100</span></summary>
+<dl><dt>Code</dt><dd>OPE-02</dd><dt>Question it answers</dt><dd>Does the stock in the system match what is on the shelf?</dd><dt>Linked objective</dt><dd>Operations: accuracy and efficiency</dd><dt>Formula</dt><dd>Positions with no discrepancy ÷ positions counted × 100</dd><dt>Numerator</dt><dd>Positions counted in cycle counting with no item or quantity discrepancy</dd><dt>Denominator</dt><dd>Positions counted in the month</dd><dt>Excluded from both</dt><dd>Positions blocked for receiving or shipping on the day of the count</dd><dt>Standard breakdowns</dt><dd>Site, warehouse zone and ABC class</dd><dt>Source</dt><dd>WMS (cycle counting)</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Higher is better</dd><dt>Target and thresholds</dt><dd>99.5%; yellow from 99%, red below</dd><dt>Owner of the result</dt><dd>Operations manager</dd><dt>Calculated by</dt><dd>Inventory analyst</dd><dt>Decision it supports</dt><dd>Where to recount and where to review the slotting process</dd><dt>Related KPIs</dt><dd>Picking errors, OTIF</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">OPE-03</span> <span class="ficha-nome">Picking errors</span><span class="ficha-resumo">Lines with errors ÷ lines picked, in parts per million</span></summary>
+<dl><dt>Code</dt><dd>OPE-03</dd><dt>Question it answers</dt><dd>How many lines go out with the wrong item or quantity?</dd><dt>Linked objective</dt><dd>Operations: accuracy and efficiency</dd><dt>Formula</dt><dd>Lines with errors ÷ lines picked, in parts per million</dd><dt>Numerator</dt><dd>Lines with errors caught at checking or reported by the customer</dd><dt>Denominator</dt><dd>Lines picked in the month</dd><dt>Excluded from both</dt><dd>Discrepancies caused by the customer's product data</dd><dt>Standard breakdowns</dt><dd>Site, shift and where the error was caught (checking or customer)</dd><dt>Source</dt><dd>WMS and complaints</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>Up to 500 parts per million; yellow up to 800, red above</dd><dt>Owner of the result</dt><dd>Operations manager</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>Where to reinforce training and checking</dd><dt>Related KPIs</dt><dd>Picking productivity, Complaints per thousand orders</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">OPE-04</span> <span class="ficha-nome">Warehouse occupancy</span><span class="ficha-resumo">Pallet positions occupied ÷ pallet positions available × 100</span></summary>
+<dl><dt>Code</dt><dd>OPE-04</dd><dt>Question it answers</dt><dd>How much of the storage capacity is in use?</dd><dt>Linked objective</dt><dd>Operations: accuracy and efficiency</dd><dt>Formula</dt><dd>Pallet positions occupied ÷ pallet positions available × 100</dd><dt>Numerator</dt><dd>Pallet positions occupied on the last day of the month</dd><dt>Denominator</dt><dd>Pallet positions available, excluding those blocked for maintenance</dd><dt>Excluded from both</dt><dd>Floor-stacking areas, measured in m² and tracked separately</dd><dt>Standard breakdowns</dt><dd>Site and position type (pallet racking or picking)</dd><dt>Source</dt><dd>WMS</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Within a range</dd><dt>Target and thresholds</dt><dd>Between 80% and 88%; yellow between 75% and 80% or between 88% and 92%, red outside that</dd><dt>Owner of the result</dt><dd>Operations manager</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>When to look for extra space or take on a new customer</dd><dt>Related KPIs</dt><dd>Picking productivity, Logistics cost per order</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details></div>
+<div class="fichas-grupo"><h3>People: attendance and safety</h3>
+<details class="ficha" open=""><summary><span class="ficha-codigo">PES-01</span> <span class="ficha-nome">Absenteeism rate</span><span class="ficha-resumo">Absence hours ÷ scheduled hours × 100</span></summary>
+<dl><dt>Code</dt><dd>PES-01</dd><dt>Question it answers</dt><dd>How much of the contracted time did the company lose to absences?</dd><dt>Linked objective</dt><dd>People: attendance and safety</dd><dt>Formula</dt><dd>Absence hours ÷ scheduled hours × 100</dd><dt>Numerator</dt><dd>Absence hours of every type: unexcused absences, doctor's notes, long-term absences, late arrivals and early departures, based on the day's scheduled hours</dd><dt>Denominator</dt><dd>Scheduled hours of everyone who was active that day</dd><dt>Excluded from both</dt><dd>Vacation, days off, holidays, days before hiring and after termination</dd><dt>Standard breakdowns</dt><dd>Short-term (up to 15 days) and long-term; absence type; site, shift, department and tenure (up to 90 days)</dd><dt>Source</dt><dd>Time-and-attendance system (schedules and clock-ins) and payroll (long-term absences)</dd><dt>Frequency</dt><dd>Monthly, published by the 5th business day</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>3.5% target for 2026; green up to 3.5%, yellow up to 4.0%, red above</dd><dt>Owner of the result</dt><dd>HR manager; each DC manager answers for their site</dd><dt>Calculated by</dt><dd>BI analyst</dd><dt>Decision it supports</dt><dd>Where to investigate first and when to open an action plan for a team</dd><dt>Related KPIs</dt><dd>Schedule absence rate, Cost of paid hours not worked, Overtime</dd><dt>Version</dt><dd>1.1, in effect since March 2026 (see the version log)</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">PES-02</span> <span class="ficha-nome">90-day turnover</span><span class="ficha-resumo">New hires who left before 90 days ÷ new hires in the month × 100</span></summary>
+<dl><dt>Code</dt><dd>PES-02</dd><dt>Question it answers</dt><dd>How many new hires leave before completing 90 days?</dd><dt>Linked objective</dt><dd>People: attendance and safety</dd><dt>Formula</dt><dd>New hires who left before 90 days ÷ new hires in the month × 100</dd><dt>Numerator</dt><dd>People hired in the reference month who left before completing 90 days</dd><dt>Denominator</dt><dd>People hired in the reference month</dd><dt>Excluded from both</dt><dd>Temporary contracts and apprentices, tracked separately</dd><dt>Standard breakdowns</dt><dd>Site, role, shift and reason for leaving (resignation or dismissal)</dd><dt>Source</dt><dd>Payroll</dd><dt>Frequency</dt><dd>Monthly, with a 3-month lag</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>Up to 15%; yellow up to 20%, red above</dd><dt>Owner of the result</dt><dd>HR manager</dd><dt>Calculated by</dt><dd>HR analyst</dd><dt>Decision it supports</dt><dd>Review recruiting and onboarding at the sites and roles most affected</dd><dt>Related KPIs</dt><dd>Absenteeism rate, Accident frequency rate</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details>
+<details class="ficha"><summary><span class="ficha-codigo">PES-03</span> <span class="ficha-nome">Accident frequency rate</span><span class="ficha-resumo">Lost-time accidents × 1,000,000 ÷ hours worked</span></summary>
+<dl><dt>Code</dt><dd>PES-03</dd><dt>Question it answers</dt><dd>How often does someone get hurt and need time off?</dd><dt>Linked objective</dt><dd>People: attendance and safety</dd><dt>Formula</dt><dd>Lost-time accidents × 1,000,000 ÷ hours worked</dd><dt>Numerator</dt><dd>Work accidents with at least one day of absence, reported on the official accident form (CAT)</dd><dt>Denominator</dt><dd>Hours actually worked in the month, including overtime</dd><dt>Excluded from both</dt><dd>Commuting accidents, tracked separately</dd><dt>Standard breakdowns</dt><dd>Site, shift, department and tenure</dd><dt>Source</dt><dd>OHS and time-and-attendance</dd><dt>Frequency</dt><dd>Monthly</dd><dt>Polarity</dt><dd>Lower is better</dd><dt>Target and thresholds</dt><dd>20% reduction from the 2025 average; yellow up to the 2025 average, red above</dd><dt>Owner of the result</dt><dd>OHS coordinator</dd><dt>Calculated by</dt><dd>Safety technician</dd><dt>Decision it supports</dt><dd>Where to focus safety inspections and training</dd><dt>Related KPIs</dt><dd>Absenteeism rate, 90-day turnover</dd><dt>Version</dt><dd>1.0, in effect since January 2026</dd></dl></details></div>
+</div>
+</div>
+<p>Two details that show the method: Warehouse occupancy has no “higher is better”, because a warehouse that is too full jams the operation; and 90-day turnover only closes three months after hiring, so the sheet says so, and nobody asks for the number before it exists.</p>
+</section>
+<section id="governance-who-decides-what-each-number-means" class="level2">
+<h2 data-anchor-id="governance-who-decides-what-each-number-means">Governance: who decides what each number means</h2>
+<p>No definition changes without a request, a test and an approval on record. The decision belongs to a KPI committee: the financial controller chairs it, the owners of the 14 KPIs take part, and the BI analyst keeps the minutes. It meets once a month, for 30 minutes, only when there are requests in the queue.</p>
+<section id="roles-raci-matrix" class="level3">
+<h3 data-anchor-id="roles-raci-matrix">Roles (RACI matrix)</h3>
+<p>R does the work, A approves and answers for it, C is consulted, I is informed.</p>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Activity</th>
+<th style="text-align: center;">KPI owner</th>
+<th style="text-align: center;">BI analyst</th>
+<th style="text-align: center;">Committee</th>
+<th style="text-align: center;">Leadership</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Propose a new KPI or a change of definition</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Measure the impact of the change</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Approve or reject the change</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R and A</td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Update the definition sheet and the version log</td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Calculate and publish every month</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R and A</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Explain the result and the action plan</td>
+<td style="text-align: center;">R and A</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Review the whole set once a year</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Discontinue a KPI</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">I</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cartoes-lista"><div class="cartao-linha"><p class="cartao-titulo">Propose a new KPI or a change of definition</p><p class="cartao-detalhe">Owner <strong>R</strong> · BI <strong>C</strong> · Committee <strong>A</strong> · Leadership <strong>I</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Measure the impact of the change</p><p class="cartao-detalhe">Owner <strong>C</strong> · BI <strong>R</strong> · Committee <strong>A</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Approve or reject the change</p><p class="cartao-detalhe">Owner <strong>C</strong> · BI <strong>C</strong> · Committee <strong>R and A</strong> · Leadership <strong>I</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Update the definition sheet and the version log</p><p class="cartao-detalhe">Owner <strong>I</strong> · BI <strong>R</strong> · Committee <strong>A</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Calculate and publish every month</p><p class="cartao-detalhe">Owner <strong>C</strong> · BI <strong>R and A</strong> · Leadership <strong>I</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Explain the result and the action plan</p><p class="cartao-detalhe">Owner <strong>R and A</strong> · BI <strong>C</strong> · Leadership <strong>I</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Review the whole set once a year</p><p class="cartao-detalhe">Owner <strong>C</strong> · BI <strong>R</strong> · Committee <strong>A</strong> · Leadership <strong>C</strong></p></div><div class="cartao-linha"><p class="cartao-titulo">Discontinue a KPI</p><p class="cartao-detalhe">Owner <strong>C</strong> · BI <strong>R</strong> · Committee <strong>A</strong> · Leadership <strong>I</strong></p></div></div>
+</div>
+</div>
+</section>
+<section id="how-a-definition-changes" class="level3">
+<h3 data-anchor-id="how-a-definition-changes">How a definition changes</h3>
+<ol type="1">
+<li>The owner opens a request: what changes, why, and from when.</li>
+<li>BI recalculates the last 12 months under the new rule and shows the difference.</li>
+<li>The committee approves, rejects or asks for changes at its next meeting.</li>
+<li>Once approved, BI updates the definition sheet, bumps the version and logs the change.</li>
+<li>The history is recalculated; when that is not possible, the break is marked on the chart.</li>
+</ol>
+</section>
+<section id="version-log-example" class="level3">
+<h3 data-anchor-id="version-log-example">Version log (example)</h3>
+<div class="so-computador">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabela-rolavel">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 5%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>KPI</th>
+<th>Version</th>
+<th>Change</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>March 2026</td>
+<td>PES-01 Absenteeism rate</td>
+<td>1.1</td>
+<td>New breakdown by tenure (up to 90 days)</td>
+<td>The Radar showed that new hires are absent more often</td>
+</tr>
+<tr class="even">
+<td>February 2026</td>
+<td>CLI-01 OTIF</td>
+<td>1.1</td>
+<td>Orders canceled by the customer leave the denominator</td>
+<td>They counted as an Operations failure</td>
+</tr>
+<tr class="odd">
+<td>January 2026</td>
+<td>All 14 leadership KPIs</td>
+<td>1.0</td>
+<td>First version of the definition sheets</td>
+<td>Governance project</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="so-celular">
+<div class="cell" data-layout-align="center">
+<div class="cartoes-lista"><div class="cartao-linha"><p class="cartao-detalhe">March 2026 · version 1.1</p><p class="cartao-titulo">PES-01 Absenteeism rate</p><p>New breakdown by tenure (up to 90 days)</p><p class="cartao-detalhe">Reason: The Radar showed that new hires are absent more often</p></div><div class="cartao-linha"><p class="cartao-detalhe">February 2026 · version 1.1</p><p class="cartao-titulo">CLI-01 OTIF</p><p>Orders canceled by the customer leave the denominator</p><p class="cartao-detalhe">Reason: They counted as an Operations failure</p></div><div class="cartao-linha"><p class="cartao-detalhe">January 2026 · version 1.0</p><p class="cartao-titulo">All 14 leadership KPIs</p><p>First version of the definition sheets</p><p class="cartao-detalhe">Reason: Governance project</p></div></div>
+</div>
+</div>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 data-anchor-id="results">Results</h2>
+<p>The monthly meeting traded six presentations and 40 numbers for a single page with 14 KPIs, each with its owner in the room to explain it. When Operations talks about its rate, it now goes by another name, and the July argument does not happen again. The Absenteeism Radar now uses the official PES-01 definition.</p>
+</section>
+<section id="what-this-case-demonstrates" class="level2">
+<h2 data-anchor-id="what-this-case-demonstrates">What this case demonstrates</h2>
+<ul>
+<li><strong>Separating the math from the governance.</strong> A divergence is rarely a calculation error; it is almost always the lack of a written definition and of someone who decides.</li>
+<li><strong>Cutting without deleting.</strong> Twenty-six KPIs left the leadership meeting, and no department lost information it needs.</li>
+<li><strong>Definition sheets that answer the questions that start arguments:</strong> what goes in, what stays out, whether higher is better, when the number closes.</li>
+<li><strong>Changes on record</strong>, so that today’s number stays comparable with last year’s.</li>
+<li><strong>A bridge to BI.</strong> The definition sheets become the DAX measures and the dashboard’s data dictionary, and the dashboard stops hiding rules.</li>
+</ul>
+</section>
+<section id="does-your-company-argue-about-which-number-is-right-before-discussing-what-to-do-about-it" class="level2 cta-final">
+<h2 data-anchor-id="does-your-company-argue-about-which-number-is-right-before-discussing-what-to-do-about-it">Does your company argue about which number is right before discussing what to do about it?</h2>
+<p>Tell me how your KPIs are calculated today and I will tell you where to start.</p>
+<p><a href="../../../en/contact.html" class="btn btn-primary">Get in touch</a></p>
+</section>
+
+
+
+</main> <!-- /main -->
+<script>
+// 1. Seletor PT | ES | EN: aponta cada idioma para a versão correspondente
+//    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
+//    Sem versão correspondente, leva para o blog do idioma (se estamos no
+//    blog), para a lista de projetos (se estamos num projeto que só existe
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
+// 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
+//    está em outra língua, sugere a versão no idioma do navegador. Nunca
+//    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
+// 3. Botão "Copiar e-mail" da página de contato.
+document.addEventListener("DOMContentLoaded", function () {
+  var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
+  var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
+  var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
+  var projetos = { PT: "/projetos.html", ES: "/es/proyectos.html", EN: "/en/projects.html" };
+  var atual = document.documentElement.lang;
+  var noBlog = /\/blog(\/|\.html)/.test(location.pathname);
+  var noProjeto = /^\/projetos\//.test(location.pathname);
+  var CHAVE_FAIXA = "orbita-faixa-idioma";
+
+  function lembrar() {
+    try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
+  }
+
+  function caminho(rotulo) {
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
+    if (alt) return new URL(alt.href).pathname;
+    if (codigos[rotulo] === atual) return location.pathname;
+    if (noBlog) return blog[rotulo];
+    return noProjeto ? projetos[rotulo] : inicio[rotulo];
+  }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
+
+  // 1. Seletor
+  document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
+    var rotulo = link.textContent.trim();
+    if (!codigos[rotulo]) return;
+    var item = link.closest(".nav-item");
+    if (item) item.classList.add("nav-idioma");
+    link.classList.remove("active");
+    link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
+    link.hreflang = codigos[rotulo];
+    link.addEventListener("click", lembrar);
+    if (codigos[rotulo] === atual) {
+      link.classList.add("idioma-atual");
+      link.setAttribute("aria-current", "true");
+    }
+  });
+
+  // 2. Faixa de idioma
+  (function faixaIdioma() {
+    try {
+      if (localStorage.getItem(CHAVE_FAIXA)) return;
+    } catch (e) {}
+    var preferido = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    var textos = {
+      es: { rotulo: "ES", frase: "Este sitio también está en español.", link: "Ver en español", fechar: "Cerrar" },
+      en: { rotulo: "EN", frase: "This site is also available in English.", link: "View in English", fechar: "Close" }
+    };
+    var t = textos[preferido];
+    if (!t || atual.slice(0, 2) === preferido) return;
+
+    var faixa = document.createElement("div");
+    faixa.className = "faixa-idioma";
+    faixa.lang = preferido;
+    faixa.setAttribute("role", "region");
+    faixa.setAttribute("aria-label", t.link);
+
+    var texto = document.createElement("p");
+    texto.appendChild(document.createTextNode(t.frase + " "));
+    var link = document.createElement("a");
+    link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
+    link.hreflang = preferido;
+    link.textContent = t.link;
+    link.addEventListener("click", lembrar);
+    texto.appendChild(link);
+
+    var fechar = document.createElement("button");
+    fechar.type = "button";
+    fechar.className = "faixa-fechar";
+    fechar.setAttribute("aria-label", t.fechar);
+    fechar.innerHTML = "&times;";
+    fechar.addEventListener("click", function () {
+      faixa.remove();
+      lembrar();
+    });
+
+    faixa.appendChild(texto);
+    faixa.appendChild(fechar);
+    document.body.insertBefore(faixa, document.body.firstChild);
+  })();
+
+  // 3. Copiar e-mail
+  document.querySelectorAll(".copiar-email").forEach(function (botao) {
+    var original = botao.textContent;
+    botao.addEventListener("click", function () {
+      var email = botao.getAttribute("data-email");
+      var copiado = function () {
+        botao.textContent = botao.getAttribute("data-copiado");
+        setTimeout(function () { botao.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(copiado, function () {});
+      } else {
+        var campo = document.createElement("textarea");
+        campo.value = email;
+        campo.setAttribute("readonly", "");
+        campo.style.position = "absolute";
+        campo.style.left = "-9999px";
+        document.body.appendChild(campo);
+        campo.select();
+        try { if (document.execCommand("copy")) copiado(); } catch (e) {}
+        campo.remove();
+      }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orbitaspace\.com\.br");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brazil</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><a href="https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.">WhatsApp</a> · <a href="mailto:felipe.fonseca@orbitaspace.com.br">Email</a> · <a href="https://www.linkedin.com/in/fpzfonseca">LinkedIn</a> · <a href="https://github.com/fefonsek">GitHub</a></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

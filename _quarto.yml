@@ -22,6 +22,8 @@ project:
     - projetos/caso-tcc-rotatividade/dados/
     # Caso Indicadores: capa gerada pela página e dados agregados para download.
     - projetos/governanca-indicadores/img/
+    - es/proyectos/gobernanza-indicadores/img/
+    - en/projects/kpi-governance/img/
     - projetos/governanca-indicadores/dados/
   post-render: scripts/aviso_render.py
 
