@@ -1,0 +1,6 @@
+campo,rh,operacao,financeiro
+Pergunta que responde,Quanto do tempo contratado se perdeu?,Quantas vagas da escala ficaram descobertas?,Quanto pagamos por horas não trabalhadas?
+Numerador,"Horas de ausência de todos os tipos, inclusive afastamentos longos","Dias escalados com qualquer ausência, inclusive atraso ou saída antecipada acima de 10 minutos","Horas de ausência pagas pela empresa: atestados, os primeiros 15 dias de afastamentos por doença ou acidente e licenças legais"
+Denominador,Horas previstas na jornada,Dias escalados (afastados há mais de 15 dias saem da escala),Horas previstas na jornada
+Unidade,Horas,Dias,Horas
+Nome depois do projeto,"**Taxa de absenteísmo** (oficial, vai à diretoria)",Taxa de ausência na escala (gestão da Operação),Custo de horas pagas não trabalhadas (gestão do Financeiro)

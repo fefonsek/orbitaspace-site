@@ -1,0 +1,41 @@
+numero,indicador,area,situacao,destino,observacao,ficha
+1,Margem EBITDA,Financeiro,Bem definido,Diretoria,,FIN-01
+2,Custo logístico por pedido,Financeiro,Divergente,Diretoria,A Operação tirava o frete do custo,FIN-02
+3,Orçado x realizado de despesas,Financeiro,Bem definido,Diretoria,,FIN-03
+4,Inadimplência,Financeiro,Bem definido,Diretoria,,FIN-04
+5,Custo de horas pagas não trabalhadas,Financeiro,Divergente,Gestão da área,Era chamado de absenteísmo,
+6,Custo de horas extras,Financeiro,Duplicado,Unificado,Entra na ficha de Horas extras,
+7,Receita por m²,Financeiro,Sem dono,Descontinuado,,
+8,Custo de energia por pallet,Financeiro,Sem uso,Descontinuado,,
+9,OTIF por nota fiscal,Comercial,Divergente,Unificado,Unificado no OTIF por pedido,
+10,NPS de clientes,Comercial,Bem definido,Diretoria,,CLI-02
+11,Reclamações de clientes,Comercial,Mal formulado,Diretoria,Contagem sem base; vira reclamações por mil pedidos,CLI-03
+12,Tempo de resposta a reclamações,Comercial,Bem definido,Gestão da área,,
+13,Clientes ativos,Comercial,Mal formulado,Gestão da área,"Volume, sem meta",
+14,Ticket médio por cliente,Comercial,Sem uso,Descontinuado,,
+15,OTIF por pedido,Operação,Divergente,Diretoria,Vira o OTIF oficial,CLI-01
+16,Produtividade de separação,Operação,Bem definido,Diretoria,,OPE-01
+17,Acuracidade de inventário,Operação,Bem definido,Diretoria,,OPE-02
+18,Erros de separação,Operação,Bem definido,Diretoria,,OPE-03
+19,Ocupação do armazém,Operação,Divergente,Diretoria,Cada CD media em posições ou em m²,OPE-04
+20,Índice de avarias,Operação,Duplicado,Gestão da área,Absorve as avarias da Qualidade,
+21,Pedidos expedidos por dia,Operação,Mal formulado,Gestão da área,"Volume, sem meta",
+22,Tempo médio de doca,Operação,Bem definido,Gestão da área,,
+23,Ausências na escala,Operação,Divergente,Gestão da área,Era chamado de absenteísmo,
+24,Horas extras da operação,Operação,Duplicado,Unificado,Entra na ficha de Horas extras,
+25,Pedidos por colaborador,Operação,Duplicado,Descontinuado,Repete a produtividade de separação,
+26,Produtividade da equipe noturna,Operação,Mal formulado,Unificado,Recorte; vira filtro de turno,
+27,Avarias reportadas por clientes,Qualidade,Duplicado,Unificado,Entra no índice de avarias,
+28,Auditorias internas realizadas,Qualidade,Sem uso,Descontinuado,,
+29,Taxa de absenteísmo,RH,Divergente,Diretoria,Vira a definição oficial,PES-01
+30,Absenteísmo por atestado,RH,Duplicado,Unificado,Vira quebra da taxa oficial,
+31,Percentual de horas extras,RH,Duplicado,Gestão da área,Ficha única de Horas extras,
+32,Turnover,RH,Bem definido,Gestão da área,,
+33,Turnover de 90 dias,RH,Sem dono,Diretoria,"Calculado à mão, só às vezes",PES-02
+34,Headcount,RH,Mal formulado,Gestão da área,"Volume, sem meta",
+35,Horas de treinamento por pessoa,RH,Bem definido,Gestão da área,,
+36,Tempo médio de contratação,RH,Sem dono,Gestão da área,,
+37,Taxa de frequência de acidentes,SESMT,Bem definido,Diretoria,,PES-03
+38,Taxa de gravidade de acidentes,SESMT,Bem definido,Gestão da área,,
+39,Dias sem acidentes,SESMT,Mal formulado,Descontinuado,Premia não registrar acidente,
+40,Inspeções de segurança realizadas,SESMT,Sem uso,Gestão da área,Ganha meta e fica no SESMT,

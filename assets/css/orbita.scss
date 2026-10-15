@@ -168,6 +168,174 @@ p, li { max-width: 72ch; }
 // Botão "Ver projetos de..." no fim de cada serviço.
 .ver-projetos { margin: 1.25rem 0 0; }
 
+// Caso Indicadores (projetos/governanca-indicadores): azul só no que o texto
+// destaca; o resto em cinza.
+$cinza-borda: #d5d7e0;
+$cinza-fundo: #eceef3;
+$cinza-escuro-texto: #4a4a63;
+
+// Árvore de indicadores: meta no topo, quatro pilares, base embaixo.
+.arvore {
+  margin: 1.25rem 0 1.5rem;
+  .arvore-meta, .arvore-base {
+    margin: 0;
+    max-width: none;
+    text-align: center;
+    border-radius: $border-radius;
+    padding: 0.75rem 1rem;
+  }
+  .arvore-meta { background: rgba($lavanda, 0.7); color: $azul-profundo; font-weight: 600; }
+  .arvore-base { background: $cinza-fundo; color: $text-muted; font-size: 0.9rem; }
+}
+.arvore-pilares {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.pilar {
+  position: relative;
+  background: $branco;
+  border: 1px solid $cinza-borda;
+  border-radius: $border-radius;
+  padding: 0.9rem 1rem;
+  // Liga cada pilar à faixa da meta.
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1.25rem;
+    left: 50%;
+    height: 1.25rem;
+    border-left: 2px solid $cinza-borda;
+  }
+  p { margin: 0; }
+  .pilar-nome { font-weight: 600; color: $azul-profundo; }
+  .pilar-objetivo { font-size: 0.85rem; color: $text-muted; margin-bottom: 0.6rem; }
+  ul { list-style: none; padding: 0; margin: 0; font-size: 0.875rem; }
+  li { padding: 0.3rem 0; border-top: 1px solid $cinza-fundo; line-height: 1.35; }
+  li span { display: block; font-size: 0.75rem; color: $text-muted; letter-spacing: 0.03em; }
+}
+
+// Fichas técnicas: cartões que abrem com um clique.
+.fichas-grupo { margin-bottom: 1.5rem; h3 { font-size: 1.1rem; margin-bottom: 0.75rem; } }
+.ficha {
+  background: $branco;
+  border: 1px solid $cinza-borda;
+  border-radius: $border-radius;
+  margin-bottom: 0.6rem;
+  summary {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    list-style-position: outside;
+    margin-left: 1rem;
+  }
+  summary:focus-visible { outline: 2px solid $azul-medio; outline-offset: 2px; border-radius: $border-radius; }
+  .ficha-codigo { font-size: 0.8rem; color: $text-muted; letter-spacing: 0.03em; margin-right: 0.35rem; }
+  .ficha-nome { font-weight: 600; color: $azul-profundo; }
+  .ficha-resumo { display: block; font-size: 0.875rem; color: $text-muted; margin-top: 0.15rem; }
+  &[open] summary { border-bottom: 1px solid $cinza-fundo; }
+  dl {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 0.45rem 1.25rem;
+    margin: 0;
+    padding: 0.9rem 1rem 1rem;
+    font-size: 0.9rem;
+  }
+  dt { font-weight: 600; color: $cinza-escuro-texto; }
+  dd { margin: 0; }
+}
+
+// Inventário com busca e filtros (os filtros só aparecem com JavaScript).
+.inventario-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+  input { flex: 2 1 13rem; }
+  select { flex: 1 1 9rem; width: auto; }
+}
+.inventario-contagem { font-size: 0.85rem; color: $text-muted; margin-bottom: 0.5rem; }
+.inventario:not(.inventario-ativo) .inventario-filtros,
+.inventario:not(.inventario-ativo) .inventario-contagem { display: none; }
+.inventario tr[hidden] { display: none; }
+.inventario table { font-size: 0.9rem; }
+// As três definições: tabela no computador, três blocos no celular.
+.definicoes-blocos { display: none; }
+.definicao-bloco {
+  background: $branco;
+  border: 1px solid $cinza-borda;
+  border-radius: $border-radius;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.75rem;
+  .definicao-nome { font-weight: 600; color: $azul-profundo; margin: 0 0 0.5rem; }
+  dl { margin: 0; font-size: 0.9rem; }
+  dt { font-weight: 600; color: $cinza-escuro-texto; margin-top: 0.5rem; }
+  dd { margin: 0; }
+}
+.definicao-oficial .definicao-nome { color: $azul-link; }
+
+// RACI e registro de versões em cartões (só aparecem no celular).
+.cartao-linha {
+  background: $branco;
+  border: 1px solid $cinza-borda;
+  border-radius: $border-radius;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  p { margin: 0 0 0.2rem; }
+  p:last-child { margin-bottom: 0; }
+  .cartao-titulo { font-weight: 600; color: $azul-profundo; }
+  .cartao-detalhe { font-size: 0.85rem; color: $text-muted; }
+  .cartao-detalhe strong { color: $azul-profundo; }
+}
+
+// Gráficos com uma versão para o computador e outra para o celular.
+.so-celular { display: none; }
+
+@media (max-width: 600px) {
+  .definicoes-tabela, .so-computador { display: none; }
+  .definicoes-blocos, .so-celular { display: block; }
+
+  // Inventário: cada linha vira um cartão (nome; área · situação · destino;
+  // observação; ficha). Busca, filtros e contador continuam iguais.
+  .inventario .tabela-rolavel { overflow: visible; }
+  .inventario .tabela-rolavel > table { display: block; font-size: 0.9rem; }
+  .inventario .tabela-rolavel > table > thead { display: none; }
+  .inventario .tabela-rolavel > table > tbody { display: block; }
+  .inventario .tabela-rolavel > table > tbody > tr {
+    display: block;
+    background: $branco;
+    border: 1px solid $cinza-borda;
+    border-radius: $border-radius;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  // Mesma cadeia de seletores da regra geral, para as colunas vencerem a
+  // regra "td { display: inline }" e o estilo de tabela do Bootstrap.
+  .inventario .tabela-rolavel > table > tbody > tr > td {
+    display: inline;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    white-space: normal;
+    &.inv-numero { display: none; }
+    &.inv-nome { display: block; font-weight: 600; color: $azul-profundo; margin-bottom: 0.15rem; }
+    &.inv-area, &.inv-situacao, &.inv-destino { color: $text-muted; font-size: 0.85rem; }
+    &.inv-situacao::before, &.inv-destino::before { content: " · "; color: $text-muted; font-weight: 400; }
+    &.inv-destino.destino-diretoria { color: $azul-link; font-weight: 600; }
+    &.inv-obs, &.inv-ficha { display: block; margin-top: 0.3rem; }
+    &.inv-ficha { font-size: 0.8rem; color: $text-muted; letter-spacing: 0.03em; }
+    &.inv-ficha::before { content: "Ficha "; }
+    &.inv-obs:empty, &.inv-ficha:empty { display: none; }
+  }
+}
+.inventario .tabela-rolavel > table > tbody > tr[hidden] { display: none; }
+
+.inventario .destino-diretoria { color: $azul-link; font-weight: 600; }
+.inventario td:first-child, .inventario td:last-child { white-space: nowrap; }
+
 // Cartões: brancos sobre o creme, borda lavanda.
 .cartao {
   background: $branco;
@@ -493,4 +661,9 @@ main:not(:has(.quarto-post)) .sem-posts { display: block; }
   .cta-final { padding: 1.75rem 1.4rem; }
   .sobre-abertura { grid-template-columns: 1fr; gap: 1.25rem; }
   .foto-sobre { max-width: 14rem; }
+  // Caso Indicadores: pilares e campos das fichas um embaixo do outro.
+  .arvore-pilares { grid-template-columns: minmax(0, 1fr); }
+  .pilar::before { display: none; }
+  .ficha dl { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+  .ficha dd { margin-bottom: 0.5rem; }
 }

@@ -1,0 +1,9 @@
+atividade,dono,bi,comite,diretoria
+Propor indicador novo ou mudança de definição,R,C,A,I
+Medir o impacto da mudança,C,R,A,
+Aprovar ou recusar a mudança,C,C,R e A,I
+Atualizar a ficha e o registro de versões,I,R,A,
+Calcular e publicar todo mês,C,R e A,,I
+Explicar o resultado e o plano de ação,R e A,C,,I
+Revisar o conjunto uma vez por ano,C,R,A,C
+Descontinuar um indicador,C,R,A,I

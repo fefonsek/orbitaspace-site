@@ -20,6 +20,9 @@ project:
     - es/proyectos/tesis-rotacion/img/
     - en/projects/thesis-turnover/img/
     - projetos/caso-tcc-rotatividade/dados/
+    # Caso Indicadores: capa gerada pela página e dados agregados para download.
+    - projetos/governanca-indicadores/img/
+    - projetos/governanca-indicadores/dados/
   post-render: scripts/aviso_render.py
 
 profile:

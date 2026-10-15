@@ -1,0 +1,283 @@
+# As 14 fichas técnicas dos indicadores que vão à diretoria.
+# Todas têm os mesmos campos da ficha modelo (PES-01); a página confere isso.
+# "pilar" e "objetivo" agrupam as fichas na árvore de indicadores.
+
+- codigo: FIN-01
+  indicador: Margem EBITDA
+  pilar: Finanças
+  objetivo: Crescer com margem
+  pergunta: Quanto da receita sobra depois dos custos e despesas da operação?
+  formula: EBITDA ÷ receita líquida × 100
+  numerador: EBITDA do mês (resultado antes de juros, impostos, depreciação e amortização)
+  denominador: Receita líquida de serviços do mês
+  fora: Receitas e despesas não recorrentes, registradas à parte e explicadas na nota do mês
+  quebras: Unidade e linha de serviço (armazenagem e transporte)
+  fonte: ERP (contabilidade)
+  periodicidade: Mensal, publicada até o 8º dia útil, depois do fechamento contábil
+  polaridade: Maior é melhor
+  meta: Meta do orçamento de 2026; verde na meta ou acima, amarelo até 1 ponto abaixo, vermelho abaixo disso
+  dono: Diretor administrativo-financeiro
+  responsavel_calculo: Analista de controladoria
+  decisao: Rever preços e contratos com margem abaixo da média
+  relacionados: Custo logístico por pedido, Orçado x realizado de despesas
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: FIN-02
+  indicador: Custo logístico por pedido
+  pilar: Finanças
+  objetivo: Crescer com margem
+  pergunta: Quanto custa, em média, armazenar e entregar um pedido?
+  formula: (Armazenagem + frete) ÷ pedidos expedidos
+  numerador: Custo de armazenagem (pessoal, aluguel, energia, equipamentos) mais frete pago no mês
+  denominador: Pedidos expedidos no mês
+  fora: Pedidos cancelados antes da separação e fretes reembolsados pelo cliente
+  quebras: Unidade, cliente e faixa de tamanho do pedido
+  fonte: ERP e WMS
+  periodicidade: Mensal
+  polaridade: Menor é melhor
+  meta: Até o custo orçado por pedido; verde até o orçado, amarelo até 5% acima, vermelho acima disso
+  dono: Gerente de controladoria
+  responsavel_calculo: Analista de controladoria
+  decisao: Onde renegociar fretes e onde rever a produtividade do armazém
+  relacionados: Margem EBITDA, Produtividade de separação, OTIF
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: FIN-03
+  indicador: Orçado x realizado de despesas
+  pilar: Finanças
+  objetivo: Crescer com margem
+  pergunta: As despesas estão andando no ritmo do orçamento?
+  formula: Despesas realizadas ÷ despesas orçadas × 100
+  numerador: Despesas realizadas no mês, pelo regime de competência
+  denominador: Despesas orçadas para o mês
+  fora: Investimentos (capex), que têm acompanhamento próprio
+  quebras: Área, centro de custo e natureza da despesa
+  fonte: ERP
+  periodicidade: Mensal
+  polaridade: Perto de 100%
+  meta: Entre 97% e 103%; amarelo até 5 pontos fora da faixa, vermelho além disso
+  dono: Gerente de controladoria
+  responsavel_calculo: Analista de controladoria
+  decisao: Quais áreas precisam explicar o desvio e rever a projeção do ano
+  relacionados: Margem EBITDA
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: FIN-04
+  indicador: Inadimplência
+  pilar: Finanças
+  objetivo: Crescer com margem
+  pergunta: Quanto do que temos a receber está atrasado há mais de 30 dias?
+  formula: Vencido há mais de 30 dias ÷ carteira a receber × 100
+  numerador: Títulos vencidos há mais de 30 dias no último dia do mês
+  denominador: Carteira total a receber no último dia do mês
+  fora: Títulos em disputa judicial, acompanhados à parte
+  quebras: Cliente e faixa de atraso (31 a 60, 61 a 90, mais de 90 dias)
+  fonte: ERP (contas a receber)
+  periodicidade: Mensal
+  polaridade: Menor é melhor
+  meta: Até 2%; amarelo até 3%, vermelho acima
+  dono: Gerente de controladoria
+  responsavel_calculo: Analista financeiro
+  decisao: Quando suspender o atendimento de um cliente e renegociar prazos
+  relacionados: Margem EBITDA
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: CLI-01
+  indicador: OTIF
+  pilar: Clientes
+  objetivo: Entregar no prazo
+  pergunta: Quantos pedidos chegaram ao cliente no prazo e completos?
+  formula: Pedidos entregues no prazo e completos ÷ pedidos expedidos × 100
+  numerador: Pedidos entregues até a data combinada e sem item faltando
+  denominador: Pedidos expedidos no mês
+  fora: Pedidos cancelados pelo cliente (desde a versão 1.1)
+  quebras: Unidade, cliente, transportadora e motivo da falha (prazo ou completude)
+  fonte: WMS e TMS
+  periodicidade: Mensal
+  polaridade: Maior é melhor
+  meta: 95%; verde a partir de 95%, amarelo a partir de 92%, vermelho abaixo
+  dono: Gerente de operações
+  responsavel_calculo: Analista de BI
+  decisao: Quais clientes e transportadoras precisam de plano de ação
+  relacionados: Reclamações por mil pedidos, Erros de separação
+  versao: 1.1, vigente desde fevereiro de 2026
+
+- codigo: CLI-02
+  indicador: NPS de clientes
+  pilar: Clientes
+  objetivo: Entregar no prazo
+  pergunta: Os clientes recomendariam a Vallora?
+  formula: "% de promotores menos % de detratores"
+  numerador: Promotores (notas 9 e 10) menos detratores (notas 0 a 6), em pontos percentuais
+  denominador: Respostas válidas da pesquisa do trimestre
+  fora: Respostas sem nota e clientes com menos de três meses de contrato
+  quebras: Segmento de cliente e unidade que atende
+  fonte: Pesquisa com clientes
+  periodicidade: Trimestral
+  polaridade: Maior é melhor
+  meta: 50 pontos; amarelo a partir de 40, vermelho abaixo
+  dono: Gerente comercial
+  responsavel_calculo: Analista comercial
+  decisao: Quais contas recebem visita e plano de melhoria
+  relacionados: OTIF, Reclamações por mil pedidos
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: CLI-03
+  indicador: Reclamações por mil pedidos
+  pilar: Clientes
+  objetivo: Entregar no prazo
+  pergunta: Com que frequência um pedido gera reclamação procedente?
+  formula: Reclamações procedentes ÷ pedidos expedidos × 1.000
+  numerador: Reclamações registradas no CRM e julgadas procedentes no mês
+  denominador: Pedidos expedidos no mês
+  fora: Reclamações improcedentes e pedidos de informação
+  quebras: Motivo da reclamação, cliente e unidade
+  fonte: CRM e WMS
+  periodicidade: Mensal
+  polaridade: Menor é melhor
+  meta: Até 3 por mil pedidos; amarelo até 5, vermelho acima
+  dono: Gerente comercial
+  responsavel_calculo: Analista de BI
+  decisao: Quais motivos atacar primeiro, junto com a Operação
+  relacionados: OTIF, Erros de separação, NPS de clientes
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: OPE-01
+  indicador: Produtividade de separação
+  pilar: Operação
+  objetivo: Precisão e eficiência
+  pergunta: Quantas linhas de pedido a separação entrega por hora trabalhada?
+  formula: Linhas separadas ÷ horas trabalhadas na separação
+  numerador: Linhas de pedido separadas e conferidas no mês
+  denominador: Horas efetivamente trabalhadas pela equipe de separação, inclusive horas extras
+  fora: Horas de treinamento e de inventário
+  quebras: Unidade, turno e tipo de pedido (fracionado ou caixa fechada)
+  fonte: WMS e ponto
+  periodicidade: Mensal
+  polaridade: Maior é melhor
+  meta: Padrão de cada unidade, revisto uma vez por ano; amarelo até 10% abaixo, vermelho abaixo disso
+  dono: Gerente de operações
+  responsavel_calculo: Analista de BI
+  decisao: Dimensionar a escala e priorizar melhorias de layout
+  relacionados: Erros de separação, Custo logístico por pedido, Taxa de absenteísmo
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: OPE-02
+  indicador: Acuracidade de inventário
+  pilar: Operação
+  objetivo: Precisão e eficiência
+  pergunta: O estoque do sistema bate com o que está na prateleira?
+  formula: Posições sem divergência ÷ posições contadas × 100
+  numerador: Posições contadas no inventário rotativo sem diferença de item ou de quantidade
+  denominador: Posições contadas no mês
+  fora: Posições bloqueadas para recebimento ou expedição no dia da contagem
+  quebras: Unidade, área do armazém e curva ABC
+  fonte: WMS (inventário rotativo)
+  periodicidade: Mensal
+  polaridade: Maior é melhor
+  meta: 99,5%; amarelo a partir de 99%, vermelho abaixo
+  dono: Gerente de operações
+  responsavel_calculo: Analista de inventário
+  decisao: Onde recontar e onde rever o processo de endereçamento
+  relacionados: Erros de separação, OTIF
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: OPE-03
+  indicador: Erros de separação
+  pilar: Operação
+  objetivo: Precisão e eficiência
+  pergunta: Quantas linhas saem com o item ou a quantidade errada?
+  formula: Linhas com erro ÷ linhas separadas, em partes por milhão
+  numerador: Linhas com erro achadas na conferência ou reclamadas pelo cliente
+  denominador: Linhas separadas no mês
+  fora: Divergências causadas pelo cadastro do cliente
+  quebras: Unidade, turno e etapa em que o erro foi achado (conferência ou cliente)
+  fonte: WMS e reclamações
+  periodicidade: Mensal
+  polaridade: Menor é melhor
+  meta: Até 500 partes por milhão; amarelo até 800, vermelho acima
+  dono: Gerente de operações
+  responsavel_calculo: Analista de BI
+  decisao: Onde reforçar treinamento e conferência
+  relacionados: Produtividade de separação, Reclamações por mil pedidos
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: OPE-04
+  indicador: Ocupação do armazém
+  pilar: Operação
+  objetivo: Precisão e eficiência
+  pergunta: Quanto da capacidade de armazenagem está em uso?
+  formula: Posições-pallet ocupadas ÷ posições-pallet disponíveis × 100
+  numerador: Posições-pallet ocupadas no último dia do mês
+  denominador: Posições-pallet disponíveis, sem as bloqueadas para manutenção
+  fora: Áreas de blocado, medidas em m² e acompanhadas à parte
+  quebras: Unidade e tipo de posição (porta-pallet ou picking)
+  fonte: WMS
+  periodicidade: Mensal
+  polaridade: Dentro de uma faixa
+  meta: Entre 80% e 88%; amarelo entre 75% e 80% ou entre 88% e 92%, vermelho fora disso
+  dono: Gerente de operações
+  responsavel_calculo: Analista de BI
+  decisao: Quando buscar espaço extra ou aceitar um cliente novo
+  relacionados: Produtividade de separação, Custo logístico por pedido
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: PES-01
+  indicador: Taxa de absenteísmo
+  pilar: Pessoas
+  objetivo: Presença e segurança
+  pergunta: Quanto do tempo contratado a empresa perdeu com ausências?
+  formula: Horas de ausência ÷ horas previstas × 100
+  numerador: "Horas de ausência de todos os tipos: faltas, atestados, afastamentos longos, atrasos e saídas antecipadas, pela jornada prevista do dia"
+  denominador: Horas previstas na jornada de quem estava ativo no dia
+  fora: Férias, folgas, feriados, dias antes da admissão e depois do desligamento
+  quebras: Curta duração (até 15 dias) e longa duração; tipo de ausência; unidade, turno, departamento e tempo de casa (até 90 dias)
+  fonte: Sistema de ponto (jornada e marcações) e folha (afastamentos)
+  periodicidade: Mensal, publicada até o 5º dia útil
+  polaridade: Menor é melhor
+  meta: Meta de 3,5% em 2026; verde até 3,5%, amarelo até 4,0%, vermelho acima
+  dono: Gerente de RH; cada gerente de CD responde pela sua unidade
+  responsavel_calculo: Analista de BI
+  decisao: Onde investigar primeiro e quando abrir plano de ação por equipe
+  relacionados: Taxa de ausência na escala, Custo de horas pagas não trabalhadas, Horas extras
+  versao: 1.1, vigente desde março de 2026 (ver registro de versões)
+
+- codigo: PES-02
+  indicador: Turnover de 90 dias
+  pilar: Pessoas
+  objetivo: Presença e segurança
+  pergunta: Quantos dos admitidos saem antes de completar 90 dias?
+  formula: Admitidos que saíram antes de 90 dias ÷ admitidos no mês × 100
+  numerador: Admitidos no mês de referência que se desligaram antes de completar 90 dias
+  denominador: Admitidos no mês de referência
+  fora: Contratos temporários e aprendizes, acompanhados à parte
+  quebras: Unidade, cargo, turno e motivo do desligamento (pedido ou dispensa)
+  fonte: Folha
+  periodicidade: Mensal, com 3 meses de defasagem
+  polaridade: Menor é melhor
+  meta: Até 15%; amarelo até 20%, vermelho acima
+  dono: Gerente de RH
+  responsavel_calculo: Analista de RH
+  decisao: Rever recrutamento e integração nas unidades e cargos mais afetados
+  relacionados: Taxa de absenteísmo, Taxa de frequência de acidentes
+  versao: 1.0, vigente desde janeiro de 2026
+
+- codigo: PES-03
+  indicador: Taxa de frequência de acidentes
+  pilar: Pessoas
+  objetivo: Presença e segurança
+  pergunta: Com que frequência alguém se acidenta e precisa se afastar?
+  formula: Acidentes com afastamento × 1.000.000 ÷ horas trabalhadas
+  numerador: Acidentes de trabalho com afastamento de pelo menos um dia, registrados em CAT
+  denominador: Horas efetivamente trabalhadas no mês, inclusive horas extras
+  fora: Acidentes de trajeto, acompanhados à parte
+  quebras: Unidade, turno, departamento e tempo de casa
+  fonte: SESMT e ponto
+  periodicidade: Mensal
+  polaridade: Menor é melhor
+  meta: Redução de 20% sobre a média de 2025; amarelo até a média de 2025, vermelho acima
+  dono: Coordenador do SESMT
+  responsavel_calculo: Técnico de segurança
+  decisao: Onde concentrar inspeções e treinamentos de segurança
+  relacionados: Taxa de absenteísmo, Turnover de 90 dias
+  versao: 1.0, vigente desde janeiro de 2026

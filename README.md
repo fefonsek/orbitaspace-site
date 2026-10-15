@@ -43,7 +43,8 @@ faz parte do script.
 
 ## O que o `render.ps1` faz
 
-1. Atualiza o caso TCC, se for preciso (veja "Caso TCC" abaixo).
+1. Atualiza o caso TCC e o caso Indicadores, se for preciso (veja "Caso TCC"
+   e "Caso Indicadores" abaixo).
 2. Apaga `docs/` uma única vez, no início.
 3. Renderiza os perfis `pt`, `es` e `en` com `--no-clean`, para que um idioma
    não apague a saída dos outros.
@@ -108,6 +109,37 @@ resultado congelado das três páginas em `_freeze/`, para que sejam refeitas. O
 `_freeze/` vai para o Git: sem mudanças, o render não precisa do R.
 
 Os termos usados nas traduções ficam em `_rascunhos/glossario_pt_es_en.md`.
+
+## Caso Indicadores (governança de indicadores)
+
+O caso "Um número, três respostas" fica em `projetos/governanca-indicadores/`
+e por enquanto existe **só em português**; as versões em espanhol e inglês
+ainda faltam (quando entrarem, ganham uma chave em `_traducoes.yml`, como o
+TCC). O roteiro aprovado está em `_rascunhos/caso_indicadores_roteiro.md`.
+
+Como no TCC, o texto da página não tem nenhum número digitado: tudo vem dos
+arquivos de `dados/` e é conferido por `stopifnot` antes de a página sair.
+
+- `dados/taxa_tres_definicoes.csv`: as três taxas de absenteísmo (RH,
+  Operação, Financeiro), 24 meses × 3 definições, só somas da empresa
+  inteira. É gerado por `scripts/agregar_radar.R`.
+- `dados/inventario.csv`, `fichas.yml`, `criterios.csv`, `definicoes.csv`,
+  `raci.csv` e `versoes.csv`: inventário dos 40 indicadores, as 14 fichas,
+  critérios de situação e destino, textos da tabela das três definições, papéis
+  e registro de versões. São editados à mão.
+- `scripts/dados.R` lê esses arquivos e roda as checagens (40 indicadores,
+  13 bem definidos, 14 na diretoria, fichas completas, RH em 3,77%...).
+- `scripts/apresentacao.R` desenha os gráficos (com uma versão para o
+  celular), as partes em HTML e a capa; `scripts/inventario.js` faz a busca
+  e os filtros do inventário.
+
+O `agregar_radar.R` lê a base do Radar de Absenteísmo **só para leitura**, na
+pasta `data/raw` do projeto `radar-absenteismo-powerbi` ao lado do site (ou no
+caminho de `ORBITA_ORIGEM_PAINEL`), nunca lê `_privado/` e nunca copia arquivo
+do Radar para o site. Ele roda sozinho no passo 0b do `render.ps1`, só quando
+o CSV não existe ou quando a base do Radar ou o script mudaram; sem a pasta do
+Radar, o render usa o CSV que já está no site. Se os dados ou os scripts do
+caso mudam, o `render.ps1` descarta o `_freeze/` da página.
 
 ## Estrutura
 

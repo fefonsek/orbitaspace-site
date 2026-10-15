@@ -1,0 +1,11 @@
+grupo,nome,criterio
+situacao,Bem definido,"Fórmula escrita, fonte única, dono e uso em alguma decisão"
+situacao,Divergente,"Mesmo nome, cálculos diferentes entre áreas ou unidades"
+situacao,Duplicado,"Nomes diferentes para a mesma medida, ou um é recorte do outro"
+situacao,Mal formulado,"Volume sem referência, recorte tratado como indicador, ou incentivo errado"
+situacao,Sem uso,Não apareceu em nenhuma decisão registrada em ata nos últimos seis meses
+situacao,Sem dono,Ninguém responde pelo resultado nem pelo cálculo
+destino,Diretoria,"Vai à reunião mensal, com ficha completa, meta e dono"
+destino,Gestão da área,A área acompanha com ficha simplificada; sobe à diretoria só por exceção
+destino,Unificado,Vira parte de outro indicador ou uma quebra dele
+destino,Descontinuado,Sai das apresentações; a base continua disponível

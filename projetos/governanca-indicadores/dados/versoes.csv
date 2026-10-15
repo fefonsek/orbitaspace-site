@@ -1,0 +1,4 @@
+data,indicador,versao,mudanca,motivo
+Março de 2026,PES-01 Taxa de absenteísmo,1.1,Nova quebra por tempo de casa (até 90 dias),O Radar mostrou que recém-admitidos faltam mais
+Fevereiro de 2026,CLI-01 OTIF,1.1,Pedidos cancelados pelo cliente saem do denominador,Contavam como falha da Operação
+Janeiro de 2026,Os 14 da diretoria,1.0,Primeira versão das fichas,Projeto de governança
