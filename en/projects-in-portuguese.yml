@@ -1,8 +1,0 @@
-# Projects that only exist in Portuguese: they show up as a card in the
-# English project list and link to the Portuguese page.
-- title: "Turnover in supermarkets: statistical consulting for an undergraduate thesis"
-  description: "Case in Portuguese. Fictional consulting for a Business Administration thesis: data cleaning, reliability, factor analysis and robust regression, in R."
-  path: /projetos/caso-tcc-rotatividade/index.html
-  image: /projetos/caso-tcc-rotatividade/img/capa.png
-  image-alt: "Chart of each factor's effect on the intention to leave the company"
-  categories: [R, Statistics, Survey]

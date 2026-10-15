@@ -1,0 +1,326 @@
+---
+title: "Rotación en supermercados: consultoría estadística para una tesis de grado"
+subtitle: "Del archivo de Google Forms a las tablas de la tesis, con cada decisión explicada."
+description: "Caso ficticio de consultoría para una tesis de grado en Administración: limpieza del cuestionario, confiabilidad, análisis factorial exploratorio, pruebas no paramétricas y regresión con errores robustos, en R."
+image: img/capa.png
+image-alt: "Gráfico del efecto de cada factor en la intención de dejar la empresa"
+categories: [R, Estadística, Cuestionario, Tesis]
+traducao: tcc
+# Tocar un gráfico lo abre en pantalla completa (en el celular quedan pequeños).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Ver el código R"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+::: aviso-dados
+**Datos ficticios.** El estudiante, los supermercados y las 230 respuestas no existen. Los datos se simularon en R con patrones programados, con fines de demostración, y recibieron a propósito problemas comunes en cuestionarios en línea. Los resultados muestran el método de trabajo; no son un hallazgo sobre supermercados reales.
+
+[Descargar las respuestas brutas (CSV)](../../../projetos/caso-tcc-rotatividade/dados/respostas_brutas.csv){download="respostas_brutas.csv"} · [Descargar el diccionario de preguntas (CSV)](../../../projetos/caso-tcc-rotatividade/dados/dicionario.csv){download="dicionario.csv"}
+:::
+
+[El cuestionario, los archivos CSV y los comentarios del código R están en portugués, el idioma original del caso.]{.nota-idioma}
+
+```{r}
+#| label: preparo
+#| code-summary: "Paquetes, resultados del análisis y textos de la página"
+library(tidyverse)
+library(gtsummary)
+library(patchwork)
+library(knitr)
+
+# A análise roda uma vez, em scripts/analise.R, e grava os resultados que as
+# versões em português, espanhol e inglês desta página leem.
+caso <- "../../../projetos/caso-tcc-rotatividade"
+res <- readRDS(file.path(caso, "resultados/analise.rds"))
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+tx <- rotulos("es")
+preparar(tx)
+
+# Os trechos de código abaixo são os de scripts/analise.R e scripts/apresentacao.R.
+read_chunk(file.path(caso, "scripts/analise.R"))
+read_chunk(file.path(caso, "scripts/apresentacao.R"))
+
+b <- setNames(res$resultado$beta, res$resultado$termo)
+pv <- setNames(res$resultado$p, res$resultado$termo)
+alfa <- setNames(res$conf$alfa, res$conf$bloco)
+teste_f <- function(h) paste0("F(", h[["gl1"]], ", ", h[["gl2"]], ") = ", tx$num(h[["F"]]), ", ", tx$p_txt(h[["p"]]))
+```
+
+## El pedido
+
+Un estudiante de Administración estaba terminando su tesis de grado *Liderazgo, reconocimiento e intención de rotación en empleados de supermercados del centro-oeste de Minas Gerais*. Aplicó un cuestionario con Google Forms en tiendas de la región: preguntas de perfil y 20 afirmaciones para responder de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo), en cinco bloques.
+
+| Bloque | Ítems | Ejemplo de afirmación |
+|---|:-:|---|
+| Liderazgo | 5 | "Mi supervisor me trata con respeto." |
+| Reconocimiento | 4 | "Recibo elogios por mi trabajo." |
+| Remuneración percibida | 4 | "Mi salario es justo por el trabajo que hago." |
+| Equilibrio entre trabajo y vida | 4 | "Puedo planificar mis días libres con anticipación." |
+| Intención de rotación | 3 | "Tengo la intención de buscar otro empleo en los próximos 12 meses." |
+
+El proyecto tenía cuatro hipótesis:
+
+- **H1.** Un liderazgo mejor evaluado reduce la intención de irse.
+- **H2.** Más reconocimiento reduce la intención de irse.
+- **H3.** Una remuneración mejor evaluada reduce la intención de irse, con un efecto menor que H1 y H2.
+- **H4.** Más equilibrio entre trabajo y vida reduce la intención de irse.
+
+Tenía la hoja de cálculo exportada de Forms y la indicación de "hacer la parte estadística". Necesitaba saber qué correr, en qué orden, cómo comprobar si podía confiar en los resultados y cómo reportarlo todo en la tesis.
+
+## Lo que hice
+
+### 1. Limpieza
+
+```{r}
+#| label: leitura
+#| eval: false
+```
+
+De las `r res$n_bruto` respuestas recibidas, `r res$n_validas` pasaron al análisis. Cada exclusión tiene un motivo que se puede escribir en la metodología de la tesis:
+
+```{r}
+#| label: tbl-fluxo
+#| echo: false
+#| tbl-cap: "De la exportación de Forms a las respuestas válidas"
+tabela_fluxo(res, tx)
+```
+
+Quien responde todo igual, incluso el ítem invertido de liderazgo ("Mi supervisor **rara vez** me da retroalimentación"), está diciendo al mismo tiempo que el supervisor da y no da retroalimentación: señal de que no leyó las afirmaciones.
+
+En las respuestas válidas quedaron `r res$celulas_brancas` ítems en blanco dispersos (`r tx$num(100 * res$celulas_brancas / (res$n_validas * 20), 1)`% de las celdas). La regla fue simple y está escrita en el informe: **el puntaje de cada bloque es el promedio de los ítems respondidos, siempre que haya como máximo 1 ítem en blanco por bloque.** Dos personas dejaron 2 ítems de Equilibrio en blanco y quedaron sin ese puntaje.
+
+El rango de edad era un campo de texto libre, y cada persona lo escribió a su manera. Una regla de texto unificó las variantes (la columna del medio muestra los datos originales, en portugués):
+
+```{r}
+#| label: faixa-etaria
+#| eval: false
+```
+
+```{r}
+#| label: tbl-grafias
+#| echo: false
+#| tbl-cap: "Rango de edad: variantes encontradas y categoría final"
+tabela_grafias(res, tx)
+```
+
+### 2. Perfil de la muestra
+
+```{r}
+#| label: tabela-perfil
+#| eval: false
+```
+
+```{r}
+#| label: tbl-perfil
+#| echo: false
+#| tbl-cap: "Perfil de las respuestas válidas"
+tabela_perfil(res, tx)
+```
+
+### 3. Confiabilidad de las escalas
+
+Antes de sumar afirmaciones en un puntaje, hay que mostrar que miden lo mismo. Usé dos indicadores: el **alfa de Cronbach**, que el director de tesis y el jurado esperan ver, y el **omega de McDonald**, más adecuado cuando las afirmaciones no pesan todas igual en el constructo. Por encima de `r tx$num1(0.70)` es el umbral habitual.
+
+```{r}
+#| label: confiabilidade
+#| eval: false
+```
+
+```{r}
+#| label: tbl-confiabilidade
+#| echo: false
+#| tbl-cap: "Alfa de Cronbach y omega de cada bloque"
+tabela_confiab(res, tx)
+```
+
+Cuatro bloques pasaron con holgura. Remuneración quedó en `r tx$num1(alfa[["REM"]])` por un ítem: "Recibo el subsidio de transporte a tiempo" (REM4) casi no acompaña a los otros tres (correlación de `r tx$num1(res$r_rem[["REM4"]])` con el total de ellos, frente a `r tx$num1(min(res$r_rem[c("REM1", "REM2", "REM3")]))` o más en los demás). Tiene sentido: mide la puntualidad de un beneficio, no si el salario parece justo. Sin él, el alfa sube a `r tx$num1(alfa[["REM_sem4"]])`. **REM4 salió del puntaje de Remuneración**, y la tesis registra esa decisión y el motivo.
+
+### 4. Análisis factorial exploratorio
+
+El análisis factorial comprueba si las 20 afirmaciones se agrupan en los cinco bloques que preveía el cuestionario. Como las respuestas son ordinales (1 a 5), usé la **correlación policórica**, que trata cada respuesta como un tramo de una escala continua y no supone que la distancia entre "1" y "2" sea igual a la distancia entre "4" y "5".
+
+```{r}
+#| label: fatorial
+#| eval: false
+```
+
+El **KMO** fue `r tx$num1(res$kmo)` (por encima de `r tx$num1(0.80)` se considera muy bueno) y la **prueba de Bartlett** dio χ²(`r res$bartlett$df`) = `r tx$num(res$bartlett$chisq, 1)`, `r tx$p_txt(res$bartlett$p.value)`: las correlaciones entre las afirmaciones son lo bastante fuertes para un análisis factorial. Con cinco factores y rotación oblicua (los constructos pueden correlacionarse), cada afirmación cargó en su bloque, con una excepción ya conocida: **REM4 no cargó en ningún factor** (carga máxima de `r tx$num(res$carga_rem4)`), lo que confirma la decisión de la confiabilidad.
+
+```{r}
+#| label: tbl-cargas
+#| echo: false
+#| tbl-cap: "Cargas factoriales (correlación policórica, rotación oblimin); cargas menores que 0,30 omitidas"
+tabela_cargas(res, tx)
+```
+
+### 5. Puntajes y comparaciones entre grupos
+
+```{r}
+#| label: escores
+#| eval: false
+```
+
+Los puntajes de escalas Likert suelen ser asimétricos y con valores repetidos, así que comparé la intención de irse entre grupos con pruebas no paramétricas, siempre con el **tamaño del efecto**, que indica si la diferencia es grande o solo estadísticamente detectable.
+
+```{r}
+#| label: comparacoes
+#| eval: false
+```
+
+- **Turno.** Quien trabaja de noche tiene mayor intención de irse (Mann-Whitney, `r tx$p_txt(res$mw[["p"]])`, r = `r tx$num1(res$mw[["r"]])`, efecto `r if_else(res$mw[["r"]] < 0.3, "pequeño", "moderado")`).
+- **Antigüedad.** Los rangos difieren (Kruskal-Wallis, H(`r res$kw[["gl"]]`) = `r tx$num(res$kw[["H"]], 1)`, `r tx$p_txt(res$kw[["p"]])`, ε² = `r tx$num1(res$kw[["eps2"]], 3)`, efecto pequeño). En las comparaciones por pares (Dunn, con corrección de Holm), la diferencia que se sostiene es entre "hasta 1 año" y `r paste0('"', str_to_lower(tx$tempo[res$dunn_novato]), '"', collapse = " y ")`; las demás comparaciones no fueron significativas.
+
+```{r}
+#| label: tbl-grupos
+#| echo: false
+#| tbl-cap: "Intención de rotación (puntaje de 1 a 5) por turno y por antigüedad"
+tabela_grupos(res, tx)
+```
+
+### 6. Correlaciones
+
+```{r}
+#| label: correlacoes
+#| eval: false
+```
+
+La correlación de Spearman (adecuada para puntajes ordinales) muestra los cuatro bloques asociados a la intención de irse, todos en el sentido esperado (`r tx$p_txt(max(res$p_int))` o menor). Los bloques también se correlacionan entre sí, lo que importa para el paso siguiente.
+
+```{r}
+#| label: tbl-correlacoes
+#| echo: false
+#| tbl-cap: "Correlaciones de Spearman entre los puntajes (N varía de 210 a 212 según los blancos)"
+tabela_correl(res, tx)
+```
+
+### 7. Regresión múltiple
+
+La correlación mira un factor a la vez. Para poner a prueba las hipótesis, la pregunta es otra: **¿cuánto pesa cada factor cuando los demás están en el mismo modelo?** Usé regresión lineal múltiple con los cuatro puntajes estandarizados (para que los efectos sean comparables) y tres controles: turno nocturno, hasta 1 año en la empresa y sexo.
+
+```{r}
+#| label: codigo-regressao
+#| eval: false
+#| ref.label: !expr c("regressao", "igualdade")
+```
+
+Antes de leer los coeficientes, revisé los supuestos:
+
+- **Multicolinealidad:** VIF máximo de `r tx$num(res$vif_max)`, lejos del límite habitual de 5. Los bloques se correlacionan, pero no al punto de confundirse.
+- **Varianza de los residuos:** prueba de Breusch-Pagan con `r tx$p_txt(res$bp_p)`. `r if_else(res$bp_p < 0.05, "Hay señal de varianza no constante, y por eso las pruebas usan errores estándar robustos (HC3).", "Sin señal fuerte de varianza no constante; aun así, las pruebas usan errores estándar robustos (HC3), que cuestan poco y protegen el resultado.")`
+- **Normalidad de los residuos:** Shapiro-Wilk con `r tx$p_txt(res$sw_p)`. `r if_else(res$sw_p < 0.05, "Con más de 200 casos, una desviación leve no compromete las pruebas de los coeficientes.", "Sin desviación relevante.")`
+- **Casos influyentes:** distancia de Cook máxima de `r tx$num(res$cook_max)`, muy por debajo de 1. Ninguna respuesta por sí sola cambia el resultado.
+
+El modelo explica el `r tx$num(100 * res$r2, 0)`% de la variación de la intención de irse (R² ajustado = `r tx$num1(res$r2a)`, N = `r res$n_modelo`).
+
+La H3 dice que el efecto de la remuneración es **menor** que los de liderazgo y reconocimiento. Mirar los β no alcanza: hay que probar si la diferencia entre ellos es real. La prueba de igualdad de coeficientes (con la misma corrección HC3) no confirmó la diferencia: `r teste_f(res$igual_lid)` frente a liderazgo y `r teste_f(res$igual_rec)` frente a reconocimiento.
+
+## Lo que mostraron los datos
+
+```{r}
+#| label: grafico-likert
+#| eval: false
+```
+
+```{r}
+#| label: fig-likert
+#| echo: false
+#| fig-cap: "Distribución de las respuestas a los 20 ítems, tal como se dieron (LID3 aún sin recodificar)"
+#| fig-alt: "Barras divergentes con la proporción de desacuerdo y acuerdo en cada uno de los 20 ítems, agrupados por bloque. Remuneración tiene más desacuerdo; LID3, el ítem invertido, tiene un patrón opuesto al de los otros ítems de liderazgo."
+#| fig-width: 8
+#| fig-height: 12
+grafico_likert(res, tx)
+```
+
+- **La remuneración es el punto peor evaluado.** El REM4 se aparta de los otros tres ítems del bloque, el mismo patrón que señalaron la confiabilidad y el análisis factorial.
+- **El ítem invertido funciona:** LID3 tiene el patrón opuesto al de los otros ítems de liderazgo, como debía.
+
+```{r}
+#| label: grafico-grupos
+#| eval: false
+```
+
+```{r}
+#| label: fig-grupos
+#| echo: false
+#| fig-cap: "Intención de rotación por turno y por antigüedad"
+#| fig-alt: "Dos diagramas de caja. A la izquierda, el turno nocturno tiene mayor intención de irse que el diurno. A la derecha, el rango de hasta 1 año en la empresa tiene la intención más alta entre los cuatro rangos de antigüedad."
+#| fig-width: 9
+#| fig-height: 4.6
+grafico_grupos(res, tx)
+```
+
+- **La noche y el primer año pesan.** Quien trabaja de noche y quien tiene hasta 1 año en la empresa piensa más en irse, y ambos efectos se mantienen en el modelo de regresión, incluso con los demás factores controlados.
+
+```{r}
+#| label: grafico-coeficientes
+#| eval: false
+```
+
+```{r}
+#| label: fig-coeficientes
+#| echo: false
+#| fig-cap: "Efecto de cada factor en la intención de irse, con los demás factores fijos (β e intervalo de confianza del 95% con errores robustos)"
+#| fig-alt: "Puntos con intervalos de confianza. Liderazgo, reconocimiento y remuneración quedan a la izquierda del cero, con remuneración más cerca de él. Equilibrio entre trabajo y vida queda sobre el cero. Turno nocturno y hasta 1 año en la empresa quedan a la derecha del cero; sexo femenino cruza el cero."
+#| fig-width: 9
+#| fig-height: 4.6
+grafico_coef(res, tx)
+salvar_capa(res, tx, "img/capa.png")
+```
+
+- **Liderazgo y reconocimiento son los dos factores más fuertes** (β = `r tx$num(b[["LID"]])` y `r tx$num(b[["REC"]])`). La remuneración también reduce la intención (β = `r tx$num(b[["REM"]])`). La estimación es menor, pero la prueba no confirmó la diferencia: con esta muestra, no se puede afirmar que la remuneración pese menos.
+- **El equilibrio entre trabajo y vida es el resultado que más enseña.** En la correlación simple aparece asociado a la intención de irse (ρ = `r tx$num1(res$rho[["INT", "EQU"]])`), pero en el modelo el efecto se va a cero (β = `r tx$num(b[["EQU"]])`, `r tx$p_txt(pv[["EQU"]])`). El equilibrio va de la mano del liderazgo y el reconocimiento: donde el supervisor es bueno, los días libres suelen planificarse. Por sí solo, "toma prestado" el efecto de los demás.
+
+```{r}
+#| label: tbl-hipoteses
+#| echo: false
+#| tbl-cap: "Prueba de las hipótesis (regresión múltiple, errores estándar robustos HC3)"
+tabela_hipoteses(res, tx)
+```
+
+## Cómo entra esto en la tesis
+
+El estudiante recibe las tablas en formato APA, que la mayoría de las carreras acepta, y un ejemplo de cómo reportar los números. La tabla siguiente es la que va al capítulo de resultados:
+
+```{r}
+#| label: tbl-apa
+#| echo: false
+#| tbl-cap: "Regresión lineal múltiple de la intención de rotación"
+tabela_apa(res, tx)
+```
+
+*Nota.* N = `r res$n_modelo`. Puntajes y variable dependiente estandarizados; turno nocturno, hasta 1 año en la empresa y sexo femenino codificados como 0 o 1. EE: error estándar robusto (HC3). R² = `r tx$num1(res$r2)`; R² ajustado = `r tx$num1(res$r2a)`; F(`r res$f[["numdf"]]`, `r res$f[["dendf"]]`) = `r tx$num(res$f[["value"]], 1)`, `r tx$p_txt(res$f[["p"]])`.
+
+::: destaque-suave
+**Ejemplo de redacción.** Este párrafo muestra qué números entran y en qué orden. La redacción de la tesis, la discusión de los resultados y las conclusiones son del estudiante.
+
+> Para poner a prueba las hipótesis, se estimó una regresión lineal múltiple con errores estándar robustos (HC3), con la intención de rotación como variable dependiente. El modelo explicó el `r tx$num(100 * res$r2, 0)`% de la varianza (R² ajustado = `r tx$num1(res$r2a)`). La percepción de liderazgo (β = `r tx$num(b[["LID"]])`, `r tx$p_txt(pv[["LID"]])`) y el reconocimiento (β = `r tx$num(b[["REC"]])`, `r tx$p_txt(pv[["REC"]])`) se asociaron negativamente con la intención, lo que respalda H1 y H2. La remuneración percibida también mostró una asociación negativa (β = `r tx$num(b[["REM"]])`, `r tx$p_txt(pv[["REM"]])`). Aunque la estimación es menor que las de liderazgo y reconocimiento, las pruebas de igualdad de coeficientes no indicaron una diferencia significativa (`r teste_f(res$igual_lid)` y `r teste_f(res$igual_rec)`, respectivamente); por lo tanto, H3 fue parcialmente respaldada. El equilibrio entre trabajo y vida no mostró asociación tras controlar las demás variables (β = `r tx$num(b[["EQU"]])`, `r tx$p_txt(pv[["EQU"]])`); H4 no fue respaldada.
+:::
+
+## Lo que recibe el estudiante
+
+- **El informe completo en Quarto**, con el código y los resultados de cada paso. Si la base cambia (por ejemplo, con respuestas que llegan después), basta con correrlo de nuevo.
+- **El script de R comentado y la base limpia**, para que el estudiante y el director de tesis los revisen.
+- **Las tablas en formato APA**, listas para pegar en Word.
+- **Una explicación en lenguaje sencillo de cada prueba:** por qué se eligió, qué significa el resultado y cuáles son sus límites. Sirve para escribir la metodología y para la defensa.
+- **Una reunión para repasar los resultados** y las preguntas que el jurado suele hacer sobre la parte estadística.
+
+El trabajo es del estudiante. Yo hago el análisis y lo explico; la redacción, la interpretación y las conclusiones son suyas.
+
+::: cta-final
+## ¿Tienes un cuestionario para analizar?
+
+Puede ser una tesis de grado, de maestría o una encuesta interna de tu empresa. Envíame el proyecto y la hoja de cálculo con las respuestas, y te digo qué se puede hacer y cómo.
+
+[Escríbeme](../../contacto.qmd){.btn .btn-primary}
+:::

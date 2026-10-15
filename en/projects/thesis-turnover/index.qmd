@@ -1,0 +1,326 @@
+---
+title: "Employee turnover in supermarkets: statistical consulting for an undergraduate thesis"
+subtitle: "From the Google Forms export to the thesis tables, with every decision explained."
+description: "Fictional consulting case for an undergraduate thesis in Business Administration: survey cleaning, reliability, exploratory factor analysis, non-parametric tests and regression with robust standard errors, in R."
+image: img/capa.png
+image-alt: "Chart of each factor's effect on the intention to leave the company"
+categories: [R, Statistics, Survey, Thesis]
+traducao: tcc
+# Tapping a chart opens it full screen (on phones the charts are small).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the R code"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+::: aviso-dados
+**Fictional data.** The student, the supermarkets and the 230 responses do not exist. The data were simulated in R with programmed patterns, for demonstration purposes, and were deliberately given problems that are common in online surveys. The results show the working method; they are not a finding about real supermarkets.
+
+[Download the raw responses (CSV)](../../../projetos/caso-tcc-rotatividade/dados/respostas_brutas.csv){download="respostas_brutas.csv"} · [Download the question dictionary (CSV)](../../../projetos/caso-tcc-rotatividade/dados/dicionario.csv){download="dicionario.csv"}
+:::
+
+[The questionnaire, the CSV files and the comments in the R code are in Portuguese, the case's original language.]{.nota-idioma}
+
+```{r}
+#| label: preparo
+#| code-summary: "Packages, analysis results and page text"
+library(tidyverse)
+library(gtsummary)
+library(patchwork)
+library(knitr)
+
+# A análise roda uma vez, em scripts/analise.R, e grava os resultados que as
+# versões em português, espanhol e inglês desta página leem.
+caso <- "../../../projetos/caso-tcc-rotatividade"
+res <- readRDS(file.path(caso, "resultados/analise.rds"))
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+tx <- rotulos("en")
+preparar(tx)
+
+# Os trechos de código abaixo são os de scripts/analise.R e scripts/apresentacao.R.
+read_chunk(file.path(caso, "scripts/analise.R"))
+read_chunk(file.path(caso, "scripts/apresentacao.R"))
+
+b <- setNames(res$resultado$beta, res$resultado$termo)
+pv <- setNames(res$resultado$p, res$resultado$termo)
+alfa <- setNames(res$conf$alfa, res$conf$bloco)
+teste_f <- function(h) paste0("F(", h[["gl1"]], ", ", h[["gl2"]], ") = ", tx$num(h[["F"]]), ", ", tx$p_txt(h[["p"]]))
+```
+
+## The request
+
+A Business Administration student was finishing an undergraduate thesis titled *Leadership, recognition and turnover intention among supermarket employees in central-western Minas Gerais*. He ran a Google Forms survey in stores across the region: profile questions plus 20 statements rated from 1 (strongly disagree) to 5 (strongly agree), in five blocks.
+
+| Block | Items | Sample statement |
+|---|:-:|---|
+| Leadership | 5 | "My supervisor treats me with respect." |
+| Recognition | 4 | "I get praise for my work." |
+| Perceived pay | 4 | "My pay is fair for the work I do." |
+| Work-life balance | 4 | "I can plan my days off in advance." |
+| Turnover intention | 3 | "I plan to look for another job in the next 12 months." |
+
+The project had four hypotheses:
+
+- **H1.** Better-rated leadership reduces the intention to leave.
+- **H2.** More recognition reduces the intention to leave.
+- **H3.** Better-rated pay reduces the intention to leave, with a smaller effect than H1 and H2.
+- **H4.** Better work-life balance reduces the intention to leave.
+
+He had the spreadsheet exported from Forms and his advisor's instruction to "do the statistics part." He needed to know what to run, in what order, how to check whether he could trust the results and how to report everything in the thesis.
+
+## What I did
+
+### 1. Cleaning
+
+```{r}
+#| label: leitura
+#| eval: false
+```
+
+Of the `r res$n_bruto` responses received, `r res$n_validas` went on to the analysis. Each exclusion has a reason that can be written into the thesis methods section:
+
+```{r}
+#| label: tbl-fluxo
+#| echo: false
+#| tbl-cap: "From the Forms export to the valid responses"
+tabela_fluxo(res, tx)
+```
+
+Someone who gives the same answer to everything, including the reversed leadership item ("My supervisor **rarely** gives me feedback"), is saying at the same time that the supervisor does and does not give feedback: a sign they did not read the statements.
+
+The valid responses still had `r res$celulas_brancas` scattered blank items (`r tx$num(100 * res$celulas_brancas / (res$n_validas * 20), 1)`% of cells). The rule was simple and is written into the report: **each block's score is the mean of the items answered, as long as no more than 1 item in the block is blank.** Two people left 2 Work-life balance items blank and have no score for that block.
+
+Age group was a free-text field, and everyone wrote it their own way. A text rule merged the variants (the middle column shows the original data, in Portuguese):
+
+```{r}
+#| label: faixa-etaria
+#| eval: false
+```
+
+```{r}
+#| label: tbl-grafias
+#| echo: false
+#| tbl-cap: "Age group: variants found and final category"
+tabela_grafias(res, tx)
+```
+
+### 2. Sample profile
+
+```{r}
+#| label: tabela-perfil
+#| eval: false
+```
+
+```{r}
+#| label: tbl-perfil
+#| echo: false
+#| tbl-cap: "Profile of the valid responses"
+tabela_perfil(res, tx)
+```
+
+### 3. Scale reliability
+
+Before adding statements up into a score, you have to show that they measure the same thing. I used two indicators: **Cronbach's alpha**, which the advisor and the thesis committee expect to see, and **McDonald's omega**, which is better suited when the statements do not all carry the same weight in the construct. Above `r tx$num1(0.70)` is the usual threshold.
+
+```{r}
+#| label: confiabilidade
+#| eval: false
+```
+
+```{r}
+#| label: tbl-confiabilidade
+#| echo: false
+#| tbl-cap: "Cronbach's alpha and omega for each block"
+tabela_confiab(res, tx)
+```
+
+Four blocks passed comfortably. Perceived pay came in at `r tx$num1(alfa[["REM"]])` because of one item: "I receive my transportation allowance on time" (REM4) barely moves with the other three (a correlation of `r tx$num1(res$r_rem[["REM4"]])` with their total, against `r tx$num1(min(res$r_rem[c("REM1", "REM2", "REM3")]))` or more for the rest). That makes sense: it measures whether a benefit arrives on time, not whether the pay feels fair. Without it, alpha rises to `r tx$num1(alfa[["REM_sem4"]])`. **REM4 was dropped from the Perceived pay score**, and the thesis records that decision and the reason for it.
+
+### 4. Exploratory factor analysis
+
+Factor analysis checks whether the 20 statements group into the five blocks the questionnaire intended. Because the answers are ordinal (1 to 5), I used **polychoric correlation**, which treats each answer as a band on an underlying continuous scale and does not assume that the distance between "1" and "2" equals the distance between "4" and "5".
+
+```{r}
+#| label: fatorial
+#| eval: false
+```
+
+The **KMO** was `r tx$num1(res$kmo)` (above `r tx$num1(0.80)` is considered very good) and **Bartlett's test** gave χ²(`r res$bartlett$df`) = `r tx$num(res$bartlett$chisq, 1)`, `r tx$p_txt(res$bartlett$p.value)`: the correlations between the statements are strong enough for factor analysis. With five factors and an oblique rotation (the constructs are allowed to correlate), each statement loaded on its own block, with one exception we already knew about: **REM4 did not load on any factor** (highest loading `r tx$num(res$carga_rem4)`), which confirms the reliability decision.
+
+```{r}
+#| label: tbl-cargas
+#| echo: false
+#| tbl-cap: "Factor loadings (polychoric correlation, oblimin rotation); loadings below 0.30 omitted"
+tabela_cargas(res, tx)
+```
+
+### 5. Scores and group comparisons
+
+```{r}
+#| label: escores
+#| eval: false
+```
+
+Likert scale scores tend to be skewed and full of ties, so I compared the intention to leave across groups with non-parametric tests, always reporting the **effect size**, which tells you whether a difference is large or merely statistically detectable.
+
+```{r}
+#| label: comparacoes
+#| eval: false
+```
+
+- **Shift.** Night-shift workers have a higher intention to leave (Mann-Whitney, `r tx$p_txt(res$mw[["p"]])`, r = `r tx$num1(res$mw[["r"]])`, `r if_else(res$mw[["r"]] < 0.3, "a small", "a moderate")` effect).
+- **Tenure.** The groups differ (Kruskal-Wallis, H(`r res$kw[["gl"]]`) = `r tx$num(res$kw[["H"]], 1)`, `r tx$p_txt(res$kw[["p"]])`, ε² = `r tx$num1(res$kw[["eps2"]], 3)`, a small effect). In the pairwise comparisons (Dunn, with Holm correction), the difference that holds up is between "up to 1 year" and `r paste0('"', str_to_lower(tx$tempo[res$dunn_novato]), '"', collapse = " and ")`; the other comparisons were not significant.
+
+```{r}
+#| label: tbl-grupos
+#| echo: false
+#| tbl-cap: "Turnover intention (score from 1 to 5) by shift and by tenure"
+tabela_grupos(res, tx)
+```
+
+### 6. Correlations
+
+```{r}
+#| label: correlacoes
+#| eval: false
+```
+
+Spearman correlation (appropriate for ordinal scores) shows all four blocks associated with the intention to leave, all in the expected direction (`r tx$p_txt(max(res$p_int))` or lower). The blocks are also correlated with one another, which matters for the next step.
+
+```{r}
+#| label: tbl-correlacoes
+#| echo: false
+#| tbl-cap: "Spearman correlations between scores (N ranges from 210 to 212 depending on blanks)"
+tabela_correl(res, tx)
+```
+
+### 7. Multiple regression
+
+Correlation looks at one factor at a time. To test the hypotheses, the question is different: **how much does each factor matter when the others are in the same model?** I used multiple linear regression with the four scores standardized (so the effects are comparable) and three controls: night shift, up to 1 year of tenure and sex.
+
+```{r}
+#| label: codigo-regressao
+#| eval: false
+#| ref.label: !expr c("regressao", "igualdade")
+```
+
+Before reading the coefficients, I checked the assumptions:
+
+- **Multicollinearity:** highest VIF of `r tx$num(res$vif_max)`, well below the usual limit of 5. The blocks are correlated, but not to the point of being confounded.
+- **Residual variance:** Breusch-Pagan test, `r tx$p_txt(res$bp_p)`. `r if_else(res$bp_p < 0.05, "There is a sign of non-constant variance, so the tests use robust standard errors (HC3).", "No strong sign of non-constant variance; even so, the tests use robust standard errors (HC3), which cost little and protect the result.")`
+- **Normality of residuals:** Shapiro-Wilk, `r tx$p_txt(res$sw_p)`. `r if_else(res$sw_p < 0.05, "With more than 200 cases, a slight departure does not compromise the coefficient tests.", "No relevant departure.")`
+- **Influential cases:** highest Cook's distance of `r tx$num(res$cook_max)`, far below 1. No single response changes the result.
+
+The model explains `r tx$num(100 * res$r2, 0)`% of the variation in the intention to leave (adjusted R² = `r tx$num1(res$r2a)`, N = `r res$n_modelo`).
+
+H3 says the effect of pay is **smaller** than those of leadership and recognition. Looking at the βs is not enough: you have to test whether the difference between them is real. The test of equality of coefficients (with the same HC3 correction) did not confirm the difference: `r teste_f(res$igual_lid)` against leadership and `r teste_f(res$igual_rec)` against recognition.
+
+## What the data showed
+
+```{r}
+#| label: grafico-likert
+#| eval: false
+```
+
+```{r}
+#| label: fig-likert
+#| echo: false
+#| fig-cap: "Distribution of answers to the 20 items, as given (LID3 not yet reverse-coded)"
+#| fig-alt: "Diverging bars with the share of disagreement and agreement for each of the 20 items, grouped by block. Perceived pay has more disagreement; LID3, the reversed item, shows the opposite pattern to the other leadership items."
+#| fig-width: 8
+#| fig-height: 12
+grafico_likert(res, tx)
+```
+
+- **Pay is the lowest-rated area.** REM4 stands apart from the other three items in its block, the same pattern that the reliability analysis and the factor analysis pointed to.
+- **The reversed item works:** LID3 shows the opposite pattern to the other leadership items, as it should.
+
+```{r}
+#| label: grafico-grupos
+#| eval: false
+```
+
+```{r}
+#| label: fig-grupos
+#| echo: false
+#| fig-cap: "Turnover intention by shift and by tenure"
+#| fig-alt: "Two box plots. On the left, the night shift has a higher intention to leave than the day shift. On the right, the up-to-1-year group has the highest intention of the four tenure groups."
+#| fig-width: 9
+#| fig-height: 4.6
+grafico_grupos(res, tx)
+```
+
+- **Nights and the first year matter.** People who work nights and people with up to 1 year of tenure think more about leaving, and both effects remain in the regression model, even with the other factors controlled for.
+
+```{r}
+#| label: grafico-coeficientes
+#| eval: false
+```
+
+```{r}
+#| label: fig-coeficientes
+#| echo: false
+#| fig-cap: "Effect of each factor on the intention to leave, holding the other factors constant (β and 95% confidence interval with robust standard errors)"
+#| fig-alt: "Points with confidence intervals. Leadership, recognition and pay are to the left of zero, with pay closest to it. Work-life balance sits on zero. Night shift and up to 1 year of tenure are to the right of zero; female crosses zero."
+#| fig-width: 9
+#| fig-height: 4.6
+grafico_coef(res, tx)
+salvar_capa(res, tx, "img/capa.png")
+```
+
+- **Leadership and recognition are the two strongest factors** (β = `r tx$num(b[["LID"]])` and `r tx$num(b[["REC"]])`). Pay also reduces the intention (β = `r tx$num(b[["REM"]])`). The estimate is smaller, but the test did not confirm the difference: with this sample, you cannot claim that pay matters less.
+- **Work-life balance is the most instructive result.** In the simple correlation it appears associated with the intention to leave (ρ = `r tx$num1(res$rho[["INT", "EQU"]])`), but in the model the effect drops to zero (β = `r tx$num(b[["EQU"]])`, `r tx$p_txt(pv[["EQU"]])`). Work-life balance goes hand in hand with leadership and recognition: where the supervisor is good, days off tend to be planned. On its own, it "borrows" the effect of the others.
+
+```{r}
+#| label: tbl-hipoteses
+#| echo: false
+#| tbl-cap: "Hypothesis tests (multiple regression, HC3 robust standard errors)"
+tabela_hipoteses(res, tx)
+```
+
+## How this goes into the thesis
+
+The student receives the tables in APA format, which most programs accept, and an example of how to report the numbers. The table below is the one that goes into the results chapter:
+
+```{r}
+#| label: tbl-apa
+#| echo: false
+#| tbl-cap: "Multiple linear regression of turnover intention"
+tabela_apa(res, tx)
+```
+
+*Note.* N = `r res$n_modelo`. Scores and dependent variable standardized; night shift, up to 1 year of tenure and female coded as 0 or 1. SE: robust standard error (HC3). R² = `r tx$num1(res$r2)`; adjusted R² = `r tx$num1(res$r2a)`; F(`r res$f[["numdf"]]`, `r res$f[["dendf"]]`) = `r tx$num(res$f[["value"]], 1)`, `r tx$p_txt(res$f[["p"]])`.
+
+::: destaque-suave
+**Sample write-up.** This paragraph shows which numbers go in and in what order. The writing of the thesis, the discussion of the results and the conclusions are the student's.
+
+> To test the hypotheses, a multiple linear regression with robust standard errors (HC3) was estimated, with turnover intention as the dependent variable. The model explained `r tx$num(100 * res$r2, 0)`% of the variance (adjusted R² = `r tx$num1(res$r2a)`). Perceived leadership (β = `r tx$num(b[["LID"]])`, `r tx$p_txt(pv[["LID"]])`) and recognition (β = `r tx$num(b[["REC"]])`, `r tx$p_txt(pv[["REC"]])`) were negatively associated with turnover intention, supporting H1 and H2. Perceived pay was also negatively associated with it (β = `r tx$num(b[["REM"]])`, `r tx$p_txt(pv[["REM"]])`). Although its estimate was smaller than those for leadership and recognition, tests of equality of coefficients did not indicate a significant difference (`r teste_f(res$igual_lid)`, and `r teste_f(res$igual_rec)`, respectively); H3 was therefore partially supported. Work-life balance was not associated with turnover intention after controlling for the other variables (β = `r tx$num(b[["EQU"]])`, `r tx$p_txt(pv[["EQU"]])`); H4 was not supported.
+:::
+
+## What the student receives
+
+- **The complete report in Quarto**, with the code and output for every step. If the data change (for example, responses that come in later), you just run it again.
+- **The commented R script and the clean dataset**, so the student and the advisor can check them.
+- **The tables in APA format**, ready to paste into Word.
+- **A plain-language explanation of each test:** why it was chosen, what the result means and what its limits are. It helps with writing the methods section and with the defense.
+- **A meeting to go over the results** and the questions the thesis committee usually asks about the statistics.
+
+The work is the student's. I do the analysis and explain it; the writing, the interpretation and the conclusions are his.
+
+::: cta-final
+## Have a survey to analyze?
+
+It could be an undergraduate thesis, a master's thesis or an internal company survey. Send me the project and the spreadsheet of responses, and I will tell you what can be done and how.
+
+[Get in touch](../../contact.qmd){.btn .btn-primary}
+:::

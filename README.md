@@ -43,10 +43,11 @@ faz parte do script.
 
 ## O que o `render.ps1` faz
 
-1. Apaga `docs/` uma única vez, no início.
-2. Renderiza os perfis `pt`, `es` e `en` com `--no-clean`, para que um idioma
+1. Atualiza o caso TCC, se for preciso (veja "Caso TCC" abaixo).
+2. Apaga `docs/` uma única vez, no início.
+3. Renderiza os perfis `pt`, `es` e `en` com `--no-clean`, para que um idioma
    não apague a saída dos outros.
-3. Roda `scripts/pos_render.py`, descrito abaixo.
+4. Roda `scripts/pos_render.py`, descrito abaixo.
 
 ## Checagens e ajustes do `scripts/pos_render.py`
 
@@ -82,6 +83,30 @@ Roda sozinho no fim de todo `render.ps1`:
   reciprocidade dos `hreflang`. Rode depois do render:
   `python scripts\auditoria.py`.
 
+## Caso TCC (páginas com código R)
+
+O caso de consultoria para TCC existe em três línguas, mas a análise em R roda
+uma vez só:
+
+- `projetos/caso-tcc-rotatividade/scripts/gerar_dados.R` gera os dados
+  fictícios (`dados/`), com semente fixa. Só precisa rodar de novo se o
+  desenho dos dados mudar. O R não está no PATH, então use o caminho completo:
+  `& "C:\Program Files\R\R-4.5.2\bin\Rscript.exe" projetos\caso-tcc-rotatividade\scripts\gerar_dados.R`.
+- `scripts/analise.R` faz toda a análise e grava `resultados/analise.rds`.
+- `scripts/rotulos.R` tem os textos dos gráficos e das tabelas em PT, ES e EN e
+  o formato dos números de cada idioma (em inglês, a regra da APA: p < .001).
+- `scripts/apresentacao.R` desenha as tabelas e os gráficos.
+- As páginas `projetos/caso-tcc-rotatividade/index.qmd`,
+  `es/proyectos/tesis-rotacion/index.qmd` e `en/projects/thesis-turnover/index.qmd`
+  só leem o `.rds` e chamam essas funções; o texto de cada uma é traduzido à mão.
+
+O `render.ps1` cuida do resto: roda o `analise.R` quando os dados ou o script
+mudaram e, quando o `.rds`, os textos ou os gráficos mudaram, descarta o
+resultado congelado das três páginas em `_freeze/`, para que sejam refeitas. O
+`_freeze/` vai para o Git: sem mudanças, o render não precisa do R.
+
+Os termos usados nas traduções ficam em `_rascunhos/glossario_pt_es_en.md`.
+
 ## Estrutura
 
 ```text
@@ -90,6 +115,7 @@ es/  en/                                     páginas em espanhol e inglês
 _quarto.yml                                  configuração comum (tema, imagens, filtros)
 _quarto-pt.yml, _quarto-es.yml, _quarto-en.yml  navbar, rodapé e páginas de cada língua
 _traducoes.yml                               qual página corresponde a qual nas três línguas
+_freeze/                                     resultados congelados do código R (vai para o Git)
 assets/css/orbita.scss                       tema (cores, fontes, componentes)
 assets/html/idiomas.html                     seletor PT | ES | EN, faixa de idioma, copiar e-mail
 assets/lua/                                  filtro de hreflang e shortcode da galeria

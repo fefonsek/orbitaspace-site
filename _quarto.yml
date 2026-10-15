@@ -17,6 +17,8 @@ project:
     - projetos/radar-absenteismo/img/
     # Caso TCC: capa gerada pela página e dados fictícios para download.
     - projetos/caso-tcc-rotatividade/img/
+    - es/proyectos/tesis-rotacion/img/
+    - en/projects/thesis-turnover/img/
     - projetos/caso-tcc-rotatividade/dados/
   post-render: scripts/aviso_render.py
 

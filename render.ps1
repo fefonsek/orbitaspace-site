@@ -1,4 +1,4 @@
-# Gera o site completo (PT, ES, EN) na pasta docs/.
+﻿# Gera o site completo (PT, ES, EN) na pasta docs/.
 # Uso, no PowerShell, dentro da pasta do site:  .\render.ps1
 #
 # Por que este script existe: cada idioma é um perfil do Quarto, e uma
@@ -11,6 +11,32 @@ Set-Location $PSScriptRoot
 $env:ORBITA_RENDER_COMPLETO = "1"
 $temp = Join-Path $env:TEMP "orbitaspace-sitemaps"
 New-Item -ItemType Directory -Force $temp | Out-Null
+
+# 0. Caso TCC: a análise em R roda uma vez e grava um .rds que as três
+#    versões da página (PT, ES, EN) leem. Ela só roda de novo se os dados ou
+#    o script da análise mudaram. Se o .rds, os textos ou os gráficos mudaram,
+#    o resultado congelado (_freeze) das três páginas é descartado, para que
+#    elas sejam refeitas com o conteúdo novo.
+$caso = "projetos\caso-tcc-rotatividade"
+$rds = "$caso\resultados\analise.rds"
+$fontesAnalise = Get-ChildItem "$caso\dados\*.csv", "$caso\scripts\analise.R"
+if (-not (Test-Path $rds) -or ($fontesAnalise | Where-Object { $_.LastWriteTime -gt (Get-Item $rds).LastWriteTime })) {
+    $rscript = Get-ChildItem "$env:ProgramFiles\R\R-*\bin\Rscript.exe" -ErrorAction SilentlyContinue |
+        Sort-Object FullName | Select-Object -Last 1
+    if (-not $rscript) { Write-Host "Rscript não encontrado em $env:ProgramFiles\R." -ForegroundColor Red; exit 1 }
+    Write-Host "`n=== Caso TCC: rodando a análise em R ===" -ForegroundColor Cyan
+    & $rscript.FullName "$caso\scripts\analise.R"
+    if ($LASTEXITCODE -ne 0) { Write-Host "Falha na análise do caso TCC." -ForegroundColor Red; exit 1 }
+}
+$ultimaMudanca = (Get-ChildItem $rds, "$caso\scripts\rotulos.R", "$caso\scripts\apresentacao.R" |
+    Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
+foreach ($congelado in "_freeze\$caso", "_freeze\es\proyectos\tesis-rotacion", "_freeze\en\projects\thesis-turnover") {
+    $json = "$congelado\index\execute-results\html.json"
+    if ((Test-Path $json) -and (Get-Item $json).LastWriteTime -lt $ultimaMudanca) {
+        Remove-Item $congelado -Recurse -Force
+        Write-Host "Caso TCC: $congelado descartado; a página será refeita."
+    }
+}
 
 # 1. Limpa a saída anterior (assim páginas removidas não ficam esquecidas).
 if (Test-Path docs) { Remove-Item docs -Recurse -Force }

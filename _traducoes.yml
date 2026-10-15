@@ -17,6 +17,10 @@ radar:
   pt: /projetos/radar-absenteismo/index.html
   es: /es/proyectos/radar-ausentismo/index.html
   en: /en/projects/absenteeism-radar/index.html
+tcc:
+  pt: /projetos/caso-tcc-rotatividade/index.html
+  es: /es/proyectos/tesis-rotacion/index.html
+  en: /en/projects/thesis-turnover/index.html
 servicos:
   pt: /servicos.html
   es: /es/servicios.html
