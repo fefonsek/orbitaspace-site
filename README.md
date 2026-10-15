@@ -218,21 +218,19 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
 - **Post traduzido:** acrescente uma entrada em `_traducoes.yml` com os
   endereços das versões e ponha `traducao: <chave>` no cabeçalho de cada uma;
   o seletor de idioma passa a levar à versão correspondente.
-- **Reativar o vídeo e o link do repositório do Radar:** as duas seções estão
-  escondidas, mas o texto continua nas três páginas do projeto
-  (`projetos/radar-absenteismo/index.qmd`, `es/proyectos/radar-ausentismo/index.qmd`
-  e `en/projects/absenteeism-radar/index.qmd`). Em cada uma:
-  1. No cabeçalho, troque `mostrar-video: false` por `true` e/ou
-     `mostrar-repositorio: false` por `true`.
-  2. Dentro do bloco `::: {.content-visible when-meta="mostrar-video"}`, troque
-     o marcador `[VÍDEO AQUI]` (e o `::: video-marcador` em volta dele) pelo
-     vídeo: `{{< video https://www.youtube.com/watch?v=CODIGO >}}`.
-  3. Dentro do bloco `::: {.content-visible when-meta="mostrar-repositorio"}`,
-     troque `[[LINK DO REPOSITÓRIO]]{.marcador-link}` pelo link, por exemplo
-     `[Ver o repositório no GitHub](https://github.com/fefonsek/NOME){.btn .btn-outline-primary}`.
-
-  Se você ligar a opção e esquecer de trocar o marcador, o `publicar.ps1` se
-  recusa a publicar, porque o marcador volta a aparecer em `docs/`.
+- **Vídeo e link do repositório do Radar:** as duas seções estão ligadas nas
+  três páginas do projeto (`projetos/radar-absenteismo/index.qmd`,
+  `es/proyectos/radar-ausentismo/index.qmd` e
+  `en/projects/absenteeism-radar/index.qmd`), com `mostrar-video: true` e
+  `mostrar-repositorio: true` no cabeçalho; `false` esconde a seção.
+  - O vídeo é um iframe do `youtube-nocookie.com` (não grava cookies antes de
+    a pessoa dar o play), dentro de `<div class="video">`, que mantém 16:9 na
+    largura da coluna. Para trocar o vídeo, troque o código depois de
+    `/embed/` nas três páginas e ajuste o `title` do iframe, que é o nome lido
+    por leitores de tela.
+  - O vídeo é em português; em ES e EN, a linha
+    `[Video en portugués.]{.nota-idioma .nota-video}` (ou `Video in
+    Portuguese.`) fica logo abaixo dele.
 - **Trocar a foto:** substitua `assets/img/felipe-original.jpeg`, ajuste as
   medidas do rosto em `scripts/preparar_imagens.py` (função `foto`) e rode o
   script e o `render.ps1`.

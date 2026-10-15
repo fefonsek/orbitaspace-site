@@ -8,9 +8,9 @@ categories: [Power BI, DAX, Estatística, People Analytics]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
 frente: [paineis]
 traducao: radar
-# Seções ocultas até existirem o vídeo e o repositório do painel.
-# Para reativar, troque false por true (veja o README).
-mostrar-video: false
+# Seções de vídeo e de repositório do painel: true mostra, false esconde
+# (veja o README).
+mostrar-video: true
 mostrar-repositorio: true
 lightbox: true
 galeria-pasta: img
@@ -36,9 +36,11 @@ galeria:
 :::
 
 ::: {.content-visible when-meta="mostrar-video"}
-::: video-marcador
-[VÍDEO AQUI]
-:::
+```{=html}
+<div class="video">
+<iframe src="https://www.youtube-nocookie.com/embed/LmRny3-oi3o" title="Vídeo: resumo do Radar de Absenteísmo" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
 :::
 
 ## O problema
