@@ -5,6 +5,8 @@ description: "Painel em Power BI que mostra por que uma taxa de absenteísmo est
 image: img/compartilhamento.jpg
 image-alt: "Capa do painel Radar de Absenteísmo"
 categories: [Power BI, DAX, Estatística, People Analytics]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [paineis]
 traducao: radar
 # Seções ocultas até existirem o vídeo e o repositório do painel.
 # Para reativar, troque false por true (veja o README).

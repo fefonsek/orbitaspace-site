@@ -12,3 +12,5 @@ listing:
 ---
 
 Work I can show in full. Projects done for companies stay out because of confidentiality, so the examples here use fictional data, built to reproduce real problems.
+
+{{< frentes >}}

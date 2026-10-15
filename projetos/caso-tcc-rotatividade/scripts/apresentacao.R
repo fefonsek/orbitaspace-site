@@ -212,9 +212,55 @@ grafico_coef <- function(res, tx, base = 12, rotulo = 3.6) {
           legend.position = "top", legend.justification = "left")
 }
 
-# A mesma figura, maior, vira a capa da página na listagem e no compartilhamento.
-salvar_capa <- function(res, tx, arquivo = "img/capa.png") {
+# Capa da página (listagem e compartilhamento), no estilo da capa do Radar:
+# fundo azul profundo, logo, título, subtítulo e uma versão pequena do gráfico
+# de coeficientes. A listagem mostra só a faixa do meio da imagem (cerca de
+# 2/3 da altura), então título e gráfico ficam nessa faixa.
+salvar_capa <- function(res, tx, arquivo = "img/capa.png", logo) {
+  claro <- c(texto = "#ffffff", sub = "#cacfee", apoio = "#9aa3c7", linha = "#34344f",
+             detectado = "#9dbde8", sem_efeito = "#6b7299")
+  grafico <- res$resultado |>
+    mutate(nome = factor(tx$termos[termo], rev(tx$termos[termo])),
+           detectado = p < 0.05) |>
+    ggplot(aes(x = beta, y = nome, colour = detectado)) +
+    geom_vline(xintercept = 0, colour = claro[["apoio"]], linewidth = 0.5, linetype = "dashed") +
+    geom_errorbar(aes(xmin = li, xmax = ls), width = 0, linewidth = 1.8) +
+    geom_point(size = 3.8, shape = 21, fill = cor[["profundo"]], stroke = 2) +
+    scale_colour_manual(values = c(`TRUE` = claro[["detectado"]], `FALSE` = claro[["sem_efeito"]]), guide = "none") +
+    scale_x_continuous(labels = \(x) tx$num(x)) +
+    labs(title = tx$capa_grafico, x = NULL, y = NULL) +
+    theme_minimal(base_family = "Montserrat", base_size = 15) +
+    theme(text = element_text(colour = claro[["sub"]]),
+          axis.text.y = element_text(colour = claro[["sub"]], size = 14),
+          axis.text.x = element_text(colour = claro[["apoio"]], size = 12),
+          plot.title = element_text(colour = claro[["apoio"]], size = 14, margin = margin(b = 10)),
+          plot.title.position = "plot",
+          panel.grid.minor = element_blank(), panel.grid.major.y = element_blank(),
+          panel.grid.major.x = element_line(colour = claro[["linha"]], linewidth = 0.5),
+          plot.background = element_blank(), panel.background = element_blank())
+
+  texto <- function(rotulo, y, tamanho, cor_texto, peso = "plain", altura = 1.15) {
+    grid::grid.text(rotulo, x = grid::unit(72, "native"), y = grid::unit(675 - y, "native"),
+                    just = c("left", "top"),
+                    gp = grid::gpar(fontfamily = "Montserrat", fontface = peso, fontsize = tamanho,
+                                    col = cor_texto, lineheight = altura),
+                    vp = grid::viewport(xscale = c(0, 1200), yscale = c(0, 675)))
+  }
+
   dir.create(dirname(arquivo), showWarnings = FALSE)
-  ggsave(arquivo, grafico_coef(res, tx, base = 15, rotulo = 4.6) + theme(plot.margin = margin(30, 40, 30, 30)),
-         width = 1200, height = 675, units = "px", dpi = 110, device = ragg::agg_png, bg = "white")
+  ragg::agg_png(arquivo, width = 1200, height = 675, res = 72, background = cor[["profundo"]])
+  on.exit(grDevices::dev.off())
+  grid::grid.raster(png::readPNG(logo), x = grid::unit(72, "points"), y = grid::unit(675 - 48, "points"),
+                    width = grid::unit(64, "points"), just = c("left", "top"))
+  linhas <- function(x) lengths(strsplit(x, "\n"))
+  y_titulo <- 175
+  texto(tx$capa_titulo, y_titulo, 46, claro[["texto"]], "bold", 1.1)
+  y_sub <- y_titulo + 51 * linhas(tx$capa_titulo) + 22
+  texto(tx$capa_subtitulo, y_sub, 22, claro[["sub"]], altura = 1.25)
+  y_frase <- y_sub + 28 * linhas(tx$capa_subtitulo) + 26
+  texto(tx$capa_frase, y_frase, 17, claro[["apoio"]], altura = 1.4)
+  texto(tx$capa_rodape, 630, 12, claro[["apoio"]])
+  print(grafico, vp = grid::viewport(x = grid::unit(1150, "points"), y = grid::unit(675 / 2, "points"),
+                                     width = grid::unit(500, "points"), height = grid::unit(410, "points"),
+                                     just = c("right", "center")))
 }

@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d1cfbc4039a6457f8ab7eb1c353d748.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-98ba39c84da2be4231e8b3546653f2d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -281,7 +281,8 @@ ul.task-list li input[type="checkbox"] {
 //    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
 //    Sem versão correspondente, leva para o blog do idioma (se estamos no
 //    blog), para a lista de projetos (se estamos num projeto que só existe
-//    em português) ou para a página inicial.
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
 // 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
@@ -300,13 +301,26 @@ document.addEventListener("DOMContentLoaded", function () {
     try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
   }
 
-  function versao(rotulo) {
+  function caminho(rotulo) {
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
     if (alt) return new URL(alt.href).pathname;
     if (codigos[rotulo] === atual) return location.pathname;
     if (noBlog) return blog[rotulo];
     return noProjeto ? projetos[rotulo] : inicio[rotulo];
   }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
 
   // 1. Seletor
   document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
@@ -316,6 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (item) item.classList.add("nav-idioma");
     link.classList.remove("active");
     link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
     link.hreflang = codigos[rotulo];
     link.addEventListener("click", lembrar);
     if (codigos[rotulo] === atual) {
@@ -347,6 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
     texto.appendChild(document.createTextNode(t.frase + " "));
     var link = document.createElement("a");
     link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
     link.hreflang = preferido;
     link.textContent = t.link;
     link.addEventListener("click", lembrar);

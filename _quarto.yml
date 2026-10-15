@@ -54,3 +54,4 @@ filters:
 
 shortcodes:
   - assets/lua/galeria.lua
+  - assets/lua/frentes.lua

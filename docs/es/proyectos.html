@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4d1cfbc4039a6457f8ab7eb1c353d748.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-98ba39c84da2be4231e8b3546653f2d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -248,13 +248,19 @@ window.Quarto = {
 
 
 <p>Trabajos que puedo mostrar completos. Los proyectos hechos para empresas quedan fuera por confidencialidad; por eso los ejemplos de esta página usan datos ficticios, construidos para reproducir problemas reales.</p>
+<div class="filtro-frentes" role="group" aria-label="Filtrar proyectos por área de servicio" hidden="">
+<button type="button" class="filtro-frente" data-frente="" aria-pressed="true">Todos</button>
+<button type="button" class="filtro-frente" data-frente="paineis" aria-pressed="false">Tableros en Power BI</button>
+<button type="button" class="filtro-frente" data-frente="pesquisas" aria-pressed="false">Análisis estadístico para investigaciones académicas</button>
+</div>
+<script type="application/json" id="frentes-projetos">{"radar-ausentismo":["paineis"],"tesis-rotacion":["pesquisas"]}</script>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-2">
-<div class="g-col-1" data-index="0" data-categories="UG93ZXIlMjBCSSUyQ0RBWCUyQ0VzdGFkJUMzJUFEc3RpY2ElMkNQZW9wbGUlMjBBbmFseXRpY3M=" data-listing-file-modified-sort="1792015643418" data-listing-reading-time-sort="5" data-listing-word-count-sort="860">
+<div class="g-col-1" data-index="0" data-categories="UG93ZXIlMjBCSSUyQ0RBWCUyQ0VzdGFkJUMzJUFEc3RpY2ElMkNQZW9wbGUlMjBBbmFseXRpY3M=" data-listing-file-modified-sort="1792024676263" data-listing-reading-time-sort="5" data-listing-word-count-sort="860">
 <a href="../es/proyectos/radar-ausentismo/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -281,11 +287,11 @@ Radar de Ausentismo
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="UiUyQ0VzdGFkJUMzJUFEc3RpY2ElMkNDdWVzdGlvbmFyaW8lMkNUZXNpcw==" data-listing-file-modified-sort="1792022743422" data-listing-reading-time-sort="12" data-listing-word-count-sort="2336">
+<div class="g-col-1" data-index="1" data-categories="UiUyQ0VzdGFkJUMzJUFEc3RpY2ElMkNDdWVzdGlvbmFyaW8lMkNUZXNpcw==" data-listing-file-modified-sort="1792024815367" data-listing-reading-time-sort="12" data-listing-word-count-sort="2340">
 <a href="../es/proyectos/tesis-rotacion/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="../es/proyectos/tesis-rotacion/img/capa.png?v=08b3f86a" class="thumbnail-image card-img" style="height: 150px;" alt="Gráfico del efecto de cada factor en la intención de dejar la empresa">
+<img loading="lazy" src="../es/proyectos/tesis-rotacion/img/capa.png?v=6494a5b3" class="thumbnail-image card-img" style="height: 150px;" alt="Portada del caso: rotación en supermercados, consultoría estadística para una tesis de grado, con el gráfico del efecto de cada factor en la intención de irse">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -303,7 +309,7 @@ Rotación en supermercados: consultoría estadística para una tesis de grado
 
 </div>
 <div class="card-text listing-description delink">
-<p>Caso ficticio de consultoría para una tesis de grado en Administración: limpieza del cuestionario, confiabilidad, análisis factorial exploratorio, pruebas no paramétricas y…</p>
+<p>Caso ficticio de consultoría para una tesis de grado: del cuestionario a las tablas de la tesis, con todo el análisis en R.</p>
 </div>
 </div>
 </div></a>
@@ -316,7 +322,8 @@ Rotación en supermercados: consultoría estadística para una tesis de grado
 //    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
 //    Sem versão correspondente, leva para o blog do idioma (se estamos no
 //    blog), para a lista de projetos (se estamos num projeto que só existe
-//    em português) ou para a página inicial.
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
 // 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
@@ -335,13 +342,26 @@ document.addEventListener("DOMContentLoaded", function () {
     try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
   }
 
-  function versao(rotulo) {
+  function caminho(rotulo) {
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
     if (alt) return new URL(alt.href).pathname;
     if (codigos[rotulo] === atual) return location.pathname;
     if (noBlog) return blog[rotulo];
     return noProjeto ? projetos[rotulo] : inicio[rotulo];
   }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
 
   // 1. Seletor
   document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
@@ -351,6 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (item) item.classList.add("nav-idioma");
     link.classList.remove("active");
     link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
     link.hreflang = codigos[rotulo];
     link.addEventListener("click", lembrar);
     if (codigos[rotulo] === atual) {
@@ -382,6 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
     texto.appendChild(document.createTextNode(t.frase + " "));
     var link = document.createElement("a");
     link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
     link.hreflang = preferido;
     link.textContent = t.link;
     link.addEventListener("click", lembrar);
@@ -835,6 +857,75 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
   </div>
 </footer>
+<script>
+// Filtro da página de Projetos por frente de serviço (botões gerados pelo
+// shortcode {{< frentes >}}, em assets/lua/frentes.lua).
+// - Lê ?frente= do endereço e já abre com o botão certo marcado.
+// - Ao clicar, esconde os cartões de outras frentes e troca o endereço,
+//   para o link filtrado poder ser compartilhado.
+// - Avisa o seletor de idioma (evento "orbita:frente"), que leva o filtro junto.
+// Sem JavaScript, os botões ficam escondidos e a grade mostra tudo.
+document.addEventListener("DOMContentLoaded", function () {
+  var grupo = document.querySelector(".filtro-frentes");
+  var dados = document.getElementById("frentes-projetos");
+  if (!grupo || !dados) return;
+
+  var mapa = JSON.parse(dados.textContent);
+  var botoes = Array.prototype.slice.call(grupo.querySelectorAll(".filtro-frente"));
+  var cartoes = Array.prototype.slice.call(document.querySelectorAll(".quarto-listing .list > *"));
+
+  // A pasta do projeto é o último trecho do caminho do link. Num servidor, o
+  // Quarto reescreve ".../radar-absenteismo/index.html" como
+  // ".../radar-absenteismo/", então o "index.html" pode ou não estar lá.
+  function frentesDo(cartao) {
+    var link = cartao.querySelector("a[href]");
+    if (!link) return [];
+    var partes = new URL(link.href, location.href).pathname
+      .replace(/index\.html$/, "").split("/").filter(Boolean);
+    return mapa[partes[partes.length - 1]] || [];
+  }
+
+  // Esconde botões de frentes que não têm cartão na grade.
+  botoes.forEach(function (botao) {
+    var chave = botao.getAttribute("data-frente");
+    if (chave && !cartoes.some(function (c) { return frentesDo(c).indexOf(chave) >= 0; })) {
+      botao.remove();
+    }
+  });
+  botoes = botoes.filter(function (b) { return b.isConnected; });
+
+  function valida(chave) {
+    return botoes.some(function (b) { return chave && b.getAttribute("data-frente") === chave; }) ? chave : "";
+  }
+
+  function aplicar(chave, mudarEndereco) {
+    botoes.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-frente") === chave ? "true" : "false");
+    });
+    cartoes.forEach(function (c) {
+      c.hidden = chave !== "" && frentesDo(c).indexOf(chave) < 0;
+    });
+    if (mudarEndereco) {
+      var url = new URL(location.href);
+      if (chave) url.searchParams.set("frente", chave);
+      else url.searchParams.delete("frente");
+      history.replaceState(history.state, "", url);
+    }
+    window.dispatchEvent(new CustomEvent("orbita:frente"));
+  }
+
+  botoes.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      aplicar(botao.getAttribute("data-frente"), true);
+    });
+  });
+
+  var inicial = new URLSearchParams(location.search).get("frente");
+  var chave = valida(inicial);
+  aplicar(chave, inicial !== null && chave !== inicial);
+  grupo.hidden = false;
+});
+</script>
 
 
 

@@ -1,10 +1,12 @@
 ---
 title: "Rotación en supermercados: consultoría estadística para una tesis de grado"
 subtitle: "Del archivo de Google Forms a las tablas de la tesis, con cada decisión explicada."
-description: "Caso ficticio de consultoría para una tesis de grado en Administración: limpieza del cuestionario, confiabilidad, análisis factorial exploratorio, pruebas no paramétricas y regresión con errores robustos, en R."
+description: "Caso ficticio de consultoría para una tesis de grado: del cuestionario a las tablas de la tesis, con todo el análisis en R."
 image: img/capa.png
-image-alt: "Gráfico del efecto de cada factor en la intención de dejar la empresa"
+image-alt: "Portada del caso: rotación en supermercados, consultoría estadística para una tesis de grado, con el gráfico del efecto de cada factor en la intención de irse"
 categories: [R, Estadística, Cuestionario, Tesis]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [pesquisas]
 traducao: tcc
 # Tocar un gráfico lo abre en pantalla completa (en el celular quedan pequeños).
 lightbox: true
@@ -275,7 +277,7 @@ grafico_grupos(res, tx)
 #| fig-width: 9
 #| fig-height: 4.6
 grafico_coef(res, tx)
-salvar_capa(res, tx, "img/capa.png")
+salvar_capa(res, tx, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
 ```
 
 - **Liderazgo y reconocimiento son los dos factores más fuertes** (β = `r tx$num(b[["LID"]])` y `r tx$num(b[["REC"]])`). La remuneración también reduce la intención (β = `r tx$num(b[["REM"]])`). La estimación es menor, pero la prueba no confirmó la diferencia: con esta muestra, no se puede afirmar que la remuneración pese menos.

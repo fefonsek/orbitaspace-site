@@ -95,7 +95,9 @@ uma vez só:
 - `scripts/analise.R` faz toda a análise e grava `resultados/analise.rds`.
 - `scripts/rotulos.R` tem os textos dos gráficos e das tabelas em PT, ES e EN e
   o formato dos números de cada idioma (em inglês, a regra da APA: p < .001).
-- `scripts/apresentacao.R` desenha as tabelas e os gráficos.
+- `scripts/apresentacao.R` desenha as tabelas e os gráficos, e também a capa
+  de cada página (`img/capa.png`, no estilo da capa do Radar: fundo azul
+  profundo, título e um gráfico pequeno, com os textos de `rotulos.R`).
 - As páginas `projetos/caso-tcc-rotatividade/index.qmd`,
   `es/proyectos/tesis-rotacion/index.qmd` e `en/projects/thesis-turnover/index.qmd`
   só leem o `.rds` e chamam essas funções; o texto de cada uma é traduzido à mão.
@@ -118,7 +120,8 @@ _traducoes.yml                               qual página corresponde a qual nas
 _freeze/                                     resultados congelados do código R (vai para o Git)
 assets/css/orbita.scss                       tema (cores, fontes, componentes)
 assets/html/idiomas.html                     seletor PT | ES | EN, faixa de idioma, copiar e-mail
-assets/lua/                                  filtro de hreflang e shortcode da galeria
+assets/lua/                                  filtro de hreflang, shortcodes da galeria e das frentes
+assets/html/frentes.html                     filtro da página de Projetos por frente de serviço
 blog/posts/                                  posts em português
 docs/                                        site gerado (é o que vai ao ar; não edite à mão)
 _rascunhos/                                  rascunhos de texto (fora do Git)
@@ -126,6 +129,15 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
 
 ## Tarefas comuns
 
+- **Novo projeto:** além de entrar na listagem, o projeto precisa de
+  `frente:` no cabeçalho, com uma ou mais destas chaves (iguais nas três
+  línguas): `paineis`, `pesquisas`, `indicadores`. Exemplo: `frente: [paineis]`.
+  É o que alimenta os botões de filtro em Projetos (`{{< frentes >}}`) e os
+  botões "Ver projetos de..." em Serviços (`{{< ver-projetos paineis >}}`),
+  ambos em `assets/lua/frentes.lua`. Botão de frente sem projeto não aparece;
+  projeto sem `frente` ou com chave desconhecida interrompe o render. O filtro
+  aceita links como `projetos.html?frente=pesquisas`, e o seletor de idioma
+  leva o `?frente=` junto.
 - **Novo post:** crie `blog/posts/<nome>/index.qmd` com `title`, `date`,
   `description` e `categories`. Ele aparece no blog em português. Posts em
   espanhol ou inglês vão em `es/blog/posts/` ou `en/blog/posts/`.

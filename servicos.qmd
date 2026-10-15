@@ -23,6 +23,8 @@ Empresas e áreas que já têm dados (ERP, planilhas, sistemas de ponto, APIs) e
 ### Como eu trabalho
 
 Começo pelas perguntas que o painel precisa responder e pelas fontes de dados disponíveis. Mostro um primeiro protótipo cedo, ajusto com quem vai usar e só então refino o visual. Já construí painéis de jornada de trabalho com alertas de excesso de horas, de indicadores jurídicos com dados vindos por API, de infrações da frota e de inventário de EPIs.
+
+{{< ver-projetos paineis >}}
 :::
 
 ::: servico
@@ -42,6 +44,8 @@ Estudantes e pesquisadores de graduação, mestrado e doutorado que precisam ana
 ### Como eu trabalho
 
 Primeiro leio o projeto e entendo o objetivo e as hipóteses. Combinamos o plano de análise antes de rodar qualquer coisa. Você acompanha cada etapa e pode perguntar o que quiser; a pesquisa continua sendo sua.
+
+{{< ver-projetos pesquisas >}}
 :::
 
 ::: servico
@@ -60,6 +64,8 @@ Empresas em que cada área calcula o mesmo indicador de um jeito, ou que acompan
 ### Como eu trabalho
 
 Converso com quem produz e com quem usa os números, levanto o que já existe e proponho um conjunto enxuto. Na Prumo Engenharia, fiz curadoria e governança de indicadores de várias áreas; é desse trabalho que vem o método.
+
+{{< ver-projetos indicadores >}}
 :::
 
 ::: cta-final

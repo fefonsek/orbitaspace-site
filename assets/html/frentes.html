@@ -1,0 +1,69 @@
+<script>
+// Filtro da página de Projetos por frente de serviço (botões gerados pelo
+// shortcode {{< frentes >}}, em assets/lua/frentes.lua).
+// - Lê ?frente= do endereço e já abre com o botão certo marcado.
+// - Ao clicar, esconde os cartões de outras frentes e troca o endereço,
+//   para o link filtrado poder ser compartilhado.
+// - Avisa o seletor de idioma (evento "orbita:frente"), que leva o filtro junto.
+// Sem JavaScript, os botões ficam escondidos e a grade mostra tudo.
+document.addEventListener("DOMContentLoaded", function () {
+  var grupo = document.querySelector(".filtro-frentes");
+  var dados = document.getElementById("frentes-projetos");
+  if (!grupo || !dados) return;
+
+  var mapa = JSON.parse(dados.textContent);
+  var botoes = Array.prototype.slice.call(grupo.querySelectorAll(".filtro-frente"));
+  var cartoes = Array.prototype.slice.call(document.querySelectorAll(".quarto-listing .list > *"));
+
+  // A pasta do projeto é o último trecho do caminho do link. Num servidor, o
+  // Quarto reescreve ".../radar-absenteismo/index.html" como
+  // ".../radar-absenteismo/", então o "index.html" pode ou não estar lá.
+  function frentesDo(cartao) {
+    var link = cartao.querySelector("a[href]");
+    if (!link) return [];
+    var partes = new URL(link.href, location.href).pathname
+      .replace(/index\.html$/, "").split("/").filter(Boolean);
+    return mapa[partes[partes.length - 1]] || [];
+  }
+
+  // Esconde botões de frentes que não têm cartão na grade.
+  botoes.forEach(function (botao) {
+    var chave = botao.getAttribute("data-frente");
+    if (chave && !cartoes.some(function (c) { return frentesDo(c).indexOf(chave) >= 0; })) {
+      botao.remove();
+    }
+  });
+  botoes = botoes.filter(function (b) { return b.isConnected; });
+
+  function valida(chave) {
+    return botoes.some(function (b) { return chave && b.getAttribute("data-frente") === chave; }) ? chave : "";
+  }
+
+  function aplicar(chave, mudarEndereco) {
+    botoes.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-frente") === chave ? "true" : "false");
+    });
+    cartoes.forEach(function (c) {
+      c.hidden = chave !== "" && frentesDo(c).indexOf(chave) < 0;
+    });
+    if (mudarEndereco) {
+      var url = new URL(location.href);
+      if (chave) url.searchParams.set("frente", chave);
+      else url.searchParams.delete("frente");
+      history.replaceState(history.state, "", url);
+    }
+    window.dispatchEvent(new CustomEvent("orbita:frente"));
+  }
+
+  botoes.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      aplicar(botao.getAttribute("data-frente"), true);
+    });
+  });
+
+  var inicial = new URLSearchParams(location.search).get("frente");
+  var chave = valida(inicial);
+  aplicar(chave, inicial !== null && chave !== inicial);
+  grupo.hidden = false;
+});
+</script>

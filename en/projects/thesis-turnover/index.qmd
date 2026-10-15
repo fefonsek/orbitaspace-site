@@ -1,10 +1,12 @@
 ---
 title: "Employee turnover in supermarkets: statistical consulting for an undergraduate thesis"
 subtitle: "From the Google Forms export to the thesis tables, with every decision explained."
-description: "Fictional consulting case for an undergraduate thesis in Business Administration: survey cleaning, reliability, exploratory factor analysis, non-parametric tests and regression with robust standard errors, in R."
+description: "Fictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R."
 image: img/capa.png
-image-alt: "Chart of each factor's effect on the intention to leave the company"
+image-alt: "Case cover: employee turnover in supermarkets, statistical consulting for an undergraduate thesis, with the chart of each factor's effect on the intention to leave"
 categories: [R, Statistics, Survey, Thesis]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [pesquisas]
 traducao: tcc
 # Tapping a chart opens it full screen (on phones the charts are small).
 lightbox: true
@@ -275,7 +277,7 @@ grafico_grupos(res, tx)
 #| fig-width: 9
 #| fig-height: 4.6
 grafico_coef(res, tx)
-salvar_capa(res, tx, "img/capa.png")
+salvar_capa(res, tx, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
 ```
 
 - **Leadership and recognition are the two strongest factors** (β = `r tx$num(b[["LID"]])` and `r tx$num(b[["REC"]])`). Pay also reduces the intention (β = `r tx$num(b[["REM"]])`). The estimate is smaller, but the test did not confirm the difference: with this sample, you cannot claim that pay matters less.

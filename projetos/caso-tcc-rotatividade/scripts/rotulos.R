@@ -66,6 +66,11 @@ rotulos <- function(idioma = c("pt", "es", "en")) {
       g_turno = "Turno", g_tempo = "Tempo de casa", g_eixo_int = "Intenção de sair (1 a 5)",
       g_detectado = "Efeito detectado (p < 0,05)", g_sem_efeito = "Sem efeito detectado",
       g_eixo_coef = "Efeito na intenção de sair (em desvios-padrão)",
+      capa_titulo = "Rotatividade\nem supermercados",
+      capa_subtitulo = "Consultoria estatística\npara um TCC",
+      capa_frase = "Do questionário às tabelas do trabalho,\ncom toda a análise em R.",
+      capa_grafico = "Efeito na intenção de sair",
+      capa_rodape = "Dados 100% fictícios, gerados para portfólio · Felipe Fonseca · @fefonsek",
       gtsummary = "pt"
     ),
     es = list(
@@ -130,6 +135,11 @@ rotulos <- function(idioma = c("pt", "es", "en")) {
       g_turno = "Turno", g_tempo = "Antigüedad", g_eixo_int = "Intención de irse (1 a 5)",
       g_detectado = "Efecto detectado (p < 0,05)", g_sem_efeito = "Sin efecto detectado",
       g_eixo_coef = "Efecto en la intención de irse (en desviaciones estándar)",
+      capa_titulo = "Rotación\nen supermercados",
+      capa_subtitulo = "Consultoría estadística\npara una tesis de grado",
+      capa_frase = "Del cuestionario a las tablas de la tesis,\ncon todo el análisis en R.",
+      capa_grafico = "Efecto en la intención de irse",
+      capa_rodape = "Datos 100% ficticios, generados para portafolio · Felipe Fonseca · @fefonsek",
       gtsummary = "es"
     ),
     en = list(
@@ -191,6 +201,11 @@ rotulos <- function(idioma = c("pt", "es", "en")) {
       g_turno = "Shift", g_tempo = "Tenure", g_eixo_int = "Intention to leave (1 to 5)",
       g_detectado = "Effect detected (p < .05)", g_sem_efeito = "No effect detected",
       g_eixo_coef = "Effect on intention to leave (in standard deviations)",
+      capa_titulo = "Employee turnover\nin supermarkets",
+      capa_subtitulo = "Statistical consulting\nfor an undergraduate thesis",
+      capa_frase = "From the survey to the thesis tables,\nwith the whole analysis in R.",
+      capa_grafico = "Effect on intention to leave",
+      capa_rodape = "100% fictional data, generated for a portfolio · Felipe Fonseca · @fefonsek",
       gtsummary = "en"
     )
   )

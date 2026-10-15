@@ -5,6 +5,8 @@ description: "A Power BI dashboard that shows why a stable absenteeism rate was 
 image: ../../../projetos/radar-absenteismo/img/compartilhamento.jpg
 image-alt: "Cover of the Absenteeism Radar dashboard"
 categories: [Power BI, DAX, Statistics, People Analytics]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [paineis]
 traducao: radar
 # Seções ocultas até existirem o vídeo e o repositório do painel.
 # Para reativar, troque false por true (veja o README).

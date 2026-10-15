@@ -15,3 +15,5 @@ listing:
 ---
 
 Trabalhos que posso mostrar por inteiro. Os projetos feitos para empresas ficam de fora por confidencialidade; por isso os exemplos aqui usam dados fictícios, construídos para reproduzir problemas reais.
+
+{{< frentes >}}

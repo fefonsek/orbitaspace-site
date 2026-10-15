@@ -136,6 +136,38 @@ p, li { max-width: 72ch; }
   &:hover { color: $branco; }
 }
 
+// Filtro de Projetos por frente de serviço (assets/lua/frentes.lua).
+.filtro-frentes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.filtro-frente {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $azul-profundo;
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+  &:hover { border-color: $azul-medio; }
+  &:focus-visible { outline: 2px solid $azul-medio; outline-offset: 2px; }
+  &[aria-pressed="true"] {
+    color: $branco;
+    background: $azul-profundo;
+    border-color: $azul-profundo;
+  }
+}
+.quarto-listing .list > [hidden] { display: none !important; }
+
+// Botão "Ver projetos de..." no fim de cada serviço.
+.ver-projetos { margin: 1.25rem 0 0; }
+
 // Cartões: brancos sobre o creme, borda lavanda.
 .cartao {
   background: $branco;

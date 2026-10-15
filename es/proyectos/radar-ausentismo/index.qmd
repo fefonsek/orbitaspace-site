@@ -5,6 +5,8 @@ description: "Tablero en Power BI que muestra por qué una tasa de ausentismo es
 image: ../../../projetos/radar-absenteismo/img/compartilhamento.jpg
 image-alt: "Portada del tablero Radar de Ausentismo"
 categories: [Power BI, DAX, Estadística, People Analytics]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [paineis]
 traducao: radar
 # Seções ocultas até existirem o vídeo e o repositório do painel.
 # Para reativar, troque false por true (veja o README).

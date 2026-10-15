@@ -1,10 +1,12 @@
 ---
 title: "Rotatividade em supermercados: consultoria estatística para um TCC"
 subtitle: "Do arquivo do Google Forms às tabelas do trabalho, com cada decisão explicada."
-description: "Caso fictício de consultoria para um TCC de Administração: limpeza do questionário, confiabilidade, fatorial exploratória, testes não paramétricos e regressão com erros robustos, em R."
+description: "Caso fictício de consultoria para um TCC: do questionário às tabelas do trabalho, com toda a análise em R."
 image: img/capa.png
-image-alt: "Gráfico do efeito de cada fator na intenção de sair da empresa"
+image-alt: "Capa do caso: rotatividade em supermercados, consultoria estatística para um TCC, com o gráfico do efeito de cada fator na intenção de sair"
 categories: [R, Estatística, Questionário, TCC]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
+frente: [pesquisas]
 traducao: tcc
 # Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
 lightbox: true
@@ -273,7 +275,7 @@ grafico_grupos(res, tx)
 #| fig-width: 9
 #| fig-height: 4.6
 grafico_coef(res, tx)
-salvar_capa(res, tx, "img/capa.png")
+salvar_capa(res, tx, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
 ```
 
 - **Liderança e reconhecimento são os dois fatores mais fortes** (β = `r tx$num(b[["LID"]])` e `r tx$num(b[["REC"]])`). Remuneração também reduz a intenção (β = `r tx$num(b[["REM"]])`). A estimativa é menor, mas o teste não confirmou a diferença: com esta amostra, não dá para afirmar que remuneração pesa menos.

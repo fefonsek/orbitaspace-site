@@ -24,6 +24,8 @@ Companies and teams that already have data (ERP, spreadsheets, timekeeping syste
 ### How I work
 
 I start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory.
+
+{{< ver-projetos paineis >}}
 :::
 
 ::: servico
@@ -43,6 +45,8 @@ Undergraduate, master's and doctoral students and researchers who need to analyz
 ### How I work
 
 First I read your proposal and understand the goal and the hypotheses. We agree on the analysis plan before running anything. You follow every step and can ask anything you like; the research stays yours.
+
+{{< ver-projetos pesquisas >}}
 :::
 
 ::: servico
@@ -61,6 +65,8 @@ Companies where each department calculates the same KPI its own way, or that tra
 ### How I work
 
 I talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.
+
+{{< ver-projetos indicadores >}}
 :::
 
 ::: cta-final

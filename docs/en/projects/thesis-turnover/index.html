@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Fictional consulting case for an undergraduate thesis in Business Administration: survey cleaning, reliability, exploratory factor analysis, non-parametric tests and regression with robust standard errors, in R.">
+<meta name="description" content="Fictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.">
 
 <title>Employee turnover in supermarkets: statistical consulting for an undergraduate thesis · Orbita Space</title>
 <style>
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-4d1cfbc4039a6457f8ab7eb1c353d748.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-98ba39c84da2be4231e8b3546653f2d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -122,12 +122,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Employee turnover in supermarkets: statistical consulting for an undergraduate thesis · Orbita Space">
-<meta property="og:description" content="Fictional consulting case for an undergraduate thesis in Business Administration: survey cleaning, reliability, exploratory factor analysis, non-parametric tests and regression with robust standard errors, in R.">
-<meta property="og:image" content="https://orbitaspace.com.br/en/projects/thesis-turnover/img/capa.png?v=c89b3863">
+<meta property="og:description" content="Fictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.">
+<meta property="og:image" content="https://orbitaspace.com.br/en/projects/thesis-turnover/img/capa.png?v=b18db4e9">
 <meta property="og:site_name" content="Orbita Space">
 <meta property="og:image:height" content="675">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:alt" content="Chart of each factor's effect on the intention to leave the company">
+<meta property="og:image:alt" content="Case cover: employee turnover in supermarkets, statistical consulting for an undergraduate thesis, with the chart of each factor's effect on the intention to leave">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Fictional consulting case for an undergraduate thesis in Business Administration: survey cleaning, reliability, exploratory factor analysis, non-parametric tests and regression with robust standard errors, in R.
+    Fictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R.
   </div>
 </div>
 
@@ -1327,12 +1327,58 @@ Figure&nbsp;2: Turnover intention by shift and by tenure
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"top"</span>, <span class="at">legend.justification =</span> <span class="st">"left"</span>)</span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># A mesma figura, maior, vira a capa da página na listagem e no compartilhamento.</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>salvar_capa <span class="ot">&lt;-</span> <span class="cf">function</span>(res, tx, <span class="at">arquivo =</span> <span class="st">"img/capa.png"</span>) {</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="fu">dirname</span>(arquivo), <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(arquivo, <span class="fu">grafico_coef</span>(res, tx, <span class="at">base =</span> <span class="dv">15</span>, <span class="at">rotulo =</span> <span class="fl">4.6</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">30</span>)),</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">width =</span> <span class="dv">1200</span>, <span class="at">height =</span> <span class="dv">675</span>, <span class="at">units =</span> <span class="st">"px"</span>, <span class="at">dpi =</span> <span class="dv">110</span>, <span class="at">device =</span> ragg<span class="sc">::</span>agg_png, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Capa da página (listagem e compartilhamento), no estilo da capa do Radar:</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co"># fundo azul profundo, logo, título, subtítulo e uma versão pequena do gráfico</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co"># de coeficientes. A listagem mostra só a faixa do meio da imagem (cerca de</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 2/3 da altura), então título e gráfico ficam nessa faixa.</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>salvar_capa <span class="ot">&lt;-</span> <span class="cf">function</span>(res, tx, <span class="at">arquivo =</span> <span class="st">"img/capa.png"</span>, logo) {</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  claro <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">texto =</span> <span class="st">"#ffffff"</span>, <span class="at">sub =</span> <span class="st">"#cacfee"</span>, <span class="at">apoio =</span> <span class="st">"#9aa3c7"</span>, <span class="at">linha =</span> <span class="st">"#34344f"</span>,</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>             <span class="at">detectado =</span> <span class="st">"#9dbde8"</span>, <span class="at">sem_efeito =</span> <span class="st">"#6b7299"</span>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>  grafico <span class="ot">&lt;-</span> res<span class="sc">$</span>resultado <span class="sc">|&gt;</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">nome =</span> <span class="fu">factor</span>(tx<span class="sc">$</span>termos[termo], <span class="fu">rev</span>(tx<span class="sc">$</span>termos[termo])),</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>           <span class="at">detectado =</span> p <span class="sc">&lt;</span> <span class="fl">0.05</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> beta, <span class="at">y =</span> nome, <span class="at">colour =</span> detectado)) <span class="sc">+</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> claro[[<span class="st">"apoio"</span>]], <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> li, <span class="at">xmax =</span> ls), <span class="at">width =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">3.8</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> cor[[<span class="st">"profundo"</span>]], <span class="at">stroke =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">TRUE</span><span class="st">`</span> <span class="ot">=</span> claro[[<span class="st">"detectado"</span>]], <span class="st">`</span><span class="at">FALSE</span><span class="st">`</span> <span class="ot">=</span> claro[[<span class="st">"sem_efeito"</span>]]), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> \(x) tx<span class="sc">$</span><span class="fu">num</span>(x)) <span class="sc">+</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> tx<span class="sc">$</span>capa_grafico, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Montserrat"</span>, <span class="at">base_size =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> claro[[<span class="st">"sub"</span>]]),</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> claro[[<span class="st">"sub"</span>]], <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> claro[[<span class="st">"apoio"</span>]], <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> claro[[<span class="st">"apoio"</span>]], <span class="at">size =</span> <span class="dv">14</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> claro[[<span class="st">"linha"</span>]], <span class="at">linewidth =</span> <span class="fl">0.5</span>),</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_blank</span>(), <span class="at">panel.background =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>  texto <span class="ot">&lt;-</span> <span class="cf">function</span>(rotulo, y, tamanho, cor_texto, <span class="at">peso =</span> <span class="st">"plain"</span>, <span class="at">altura =</span> <span class="fl">1.15</span>) {</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>    grid<span class="sc">::</span><span class="fu">grid.text</span>(rotulo, <span class="at">x =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">72</span>, <span class="st">"native"</span>), <span class="at">y =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">675</span> <span class="sc">-</span> y, <span class="st">"native"</span>),</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>                    <span class="at">just =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"top"</span>),</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>                    <span class="at">gp =</span> grid<span class="sc">::</span><span class="fu">gpar</span>(<span class="at">fontfamily =</span> <span class="st">"Montserrat"</span>, <span class="at">fontface =</span> peso, <span class="at">fontsize =</span> tamanho,</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">col =</span> cor_texto, <span class="at">lineheight =</span> altura),</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>                    <span class="at">vp =</span> grid<span class="sc">::</span><span class="fu">viewport</span>(<span class="at">xscale =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1200</span>), <span class="at">yscale =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">675</span>)))</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="fu">dirname</span>(arquivo), <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>  ragg<span class="sc">::</span><span class="fu">agg_png</span>(arquivo, <span class="at">width =</span> <span class="dv">1200</span>, <span class="at">height =</span> <span class="dv">675</span>, <span class="at">res =</span> <span class="dv">72</span>, <span class="at">background =</span> cor[[<span class="st">"profundo"</span>]])</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(grDevices<span class="sc">::</span><span class="fu">dev.off</span>())</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>  grid<span class="sc">::</span><span class="fu">grid.raster</span>(png<span class="sc">::</span><span class="fu">readPNG</span>(logo), <span class="at">x =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">72</span>, <span class="st">"points"</span>), <span class="at">y =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">675</span> <span class="sc">-</span> <span class="dv">48</span>, <span class="st">"points"</span>),</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>                    <span class="at">width =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">64</span>, <span class="st">"points"</span>), <span class="at">just =</span> <span class="fu">c</span>(<span class="st">"left"</span>, <span class="st">"top"</span>))</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>  linhas <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">lengths</span>(<span class="fu">strsplit</span>(x, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>  y_titulo <span class="ot">&lt;-</span> <span class="dv">175</span></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">texto</span>(tx<span class="sc">$</span>capa_titulo, y_titulo, <span class="dv">46</span>, claro[[<span class="st">"texto"</span>]], <span class="st">"bold"</span>, <span class="fl">1.1</span>)</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>  y_sub <span class="ot">&lt;-</span> y_titulo <span class="sc">+</span> <span class="dv">51</span> <span class="sc">*</span> <span class="fu">linhas</span>(tx<span class="sc">$</span>capa_titulo) <span class="sc">+</span> <span class="dv">22</span></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">texto</span>(tx<span class="sc">$</span>capa_subtitulo, y_sub, <span class="dv">22</span>, claro[[<span class="st">"sub"</span>]], <span class="at">altura =</span> <span class="fl">1.25</span>)</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>  y_frase <span class="ot">&lt;-</span> y_sub <span class="sc">+</span> <span class="dv">28</span> <span class="sc">*</span> <span class="fu">linhas</span>(tx<span class="sc">$</span>capa_subtitulo) <span class="sc">+</span> <span class="dv">26</span></span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">texto</span>(tx<span class="sc">$</span>capa_frase, y_frase, <span class="dv">17</span>, claro[[<span class="st">"apoio"</span>]], <span class="at">altura =</span> <span class="fl">1.4</span>)</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">texto</span>(tx<span class="sc">$</span>capa_rodape, <span class="dv">630</span>, <span class="dv">12</span>, claro[[<span class="st">"apoio"</span>]])</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(grafico, <span class="at">vp =</span> grid<span class="sc">::</span><span class="fu">viewport</span>(<span class="at">x =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">1150</span>, <span class="st">"points"</span>), <span class="at">y =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">675</span> <span class="sc">/</span> <span class="dv">2</span>, <span class="st">"points"</span>),</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">width =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">500</span>, <span class="st">"points"</span>), <span class="at">height =</span> grid<span class="sc">::</span><span class="fu">unit</span>(<span class="dv">410</span>, <span class="st">"points"</span>),</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">just =</span> <span class="fu">c</span>(<span class="st">"right"</span>, <span class="st">"center"</span>)))</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell" data-layout-align="center">
@@ -1530,7 +1576,8 @@ Table&nbsp;9: Multiple linear regression of turnover intention
 //    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
 //    Sem versão correspondente, leva para o blog do idioma (se estamos no
 //    blog), para a lista de projetos (se estamos num projeto que só existe
-//    em português) ou para a página inicial.
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
 // 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
@@ -1549,13 +1596,26 @@ document.addEventListener("DOMContentLoaded", function () {
     try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
   }
 
-  function versao(rotulo) {
+  function caminho(rotulo) {
     var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
     if (alt) return new URL(alt.href).pathname;
     if (codigos[rotulo] === atual) return location.pathname;
     if (noBlog) return blog[rotulo];
     return noProjeto ? projetos[rotulo] : inicio[rotulo];
   }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
 
   // 1. Seletor
   document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
@@ -1565,6 +1625,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (item) item.classList.add("nav-idioma");
     link.classList.remove("active");
     link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
     link.hreflang = codigos[rotulo];
     link.addEventListener("click", lembrar);
     if (codigos[rotulo] === atual) {
@@ -1596,6 +1657,7 @@ document.addEventListener("DOMContentLoaded", function () {
     texto.appendChild(document.createTextNode(t.frase + " "));
     var link = document.createElement("a");
     link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
     link.hreflang = preferido;
     link.textContent = t.link;
     link.addEventListener("click", lembrar);
