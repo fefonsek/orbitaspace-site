@@ -1,7 +1,7 @@
 ---
 traducao: inicio
 pagetitle: "Orbita Space · Felipe Fonseca, Consultor de Datos"
-description: "Orbita Space, consultoría de datos de Felipe Fonseca, con base en Brasil. Tableros en Power BI, análisis estadístico para tesis y consultoría en indicadores, con atención remota."
+description: "Orbita Space, consultoría de datos de Felipe Fonseca, con base en Brasil. Tableros en Power BI, análisis estadístico para tesis, consultoría en indicadores e informes y auditorías de datos, con atención remota."
 page-layout: full
 title-block-banner: false
 ---
@@ -56,6 +56,11 @@ Planificación, análisis e interpretación de resultados para tesis de grado, m
 ::: cartao
 ### [Consultoría en indicadores](servicios.qmd#indicadores)
 Definir qué medir, cómo calcularlo y quién responde por cada número.
+:::
+
+::: cartao
+### [Informes y auditorías de datos](proyectos.html?frente=relatorios)
+Una respuesta precisa sobre un problema concreto, con un informe en HTML y PDF y la lista de casos a revisar.
 :::
 :::
 

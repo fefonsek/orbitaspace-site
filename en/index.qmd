@@ -1,7 +1,7 @@
 ---
 traducao: inicio
 pagetitle: "Orbita Space · Felipe Fonseca, Data Consultant"
-description: "Orbita Space is Felipe Fonseca's data consultancy, based in Brazil. Power BI dashboards, statistical analysis for theses and dissertations, and KPI consulting, all done remotely."
+description: "Orbita Space is Felipe Fonseca's data consultancy, based in Brazil. Power BI dashboards, statistical analysis for theses and dissertations, KPI consulting, and data reports and audits, all done remotely."
 page-layout: full
 title-block-banner: false
 ---
@@ -56,6 +56,11 @@ Planning, analysis and interpretation of results for undergraduate theses, maste
 ::: cartao
 ### [KPI consulting](services.qmd#kpis)
 Deciding what to measure, how to calculate it and who owns each number.
+:::
+
+::: cartao
+### [Data reports and audits](projects.html?frente=relatorios)
+A precise answer about a concrete problem, with a report in HTML and PDF and a list of cases to review.
 :::
 :::
 

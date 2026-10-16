@@ -1,7 +1,7 @@
 ---
 traducao: inicio
 pagetitle: "Orbita Space · Felipe Fonseca, Consultor de Dados"
-description: "Orbita Space, consultoria de dados de Felipe Fonseca em Formiga, MG. Painéis em Power BI, análise estatística para pesquisas acadêmicas e consultoria em indicadores, com atendimento remoto."
+description: "Orbita Space, consultoria de dados de Felipe Fonseca em Formiga, MG. Painéis em Power BI, análise estatística para pesquisas acadêmicas, consultoria em indicadores e relatórios e auditorias de dados, com atendimento remoto."
 page-layout: full
 title-block-banner: false
 ---
@@ -56,6 +56,11 @@ Planejamento, análise e interpretação dos resultados de TCC, dissertação e 
 ::: cartao
 ### [Consultoria em indicadores](servicos.qmd#indicadores)
 Definir o que medir, como calcular e quem responde por cada número.
+:::
+
+::: cartao
+### [Relatórios e auditorias de dados](projetos.html?frente=relatorios)
+Uma resposta precisa sobre um problema concreto, com relatório em HTML e PDF e a lista de casos para revisar.
 :::
 :::
 
