@@ -231,6 +231,19 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   - O vídeo é em português; em ES e EN, a linha
     `[Video en portugués.]{.nota-idioma .nota-video}` (ou `Video in
     Portuguese.`) fica logo abaixo dele.
+- **Painel interativo do Radar:** a seção "Explore o painel" fica logo abaixo
+  do vídeo nas mesmas três páginas e liga com `mostrar-painel: true` no
+  cabeçalho (`false` esconde).
+  - O link "Publicar na Web" do Power BI fica num lugar só: a chave
+    `painel-pbi` do `_quarto.yml`. Para trocar o painel, troque esse link.
+  - O shortcode `{{< painel-pbi titulo="..." botao="..." >}}`
+    (`assets/lua/painel_pbi.lua`) monta a seção: no computador, um iframe
+    16:9 mais 40 px para a barra inferior do Power BI; no celular (até
+    600 px), um botão que abre o painel numa nova aba. `titulo` é o nome do
+    iframe lido por leitores de tela e `botao` é o texto do botão.
+  - O painel é em português; em ES e EN, a linha
+    `[Tablero en portugués.]{.nota-idioma .nota-painel}` (ou `Dashboard in
+    Portuguese.`) fica logo abaixo dele.
 - **Trocar a foto:** substitua `assets/img/felipe-original.jpeg`, ajuste as
   medidas do rosto em `scripts/preparar_imagens.py` (função `foto`) e rode o
   script e o `render.ps1`.

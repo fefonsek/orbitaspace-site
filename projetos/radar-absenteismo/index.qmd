@@ -11,6 +11,7 @@ traducao: radar
 # Seções de vídeo e de repositório do painel: true mostra, false esconde
 # (veja o README).
 mostrar-video: true
+mostrar-painel: true
 mostrar-repositorio: true
 lightbox: true
 galeria-pasta: img
@@ -41,6 +42,14 @@ galeria:
 <iframe src="https://www.youtube-nocookie.com/embed/LmRny3-oi3o" title="Vídeo: resumo do Radar de Absenteísmo" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
+:::
+
+::: {.content-visible when-meta="mostrar-painel"}
+## Explore o painel
+
+O painel abaixo é interativo: clique nos filtros e navegue pelas páginas. Os dados são fictícios.
+
+{{< painel-pbi titulo="Painel interativo do Radar de Absenteísmo no Power BI" botao="Abrir o painel em tela cheia" >}}
 :::
 
 ## O problema

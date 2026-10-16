@@ -71,3 +71,8 @@ filters:
 shortcodes:
   - assets/lua/galeria.lua
   - assets/lua/frentes.lua
+  - assets/lua/painel_pbi.lua
+
+# Link "Publicar na Web" do painel do Radar, usado pelo shortcode
+# {{< painel-pbi >}} nas três páginas do projeto (veja o README).
+painel-pbi: "https://app.powerbi.com/view?r=eyJrIjoiZjViNTBjOWEtNmQ3OC00ODc5LWI3MzItYTA3NWUxNDc1YzU4IiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9"

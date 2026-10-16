@@ -11,6 +11,7 @@ traducao: radar
 # Seções de vídeo e de repositório do painel: true mostra, false esconde
 # (veja o README).
 mostrar-video: true
+mostrar-painel: true
 mostrar-repositorio: true
 lightbox: true
 galeria-pasta: ../../../projetos/radar-absenteismo/img
@@ -45,6 +46,16 @@ galeria:
 ```
 
 [Video en portugués.]{.nota-idioma .nota-video}
+:::
+
+::: {.content-visible when-meta="mostrar-painel"}
+## Explora el tablero
+
+El tablero de abajo es interactivo: haz clic en los filtros y navega por las páginas. Los datos son ficticios.
+
+{{< painel-pbi titulo="Tablero interactivo del Radar de Ausentismo en Power BI" botao="Abrir el tablero en pantalla completa" >}}
+
+[Tablero en portugués.]{.nota-idioma .nota-painel}
 :::
 
 ## El problema

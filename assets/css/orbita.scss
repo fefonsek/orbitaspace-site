@@ -450,6 +450,22 @@ $cinza-escuro-texto: #4a4a63;
 }
 .video + p:has(> .nota-video) { margin-top: -1.5rem; margin-bottom: 2rem; }
 
+// Painel do Power BI ("Publicar na Web"): página 16:9 mais 60 px para a linha
+// de zoom e a barra inferior do Power BI, sem rolagem nem faixas laterais.
+// No celular vira um botão (.so-celular).
+.painel-pbi {
+  position: relative;
+  padding-top: calc(56.25% + 60px);
+  margin: 1.25rem 0 2rem;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background: $branco;
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+}
+.painel-pbi-botao + p:has(> .nota-painel) { margin-top: -1.5rem; margin-bottom: 2rem; }
+.painel-pbi-botao { margin: 1.25rem 0 2rem; }
+
 .marcador-link {
   display: inline-block;
   font-weight: 600;
