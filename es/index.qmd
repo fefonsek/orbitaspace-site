@@ -11,7 +11,7 @@ title-block-banner: false
 
 [por Felipe Fonseca · Consultor de Datos | Estadística y BI]{.hero-titulo}
 
-[Ayudo a empresas e investigadores a pasar de una hoja de cálculo con números sueltos a una respuesta clara: un tablero que muestra dónde actuar, un análisis que resiste la revisión de un jurado, un indicador que todos calculan de la misma manera.]{.hero-frase}
+[Ayudo a empresas e investigadores a pasar de una hoja de cálculo con números sueltos a una respuesta clara: un tablero que muestra dónde actuar, un análisis que resiste la revisión de un jurado, un indicador que todos calculan de la misma manera, un informe que responde a una pregunta concreta.]{.hero-frase}
 
 ::: botoes
 [Ver proyectos](proyectos.qmd){.btn .btn-primary}
@@ -59,7 +59,7 @@ Definir qué medir, cómo calcularlo y quién responde por cada número.
 :::
 
 ::: cartao
-### [Informes y auditorías de datos](proyectos.html?frente=relatorios)
+### [Informes y auditorías de datos](servicios.qmd#informes)
 Una respuesta precisa sobre un problema concreto, con un informe en HTML y PDF y la lista de casos a revisar.
 :::
 :::
