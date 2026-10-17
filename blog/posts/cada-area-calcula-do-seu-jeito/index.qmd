@@ -6,6 +6,7 @@ categories: [Indicadores, Governança de indicadores, Gestão]
 image: ../../../projetos/governanca-indicadores/img/taxas_mini.jpg
 image-alt: "Gráfico do caso Um número, três respostas: a taxa de absenteísmo calculada pelo RH, pela Operação e pelo Financeiro, mês a mês, com três linhas separadas"
 draft: false
+traducao: post-indicadores
 ---
 
 Julho de 2025, reunião mensal de resultados. A pauta pedia uma coisa simples: entender a taxa de absenteísmo de junho. O RH abriu a apresentação com 4,38%. A Operação, logo depois, mostrou 3,54%. O Financeiro tinha 2,15% na planilha que circulou antes da reunião. Três áreas, o mesmo mês, o mesmo indicador e três números diferentes.

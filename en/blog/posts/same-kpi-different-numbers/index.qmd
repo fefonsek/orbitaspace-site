@@ -1,0 +1,70 @@
+---
+title: "When every department calculates the same KPI its own way"
+description: "The cost of KPIs with no owner, and how to start fixing it without red tape."
+date: 2026-10-17
+categories: [KPIs, KPI governance, Management]
+image: ../../../projects/kpi-governance/img/taxas_mini.jpg
+image-alt: "Chart from the One number, three answers case: the absenteeism rate as calculated by HR, Operations and Finance, month by month, as three separate lines"
+draft: false
+traducao: post-indicadores
+---
+
+July 2025, the monthly results meeting. The agenda asked for something simple: understand the June absenteeism rate. HR opened its presentation with 4.38%. Operations, right after, showed 3.54%. Finance had 2.15% in the spreadsheet that went around before the meeting. Three departments, the same month, the same KPI and three different numbers.
+
+Much of the meeting went into trying to figure out which one was right. Nobody left with a decision about absenteeism. They left with a task, "align the numbers," before the next meeting, where the scene played out again.
+
+The scene comes from a demo case in my portfolio, built on fictional data. But anyone who has sat through a results meeting will probably recognize it.
+
+## The cost nobody puts in the spreadsheet
+
+A KPI with three versions never shows up as an expense anywhere, so it tends to be treated as a minor annoyance. But it is expensive, in several ways at once.
+
+It costs the time of expensive people: directors and managers arguing about where the number came from instead of what to do about it. It costs delayed decisions, because nobody wants to act on data that another department disputes. It costs trust, which is the hardest loss to recover: after a few meetings like that, every new number arrives with the question "but whose number is this?" And it costs rework, because each department starts keeping its own dashboard, its own spreadsheet and its own calculation, partly to protect itself in the next argument.
+
+The end result is an odd one. The company invests in systems, dashboards and reports to make better decisions, and ends up making them more slowly.
+
+## Nobody was wrong
+
+The most important detail in the scene is that all three numbers were right. Each department started from a reasonable choice for its own work: what counts as an absence, whether long-term absences are included, whether the base is scheduled hours or days worked, which people belong in the denominator. HR was looking at people's health, Operations at team coverage, Finance at cost.
+
+The problem was not the math. It was the lack of three things: an official definition, a person responsible for it and a rule for changing it. Without them, each department fills the gap its own way, and every one of them has good arguments.
+
+That is why the fix is rarely technical. A new dashboard, prettier or faster, just shows the same three versions in more colors.
+
+## What KPI governance looks like in practice
+
+The word governance scares people, because it brings to mind committees, policies and documents nobody reads. In practice, for KPIs, it comes down to a few pieces.
+
+The first is a **definition sheet** for each KPI: what it measures, the formula, where the data comes from, how often it is updated and what the target is. One page per KPI is enough.
+
+The second is an **owner**. Not the person who calculates the number, but the person who answers for the definition: they decide what goes in and what stays out, and they are the one others turn to when a question comes up.
+
+The third is a **version log**. Definitions change, and they should when the business changes. What cannot happen is a change nobody knows about. Every change gets a version number, a date and a reason.
+
+The fourth is **a single place** where the official definition lives. It can be a shared document, an intranet page or a tab in the dashboard itself. What matters is that, whenever a question comes up, everyone knows where to look.
+
+## What changes afterward
+
+In the case, leadership asked for a full inventory at the end of the year. It found 40 KPIs in use, scattered across dashboards, spreadsheets and presentations. Only 13 had a definition clear enough for two people to arrive at the same number.
+
+After the review, 14 stayed as leadership KPIs, 14 moved to the department level, 6 were merged because they measured the same thing under different names and 6 were discontinued because nobody used them to decide anything. The first version of the definition sheets came out in January, and the first revisions followed in the months after, already on record.
+
+The company started looking at fewer numbers, and talking more about what they said.
+
+## How to start tomorrow
+
+You do not need a big project to take the first step. Three moves are enough to change the mood of the meetings.
+
+First, **list the KPIs that exist today**: name, where each one appears, who calculates it and what it is used for. The list is usually longer than anyone expects, and simply having it already exposes duplicates.
+
+Second, **write the definition sheet for the ten most used KPIs** in results meetings. You do not have to start with all of them. The ten that cause the most arguments are the ones that give back the most time once they are clear.
+
+Third, **agree on who can change a definition and how the change is recorded**. A simple rule, approved by leadership, keeps the next version from being born quietly inside a spreadsheet.
+
+After that, the dashboard goes back to doing its job: showing a number everyone trusts, so the meeting can be about what to do.
+
+---
+
+The full case, with the inventory of all 40 KPIs, the definition sheets and the three definitions calculated side by side, is in [One number, three answers](../../../projects/kpi-governance/index.qmd).
+
+If the same KPI has more than one version at your company too, [tell me how it works today](../../../contact.qmd). I will tell you where to start.
