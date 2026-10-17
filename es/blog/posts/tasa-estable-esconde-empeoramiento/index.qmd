@@ -1,0 +1,60 @@
+---
+title: "Cuando una tasa de ausentismo estable esconde un empeoramiento"
+description: "Una tasa de ausentismo detenida en 3,77% durante dos años parecía una buena noticia. Al descomponerla, la parte que controla el líder había empeorado 8%."
+date: 2026-10-14
+categories: [Ausentismo, Indicadores, Estadística]
+image: ../../../../projetos/radar-absenteismo/img/02_evolucao_temporal_mini.jpg
+image-alt: "Pantalla de evolución en el tiempo del tablero Radar de Ausentismo"
+draft: false
+traducao: post-absenteismo
+---
+
+Seguro que ya viste esta escena. Cierra el año, la tasa de ausentismo sale igual a la del año anterior, alguien escribe "estable" en el informe y el tema sale de la agenda. Tiene sentido: si el número no cambió, ¿para qué dedicarle tiempo?
+
+Porque un número quieto puede ser la suma de cosas que se mueven en direcciones opuestas.
+
+En el [Radar de Ausentismo](../../../proyectos/radar-ausentismo/index.qmd), un tablero que construí sobre una empresa ficticia, la tasa pasó de 3,772% en 2024 a 3,774% en 2025. Una diferencia de dos milésimas de punto porcentual. Si el informe se quedara ahí, la conclusión sería "nada cambió". Pero cambiaron bastantes cosas.
+
+## Separa lo que el líder controla de lo que no controla
+
+El primer paso es dividir la tasa en dos partes:
+
+- **corta duración:** ausencias de hasta 15 días, como faltas, certificados médicos cortos y llegadas tarde. Es la parte en la que el líder del día a día puede influir;
+- **larga duración:** ausencias de más de 15 días, que suele seguir caso por caso el área de salud ocupacional.
+
+Hecha la división, el "estable" se deshace. La corta duración subió 0,055 puntos porcentuales (de 2,45% a 2,51%). La larga bajó prácticamente lo mismo, 0,052 puntos (de 1,32% a 1,27%). Una anuló a la otra.
+
+## Después, mira dentro de la corta duración
+
+Todavía se puede ir más a fondo. En 2024 hubo un brote de enfermedades infecciosas entre febrero y mayo, que infló las ausencias cortas de ese año. En 2025 el brote no se repitió, y ese grupo de motivos bajó 0,113 puntos.
+
+Es decir: la corta duración no subió más solo porque el año anterior había sido atípico. Si se dejan fuera las enfermedades infecciosas, **las demás ausencias de corta duración subieron 0,17 puntos porcentuales, un alza de 8%**.
+
+En resumen, lo que escondía el número "estable":
+
+| Componente | 2024 | 2025 | Variación |
+|---|---:|---:|---:|
+| Tasa total | 3,77% | 3,77% | +0,002 p. p. |
+| Larga duración | 1,32% | 1,27% | -0,052 p. p. |
+| Corta duración | 2,45% | 2,51% | +0,055 p. p. |
+| Corta, solo enfermedades infecciosas | 0,435% | 0,322% | -0,113 p. p. |
+| Corta, demás motivos | 2,02% | 2,18% | +0,17 p. p. (+8%) |
+
+La mejora vino de factores que la gestión no controla: una epidemia que pasó y las ausencias de larga duración, que oscilan mucho con pocos casos. El empeoramiento estaba justamente en la parte que la gestión controla.
+
+## Lo que yo haría con esto
+
+Dos cambios simples en la forma de reportar:
+
+1. **Usar la tasa de corta duración como indicador de gestión de los líderes.** Es la que responde a las acciones de supervisión, de programación de turnos y de integración del personal recién contratado.
+2. **Nunca presentar la tasa total sola.** Siempre descompuesta en corta y larga duración, de preferencia con los grandes grupos de motivos al lado.
+
+## Una precaución
+
+Descomponer muestra de dónde viene la variación, no por qué ocurrió. Saber que la corta duración subió 8% fuera de las enfermedades infecciosas es el comienzo de la investigación, no el final. En el caso del Radar, el paso siguiente mostró que el empeoramiento estaba concentrado en dos equipos del turno nocturno; pero eso es tema para otro texto.
+
+Si sigues el ausentismo en tu empresa, vale la pena el ejercicio: toma la tasa de los dos últimos años y separa corta y larga duración. Puede que tu "estable" también esté escondiendo algo.
+
+---
+
+*Los datos de este texto son ficticios, generados para el proyecto Radar de Ausentismo. [Ver el proyecto](../../../proyectos/radar-ausentismo/index.qmd)*

@@ -215,6 +215,10 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
 - **Novo post:** crie `blog/posts/<nome>/index.qmd` com `title`, `date`,
   `description` e `categories`. Ele aparece no blog em português. Posts em
   espanhol ou inglês vão em `es/blog/posts/` ou `en/blog/posts/`.
+  - A imagem da listagem (`image` e `image-alt`) é um print 640x360 de um
+    projeto. A do post de indicadores é o gráfico das três taxas do caso,
+    gerado por `python scripts/miniatura_post_indicadores.py pt es en`
+    depois do render (cada língua usa o gráfico da sua versão do caso).
 - **Post traduzido:** acrescente uma entrada em `_traducoes.yml` com os
   endereços das versões e ponha `traducao: <chave>` no cabeçalho de cada uma;
   o seletor de idioma passa a levar à versão correspondente.

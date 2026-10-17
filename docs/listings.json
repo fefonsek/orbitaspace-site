@@ -1,7 +1,9 @@
 [
   {
     "listing": "/en/blog.html",
-    "items": []
+    "items": [
+      "/en/blog/posts/stable-rate-turn-for-the-worse/index.html"
+    ]
   },
   {
     "listing": "/en/projects.html",

@@ -6,6 +6,7 @@ categories: [Absenteísmo, Indicadores, Estatística]
 image: ../../../projetos/radar-absenteismo/img/02_evolucao_temporal_mini.jpg
 image-alt: "Tela de evolução temporal do painel Radar de Absenteísmo"
 draft: false
+traducao: post-absenteismo
 ---
 
 Você já deve ter visto esta cena. Fecha o ano, a taxa de absenteísmo sai igual à do ano anterior, alguém escreve "estável" no relatório e o assunto sai da pauta. Faz sentido: se o número não mudou, por que gastar tempo com ele?
@@ -34,9 +35,9 @@ Resumindo o que o número "estável" escondia:
 | Componente | 2024 | 2025 | Variação |
 |---|---:|---:|---:|
 | Taxa total | 3,77% | 3,77% | +0,002 p.p. |
-| Longa duração | 1,32% | 1,27% | −0,052 p.p. |
+| Longa duração | 1,32% | 1,27% | -0,052 p.p. |
 | Curta duração | 2,45% | 2,51% | +0,055 p.p. |
-| Curta, só doenças infecciosas | 0,435% | 0,322% | −0,113 p.p. |
+| Curta, só doenças infecciosas | 0,435% | 0,322% | -0,113 p.p. |
 | Curta, demais motivos | 2,02% | 2,18% | +0,17 p.p. (+8%) |
 
 A melhora veio de fatores que a gestão não controla: uma epidemia que passou e afastamentos longos, que oscilam muito com poucos casos. A piora estava justamente na parte que a gestão controla.

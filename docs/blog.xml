@@ -15,7 +15,66 @@
 <link>https://orbitaspace.com.br/blog.html</link>
 </image>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Wed, 14 Oct 2026 03:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 17 Oct 2026 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quando cada área calcula o mesmo indicador do seu jeito</title>
+  <link>https://orbitaspace.com.br/blog/posts/cada-area-calcula-do-seu-jeito/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Julho de 2025, reunião mensal de resultados. A pauta pedia uma coisa simples: entender a taxa de absenteísmo de junho. O RH abriu a apresentação com 4,38%. A Operação, logo depois, mostrou 3,54%. O Financeiro tinha 2,15% na planilha que circulou antes da reunião. Três áreas, o mesmo mês, o mesmo indicador e três números diferentes.</p>
+<p>Boa parte da reunião foi gasta tentando descobrir qual deles estava certo. Ninguém saiu dali com uma decisão sobre o absenteísmo. Saíram com a tarefa de “alinhar os números” até a próxima reunião, onde a cena se repetiu.</p>
+<p>A cena vem de um caso de demonstração do meu portfólio, montado com dados fictícios. Mas quem já participou de uma reunião de resultados provavelmente reconhece a situação.</p>
+<section id="o-custo-que-ninguém-coloca-na-planilha" class="level2">
+<h2 data-anchor-id="o-custo-que-ninguém-coloca-na-planilha">O custo que ninguém coloca na planilha</h2>
+<p>Indicador com três versões não aparece como despesa em lugar nenhum, e por isso costuma ser tratado como um incômodo menor. Só que ele custa caro, de várias formas ao mesmo tempo.</p>
+<p>Custa tempo de gente cara: diretores e gerentes discutindo de onde veio o número em vez de discutir o que fazer com ele. Custa decisões adiadas, porque ninguém quer agir em cima de um dado que outra área contesta. Custa confiança, que é o prejuízo mais difícil de recuperar: depois de algumas reuniões assim, qualquer número novo chega com a pergunta “mas esse é de quem?”. E custa retrabalho, porque cada área passa a manter o próprio painel, a própria planilha e o próprio cálculo, em parte para se proteger da próxima discussão.</p>
+<p>O efeito final é curioso. A empresa investe em sistemas, painéis e relatórios para decidir melhor, e acaba decidindo mais devagar.</p>
+</section>
+<section id="ninguém-estava-errado" class="level2">
+<h2 data-anchor-id="ninguém-estava-errado">Ninguém estava errado</h2>
+<p>O detalhe mais importante da cena é que os três números estavam certos. Cada área partiu de uma escolha razoável para o próprio trabalho: o que conta como ausência, se afastamentos longos entram na conta, se a base é hora prevista ou dia trabalhado, quais pessoas fazem parte do denominador. O RH olhava para a saúde das pessoas, a Operação para a cobertura das equipes, o Financeiro para o custo.</p>
+<p>O problema não era de cálculo. Era a falta de três coisas: uma definição oficial, uma pessoa responsável por ela e uma regra para mudá-la. Sem isso, cada área preenche o vazio do seu jeito, e todas têm bons argumentos.</p>
+<p>Por isso a solução raramente é técnica. Um painel novo, mais bonito ou mais rápido, só mostra as mesmas três versões com mais cores.</p>
+</section>
+<section id="o-que-é-governança-de-indicadores-na-prática" class="level2">
+<h2 data-anchor-id="o-que-é-governança-de-indicadores-na-prática">O que é governança de indicadores, na prática</h2>
+<p>A palavra governança assusta, porque lembra comitês, normas e documentos que ninguém lê. Na prática, para indicadores, ela cabe em poucos elementos.</p>
+<p>O primeiro é a <strong>ficha técnica</strong> de cada indicador: o que ele mede, a fórmula, de onde vêm os dados, de quanto em quanto tempo é atualizado e qual é a meta. Uma página por indicador basta.</p>
+<p>O segundo é um <strong>dono</strong>. Não é quem calcula, é quem responde pela definição: decide o que entra e o que sai, e é a quem os outros recorrem quando surge uma dúvida.</p>
+<p>O terceiro é o <strong>registro de versões</strong>. Definições mudam, e devem mudar quando o negócio muda. O que não pode acontecer é mudar sem ninguém saber. Cada alteração ganha um número de versão, uma data e um motivo.</p>
+<p>O quarto é <strong>um lugar só</strong> onde a definição oficial vale. Pode ser um documento compartilhado, uma página na intranet ou uma aba no próprio painel. O importante é que, diante de qualquer dúvida, todo mundo saiba onde olhar.</p>
+</section>
+<section id="o-que-muda-depois" class="level2">
+<h2 data-anchor-id="o-que-muda-depois">O que muda depois</h2>
+<p>No caso, a diretoria pediu um levantamento completo no fim do ano. Foram encontrados 40 indicadores em uso, espalhados entre painéis, planilhas e apresentações. Só 13 tinham uma definição clara o bastante para que duas pessoas chegassem ao mesmo número.</p>
+<p>Depois da revisão, 14 ficaram como indicadores da diretoria, 14 passaram a ser acompanhados pela gestão de cada área, 6 foram unificados porque mediam a mesma coisa com nomes diferentes e 6 foram descontinuados porque ninguém usava para decidir nada. As fichas da primeira versão saíram em janeiro, e as primeiras revisões vieram nos meses seguintes, já registradas.</p>
+<p>A empresa passou a olhar menos números, e a discutir mais o que eles diziam.</p>
+</section>
+<section id="como-começar-amanhã" class="level2">
+<h2 data-anchor-id="como-começar-amanhã">Como começar amanhã</h2>
+<p>Não é preciso um projeto grande para dar o primeiro passo. Três movimentos já mudam o clima das reuniões.</p>
+<p>Primeiro, <strong>liste os indicadores que existem hoje</strong>: nome, onde aparece, quem calcula e para que é usado. Essa lista costuma ser maior do que todo mundo imagina, e só de existir já revela duplicidades.</p>
+<p>Segundo, <strong>escreva a ficha dos dez indicadores mais usados</strong> nas reuniões de resultado. Não precisa começar por todos. Os dez que mais geram discussão são os que mais devolvem tempo quando ficam claros.</p>
+<p>Terceiro, <strong>combine quem pode mudar uma definição e como a mudança é registrada</strong>. Uma regra simples, aprovada pela diretoria, evita que a próxima versão nasça em silêncio dentro de uma planilha.</p>
+<p>Depois disso, o painel volta a fazer o papel dele: mostrar um número em que todos confiam, para que a reunião seja sobre o que fazer.</p>
+<hr>
+<p>O caso completo, com o inventário dos 40 indicadores, as fichas técnicas e as três definições calculadas lado a lado, está em <a href="../../../projetos/governanca-indicadores/index.html">Um número, três respostas</a>.</p>
+<p>Se na sua empresa o mesmo indicador também tem mais de uma versão, <a href="../../../contato.html">me conta como funciona hoje</a>. Eu te digo por onde começar.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Indicadores</category>
+  <category>Governança de indicadores</category>
+  <category>Gestão</category>
+  <guid>https://orbitaspace.com.br/blog/posts/cada-area-calcula-do-seu-jeito/</guid>
+  <pubDate>Sat, 17 Oct 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://orbitaspace.com.br/projetos/governanca-indicadores/img/taxas_mini.jpg?v=ebc05c58" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Quando a taxa de absenteísmo estável esconde uma piora</title>
   <link>https://orbitaspace.com.br/blog/posts/taxa-estavel-esconde-piora/</link>
@@ -62,7 +121,7 @@
 <td>Longa duração</td>
 <td style="text-align: right;">1,32%</td>
 <td style="text-align: right;">1,27%</td>
-<td style="text-align: right;">−0,052 p.p.</td>
+<td style="text-align: right;">-0,052 p.p.</td>
 </tr>
 <tr class="odd">
 <td>Curta duração</td>
@@ -74,7 +133,7 @@
 <td>Curta, só doenças infecciosas</td>
 <td style="text-align: right;">0,435%</td>
 <td style="text-align: right;">0,322%</td>
-<td style="text-align: right;">−0,113 p.p.</td>
+<td style="text-align: right;">-0,113 p.p.</td>
 </tr>
 <tr class="odd">
 <td>Curta, demais motivos</td>

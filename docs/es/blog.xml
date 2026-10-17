@@ -15,6 +15,109 @@
 <link>https://orbitaspace.com.br/es/blog.html</link>
 </image>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Sat, 17 Oct 2026 14:18:10 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Oct 2026 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cuando una tasa de ausentismo estable esconde un empeoramiento</title>
+  <link>https://orbitaspace.com.br/es/blog/posts/tasa-estable-esconde-empeoramiento/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Seguro que ya viste esta escena. Cierra el año, la tasa de ausentismo sale igual a la del año anterior, alguien escribe “estable” en el informe y el tema sale de la agenda. Tiene sentido: si el número no cambió, ¿para qué dedicarle tiempo?</p>
+<p>Porque un número quieto puede ser la suma de cosas que se mueven en direcciones opuestas.</p>
+<p>En el <a href="../../../../es/proyectos/radar-ausentismo/index.html">Radar de Ausentismo</a>, un tablero que construí sobre una empresa ficticia, la tasa pasó de 3,772% en 2024 a 3,774% en 2025. Una diferencia de dos milésimas de punto porcentual. Si el informe se quedara ahí, la conclusión sería “nada cambió”. Pero cambiaron bastantes cosas.</p>
+<section id="separa-lo-que-el-líder-controla-de-lo-que-no-controla" class="level2">
+<h2 data-anchor-id="separa-lo-que-el-líder-controla-de-lo-que-no-controla">Separa lo que el líder controla de lo que no controla</h2>
+<p>El primer paso es dividir la tasa en dos partes:</p>
+<ul>
+<li><strong>corta duración:</strong> ausencias de hasta 15 días, como faltas, certificados médicos cortos y llegadas tarde. Es la parte en la que el líder del día a día puede influir;</li>
+<li><strong>larga duración:</strong> ausencias de más de 15 días, que suele seguir caso por caso el área de salud ocupacional.</li>
+</ul>
+<p>Hecha la división, el “estable” se deshace. La corta duración subió 0,055 puntos porcentuales (de 2,45% a 2,51%). La larga bajó prácticamente lo mismo, 0,052 puntos (de 1,32% a 1,27%). Una anuló a la otra.</p>
+</section>
+<section id="después-mira-dentro-de-la-corta-duración" class="level2">
+<h2 data-anchor-id="después-mira-dentro-de-la-corta-duración">Después, mira dentro de la corta duración</h2>
+<p>Todavía se puede ir más a fondo. En 2024 hubo un brote de enfermedades infecciosas entre febrero y mayo, que infló las ausencias cortas de ese año. En 2025 el brote no se repitió, y ese grupo de motivos bajó 0,113 puntos.</p>
+<p>Es decir: la corta duración no subió más solo porque el año anterior había sido atípico. Si se dejan fuera las enfermedades infecciosas, <strong>las demás ausencias de corta duración subieron 0,17 puntos porcentuales, un alza de 8%</strong>.</p>
+<p>En resumen, lo que escondía el número “estable”:</p>
+<div class="tabela-rolavel">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th style="text-align: right;">2024</th>
+<th style="text-align: right;">2025</th>
+<th style="text-align: right;">Variación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tasa total</td>
+<td style="text-align: right;">3,77%</td>
+<td style="text-align: right;">3,77%</td>
+<td style="text-align: right;">+0,002 p.&nbsp;p.</td>
+</tr>
+<tr class="even">
+<td>Larga duración</td>
+<td style="text-align: right;">1,32%</td>
+<td style="text-align: right;">1,27%</td>
+<td style="text-align: right;">-0,052 p.&nbsp;p.</td>
+</tr>
+<tr class="odd">
+<td>Corta duración</td>
+<td style="text-align: right;">2,45%</td>
+<td style="text-align: right;">2,51%</td>
+<td style="text-align: right;">+0,055 p.&nbsp;p.</td>
+</tr>
+<tr class="even">
+<td>Corta, solo enfermedades infecciosas</td>
+<td style="text-align: right;">0,435%</td>
+<td style="text-align: right;">0,322%</td>
+<td style="text-align: right;">-0,113 p.&nbsp;p.</td>
+</tr>
+<tr class="odd">
+<td>Corta, demás motivos</td>
+<td style="text-align: right;">2,02%</td>
+<td style="text-align: right;">2,18%</td>
+<td style="text-align: right;">+0,17 p.&nbsp;p.&nbsp;(+8%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La mejora vino de factores que la gestión no controla: una epidemia que pasó y las ausencias de larga duración, que oscilan mucho con pocos casos. El empeoramiento estaba justamente en la parte que la gestión controla.</p>
+</section>
+<section id="lo-que-yo-haría-con-esto" class="level2">
+<h2 data-anchor-id="lo-que-yo-haría-con-esto">Lo que yo haría con esto</h2>
+<p>Dos cambios simples en la forma de reportar:</p>
+<ol type="1">
+<li><strong>Usar la tasa de corta duración como indicador de gestión de los líderes.</strong> Es la que responde a las acciones de supervisión, de programación de turnos y de integración del personal recién contratado.</li>
+<li><strong>Nunca presentar la tasa total sola.</strong> Siempre descompuesta en corta y larga duración, de preferencia con los grandes grupos de motivos al lado.</li>
+</ol>
+</section>
+<section id="una-precaución" class="level2">
+<h2 data-anchor-id="una-precaución">Una precaución</h2>
+<p>Descomponer muestra de dónde viene la variación, no por qué ocurrió. Saber que la corta duración subió 8% fuera de las enfermedades infecciosas es el comienzo de la investigación, no el final. En el caso del Radar, el paso siguiente mostró que el empeoramiento estaba concentrado en dos equipos del turno nocturno; pero eso es tema para otro texto.</p>
+<p>Si sigues el ausentismo en tu empresa, vale la pena el ejercicio: toma la tasa de los dos últimos años y separa corta y larga duración. Puede que tu “estable” también esté escondiendo algo.</p>
+<hr>
+<p><em>Los datos de este texto son ficticios, generados para el proyecto Radar de Ausentismo. <a href="../../../../es/proyectos/radar-ausentismo/index.html">Ver el proyecto</a></em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Ausentismo</category>
+  <category>Indicadores</category>
+  <category>Estadística</category>
+  <guid>https://orbitaspace.com.br/es/blog/posts/tasa-estable-esconde-empeoramiento/</guid>
+  <pubDate>Wed, 14 Oct 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://orbitaspace.com.br/projetos/radar-absenteismo/img/02_evolucao_temporal_mini.jpg?v=a6f457ad" medium="image" type="image/jpeg"/>
+</item>
 </channel>
 </rss>

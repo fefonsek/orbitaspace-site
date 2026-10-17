@@ -193,7 +193,7 @@
     "href": "en/blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Notes on KPIs, Power BI and applied statistics, based on problems I run into at work.\n\nFor now, posts are only available in Portuguese. See the Portuguese blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhen a stable absenteeism rate hides a turn for the worse\n\n\n\nAbsenteeism\n\nKPIs\n\nStatistics\n\n\n\nAn absenteeism rate stuck at 3.77% for two years looked like good news. Broken down, the part managers control had gotten 8% worse.\n\n\n\n\n\nOct 14, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "en/about.html",
@@ -229,6 +229,41 @@
     "title": "About",
     "section": "Where I am",
     "text": "Where I am\nI live in Formiga, Minas Gerais, Brazil, and work remotely with clients in Brazil and abroad.\n\nGet in touch"
+  },
+  {
+    "objectID": "en/blog/posts/stable-rate-turn-for-the-worse/index.html",
+    "href": "en/blog/posts/stable-rate-turn-for-the-worse/index.html",
+    "title": "When a stable absenteeism rate hides a turn for the worse",
+    "section": "",
+    "text": "You have probably seen this play out. The year closes, the absenteeism rate comes in the same as the year before, someone writes “stable” in the report and the topic drops off the agenda. It makes sense: if the number did not change, why spend time on it?\nBecause a number that stands still can be the sum of things moving in opposite directions.\nIn the Absenteeism Radar, a dashboard I built for a fictional company, the rate went from 3.772% in 2024 to 3.774% in 2025. A difference of two thousandths of a percentage point. If the report stopped there, the conclusion would be “nothing changed.” But quite a lot did."
+  },
+  {
+    "objectID": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#separate-what-managers-control-from-what-they-do-not",
+    "href": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#separate-what-managers-control-from-what-they-do-not",
+    "title": "When a stable absenteeism rate hides a turn for the worse",
+    "section": "Separate what managers control from what they do not",
+    "text": "Separate what managers control from what they do not\nThe first step is to split the rate into two parts:\n\nshort-term: absences of up to 15 days, such as unexcused absences, short doctor’s notes and late arrivals. This is the part that day-to-day line managers can influence;\nlong-term: absences of more than 15 days, which occupational health usually follows case by case.\n\nOnce you split it, “stable” falls apart. Short-term absence rose 0.055 percentage points (from 2.45% to 2.51%). Long-term absence fell by almost exactly as much, 0.052 points (from 1.32% to 1.27%). One canceled out the other."
+  },
+  {
+    "objectID": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#then-look-inside-short-term-absence",
+    "href": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#then-look-inside-short-term-absence",
+    "title": "When a stable absenteeism rate hides a turn for the worse",
+    "section": "Then look inside short-term absence",
+    "text": "Then look inside short-term absence\nYou can dig deeper still. In 2024 there was an infectious disease outbreak between February and May, which inflated short-term absences that year. In 2025 the outbreak did not come back, and that group of reasons fell 0.113 points.\nIn other words, short-term absence only avoided a bigger rise because the previous year had been unusual. Take infectious diseases out of the count and all other short-term absences rose 0.17 percentage points, an 8% increase.\nTo sum up what the “stable” number was hiding:\n\n\n\n\nComponent\n2024\n2025\nChange\n\n\n\n\nTotal rate\n3.77%\n3.77%\n+0.002 pp\n\n\nLong-term\n1.32%\n1.27%\n−0.052 pp\n\n\nShort-term\n2.45%\n2.51%\n+0.055 pp\n\n\nShort-term, infectious diseases only\n0.435%\n0.322%\n−0.113 pp\n\n\nShort-term, all other reasons\n2.02%\n2.18%\n+0.17 pp (+8%)\n\n\n\n\nThe improvement came from factors management does not control: an epidemic that passed, and long-term absences, which swing widely with just a few cases. The deterioration was precisely in the part management does control."
+  },
+  {
+    "objectID": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#what-i-would-do-about-it",
+    "href": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#what-i-would-do-about-it",
+    "title": "When a stable absenteeism rate hides a turn for the worse",
+    "section": "What I would do about it",
+    "text": "What I would do about it\nTwo simple changes to how this gets reported:\n\nUse the short-term rate as a management KPI for line managers. It is the rate that responds to supervision, scheduling and onboarding of new hires.\nNever present the total rate on its own. Always break it down into short-term and long-term, ideally with the main groups of reasons alongside."
+  },
+  {
+    "objectID": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#a-word-of-caution",
+    "href": "en/blog/posts/stable-rate-turn-for-the-worse/index.html#a-word-of-caution",
+    "title": "When a stable absenteeism rate hides a turn for the worse",
+    "section": "A word of caution",
+    "text": "A word of caution\nBreaking the rate down shows where the change comes from, not why it happened. Knowing that short-term absence rose 8% outside infectious diseases is the start of the investigation, not the end. In the Radar case, the next step showed that the rise was concentrated in two night-shift teams; but that is a topic for another post.\nIf you track absenteeism at your company, the exercise is worth it: take the rate for the last two years and split it into short-term and long-term. Your “stable” may be hiding something too.\n\nThe data in this post is fictional, generated for the Absenteeism Radar project. See the project"
   },
   {
     "objectID": "en/contact.html",
