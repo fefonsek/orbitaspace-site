@@ -231,6 +231,11 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   - O vídeo é em português; em ES e EN, a linha
     `[Video en portugués.]{.nota-idioma .nota-video}` (ou `Video in
     Portuguese.`) fica logo abaixo dele.
+- **Link do feed RSS do Blog:** está escondido com `mostrar-rss: false` no
+  cabeçalho do `blog.qmd`; `true` volta a mostrar "Assinar o feed RSS". O
+  feed continua sendo gerado (`feed: true` no `listing`), em `docs/blog.xml`,
+  `docs/es/blog.xml` e `docs/en/blog.xml`. As páginas em ES e EN não têm link
+  visível para o feed.
 - **Painel interativo do Radar:** a seção "Explore o painel" fica logo abaixo
   do vídeo nas mesmas três páginas e liga com `mostrar-painel: true` no
   cabeçalho (`false` esconde).
