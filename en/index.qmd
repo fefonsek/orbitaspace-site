@@ -13,6 +13,8 @@ title-block-banner: false
 
 [I help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way, a report that answers a concrete question.]{.hero-frase}
 
+[Decode the signals in your data.]{.hero-bordao}
+
 ::: botoes
 [See projects](projects.qmd){.btn .btn-primary}
 [Get in touch](contact.qmd){.btn .btn-outline-primary}

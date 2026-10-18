@@ -13,6 +13,8 @@ title-block-banner: false
 
 [Ajudo empresas e pesquisadores a sair da planilha com números soltos e chegar a uma resposta clara: um painel que mostra onde agir, uma análise que se sustenta numa banca, um indicador que todo mundo calcula do mesmo jeito, um relatório que responde a uma pergunta concreta.]{.hero-frase}
 
+[Decifre os sinais dos seus dados.]{.hero-bordao}
+
 ::: botoes
 [Ver projetos](projetos.qmd){.btn .btn-primary}
 [Fale comigo](contato.qmd){.btn .btn-outline-primary}

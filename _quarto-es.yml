@@ -35,4 +35,7 @@ website:
   page-footer:
     background: "#1a1a2e"
     left: "© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil"
-    right: "[WhatsApp](https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.) · [Correo](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek)"
+    # Frase da Saline Astral: o link vai para a página em PT (por enquanto só existe em PT).
+    center: "También creo música y contenidos de autoconocimiento como <a href=\"/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conócela*"
+    # O WhatsApp fica num span próprio porque a página da Saline o esconde.
+    right: "[[WhatsApp](https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.) ·]{.rodape-whatsapp} [Correo](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)"

@@ -125,6 +125,20 @@ p, li { max-width: 72ch; }
   a { color: $branco; }
   a:hover { color: $lavanda; }
 }
+// A frase da Saline Astral (centro do rodapé) vira uma linha própria, abaixo
+// do endereço e dos contatos, em qualquer largura.
+.nav-footer .nav-footer-center {
+  order: 10;
+  flex: 1 1 100%;
+  min-height: 0;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba($lavanda, 0.2);
+  text-align: center;
+  p { max-width: none; }
+}
+// Frase espelhada (dados e estatística): só aparece na página da Saline.
+.rodape-dados { display: none; }
 
 // Botões.
 .btn { border-radius: 999px; text-decoration: none; }
@@ -394,6 +408,14 @@ $cinza-escuro-texto: #4a4a63;
     margin-bottom: 1.5rem;
   }
   .hero-frase { font-size: 1.15rem; max-width: 40rem; }
+  // Bordão do lado de dados: linha discreta logo abaixo da frase.
+  .hero-bordao {
+    display: block;
+    margin-top: -0.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    color: $text-muted;
+  }
   .botoes { margin-top: 2rem; }
 }
 
@@ -681,4 +703,113 @@ main:not(:has(.quarto-post)) .sem-posts { display: block; }
   .pilar::before { display: none; }
   .ficha dl { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
   .ficha dd { margin-bottom: 0.5rem; }
+}
+
+// Página Saline Astral (saline-astral.qmd, body-classes: pagina-saline).
+// Mesma família do site, clima próprio: fundo azul profundo, texto em branco
+// e lavanda, detalhes em azul suave, Montserrat Light e bastante espaço.
+// Nenhum tom quente. No rodapé, sem WhatsApp, e a frase da Saline dá lugar
+// à frase espelhada, que leva à página inicial.
+body.pagina-saline {
+  background: $azul-profundo;
+  color: $lavanda;
+  font-weight: 300;
+
+  h1, h2, h3 { color: $branco; font-weight: 300; letter-spacing: 0; border-bottom: 0; padding-bottom: 0; }
+  strong, b { font-weight: 400; color: $branco; }
+  a { color: $branco; text-decoration-color: rgba($azul-suave, 0.8); text-underline-offset: 0.25em; }
+  a:hover, a:focus-visible { color: $lavanda; }
+  ::selection { background: $azul-suave; color: $branco; }
+  p { max-width: 38rem; }
+  main { padding-bottom: 2rem; }
+
+  .rodape-whatsapp, .rodape-saline { display: none; }
+  .rodape-dados { display: inline; }
+  // O rodapé mantém o negrito do resto do site, como na frase da Saline.
+  .nav-footer strong { font-weight: 600; }
+  .nav-footer { border-top: 1px solid rgba($azul-suave, 0.35); }
+}
+
+// Rótulos pequenos: os únicos em SemiBold.
+.saline-rotulo {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $azul-suave;
+  margin-bottom: 0.75rem;
+}
+
+.saline-abertura {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 0 4rem;
+  h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.2; margin: 0 0 1.5rem; }
+  .saline-frase { display: block; font-size: 1.15rem; line-height: 1.75; }
+}
+
+.saline-imagem {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: $border-radius-lg;
+}
+.saline-abertura p:has(> .saline-imagem),
+.saline-curso p:has(> .saline-imagem) { margin: 0; max-width: none; }
+
+.saline-secao {
+  padding: 3rem 0;
+  border-top: 1px solid rgba($azul-suave, 0.3);
+  > h2:first-child { margin-top: 0; }
+  h2 { font-size: clamp(1.6rem, 3.4vw, 2rem); margin-bottom: 1.25rem; }
+  .saline-rotulo { margin-top: 2.25rem; }
+}
+
+// Players do Spotify: largura toda da coluna, também no celular.
+.saline-player {
+  margin: 0.5rem 0 1rem;
+  iframe { display: block; width: 100%; max-width: 100%; border: 0; border-radius: 12px; }
+}
+.saline-players {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  p { margin-bottom: 0.25rem; }
+  + p { margin-top: 1rem; }
+}
+
+.saline-curso {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 3rem;
+  align-items: center;
+  .saline-rotulo { margin-top: 0; }
+  h2 { margin-top: 0; }
+}
+
+.btn.saline-botao {
+  color: $branco;
+  background: transparent;
+  border: 1px solid $azul-suave;
+  font-weight: 400;
+  margin-top: 0.75rem;
+  &:hover, &:focus-visible { color: $azul-profundo; background: $lavanda; border-color: $lavanda; }
+}
+
+.saline-fecho {
+  text-align: center;
+  padding: 3.5rem 0 1.5rem;
+  border-top: 1px solid rgba($azul-suave, 0.3);
+  p { margin-left: auto; margin-right: auto; }
+  .saline-bordao { display: block; font-size: 1.2rem; letter-spacing: 0.08em; color: $branco; }
+}
+
+@media (max-width: 767.98px) {
+  .saline-abertura, .saline-curso { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .saline-abertura { padding: 2rem 0 3rem; }
+  .saline-players { grid-template-columns: minmax(0, 1fr); }
+  .saline-secao { padding: 2.5rem 0; }
 }

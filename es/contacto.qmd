@@ -36,6 +36,24 @@ Puedes escribirme por WhatsApp o por correo. Cuéntame en pocas líneas qué nec
 
 [github.com/fefonsek](https://github.com/fefonsek){.stretched-link}
 :::
+
+::: contato-canal
+[YouTube]{.rotulo}
+
+[youtube.com/@fefonsek](https://www.youtube.com/@fefonsek){.stretched-link}
+:::
+
+::: contato-canal
+[TikTok]{.rotulo}
+
+[tiktok.com/@fefonsek](https://www.tiktok.com/@fefonsek){.stretched-link}
+:::
+
+::: contato-canal
+[Instagram]{.rotulo}
+
+[instagram.com/fefonsek](https://www.instagram.com/fefonsek){.stretched-link}
+:::
 :::
 
 Trabajo en forma remota, con clientes de Brasil y de otros países, en portugués, español o inglés.

@@ -36,6 +36,24 @@ Pode me chamar no WhatsApp ou por e-mail. Conte em poucas linhas o que você pre
 
 [github.com/fefonsek](https://github.com/fefonsek){.stretched-link}
 :::
+
+::: contato-canal
+[YouTube]{.rotulo}
+
+[youtube.com/@fefonsek](https://www.youtube.com/@fefonsek){.stretched-link}
+:::
+
+::: contato-canal
+[TikTok]{.rotulo}
+
+[tiktok.com/@fefonsek](https://www.tiktok.com/@fefonsek){.stretched-link}
+:::
+
+::: contato-canal
+[Instagram]{.rotulo}
+
+[instagram.com/fefonsek](https://www.instagram.com/fefonsek){.stretched-link}
+:::
 :::
 
 Atendo remotamente, no Brasil e no exterior, em português, espanhol ou inglês.

@@ -247,12 +247,28 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
     `painel-pbi` do `_quarto.yml`. Para trocar o painel, troque esse link.
   - O shortcode `{{< painel-pbi titulo="..." botao="..." >}}`
     (`assets/lua/painel_pbi.lua`) monta a seção: no computador, um iframe
-    16:9 mais 40 px para a barra inferior do Power BI; no celular (até
+    16:9 mais 60 px para a barra inferior do Power BI; no celular (até
     600 px), um botão que abre o painel numa nova aba. `titulo` é o nome do
     iframe lido por leitores de tela e `botao` é o texto do botão.
   - O painel é em português; em ES e EN, a linha
     `[Tablero en portugués.]{.nota-idioma .nota-painel}` (ou `Dashboard in
     Portuguese.`) fica logo abaixo dele.
+- **Página Saline Astral** (`saline-astral.qmd`, só em PT): fica fora do
+  menu principal; o acesso é pela frase do rodapé (`center` do `page-footer`
+  em `_quarto-pt.yml`, `_quarto-es.yml` e `_quarto-en.yml`; em ES e EN o
+  link aponta para a página em PT por enquanto) e por link direto.
+  - O visual próprio vem de `body-classes: pagina-saline` no cabeçalho e das
+    regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`. Nessa
+    página o WhatsApp do rodapé não aparece (`.rodape-whatsapp`), e a frase
+    da Saline dá lugar à frase espelhada, "Também trabalho com dados e
+    estatística como Felipe Fonseca", que leva à página inicial
+    (`.rodape-saline` e `.rodape-dados`, no `center` do `_quarto-pt.yml`).
+  - As duas imagens são geradas por `python scripts/imagens_saline.py`, que lê
+    só os dois arquivos citados no script, da pasta `orbita-marcas/artes` ao
+    lado do site (ou `ORBITA_ARTES`), e grava JPGs leves em
+    `assets/img/saline/`.
+  - O link da frase no rodapé é HTML (`<a href="/saline-astral.html">`): em
+    Markdown, o Quarto no Windows reescreve o endereço com barra invertida.
 - **Trocar a foto:** substitua `assets/img/felipe-original.jpeg`, ajuste as
   medidas do rosto em `scripts/preparar_imagens.py` (função `foto`) e rode o
   script e o `render.ps1`.
