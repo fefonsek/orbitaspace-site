@@ -1,18 +1,18 @@
 [
   {
-    "listing": "/en/blog.html",
-    "items": [
-      "/en/blog/posts/same-kpi-different-numbers/index.html",
-      "/en/blog/posts/stable-rate-turn-for-the-worse/index.html"
-    ]
-  },
-  {
     "listing": "/en/projects.html",
     "items": [
       "/en/projects/absenteeism-radar/index.html",
       "/en/projects/thesis-turnover/index.html",
       "/en/projects/kpi-governance/index.html",
       "/en/projects/meal-allowance-audit/index.html"
+    ]
+  },
+  {
+    "listing": "/en/blog.html",
+    "items": [
+      "/en/blog/posts/same-kpi-different-numbers/index.html",
+      "/en/blog/posts/stable-rate-turn-for-the-worse/index.html"
     ]
   }
 ]

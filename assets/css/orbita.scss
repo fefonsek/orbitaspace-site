@@ -705,7 +705,7 @@ main:not(:has(.quarto-post)) .sem-posts { display: block; }
   .ficha dd { margin-bottom: 0.5rem; }
 }
 
-// Página Saline Astral (saline-astral.qmd, body-classes: pagina-saline).
+// Página Saline Astral (saline-astral.qmd em PT, ES e EN; body-classes: pagina-saline).
 // Mesma família do site, clima próprio: fundo azul profundo, texto em branco
 // e lavanda, detalhes em azul suave, Montserrat Light e bastante espaço.
 // Nenhum tom quente. No rodapé, sem WhatsApp, e a frase da Saline dá lugar
@@ -728,6 +728,32 @@ body.pagina-saline {
   // O rodapé mantém o negrito do resto do site, como na frase da Saline.
   .nav-footer strong { font-weight: 600; }
   .nav-footer { border-top: 1px solid rgba($azul-suave, 0.35); }
+
+  // Sem a barra de navegação: só o seletor PT | ES | EN, discreto no canto
+  // superior direito, por cima da abertura. O Quarto põe no body um
+  // padding-top do tamanho da barra; aqui ele é zerado.
+  padding-top: 0 !important;
+  #quarto-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    background: transparent;
+    transform: none !important;
+  }
+  .navbar { background: transparent !important; padding: 0.5rem 0.75rem; }
+  .navbar-brand-container, .navbar-toggler, .navbar-nav.me-auto { display: none !important; }
+  #navbarCollapse { display: flex !important; flex-basis: auto; }
+  .navbar .navbar-nav.ms-auto { flex-direction: row; align-items: center; gap: 0; }
+  .navbar .nav-idioma { display: flex; }
+  .navbar .nav-idioma .nav-link { padding: 0.25rem 0.45rem; font-size: 0.8rem; color: rgba($lavanda, 0.7); }
+  .navbar .nav-idioma .nav-link.idioma-atual { color: $branco; }
+  .navbar .nav-idioma + .nav-idioma::before {
+    content: "|";
+    color: rgba($lavanda, 0.4);
+    align-self: center;
+    font-size: 0.8rem;
+  }
 }
 
 // Rótulos pequenos: os únicos em SemiBold.
@@ -789,6 +815,8 @@ body.pagina-saline {
   .saline-rotulo { margin-top: 0; }
   h2 { margin-top: 0; }
 }
+// Playlist do curso no YouTube, logo abaixo do texto e do botão (padrão .video).
+.video.saline-playlist { margin: 2.5rem 0 0; }
 
 .btn.saline-botao {
   color: $branco;
@@ -809,7 +837,9 @@ body.pagina-saline {
 
 @media (max-width: 767.98px) {
   .saline-abertura, .saline-curso { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
-  .saline-abertura { padding: 2rem 0 3rem; }
+  // No celular a página começa direto na abertura; o espaço de cima é só o
+  // do seletor de idioma.
+  .saline-abertura { padding: 2.75rem 0 3rem; }
   .saline-players { grid-template-columns: minmax(0, 1fr); }
   .saline-secao { padding: 2.5rem 0; }
 }

@@ -1,0 +1,109 @@
+---
+pagetitle: "Saline Astral"
+description: "Saline Astral: música, palabra y psicología profunda para quienes ya recorrieron algún camino y aún encuentran los mismos patrones."
+image: ../assets/img/saline/planicie.jpg
+title-block-banner: false
+# Página fora do menu principal (acesso pelo rodapé e por link direto), com
+# visual próprio: sem a barra de navegação (só o seletor de idioma) e as
+# regras de .pagina-saline, em assets/css/orbita.scss.
+body-classes: pagina-saline
+traducao: saline
+---
+
+::: saline-abertura
+::: {}
+[Saline Astral]{.saline-rotulo}
+
+# Descifra las señales que viven en ti.
+
+[Música, palabra y psicología profunda para quienes ya recorrieron algún camino y aún encuentran los mismos patrones.]{.saline-frase}
+:::
+
+![](../assets/img/saline/planicie.jpg){.saline-imagem fig-alt="Acuarela de una figura de pie sobre una llanura de sal bajo un cielo azul y lavanda" width="800" height="800"}
+:::
+
+::: saline-secao
+## Quién es Saline Astral
+
+Saline Astral nació de una pregunta: ¿y si los patrones que aprendí a ver en los datos también existieran dentro de nosotros?
+
+Detrás de este proyecto hay un estadístico y estudiante de maestría en Administración que encontró en el rigor analítico otra forma de mirar hacia adentro. Aquí, Jung, la neurociencia emocional y el arte conversan sin prisa. No hay promesa de cura ni fórmula de motivación. Hay una invitación a conocerte, incluso en las partes que aprendiste a esconder.
+:::
+
+::: saline-secao
+## Música
+
+Las canciones de Saline Astral existen en portugués, español, inglés, francés y alemán, porque lo que se siente por dentro no cabe en una sola lengua.
+
+[Destacado]{.saline-rotulo}
+
+Álbum **SAL**, el primero de la trilogía SAL, BRASA y NÉVOA.
+
+```{=html}
+<div class="saline-player">
+<iframe src="https://open.spotify.com/embed/album/62Yawt9mDFj7qPiIemdoqL" title="Reproductor de Spotify: álbum SAL, de Saline Astral" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+```
+
+[Escucha también]{.saline-rotulo}
+
+::: saline-players
+::: {}
+Single "Sexto Sentido"
+
+```{=html}
+<div class="saline-player">
+<iframe src="https://open.spotify.com/embed/track/66umlk8BZ7qBAROG21CnJj" title="Reproductor de Spotify: single Sexto Sentido, de Saline Astral" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+```
+:::
+
+::: {}
+Último lanzamiento, "1026"
+
+```{=html}
+<div class="saline-player">
+<iframe src="https://open.spotify.com/embed/album/248ouOmwvbeLEVeV2DX4pw" title="Reproductor de Spotify: 1026, de Saline Astral" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+```
+:::
+:::
+
+[Todos los lanzamientos en Spotify](https://open.spotify.com/artist/07bz9fCMgWLo8WP9tietlG)
+:::
+
+::: saline-secao
+::: saline-curso
+![](../assets/img/saline/sombras.jpg){.saline-imagem fig-alt="Acuarela de un rostro de perfil envuelto por líneas de geometría sagrada" width="800" height="800"}
+
+::: {}
+[Curso]{.saline-rotulo}
+
+## Integração com as Sombras (Integración con las Sombras)
+
+Trece clases sobre la sombra, el concepto central de la psicología analítica de Carl Jung, con apoyo de la neurociencia emocional y de prácticas concretas de integración. Gratis, en YouTube, a tu ritmo. Curso en portugués.
+
+Integrar la sombra no es volverte una mejor persona. Es volverte más entero de lo que ya eres.
+
+[Ver en YouTube](https://youtube.com/playlist?list=PLcpxt7S-mEbA&si=k8LiBhqYD8lvdJVk){.btn .saline-botao}
+:::
+:::
+
+```{=html}
+<div class="video saline-playlist">
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLcpxt7S-mEbA" title="Curso Integração com as Sombras, lista de reproducción en YouTube" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
+:::
+
+::: saline-secao
+## Dónde seguir
+
+Instagram, TikTok y YouTube: @salineastral
+
+[Instagram](https://www.instagram.com/salineastral) · [TikTok](https://www.tiktok.com/@salineastral) · [YouTube](https://www.youtube.com/@SalineAstral)
+:::
+
+::: saline-fecho
+[✦ Descifra las señales ✦]{.saline-bordao}
+:::

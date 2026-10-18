@@ -253,22 +253,27 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   - O painel é em português; em ES e EN, a linha
     `[Tablero en portugués.]{.nota-idioma .nota-painel}` (ou `Dashboard in
     Portuguese.`) fica logo abaixo dele.
-- **Página Saline Astral** (`saline-astral.qmd`, só em PT): fica fora do
-  menu principal; o acesso é pela frase do rodapé (`center` do `page-footer`
-  em `_quarto-pt.yml`, `_quarto-es.yml` e `_quarto-en.yml`; em ES e EN o
-  link aponta para a página em PT por enquanto) e por link direto.
+- **Página Saline Astral** (`saline-astral.qmd`, `es/saline-astral.qmd` e
+  `en/saline-astral.qmd`, ligadas pela chave `saline` do `_traducoes.yml`):
+  fica fora do menu principal; o acesso é pela frase do rodapé (`center` do
+  `page-footer` em `_quarto-pt.yml`, `_quarto-es.yml` e `_quarto-en.yml`, com
+  link para a página na mesma língua) e por link direto. Os textos em ES e EN
+  vêm de `_rascunhos/saline_astral_es_en.md`.
   - O visual próprio vem de `body-classes: pagina-saline` no cabeçalho e das
     regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`. Nessa
-    página o WhatsApp do rodapé não aparece (`.rodape-whatsapp`), e a frase
-    da Saline dá lugar à frase espelhada, "Também trabalho com dados e
-    estatística como Felipe Fonseca", que leva à página inicial
-    (`.rodape-saline` e `.rodape-dados`, no `center` do `_quarto-pt.yml`).
+    página a barra de navegação some (fica só o seletor PT | ES | EN, no
+    canto superior direito), o WhatsApp do rodapé não aparece
+    (`.rodape-whatsapp`) e a frase da Saline dá lugar à frase espelhada,
+    "Também trabalho com dados e estatística como Felipe Fonseca", que leva à
+    página inicial da mesma língua (`.rodape-saline` e `.rodape-dados`).
+  - A playlist do curso fica embutida logo abaixo do texto do curso, no mesmo
+    padrão do vídeo do Radar (`youtube-nocookie.com/embed/videoseries?list=`).
   - As duas imagens são geradas por `python scripts/imagens_saline.py`, que lê
     só os dois arquivos citados no script, da pasta `orbita-marcas/artes` ao
     lado do site (ou `ORBITA_ARTES`), e grava JPGs leves em
     `assets/img/saline/`.
-  - O link da frase no rodapé é HTML (`<a href="/saline-astral.html">`): em
-    Markdown, o Quarto no Windows reescreve o endereço com barra invertida.
+  - Os links das frases do rodapé são HTML (`<a href="/saline-astral.html">`):
+    em Markdown, o Quarto no Windows reescreve o endereço com barra invertida.
 - **Trocar a foto:** substitua `assets/img/felipe-original.jpeg`, ajuste as
   medidas do rosto em `scripts/preparar_imagens.py` (função `foto`) e rode o
   script e o `render.ps1`.

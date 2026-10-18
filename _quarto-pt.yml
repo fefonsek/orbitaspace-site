@@ -39,7 +39,7 @@ website:
   page-footer:
     background: "#1a1a2e"
     left: "© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil"
-    # Frase da Saline Astral: o link vai para a página em PT (por enquanto só existe em PT).
+    # Frase da Saline Astral, com link para a página na mesma língua.
     # Na própria página da Saline aparece a frase espelhada, que leva à página
     # inicial (.rodape-dados); a troca é feita em assets/css/orbita.scss.
     center: "[Também crio música e conteúdos de autoconhecimento como <a href=\"/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conheça*]{.rodape-saline}[Também trabalho com dados e estatística como <a href=\"/index.html\"><strong>Felipe Fonseca</strong></a> → *Conheça*]{.rodape-dados}"
