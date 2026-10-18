@@ -67,6 +67,7 @@ format:
 filters:
   - assets/lua/traducoes.lua
   - assets/lua/tabelas.lua
+  - assets/lua/faixa.lua
 
 shortcodes:
   - assets/lua/galeria.lua

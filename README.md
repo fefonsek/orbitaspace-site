@@ -261,19 +261,27 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   vêm de `_rascunhos/saline_astral_es_en.md`.
   - O visual próprio vem de `body-classes: pagina-saline` no cabeçalho e das
     regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`. Nessa
-    página a barra de navegação some (fica só o seletor PT | ES | EN, no
-    canto superior direito), o WhatsApp do rodapé não aparece
+    página o menu some (ficam o logo, à esquerda, com link para a página
+    inicial da mesma língua, e o seletor PT | ES | EN, à direita), o WhatsApp do rodapé não aparece
     (`.rodape-whatsapp`) e a frase da Saline dá lugar à frase espelhada,
     "Também trabalho com dados e estatística como Felipe Fonseca", que leva à
     página inicial da mesma língua (`.rodape-saline` e `.rodape-dados`).
   - A playlist do curso fica embutida logo abaixo do texto do curso, no mesmo
     padrão do vídeo do Radar (`youtube-nocookie.com/embed/videoseries?list=`).
-  - As duas imagens são geradas por `python scripts/imagens_saline.py`, que lê
-    só os dois arquivos citados no script, da pasta `orbita-marcas/artes` ao
-    lado do site (ou `ORBITA_ARTES`), e grava JPGs leves em
-    `assets/img/saline/`.
+  - As duas imagens são geradas por `python scripts/imagens_artes.py` (veja
+    a faixa de arte, abaixo), em `assets/img/saline/`.
   - Os links das frases do rodapé são HTML (`<a href="/saline-astral.html">`):
     em Markdown, o Quarto no Windows reescreve o endereço com barra invertida.
+- **Bordão e faixa de arte no fim das páginas:** o filtro
+  `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
+  dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa
+  `assets/img/faixa_orbita.jpg`; o script de `assets/html/idiomas.html` leva o
+  bloco para logo acima do rodapé, na largura total da tela. A faixa tem
+  90 px de altura no computador e 60 px no celular, com o centro da imagem.
+  Na página da Saline só entra a faixa.
+  - A faixa e as aquarelas da Saline vêm de `python scripts/imagens_artes.py`,
+    que lê só os arquivos citados no script, da pasta `orbita-marcas/artes`
+    ao lado do site (ou `ORBITA_ARTES`), e grava JPGs leves.
 - **Trocar a foto:** substitua `assets/img/felipe-original.jpeg`, ajuste as
   medidas do rosto em `scripts/preparar_imagens.py` (função `foto`) e rode o
   script e o `render.ps1`.

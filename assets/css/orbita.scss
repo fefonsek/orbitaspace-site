@@ -135,6 +135,8 @@ p, li { max-width: 72ch; }
   padding-top: 1rem;
   border-top: 1px solid rgba($lavanda, 0.2);
   text-align: center;
+  // Menor que a linha de cima (endereço e contatos, 0,825em).
+  font-size: 0.75em;
   p { max-width: none; }
 }
 // Frase espelhada (dados e estatística): só aparece na página da Saline.
@@ -408,14 +410,6 @@ $cinza-escuro-texto: #4a4a63;
     margin-bottom: 1.5rem;
   }
   .hero-frase { font-size: 1.15rem; max-width: 40rem; }
-  // Bordão do lado de dados: linha discreta logo abaixo da frase.
-  .hero-bordao {
-    display: block;
-    margin-top: -0.25rem;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    color: $text-muted;
-  }
   .botoes { margin-top: 2rem; }
 }
 
@@ -727,23 +721,22 @@ body.pagina-saline {
   .rodape-dados { display: inline; }
   // O rodapé mantém o negrito do resto do site, como na frase da Saline.
   .nav-footer strong { font-weight: 600; }
-  .nav-footer { border-top: 1px solid rgba($azul-suave, 0.35); }
 
-  // Sem a barra de navegação: só o seletor PT | ES | EN, discreto no canto
-  // superior direito, por cima da abertura. O Quarto põe no body um
-  // padding-top do tamanho da barra; aqui ele é zerado.
+  // Topo sem o menu: logo e nome "Orbita Space" à esquerda (link para a
+  // página inicial da mesma língua) e o seletor PT | ES | EN, discreto, à
+  // direita. Sem hambúrguer no celular. A barra fica no fluxo da página e
+  // transparente, então o Quarto não precisa do padding-top no body.
   padding-top: 0 !important;
   #quarto-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: auto;
+    position: static;
     background: transparent;
     transform: none !important;
   }
-  .navbar { background: transparent !important; padding: 0.5rem 0.75rem; }
-  .navbar-brand-container, .navbar-toggler, .navbar-nav.me-auto { display: none !important; }
-  #navbarCollapse { display: flex !important; flex-basis: auto; }
+  .navbar { background: transparent !important; }
+  .navbar-container { flex-wrap: nowrap; }
+  .navbar-brand-container { margin-left: 0 !important; margin-right: auto !important; }
+  .navbar-toggler, .navbar-nav.me-auto { display: none !important; }
+  #navbarCollapse { display: flex !important; flex-basis: auto; flex-grow: 0; margin-left: auto; }
   .navbar .navbar-nav.ms-auto { flex-direction: row; align-items: center; gap: 0; }
   .navbar .nav-idioma { display: flex; }
   .navbar .nav-idioma .nav-link { padding: 0.25rem 0.45rem; font-size: 0.8rem; color: rgba($lavanda, 0.7); }
@@ -754,6 +747,8 @@ body.pagina-saline {
     align-self: center;
     font-size: 0.8rem;
   }
+  // A faixa de arte separa a página do rodapé.
+  .nav-footer { border-top: 0; }
 }
 
 // Rótulos pequenos: os únicos em SemiBold.
@@ -772,7 +767,7 @@ body.pagina-saline {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 3rem;
   align-items: center;
-  padding: 3.5rem 0 4rem;
+  padding: 2rem 0 4rem;
   h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); line-height: 1.2; margin: 0 0 1.5rem; }
   .saline-frase { display: block; font-size: 1.15rem; line-height: 1.75; }
 }
@@ -837,9 +832,46 @@ body.pagina-saline {
 
 @media (max-width: 767.98px) {
   .saline-abertura, .saline-curso { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
-  // No celular a página começa direto na abertura; o espaço de cima é só o
-  // do seletor de idioma.
-  .saline-abertura { padding: 2.75rem 0 3rem; }
+  .saline-abertura { padding: 1.5rem 0 3rem; }
   .saline-players { grid-template-columns: minmax(0, 1fr); }
   .saline-secao { padding: 2.5rem 0; }
+}
+
+// Fecho de todas as páginas (assets/lua/faixa.lua): bordão e faixa de arte,
+// logo acima do rodapé. O bordão segue o fecho da Saline (mesmo tamanho e
+// espaçamento), nas cores do fundo creme; a página da Saline só tem a faixa.
+.bordao-site {
+  width: min(50rem, calc(100% - 2rem));
+  max-width: none;
+  // Do fim do conteúdo até a linha: 60 px que o Quarto deixa depois do
+  // <main> mais 20 px daqui, uns 80 px no total (veja a regra abaixo).
+  margin: 20px auto 2rem;
+  padding: 3.5rem 0 1.5rem;
+  border-top: 1px solid $lavanda;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  color: $azul-profundo;
+}
+// Para o espaço acima do bordão ser o mesmo em todas as páginas, o fim do
+// conteúdo não deixa sobra: sem margem embaixo do <main> nem do último bloco
+// (até quatro níveis), e sem o respiro de baixo da última seção.
+body:not(.pagina-saline) main.content {
+  margin-bottom: 0;
+  > :last-child,
+  > :last-child > :last-child,
+  > :last-child > :last-child > :last-child,
+  > :last-child > :last-child > :last-child > :last-child { margin-bottom: 0; }
+  > .secao:last-child, > .quarto-listing:last-child { padding-bottom: 0; }
+  .quarto-listing .list > .quarto-post:last-child { margin-bottom: 0; }
+}
+// Faixa: largura total da tela, recorte central da imagem (símbolo orbital
+// no meio). Decorativa.
+.faixa-arte {
+  height: 90px;
+  overflow: hidden;
+  img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+}
+@media (max-width: 600px) {
+  .faixa-arte { height: 60px; }
 }

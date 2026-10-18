@@ -4,8 +4,8 @@ description: "Saline Astral: música, palabra y psicología profunda para quiene
 image: ../assets/img/saline/planicie.jpg
 title-block-banner: false
 # Página fora do menu principal (acesso pelo rodapé e por link direto), com
-# visual próprio: sem a barra de navegação (só o seletor de idioma) e as
-# regras de .pagina-saline, em assets/css/orbita.scss.
+# visual próprio: no topo, só o logo e o seletor de idioma, sem o menu; as
+# regras ficam em .pagina-saline, em assets/css/orbita.scss.
 body-classes: pagina-saline
 traducao: saline
 ---

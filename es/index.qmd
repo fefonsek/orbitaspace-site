@@ -13,8 +13,6 @@ title-block-banner: false
 
 [Ayudo a empresas e investigadores a pasar de una hoja de cálculo con números sueltos a una respuesta clara: un tablero que muestra dónde actuar, un análisis que resiste la revisión de un jurado, un indicador que todos calculan de la misma manera, un informe que responde a una pregunta concreta.]{.hero-frase}
 
-[Descifra las señales de tus datos.]{.hero-bordao}
-
 ::: botoes
 [Ver proyectos](proyectos.qmd){.btn .btn-primary}
 [Escríbeme](contacto.qmd){.btn .btn-outline-primary}

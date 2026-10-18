@@ -9,7 +9,14 @@
 //    está em outra língua, sugere a versão no idioma do navegador. Nunca
 //    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
 // 3. Botão "Copiar e-mail" da página de contato.
+// 4. Fecho (bordão e faixa de arte, de assets/lua/faixa.lua): sai do fim do
+//    conteúdo e vai para logo acima do rodapé, na largura total da tela.
 document.addEventListener("DOMContentLoaded", function () {
+  // 4. Fecho
+  var fecho = document.querySelector(".fecho-site");
+  var rodape = document.querySelector("footer.footer");
+  if (fecho && rodape) rodape.parentNode.insertBefore(fecho, rodape);
+
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
   var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
