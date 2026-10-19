@@ -715,7 +715,14 @@ body.pagina-saline {
   a:hover, a:focus-visible { color: $lavanda; }
   ::selection { background: $azul-suave; color: $branco; }
   p { max-width: 38rem; }
-  main { padding-bottom: 2rem; }
+  // Fecho com as mesmas medidas do bordão das outras páginas: da frase até a
+  // faixa, só o respiro de baixo do .saline-fecho (1,5rem) e mais 2rem. Para
+  // isso, o <main> não deixa sobra embaixo e a faixa de 60 px que o Quarto
+  // reserva depois do conteúdo vira 2rem.
+  main.content { padding-bottom: 0; margin-bottom: 0; }
+  #quarto-content.page-rows-contents {
+    grid-template-rows: [content-top] minmax(max-content, 1fr) [content-bottom] minmax(2rem, max-content) [page-bottom];
+  }
 
   .rodape-whatsapp, .rodape-saline { display: none; }
   .rodape-dados { display: inline; }
@@ -826,7 +833,7 @@ body.pagina-saline {
   text-align: center;
   padding: 3.5rem 0 1.5rem;
   border-top: 1px solid rgba($azul-suave, 0.3);
-  p { margin-left: auto; margin-right: auto; }
+  p { margin-left: auto; margin-right: auto; margin-bottom: 0; }
   .saline-bordao { display: block; font-size: 1.2rem; letter-spacing: 0.08em; color: $branco; }
 }
 
