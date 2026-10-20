@@ -284,6 +284,14 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   botões de WhatsApp usam a referência `[whatsapp]` do fim do arquivo (o link
   e a mensagem ficam num lugar só) e têm a classe fixa `cta-whatsapp-tcc`,
   usada pelo Google Ads para medir as conversões.
+  - A tag do Google Ads (`AW-18527658136`) e o script da conversão ficam em
+    `assets/html/google-ads-tcc.html`, incluído só nessa página
+    (`include-in-header` no cabeçalho do `.qmd`, que repete o `head.html` do
+    site). A conversão dispara só no clique em `.cta-whatsapp-tcc`, com
+    `transport_type: beacon`, sem segurar o link; com o Google bloqueado, o
+    botão abre o WhatsApp do mesmo jeito.
+  - O `scripts/pos_render.py` leva o bloco marcado com
+    `<!-- inicio-do-head -->` para logo depois de `<head>`.
 - **Bordão e faixa de arte no fim das páginas:** o filtro
   `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
   dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa

@@ -7,6 +7,9 @@
    publicado com eles.
 4. Põe um sufixo de versão nas imagens (foto.jpg?v=<hash>), para que uma
    imagem trocada apareça atualizada mesmo com o cache do navegador.
+5. Leva para logo depois de <head> os blocos marcados com
+   <!-- inicio-do-head --> ... <!-- /inicio-do-head --> (a tag do Google Ads
+   da landing de TCC), que o Quarto põe no fim do cabeçalho.
 
 Uso: python scripts/pos_render.py <pasta com sitemap-pt.xml, sitemap-es.xml, sitemap-en.xml>
 """
@@ -143,6 +146,30 @@ def versionar_imagens() -> tuple[int, list[str]]:
     return trocas, sorted(nao_encontradas)
 
 
+INICIO_DO_HEAD = re.compile(r"[ \t]*<!-- inicio-do-head\b.*?<!-- /inicio-do-head -->[ \t]*\r?\n?", re.DOTALL)
+
+
+def mover_para_inicio_do_head() -> int:
+    """Move cada bloco <!-- inicio-do-head --> para logo depois de <head>."""
+    movidos = 0
+    for arquivo in DOCS.rglob("*.html"):
+        if "site_libs" in arquivo.parts:
+            continue
+        original = arquivo.read_text(encoding="utf-8")
+        blocos = INICIO_DO_HEAD.findall(original)
+        if not blocos:
+            continue
+        sem = INICIO_DO_HEAD.sub("", original)
+        abre = re.search(r"<head[^>]*>\r?\n?", sem)
+        if abre is None:
+            continue
+        novo = sem[: abre.end()] + "".join(blocos) + sem[abre.end():]
+        if novo != original:
+            arquivo.write_text(novo, encoding="utf-8")
+            movidos += 1
+    return movidos
+
+
 def travessoes_no_site() -> list[str]:
     """Procura — e – no texto visível e nos metadados (title, description), fora de <script> e <style>."""
     achados = []
@@ -175,6 +202,7 @@ def main() -> int:
     print(f"Sitemap: {len(no_sitemap)} endereços.")
 
     print(f"Títulos corrigidos (separador do Quarto): {corrigir_titulos()} páginas.")
+    print(f"Blocos levados para o início do <head>: {mover_para_inicio_do_head()} páginas.")
     versionadas, sem_arquivo = versionar_imagens()
     print(f"Imagens com sufixo de versão (?v=hash): {versionadas} referências.")
     faltando += [f"imagem citada mas não encontrada em docs/: {s}" for s in sem_arquivo]

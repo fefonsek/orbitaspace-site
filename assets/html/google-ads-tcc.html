@@ -1,0 +1,24 @@
+<!-- inicio-do-head: scripts/pos_render.py leva este bloco para logo depois de <head>. -->
+<!-- Google Ads, só na landing de estatística para TCC (analise-estatistica-tcc.qmd). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18527658136"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18527658136');
+</script>
+<script>
+  // Conversão: só no clique em um botão de WhatsApp (.cta-whatsapp-tcc), nunca
+  // no carregamento da página. O clique não é interrompido nem atrasado: o
+  // link abre o WhatsApp normalmente e o aviso vai por "beacon", que o
+  // navegador envia mesmo quando a página é trocada. Se o gtag.js for
+  // bloqueado, a chamada só entra na fila do dataLayer e o botão funciona.
+  document.addEventListener('click', function (evento) {
+    var botao = evento.target.closest && evento.target.closest('.cta-whatsapp-tcc');
+    if (!botao) return;
+    try {
+      gtag('event', 'conversion', {'send_to': 'AW-18527658136/Ozy2CIKz7aMdEJjB1oJF', 'transport_type': 'beacon'});
+    } catch (erro) {}
+  });
+</script>
+<!-- /inicio-do-head -->
