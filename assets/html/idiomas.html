@@ -11,11 +11,23 @@
 // 3. Botão "Copiar e-mail" da página de contato.
 // 4. Fecho (bordão e faixa de arte, de assets/lua/faixa.lua): sai do fim do
 //    conteúdo e vai para logo acima do rodapé, na largura total da tela.
+// 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
+//    página e aparece como atual (o CSS esconde os outros itens).
 document.addEventListener("DOMContentLoaded", function () {
   // 4. Fecho
   var fecho = document.querySelector(".fecho-site");
   var rodape = document.querySelector("footer.footer");
   if (fecho && rodape) rodape.parentNode.insertBefore(fecho, rodape);
+
+  // 5. Saline
+  if (document.body.classList.contains("pagina-saline")) {
+    var inicioSaline = document.querySelector(".navbar .navbar-nav.me-auto .nav-link");
+    if (inicioSaline) {
+      inicioSaline.href = location.pathname;
+      inicioSaline.classList.add("active");
+      inicioSaline.setAttribute("aria-current", "page");
+    }
+  }
 
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };

@@ -4,8 +4,8 @@ description: "Saline Astral: música, palavra e psicologia profunda para quem j�
 image: assets/img/saline/planicie.jpg
 title-block-banner: false
 # Página fora do menu principal (acesso pelo rodapé e por link direto), com
-# visual próprio: no topo, só o logo e o seletor de idioma, sem o menu; as
-# regras ficam em .pagina-saline, em assets/css/orbita.scss.
+# visual próprio: no topo, o logo, um item "Início" (a própria página) e o
+# seletor de idioma; as regras ficam em .pagina-saline, em assets/css/orbita.scss.
 body-classes: pagina-saline
 traducao: saline
 ---
@@ -99,9 +99,7 @@ Integrar a sombra não é virar uma pessoa melhor. É tornar-se mais inteiro do 
 ::: saline-secao
 ## Onde acompanhar
 
-Instagram, TikTok e YouTube: @salineastral
-
-[Instagram](https://www.instagram.com/salineastral) · [TikTok](https://www.tiktok.com/@salineastral) · [YouTube](https://www.youtube.com/@SalineAstral)
+[Instagram](https://www.instagram.com/salineastral) · [TikTok](https://www.tiktok.com/@salineastral) · [[YouTube](https://www.youtube.com/@SalineAstral): @salineastral]{.saline-sem-quebra}
 :::
 
 ::: saline-fecho

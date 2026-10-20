@@ -260,10 +260,16 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   link para a página na mesma língua) e por link direto. Os textos em ES e EN
   vêm de `_rascunhos/saline_astral_es_en.md`.
   - O visual próprio vem de `body-classes: pagina-saline` no cabeçalho e das
-    regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`. Nessa
-    página o menu some (ficam o logo, à esquerda, com link para a página
-    inicial da mesma língua, e o seletor PT | ES | EN, à direita), o WhatsApp do rodapé não aparece
-    (`.rodape-whatsapp`) e a frase da Saline dá lugar à frase espelhada,
+    regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`.
+  - Topo: o logo, à esquerda, com link para a página inicial da mesma língua;
+    do menu fica só "Início", que o script de `assets/html/idiomas.html` faz
+    apontar para a própria página da Saline e marca como atual; o seletor
+    PT | ES | EN fica à direita. Sem hambúrguer no celular.
+  - Rodapé: o texto da esquerda e os links da direita das duas marcas ficam
+    em spans no `page-footer` (`.rodape-marca-felipe` e
+    `.rodape-marca-saline`); nas páginas da Saline aparecem os da Saline
+    (Planeta Terra; e-mail saline.astral@orbitaspace.com.br, YouTube, TikTok
+    e Instagram da Saline). A frase da Saline dá lugar à frase espelhada,
     "Também trabalho com dados e estatística como Felipe Fonseca", que leva à
     página inicial da mesma língua (`.rodape-saline` e `.rodape-dados`).
   - A playlist do curso fica embutida logo abaixo do texto do curso, no mesmo

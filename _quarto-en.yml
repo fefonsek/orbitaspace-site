@@ -34,9 +34,10 @@ website:
         text: EN
   page-footer:
     background: "#1a1a2e"
-    left: "© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brazil"
+    # Cada marca tem o seu texto e os seus links; o CSS mostra os da Saline
+    # (.rodape-marca-saline) só nas páginas da Saline.
+    left: "[© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brazil]{.rodape-marca-felipe}[© 2026 Orbita Space · Saline Astral · Planet Earth]{.rodape-marca-saline}"
     # Frase da Saline Astral, com link para a página na mesma língua. Na própria
     # página da Saline aparece a frase espelhada (.rodape-dados).
     center: "[I also make music and self-knowledge content as <a href=\"/en/saline-astral.html\"><strong>Saline Astral</strong></a> → *Discover*]{.rodape-saline}[I also work with data and statistics as <a href=\"/en/index.html\"><strong>Felipe Fonseca</strong></a> → *Discover*]{.rodape-dados}"
-    # O WhatsApp fica num span próprio porque a página da Saline o esconde.
-    right: "[[WhatsApp](https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.) ·]{.rodape-whatsapp} [Email](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)"
+    right: "[[WhatsApp](https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.) · [Email](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-marca-felipe}[[Email](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"

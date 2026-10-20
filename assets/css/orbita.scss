@@ -139,8 +139,9 @@ p, li { max-width: 72ch; }
   font-size: 0.75em;
   p { max-width: none; }
 }
-// Frase espelhada (dados e estatística): só aparece na página da Saline.
-.rodape-dados { display: none; }
+// Frase espelhada (dados e estatística), texto e links da Saline: só
+// aparecem na página da Saline.
+.rodape-dados, .rodape-marca-saline { display: none; }
 
 // Botões.
 .btn { border-radius: 999px; text-decoration: none; }
@@ -702,8 +703,9 @@ main:not(:has(.quarto-post)) .sem-posts { display: block; }
 // Página Saline Astral (saline-astral.qmd em PT, ES e EN; body-classes: pagina-saline).
 // Mesma família do site, clima próprio: fundo azul profundo, texto em branco
 // e lavanda, detalhes em azul suave, Montserrat Light e bastante espaço.
-// Nenhum tom quente. No rodapé, sem WhatsApp, e a frase da Saline dá lugar
-// à frase espelhada, que leva à página inicial.
+// Nenhum tom quente. No rodapé, o texto e os links da Saline no lugar dos de
+// Felipe Fonseca, e a frase da Saline dá lugar à frase espelhada, que leva à
+// página inicial.
 body.pagina-saline {
   background: $azul-profundo;
   color: $lavanda;
@@ -724,15 +726,17 @@ body.pagina-saline {
     grid-template-rows: [content-top] minmax(max-content, 1fr) [content-bottom] minmax(2rem, max-content) [page-bottom];
   }
 
-  .rodape-whatsapp, .rodape-saline { display: none; }
-  .rodape-dados { display: inline; }
+  .rodape-marca-felipe, .rodape-saline { display: none; }
+  .rodape-dados, .rodape-marca-saline { display: inline; }
   // O rodapé mantém o negrito do resto do site, como na frase da Saline.
   .nav-footer strong { font-weight: 600; }
 
-  // Topo sem o menu: logo e nome "Orbita Space" à esquerda (link para a
-  // página inicial da mesma língua) e o seletor PT | ES | EN, discreto, à
-  // direita. Sem hambúrguer no celular. A barra fica no fluxo da página e
-  // transparente, então o Quarto não precisa do padding-top no body.
+  // Topo: logo e nome "Orbita Space" à esquerda (link para a página inicial
+  // da mesma língua), um item só no menu, "Início", que leva à própria página
+  // da Saline e aparece como atual (assets/html/idiomas.html), e o seletor
+  // PT | ES | EN, discreto, à direita. Sem hambúrguer no celular. A barra
+  // fica no fluxo da página e transparente, então o Quarto não precisa do
+  // padding-top no body.
   padding-top: 0 !important;
   #quarto-header {
     position: static;
@@ -741,9 +745,20 @@ body.pagina-saline {
   }
   .navbar { background: transparent !important; }
   .navbar-container { flex-wrap: nowrap; }
-  .navbar-brand-container { margin-left: 0 !important; margin-right: auto !important; }
-  .navbar-toggler, .navbar-nav.me-auto { display: none !important; }
-  #navbarCollapse { display: flex !important; flex-basis: auto; flex-grow: 0; margin-left: auto; }
+  .navbar-brand-container { margin-left: 0 !important; margin-right: 0 !important; }
+  .navbar-toggler, .navbar-nav.me-auto > .nav-item:not(:first-child) { display: none !important; }
+  #navbarCollapse { display: flex !important; flex-basis: auto; flex-grow: 1; }
+  .navbar .navbar-nav.me-auto { flex-direction: row; }
+  // No celular, logo, nome, "Início" e seletor numa linha só, sem cortar o nome.
+  @media (max-width: 575.98px) {
+    .navbar-container { padding-left: 0.75rem; padding-right: 0.5rem; }
+    .navbar-brand-container { flex-shrink: 0; max-width: none; }
+    .navbar-brand { margin-right: 0.35rem; }
+    .navbar-brand img { max-height: 28px; }
+    .navbar-title { font-size: 1.05rem; }
+    .navbar .navbar-nav.me-auto .nav-link { padding: 0.25rem 0.4rem; font-size: 0.95rem; }
+    .navbar .nav-idioma .nav-link { padding: 0.25rem 0.3rem; }
+  }
   .navbar .navbar-nav.ms-auto { flex-direction: row; align-items: center; gap: 0; }
   .navbar .nav-idioma { display: flex; }
   .navbar .nav-idioma .nav-link { padding: 0.25rem 0.45rem; font-size: 0.8rem; color: rgba($lavanda, 0.7); }
@@ -757,6 +772,9 @@ body.pagina-saline {
   // A faixa de arte separa a página do rodapé.
   .nav-footer { border-top: 0; }
 }
+
+// "YouTube: @salineastral" (Onde acompanhar) não quebra no meio.
+.saline-sem-quebra { white-space: nowrap; }
 
 // Rótulos pequenos: os únicos em SemiBold.
 .saline-rotulo {

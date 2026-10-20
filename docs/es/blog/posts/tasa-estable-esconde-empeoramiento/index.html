@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-ea360201697be52ad952dde93de76fdd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-308107f2e7a93a315d92b101aae92fee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -299,11 +299,23 @@ ul.task-list li input[type="checkbox"] {
 // 3. Botão "Copiar e-mail" da página de contato.
 // 4. Fecho (bordão e faixa de arte, de assets/lua/faixa.lua): sai do fim do
 //    conteúdo e vai para logo acima do rodapé, na largura total da tela.
+// 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
+//    página e aparece como atual (o CSS esconde os outros itens).
 document.addEventListener("DOMContentLoaded", function () {
   // 4. Fecho
   var fecho = document.querySelector(".fecho-site");
   var rodape = document.querySelector("footer.footer");
   if (fecho && rodape) rodape.parentNode.insertBefore(fecho, rodape);
+
+  // 5. Saline
+  if (document.body.classList.contains("pagina-saline")) {
+    var inicioSaline = document.querySelector(".navbar .navbar-nav.me-auto .nav-link");
+    if (inicioSaline) {
+      inicioSaline.href = location.pathname;
+      inicioSaline.classList.add("active");
+      inicioSaline.setAttribute("aria-current", "page");
+    }
+  }
 
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
@@ -823,13 +835,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil</p>
+<p><span class="rodape-marca-felipe">© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil</span><span class="rodape-marca-saline">© 2026 Orbita Space · Saline Astral · Planeta Tierra</span></p>
 </div>   
     <div class="nav-footer-center">
 <p><span class="rodape-saline">También creo música y contenidos de autoconocimiento como <a href="../../../../es/saline-astral.html"><strong>Saline Astral</strong></a> → <em>Conócela</em></span><span class="rodape-dados">También trabajo con datos y estadística como <a href="../../../../es/index.html"><strong>Felipe Fonseca</strong></a> → <em>Descubre</em></span></p>
 </div>
     <div class="nav-footer-right">
-<p><span class="rodape-whatsapp"><a href="https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.">WhatsApp</a> ·</span> <a href="mailto:felipe.fonseca@orbitaspace.com.br">Correo</a> · <a href="https://www.linkedin.com/in/fpzfonseca">LinkedIn</a> · <a href="https://github.com/fefonsek">GitHub</a> · <a href="https://www.youtube.com/@fefonsek">YouTube</a> · <a href="https://www.tiktok.com/@fefonsek">TikTok</a> · <a href="https://www.instagram.com/fefonsek">Instagram</a></p>
+<p><span class="rodape-marca-felipe"><a href="https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.">WhatsApp</a> · <a href="mailto:felipe.fonseca@orbitaspace.com.br">Correo</a> · <a href="https://www.linkedin.com/in/fpzfonseca">LinkedIn</a> · <a href="https://github.com/fefonsek">GitHub</a> · <a href="https://www.youtube.com/@fefonsek">YouTube</a> · <a href="https://www.tiktok.com/@fefonsek">TikTok</a> · <a href="https://www.instagram.com/fefonsek">Instagram</a></span><span class="rodape-marca-saline"><a href="mailto:saline.astral@orbitaspace.com.br">Correo</a> · <a href="https://www.youtube.com/@SalineAstral">YouTube</a> · <a href="https://www.tiktok.com/@salineastral">TikTok</a> · <a href="https://www.instagram.com/salineastral">Instagram</a></span></p>
 </div>
   </div>
 </footer>
