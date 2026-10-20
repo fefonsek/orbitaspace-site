@@ -1,11 +1,12 @@
 ---
 pagetitle: "Estatística para TCC: orientação e aulas | Orbita Space"
-description: "Orientação em estatística para o seu TCC: planejamos a análise juntos, rodamos os testes e eu explico cada resultado até você conseguir defender na banca. A partir de R$ 900."
+description: "Orientação e aulas de estatística para o seu TCC: planejamos a análise juntos e eu explico cada resultado até você conseguir defender na banca. Aulas por hora ou projeto completo."
 title-block-banner: false
 # Landing page (anúncios do Google): só em PT, fora do menu e das listagens,
 # mas no sitemap. Roteiro em _rascunhos/landing_tcc.md.
-# Os três botões de WhatsApp usam a referência [whatsapp], no fim do arquivo,
-# com a classe fixa cta-whatsapp-tcc (conversão do Google Ads).
+# Os três botões de WhatsApp ("Conversar no WhatsApp" no topo e no fim, "Pedir
+# orçamento no WhatsApp" em Investimento) usam a referência [whatsapp], no fim
+# do arquivo, com a classe fixa cta-whatsapp-tcc (conversão do Google Ads).
 ---
 
 ::: landing-abertura
@@ -17,7 +18,7 @@ title-block-banner: false
 
 [Conversar no WhatsApp][whatsapp]
 
-[A partir de R$\ 900 · Atendimento online e presencial em Formiga, MG · Resposta em até 48 horas]{.landing-info}
+[Atendimento online e presencial em Formiga, MG · Orçamento sem compromisso · Resposta em até 48\ horas]{.landing-info}
 :::
 
 ::: landing-secao
@@ -55,13 +56,27 @@ Não escrevo o seu trabalho. A redação, as conclusões e a defesa são suas. O
 ::: landing-secao
 ## Investimento
 
-**A partir de R$\ 900** para TCC de graduação. O valor final depende do tamanho da base e do número de análises, e você recebe a proposta fechada antes de começar.
+::: landing-modalidades
+::: landing-modalidade
+### Aulas por hora
 
-Pagamento em duas etapas: metade para começar e metade na entrega. Pix ou cartão, com parcelamento.
+[R$\ 100 por hora]{.landing-preco}
 
-Dissertação, artigo ou pesquisa maior? Também atendo, com orçamento próprio.
+Para tirar dúvidas pontuais, entender qual teste usar ou aprender a rodar e interpretar a sua própria análise. Você contrata as horas que precisar.
+:::
 
-[Conversar no WhatsApp][whatsapp]
+::: landing-modalidade
+### Projeto completo
+
+[A partir de R$\ 900]{.landing-preco}
+
+Valor fechado, sem contar horas: análise descritiva e até três testes, relatório técnico, devolutiva por vídeo e uma rodada de ajustes, em 10 dias úteis.
+:::
+:::
+
+Pagamento por Pix ou cartão, com parcelamento no projeto completo. Dissertação, artigo ou pesquisa maior? Também atendo, com orçamento próprio.
+
+[Pedir orçamento no WhatsApp][whatsapp]
 :::
 
 ::: landing-secao

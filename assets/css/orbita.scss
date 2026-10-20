@@ -920,6 +920,9 @@ body:not(.pagina-saline) main.content {
   margin-bottom: 0.75rem;
 }
 .landing-info { font-size: 0.9rem; color: $text-muted; }
+// A linha de informações usa a largura toda da coluna (sem o limite de 72ch)
+// e, quando não cabe numa linha, quebra em duas de tamanho parecido.
+p:has(> .landing-info) { max-width: none; text-wrap: balance; }
 .landing-secao {
   padding: 2rem 0;
   // Com um título, o Pandoc junta a seção e o div; com dois ("O que está
@@ -928,6 +931,25 @@ body:not(.pagina-saline) main.content {
   > h2:first-child { margin-top: 0; }
   #quarto-content & > section:first-child > h2:first-child { margin-top: 0; }
   .cta-whatsapp-tcc { margin-top: 0.5rem; }
+}
+.landing-secao .landing-modalidades {
+  // Investimento: duas modalidades lado a lado; uma embaixo da outra no celular.
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 1.5rem;
+}
+.landing-modalidade {
+  background: $branco;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  padding: 1.4rem 1.5rem;
+  h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.35rem; }
+  .landing-preco { display: block; font-size: 1.2rem; font-weight: 500; color: $azul-link; }
+  p:last-child { margin-bottom: 0; }
+}
+@media (max-width: 600px) {
+  .landing-secao .landing-modalidades { grid-template-columns: minmax(0, 1fr); }
 }
 .landing-perguntas h3 { font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; }
 .landing-fecho {
