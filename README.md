@@ -278,6 +278,12 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
     a faixa de arte, abaixo), em `assets/img/saline/`.
   - Os links das frases do rodapé são HTML (`<a href="/saline-astral.html">`):
     em Markdown, o Quarto no Windows reescreve o endereço com barra invertida.
+- **Landing page de estatística para TCC** (`analise-estatistica-tcc.qmd`, só
+  em PT): página para os anúncios do Google, fora do menu e das listagens,
+  mas no sitemap. O roteiro está em `_rascunhos/landing_tcc.md`. Os três
+  botões de WhatsApp usam a referência `[whatsapp]` do fim do arquivo (o link
+  e a mensagem ficam num lugar só) e têm a classe fixa `cta-whatsapp-tcc`,
+  usada pelo Google Ads para medir as conversões.
 - **Bordão e faixa de arte no fim das páginas:** o filtro
   `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
   dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa

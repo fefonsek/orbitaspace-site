@@ -900,3 +900,39 @@ body:not(.pagina-saline) main.content {
 @media (max-width: 600px) {
   .faixa-arte { height: 60px; }
 }
+
+// Landing page de estatística para TCC (analise-estatistica-tcc.qmd): uma
+// coluna; cada seção começa no título sublinhado, como nas outras páginas;
+// botão de WhatsApp em três pontos.
+.landing-abertura {
+  padding: 2.5rem 0 3rem;
+  h1 { font-size: clamp(2rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 0 0 1.25rem; }
+  .landing-frase { display: block; font-size: 1.15rem; }
+  .cta-whatsapp-tcc { margin: 0.5rem 0 1rem; }
+}
+.landing-rotulo {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $azul-link;
+  margin-bottom: 0.75rem;
+}
+.landing-info { font-size: 0.9rem; color: $text-muted; }
+.landing-secao {
+  padding: 2rem 0;
+  // Com um título, o Pandoc junta a seção e o div; com dois ("O que está
+  // incluído" e "O que eu não faço"), o primeiro título fica um nível abaixo.
+  // O #quarto-content vence a regra do Quarto que dá 1rem a esse título.
+  > h2:first-child { margin-top: 0; }
+  #quarto-content & > section:first-child > h2:first-child { margin-top: 0; }
+  .cta-whatsapp-tcc { margin-top: 0.5rem; }
+}
+.landing-perguntas h3 { font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; }
+.landing-fecho {
+  padding: 2rem 0 1rem;
+  text-align: center;
+  p { max-width: none; font-size: 1.25rem; }
+  .cta-whatsapp-tcc { font-size: 1rem; }
+}

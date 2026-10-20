@@ -1,0 +1,105 @@
+---
+pagetitle: "Estatística para TCC: orientação e aulas | Orbita Space"
+description: "Orientação em estatística para o seu TCC: planejamos a análise juntos, rodamos os testes e eu explico cada resultado até você conseguir defender na banca. A partir de R$ 900."
+title-block-banner: false
+# Landing page (anúncios do Google): só em PT, fora do menu e das listagens,
+# mas no sitemap. Roteiro em _rascunhos/landing_tcc.md.
+# Os três botões de WhatsApp usam a referência [whatsapp], no fim do arquivo,
+# com a classe fixa cta-whatsapp-tcc (conversão do Google Ads).
+---
+
+::: landing-abertura
+[Estatística para TCC]{.landing-rotulo}
+
+# Chegue na banca entendendo cada número do seu TCC.
+
+[Orientação e aulas de estatística aplicada à sua pesquisa. A gente planeja a análise junto, roda os testes e eu explico cada resultado até você conseguir defender sozinho.]{.landing-frase}
+
+[Conversar no WhatsApp][whatsapp]
+
+[A partir de R$\ 900 · Atendimento online e presencial em Formiga, MG · Resposta em até 48 horas]{.landing-info}
+:::
+
+::: landing-secao
+## Para quem é
+
+Para quem está com os dados na mão (ou quase) e travou na parte estatística. Você já tem o questionário aplicado, a planilha montada ou a base do laboratório, mas não sabe qual teste usar, o software devolve tabelas que não fazem sentido ou o orientador pediu "mais análise" e não explicou o quê.
+
+Também serve para quem ainda vai coletar e quer planejar antes, para não descobrir no fim que faltou uma pergunta no questionário.
+:::
+
+::: landing-secao
+## Como funciona
+
+**1. Conversa inicial.** Você me conta o tema, os objetivos e o que tem de dados. Sem custo. Saio dela com uma proposta fechada de escopo, prazo e valor.
+
+**2. Plano e análise.** Definimos juntos as perguntas que a estatística precisa responder e os testes adequados. Eu organizo a base, rodo as análises e monto as tabelas e os gráficos no padrão que o seu trabalho pede.
+
+**3. Devolutiva.** Numa chamada de vídeo, explico resultado por resultado: o que cada número significa, por que esse teste e não outro, e o que a banca costuma perguntar. Você sai sabendo explicar, não só copiar.
+:::
+
+::: landing-secao
+## O que está incluído
+
+- Análise descritiva e até três testes estatísticos.
+- Relatório técnico com tabelas, gráficos e a interpretação de cada resultado, para servir de base na escrita do seu capítulo.
+- Uma devolutiva por vídeo de até uma hora.
+- Uma rodada de ajustes depois da devolutiva.
+- Prazo de 10 dias úteis, contado a partir do pagamento da entrada.
+
+## O que eu não faço
+
+Não escrevo o seu trabalho. A redação, as conclusões e a defesa são suas. O meu papel é o de um professor particular de estatística dedicado à sua pesquisa: garantir que a análise esteja certa e que você entenda o que está apresentando.
+:::
+
+::: landing-secao
+## Investimento
+
+**A partir de R$\ 900** para TCC de graduação. O valor final depende do tamanho da base e do número de análises, e você recebe a proposta fechada antes de começar.
+
+Pagamento em duas etapas: metade para começar e metade na entrega. Pix ou cartão, com parcelamento.
+
+Dissertação, artigo ou pesquisa maior? Também atendo, com orçamento próprio.
+
+[Conversar no WhatsApp][whatsapp]
+:::
+
+::: landing-secao
+## Quem vai te acompanhar
+
+Sou o Felipe Fonseca, estatístico formado pela UFOP e mestrando em Administração pelo IFMG. Trabalho com análise de dados há anos e já estive do outro lado: sei como é chegar na reta final do curso com uma planilha cheia e nenhuma ideia do que fazer com ela.
+
+Veja um exemplo de como conduzo uma análise de TCC: [Caso: análise estatística de um TCC de Administração](projetos/caso-tcc-rotatividade/index.qmd).
+:::
+
+::: {.landing-secao .landing-perguntas}
+## Perguntas frequentes
+
+### Preciso já ter os dados?
+
+Não. Se ainda vai coletar, melhor ainda: dá para planejar o questionário e a amostra para que a análise funcione depois.
+
+### Qual programa você usa?
+
+Trabalho em R e entrego as tabelas prontas. Se o seu curso exige SPSS, Jamovi ou Excel, combinamos na conversa inicial.
+
+### Isso é permitido? E o meu orientador?
+
+É apoio de ensino, como aula particular: você aprende a análise e escreve o próprio trabalho. Recomendo contar ao seu orientador; ele costuma gostar de saber que a parte estatística está sendo bem cuidada.
+
+### Meu prazo é curto. Dá?
+
+Depende do tamanho da análise. Me chame com a data da entrega e eu digo com sinceridade se cabe. Prazos menores que o padrão têm acréscimo.
+
+### Como é a devolutiva?
+
+Por chamada de vídeo, gravada se você quiser, para rever antes da banca.
+:::
+
+::: landing-fecho
+Sua pesquisa merece uma análise que você consiga defender.
+
+[Conversar no WhatsApp][whatsapp]
+:::
+
+[whatsapp]: https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pela%20p%C3%A1gina%20de%20estat%C3%ADstica%20para%20TCC%20e%20quero%20saber%20mais%20sobre%20a%20orienta%C3%A7%C3%A3o. {.btn .btn-primary .cta-whatsapp-tcc}
