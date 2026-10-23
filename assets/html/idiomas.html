@@ -13,6 +13,9 @@
 //    conteúdo e vai para logo acima do rodapé, na largura total da tela.
 // 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
 //    página e aparece como atual (o CSS esconde os outros itens).
+// 6. Painel do Power BI que só carrega no clique ({{< painel-pbi imagem=... >}}):
+//    no computador, o clique troca a imagem pelo iframe; no celular (até
+//    600 px), o link abre o painel numa nova aba, como na página do Radar.
 document.addEventListener("DOMContentLoaded", function () {
   // 4. Fecho
   var fecho = document.querySelector(".fecho-site");
@@ -28,6 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
       inicioSaline.setAttribute("aria-current", "page");
     }
   }
+
+  // 6. Painel no clique
+  document.querySelectorAll(".painel-pbi-clique").forEach(function (bloco) {
+    var capa = bloco.querySelector(".painel-pbi-capa");
+    if (!capa) return;
+    capa.addEventListener("click", function (evento) {
+      if (window.matchMedia("(max-width: 600px)").matches) return;
+      evento.preventDefault();
+      var moldura = document.createElement("div");
+      moldura.className = "painel-pbi";
+      var iframe = document.createElement("iframe");
+      iframe.src = bloco.getAttribute("data-src");
+      iframe.title = bloco.getAttribute("data-titulo");
+      iframe.setAttribute("allowfullscreen", "");
+      moldura.appendChild(iframe);
+      bloco.replaceWith(moldura);
+      iframe.focus();
+    });
+  });
 
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };

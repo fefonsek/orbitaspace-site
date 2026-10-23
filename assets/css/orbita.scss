@@ -901,14 +901,14 @@ body:not(.pagina-saline) main.content {
   .faixa-arte { height: 60px; }
 }
 
-// Landing page de estatística para TCC (analise-estatistica-tcc.qmd): uma
-// coluna; cada seção começa no título sublinhado, como nas outras páginas;
-// botão de WhatsApp em três pontos.
+// Landing pages (analise-estatistica-tcc.qmd e people-analytics-power-bi.qmd):
+// uma coluna; cada seção começa no título sublinhado, como nas outras
+// páginas; botões de WhatsApp (.cta-whatsapp-tcc e .cta-whatsapp-rh).
 .landing-abertura {
   padding: 2.5rem 0 3rem;
   h1 { font-size: clamp(2rem, 4.6vw, 2.8rem); line-height: 1.2; margin: 0 0 1.25rem; }
   .landing-frase { display: block; font-size: 1.15rem; }
-  .cta-whatsapp-tcc { margin: 0.5rem 0 1rem; }
+  .cta-whatsapp-tcc, .cta-whatsapp-rh { margin: 0.5rem 0 1rem; }
 }
 .landing-rotulo {
   display: block;
@@ -930,7 +930,7 @@ p:has(> .landing-info) { max-width: none; text-wrap: balance; }
   // O #quarto-content vence a regra do Quarto que dá 1rem a esse título.
   > h2:first-child { margin-top: 0; }
   #quarto-content & > section:first-child > h2:first-child { margin-top: 0; }
-  .cta-whatsapp-tcc { margin-top: 0.5rem; }
+  .cta-whatsapp-tcc, .cta-whatsapp-rh { margin-top: 0.5rem; }
 }
 .landing-secao .landing-modalidades {
   // Investimento: duas modalidades lado a lado; uma embaixo da outra no celular.
@@ -946,11 +946,43 @@ p:has(> .landing-info) { max-width: none; text-wrap: balance; }
   padding: 1.4rem 1.5rem;
   h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.35rem; }
   .landing-preco { display: block; font-size: 1.2rem; font-weight: 500; color: $azul-link; }
+  // "Sob proposta": sem o destaque do valor.
+  .landing-preco-proposta { font-size: 1rem; font-weight: 400; color: $text-muted; }
   p:last-child { margin-bottom: 0; }
 }
 @media (max-width: 600px) {
   .landing-secao .landing-modalidades { grid-template-columns: minmax(0, 1fr); }
 }
+// People Analytics: três cartões lado a lado; empilhados abaixo de 768 px,
+// onde três colunas ficariam estreitas demais.
+.landing-secao .landing-modalidades-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 767.98px) {
+  .landing-secao .landing-modalidades-3 { grid-template-columns: minmax(0, 1fr); }
+}
+
+// Painel do Power BI que só carrega no clique (painel-pbi com imagem=...):
+// imagem do painel com o botão por cima; o clique troca tudo pelo iframe.
+.painel-pbi-clique { margin: 1.25rem 0 1rem; }
+.painel-pbi-capa {
+  position: relative;
+  display: block;
+  border: 1px solid $lavanda;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background: $azul-profundo;
+  img { display: block; width: 100%; height: auto; opacity: 0.55; transition: opacity 0.15s ease; }
+  .painel-pbi-abrir {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    box-shadow: 0 0.35rem 1.25rem rgba($azul-profundo, 0.35);
+  }
+  &:hover img, &:focus-visible img { opacity: 0.7; }
+  &:focus-visible { outline: 2px solid $azul-medio; outline-offset: 2px; }
+}
+.painel-pbi-clique + p { margin-top: 0.25rem; }
 .landing-perguntas h3 { font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; }
 .landing-fecho {
   padding: 2rem 0 1rem;

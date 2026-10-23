@@ -285,13 +285,24 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   e a mensagem ficam num lugar só) e têm a classe fixa `cta-whatsapp-tcc`,
   usada pelo Google Ads para medir as conversões.
   - A tag do Google Ads (`AW-18527658136`) e o script da conversão ficam em
-    `assets/html/google-ads-tcc.html`, incluído só nessa página
+    `assets/html/google-ads.html`, incluído só nas landing pages
     (`include-in-header` no cabeçalho do `.qmd`, que repete o `head.html` do
     site). A conversão dispara só no clique em `.cta-whatsapp-tcc`, com
     `transport_type: beacon`, sem segurar o link; com o Google bloqueado, o
     botão abre o WhatsApp do mesmo jeito.
   - O `scripts/pos_render.py` leva o bloco marcado com
     `<!-- inicio-do-head -->` para logo depois de `<head>`.
+- **Landing page de People Analytics** (`people-analytics-power-bi.qmd`, só
+  em PT): mesma estrutura e estilo da landing de TCC, fora do menu e das
+  listagens, no sitemap. Roteiro em `_rascunhos/landing_people_analytics.md`.
+  Os quatro botões de WhatsApp usam a referência `[whatsapp]` do fim do
+  arquivo e têm a classe `cta-whatsapp-rh`; a tag do Google Ads e a
+  conversão são as mesmas da landing de TCC (`assets/html/google-ads.html`).
+  - O painel do Radar entra com `{{< painel-pbi ... imagem="..." imagem-mini="..." alt="..." >}}`:
+    com `imagem`, o shortcode mostra a imagem do painel com o botão, e o
+    iframe só é inserido no clique (script em `assets/html/idiomas.html`).
+    No celular e sem JavaScript, o clique abre o painel numa nova aba. A
+    página do Radar continua com o iframe direto (sem `imagem`).
 - **Bordão e faixa de arte no fim das páginas:** o filtro
   `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
   dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa

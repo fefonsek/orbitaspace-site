@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 <!-- inicio-do-head: scripts/pos_render.py leva este bloco para logo depois de <head>. -->
-<!-- Google Ads, só na landing de estatística para TCC (analise-estatistica-tcc.qmd). -->
+<!-- Google Ads, só nas landing pages (analise-estatistica-tcc.qmd e people-analytics-power-bi.qmd). -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18527658136"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,13 +10,14 @@
   gtag('config', 'AW-18527658136');
 </script>
 <script>
-  // Conversão: só no clique em um botão de WhatsApp (.cta-whatsapp-tcc), nunca
+  // Conversão: só no clique em um botão de WhatsApp das landing pages
+  // (.cta-whatsapp-tcc e .cta-whatsapp-rh), nunca
   // no carregamento da página. O clique não é interrompido nem atrasado: o
   // link abre o WhatsApp normalmente e o aviso vai por "beacon", que o
   // navegador envia mesmo quando a página é trocada. Se o gtag.js for
   // bloqueado, a chamada só entra na fila do dataLayer e o botão funciona.
   document.addEventListener('click', function (evento) {
-    var botao = evento.target.closest && evento.target.closest('.cta-whatsapp-tcc');
+    var botao = evento.target.closest && evento.target.closest('.cta-whatsapp-tcc, .cta-whatsapp-rh');
     if (!botao) return;
     try {
       gtag('event', 'conversion', {'send_to': 'AW-18527658136/Ozy2CIKz7aMdEJjB1oJF', 'transport_type': 'beacon'});
@@ -67,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2bca1ce3378ab5f685e22f44af7b8d97.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-95eac6261065c91d74b8c047bfe6782e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -289,6 +290,9 @@ ul.task-list li input[type="checkbox"] {
 //    conteúdo e vai para logo acima do rodapé, na largura total da tela.
 // 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
 //    página e aparece como atual (o CSS esconde os outros itens).
+// 6. Painel do Power BI que só carrega no clique ():
+//    no computador, o clique troca a imagem pelo iframe; no celular (até
+//    600 px), o link abre o painel numa nova aba, como na página do Radar.
 document.addEventListener("DOMContentLoaded", function () {
   // 4. Fecho
   var fecho = document.querySelector(".fecho-site");
@@ -304,6 +308,25 @@ document.addEventListener("DOMContentLoaded", function () {
       inicioSaline.setAttribute("aria-current", "page");
     }
   }
+
+  // 6. Painel no clique
+  document.querySelectorAll(".painel-pbi-clique").forEach(function (bloco) {
+    var capa = bloco.querySelector(".painel-pbi-capa");
+    if (!capa) return;
+    capa.addEventListener("click", function (evento) {
+      if (window.matchMedia("(max-width: 600px)").matches) return;
+      evento.preventDefault();
+      var moldura = document.createElement("div");
+      moldura.className = "painel-pbi";
+      var iframe = document.createElement("iframe");
+      iframe.src = bloco.getAttribute("data-src");
+      iframe.title = bloco.getAttribute("data-titulo");
+      iframe.setAttribute("allowfullscreen", "");
+      moldura.appendChild(iframe);
+      bloco.replaceWith(moldura);
+      iframe.focus();
+    });
+  });
 
   var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
   var inicio = { PT: "/", ES: "/es/", EN: "/en/" };

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+<!-- inicio-do-head: scripts/pos_render.py leva este bloco para logo depois de <head>. -->
+<!-- Google Ads, só nas landing pages (analise-estatistica-tcc.qmd e people-analytics-power-bi.qmd). -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18527658136"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18527658136');
+</script>
+<script>
+  // Conversão: só no clique em um botão de WhatsApp das landing pages
+  // (.cta-whatsapp-tcc e .cta-whatsapp-rh), nunca
+  // no carregamento da página. O clique não é interrompido nem atrasado: o
+  // link abre o WhatsApp normalmente e o aviso vai por "beacon", que o
+  // navegador envia mesmo quando a página é trocada. Se o gtag.js for
+  // bloqueado, a chamada só entra na fila do dataLayer e o botão funciona.
+  document.addEventListener('click', function (evento) {
+    var botao = evento.target.closest && evento.target.closest('.cta-whatsapp-tcc, .cta-whatsapp-rh');
+    if (!botao) return;
+    try {
+      gtag('event', 'conversion', {'send_to': 'AW-18527658136/Ozy2CIKz7aMdEJjB1oJF', 'transport_type': 'beacon'});
+    } catch (erro) {}
+  });
+</script>
+<!-- /inicio-do-head -->
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Painéis de RH em Power BI com os dados que a sua empresa já tem: absenteísmo, turnover, horas extras e headcount, sem trocar de sistema e com cuidado com a LGPD.">
+
+<title>People Analytics em Power BI: painéis de RH | Orbita Space</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/img/favicon-32.png?v=adc3fc4c" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9a7dff649313491d3cb860140645fda8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-95eac6261065c91d74b8c047bfe6782e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png?v=f2b429e3">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;display=swap">
+
+
+<meta property="og:title" content="People Analytics em Power BI: painéis de RH | Orbita Space">
+<meta property="og:description" content="Painéis de RH em Power BI com os dados que a sua empresa já tem: absenteísmo, turnover, horas extras e headcount, sem trocar de sistema e com cuidado com a LGPD.">
+<meta property="og:image" content="https://orbitaspace.com.br/projetos/radar-absenteismo/img/01_visao_executiva_mini.jpg?v=f81fd44d">
+<meta property="og:site_name" content="Orbita Space">
+<meta property="og:image:alt" content="Visão executiva do painel Radar de Absenteísmo, com a taxa mensal e a taxa de curta duração">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, página inicial" class="navbar-logo light-content">
+    <img src="./assets/img/logo-branco.png?v=a2531125" alt="Orbita Space, página inicial" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Orbita Space</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Início</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projetos.html"> 
+<span class="menu-text">Projetos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./servicos.html"> 
+<span class="menu-text">Serviços</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sobre.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contato.html"> 
+<span class="menu-text">Contato</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">PT</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./en/index.html"> 
+<span class="menu-text">EN</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<div class="landing-abertura">
+<p><span class="landing-rotulo">People Analytics em Power BI</span></p>
+<section id="os-números-de-rh-que-a-diretoria-entende-com-os-dados-que-a-sua-empresa-já-tem." class="level1">
+<h1>Os números de RH que a diretoria entende, com os dados que a sua empresa já tem.</h1>
+<p><span class="landing-frase">Painéis de absenteísmo, turnover, horas extras e headcount em Power BI, conectados à folha, ao ponto e às planilhas que você já usa. Sem trocar de sistema.</span></p>
+<p><a href="https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pela%20p%C3%A1gina%20de%20People%20Analytics%20e%20quero%20conversar%20sobre%20um%20painel%20de%20RH." class="btn btn-primary cta-whatsapp-rh">Conversar no WhatsApp</a></p>
+<p><span class="landing-info">Diagnóstico inicial sem custo · Atendimento online para todo o Brasil · Resposta em até 48&nbsp;horas</span></p>
+</section>
+</div>
+<section id="o-problema" class="level2 landing-secao">
+<h2 data-anchor-id="o-problema">O problema</h2>
+<p>O RH tem os dados, mas eles estão espalhados entre o sistema de folha, o ponto, planilhas de afastamento e relatórios que alguém monta à mão todo mês. Quando a diretoria pergunta por que as horas extras subiram ou onde estão as faltas, a resposta leva dias e ainda chega com números diferentes, porque cada área calcula de um jeito.</p>
+<p>Um painel bem construído resolve isso: um número só para cada indicador, atualizado, com o detalhe que o gestor precisa para agir.</p>
+</section>
+<section id="um-exemplo-quando-a-taxa-estável-esconde-uma-piora" class="level2 landing-secao">
+<h2 data-anchor-id="um-exemplo-quando-a-taxa-estável-esconde-uma-piora">Um exemplo: quando a taxa estável esconde uma piora</h2>
+<p>No Radar de Absenteísmo, um painel que construí com dados fictícios de uma operação logística, a taxa de absenteísmo ficou parada em 3,77% por dois anos. Parecia boa notícia.</p>
+<p>Separando as ausências curtas, que a liderança do dia a dia influencia, das longas, que dependem da saúde ocupacional, apareceu outra história: tirando um surto de doenças que tinha inflado o ano anterior, as ausências curtas subiram 8%. A piora estava justamente na parte que a gestão controla.</p>
+<div class="painel-pbi-clique" data-src="https://app.powerbi.com/view?r=eyJrIjoiZjViNTBjOWEtNmQ3OC00ODc5LWI3MzItYTA3NWUxNDc1YzU4IiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" data-titulo="Painel interativo do Radar de Absenteísmo no Power BI">
+<a class="painel-pbi-capa" href="https://app.powerbi.com/view?r=eyJrIjoiZjViNTBjOWEtNmQ3OC00ODc5LWI3MzItYTA3NWUxNDc1YzU4IiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" target="_blank" rel="noopener"><img src="projetos/radar-absenteismo/img/01_visao_executiva_mini.jpg?v=f81fd44d" srcset="projetos/radar-absenteismo/img/01_visao_executiva_mini.jpg 640w, projetos/radar-absenteismo/img/01_visao_executiva.jpg 1600w" sizes="(max-width: 600px) 100vw, 800px" alt="Visão executiva do painel Radar de Absenteísmo, com a taxa mensal e a taxa de curta duração" width="1600" height="900" loading="lazy"><span class="btn btn-primary painel-pbi-abrir">Explorar o painel interativo</span></a>
+</div>
+<p><a href="./projetos/radar-absenteismo/index.html">Ver o caso completo</a></p>
+<p><a href="https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pela%20p%C3%A1gina%20de%20People%20Analytics%20e%20quero%20conversar%20sobre%20um%20painel%20de%20RH." class="btn btn-primary cta-whatsapp-rh">Conversar no WhatsApp</a></p>
+</section>
+<section id="o-que-o-painel-pode-mostrar" class="level2 landing-secao">
+<h2 data-anchor-id="o-que-o-painel-pode-mostrar">O que o painel pode mostrar</h2>
+<p>Cada empresa tem as suas perguntas, e o painel é montado a partir delas. Os indicadores mais pedidos:</p>
+<ul>
+<li><strong>Absenteísmo:</strong> taxa geral e separada em curta e longa duração, por área, turno, gestor e motivo.</li>
+<li><strong>Turnover:</strong> desligamentos voluntários e involuntários, tempo de casa de quem sai e onde a rotatividade se concentra.</li>
+<li><strong>Headcount e movimentação:</strong> quadro por área, admissões, desligamentos e transferências mês a mês.</li>
+<li><strong>Horas extras e banco de horas:</strong> onde a jornada está estourando e quanto isso custa.</li>
+<li><strong>Afastamentos e acidentes:</strong> frequência, duração e relação com tempo de empresa e função.</li>
+<li><strong>Custo das ausências:</strong> quanto as faltas e as horas extras representam em reais.</li>
+</ul>
+</section>
+<section id="como-funciona" class="level2 landing-secao">
+<h2 data-anchor-id="como-funciona">Como funciona</h2>
+<p><strong>1. Diagnóstico.</strong> Uma conversa para entender as perguntas da sua diretoria e onde estão os dados hoje. Sem custo. Você recebe uma proposta fechada de escopo, prazo e valor.</p>
+<p><strong>2. Mapeamento dos dados.</strong> Levanto o que existe na folha, no ponto, no ERP e nas planilhas, e defino junto com o RH como cada indicador deve ser calculado, para que todo mundo use o mesmo número.</p>
+<p><strong>3. Construção.</strong> Monto o modelo de dados e o painel em Power BI, com as visões para a diretoria e o detalhe para os gestores.</p>
+<p><strong>4. Entrega e treinamento.</strong> Publico o painel, treino a equipe e entrego a documentação de cada indicador.</p>
+<p><strong>5. Sustentação (opcional).</strong> Acompanhamento mensal para ajustes, novos indicadores e atualização das fontes.</p>
+</section>
+<div class="landing-secao">
+<section id="sem-trocar-de-sistema" class="level2">
+<h2 data-anchor-id="sem-trocar-de-sistema">Sem trocar de sistema</h2>
+<p>O painel se conecta ao que a empresa já usa: exportações do sistema de folha e do ponto, ERP, banco de dados ou planilhas. Quando a extração ainda é manual, organizo uma rotina simples para que a atualização não dependa de retrabalho.</p>
+</section>
+<section id="cuidado-com-dados-de-pessoas" class="level2">
+<h2 data-anchor-id="cuidado-com-dados-de-pessoas">Cuidado com dados de pessoas</h2>
+<p>Dados de RH são sensíveis. O painel é pensado para apoiar decisões, não para vigiar pessoas: as visões gerais mostram grupos e tendências, o detalhe por pessoa só aparece para quem tem permissão, e o acesso é controlado por perfil. Os dados permanecem no ambiente da empresa, em linha com a LGPD.</p>
+</section>
+<section id="onde-o-painel-fica" class="level2">
+<h2 data-anchor-id="onde-o-painel-fica">Onde o painel fica</h2>
+<p>O painel pode ser publicado no Power BI da própria empresa, com as licenças da Microsoft no nome dela, ou em um portal de hospedagem de painéis, conforme o que fizer mais sentido para o seu caso. Eventuais custos de licença ou hospedagem são explicados na proposta, antes de começar, sem surpresa.</p>
+</section>
+</div>
+<section id="investimento" class="level2 landing-secao">
+<h2 data-anchor-id="investimento">Investimento</h2>
+<p>Valores de referência, com proposta fechada depois do diagnóstico:</p>
+<div class="landing-modalidades landing-modalidades-3">
+<section id="painel-essencial-de-rh" class="level3 landing-modalidade">
+<h3 data-anchor-id="painel-essencial-de-rh">Painel essencial de RH</h3>
+<p><span class="landing-preco">A partir de R$&nbsp;2.500</span></p>
+<p>Um painel com os principais indicadores de uma frente, como absenteísmo ou turnover, a partir de fontes já organizadas.</p>
+</section>
+<section id="people-analytics-completo" class="level3 landing-modalidade">
+<h3 data-anchor-id="people-analytics-completo">People Analytics completo</h3>
+<p><span class="landing-preco landing-preco-proposta">Sob proposta</span></p>
+<p>Várias frentes integradas, com visão executiva, detalhe por área e documentação dos indicadores.</p>
+</section>
+<section id="sustentação-mensal" class="level3 landing-modalidade">
+<h3 data-anchor-id="sustentação-mensal">Sustentação mensal</h3>
+<p><span class="landing-preco landing-preco-proposta">Sob proposta</span></p>
+<p>Acompanhamento mensal para ajustes, novos indicadores e atualização das fontes.</p>
+</section>
+</div>
+<p>Pagamento em duas etapas, metade no início e metade na entrega, por Pix ou cartão com parcelamento.</p>
+<p><a href="https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pela%20p%C3%A1gina%20de%20People%20Analytics%20e%20quero%20conversar%20sobre%20um%20painel%20de%20RH." class="btn btn-primary cta-whatsapp-rh">Pedir uma proposta no WhatsApp</a></p>
+</section>
+<section id="quem-vai-construir-o-seu-painel" class="level2 landing-secao">
+<h2 data-anchor-id="quem-vai-construir-o-seu-painel">Quem vai construir o seu painel</h2>
+<p>Sou o Felipe Fonseca, estatístico formado pela UFOP e mestrando em Administração pelo IFMG. Trabalhei construindo painéis de jornada, presença e indicadores de pessoas em uma empresa de grande porte, com milhares de colaboradores e operação em campo, e hoje atendo pela Orbita Space.</p>
+<p>O meu diferencial é o cuidado com o número: antes de desenhar o gráfico, garanto que cada indicador está calculado do jeito certo e que todo mundo entende o que ele mede.</p>
+</section>
+<section id="perguntas-frequentes" class="level2 landing-secao landing-perguntas">
+<h2 data-anchor-id="perguntas-frequentes">Perguntas frequentes</h2>
+<section id="a-minha-empresa-precisa-já-usar-power-bi" class="level3">
+<h3 data-anchor-id="a-minha-empresa-precisa-já-usar-power-bi">A minha empresa precisa já usar Power BI?</h3>
+<p>Não. Se a empresa ainda não usa, explico na proposta o que é necessário e quanto custa. Para começar, muitas vezes basta uma licença para quem publica.</p>
+</section>
+<section id="nossos-dados-estão-em-planilhas.-serve" class="level3">
+<h3 data-anchor-id="nossos-dados-estão-em-planilhas.-serve">Nossos dados estão em planilhas. Serve?</h3>
+<p>Serve. Boa parte dos projetos começa assim. Organizo as planilhas e, quando possível, deixo a atualização mais automática.</p>
+</section>
+<section id="quanto-tempo-leva" class="level3">
+<h3 data-anchor-id="quanto-tempo-leva">Quanto tempo leva?</h3>
+<p>Um painel essencial costuma ficar pronto em duas a quatro semanas, a partir do envio dos dados. Projetos maiores têm prazo combinado na proposta.</p>
+</section>
+<section id="funciona-para-empresas-pequenas-e-médias" class="level3">
+<h3 data-anchor-id="funciona-para-empresas-pequenas-e-médias">Funciona para empresas pequenas e médias?</h3>
+<p>Sim. O painel essencial foi pensado justamente para empresas que querem começar com poucos indicadores bem feitos.</p>
+</section>
+<section id="vocês-atendem-fora-de-minas-gerais" class="level3">
+<h3 data-anchor-id="vocês-atendem-fora-de-minas-gerais">Vocês atendem fora de Minas Gerais?</h3>
+<p>Sim, todo o atendimento pode ser online.</p>
+</section>
+<section id="e-a-lgpd" class="level3">
+<h3 data-anchor-id="e-a-lgpd">E a LGPD?</h3>
+<p>O painel é desenhado para mostrar grupos e tendências, com acesso por perfil e os dados dentro do ambiente da empresa. Combinamos as regras de acesso logo no diagnóstico.</p>
+</section>
+</section>
+<div class="landing-fecho">
+<p>Os sinais estão nos seus dados de RH. Vamos colocá-los na frente de quem decide.</p>
+<p><a href="https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pela%20p%C3%A1gina%20de%20People%20Analytics%20e%20quero%20conversar%20sobre%20um%20painel%20de%20RH." class="btn btn-primary cta-whatsapp-rh">Conversar no WhatsApp</a></p>
+</div>
+
+
+
+</main> <!-- /main -->
+<script>
+// 1. Seletor PT | ES | EN: aponta cada idioma para a versão correspondente
+//    desta página (links hreflang do cabeçalho, vindos de _traducoes.yml).
+//    Sem versão correspondente, leva para o blog do idioma (se estamos no
+//    blog), para a lista de projetos (se estamos num projeto que só existe
+//    em português) ou para a página inicial. Na página de Projetos, leva o
+//    filtro ?frente= junto (as chaves são as mesmas nas três línguas).
+// 2. Faixa de idioma: se o navegador está em espanhol ou inglês e a página
+//    está em outra língua, sugere a versão no idioma do navegador. Nunca
+//    redireciona. Fechar a faixa ou escolher um idioma no seletor é lembrado.
+// 3. Botão "Copiar e-mail" da página de contato.
+// 4. Fecho (bordão e faixa de arte, de assets/lua/faixa.lua): sai do fim do
+//    conteúdo e vai para logo acima do rodapé, na largura total da tela.
+// 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
+//    página e aparece como atual (o CSS esconde os outros itens).
+// 6. Painel do Power BI que só carrega no clique ():
+//    no computador, o clique troca a imagem pelo iframe; no celular (até
+//    600 px), o link abre o painel numa nova aba, como na página do Radar.
+document.addEventListener("DOMContentLoaded", function () {
+  // 4. Fecho
+  var fecho = document.querySelector(".fecho-site");
+  var rodape = document.querySelector("footer.footer");
+  if (fecho && rodape) rodape.parentNode.insertBefore(fecho, rodape);
+
+  // 5. Saline
+  if (document.body.classList.contains("pagina-saline")) {
+    var inicioSaline = document.querySelector(".navbar .navbar-nav.me-auto .nav-link");
+    if (inicioSaline) {
+      inicioSaline.href = location.pathname;
+      inicioSaline.classList.add("active");
+      inicioSaline.setAttribute("aria-current", "page");
+    }
+  }
+
+  // 6. Painel no clique
+  document.querySelectorAll(".painel-pbi-clique").forEach(function (bloco) {
+    var capa = bloco.querySelector(".painel-pbi-capa");
+    if (!capa) return;
+    capa.addEventListener("click", function (evento) {
+      if (window.matchMedia("(max-width: 600px)").matches) return;
+      evento.preventDefault();
+      var moldura = document.createElement("div");
+      moldura.className = "painel-pbi";
+      var iframe = document.createElement("iframe");
+      iframe.src = bloco.getAttribute("data-src");
+      iframe.title = bloco.getAttribute("data-titulo");
+      iframe.setAttribute("allowfullscreen", "");
+      moldura.appendChild(iframe);
+      bloco.replaceWith(moldura);
+      iframe.focus();
+    });
+  });
+
+  var codigos = { PT: "pt-BR", ES: "es", EN: "en" };
+  var inicio = { PT: "/", ES: "/es/", EN: "/en/" };
+  var blog = { PT: "/blog.html", ES: "/es/blog.html", EN: "/en/blog.html" };
+  var projetos = { PT: "/projetos.html", ES: "/es/proyectos.html", EN: "/en/projects.html" };
+  var atual = document.documentElement.lang;
+  var noBlog = /\/blog(\/|\.html)/.test(location.pathname);
+  var noProjeto = /^\/projetos\//.test(location.pathname);
+  var CHAVE_FAIXA = "orbita-faixa-idioma";
+
+  function lembrar() {
+    try { localStorage.setItem(CHAVE_FAIXA, "escolhido"); } catch (e) {}
+  }
+
+  function caminho(rotulo) {
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + codigos[rotulo] + '"]');
+    if (alt) return new URL(alt.href).pathname;
+    if (codigos[rotulo] === atual) return location.pathname;
+    if (noBlog) return blog[rotulo];
+    return noProjeto ? projetos[rotulo] : inicio[rotulo];
+  }
+
+  function versao(rotulo) {
+    var destino = caminho(rotulo);
+    var frente = new URLSearchParams(location.search).get("frente");
+    if (frente && destino === projetos[rotulo]) destino += "?frente=" + encodeURIComponent(frente);
+    return destino;
+  }
+
+  // Links que apontam para outro idioma; o filtro de Projetos os atualiza.
+  var links = [];
+  window.addEventListener("orbita:frente", function () {
+    links.forEach(function (par) { par.link.href = versao(par.rotulo); });
+  });
+
+  // 1. Seletor
+  document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
+    var rotulo = link.textContent.trim();
+    if (!codigos[rotulo]) return;
+    var item = link.closest(".nav-item");
+    if (item) item.classList.add("nav-idioma");
+    link.classList.remove("active");
+    link.href = versao(rotulo);
+    links.push({ link: link, rotulo: rotulo });
+    link.hreflang = codigos[rotulo];
+    link.addEventListener("click", lembrar);
+    if (codigos[rotulo] === atual) {
+      link.classList.add("idioma-atual");
+      link.setAttribute("aria-current", "true");
+    }
+  });
+
+  // 2. Faixa de idioma
+  (function faixaIdioma() {
+    try {
+      if (localStorage.getItem(CHAVE_FAIXA)) return;
+    } catch (e) {}
+    var preferido = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    var textos = {
+      es: { rotulo: "ES", frase: "Este sitio también está en español.", link: "Ver en español", fechar: "Cerrar" },
+      en: { rotulo: "EN", frase: "This site is also available in English.", link: "View in English", fechar: "Close" }
+    };
+    var t = textos[preferido];
+    if (!t || atual.slice(0, 2) === preferido) return;
+
+    var faixa = document.createElement("div");
+    faixa.className = "faixa-idioma";
+    faixa.lang = preferido;
+    faixa.setAttribute("role", "region");
+    faixa.setAttribute("aria-label", t.link);
+
+    var texto = document.createElement("p");
+    texto.appendChild(document.createTextNode(t.frase + " "));
+    var link = document.createElement("a");
+    link.href = versao(t.rotulo);
+    links.push({ link: link, rotulo: t.rotulo });
+    link.hreflang = preferido;
+    link.textContent = t.link;
+    link.addEventListener("click", lembrar);
+    texto.appendChild(link);
+
+    var fechar = document.createElement("button");
+    fechar.type = "button";
+    fechar.className = "faixa-fechar";
+    fechar.setAttribute("aria-label", t.fechar);
+    fechar.innerHTML = "&times;";
+    fechar.addEventListener("click", function () {
+      faixa.remove();
+      lembrar();
+    });
+
+    faixa.appendChild(texto);
+    faixa.appendChild(fechar);
+    document.body.insertBefore(faixa, document.body.firstChild);
+  })();
+
+  // 3. Copiar e-mail
+  document.querySelectorAll(".copiar-email").forEach(function (botao) {
+    var original = botao.textContent;
+    botao.addEventListener("click", function () {
+      var email = botao.getAttribute("data-email");
+      var copiado = function () {
+        botao.textContent = botao.getAttribute("data-copiado");
+        setTimeout(function () { botao.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(copiado, function () {});
+      } else {
+        var campo = document.createElement("textarea");
+        campo.value = email;
+        campo.setAttribute("readonly", "");
+        campo.style.position = "absolute";
+        campo.style.left = "-9999px";
+        document.body.appendChild(campo);
+        campo.select();
+        try { if (document.execCommand("copy")) copiado(); } catch (e) {}
+        campo.remove();
+      }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orbitaspace\.com\.br");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="rodape-marca-felipe">© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil</span><span class="rodape-marca-saline">© 2026 Orbita Space · Saline Astral · Planeta Terra</span></p>
+</div>   
+    <div class="nav-footer-center">
+<p><span class="rodape-saline">Também crio música e conteúdos de autoconhecimento como <a href="./saline-astral.html"><strong>Saline Astral</strong></a> → <em>Conheça</em></span><span class="rodape-dados">Também trabalho com dados e estatística como <a href="./index.html"><strong>Felipe Fonseca</strong></a> → <em>Conheça</em></span></p>
+</div>
+    <div class="nav-footer-right">
+<p><span class="rodape-marca-felipe"><a href="https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pelo%20site%20da%20Orbita%20Space.">WhatsApp</a> · <a href="mailto:felipe.fonseca@orbitaspace.com.br">E-mail</a> · <a href="https://www.linkedin.com/in/fpzfonseca">LinkedIn</a> · <a href="https://github.com/fefonsek">GitHub</a> · <a href="https://www.youtube.com/@fefonsek">YouTube</a> · <a href="https://www.tiktok.com/@fefonsek">TikTok</a> · <a href="https://www.instagram.com/fefonsek">Instagram</a></span><span class="rodape-marca-saline"><a href="mailto:saline.astral@orbitaspace.com.br">E-mail</a> · <a href="https://www.youtube.com/@SalineAstral">YouTube</a> · <a href="https://www.tiktok.com/@salineastral">TikTok</a> · <a href="https://www.instagram.com/salineastral">Instagram</a></span></p>
+</div>
+  </div>
+</footer>
+<div class="fecho-site">
+<p class="bordao-site">Decifre os sinais dos seus dados.</p>
+<div class="faixa-arte" aria-hidden="true"><img src="./assets/img/faixa_orbita.jpg?v=c30d7967" alt="" width="2000" height="500" loading="lazy"></div>
+</div>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

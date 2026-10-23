@@ -7,12 +7,12 @@ title-block-banner: false
 # Os três botões de WhatsApp ("Conversar no WhatsApp" no topo e no fim, "Pedir
 # orçamento no WhatsApp" em Investimento) usam a referência [whatsapp], no fim
 # do arquivo, com a classe fixa cta-whatsapp-tcc (conversão do Google Ads).
-# Tag do Google Ads e conversão no clique dos botões: só nesta página. A lista
+# Tag do Google Ads e conversão no clique dos botões: só nas landing pages. A lista
 # repete o head.html do site porque a da página substitui a do _quarto.yml.
 format:
   html:
     include-in-header:
-      - assets/html/google-ads-tcc.html
+      - assets/html/google-ads.html
       - assets/html/head.html
 ---
 
