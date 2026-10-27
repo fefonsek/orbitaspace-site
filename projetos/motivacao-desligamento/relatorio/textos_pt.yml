@@ -1,0 +1,68 @@
+# Texto do relatório em PDF, em português. Trechos entre chaves são R,
+# preenchidos com os valores do .rds (ver relatorio.qmd e scripts/apresentacao.R).
+
+titulo: "Motivação de desligamento"
+subtitulo: "Cestária Supermercados · Desligamentos e entrevistas de saída, 2024 e 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Caso fictício: empresa, pessoas e dados fictícios. O método é real."
+de: "de"
+
+manchete: "O motivo declarado nem sempre é o motivo real: entre quem deu nota 1 ou 2 ao gestor, liderança e gestor é o motivo de {pct(motivo(pn, \"Liderança e gestor\"), 0)} das saídas voluntárias, e salário, de {pct(motivo(pn, \"Salário e benefícios\"), 0)}."
+
+s_resumo: "Resumo"
+resumo: |
+  A taxa de desligamento da Cestária ficou estável: {pct(an$taxa[1], 2)} do quadro saiu por mês em 2024 e {pct(an$taxa[2], 2)} em 2025. A diretoria perguntou por que as pessoas pedem para sair e onde agir primeiro.
+
+  - **O motivo declarado esconde o motivo real.** "Salário e benefícios" é o motivo mais citado ({pct(motivo(pg, "Salário e benefícios"), 0)}), mas, entre quem deu nota 1 ou 2 ao gestor, "liderança e gestor" passa à frente: {pct(motivo(pn, "Liderança e gestor"), 0)} contra {pct(motivo(pn, "Salário e benefícios"), 0)}.
+  - **Saídas nos primeiros 90 dias cresceram em duas gerências:** no CD Expedição, de {pct(g90("CD Expedição", 2024), 0)} para {pct(g90("CD Expedição", 2025), 0)} dos admitidos; na L3 Operações, de {pct(g90("L3 Operações", 2024), 0)} para {pct(g90("L3 Operações", 2025), 0)}.
+  - **A L5 Vendas perde mais gente desde a troca de gestor**, em {mes_ano(res$troca)}: a taxa ficou {num(rr$rr, 1)} vezes maior que a esperada pelas outras gerências de Vendas.
+  - **A escala 6x1 da noite concentra "jornada e escala"**, motivo de {pct(jo$pct[1], 0)} das saídas ali, contra {pct(outros_jornada$pct, 0)} no resto.
+  - **A idade não explica as saídas:** o efeito some quando o tempo de casa entra no modelo.
+
+s_contexto: "A pergunta"
+contexto: |
+  A Cestária tem {num(res$lojas)} lojas, um centro de distribuição e um escritório central, e cerca de {num(round(res$hc_medio, -1))} pessoas. Em 2024 e 2025, {num(res$saidas_total)} pessoas saíram. O total ficou parado (p = {num(res$teste_anos$p.value, 2)}), mas as saídas voluntárias subiram de {pct(an$taxa_vol[1], 2)} para {pct(an$taxa_vol[2], 2)} ao mês, e as dispensas caíram quase na mesma medida. Para responder à diretoria, a entrevista de desligamento foi cruzada com o quadro mês a mês e com os desligamentos.
+
+s_motivos: "O que o motivo declarado esconde"
+motivos: |
+  Foram {num(res$respondentes)} respostas de quem pediu para sair (pedido ou acordo). No geral, salário lidera, com {pct(motivo(pg, "Salário e benefícios"))} (IC 95% de {ic(motivo(pg, "Salário e benefícios", "inf"), motivo(pg, "Salário e benefícios", "sup"))}). Entre as {num(pn$total[1])} pessoas que deram nota 1 ou 2 ao gestor, "liderança e gestor" vai a {pct(motivo(pn, "Liderança e gestor"))} (de {ic(motivo(pn, "Liderança e gestor", "inf"), motivo(pn, "Liderança e gestor", "sup"))}). Das {num(sal_nb$n)} pessoas com nota baixa que declararam salário, {pct(sal_nb$pct, 0)} puseram a liderança como motivo secundário.
+
+  Isso não prova que o gestor causou a saída. Mostra que o motivo principal, lido sozinho, aponta para salário, enquanto a nota e o segundo motivo apontam para a liderança.
+
+s_resposta: "Quem respondeu"
+resposta: |
+  Responderam {pct(resp_vol, 0)} de quem pediu para sair e {pct(resp_inv, 0)} de quem foi dispensado; a {unidade_baixa} ficou em {pct(resp_baixa, 0)}. O motivo só é perguntado a quem pede para sair; a diferença entre unidades foi corrigida ponderando cada resposta pela inversa da taxa de resposta da unidade. Nenhum motivo mudou mais de {num(pond_max, 1)} ponto percentual, e a ordem ficou a mesma. A ponderação supõe que, dentro de cada unidade, quem respondeu é parecido com quem não respondeu.
+
+s_onde: "Onde agir primeiro"
+s_90: "Saídas nos primeiros 90 dias"
+noventa: |
+  Entre os admitidos até 02/10/2025, a parte que pediu para sair até 90 dias foi, no CD Expedição, de {pct(g90("CD Expedição", 2024), 0)} (admitidos de 2024) para {pct(g90("CD Expedição", 2025), 0)} (de 2025), e na L3 Operações, de {pct(g90("L3 Operações", 2024), 0)} para {pct(g90("L3 Operações", 2025), 0)}; nas demais, de {pct(g90("Demais gerências", 2024), 0)} para {pct(g90("Demais gerências", 2025), 0)}. Em 2025, o risco foi {num(hr$hr[hr$grupo == "CD Expedição"], 1)} e {num(hr$hr[hr$grupo == "L3 Operações"], 1)} vezes o das demais gerências (Cox causa-específico). O gráfico mostra a incidência acumulada, com todos os admitidos e a dispensa como risco competitivo; por isso, aos 90 dias, ele não coincide exatamente com essas proporções.
+
+s_troca: "A troca de gestor na L5 Vendas"
+troca: |
+  Antes da troca, a L5 perdia {pct(taxa_troca("L5 Vendas", FALSE), 1)} do quadro por mês em saídas voluntárias; depois, {pct(taxa_troca("L5 Vendas", TRUE), 1)}. As outras gerências de Vendas foram de {pct(taxa_troca("Outras gerências de Vendas", FALSE), 1)} para {pct(taxa_troca("Outras gerências de Vendas", TRUE), 1)}. Descontado isso, a taxa da L5 ficou {num(rr$rr, 1)} vezes maior (IC 95% de {num(rr$inf, 1)} a {num(rr$sup, 1)}). "Liderança e gestor" foi de menos de 10 das {num(tl$n[!tl$depois])} respostas para {num(tl$x[tl$depois])} das {num(tl$n[tl$depois])}. É uma associação no tempo, com só seis meses de dados depois da troca.
+
+s_jornada: "Escala 6x1 no turno da noite"
+jornada: |
+  "Jornada e escala" é o motivo de {pct(jo$pct[1], 0)} das saídas voluntárias na noite em 6x1 (de {ic(jo$inf[1], jo$sup[1], 0)}), contra {pct(outros_jornada$pct, 0)} nas outras combinações. A noite em outras escalas não tem o mesmo problema: pesa a folga única na semana.
+
+s_prioridades: "Prioridades por gerência"
+prioridades: |
+  Em 2025. **Alta:** a taxa voluntária ou as saídas até 90 dias ficam acima da empresa ({pct(res$empresa_vol, 2)} ao mês e {pct(res$empresa_90, 0)}) mesmo no limite inferior do intervalo de 95%. **Média:** as duas acima na estimativa, ou um motivo (liderança, jornada) acima da empresa no limite inferior. As demais gerências ficam em "Acompanhar" e estão no CSV, com os intervalos; nenhum grupo com menos de 10 pessoas aparece. {frase_acompanhar}
+
+s_acoes: "O que fazer"
+acoes: |
+  - **CD Expedição e L3 Operações:** ouvir os admitidos antes dos 90 dias e revisar a integração e a escala informada na contratação.
+  - **L5 Vendas:** conversa estruturada com a equipe e com o novo gestor, e acompanhamento mensal da taxa contra as outras lojas.
+  - **Noite em 6x1:** estudar outra escala para a reposição noturna, a começar pelas gerências com mais saídas.
+  - **Entrevista:** pedir sempre o motivo secundário e a nota ao gestor, e buscar mais respostas na {unidade_baixa}.
+
+s_limitacoes: "Limitações"
+limitacoes: |
+  - Dados fictícios: os padrões foram plantados por um gerador, e a análise os encontrou sem ler o gabarito.
+  - Viés de resposta: a ponderação só corrige a diferença entre unidades.
+  - Associação não é causa: a comparação da L5 supõe que ela seguiria a tendência das outras gerências de Vendas sem a troca.
+  - O motivo é autodeclarado, numa lista fechada; os admitidos depois de 02/10/2025 ficam fora da janela de 90 dias.
+
+nota: |
+  O método completo, as regressões e o código R estão na página do caso, em orbitaspace.com.br/projetos/motivacao-desligamento.

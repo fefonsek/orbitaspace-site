@@ -1,0 +1,218 @@
+---
+# Relatório em PDF do caso Motivação de desligamento. O mesmo arquivo gera
+# relatorio.pdf (PT) e, depois, relatorio-es.pdf e relatorio-en.pdf; o
+# render.ps1 passa a língua com -P idioma:es. O texto corrido fica em
+# textos_<idioma>.yml, com trechos de R entre chaves que o glue preenche
+# (todos os números vêm do .rds). Quatro páginas, nesta ordem: resumo,
+# motivos, onde agir e prioridades; as regressões ficam na página do caso.
+params:
+  idioma: pt
+format:
+  typst:
+    papersize: a4
+    margin:
+      x: 2.1cm
+      y: 2.1cm
+    mainfont: "Montserrat"
+    fontsize: 9.5pt
+    section-numbering: "1."
+    include-in-header:
+      text: |
+        #set text(fill: rgb("#1a1a2e"))
+        #show table: set par(justify: false)
+        #show heading: set text(fill: rgb("#1a1a2e"), weight: "bold")
+        #show link: set text(fill: rgb("#3473C0"))
+        #set table(stroke: (x, y) => if y == 0 { (bottom: 0.6pt + rgb("#4a4a63")) } else { (bottom: 0.3pt + rgb("#d5d7e0")) })
+        // O texto do rodapé e o "de"/"of" da numeração vêm da língua: o corpo
+        // do documento grava os dois nestes states.
+        #set page(footer: context [
+          #set text(size: 7.5pt, fill: rgb("#8b8fa3"))
+          #state("rodape", "").final()
+          #h(1fr)
+          #counter(page).display("1 " + state("de", "de").final() + " 1", both: true)
+        ])
+execute:
+  echo: false
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dpi: 200
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+library(tidyverse)
+library(knitr)
+
+# O relatório lê o mesmo resultados/desligamento.rds da página e usa as
+# mesmas funções de scripts/apresentacao.R. Ele é gerado à parte (relatorio/
+# tem o seu próprio _quarto.yml) pelo render.ps1, e a página só aponta para o PDF.
+caso <- ".."
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+res <- ler_desligamento(caso, params$idioma)
+tx <- res$tx
+preparar_texto(res)
+t <- yaml::read_yaml(sprintf("textos_%s.yml", params$idioma))
+# Preenche os trechos {…} do texto com os valores calculados.
+amb <- environment()
+f <- function(x) glue::glue(x, .envir = amb, .trim = FALSE)
+bloco <- function(x) cat(f(x), "\n", sep = "")
+typst <- function(x) cat("```{=typst}\n", x, "\n```\n", sep = "")
+# Texto dentro de [...] no Typst: só os caracteres especiais precisam de escape.
+esc_typst <- function(x) gsub("([#$*_@<>\\[\\]\\\\])", "\\\\\\1", x, perl = TRUE)
+```
+
+```{r}
+#| output: asis
+# Cabeçalho, rodapé e língua do documento (hifenização, aspas).
+typst(paste0(
+  '#set text(lang: "', params$idioma, '")\n',
+  '#state("rodape").update("', t$rodape, '")\n',
+  '#state("de").update("', t$de, '")\n',
+  '#align(center)[\n',
+  '  #text(size: 17pt, weight: "bold")[', esc_typst(t$titulo), ']\n',
+  '  #v(0.2em)\n',
+  '  #text(size: 11.5pt, weight: "bold")[', esc_typst(t$subtitulo), ']\n',
+  '  #v(1em)\n',
+  '  ', esc_typst(t$autor), ' · ', esc_typst(tx$data_longa("2026-10-27")), '\n',
+  ']\n',
+  '#v(0.6em)\n',
+  # A manchete do caso numa faixa lavanda, logo abaixo do título.
+  '#block(fill: rgb("#cacfee").transparentize(55%), inset: (x: 12pt, y: 10pt), radius: 4pt, width: 100%)[',
+  '#text(size: 10.5pt, weight: "bold")[', esc_typst(f(t$manchete)), ']]\n',
+  '#v(0.3em)'))
+```
+
+# `r t$s_resumo`
+
+```{r}
+#| output: asis
+bloco(t$resumo)
+```
+
+# `r t$s_contexto`
+
+```{r}
+#| output: asis
+bloco(t$contexto)
+```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 2.5
+grafico_mensal(res)
+```
+
+```{=typst}
+#pagebreak()
+```
+
+# `r t$s_motivos`
+
+```{r}
+#| fig-width: 7
+#| fig-height: 3.4
+grafico_pareto(res)
+```
+
+```{r}
+#| output: asis
+bloco(t$motivos)
+```
+
+## `r t$s_resposta`
+
+```{r}
+#| output: asis
+bloco(t$resposta)
+```
+
+```{r}
+res$pareto_ponderado |>
+  transmute(motivo = traduzir(motivo, tx$motivos), sem = pct(pct_sem_peso), com = pct(pct)) |>
+  tabela(tx$nomes_ponderacao, c("l", "r", "r"))
+```
+
+```{=typst}
+#pagebreak()
+```
+
+# `r t$s_onde`
+
+## `r t$s_90`
+
+```{r}
+#| fig-width: 7
+#| fig-height: 2.3
+grafico_incidencia(res)
+```
+
+```{r}
+#| output: asis
+bloco(t$noventa)
+```
+
+## `r t$s_troca`
+
+```{r}
+#| fig-width: 7
+#| fig-height: 2.15
+grafico_troca(res)
+```
+
+```{r}
+#| output: asis
+bloco(t$troca)
+```
+
+## `r t$s_jornada`
+
+```{r}
+#| fig-width: 7
+#| fig-height: 1.45
+grafico_jornada(res)
+```
+
+```{r}
+#| output: asis
+bloco(t$jornada)
+```
+
+```{=typst}
+#pagebreak()
+```
+
+# `r t$s_prioridades`
+
+```{r}
+#| output: asis
+bloco(t$prioridades)
+```
+
+```{r}
+prioridades_fmt(res, pdf = TRUE) |>
+  tabela(tx$nomes_prioridades_pdf, c("r", "l", "l", "l", "r", "r", "r"))
+```
+
+# `r t$s_acoes`
+
+```{r}
+#| output: asis
+bloco(t$acoes)
+```
+
+# `r t$s_limitacoes`
+
+```{r}
+#| output: asis
+bloco(t$limitacoes)
+typst(paste0('#text(size: 8.5pt, fill: rgb("#4a4a63"), hyphenate: false)[', esc_typst(f(t$nota)), "]"))
+# O relatório precisa caber em 4 páginas: se passar, o Typst para com erro e o
+# render.ps1 também.
+typst(paste0('#context { if counter(page).final().first() > 4 { panic("',
+             "relatório em ", params$idioma, ' passou de 4 páginas") } }'))
+```

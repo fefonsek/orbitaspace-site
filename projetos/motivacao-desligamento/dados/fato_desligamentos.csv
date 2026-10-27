@@ -1,0 +1,1454 @@
+id_desligamento,id_colaborador,id_estrutura,data_desligamento,tipo,voluntario,tempo_casa_dias,faixa_tempo_casa
+D00001,C01709,E01,2024-01-02,Dispensa sem justa causa,0,93,91 a 180 dias
+D00002,C01755,E20,2024-01-02,Pedido de demissão,1,59,Até 90 dias
+D00003,C01098,E03,2024-01-03,Dispensa sem justa causa,0,713,1 a 2 anos
+D00004,C01548,E05,2024-01-03,Pedido de demissão,1,205,181 dias a 1 ano
+D00005,C01652,E06,2024-01-03,Pedido de demissão,1,129,91 a 180 dias
+D00006,C00311,E19,2024-01-04,Dispensa sem justa causa,0,3628,Mais de 2 anos
+D00007,C00500,E18,2024-01-04,Dispensa sem justa causa,0,2370,Mais de 2 anos
+D00008,C01523,E07,2024-01-04,Pedido de demissão,1,219,181 dias a 1 ano
+D00009,C00103,E09,2024-01-05,Dispensa sem justa causa,0,4956,Mais de 2 anos
+D00010,C01210,E17,2024-01-05,Pedido de demissão,1,509,1 a 2 anos
+D00011,C01559,E12,2024-01-05,Dispensa sem justa causa,0,201,181 dias a 1 ano
+D00012,C01761,E18,2024-01-05,Pedido de demissão,1,59,Até 90 dias
+D00013,C01642,E18,2024-01-07,Pedido de demissão,1,141,91 a 180 dias
+D00014,C00568,E14,2024-01-08,Pedido de demissão,1,1944,Mais de 2 anos
+D00015,C00014,E20,2024-01-09,Dispensa sem justa causa,0,6317,Mais de 2 anos
+D00016,C01091,E06,2024-01-09,Pedido de demissão,1,726,1 a 2 anos
+D00017,C01638,E19,2024-01-09,Pedido de demissão,1,145,91 a 180 dias
+D00018,C01750,E18,2024-01-10,Pedido de demissão,1,70,Até 90 dias
+D00019,C00576,E20,2024-01-12,Pedido de demissão,1,1918,Mais de 2 anos
+D00020,C00406,E06,2024-01-13,Pedido de demissão,1,2959,Mais de 2 anos
+D00021,C00900,E18,2024-01-13,Pedido de demissão,1,1065,Mais de 2 anos
+D00022,C01662,E03,2024-01-13,Pedido de demissão,1,135,91 a 180 dias
+D00023,C00886,E19,2024-01-14,Dispensa sem justa causa,0,1093,Mais de 2 anos
+D00024,C01712,E14,2024-01-15,Pedido de demissão,1,103,91 a 180 dias
+D00025,C00777,E15,2024-01-16,Pedido de demissão,1,1273,Mais de 2 anos
+D00026,C01386,E05,2024-01-16,Pedido de demissão,1,316,181 dias a 1 ano
+D00027,C01794,E05,2024-01-16,Término de experiência,0,47,Até 90 dias
+D00028,C00380,E09,2024-01-17,Pedido de demissão,1,3119,Mais de 2 anos
+D00029,C00545,E19,2024-01-19,Pedido de demissão,1,2103,Mais de 2 anos
+D00030,C00049,E14,2024-01-20,Acordo,1,5326,Mais de 2 anos
+D00031,C00140,E01,2024-01-20,Dispensa sem justa causa,0,4695,Mais de 2 anos
+D00032,C00778,E07,2024-01-21,Pedido de demissão,1,1275,Mais de 2 anos
+D00033,C00401,E19,2024-01-22,Dispensa sem justa causa,0,3010,Mais de 2 anos
+D00034,C01237,E12,2024-01-22,Acordo,1,476,1 a 2 anos
+D00035,C00102,E15,2024-01-23,Dispensa sem justa causa,0,4980,Mais de 2 anos
+D00036,C00562,E06,2024-01-24,Acordo,1,1981,Mais de 2 anos
+D00037,C01506,E19,2024-01-24,Pedido de demissão,1,248,181 dias a 1 ano
+D00038,C01808,E07,2024-01-24,Término de experiência,0,47,Até 90 dias
+D00039,C00962,E19,2024-01-25,Dispensa sem justa causa,0,971,Mais de 2 anos
+D00040,C01052,E07,2024-01-25,Acordo,1,811,Mais de 2 anos
+D00041,C01775,E19,2024-01-26,Pedido de demissão,1,72,Até 90 dias
+D00042,C01817,E19,2024-01-26,Término de experiência,0,42,Até 90 dias
+D00043,C00259,E07,2024-01-27,Pedido de demissão,1,4048,Mais de 2 anos
+D00044,C00810,E01,2024-01-27,Dispensa sem justa causa,0,1233,Mais de 2 anos
+D00045,C00889,E12,2024-01-28,Pedido de demissão,1,1102,Mais de 2 anos
+D00046,C01396,E19,2024-01-28,Dispensa sem justa causa,0,319,181 dias a 1 ano
+D00047,C01840,E19,2024-01-28,Pedido de demissão,1,20,Até 90 dias
+D00048,C00703,E19,2024-01-30,Dispensa sem justa causa,0,1413,Mais de 2 anos
+D00049,C01168,E20,2024-01-30,Pedido de demissão,1,620,1 a 2 anos
+D00050,C01087,E05,2024-01-31,Pedido de demissão,1,753,Mais de 2 anos
+D00051,C01153,E06,2024-02-01,Pedido de demissão,1,652,1 a 2 anos
+D00052,C01844,E13,2024-02-01,Pedido de demissão,1,10,Até 90 dias
+D00053,C00878,E04,2024-02-02,Dispensa sem justa causa,0,1126,Mais de 2 anos
+D00054,C00873,E18,2024-02-03,Acordo,1,1133,Mais de 2 anos
+D00055,C01403,E03,2024-02-04,Dispensa sem justa causa,0,322,181 dias a 1 ano
+D00056,C00029,E15,2024-02-05,Pedido de demissão,1,5472,Mais de 2 anos
+D00057,C00213,E07,2024-02-05,Dispensa sem justa causa,0,4301,Mais de 2 anos
+D00058,C01212,E12,2024-02-05,Pedido de demissão,1,538,1 a 2 anos
+D00059,C00802,E16,2024-02-06,Dispensa sem justa causa,0,1259,Mais de 2 anos
+D00060,C01771,E01,2024-02-06,Pedido de demissão,1,84,Até 90 dias
+D00061,C01243,E18,2024-02-07,Pedido de demissão,1,483,1 a 2 anos
+D00062,C01676,E18,2024-02-08,Pedido de demissão,1,151,91 a 180 dias
+D00063,C00128,E16,2024-02-09,Pedido de demissão,1,4798,Mais de 2 anos
+D00064,C00230,E04,2024-02-09,Pedido de demissão,1,4197,Mais de 2 anos
+D00065,C01785,E16,2024-02-09,Pedido de demissão,1,77,Até 90 dias
+D00066,C01810,E15,2024-02-09,Pedido de demissão,1,62,Até 90 dias
+D00067,C01541,E03,2024-02-11,Dispensa sem justa causa,0,247,181 dias a 1 ano
+D00068,C01667,E17,2024-02-11,Pedido de demissão,1,161,91 a 180 dias
+D00069,C00024,E03,2024-02-12,Pedido de demissão,1,5491,Mais de 2 anos
+D00070,C00045,E20,2024-02-12,Dispensa sem justa causa,0,5362,Mais de 2 anos
+D00071,C01062,E14,2024-02-12,Dispensa sem justa causa,0,816,Mais de 2 anos
+D00072,C00561,E08,2024-02-13,Pedido de demissão,1,2003,Mais de 2 anos
+D00073,C01197,E03,2024-02-13,Pedido de demissão,1,574,1 a 2 anos
+D00074,C01522,E03,2024-02-13,Pedido de demissão,1,259,181 dias a 1 ano
+D00075,C01818,E19,2024-02-13,Término de experiência,0,60,Até 90 dias
+D00076,C00618,E14,2024-02-14,Pedido de demissão,1,1711,Mais de 2 anos
+D00077,C00818,E18,2024-02-14,Dispensa sem justa causa,0,1232,Mais de 2 anos
+D00078,C01111,E13,2024-02-14,Acordo,1,743,Mais de 2 anos
+D00079,C01357,E05,2024-02-14,Dispensa sem justa causa,0,364,181 dias a 1 ano
+D00080,C01786,E19,2024-02-14,Dispensa sem justa causa,0,80,Até 90 dias
+D00081,C01805,E18,2024-02-14,Dispensa sem justa causa,0,71,Até 90 dias
+D00082,C01852,E16,2024-02-16,Término de experiência,0,19,Até 90 dias
+D00083,C00047,E06,2024-02-18,Pedido de demissão,1,5367,Mais de 2 anos
+D00084,C00152,E19,2024-02-18,Dispensa sem justa causa,0,4667,Mais de 2 anos
+D00085,C01470,E08,2024-02-18,Dispensa sem justa causa,0,294,181 dias a 1 ano
+D00086,C01565,E03,2024-02-18,Dispensa sem justa causa,0,241,181 dias a 1 ano
+D00087,C00131,E06,2024-02-19,Dispensa sem justa causa,0,4792,Mais de 2 anos
+D00088,C00274,E06,2024-02-20,Pedido de demissão,1,3904,Mais de 2 anos
+D00089,C00334,E17,2024-02-20,Dispensa sem justa causa,0,3533,Mais de 2 anos
+D00090,C01551,E05,2024-02-20,Dispensa sem justa causa,0,252,181 dias a 1 ano
+D00091,C01870,E19,2024-02-20,Dispensa sem justa causa,0,9,Até 90 dias
+D00092,C00070,E15,2024-02-21,Pedido de demissão,1,5215,Mais de 2 anos
+D00093,C01730,E17,2024-02-21,Pedido de demissão,1,126,91 a 180 dias
+D00094,C01872,E14,2024-02-21,Pedido de demissão,1,9,Até 90 dias
+D00095,C00812,E09,2024-02-22,Dispensa sem justa causa,0,1257,Mais de 2 anos
+D00096,C01075,E01,2024-02-22,Dispensa sem justa causa,0,795,Mais de 2 anos
+D00097,C01829,E07,2024-02-22,Término de experiência,0,62,Até 90 dias
+D00098,C00185,E09,2024-02-23,Pedido de demissão,1,4510,Mais de 2 anos
+D00099,C00880,E18,2024-02-23,Pedido de demissão,1,1141,Mais de 2 anos
+D00100,C01372,E20,2024-02-23,Pedido de demissão,1,360,181 dias a 1 ano
+D00101,C00162,E18,2024-02-24,Pedido de demissão,1,4635,Mais de 2 anos
+D00102,C00783,E19,2024-02-24,Pedido de demissão,1,1298,Mais de 2 anos
+D00103,C01303,E19,2024-02-24,Pedido de demissão,1,417,1 a 2 anos
+D00104,C01436,E05,2024-02-24,Dispensa sem justa causa,0,320,181 dias a 1 ano
+D00105,C01726,E09,2024-02-24,Dispensa sem justa causa,0,131,91 a 180 dias
+D00106,C00738,E02,2024-02-25,Pedido de demissão,1,1389,Mais de 2 anos
+D00107,C01310,E19,2024-02-25,Dispensa sem justa causa,0,411,1 a 2 anos
+D00108,C01813,E06,2024-02-25,Pedido de demissão,1,76,Até 90 dias
+D00109,C01408,E20,2024-02-27,Dispensa sem justa causa,0,340,181 dias a 1 ano
+D00110,C01738,E06,2024-02-27,Pedido de demissão,1,126,91 a 180 dias
+D00111,C01826,E18,2024-02-27,Pedido de demissão,1,69,Até 90 dias
+D00112,C00839,E18,2024-02-28,Dispensa sem justa causa,0,1217,Mais de 2 anos
+D00113,C01571,E18,2024-02-29,Pedido de demissão,1,249,181 dias a 1 ano
+D00114,C01896,E12,2024-02-29,Pedido de demissão,1,6,Até 90 dias
+D00115,C00440,E07,2024-03-02,Dispensa sem justa causa,0,2771,Mais de 2 anos
+D00116,C00540,E11,2024-03-03,Dispensa sem justa causa,0,2189,Mais de 2 anos
+D00117,C00616,E11,2024-03-04,Dispensa sem justa causa,0,1748,Mais de 2 anos
+D00118,C01404,E13,2024-03-04,Dispensa sem justa causa,0,351,181 dias a 1 ano
+D00119,C01848,E02,2024-03-05,Pedido de demissão,1,37,Até 90 dias
+D00120,C01222,E04,2024-03-06,Pedido de demissão,1,554,1 a 2 anos
+D00121,C00042,E19,2024-03-07,Pedido de demissão,1,5408,Mais de 2 anos
+D00122,C01048,E08,2024-03-07,Dispensa sem justa causa,0,859,Mais de 2 anos
+D00123,C01341,E13,2024-03-07,Pedido de demissão,1,398,1 a 2 anos
+D00124,C01363,E12,2024-03-07,Dispensa sem justa causa,0,383,1 a 2 anos
+D00125,C00405,E03,2024-03-08,Pedido de demissão,1,3049,Mais de 2 anos
+D00126,C00666,E08,2024-03-10,Dispensa sem justa causa,0,1527,Mais de 2 anos
+D00127,C01834,E04,2024-03-10,Término de experiência,0,72,Até 90 dias
+D00128,C01641,E09,2024-03-11,Dispensa sem justa causa,0,206,181 dias a 1 ano
+D00129,C01891,E19,2024-03-11,Pedido de demissão,1,20,Até 90 dias
+D00130,C01770,E17,2024-03-12,Dispensa sem justa causa,0,122,91 a 180 dias
+D00131,C01816,E19,2024-03-12,Término de experiência,0,88,Até 90 dias
+D00132,C00946,E03,2024-03-13,Pedido de demissão,1,1044,Mais de 2 anos
+D00133,C00501,E18,2024-03-14,Pedido de demissão,1,2439,Mais de 2 anos
+D00134,C00663,E19,2024-03-14,Dispensa sem justa causa,0,1533,Mais de 2 anos
+D00135,C00020,E20,2024-03-15,Acordo,1,5764,Mais de 2 anos
+D00136,C01002,E18,2024-03-15,Dispensa sem justa causa,0,952,Mais de 2 anos
+D00137,C01836,E09,2024-03-15,Pedido de demissão,1,73,Até 90 dias
+D00138,C00521,E14,2024-03-16,Dispensa sem justa causa,0,2307,Mais de 2 anos
+D00139,C01821,E20,2024-03-16,Término de experiência,0,90,Até 90 dias
+D00140,C00096,E19,2024-03-17,Pedido de demissão,1,5102,Mais de 2 anos
+D00141,C00791,E19,2024-03-17,Pedido de demissão,1,1307,Mais de 2 anos
+D00142,C01823,E19,2024-03-17,Término de experiência,0,89,Até 90 dias
+D00143,C00801,E05,2024-03-18,Pedido de demissão,1,1300,Mais de 2 anos
+D00144,C01336,E13,2024-03-18,Pedido de demissão,1,412,1 a 2 anos
+D00145,C01928,E06,2024-03-18,Pedido de demissão,1,6,Até 90 dias
+D00146,C01382,E16,2024-03-19,Pedido de demissão,1,380,1 a 2 anos
+D00147,C01859,E18,2024-03-20,Término de experiência,0,46,Até 90 dias
+D00148,C00314,E15,2024-03-21,Dispensa sem justa causa,0,3687,Mais de 2 anos
+D00149,C00371,E19,2024-03-21,Pedido de demissão,1,3271,Mais de 2 anos
+D00150,C01537,E18,2024-03-21,Pedido de demissão,1,287,181 dias a 1 ano
+D00151,C01787,E09,2024-03-21,Pedido de demissão,1,116,91 a 180 dias
+D00152,C01838,E19,2024-03-21,Pedido de demissão,1,76,Até 90 dias
+D00153,C01294,E17,2024-03-22,Pedido de demissão,1,455,1 a 2 anos
+D00154,C01384,E19,2024-03-22,Pedido de demissão,1,382,1 a 2 anos
+D00155,C01802,E14,2024-03-22,Pedido de demissão,1,110,91 a 180 dias
+D00156,C01266,E18,2024-03-24,Acordo,1,504,1 a 2 anos
+D00157,C01819,E01,2024-03-24,Pedido de demissão,1,100,91 a 180 dias
+D00158,C01906,E09,2024-03-24,Pedido de demissão,1,25,Até 90 dias
+D00159,C01917,E18,2024-03-24,Pedido de demissão,1,17,Até 90 dias
+D00160,C00914,E11,2024-03-26,Acordo,1,1118,Mais de 2 anos
+D00161,C00924,E06,2024-03-26,Dispensa sem justa causa,0,1100,Mais de 2 anos
+D00162,C01148,E14,2024-03-26,Acordo,1,709,1 a 2 anos
+D00163,C01298,E06,2024-03-26,Pedido de demissão,1,450,1 a 2 anos
+D00164,C00817,E15,2024-03-27,Pedido de demissão,1,1275,Mais de 2 anos
+D00165,C00177,E20,2024-03-28,Acordo,1,4600,Mais de 2 anos
+D00166,C01814,E05,2024-03-28,Dispensa sem justa causa,0,108,91 a 180 dias
+D00167,C01920,E18,2024-03-28,Pedido de demissão,1,19,Até 90 dias
+D00168,C00114,E12,2024-03-29,Dispensa sem justa causa,0,4933,Mais de 2 anos
+D00169,C01189,E19,2024-03-29,Pedido de demissão,1,633,1 a 2 anos
+D00170,C00281,E07,2024-03-30,Pedido de demissão,1,3899,Mais de 2 anos
+D00171,C01803,E20,2024-03-30,Pedido de demissão,1,117,91 a 180 dias
+D00172,C01163,E06,2024-04-01,Pedido de demissão,1,694,1 a 2 anos
+D00173,C01415,E14,2024-04-02,Dispensa sem justa causa,0,372,1 a 2 anos
+D00174,C01639,E19,2024-04-02,Pedido de demissão,1,229,181 dias a 1 ano
+D00175,C01773,E05,2024-04-02,Pedido de demissão,1,140,91 a 180 dias
+D00176,C00830,E05,2024-04-04,Dispensa sem justa causa,0,1263,Mais de 2 anos
+D00177,C01251,E14,2024-04-04,Dispensa sem justa causa,0,530,1 a 2 anos
+D00178,C01441,E05,2024-04-04,Pedido de demissão,1,357,181 dias a 1 ano
+D00179,C00249,E04,2024-04-05,Pedido de demissão,1,4170,Mais de 2 anos
+D00180,C00780,E06,2024-04-05,Pedido de demissão,1,1348,Mais de 2 anos
+D00181,C01820,E18,2024-04-05,Pedido de demissão,1,111,91 a 180 dias
+D00182,C00527,E04,2024-04-06,Dispensa sem justa causa,0,2269,Mais de 2 anos
+D00183,C01233,E20,2024-04-06,Pedido de demissão,1,564,1 a 2 anos
+D00184,C01630,E18,2024-04-06,Pedido de demissão,1,244,181 dias a 1 ano
+D00185,C01815,E17,2024-04-08,Pedido de demissão,1,118,91 a 180 dias
+D00186,C00250,E07,2024-04-09,Dispensa sem justa causa,0,4158,Mais de 2 anos
+D00187,C00320,E18,2024-04-09,Pedido de demissão,1,3689,Mais de 2 anos
+D00188,C01006,E19,2024-04-09,Dispensa sem justa causa,0,969,Mais de 2 anos
+D00189,C01072,E14,2024-04-10,Pedido de demissão,1,847,Mais de 2 anos
+D00190,C01277,E15,2024-04-10,Dispensa sem justa causa,0,497,1 a 2 anos
+D00191,C00602,E05,2024-04-11,Dispensa sem justa causa,0,1884,Mais de 2 anos
+D00192,C01943,E14,2024-04-11,Pedido de demissão,1,18,Até 90 dias
+D00193,C01262,E15,2024-04-13,Pedido de demissão,1,528,1 a 2 anos
+D00194,C00950,E08,2024-04-14,Dispensa sem justa causa,0,1074,Mais de 2 anos
+D00195,C01832,E20,2024-04-15,Pedido de demissão,1,111,91 a 180 dias
+D00196,C01861,E19,2024-04-15,Pedido de demissão,1,71,Até 90 dias
+D00197,C01875,E20,2024-04-15,Pedido de demissão,1,62,Até 90 dias
+D00198,C01147,E18,2024-04-16,Pedido de demissão,1,731,Mais de 2 anos
+D00199,C01913,E19,2024-04-16,Pedido de demissão,1,42,Até 90 dias
+D00200,C00059,E06,2024-04-18,Dispensa sem justa causa,0,5339,Mais de 2 anos
+D00201,C01512,E06,2024-04-18,Pedido de demissão,1,329,181 dias a 1 ano
+D00202,C00648,E16,2024-04-19,Pedido de demissão,1,1643,Mais de 2 anos
+D00203,C01385,E04,2024-04-19,Dispensa sem justa causa,0,410,1 a 2 anos
+D00204,C00268,E19,2024-04-20,Pedido de demissão,1,4050,Mais de 2 anos
+D00205,C01108,E09,2024-04-20,Dispensa sem justa causa,0,810,Mais de 2 anos
+D00206,C01749,E06,2024-04-20,Pedido de demissão,1,172,91 a 180 dias
+D00207,C01857,E01,2024-04-22,Pedido de demissão,1,81,Até 90 dias
+D00208,C00672,E06,2024-04-23,Acordo,1,1555,Mais de 2 anos
+D00209,C01191,E11,2024-04-23,Pedido de demissão,1,657,1 a 2 anos
+D00210,C01365,E17,2024-04-23,Dispensa sem justa causa,0,428,1 a 2 anos
+D00211,C01552,E05,2024-04-23,Pedido de demissão,1,315,181 dias a 1 ano
+D00212,C00091,E01,2024-04-24,Pedido de demissão,1,5152,Mais de 2 anos
+D00213,C00322,E20,2024-04-24,Dispensa sem justa causa,0,3692,Mais de 2 anos
+D00214,C00581,E14,2024-04-24,Dispensa sem justa causa,0,2002,Mais de 2 anos
+D00215,C00607,E19,2024-04-24,Pedido de demissão,1,1880,Mais de 2 anos
+D00216,C01949,E03,2024-04-24,Pedido de demissão,1,26,Até 90 dias
+D00217,C01969,E09,2024-04-24,Dispensa sem justa causa,0,17,Até 90 dias
+D00218,C00423,E08,2024-04-25,Pedido de demissão,1,2937,Mais de 2 anos
+D00219,C00702,E13,2024-04-25,Dispensa sem justa causa,0,1500,Mais de 2 anos
+D00220,C01152,E13,2024-04-26,Dispensa sem justa causa,0,738,Mais de 2 anos
+D00221,C01490,E02,2024-04-26,Dispensa sem justa causa,0,350,181 dias a 1 ano
+D00222,C00265,E03,2024-04-27,Pedido de demissão,1,4082,Mais de 2 anos
+D00223,C00298,E15,2024-04-28,Dispensa sem justa causa,0,3835,Mais de 2 anos
+D00224,C00319,E19,2024-04-28,Dispensa sem justa causa,0,3708,Mais de 2 anos
+D00225,C00197,E18,2024-04-29,Acordo,1,4477,Mais de 2 anos
+D00226,C00512,E14,2024-04-30,Pedido de demissão,1,2439,Mais de 2 anos
+D00227,C01409,E03,2024-05-01,Pedido de demissão,1,404,1 a 2 anos
+D00228,C01517,E15,2024-05-01,Dispensa sem justa causa,0,339,181 dias a 1 ano
+D00229,C01560,E09,2024-05-02,Pedido de demissão,1,318,181 dias a 1 ano
+D00230,C01176,E06,2024-05-03,Dispensa sem justa causa,0,699,1 a 2 anos
+D00231,C01892,E19,2024-05-03,Término de experiência,0,73,Até 90 dias
+D00232,C01919,E18,2024-05-03,Pedido de demissão,1,55,Até 90 dias
+D00233,C00720,E11,2024-05-06,Pedido de demissão,1,1479,Mais de 2 anos
+D00234,C01424,E14,2024-05-07,Pedido de demissão,1,400,1 a 2 anos
+D00235,C01431,E20,2024-05-07,Dispensa sem justa causa,0,394,1 a 2 anos
+D00236,C01825,E16,2024-05-07,Pedido de demissão,1,140,91 a 180 dias
+D00237,C01014,E05,2024-05-08,Dispensa sem justa causa,0,981,Mais de 2 anos
+D00238,C01482,E20,2024-05-09,Dispensa sem justa causa,0,366,1 a 2 anos
+D00239,C00226,E20,2024-05-10,Dispensa sem justa causa,0,4319,Mais de 2 anos
+D00240,C00570,E03,2024-05-11,Dispensa sem justa causa,0,2057,Mais de 2 anos
+D00241,C00835,E14,2024-05-11,Pedido de demissão,1,1293,Mais de 2 anos
+D00242,C01854,E14,2024-05-11,Pedido de demissão,1,102,91 a 180 dias
+D00243,C01008,E08,2024-05-12,Pedido de demissão,1,993,Mais de 2 anos
+D00244,C01564,E01,2024-05-14,Pedido de demissão,1,327,181 dias a 1 ano
+D00245,C01731,E09,2024-05-14,Acordo,1,208,181 dias a 1 ano
+D00246,C00951,E19,2024-05-15,Dispensa sem justa causa,0,1103,Mais de 2 anos
+D00247,C01624,E12,2024-05-15,Pedido de demissão,1,287,181 dias a 1 ano
+D00248,C01526,E13,2024-05-16,Pedido de demissão,1,350,181 dias a 1 ano
+D00249,C01982,E19,2024-05-16,Término de experiência,0,32,Até 90 dias
+D00250,C01177,E19,2024-05-18,Dispensa sem justa causa,0,712,1 a 2 anos
+D00251,C01271,E13,2024-05-18,Dispensa sem justa causa,0,555,1 a 2 anos
+D00252,C01584,E05,2024-05-18,Acordo,1,318,181 dias a 1 ano
+D00253,C01586,E05,2024-05-18,Pedido de demissão,1,317,181 dias a 1 ano
+D00254,C00706,E02,2024-05-19,Pedido de demissão,1,1520,Mais de 2 anos
+D00255,C01746,E19,2024-05-19,Pedido de demissão,1,204,181 dias a 1 ano
+D00256,C02022,E05,2024-05-20,Término de experiência,0,16,Até 90 dias
+D00257,C00026,E08,2024-05-21,Dispensa sem justa causa,0,5587,Mais de 2 anos
+D00258,C00428,E09,2024-05-21,Dispensa sem justa causa,0,2931,Mais de 2 anos
+D00259,C00955,E09,2024-05-21,Dispensa sem justa causa,0,1102,Mais de 2 anos
+D00260,C01708,E18,2024-05-21,Dispensa sem justa causa,0,233,181 dias a 1 ano
+D00261,C00671,E04,2024-05-22,Pedido de demissão,1,1584,Mais de 2 anos
+D00262,C01966,E19,2024-05-22,Pedido de demissão,1,46,Até 90 dias
+D00263,C02041,E02,2024-05-22,Pedido de demissão,1,7,Até 90 dias
+D00264,C00138,E20,2024-05-23,Pedido de demissão,1,4828,Mais de 2 anos
+D00265,C00170,E20,2024-05-23,Dispensa sem justa causa,0,4683,Mais de 2 anos
+D00266,C00436,E19,2024-05-23,Pedido de demissão,1,2876,Mais de 2 anos
+D00267,C00574,E01,2024-05-23,Pedido de demissão,1,2059,Mais de 2 anos
+D00268,C01898,E18,2024-05-23,Pedido de demissão,1,89,Até 90 dias
+D00269,C00441,E20,2024-05-24,Pedido de demissão,1,2850,Mais de 2 anos
+D00270,C01388,E20,2024-05-24,Pedido de demissão,1,442,1 a 2 anos
+D00271,C01929,E18,2024-05-24,Pedido de demissão,1,72,Até 90 dias
+D00272,C01413,E12,2024-05-25,Dispensa sem justa causa,0,426,1 a 2 anos
+D00273,C01566,E17,2024-05-25,Dispensa sem justa causa,0,338,181 dias a 1 ano
+D00274,C01574,E06,2024-05-25,Pedido de demissão,1,332,181 dias a 1 ano
+D00275,C01611,E07,2024-05-25,Dispensa sem justa causa,0,308,181 dias a 1 ano
+D00276,C01085,E02,2024-05-26,Dispensa sem justa causa,0,875,Mais de 2 anos
+D00277,C01880,E15,2024-05-26,Dispensa sem justa causa,0,102,91 a 180 dias
+D00278,C01972,E19,2024-05-26,Pedido de demissão,1,48,Até 90 dias
+D00279,C00947,E07,2024-05-27,Dispensa sem justa causa,0,1119,Mais de 2 anos
+D00280,C01842,E06,2024-05-27,Dispensa sem justa causa,0,130,91 a 180 dias
+D00281,C01242,E01,2024-05-28,Pedido de demissão,1,596,1 a 2 anos
+D00282,C02055,E04,2024-05-29,Término de experiência,0,5,Até 90 dias
+D00283,C01171,E04,2024-05-30,Pedido de demissão,1,739,Mais de 2 anos
+D00284,C00798,E19,2024-05-31,Pedido de demissão,1,1377,Mais de 2 anos
+D00285,C01752,E19,2024-06-01,Pedido de demissão,1,212,181 dias a 1 ano
+D00286,C01127,E15,2024-06-02,Dispensa sem justa causa,0,830,Mais de 2 anos
+D00287,C01934,E18,2024-06-02,Pedido de demissão,1,76,Até 90 dias
+D00288,C01986,E19,2024-06-03,Término de experiência,0,48,Até 90 dias
+D00289,C00808,E07,2024-06-04,Acordo,1,1367,Mais de 2 anos
+D00290,C00948,E04,2024-06-04,Pedido de demissão,1,1126,Mais de 2 anos
+D00291,C00150,E05,2024-06-05,Dispensa sem justa causa,0,4778,Mais de 2 anos
+D00292,C00011,E20,2024-06-06,Pedido de demissão,1,6832,Mais de 2 anos
+D00293,C00448,E18,2024-06-06,Dispensa sem justa causa,0,2832,Mais de 2 anos
+D00294,C01344,E19,2024-06-07,Pedido de demissão,1,487,1 a 2 anos
+D00295,C00858,E04,2024-06-08,Dispensa sem justa causa,0,1293,Mais de 2 anos
+D00296,C01020,E12,2024-06-08,Pedido de demissão,1,1003,Mais de 2 anos
+D00297,C01443,E01,2024-06-09,Pedido de demissão,1,421,1 a 2 anos
+D00298,C01948,E03,2024-06-09,Pedido de demissão,1,73,Até 90 dias
+D00299,C02073,E20,2024-06-09,Término de experiência,0,2,Até 90 dias
+D00300,C00954,E04,2024-06-10,Dispensa sem justa causa,0,1125,Mais de 2 anos
+D00301,C00571,E18,2024-06-11,Pedido de demissão,1,2081,Mais de 2 anos
+D00302,C01597,E19,2024-06-11,Pedido de demissão,1,335,181 dias a 1 ano
+D00303,C00076,E08,2024-06-12,Dispensa sem justa causa,0,5279,Mais de 2 anos
+D00304,C01990,E16,2024-06-12,Término de experiência,0,57,Até 90 dias
+D00305,C01521,E19,2024-06-13,Dispensa sem justa causa,0,380,1 a 2 anos
+D00306,C01989,E12,2024-06-13,Término de experiência,0,58,Até 90 dias
+D00307,C01995,E11,2024-06-14,Pedido de demissão,1,57,Até 90 dias
+D00308,C00498,E15,2024-06-15,Pedido de demissão,1,2557,Mais de 2 anos
+D00309,C01767,E12,2024-06-15,Dispensa sem justa causa,0,219,181 dias a 1 ano
+D00310,C01950,E15,2024-06-15,Pedido de demissão,1,78,Até 90 dias
+D00311,C02063,E19,2024-06-15,Pedido de demissão,1,17,Até 90 dias
+D00312,C00205,E15,2024-06-16,Dispensa sem justa causa,0,4487,Mais de 2 anos
+D00313,C02075,E05,2024-06-17,Pedido de demissão,1,10,Até 90 dias
+D00314,C00225,E05,2024-06-18,Pedido de demissão,1,4368,Mais de 2 anos
+D00315,C01253,E19,2024-06-18,Acordo,1,601,1 a 2 anos
+D00316,C01400,E06,2024-06-18,Pedido de demissão,1,459,1 a 2 anos
+D00317,C00995,E03,2024-06-19,Dispensa sem justa causa,0,1067,Mais de 2 anos
+D00318,C01645,E19,2024-06-19,Dispensa sem justa causa,0,304,181 dias a 1 ano
+D00319,C00667,E19,2024-06-20,Pedido de demissão,1,1628,Mais de 2 anos
+D00320,C01525,E03,2024-06-20,Pedido de demissão,1,386,1 a 2 anos
+D00321,C01942,E08,2024-06-20,Pedido de demissão,1,88,Até 90 dias
+D00322,C02076,E14,2024-06-20,Término de experiência,0,13,Até 90 dias
+D00323,C01073,E14,2024-06-21,Pedido de demissão,1,917,Mais de 2 anos
+D00324,C01660,E19,2024-06-21,Pedido de demissão,1,295,181 dias a 1 ano
+D00325,C01788,E03,2024-06-21,Dispensa sem justa causa,0,207,181 dias a 1 ano
+D00326,C01998,E13,2024-06-21,Dispensa sem justa causa,0,63,Até 90 dias
+D00327,C00969,E01,2024-06-22,Pedido de demissão,1,1111,Mais de 2 anos
+D00328,C01774,E12,2024-06-22,Pedido de demissão,1,221,181 dias a 1 ano
+D00329,C00725,E18,2024-06-23,Dispensa sem justa causa,0,1519,Mais de 2 anos
+D00330,C01120,E18,2024-06-23,Pedido de demissão,1,863,Mais de 2 anos
+D00331,C01402,E01,2024-06-23,Dispensa sem justa causa,0,462,1 a 2 anos
+D00332,C02001,E17,2024-06-23,Término de experiência,0,64,Até 90 dias
+D00333,C02010,E18,2024-06-23,Pedido de demissão,1,57,Até 90 dias
+D00334,C00452,E06,2024-06-24,Pedido de demissão,1,2823,Mais de 2 anos
+D00335,C01923,E15,2024-06-25,Pedido de demissão,1,108,91 a 180 dias
+D00336,C02060,E19,2024-06-27,Dispensa sem justa causa,0,30,Até 90 dias
+D00337,C01034,E07,2024-06-28,Pedido de demissão,1,985,Mais de 2 anos
+D00338,C01590,E12,2024-06-28,Dispensa sem justa causa,0,354,181 dias a 1 ano
+D00339,C01970,E13,2024-06-28,Término de experiência,0,82,Até 90 dias
+D00340,C01080,E18,2024-06-29,Pedido de demissão,1,916,Mais de 2 anos
+D00341,C02034,E06,2024-06-29,Término de experiência,0,49,Até 90 dias
+D00342,C00628,E19,2024-06-30,Dispensa sem justa causa,0,1793,Mais de 2 anos
+D00343,C01458,E19,2024-06-30,Pedido de demissão,1,433,1 a 2 anos
+D00344,C01665,E06,2024-06-30,Pedido de demissão,1,303,181 dias a 1 ano
+D00345,C01932,E19,2024-07-01,Pedido de demissão,1,106,91 a 180 dias
+D00346,C02118,E06,2024-07-01,Pedido de demissão,1,7,Até 90 dias
+D00347,C00558,E20,2024-07-02,Pedido de demissão,1,2150,Mais de 2 anos
+D00348,C02105,E09,2024-07-02,Pedido de demissão,1,16,Até 90 dias
+D00349,C01288,E07,2024-07-03,Dispensa sem justa causa,0,567,1 a 2 anos
+D00350,C01953,E18,2024-07-03,Dispensa sem justa causa,0,94,91 a 180 dias
+D00351,C00840,E19,2024-07-04,Dispensa sem justa causa,0,1340,Mais de 2 anos
+D00352,C02088,E08,2024-07-04,Término de experiência,0,22,Até 90 dias
+D00353,C00124,E04,2024-07-07,Dispensa sem justa causa,0,4967,Mais de 2 anos
+D00354,C00959,E12,2024-07-07,Dispensa sem justa causa,0,1141,Mais de 2 anos
+D00355,C01025,E14,2024-07-07,Pedido de demissão,1,1022,Mais de 2 anos
+D00356,C02085,E17,2024-07-07,Pedido de demissão,1,26,Até 90 dias
+D00357,C02121,E15,2024-07-07,Dispensa sem justa causa,0,12,Até 90 dias
+D00358,C00043,E07,2024-07-08,Pedido de demissão,1,5522,Mais de 2 anos
+D00359,C00127,E18,2024-07-08,Pedido de demissão,1,4949,Mais de 2 anos
+D00360,C01540,E19,2024-07-08,Pedido de demissão,1,395,1 a 2 anos
+D00361,C02025,E08,2024-07-09,Pedido de demissão,1,65,Até 90 dias
+D00362,C00611,E01,2024-07-10,Dispensa sem justa causa,0,1943,Mais de 2 anos
+D00363,C00911,E13,2024-07-10,Dispensa sem justa causa,0,1228,Mais de 2 anos
+D00364,C02141,E13,2024-07-10,Pedido de demissão,1,7,Até 90 dias
+D00365,C00143,E08,2024-07-11,Dispensa sem justa causa,0,4839,Mais de 2 anos
+D00366,C01997,E17,2024-07-11,Pedido de demissão,1,84,Até 90 dias
+D00367,C00068,E19,2024-07-12,Dispensa sem justa causa,0,5357,Mais de 2 anos
+D00368,C00985,E19,2024-07-13,Acordo,1,1106,Mais de 2 anos
+D00369,C01130,E18,2024-07-13,Pedido de demissão,1,860,Mais de 2 anos
+D00370,C01309,E08,2024-07-13,Acordo,1,552,1 a 2 anos
+D00371,C01968,E03,2024-07-13,Pedido de demissão,1,97,91 a 180 dias
+D00372,C02007,E19,2024-07-14,Término de experiência,0,80,Até 90 dias
+D00373,C02046,E15,2024-07-14,Pedido de demissão,1,58,Até 90 dias
+D00374,C01940,E06,2024-07-17,Dispensa sem justa causa,0,117,91 a 180 dias
+D00375,C02090,E17,2024-07-19,Pedido de demissão,1,37,Até 90 dias
+D00376,C00236,E18,2024-07-21,Pedido de demissão,1,4335,Mais de 2 anos
+D00377,C02006,E03,2024-07-22,Pedido de demissão,1,89,Até 90 dias
+D00378,C00752,E05,2024-07-23,Dispensa sem justa causa,0,1514,Mais de 2 anos
+D00379,C00872,E09,2024-07-23,Pedido de demissão,1,1306,Mais de 2 anos
+D00380,C01967,E14,2024-07-23,Dispensa sem justa causa,0,108,91 a 180 dias
+D00381,C02069,E07,2024-07-23,Pedido de demissão,1,51,Até 90 dias
+D00382,C00317,E15,2024-07-24,Pedido de demissão,1,3804,Mais de 2 anos
+D00383,C01155,E12,2024-07-24,Dispensa sem justa causa,0,822,Mais de 2 anos
+D00384,C01716,E11,2024-07-25,Pedido de demissão,1,293,181 dias a 1 ano
+D00385,C01797,E19,2024-07-26,Pedido de demissão,1,237,181 dias a 1 ano
+D00386,C01938,E18,2024-07-26,Pedido de demissão,1,126,91 a 180 dias
+D00387,C00261,E11,2024-07-29,Dispensa sem justa causa,0,4223,Mais de 2 anos
+D00388,C02042,E06,2024-07-29,Término de experiência,0,75,Até 90 dias
+D00389,C01377,E03,2024-07-30,Pedido de demissão,1,516,1 a 2 anos
+D00390,C01763,E08,2024-07-30,Pedido de demissão,1,265,181 dias a 1 ano
+D00391,C02147,E06,2024-07-30,Pedido de demissão,1,24,Até 90 dias
+D00392,C01695,E19,2024-07-31,Pedido de demissão,1,313,181 dias a 1 ano
+D00393,C01855,E19,2024-07-31,Dispensa sem justa causa,0,182,181 dias a 1 ano
+D00394,C01241,E20,2024-08-01,Pedido de demissão,1,662,1 a 2 anos
+D00395,C01331,E09,2024-08-01,Pedido de demissão,1,551,1 a 2 anos
+D00396,C01684,E05,2024-08-01,Acordo,1,322,181 dias a 1 ano
+D00397,C02026,E14,2024-08-01,Pedido de demissão,1,88,Até 90 dias
+D00398,C00640,E05,2024-08-04,Pedido de demissão,1,1775,Mais de 2 anos
+D00399,C00929,E20,2024-08-04,Pedido de demissão,1,1213,Mais de 2 anos
+D00400,C02139,E06,2024-08-04,Pedido de demissão,1,32,Até 90 dias
+D00401,C01567,E19,2024-08-05,Dispensa sem justa causa,0,409,1 a 2 anos
+D00402,C02133,E09,2024-08-05,Pedido de demissão,1,36,Até 90 dias
+D00403,C01225,E06,2024-08-06,Dispensa sem justa causa,0,696,1 a 2 anos
+D00404,C02040,E20,2024-08-06,Dispensa sem justa causa,0,83,Até 90 dias
+D00405,C00383,E18,2024-08-07,Dispensa sem justa causa,0,3316,Mais de 2 anos
+D00406,C00704,E11,2024-08-07,Dispensa sem justa causa,0,1603,Mais de 2 anos
+D00407,C00745,E11,2024-08-07,Pedido de demissão,1,1539,Mais de 2 anos
+D00408,C01587,E01,2024-08-07,Pedido de demissão,1,395,1 a 2 anos
+D00409,C01609,E03,2024-08-07,Pedido de demissão,1,383,1 a 2 anos
+D00410,C02092,E19,2024-08-07,Pedido de demissão,1,54,Até 90 dias
+D00411,C01097,E04,2024-08-08,Pedido de demissão,1,933,Mais de 2 anos
+D00412,C01916,E06,2024-08-08,Pedido de demissão,1,155,91 a 180 dias
+D00413,C00824,E16,2024-08-09,Pedido de demissão,1,1404,Mais de 2 anos
+D00414,C02057,E19,2024-08-09,Término de experiência,0,75,Até 90 dias
+D00415,C00062,E18,2024-08-10,Dispensa sem justa causa,0,5442,Mais de 2 anos
+D00416,C01418,E11,2024-08-10,Dispensa sem justa causa,0,500,1 a 2 anos
+D00417,C01951,E14,2024-08-10,Dispensa sem justa causa,0,134,91 a 180 dias
+D00418,C02170,E15,2024-08-10,Dispensa sem justa causa,0,25,Até 90 dias
+D00419,C00254,E03,2024-08-11,Pedido de demissão,1,4257,Mais de 2 anos
+D00420,C01184,E14,2024-08-11,Pedido de demissão,1,777,Mais de 2 anos
+D00421,C01211,E19,2024-08-11,Pedido de demissão,1,727,1 a 2 anos
+D00422,C01270,E19,2024-08-11,Dispensa sem justa causa,0,640,1 a 2 anos
+D00423,C01651,E04,2024-08-12,Pedido de demissão,1,351,181 dias a 1 ano
+D00424,C01256,E08,2024-08-13,Dispensa sem justa causa,0,656,1 a 2 anos
+D00425,C01556,E19,2024-08-14,Pedido de demissão,1,423,1 a 2 anos
+D00426,C01796,E19,2024-08-16,Dispensa sem justa causa,0,259,181 dias a 1 ano
+D00427,C00488,E09,2024-08-17,Pedido de demissão,1,2676,Mais de 2 anos
+D00428,C00727,E09,2024-08-17,Dispensa sem justa causa,0,1569,Mais de 2 anos
+D00429,C00420,E19,2024-08-18,Acordo,1,3078,Mais de 2 anos
+D00430,C00516,E12,2024-08-18,Dispensa sem justa causa,0,2511,Mais de 2 anos
+D00431,C02102,E19,2024-08-18,Pedido de demissão,1,63,Até 90 dias
+D00432,C01040,E06,2024-08-19,Dispensa sem justa causa,0,1031,Mais de 2 anos
+D00433,C01305,E19,2024-08-19,Pedido de demissão,1,593,1 a 2 anos
+D00434,C01841,E02,2024-08-19,Dispensa sem justa causa,0,215,181 dias a 1 ano
+D00435,C01084,E03,2024-08-20,Pedido de demissão,1,963,Mais de 2 anos
+D00436,C01449,E02,2024-08-21,Pedido de demissão,1,489,1 a 2 anos
+D00437,C01475,E18,2024-08-21,Pedido de demissão,1,474,1 a 2 anos
+D00438,C02137,E19,2024-08-22,Término de experiência,0,50,Até 90 dias
+D00439,C01671,E03,2024-08-23,Dispensa sem justa causa,0,351,181 dias a 1 ano
+D00440,C01721,E18,2024-08-23,Dispensa sem justa causa,0,317,181 dias a 1 ano
+D00441,C00582,E06,2024-08-24,Pedido de demissão,1,2122,Mais de 2 anos
+D00442,C01257,E12,2024-08-24,Dispensa sem justa causa,0,664,1 a 2 anos
+D00443,C01719,E02,2024-08-24,Dispensa sem justa causa,0,322,181 dias a 1 ano
+D00444,C01964,E09,2024-08-24,Pedido de demissão,1,141,91 a 180 dias
+D00445,C00682,E19,2024-08-25,Dispensa sem justa causa,0,1658,Mais de 2 anos
+D00446,C01984,E09,2024-08-25,Pedido de demissão,1,133,91 a 180 dias
+D00447,C02236,E14,2024-08-25,Término de experiência,0,2,Até 90 dias
+D00448,C01447,E11,2024-08-26,Pedido de demissão,1,496,1 a 2 anos
+D00449,C01946,E19,2024-08-26,Pedido de demissão,1,152,91 a 180 dias
+D00450,C01061,E11,2024-08-27,Dispensa sem justa causa,0,1013,Mais de 2 anos
+D00451,C01877,E19,2024-08-28,Dispensa sem justa causa,0,196,181 dias a 1 ano
+D00452,C02050,E07,2024-08-30,Pedido de demissão,1,102,91 a 180 dias
+D00453,C02222,E19,2024-08-30,Pedido de demissão,1,16,Até 90 dias
+D00454,C00532,E14,2024-08-31,Dispensa sem justa causa,0,2405,Mais de 2 anos
+D00455,C01812,E11,2024-08-31,Pedido de demissão,1,265,181 dias a 1 ano
+D00456,C00351,E09,2024-09-01,Dispensa sem justa causa,0,3567,Mais de 2 anos
+D00457,C00695,E03,2024-09-01,Acordo,1,1635,Mais de 2 anos
+D00458,C00822,E06,2024-09-01,Pedido de demissão,1,1429,Mais de 2 anos
+D00459,C01158,E03,2024-09-01,Dispensa sem justa causa,0,854,Mais de 2 anos
+D00460,C01498,E11,2024-09-02,Dispensa sem justa causa,0,475,1 a 2 anos
+D00461,C01535,E19,2024-09-02,Dispensa sem justa causa,0,453,1 a 2 anos
+D00462,C01723,E13,2024-09-02,Pedido de demissão,1,327,181 dias a 1 ano
+D00463,C02194,E18,2024-09-02,Pedido de demissão,1,35,Até 90 dias
+D00464,C02108,E05,2024-09-03,Dispensa sem justa causa,0,77,Até 90 dias
+D00465,C00726,E19,2024-09-04,Pedido de demissão,1,1591,Mais de 2 anos
+D00466,C00792,E16,2024-09-04,Pedido de demissão,1,1478,Mais de 2 anos
+D00467,C02012,E16,2024-09-04,Dispensa sem justa causa,0,130,91 a 180 dias
+D00468,C02107,E06,2024-09-04,Pedido de demissão,1,78,Até 90 dias
+D00469,C02166,E19,2024-09-04,Pedido de demissão,1,50,Até 90 dias
+D00470,C01742,E19,2024-09-05,Dispensa sem justa causa,0,314,181 dias a 1 ano
+D00471,C01824,E15,2024-09-05,Pedido de demissão,1,261,181 dias a 1 ano
+D00472,C02192,E12,2024-09-05,Pedido de demissão,1,39,Até 90 dias
+D00473,C00520,E20,2024-09-06,Pedido de demissão,1,2490,Mais de 2 anos
+D00474,C00907,E05,2024-09-06,Pedido de demissão,1,1295,Mais de 2 anos
+D00475,C01628,E19,2024-09-07,Dispensa sem justa causa,0,400,1 a 2 anos
+D00476,C01766,E04,2024-09-07,Pedido de demissão,1,303,181 dias a 1 ano
+D00477,C00613,E02,2024-09-08,Acordo,1,1976,Mais de 2 anos
+D00478,C00926,E16,2024-09-08,Dispensa sem justa causa,0,1264,Mais de 2 anos
+D00479,C02239,E06,2024-09-08,Término de experiência,0,13,Até 90 dias
+D00480,C02250,E19,2024-09-08,Término de experiência,0,6,Até 90 dias
+D00481,C02017,E08,2024-09-10,Pedido de demissão,1,134,91 a 180 dias
+D00482,C02256,E11,2024-09-10,Término de experiência,0,6,Até 90 dias
+D00483,C00325,E19,2024-09-11,Dispensa sem justa causa,0,3801,Mais de 2 anos
+D00484,C01696,E11,2024-09-12,Pedido de demissão,1,355,181 dias a 1 ano
+D00485,C02093,E02,2024-09-12,Pedido de demissão,1,90,Até 90 dias
+D00486,C01893,E20,2024-09-13,Pedido de demissão,1,206,181 dias a 1 ano
+D00487,C02047,E20,2024-09-13,Dispensa sem justa causa,0,118,91 a 180 dias
+D00488,C01496,E19,2024-09-14,Pedido de demissão,1,487,1 a 2 anos
+D00489,C02037,E05,2024-09-14,Pedido de demissão,1,124,91 a 180 dias
+D00490,C00471,E04,2024-09-15,Acordo,1,2789,Mais de 2 anos
+D00491,C01444,E06,2024-09-15,Pedido de demissão,1,518,1 a 2 anos
+D00492,C02089,E15,2024-09-15,Dispensa sem justa causa,0,95,91 a 180 dias
+D00493,C02109,E04,2024-09-15,Dispensa sem justa causa,0,88,Até 90 dias
+D00494,C02180,E19,2024-09-15,Pedido de demissão,1,55,Até 90 dias
+D00495,C02270,E14,2024-09-15,Pedido de demissão,1,5,Até 90 dias
+D00496,C00165,E04,2024-09-16,Pedido de demissão,1,4826,Mais de 2 anos
+D00497,C01882,E05,2024-09-16,Pedido de demissão,1,213,181 dias a 1 ano
+D00498,C02244,E04,2024-09-16,Pedido de demissão,1,17,Até 90 dias
+D00499,C00449,E16,2024-09-18,Pedido de demissão,1,2936,Mais de 2 anos
+D00500,C00826,E13,2024-09-18,Dispensa sem justa causa,0,1439,Mais de 2 anos
+D00501,C01531,E04,2024-09-18,Dispensa sem justa causa,0,471,1 a 2 anos
+D00502,C01975,E01,2024-09-18,Pedido de demissão,1,161,91 a 180 dias
+D00503,C02246,E19,2024-09-18,Pedido de demissão,1,17,Até 90 dias
+D00504,C00326,E19,2024-09-20,Acordo,1,3797,Mais de 2 anos
+D00505,C01704,E02,2024-09-20,Pedido de demissão,1,358,181 dias a 1 ano
+D00506,C00771,E16,2024-09-21,Pedido de demissão,1,1539,Mais de 2 anos
+D00507,C00849,E05,2024-09-21,Pedido de demissão,1,1408,Mais de 2 anos
+D00508,C01236,E11,2024-09-21,Acordo,1,727,1 a 2 anos
+D00509,C01058,E08,2024-09-22,Dispensa sem justa causa,0,1043,Mais de 2 anos
+D00510,C01849,E13,2024-09-22,Acordo,1,238,181 dias a 1 ano
+D00511,C02158,E07,2024-09-22,Pedido de demissão,1,74,Até 90 dias
+D00512,C02188,E14,2024-09-22,Pedido de demissão,1,59,Até 90 dias
+D00513,C00731,E06,2024-09-23,Pedido de demissão,1,1604,Mais de 2 anos
+D00514,C01422,E12,2024-09-23,Dispensa sem justa causa,0,541,1 a 2 anos
+D00515,C02084,E19,2024-09-23,Pedido de demissão,1,105,91 a 180 dias
+D00516,C02206,E08,2024-09-23,Pedido de demissão,1,50,Até 90 dias
+D00517,C02156,E07,2024-09-24,Término de experiência,0,77,Até 90 dias
+D00518,C02273,E06,2024-09-24,Dispensa sem justa causa,0,12,Até 90 dias
+D00519,C01527,E12,2024-09-25,Dispensa sem justa causa,0,482,1 a 2 anos
+D00520,C01878,E19,2024-09-25,Pedido de demissão,1,224,181 dias a 1 ano
+D00521,C02135,E18,2024-09-25,Pedido de demissão,1,86,Até 90 dias
+D00522,C01670,E03,2024-09-26,Pedido de demissão,1,385,1 a 2 anos
+D00523,C01722,E03,2024-09-26,Pedido de demissão,1,351,181 dias a 1 ano
+D00524,C02027,E05,2024-09-27,Pedido de demissão,1,143,91 a 180 dias
+D00525,C02255,E06,2024-09-27,Término de experiência,0,23,Até 90 dias
+D00526,C01580,E01,2024-09-28,Pedido de demissão,1,455,1 a 2 anos
+D00527,C02149,E13,2024-09-28,Término de experiência,0,84,Até 90 dias
+D00528,C01724,E17,2024-09-29,Pedido de demissão,1,354,181 dias a 1 ano
+D00529,C02091,E19,2024-09-29,Pedido de demissão,1,107,91 a 180 dias
+D00530,C02120,E16,2024-09-30,Dispensa sem justa causa,0,98,91 a 180 dias
+D00531,C02297,E12,2024-09-30,Pedido de demissão,1,7,Até 90 dias
+D00532,C01769,E03,2024-10-01,Pedido de demissão,1,325,181 dias a 1 ano
+D00533,C00551,E19,2024-10-02,Dispensa sem justa causa,0,2331,Mais de 2 anos
+D00534,C01973,E12,2024-10-02,Dispensa sem justa causa,0,177,91 a 180 dias
+D00535,C01001,E19,2024-10-03,Pedido de demissão,1,1155,Mais de 2 anos
+D00536,C02254,E08,2024-10-03,Pedido de demissão,1,30,Até 90 dias
+D00537,C02165,E15,2024-10-04,Término de experiência,0,81,Até 90 dias
+D00538,C02298,E19,2024-10-05,Pedido de demissão,1,11,Até 90 dias
+D00539,C00709,E11,2024-10-06,Pedido de demissão,1,1659,Mais de 2 anos
+D00540,C01625,E19,2024-10-06,Dispensa sem justa causa,0,430,1 a 2 anos
+D00541,C00270,E06,2024-10-07,Pedido de demissão,1,4207,Mais de 2 anos
+D00542,C01428,E18,2024-10-08,Pedido de demissão,1,550,1 a 2 anos
+D00543,C02213,E19,2024-10-08,Pedido de demissão,1,60,Até 90 dias
+D00544,C02215,E19,2024-10-08,Pedido de demissão,1,59,Até 90 dias
+D00545,C02294,E03,2024-10-08,Pedido de demissão,1,16,Até 90 dias
+D00546,C02150,E12,2024-10-09,Dispensa sem justa causa,0,95,91 a 180 dias
+D00547,C01092,E19,2024-10-10,Dispensa sem justa causa,0,1000,Mais de 2 anos
+D00548,C01596,E08,2024-10-10,Dispensa sem justa causa,0,457,1 a 2 anos
+D00549,C00773,E20,2024-10-11,Dispensa sem justa causa,0,1555,Mais de 2 anos
+D00550,C01224,E18,2024-10-11,Pedido de demissão,1,770,Mais de 2 anos
+D00551,C01800,E05,2024-10-11,Pedido de demissão,1,314,181 dias a 1 ano
+D00552,C02110,E20,2024-10-11,Dispensa sem justa causa,0,113,91 a 180 dias
+D00553,C00779,E03,2024-10-12,Dispensa sem justa causa,0,1538,Mais de 2 anos
+D00554,C02295,E09,2024-10-12,Pedido de demissão,1,20,Até 90 dias
+D00555,C00291,E18,2024-10-13,Pedido de demissão,1,4026,Mais de 2 anos
+D00556,C01101,E03,2024-10-13,Pedido de demissão,1,994,Mais de 2 anos
+D00557,C01451,E01,2024-10-13,Pedido de demissão,1,541,1 a 2 anos
+D00558,C02269,E15,2024-10-13,Pedido de demissão,1,33,Até 90 dias
+D00559,C02301,E18,2024-10-13,Dispensa sem justa causa,0,18,Até 90 dias
+D00560,C00871,E01,2024-10-14,Pedido de demissão,1,1389,Mais de 2 anos
+D00561,C01789,E15,2024-10-14,Pedido de demissão,1,322,181 dias a 1 ano
+D00562,C01864,E06,2024-10-14,Pedido de demissão,1,251,181 dias a 1 ano
+D00563,C00036,E03,2024-10-15,Pedido de demissão,1,5686,Mais de 2 anos
+D00564,C02048,E02,2024-10-15,Dispensa sem justa causa,0,150,91 a 180 dias
+D00565,C01827,E02,2024-10-16,Pedido de demissão,1,301,181 dias a 1 ano
+D00566,C02190,E19,2024-10-16,Término de experiência,0,81,Até 90 dias
+D00567,C01138,E03,2024-10-17,Pedido de demissão,1,943,Mais de 2 anos
+D00568,C01375,E19,2024-10-17,Acordo,1,595,1 a 2 anos
+D00569,C01464,E01,2024-10-17,Dispensa sem justa causa,0,538,1 a 2 anos
+D00570,C01980,E20,2024-10-17,Acordo,1,187,181 dias a 1 ano
+D00571,C01983,E04,2024-10-17,Dispensa sem justa causa,0,186,181 dias a 1 ano
+D00572,C02178,E06,2024-10-17,Pedido de demissão,1,88,Até 90 dias
+D00573,C02337,E06,2024-10-17,Término de experiência,0,5,Até 90 dias
+D00574,C02082,E17,2024-10-18,Pedido de demissão,1,131,91 a 180 dias
+D00575,C00222,E18,2024-10-19,Dispensa sem justa causa,0,4508,Mais de 2 anos
+D00576,C01290,E04,2024-10-19,Pedido de demissão,1,672,1 a 2 anos
+D00577,C01321,E16,2024-10-21,Pedido de demissão,1,641,1 a 2 anos
+D00578,C01643,E11,2024-10-21,Pedido de demissão,1,429,1 a 2 anos
+D00579,C00984,E02,2024-10-22,Acordo,1,1209,Mais de 2 anos
+D00580,C01682,E18,2024-10-22,Pedido de demissão,1,405,1 a 2 anos
+D00581,C01218,E05,2024-10-23,Dispensa sem justa causa,0,794,Mais de 2 anos
+D00582,C02220,E03,2024-10-23,Término de experiência,0,72,Até 90 dias
+D00583,C01578,E03,2024-10-25,Dispensa sem justa causa,0,483,1 a 2 anos
+D00584,C01601,E13,2024-10-25,Pedido de demissão,1,469,1 a 2 anos
+D00585,C02230,E19,2024-10-26,Pedido de demissão,1,68,Até 90 dias
+D00586,C01173,E19,2024-10-27,Dispensa sem justa causa,0,884,Mais de 2 anos
+D00587,C01657,E19,2024-10-27,Dispensa sem justa causa,0,424,1 a 2 anos
+D00588,C02221,E08,2024-10-27,Término de experiência,0,76,Até 90 dias
+D00589,C02315,E18,2024-10-27,Término de experiência,0,24,Até 90 dias
+D00590,C01890,E17,2024-10-28,Pedido de demissão,1,252,181 dias a 1 ano
+D00591,C00132,E20,2024-10-30,Dispensa sem justa causa,0,5023,Mais de 2 anos
+D00592,C02259,E08,2024-11-01,Dispensa sem justa causa,0,57,Até 90 dias
+D00593,C02345,E02,2024-11-01,Pedido de demissão,1,17,Até 90 dias
+D00594,C02159,E18,2024-11-02,Dispensa sem justa causa,0,114,91 a 180 dias
+D00595,C01926,E15,2024-11-03,Dispensa sem justa causa,0,237,181 dias a 1 ano
+D00596,C00627,E14,2024-11-04,Dispensa sem justa causa,0,1925,Mais de 2 anos
+D00597,C00885,E04,2024-11-04,Dispensa sem justa causa,0,1390,Mais de 2 anos
+D00598,C01078,E17,2024-11-04,Dispensa sem justa causa,0,1048,Mais de 2 anos
+D00599,C02238,E01,2024-11-05,Pedido de demissão,1,71,Até 90 dias
+D00600,C02224,E06,2024-11-06,Pedido de demissão,1,82,Até 90 dias
+D00601,C00760,E08,2024-11-07,Dispensa sem justa causa,0,1609,Mais de 2 anos
+D00602,C01066,E08,2024-11-07,Dispensa sem justa causa,0,1072,Mais de 2 anos
+D00603,C00762,E03,2024-11-09,Pedido de demissão,1,1608,Mais de 2 anos
+D00604,C01456,E18,2024-11-09,Dispensa sem justa causa,0,566,1 a 2 anos
+D00605,C02293,E09,2024-11-09,Término de experiência,0,49,Até 90 dias
+D00606,C00960,E19,2024-11-10,Pedido de demissão,1,1264,Mais de 2 anos
+D00607,C01981,E16,2024-11-10,Acordo,1,211,181 dias a 1 ano
+D00608,C00092,E03,2024-11-11,Dispensa sem justa causa,0,5352,Mais de 2 anos
+D00609,C02292,E09,2024-11-12,Pedido de demissão,1,52,Até 90 dias
+D00610,C02243,E14,2024-11-13,Término de experiência,0,76,Até 90 dias
+D00611,C02285,E09,2024-11-13,Término de experiência,0,56,Até 90 dias
+D00612,C01022,E19,2024-11-14,Pedido de demissão,1,1158,Mais de 2 anos
+D00613,C01887,E11,2024-11-14,Pedido de demissão,1,271,181 dias a 1 ano
+D00614,C00180,E04,2024-11-15,Pedido de demissão,1,4815,Mais de 2 anos
+D00615,C01536,E06,2024-11-15,Dispensa sem justa causa,0,527,1 a 2 anos
+D00616,C02018,E19,2024-11-15,Pedido de demissão,1,199,181 dias a 1 ano
+D00617,C02365,E11,2024-11-15,Pedido de demissão,1,22,Até 90 dias
+D00618,C02385,E03,2024-11-15,Pedido de demissão,1,12,Até 90 dias
+D00619,C00175,E03,2024-11-16,Acordo,1,4838,Mais de 2 anos
+D00620,C00915,E15,2024-11-16,Dispensa sem justa causa,0,1352,Mais de 2 anos
+D00621,C02205,E05,2024-11-16,Dispensa sem justa causa,0,104,91 a 180 dias
+D00622,C02354,E13,2024-11-16,Pedido de demissão,1,28,Até 90 dias
+D00623,C01599,E07,2024-11-18,Pedido de demissão,1,495,1 a 2 anos
+D00624,C01795,E09,2024-11-18,Pedido de demissão,1,354,181 dias a 1 ano
+D00625,C02266,E19,2024-11-18,Pedido de demissão,1,69,Até 90 dias
+D00626,C02172,E04,2024-11-19,Dispensa sem justa causa,0,125,91 a 180 dias
+D00627,C02228,E17,2024-11-19,Dispensa sem justa causa,0,94,91 a 180 dias
+D00628,C02379,E01,2024-11-19,Pedido de demissão,1,18,Até 90 dias
+D00629,C00617,E19,2024-11-20,Dispensa sem justa causa,0,2007,Mais de 2 anos
+D00630,C02279,E03,2024-11-20,Pedido de demissão,1,65,Até 90 dias
+D00631,C01488,E18,2024-11-22,Pedido de demissão,1,560,1 a 2 anos
+D00632,C02251,E20,2024-11-23,Término de experiência,0,82,Até 90 dias
+D00633,C00354,E18,2024-11-24,Pedido de demissão,1,3628,Mais de 2 anos
+D00634,C00579,E09,2024-11-24,Pedido de demissão,1,2228,Mais de 2 anos
+D00635,C00735,E09,2024-11-24,Dispensa sem justa causa,0,1664,Mais de 2 anos
+D00636,C01768,E06,2024-11-24,Pedido de demissão,1,380,1 a 2 anos
+D00637,C01905,E19,2024-11-24,Pedido de demissão,1,270,181 dias a 1 ano
+D00638,C02313,E19,2024-11-24,Pedido de demissão,1,53,Até 90 dias
+D00639,C02299,E09,2024-11-25,Pedido de demissão,1,62,Até 90 dias
+D00640,C02329,E04,2024-11-25,Pedido de demissão,1,47,Até 90 dias
+D00641,C00064,E17,2024-11-26,Dispensa sem justa causa,0,5531,Mais de 2 anos
+D00642,C01685,E18,2024-11-26,Pedido de demissão,1,438,1 a 2 anos
+D00643,C02321,E19,2024-11-26,Pedido de demissão,1,51,Até 90 dias
+D00644,C00922,E12,2024-11-27,Acordo,1,1350,Mais de 2 anos
+D00645,C01215,E01,2024-11-27,Dispensa sem justa causa,0,831,Mais de 2 anos
+D00646,C01209,E05,2024-11-28,Pedido de demissão,1,839,Mais de 2 anos
+D00647,C01910,E09,2024-11-29,Acordo,1,271,181 dias a 1 ano
+D00648,C02191,E03,2024-11-29,Pedido de demissão,1,125,91 a 180 dias
+D00649,C02234,E07,2024-11-29,Pedido de demissão,1,99,91 a 180 dias
+D00650,C00257,E15,2024-11-30,Dispensa sem justa causa,0,4357,Mais de 2 anos
+D00651,C00643,E05,2024-11-30,Pedido de demissão,1,1882,Mais de 2 anos
+D00652,C02296,E08,2024-11-30,Pedido de demissão,1,68,Até 90 dias
+D00653,C02439,E08,2024-11-30,Pedido de demissão,1,4,Até 90 dias
+D00654,C00814,E01,2024-12-01,Pedido de demissão,1,1534,Mais de 2 anos
+D00655,C00819,E02,2024-12-01,Pedido de demissão,1,1521,Mais de 2 anos
+D00656,C01524,E15,2024-12-01,Pedido de demissão,1,551,1 a 2 anos
+D00657,C01585,E13,2024-12-01,Dispensa sem justa causa,0,515,1 a 2 anos
+D00658,C01748,E09,2024-12-02,Pedido de demissão,1,400,1 a 2 anos
+D00659,C00991,E13,2024-12-04,Dispensa sem justa causa,0,1242,Mais de 2 anos
+D00660,C02086,E01,2024-12-04,Pedido de demissão,1,175,91 a 180 dias
+D00661,C02271,E16,2024-12-04,Pedido de demissão,1,85,Até 90 dias
+D00662,C01914,E18,2024-12-05,Pedido de demissão,1,275,181 dias a 1 ano
+D00663,C00698,E06,2024-12-07,Dispensa sem justa causa,0,1731,Mais de 2 anos
+D00664,C01918,E16,2024-12-07,Dispensa sem justa causa,0,274,181 dias a 1 ano
+D00665,C02146,E06,2024-12-07,Dispensa sem justa causa,0,154,91 a 180 dias
+D00666,C01178,E01,2024-12-08,Pedido de demissão,1,914,Mais de 2 anos
+D00667,C01595,E05,2024-12-08,Acordo,1,516,1 a 2 anos
+D00668,C00426,E19,2024-12-09,Dispensa sem justa causa,0,3144,Mais de 2 anos
+D00669,C00847,E18,2024-12-09,Pedido de demissão,1,1488,Mais de 2 anos
+D00670,C01607,E19,2024-12-09,Dispensa sem justa causa,0,508,1 a 2 anos
+D00671,C02032,E07,2024-12-09,Pedido de demissão,1,213,181 dias a 1 ano
+D00672,C02308,E11,2024-12-09,Término de experiência,0,71,Até 90 dias
+D00673,C00015,E20,2024-12-10,Pedido de demissão,1,6637,Mais de 2 anos
+D00674,C00296,E18,2024-12-10,Pedido de demissão,1,4072,Mais de 2 anos
+D00675,C02358,E03,2024-12-10,Pedido de demissão,1,50,Até 90 dias
+D00676,C00171,E18,2024-12-11,Dispensa sem justa causa,0,4884,Mais de 2 anos
+D00677,C00054,E07,2024-12-12,Dispensa sem justa causa,0,5636,Mais de 2 anos
+D00678,C00644,E07,2024-12-13,Pedido de demissão,1,1891,Mais de 2 anos
+D00679,C02437,E18,2024-12-13,Pedido de demissão,1,17,Até 90 dias
+D00680,C01229,E13,2024-12-18,Acordo,1,825,Mais de 2 anos
+D00681,C01355,E16,2024-12-18,Acordo,1,674,1 a 2 anos
+D00682,C01835,E12,2024-12-18,Pedido de demissão,1,353,181 dias a 1 ano
+D00683,C00593,E20,2024-12-19,Dispensa sem justa causa,0,2162,Mais de 2 anos
+D00684,C01497,E20,2024-12-19,Pedido de demissão,1,583,1 a 2 anos
+D00685,C02099,E07,2024-12-19,Pedido de demissão,1,187,181 dias a 1 ano
+D00686,C01507,E19,2024-12-20,Dispensa sem justa causa,0,578,1 a 2 anos
+D00687,C02381,E12,2024-12-20,Pedido de demissão,1,49,Até 90 dias
+D00688,C00174,E18,2024-12-21,Acordo,1,4885,Mais de 2 anos
+D00689,C00411,E13,2024-12-21,Dispensa sem justa causa,0,3290,Mais de 2 anos
+D00690,C01717,E19,2024-12-22,Pedido de demissão,1,442,1 a 2 anos
+D00691,C02434,E19,2024-12-22,Dispensa sem justa causa,0,27,Até 90 dias
+D00692,C00638,E05,2024-12-23,Dispensa sem justa causa,0,1917,Mais de 2 anos
+D00693,C00895,E07,2024-12-23,Dispensa sem justa causa,0,1420,Mais de 2 anos
+D00694,C01931,E09,2024-12-23,Pedido de demissão,1,283,181 dias a 1 ano
+D00695,C02343,E03,2024-12-23,Pedido de demissão,1,71,Até 90 dias
+D00696,C00685,E16,2024-12-24,Dispensa sem justa causa,0,1769,Mais de 2 anos
+D00697,C01979,E19,2024-12-24,Pedido de demissão,1,255,181 dias a 1 ano
+D00698,C02284,E06,2024-12-24,Dispensa sem justa causa,0,97,91 a 180 dias
+D00699,C02414,E19,2024-12-24,Término de experiência,0,38,Até 90 dias
+D00700,C01705,E08,2024-12-25,Dispensa sem justa causa,0,454,1 a 2 anos
+D00701,C01798,E18,2024-12-25,Dispensa sem justa causa,0,389,1 a 2 anos
+D00702,C02083,E19,2024-12-26,Dispensa sem justa causa,0,199,181 dias a 1 ano
+D00703,C01534,E07,2024-12-27,Pedido de demissão,1,570,1 a 2 anos
+D00704,C00445,E01,2024-12-28,Dispensa sem justa causa,0,3049,Mais de 2 anos
+D00705,C02253,E12,2024-12-28,Pedido de demissão,1,117,91 a 180 dias
+D00706,C00088,E14,2024-12-29,Dispensa sem justa causa,0,5404,Mais de 2 anos
+D00707,C00864,E17,2024-12-30,Dispensa sem justa causa,0,1479,Mais de 2 anos
+D00708,C01291,E18,2024-12-30,Pedido de demissão,1,740,Mais de 2 anos
+D00709,C02309,E11,2024-12-30,Pedido de demissão,1,92,91 a 180 dias
+D00710,C02360,E20,2024-12-30,Pedido de demissão,1,68,Até 90 dias
+D00711,C00278,E09,2024-12-31,Dispensa sem justa causa,0,4198,Mais de 2 anos
+D00712,C02331,E03,2024-12-31,Pedido de demissão,1,83,Até 90 dias
+D00713,C02366,E12,2024-12-31,Término de experiência,0,68,Até 90 dias
+D00714,C00348,E02,2025-01-01,Dispensa sem justa causa,0,3703,Mais de 2 anos
+D00715,C01689,E01,2025-01-01,Dispensa sem justa causa,0,472,1 a 2 anos
+D00716,C01626,E12,2025-01-02,Acordo,1,518,1 a 2 anos
+D00717,C00526,E04,2025-01-03,Pedido de demissão,1,2550,Mais de 2 anos
+D00718,C01617,E18,2025-01-03,Dispensa sem justa causa,0,524,1 a 2 anos
+D00719,C00502,E19,2025-01-04,Pedido de demissão,1,2731,Mais de 2 anos
+D00720,C01406,E11,2025-01-07,Dispensa sem justa causa,0,659,1 a 2 anos
+D00721,C01462,E19,2025-01-07,Dispensa sem justa causa,0,621,1 a 2 anos
+D00722,C02340,E18,2025-01-07,Pedido de demissão,1,86,Até 90 dias
+D00723,C02512,E06,2025-01-08,Pedido de demissão,1,8,Até 90 dias
+D00724,C00093,E05,2025-01-09,Pedido de demissão,1,5409,Mais de 2 anos
+D00725,C02390,E18,2025-01-09,Pedido de demissão,1,65,Até 90 dias
+D00726,C02464,E19,2025-01-09,Término de experiência,0,33,Até 90 dias
+D00727,C01760,E18,2025-01-10,Dispensa sem justa causa,0,430,1 a 2 anos
+D00728,C02179,E13,2025-01-10,Pedido de demissão,1,173,91 a 180 dias
+D00729,C02280,E13,2025-01-10,Pedido de demissão,1,116,91 a 180 dias
+D00730,C00272,E18,2025-01-11,Pedido de demissão,1,4257,Mais de 2 anos
+D00731,C00961,E14,2025-01-11,Dispensa sem justa causa,0,1324,Mais de 2 anos
+D00732,C01322,E16,2025-01-11,Pedido de demissão,1,723,1 a 2 anos
+D00733,C00606,E20,2025-01-12,Pedido de demissão,1,2149,Mais de 2 anos
+D00734,C02398,E06,2025-01-12,Pedido de demissão,1,65,Até 90 dias
+D00735,C00751,E03,2025-01-13,Pedido de demissão,1,1688,Mais de 2 anos
+D00736,C00970,E19,2025-01-13,Dispensa sem justa causa,0,1315,Mais de 2 anos
+D00737,C01457,E18,2025-01-13,Pedido de demissão,1,631,1 a 2 anos
+D00738,C02203,E03,2025-01-13,Pedido de demissão,1,162,91 a 180 dias
+D00739,C02444,E19,2025-01-13,Pedido de demissão,1,45,Até 90 dias
+D00740,C00318,E08,2025-01-14,Dispensa sem justa causa,0,3970,Mais de 2 anos
+D00741,C00451,E19,2025-01-14,Dispensa sem justa causa,0,3036,Mais de 2 anos
+D00742,C02023,E19,2025-01-14,Dispensa sem justa causa,0,254,181 dias a 1 ano
+D00743,C00483,E16,2025-01-15,Dispensa sem justa causa,0,2859,Mais de 2 anos
+D00744,C02053,E14,2025-01-16,Dispensa sem justa causa,0,239,181 dias a 1 ano
+D00745,C00694,E19,2025-01-17,Dispensa sem justa causa,0,1773,Mais de 2 anos
+D00746,C02526,E17,2025-01-17,Dispensa sem justa causa,0,10,Até 90 dias
+D00747,C01380,E20,2025-01-18,Dispensa sem justa causa,0,685,1 a 2 anos
+D00748,C02119,E15,2025-01-18,Pedido de demissão,1,208,181 dias a 1 ano
+D00749,C01005,E01,2025-01-19,Dispensa sem justa causa,0,1257,Mais de 2 anos
+D00750,C00116,E18,2025-01-20,Pedido de demissão,1,5219,Mais de 2 anos
+D00751,C00168,E19,2025-01-20,Dispensa sem justa causa,0,4941,Mais de 2 anos
+D00752,C02019,E20,2025-01-20,Pedido de demissão,1,264,181 dias a 1 ano
+D00753,C02525,E09,2025-01-20,Término de experiência,0,14,Até 90 dias
+D00754,C02531,E12,2025-01-20,Pedido de demissão,1,9,Até 90 dias
+D00755,C00148,E03,2025-01-21,Pedido de demissão,1,5017,Mais de 2 anos
+D00756,C02317,E06,2025-01-21,Pedido de demissão,1,110,91 a 180 dias
+D00757,C02338,E19,2025-01-21,Pedido de demissão,1,100,91 a 180 dias
+D00758,C02418,E07,2025-01-21,Dispensa sem justa causa,0,65,Até 90 dias
+D00759,C02410,E20,2025-01-22,Pedido de demissão,1,68,Até 90 dias
+D00760,C00078,E19,2025-01-23,Pedido de demissão,1,5486,Mais de 2 anos
+D00761,C02356,E19,2025-01-23,Pedido de demissão,1,95,91 a 180 dias
+D00762,C02411,E06,2025-01-23,Término de experiência,0,69,Até 90 dias
+D00763,C02468,E19,2025-01-23,Término de experiência,0,45,Até 90 dias
+D00764,C02481,E19,2025-01-23,Pedido de demissão,1,39,Até 90 dias
+D00765,C02396,E18,2025-01-24,Pedido de demissão,1,78,Até 90 dias
+D00766,C00033,E18,2025-01-25,Dispensa sem justa causa,0,5803,Mais de 2 anos
+D00767,C00939,E20,2025-01-27,Dispensa sem justa causa,0,1379,Mais de 2 anos
+D00768,C00887,E02,2025-01-28,Pedido de demissão,1,1471,Mais de 2 anos
+D00769,C01238,E18,2025-01-28,Pedido de demissão,1,846,Mais de 2 anos
+D00770,C02290,E16,2025-01-29,Pedido de demissão,1,131,91 a 180 dias
+D00771,C02489,E06,2025-01-29,Pedido de demissão,1,43,Até 90 dias
+D00772,C00377,E12,2025-01-30,Acordo,1,3528,Mais de 2 anos
+D00773,C01478,E14,2025-01-30,Dispensa sem justa causa,0,635,1 a 2 anos
+D00774,C00675,E12,2025-01-31,Dispensa sem justa causa,0,1836,Mais de 2 anos
+D00775,C02039,E05,2025-01-31,Dispensa sem justa causa,0,262,181 dias a 1 ano
+D00776,C02514,E18,2025-01-31,Pedido de demissão,1,29,Até 90 dias
+D00777,C00409,E05,2025-02-01,Pedido de demissão,1,3337,Mais de 2 anos
+D00778,C01275,E01,2025-02-01,Pedido de demissão,1,799,Mais de 2 anos
+D00779,C02197,E12,2025-02-02,Dispensa sem justa causa,0,188,181 dias a 1 ano
+D00780,C02339,E19,2025-02-02,Dispensa sem justa causa,0,112,91 a 180 dias
+D00781,C00572,E01,2025-02-03,Pedido de demissão,1,2317,Mais de 2 anos
+D00782,C01686,E18,2025-02-03,Dispensa sem justa causa,0,506,1 a 2 anos
+D00783,C02175,E19,2025-02-03,Acordo,1,199,181 dias a 1 ano
+D00784,C02186,E08,2025-02-03,Dispensa sem justa causa,0,193,181 dias a 1 ano
+D00785,C00486,E07,2025-02-04,Pedido de demissão,1,2865,Mais de 2 anos
+D00786,C01944,E09,2025-02-04,Pedido de demissão,1,316,181 dias a 1 ano
+D00787,C02231,E06,2025-02-04,Pedido de demissão,1,169,91 a 180 dias
+D00788,C02495,E03,2025-02-05,Término de experiência,0,47,Até 90 dias
+D00789,C01960,E13,2025-02-06,Pedido de demissão,1,309,181 dias a 1 ano
+D00790,C00142,E11,2025-02-07,Acordo,1,5068,Mais de 2 anos
+D00791,C00860,E19,2025-02-07,Pedido de demissão,1,1533,Mais de 2 anos
+D00792,C01145,E19,2025-02-07,Pedido de demissão,1,1033,Mais de 2 anos
+D00793,C01907,E07,2025-02-07,Pedido de demissão,1,344,181 dias a 1 ano
+D00794,C02461,E01,2025-02-07,Dispensa sem justa causa,0,63,Até 90 dias
+D00795,C02511,E02,2025-02-07,Pedido de demissão,1,38,Até 90 dias
+D00796,C00565,E20,2025-02-08,Pedido de demissão,1,2351,Mais de 2 anos
+D00797,C01862,E03,2025-02-08,Pedido de demissão,1,370,1 a 2 anos
+D00798,C01337,E04,2025-02-09,Dispensa sem justa causa,0,738,Mais de 2 anos
+D00799,C01563,E19,2025-02-09,Dispensa sem justa causa,0,599,1 a 2 anos
+D00800,C02268,E18,2025-02-09,Pedido de demissão,1,152,91 a 180 dias
+D00801,C02361,E02,2025-02-09,Pedido de demissão,1,109,91 a 180 dias
+D00802,C00772,E14,2025-02-10,Dispensa sem justa causa,0,1679,Mais de 2 anos
+D00803,C01736,E19,2025-02-11,Pedido de demissão,1,476,1 a 2 anos
+D00804,C02252,E03,2025-02-11,Pedido de demissão,1,162,91 a 180 dias
+D00805,C02415,E05,2025-02-11,Pedido de demissão,1,87,Até 90 dias
+D00806,C00073,E19,2025-02-12,Dispensa sem justa causa,0,5558,Mais de 2 anos
+D00807,C01154,E05,2025-02-12,Dispensa sem justa causa,0,1027,Mais de 2 anos
+D00808,C02428,E12,2025-02-12,Término de experiência,0,83,Até 90 dias
+D00809,C02490,E08,2025-02-12,Dispensa sem justa causa,0,57,Até 90 dias
+D00810,C02169,E06,2025-02-15,Pedido de demissão,1,214,181 dias a 1 ano
+D00811,C02287,E09,2025-02-15,Pedido de demissão,1,149,91 a 180 dias
+D00812,C02482,E11,2025-02-15,Pedido de demissão,1,62,Até 90 dias
+D00813,C01044,E05,2025-02-16,Dispensa sem justa causa,0,1210,Mais de 2 anos
+D00814,C01360,E18,2025-02-16,Pedido de demissão,1,730,1 a 2 anos
+D00815,C02550,E19,2025-02-16,Pedido de demissão,1,21,Até 90 dias
+D00816,C00345,E13,2025-02-17,Acordo,1,3786,Mais de 2 anos
+D00817,C00412,E16,2025-02-17,Dispensa sem justa causa,0,3344,Mais de 2 anos
+D00818,C01128,E08,2025-02-17,Pedido de demissão,1,1089,Mais de 2 anos
+D00819,C02524,E01,2025-02-17,Término de experiência,0,42,Até 90 dias
+D00820,C02532,E05,2025-02-17,Pedido de demissão,1,34,Até 90 dias
+D00821,C02558,E06,2025-02-17,Término de experiência,0,19,Até 90 dias
+D00822,C02193,E19,2025-02-18,Pedido de demissão,1,204,181 dias a 1 ano
+D00823,C02580,E01,2025-02-18,Dispensa sem justa causa,0,10,Até 90 dias
+D00824,C01865,E20,2025-02-19,Pedido de demissão,1,376,1 a 2 anos
+D00825,C02064,E04,2025-02-19,Dispensa sem justa causa,0,265,181 dias a 1 ano
+D00826,C02384,E19,2025-02-20,Pedido de demissão,1,109,91 a 180 dias
+D00827,C02475,E11,2025-02-20,Término de experiência,0,71,Até 90 dias
+D00828,C01487,E12,2025-02-21,Pedido de demissão,1,652,1 a 2 anos
+D00829,C01888,E18,2025-02-21,Dispensa sem justa causa,0,369,1 a 2 anos
+D00830,C01962,E11,2025-02-21,Pedido de demissão,1,323,181 dias a 1 ano
+D00831,C00598,E20,2025-02-23,Pedido de demissão,1,2210,Mais de 2 anos
+D00832,C02096,E09,2025-02-23,Pedido de demissão,1,254,181 dias a 1 ano
+D00833,C00155,E19,2025-02-24,Pedido de demissão,1,5027,Mais de 2 anos
+D00834,C00273,E08,2025-02-24,Dispensa sem justa causa,0,4279,Mais de 2 anos
+D00835,C00717,E06,2025-02-24,Pedido de demissão,1,1782,Mais de 2 anos
+D00836,C01511,E04,2025-02-26,Dispensa sem justa causa,0,644,1 a 2 anos
+D00837,C01822,E09,2025-02-26,Pedido de demissão,1,437,1 a 2 anos
+D00838,C02565,E18,2025-02-26,Pedido de demissão,1,24,Até 90 dias
+D00839,C01993,E18,2025-02-27,Pedido de demissão,1,315,181 dias a 1 ano
+D00840,C02445,E19,2025-02-27,Pedido de demissão,1,90,Até 90 dias
+D00841,C02608,E19,2025-02-28,Pedido de demissão,1,5,Até 90 dias
+D00842,C00085,E20,2025-03-01,Pedido de demissão,1,5471,Mais de 2 anos
+D00843,C02594,E07,2025-03-01,Pedido de demissão,1,12,Até 90 dias
+D00844,C02598,E20,2025-03-01,Pedido de demissão,1,9,Até 90 dias
+D00845,C00231,E03,2025-03-02,Dispensa sem justa causa,0,4582,Mais de 2 anos
+D00846,C01516,E02,2025-03-02,Pedido de demissão,1,644,1 a 2 anos
+D00847,C01663,E06,2025-03-04,Dispensa sem justa causa,0,551,1 a 2 anos
+D00848,C02216,E05,2025-03-04,Acordo,1,206,181 dias a 1 ano
+D00849,C01754,E18,2025-03-05,Dispensa sem justa causa,0,487,1 a 2 anos
+D00850,C00767,E18,2025-03-07,Pedido de demissão,1,1720,Mais de 2 anos
+D00851,C01011,E06,2025-03-07,Dispensa sem justa causa,0,1286,Mais de 2 anos
+D00852,C01792,E15,2025-03-07,Pedido de demissão,1,464,1 a 2 anos
+D00853,C02204,E03,2025-03-07,Pedido de demissão,1,215,181 dias a 1 ano
+D00854,C02610,E16,2025-03-07,Pedido de demissão,1,12,Até 90 dias
+D00855,C02614,E18,2025-03-07,Término de experiência,0,10,Até 90 dias
+D00856,C02451,E02,2025-03-08,Pedido de demissão,1,97,91 a 180 dias
+D00857,C02263,E08,2025-03-09,Dispensa sem justa causa,0,183,181 dias a 1 ano
+D00858,C01352,E02,2025-03-10,Acordo,1,756,Mais de 2 anos
+D00859,C01985,E16,2025-03-10,Pedido de demissão,1,329,181 dias a 1 ano
+D00860,C00353,E02,2025-03-11,Pedido de demissão,1,3753,Mais de 2 anos
+D00861,C00656,E03,2025-03-12,Dispensa sem justa causa,0,1923,Mais de 2 anos
+D00862,C02152,E08,2025-03-12,Pedido de demissão,1,248,181 dias a 1 ano
+D00863,C00212,E15,2025-03-13,Dispensa sem justa causa,0,4708,Mais de 2 anos
+D00864,C01508,E12,2025-03-13,Pedido de demissão,1,661,1 a 2 anos
+D00865,C02515,E13,2025-03-13,Pedido de demissão,1,69,Até 90 dias
+D00866,C02561,E18,2025-03-13,Término de experiência,0,40,Até 90 dias
+D00867,C02619,E17,2025-03-14,Pedido de demissão,1,16,Até 90 dias
+D00868,C02611,E03,2025-03-15,Término de experiência,0,19,Até 90 dias
+D00869,C00447,E16,2025-03-17,Pedido de demissão,1,3117,Mais de 2 anos
+D00870,C00534,E03,2025-03-17,Dispensa sem justa causa,0,2584,Mais de 2 anos
+D00871,C00546,E02,2025-03-17,Pedido de demissão,1,2523,Mais de 2 anos
+D00872,C01562,E06,2025-03-17,Pedido de demissão,1,636,1 a 2 anos
+D00873,C02382,E19,2025-03-19,Pedido de demissão,1,137,91 a 180 dias
+D00874,C02574,E19,2025-03-19,Pedido de demissão,1,40,Até 90 dias
+D00875,C02474,E06,2025-03-20,Pedido de demissão,1,99,91 a 180 dias
+D00876,C02577,E19,2025-03-20,Término de experiência,0,40,Até 90 dias
+D00877,C02624,E06,2025-03-20,Pedido de demissão,1,20,Até 90 dias
+D00878,C00388,E19,2025-03-21,Pedido de demissão,1,3503,Mais de 2 anos
+D00879,C00844,E01,2025-03-21,Dispensa sem justa causa,0,1593,Mais de 2 anos
+D00880,C02564,E19,2025-03-21,Pedido de demissão,1,47,Até 90 dias
+D00881,C01245,E18,2025-03-23,Dispensa sem justa causa,0,891,Mais de 2 anos
+D00882,C02395,E18,2025-03-23,Dispensa sem justa causa,0,136,91 a 180 dias
+D00883,C02454,E19,2025-03-24,Pedido de demissão,1,111,91 a 180 dias
+D00884,C02630,E06,2025-03-24,Pedido de demissão,1,22,Até 90 dias
+D00885,C02480,E17,2025-03-25,Pedido de demissão,1,101,91 a 180 dias
+D00886,C00202,E19,2025-03-27,Dispensa sem justa causa,0,4792,Mais de 2 anos
+D00887,C01393,E01,2025-03-27,Pedido de demissão,1,746,Mais de 2 anos
+D00888,C01142,E18,2025-03-28,Acordo,1,1098,Mais de 2 anos
+D00889,C00215,E04,2025-03-30,Pedido de demissão,1,4716,Mais de 2 anos
+D00890,C00573,E14,2025-03-30,Pedido de demissão,1,2371,Mais de 2 anos
+D00891,C01353,E05,2025-03-31,Pedido de demissão,1,777,Mais de 2 anos
+D00892,C00484,E05,2025-04-01,Pedido de demissão,1,2932,Mais de 2 anos
+D00893,C01837,E18,2025-04-01,Pedido de demissão,1,453,1 a 2 anos
+D00894,C02342,E04,2025-04-01,Pedido de demissão,1,170,91 a 180 dias
+D00895,C01720,E11,2025-04-02,Pedido de demissão,1,541,1 a 2 anos
+D00896,C01955,E18,2025-04-03,Pedido de demissão,1,367,1 a 2 anos
+D00897,C02245,E19,2025-04-03,Pedido de demissão,1,214,181 dias a 1 ano
+D00898,C02590,E18,2025-04-03,Pedido de demissão,1,48,Até 90 dias
+D00899,C01833,E05,2025-04-04,Pedido de demissão,1,464,1 a 2 anos
+D00900,C02552,E18,2025-04-05,Pedido de demissão,1,69,Até 90 dias
+D00901,C02664,E19,2025-04-05,Término de experiência,0,15,Até 90 dias
+D00902,C02702,E06,2025-04-08,Pedido de demissão,1,2,Até 90 dias
+D00903,C00701,E19,2025-04-09,Dispensa sem justa causa,0,1851,Mais de 2 anos
+D00904,C01700,E12,2025-04-09,Pedido de demissão,1,561,1 a 2 anos
+D00905,C02160,E19,2025-04-10,Acordo,1,272,181 dias a 1 ano
+D00906,C02615,E18,2025-04-10,Pedido de demissão,1,44,Até 90 dias
+D00907,C02341,E04,2025-04-11,Pedido de demissão,1,180,91 a 180 dias
+D00908,C02578,E19,2025-04-11,Pedido de demissão,1,62,Até 90 dias
+D00909,C01486,E05,2025-04-12,Pedido de demissão,1,703,1 a 2 anos
+D00910,C02422,E19,2025-04-12,Pedido de demissão,1,144,91 a 180 dias
+D00911,C01549,E16,2025-04-13,Pedido de demissão,1,671,1 a 2 anos
+D00912,C02663,E06,2025-04-13,Dispensa sem justa causa,0,27,Até 90 dias
+D00913,C02497,E09,2025-04-14,Pedido de demissão,1,114,91 a 180 dias
+D00914,C02506,E08,2025-04-14,Pedido de demissão,1,107,91 a 180 dias
+D00915,C02688,E19,2025-04-14,Término de experiência,0,14,Até 90 dias
+D00916,C00182,E03,2025-04-16,Pedido de demissão,1,4961,Mais de 2 anos
+D00917,C02367,E19,2025-04-17,Pedido de demissão,1,171,91 a 180 dias
+D00918,C02568,E19,2025-04-18,Pedido de demissão,1,72,Até 90 dias
+D00919,C00937,E19,2025-04-19,Dispensa sem justa causa,0,1462,Mais de 2 anos
+D00920,C02457,E02,2025-04-19,Pedido de demissão,1,135,91 a 180 dias
+D00921,C02690,E19,2025-04-19,Pedido de demissão,1,18,Até 90 dias
+D00922,C00306,E19,2025-04-20,Dispensa sem justa causa,0,4131,Mais de 2 anos
+D00923,C00859,E19,2025-04-20,Dispensa sem justa causa,0,1606,Mais de 2 anos
+D00924,C02696,E09,2025-04-20,Término de experiência,0,17,Até 90 dias
+D00925,C02372,E04,2025-04-21,Pedido de demissão,1,174,91 a 180 dias
+D00926,C02551,E18,2025-04-21,Término de experiência,0,85,Até 90 dias
+D00927,C02567,E07,2025-04-21,Pedido de demissão,1,78,Até 90 dias
+D00928,C02633,E06,2025-04-22,Pedido de demissão,1,50,Até 90 dias
+D00929,C00964,E05,2025-04-24,Dispensa sem justa causa,0,1425,Mais de 2 anos
+D00930,C00677,E14,2025-04-25,Pedido de demissão,1,1911,Mais de 2 anos
+D00931,C02275,E14,2025-04-25,Acordo,1,225,181 dias a 1 ano
+D00932,C02479,E15,2025-04-25,Pedido de demissão,1,132,91 a 180 dias
+D00933,C02641,E06,2025-04-25,Pedido de demissão,1,48,Até 90 dias
+D00934,C00679,E19,2025-04-26,Dispensa sem justa causa,0,1906,Mais de 2 anos
+D00935,C02681,E19,2025-04-26,Pedido de demissão,1,29,Até 90 dias
+D00936,C00708,E17,2025-04-28,Dispensa sem justa causa,0,1864,Mais de 2 anos
+D00937,C01495,E01,2025-04-28,Pedido de demissão,1,714,1 a 2 anos
+D00938,C02585,E09,2025-04-29,Término de experiência,0,76,Até 90 dias
+D00939,C02603,E16,2025-04-29,Pedido de demissão,1,67,Até 90 dias
+D00940,C02691,E19,2025-04-29,Pedido de demissão,1,27,Até 90 dias
+D00941,C02371,E19,2025-04-30,Dispensa sem justa causa,0,183,181 dias a 1 ano
+D00942,C00099,E19,2025-05-01,Dispensa sem justa causa,0,5488,Mais de 2 anos
+D00943,C01126,E19,2025-05-01,Dispensa sem justa causa,0,1164,Mais de 2 anos
+D00944,C01603,E19,2025-05-01,Pedido de demissão,1,655,1 a 2 anos
+D00945,C02555,E01,2025-05-01,Dispensa sem justa causa,0,93,91 a 180 dias
+D00946,C02671,E02,2025-05-01,Pedido de demissão,1,38,Até 90 dias
+D00947,C01615,E14,2025-05-02,Pedido de demissão,1,644,1 a 2 anos
+D00948,C02106,E07,2025-05-03,Pedido de demissão,1,320,181 dias a 1 ano
+D00949,C02274,E11,2025-05-03,Dispensa sem justa causa,0,233,181 dias a 1 ano
+D00950,C02662,E19,2025-05-03,Pedido de demissão,1,47,Até 90 dias
+D00951,C01323,E03,2025-05-04,Pedido de demissão,1,835,Mais de 2 anos
+D00952,C02700,E16,2025-05-04,Pedido de demissão,1,29,Até 90 dias
+D00953,C00854,E19,2025-05-07,Dispensa sem justa causa,0,1630,Mais de 2 anos
+D00954,C01200,E14,2025-05-08,Pedido de demissão,1,1014,Mais de 2 anos
+D00955,C01633,E05,2025-05-09,Pedido de demissão,1,641,1 a 2 anos
+D00956,C01884,E12,2025-05-09,Acordo,1,448,1 a 2 anos
+D00957,C02306,E06,2025-05-09,Pedido de demissão,1,223,181 dias a 1 ano
+D00958,C02642,E12,2025-05-09,Pedido de demissão,1,62,Até 90 dias
+D00959,C02471,E03,2025-05-10,Dispensa sem justa causa,0,151,91 a 180 dias
+D00960,C02588,E19,2025-05-10,Pedido de demissão,1,85,Até 90 dias
+D00961,C02707,E11,2025-05-10,Pedido de demissão,1,31,Até 90 dias
+D00962,C02616,E01,2025-05-11,Pedido de demissão,1,75,Até 90 dias
+D00963,C00673,E08,2025-05-12,Dispensa sem justa causa,0,1939,Mais de 2 anos
+D00964,C01166,E05,2025-05-12,Pedido de demissão,1,1093,Mais de 2 anos
+D00965,C02492,E16,2025-05-12,Dispensa sem justa causa,0,146,91 a 180 dias
+D00966,C02730,E06,2025-05-12,Pedido de demissão,1,15,Até 90 dias
+D00967,C00179,E03,2025-05-13,Dispensa sem justa causa,0,4998,Mais de 2 anos
+D00968,C02129,E13,2025-05-14,Pedido de demissão,1,321,181 dias a 1 ano
+D00969,C00002,E20,2025-05-15,Dispensa sem justa causa,0,8092,Mais de 2 anos
+D00970,C01903,E15,2025-05-15,Dispensa sem justa causa,0,444,1 a 2 anos
+D00971,C02097,E19,2025-05-15,Pedido de demissão,1,334,181 dias a 1 ano
+D00972,C02695,E05,2025-05-15,Pedido de demissão,1,42,Até 90 dias
+D00973,C02701,E19,2025-05-15,Pedido de demissão,1,39,Até 90 dias
+D00974,C00940,E18,2025-05-16,Dispensa sem justa causa,0,1483,Mais de 2 anos
+D00975,C01137,E03,2025-05-16,Dispensa sem justa causa,0,1157,Mais de 2 anos
+D00976,C01219,E09,2025-05-16,Acordo,1,998,Mais de 2 anos
+D00977,C01830,E16,2025-05-16,Pedido de demissão,1,510,1 a 2 anos
+D00978,C00339,E12,2025-05-17,Pedido de demissão,1,3944,Mais de 2 anos
+D00979,C00734,E19,2025-05-17,Dispensa sem justa causa,0,1838,Mais de 2 anos
+D00980,C01113,E08,2025-05-17,Pedido de demissão,1,1200,Mais de 2 anos
+D00981,C02682,E19,2025-05-18,Pedido de demissão,1,51,Até 90 dias
+D00982,C02753,E09,2025-05-18,Pedido de demissão,1,12,Até 90 dias
+D00983,C00687,E19,2025-05-19,Dispensa sem justa causa,0,1911,Mais de 2 anos
+D00984,C00997,E19,2025-05-19,Pedido de demissão,1,1392,Mais de 2 anos
+D00985,C02569,E19,2025-05-19,Pedido de demissão,1,103,91 a 180 dias
+D00986,C00600,E17,2025-05-20,Pedido de demissão,1,2292,Mais de 2 anos
+D00987,C00238,E08,2025-05-21,Pedido de demissão,1,4617,Mais de 2 anos
+D00988,C00242,E05,2025-05-21,Dispensa sem justa causa,0,4602,Mais de 2 anos
+D00989,C01004,E17,2025-05-21,Dispensa sem justa causa,0,1381,Mais de 2 anos
+D00990,C02680,E15,2025-05-21,Pedido de demissão,1,55,Até 90 dias
+D00991,C00899,E07,2025-05-22,Acordo,1,1563,Mais de 2 anos
+D00992,C02722,E02,2025-05-22,Pedido de demissão,1,28,Até 90 dias
+D00993,C02333,E19,2025-05-23,Pedido de demissão,1,224,181 dias a 1 ano
+D00994,C02596,E20,2025-05-23,Dispensa sem justa causa,0,94,91 a 180 dias
+D00995,C00513,E14,2025-05-24,Acordo,1,2828,Mais de 2 anos
+D00996,C00536,E02,2025-05-24,Pedido de demissão,1,2645,Mais de 2 anos
+D00997,C00066,E17,2025-05-25,Dispensa sem justa causa,0,5710,Mais de 2 anos
+D00998,C01306,E18,2025-05-25,Pedido de demissão,1,871,Mais de 2 anos
+D00999,C01407,E09,2025-05-25,Pedido de demissão,1,796,Mais de 2 anos
+D01000,C01679,E14,2025-05-25,Dispensa sem justa causa,0,622,1 a 2 anos
+D01001,C01378,E16,2025-05-26,Pedido de demissão,1,816,Mais de 2 anos
+D01002,C01530,E02,2025-05-26,Dispensa sem justa causa,0,722,1 a 2 anos
+D01003,C01863,E05,2025-05-26,Pedido de demissão,1,476,1 a 2 anos
+D01004,C02586,E19,2025-05-26,Pedido de demissão,1,102,91 a 180 dias
+D01005,C02743,E18,2025-05-26,Dispensa sem justa causa,0,24,Até 90 dias
+D01006,C01410,E05,2025-05-27,Acordo,1,795,Mais de 2 anos
+D01007,C02521,E13,2025-05-27,Pedido de demissão,1,142,91 a 180 dias
+D01008,C02593,E15,2025-05-28,Pedido de demissão,1,101,91 a 180 dias
+D01009,C02668,E19,2025-05-28,Pedido de demissão,1,66,Até 90 dias
+D01010,C00398,E19,2025-05-30,Acordo,1,3516,Mais de 2 anos
+D01011,C00728,E01,2025-05-30,Pedido de demissão,1,1854,Mais de 2 anos
+D01012,C02044,E04,2025-05-30,Acordo,1,379,1 a 2 anos
+D01013,C02548,E17,2025-05-30,Pedido de demissão,1,126,91 a 180 dias
+D01014,C02774,E19,2025-05-30,Pedido de demissão,1,9,Até 90 dias
+D01015,C00827,E03,2025-05-31,Pedido de demissão,1,1693,Mais de 2 anos
+D01016,C01000,E16,2025-05-31,Pedido de demissão,1,1397,Mais de 2 anos
+D01017,C02265,E15,2025-06-01,Acordo,1,265,181 dias a 1 ano
+D01018,C02652,E01,2025-06-01,Término de experiência,0,80,Até 90 dias
+D01019,C02710,E02,2025-06-01,Pedido de demissão,1,47,Até 90 dias
+D01020,C00495,E19,2025-06-02,Dispensa sem justa causa,0,2919,Mais de 2 anos
+D01021,C02466,E01,2025-06-02,Dispensa sem justa causa,0,177,91 a 180 dias
+D01022,C02737,E19,2025-06-02,Dispensa sem justa causa,0,33,Até 90 dias
+D01023,C00389,E15,2025-06-03,Acordo,1,3576,Mais de 2 anos
+D01024,C00476,E12,2025-06-03,Dispensa sem justa causa,0,3026,Mais de 2 anos
+D01025,C00737,E18,2025-06-03,Dispensa sem justa causa,0,1853,Mais de 2 anos
+D01026,C01669,E11,2025-06-04,Pedido de demissão,1,637,1 a 2 anos
+D01027,C02162,E19,2025-06-04,Pedido de demissão,1,325,181 dias a 1 ano
+D01028,C01553,E19,2025-06-06,Dispensa sem justa causa,0,722,1 a 2 anos
+D01029,C02629,E08,2025-06-06,Pedido de demissão,1,97,91 a 180 dias
+D01030,C00944,E19,2025-06-07,Dispensa sem justa causa,0,1497,Mais de 2 anos
+D01031,C01217,E19,2025-06-07,Dispensa sem justa causa,0,1021,Mais de 2 anos
+D01032,C01234,E19,2025-06-07,Dispensa sem justa causa,0,989,Mais de 2 anos
+D01033,C02759,E19,2025-06-07,Pedido de demissão,1,26,Até 90 dias
+D01034,C01049,E09,2025-06-08,Acordo,1,1317,Mais de 2 anos
+D01035,C01383,E19,2025-06-08,Dispensa sem justa causa,0,825,Mais de 2 anos
+D01036,C02739,E03,2025-06-08,Pedido de demissão,1,39,Até 90 dias
+D01037,C02754,E19,2025-06-08,Pedido de demissão,1,32,Até 90 dias
+D01038,C00159,E14,2025-06-09,Acordo,1,5117,Mais de 2 anos
+D01039,C01185,E07,2025-06-09,Dispensa sem justa causa,0,1076,Mais de 2 anos
+D01040,C02080,E06,2025-06-09,Dispensa sem justa causa,0,365,181 dias a 1 ano
+D01041,C00303,E18,2025-06-10,Dispensa sem justa causa,0,4192,Mais de 2 anos
+D01042,C00564,E15,2025-06-11,Dispensa sem justa causa,0,2482,Mais de 2 anos
+D01043,C00637,E05,2025-06-12,Pedido de demissão,1,2095,Mais de 2 anos
+D01044,C02802,E19,2025-06-12,Pedido de demissão,1,8,Até 90 dias
+D01045,C02559,E19,2025-06-13,Dispensa sem justa causa,0,134,91 a 180 dias
+D01046,C02581,E20,2025-06-13,Pedido de demissão,1,122,91 a 180 dias
+D01047,C02824,E06,2025-06-13,Término de experiência,0,1,Até 90 dias
+D01048,C02530,E12,2025-06-14,Dispensa sem justa causa,0,157,91 a 180 dias
+D01049,C02813,E19,2025-06-14,Pedido de demissão,1,6,Até 90 dias
+D01050,C02822,E14,2025-06-14,Pedido de demissão,1,3,Até 90 dias
+D01051,C00172,E13,2025-06-15,Acordo,1,5065,Mais de 2 anos
+D01052,C02632,E03,2025-06-15,Dispensa sem justa causa,0,104,91 a 180 dias
+D01053,C00425,E11,2025-06-16,Pedido de demissão,1,3339,Mais de 2 anos
+D01054,C00722,E19,2025-06-16,Dispensa sem justa causa,0,1879,Mais de 2 anos
+D01055,C01416,E02,2025-06-16,Pedido de demissão,1,810,Mais de 2 anos
+D01056,C01533,E05,2025-06-16,Pedido de demissão,1,741,Mais de 2 anos
+D01057,C00337,E06,2025-06-18,Dispensa sem justa causa,0,3992,Mais de 2 anos
+D01058,C01081,E04,2025-06-18,Pedido de demissão,1,1267,Mais de 2 anos
+D01059,C02350,E12,2025-06-18,Pedido de demissão,1,244,181 dias a 1 ano
+D01060,C02764,E07,2025-06-18,Pedido de demissão,1,34,Até 90 dias
+D01061,C02776,E17,2025-06-18,Término de experiência,0,28,Até 90 dias
+D01062,C01807,E18,2025-06-19,Acordo,1,560,1 a 2 anos
+D01063,C02778,E19,2025-06-19,Pedido de demissão,1,27,Até 90 dias
+D01064,C02430,E11,2025-06-20,Pedido de demissão,1,210,181 dias a 1 ano
+D01065,C01026,E19,2025-06-21,Dispensa sem justa causa,0,1369,Mais de 2 anos
+D01066,C01961,E01,2025-06-21,Dispensa sem justa causa,0,443,1 a 2 anos
+D01067,C02635,E19,2025-06-21,Dispensa sem justa causa,0,107,91 a 180 dias
+D01068,C02784,E13,2025-06-21,Pedido de demissão,1,24,Até 90 dias
+D01069,C00898,E18,2025-06-22,Pedido de demissão,1,1594,Mais de 2 anos
+D01070,C02741,E18,2025-06-22,Pedido de demissão,1,52,Até 90 dias
+D01071,C01292,E01,2025-06-23,Pedido de demissão,1,913,Mais de 2 anos
+D01072,C01557,E01,2025-06-23,Pedido de demissão,1,736,Mais de 2 anos
+D01073,C01996,E13,2025-06-23,Dispensa sem justa causa,0,431,1 a 2 anos
+D01074,C02720,E06,2025-06-23,Pedido de demissão,1,61,Até 90 dias
+D01075,C00251,E18,2025-06-24,Pedido de demissão,1,4598,Mais de 2 anos
+D01076,C00982,E03,2025-06-24,Acordo,1,1457,Mais de 2 anos
+D01077,C01632,E09,2025-06-24,Pedido de demissão,1,688,1 a 2 anos
+D01078,C02081,E14,2025-06-24,Pedido de demissão,1,380,1 a 2 anos
+D01079,C02208,E01,2025-06-24,Acordo,1,322,181 dias a 1 ano
+D01080,C02713,E19,2025-06-24,Pedido de demissão,1,66,Até 90 dias
+D01081,C02721,E19,2025-06-24,Término de experiência,0,61,Até 90 dias
+D01082,C02817,E02,2025-06-25,Término de experiência,0,15,Até 90 dias
+D01083,C02233,E05,2025-06-26,Pedido de demissão,1,310,181 dias a 1 ano
+D01084,C02826,E15,2025-06-26,Pedido de demissão,1,14,Até 90 dias
+D01085,C02542,E07,2025-06-28,Pedido de demissão,1,158,91 a 180 dias
+D01086,C02658,E20,2025-06-28,Dispensa sem justa causa,0,104,91 a 180 dias
+D01087,C02755,E05,2025-06-28,Pedido de demissão,1,49,Até 90 dias
+D01088,C00363,E13,2025-06-30,Dispensa sem justa causa,0,3812,Mais de 2 anos
+D01089,C02347,E04,2025-06-30,Pedido de demissão,1,257,181 dias a 1 ano
+D01090,C02783,E07,2025-06-30,Pedido de demissão,1,34,Até 90 dias
+D01091,C02241,E15,2025-07-01,Pedido de demissão,1,309,181 dias a 1 ano
+D01092,C02225,E18,2025-07-02,Pedido de demissão,1,319,181 dias a 1 ano
+D01093,C02812,E10,2025-07-02,Pedido de demissão,1,25,Até 90 dias
+D01094,C02003,E10,2025-07-03,Pedido de demissão,1,437,1 a 2 anos
+D01095,C00260,E16,2025-07-04,Pedido de demissão,1,4564,Mais de 2 anos
+D01096,C01267,E04,2025-07-04,Pedido de demissão,1,970,Mais de 2 anos
+D01097,C02404,E11,2025-07-05,Pedido de demissão,1,236,181 dias a 1 ano
+D01098,C00393,E19,2025-07-06,Acordo,1,3585,Mais de 2 anos
+D01099,C01179,E01,2025-07-06,Pedido de demissão,1,1122,Mais de 2 anos
+D01100,C01434,E17,2025-07-06,Acordo,1,819,Mais de 2 anos
+D01101,C02113,E05,2025-07-06,Dispensa sem justa causa,0,379,1 a 2 anos
+D01102,C02114,E05,2025-07-06,Pedido de demissão,1,379,1 a 2 anos
+D01103,C02786,E06,2025-07-06,Pedido de demissão,1,38,Até 90 dias
+D01104,C01715,E19,2025-07-08,Pedido de demissão,1,641,1 a 2 anos
+D01105,C00684,E19,2025-07-10,Dispensa sem justa causa,0,1969,Mais de 2 anos
+D01106,C02462,E07,2025-07-11,Pedido de demissão,1,217,181 dias a 1 ano
+D01107,C00815,E17,2025-07-12,Pedido de demissão,1,1750,Mais de 2 anos
+D01108,C02278,E10,2025-07-12,Pedido de demissão,1,300,181 dias a 1 ano
+D01109,C02724,E06,2025-07-12,Pedido de demissão,1,78,Até 90 dias
+D01110,C01901,E20,2025-07-13,Pedido de demissão,1,504,1 a 2 anos
+D01111,C02148,E08,2025-07-13,Pedido de demissão,1,372,1 a 2 anos
+D01112,C02727,E02,2025-07-13,Pedido de demissão,1,78,Até 90 dias
+D01113,C02483,E01,2025-07-15,Pedido de demissão,1,211,181 dias a 1 ano
+D01114,C02709,E18,2025-07-15,Pedido de demissão,1,93,91 a 180 dias
+D01115,C01327,E14,2025-07-16,Acordo,1,901,Mais de 2 anos
+D01116,C02622,E20,2025-07-16,Pedido de demissão,1,138,91 a 180 dias
+D01117,C01035,E18,2025-07-17,Pedido de demissão,1,1367,Mais de 2 anos
+D01118,C02544,E17,2025-07-17,Pedido de demissão,1,175,91 a 180 dias
+D01119,C01391,E16,2025-07-19,Pedido de demissão,1,862,Mais de 2 anos
+D01120,C02336,E03,2025-07-19,Dispensa sem justa causa,0,280,181 dias a 1 ano
+D01121,C02765,E19,2025-07-19,Pedido de demissão,1,63,Até 90 dias
+D01122,C00491,E20,2025-07-20,Dispensa sem justa causa,0,2996,Mais de 2 anos
+D01123,C02631,E19,2025-07-20,Pedido de demissão,1,139,91 a 180 dias
+D01124,C00601,E06,2025-07-21,Pedido de demissão,1,2350,Mais de 2 anos
+D01125,C02814,E19,2025-07-21,Pedido de demissão,1,43,Até 90 dias
+D01126,C01958,E12,2025-07-22,Pedido de demissão,1,477,1 a 2 anos
+D01127,C00301,E10,2025-07-23,Dispensa sem justa causa,0,4253,Mais de 2 anos
+D01128,C00535,E06,2025-07-23,Pedido de demissão,1,2711,Mais de 2 anos
+D01129,C01547,E06,2025-07-23,Dispensa sem justa causa,0,772,Mais de 2 anos
+D01130,C02667,E11,2025-07-23,Pedido de demissão,1,123,91 a 180 dias
+D01131,C00508,E11,2025-07-25,Dispensa sem justa causa,0,2905,Mais de 2 anos
+D01132,C02876,E17,2025-07-25,Pedido de demissão,1,20,Até 90 dias
+D01133,C02583,E18,2025-07-26,Pedido de demissão,1,164,91 a 180 dias
+D01134,C02857,E01,2025-07-26,Pedido de demissão,1,28,Até 90 dias
+D01135,C02884,E07,2025-07-26,Pedido de demissão,1,17,Até 90 dias
+D01136,C00904,E10,2025-07-27,Dispensa sem justa causa,0,1624,Mais de 2 anos
+D01137,C02510,E02,2025-07-27,Pedido de demissão,1,209,181 dias a 1 ano
+D01138,C00160,E19,2025-07-28,Dispensa sem justa causa,0,5164,Mais de 2 anos
+D01139,C02344,E19,2025-07-29,Acordo,1,288,181 dias a 1 ano
+D01140,C02659,E01,2025-07-30,Dispensa sem justa causa,0,136,91 a 180 dias
+D01141,C00432,E04,2025-07-31,Pedido de demissão,1,3322,Mais de 2 anos
+D01142,C02869,E19,2025-07-31,Pedido de demissão,1,28,Até 90 dias
+D01143,C01143,E18,2025-08-01,Dispensa sem justa causa,0,1212,Mais de 2 anos
+D01144,C02746,E18,2025-08-01,Dispensa sem justa causa,0,90,Até 90 dias
+D01145,C01039,E03,2025-08-02,Dispensa sem justa causa,0,1381,Mais de 2 anos
+D01146,C02644,E11,2025-08-02,Dispensa sem justa causa,0,146,91 a 180 dias
+D01147,C00910,E14,2025-08-03,Pedido de demissão,1,1621,Mais de 2 anos
+D01148,C02922,E19,2025-08-03,Pedido de demissão,1,8,Até 90 dias
+D01149,C01648,E16,2025-08-04,Acordo,1,711,1 a 2 anos
+D01150,C02095,E04,2025-08-04,Pedido de demissão,1,416,1 a 2 anos
+D01151,C02364,E19,2025-08-04,Pedido de demissão,1,284,181 dias a 1 ano
+D01152,C02825,E10,2025-08-04,Pedido de demissão,1,53,Até 90 dias
+D01153,C02402,E05,2025-08-05,Acordo,1,268,181 dias a 1 ano
+D01154,C01900,E19,2025-08-06,Pedido de demissão,1,528,1 a 2 anos
+D01155,C02534,E19,2025-08-07,Dispensa sem justa causa,0,204,181 dias a 1 ano
+D01156,C02798,E19,2025-08-07,Pedido de demissão,1,66,Até 90 dias
+D01157,C02861,E19,2025-08-07,Pedido de demissão,1,38,Até 90 dias
+D01158,C02856,E19,2025-08-08,Pedido de demissão,1,42,Até 90 dias
+D01159,C00286,E19,2025-08-09,Pedido de demissão,1,4361,Mais de 2 anos
+D01160,C01162,E03,2025-08-09,Dispensa sem justa causa,0,1189,Mais de 2 anos
+D01161,C02760,E18,2025-08-09,Pedido de demissão,1,88,Até 90 dias
+D01162,C00240,E19,2025-08-10,Dispensa sem justa causa,0,4697,Mais de 2 anos
+D01163,C01041,E05,2025-08-10,Dispensa sem justa causa,0,1387,Mais de 2 anos
+D01164,C02211,E18,2025-08-10,Acordo,1,367,1 a 2 anos
+D01165,C02924,E07,2025-08-11,Pedido de demissão,1,16,Até 90 dias
+D01166,C00183,E06,2025-08-12,Dispensa sem justa causa,0,5076,Mais de 2 anos
+D01167,C02799,E03,2025-08-12,Pedido de demissão,1,71,Até 90 dias
+D01168,C02838,E19,2025-08-12,Pedido de demissão,1,55,Até 90 dias
+D01169,C02909,E13,2025-08-12,Pedido de demissão,1,25,Até 90 dias
+D01170,C01043,E18,2025-08-14,Dispensa sem justa causa,0,1390,Mais de 2 anos
+D01171,C01764,E15,2025-08-15,Pedido de demissão,1,646,1 a 2 anos
+D01172,C02136,E08,2025-08-15,Pedido de demissão,1,409,1 a 2 anos
+D01173,C00414,E18,2025-08-16,Pedido de demissão,1,3509,Mais de 2 anos
+D01174,C02059,E19,2025-08-16,Pedido de demissão,1,446,1 a 2 anos
+D01175,C02734,E05,2025-08-16,Pedido de demissão,1,109,91 a 180 dias
+D01176,C02927,E19,2025-08-16,Pedido de demissão,1,19,Até 90 dias
+D01177,C02184,E12,2025-08-17,Pedido de demissão,1,389,1 a 2 anos
+D01178,C02210,E11,2025-08-17,Dispensa sem justa causa,0,375,1 a 2 anos
+D01179,C02763,E19,2025-08-18,Pedido de demissão,1,95,91 a 180 dias
+D01180,C02831,E19,2025-08-18,Pedido de demissão,1,64,Até 90 dias
+D01181,C01514,E13,2025-08-19,Pedido de demissão,1,816,Mais de 2 anos
+D01182,C02792,E19,2025-08-19,Pedido de demissão,1,79,Até 90 dias
+D01183,C02852,E01,2025-08-19,Pedido de demissão,1,54,Até 90 dias
+D01184,C02931,E07,2025-08-19,Término de experiência,0,20,Até 90 dias
+D01185,C01198,E12,2025-08-20,Pedido de demissão,1,1125,Mais de 2 anos
+D01186,C02029,E07,2025-08-20,Pedido de demissão,1,468,1 a 2 anos
+D01187,C02842,E19,2025-08-20,Pedido de demissão,1,61,Até 90 dias
+D01188,C02937,E14,2025-08-20,Dispensa sem justa causa,0,17,Até 90 dias
+D01189,C01544,E13,2025-08-21,Pedido de demissão,1,802,Mais de 2 anos
+D01190,C01843,E10,2025-08-21,Dispensa sem justa causa,0,577,1 a 2 anos
+D01191,C02941,E19,2025-08-21,Término de experiência,0,15,Até 90 dias
+D01192,C00661,E06,2025-08-22,Dispensa sem justa causa,0,2081,Mais de 2 anos
+D01193,C02328,E11,2025-08-22,Acordo,1,318,181 dias a 1 ano
+D01194,C02656,E06,2025-08-22,Dispensa sem justa causa,0,160,91 a 180 dias
+D01195,C02810,E06,2025-08-22,Pedido de demissão,1,76,Até 90 dias
+D01196,C02916,E05,2025-08-22,Término de experiência,0,31,Até 90 dias
+D01197,C02929,E06,2025-08-22,Dispensa sem justa causa,0,25,Até 90 dias
+D01198,C00813,E13,2025-08-23,Pedido de demissão,1,1805,Mais de 2 anos
+D01199,C00077,E16,2025-08-25,Pedido de demissão,1,5714,Mais de 2 anos
+D01200,C00797,E10,2025-08-25,Dispensa sem justa causa,0,1830,Mais de 2 anos
+D01201,C02520,E03,2025-08-25,Pedido de demissão,1,232,181 dias a 1 ano
+D01202,C01269,E16,2025-08-26,Pedido de demissão,1,1022,Mais de 2 anos
+D01203,C01655,E01,2025-08-27,Acordo,1,729,1 a 2 anos
+D01204,C02433,E05,2025-08-28,Dispensa sem justa causa,0,277,181 dias a 1 ano
+D01205,C02248,E12,2025-08-29,Pedido de demissão,1,362,181 dias a 1 ano
+D01206,C02473,E04,2025-08-29,Pedido de demissão,1,261,181 dias a 1 ano
+D01207,C01299,E16,2025-08-31,Dispensa sem justa causa,0,973,Mais de 2 anos
+D01208,C01371,E07,2025-08-31,Pedido de demissão,1,917,Mais de 2 anos
+D01209,C01392,E07,2025-08-31,Dispensa sem justa causa,0,904,Mais de 2 anos
+D01210,C02413,E19,2025-08-31,Dispensa sem justa causa,0,288,181 dias a 1 ano
+D01211,C00119,E18,2025-09-01,Pedido de demissão,1,5435,Mais de 2 anos
+D01212,C02128,E10,2025-09-01,Pedido de demissão,1,431,1 a 2 anos
+D01213,C02435,E06,2025-09-01,Dispensa sem justa causa,0,280,181 dias a 1 ano
+D01214,C02894,E11,2025-09-01,Pedido de demissão,1,48,Até 90 dias
+D01215,C00338,E20,2025-09-02,Acordo,1,4060,Mais de 2 anos
+D01216,C02729,E02,2025-09-02,Pedido de demissão,1,128,91 a 180 dias
+D01217,C00487,E19,2025-09-03,Dispensa sem justa causa,0,3073,Mais de 2 anos
+D01218,C01627,E17,2025-09-07,Dispensa sem justa causa,0,766,Mais de 2 anos
+D01219,C00324,E05,2025-09-08,Pedido de demissão,1,4167,Mais de 2 anos
+D01220,C00811,E11,2025-09-08,Dispensa sem justa causa,0,1823,Mais de 2 anos
+D01221,C02465,E19,2025-09-09,Pedido de demissão,1,276,181 dias a 1 ano
+D01222,C01777,E10,2025-09-11,Dispensa sem justa causa,0,666,1 a 2 anos
+D01223,C01954,E12,2025-09-11,Pedido de demissão,1,529,1 a 2 anos
+D01224,C02855,E19,2025-09-11,Pedido de demissão,1,76,Até 90 dias
+D01225,C00691,E11,2025-09-12,Dispensa sem justa causa,0,2021,Mais de 2 anos
+D01226,C01897,E15,2025-09-12,Acordo,1,567,1 a 2 anos
+D01227,C02579,E18,2025-09-12,Pedido de demissão,1,216,181 dias a 1 ano
+D01228,C00391,E18,2025-09-13,Pedido de demissão,1,3674,Mais de 2 anos
+D01229,C02745,E19,2025-09-13,Pedido de demissão,1,133,91 a 180 dias
+D01230,C02766,E18,2025-09-13,Dispensa sem justa causa,0,118,91 a 180 dias
+D01231,C02836,E19,2025-09-14,Pedido de demissão,1,89,Até 90 dias
+D01232,C02875,E01,2025-09-14,Dispensa sem justa causa,0,71,Até 90 dias
+D01233,C00965,E07,2025-09-15,Dispensa sem justa causa,0,1569,Mais de 2 anos
+D01234,C01674,E12,2025-09-16,Pedido de demissão,1,738,Mais de 2 anos
+D01235,C02045,E06,2025-09-16,Dispensa sem justa causa,0,487,1 a 2 anos
+D01236,C02892,E19,2025-09-17,Pedido de demissão,1,65,Até 90 dias
+D01237,C00253,E20,2025-09-18,Pedido de demissão,1,4677,Mais de 2 anos
+D01238,C02926,E18,2025-09-18,Pedido de demissão,1,53,Até 90 dias
+D01239,C02928,E19,2025-09-18,Pedido de demissão,1,52,Até 90 dias
+D01240,C02980,E18,2025-09-18,Pedido de demissão,1,23,Até 90 dias
+D01241,C00438,E19,2025-09-19,Dispensa sem justa causa,0,3349,Mais de 2 anos
+D01242,C02562,E18,2025-09-19,Pedido de demissão,1,230,181 dias a 1 ano
+D01243,C02866,E11,2025-09-20,Pedido de demissão,1,80,Até 90 dias
+D01244,C01452,E07,2025-09-21,Pedido de demissão,1,884,Mais de 2 anos
+D01245,C01687,E07,2025-09-21,Dispensa sem justa causa,0,736,Mais de 2 anos
+D01246,C02974,E10,2025-09-21,Pedido de demissão,1,28,Até 90 dias
+D01247,C02979,E18,2025-09-21,Pedido de demissão,1,26,Até 90 dias
+D01248,C00757,E04,2025-09-22,Pedido de demissão,1,1931,Mais de 2 anos
+D01249,C00775,E02,2025-09-22,Dispensa sem justa causa,0,1895,Mais de 2 anos
+D01250,C01286,E16,2025-09-22,Dispensa sem justa causa,0,1017,Mais de 2 anos
+D01251,C00883,E20,2025-09-23,Acordo,1,1716,Mais de 2 anos
+D01252,C01248,E02,2025-09-23,Dispensa sem justa causa,0,1071,Mais de 2 anos
+D01253,C01302,E16,2025-09-23,Pedido de demissão,1,995,Mais de 2 anos
+D01254,C01606,E19,2025-09-23,Pedido de demissão,1,798,Mais de 2 anos
+D01255,C01904,E05,2025-09-23,Pedido de demissão,1,574,1 a 2 anos
+D01256,C02859,E05,2025-09-23,Término de experiência,0,86,Até 90 dias
+D01257,C03013,E19,2025-09-23,Pedido de demissão,1,11,Até 90 dias
+D01258,C01846,E06,2025-09-24,Pedido de demissão,1,607,1 a 2 anos
+D01259,C02850,E14,2025-09-24,Pedido de demissão,1,92,91 a 180 dias
+D01260,C02912,E08,2025-09-25,Pedido de demissão,1,67,Até 90 dias
+D01261,C00328,E10,2025-09-26,Pedido de demissão,1,4149,Mais de 2 anos
+D01262,C02864,E16,2025-09-26,Pedido de demissão,1,88,Até 90 dias
+D01263,C02335,E04,2025-09-27,Pedido de demissão,1,350,181 dias a 1 ano
+D01264,C01031,E12,2025-09-28,Dispensa sem justa causa,0,1455,Mais de 2 anos
+D01265,C02808,E10,2025-09-28,Pedido de demissão,1,114,91 a 180 dias
+D01266,C02809,E03,2025-09-28,Dispensa sem justa causa,0,113,91 a 180 dias
+D01267,C00394,E18,2025-09-29,Pedido de demissão,1,3664,Mais de 2 anos
+D01268,C00589,E03,2025-09-29,Pedido de demissão,1,2452,Mais de 2 anos
+D01269,C01939,E18,2025-09-29,Pedido de demissão,1,556,1 a 2 anos
+D01270,C02463,E14,2025-09-29,Pedido de demissão,1,297,181 dias a 1 ano
+D01271,C00632,E16,2025-09-30,Pedido de demissão,1,2237,Mais de 2 anos
+D01272,C01213,E18,2025-09-30,Dispensa sem justa causa,0,1140,Mais de 2 anos
+D01273,C02005,E01,2025-09-30,Dispensa sem justa causa,0,525,1 a 2 anos
+D01274,C02563,E12,2025-09-30,Dispensa sem justa causa,0,241,181 dias a 1 ano
+D01275,C02964,E19,2025-09-30,Pedido de demissão,1,42,Até 90 dias
+D01276,C02513,E10,2025-10-02,Pedido de demissão,1,275,181 dias a 1 ano
+D01277,C01460,E01,2025-10-03,Pedido de demissão,1,892,Mais de 2 anos
+D01278,C02392,E18,2025-10-03,Pedido de demissão,1,331,181 dias a 1 ano
+D01279,C02973,E10,2025-10-03,Término de experiência,0,40,Até 90 dias
+D01280,C03010,E01,2025-10-03,Pedido de demissão,1,25,Até 90 dias
+D01281,C03046,E02,2025-10-03,Pedido de demissão,1,8,Até 90 dias
+D01282,C00304,E18,2025-10-04,Dispensa sem justa causa,0,4306,Mais de 2 anos
+D01283,C00586,E19,2025-10-04,Dispensa sem justa causa,0,2509,Mais de 2 anos
+D01284,C03007,E19,2025-10-04,Pedido de demissão,1,27,Até 90 dias
+D01285,C00430,E12,2025-10-05,Pedido de demissão,1,3405,Mais de 2 anos
+D01286,C01046,E01,2025-10-06,Pedido de demissão,1,1439,Mais de 2 anos
+D01287,C02380,E07,2025-10-06,Pedido de demissão,1,339,181 dias a 1 ano
+D01288,C02609,E14,2025-10-06,Dispensa sem justa causa,0,225,181 dias a 1 ano
+D01289,C02998,E06,2025-10-06,Pedido de demissão,1,34,Até 90 dias
+D01290,C02761,E17,2025-10-07,Dispensa sem justa causa,0,146,91 a 180 dias
+D01291,C02925,E19,2025-10-07,Pedido de demissão,1,72,Até 90 dias
+D01292,C02282,E11,2025-10-08,Dispensa sem justa causa,0,386,1 a 2 anos
+D01293,C03033,E04,2025-10-10,Término de experiência,0,21,Até 90 dias
+D01294,C00427,E18,2025-10-11,Dispensa sem justa causa,0,3450,Mais de 2 anos
+D01295,C02684,E05,2025-10-11,Pedido de demissão,1,197,181 dias a 1 ano
+D01296,C02718,E08,2025-10-11,Pedido de demissão,1,173,91 a 180 dias
+D01297,C02944,E12,2025-10-11,Pedido de demissão,1,66,Até 90 dias
+D01298,C02969,E19,2025-10-12,Pedido de demissão,1,51,Até 90 dias
+D01299,C01908,E03,2025-10-13,Pedido de demissão,1,591,1 a 2 anos
+D01300,C02899,E05,2025-10-13,Pedido de demissão,1,89,Até 90 dias
+D01301,C03081,E03,2025-10-13,Dispensa sem justa causa,0,2,Até 90 dias
+D01302,C01706,E14,2025-10-14,Pedido de demissão,1,747,Mais de 2 anos
+D01303,C00344,E02,2025-10-15,Pedido de demissão,1,4027,Mais de 2 anos
+D01304,C03040,E02,2025-10-15,Pedido de demissão,1,24,Até 90 dias
+D01305,C00742,E19,2025-10-16,Pedido de demissão,1,1978,Mais de 2 anos
+D01306,C02960,E12,2025-10-16,Pedido de demissão,1,61,Até 90 dias
+D01307,C02989,E05,2025-10-16,Pedido de demissão,1,47,Até 90 dias
+D01308,C00219,E02,2025-10-17,Dispensa sem justa causa,0,4887,Mais de 2 anos
+D01309,C01144,E20,2025-10-17,Dispensa sem justa causa,0,1288,Mais de 2 anos
+D01310,C02854,E16,2025-10-17,Pedido de demissão,1,113,91 a 180 dias
+D01311,C02943,E06,2025-10-17,Pedido de demissão,1,72,Até 90 dias
+D01312,C03052,E18,2025-10-17,Pedido de demissão,1,17,Até 90 dias
+D01313,C00496,E19,2025-10-19,Pedido de demissão,1,3053,Mais de 2 anos
+D01314,C02963,E06,2025-10-19,Término de experiência,0,62,Até 90 dias
+D01315,C02987,E15,2025-10-19,Pedido de demissão,1,52,Até 90 dias
+D01316,C02888,E02,2025-10-20,Pedido de demissão,1,101,91 a 180 dias
+D01317,C02895,E17,2025-10-20,Pedido de demissão,1,97,91 a 180 dias
+D01318,C02992,E19,2025-10-20,Pedido de demissão,1,50,Até 90 dias
+D01319,C02400,E19,2025-10-21,Dispensa sem justa causa,0,345,181 dias a 1 ano
+D01320,C02749,E17,2025-10-21,Pedido de demissão,1,171,91 a 180 dias
+D01321,C02958,E03,2025-10-21,Pedido de demissão,1,66,Até 90 dias
+D01322,C03001,E18,2025-10-21,Término de experiência,0,47,Até 90 dias
+D01323,C00241,E10,2025-10-22,Acordo,1,4761,Mais de 2 anos
+D01324,C02936,E04,2025-10-23,Pedido de demissão,1,81,Até 90 dias
+D01325,C03077,E19,2025-10-23,Pedido de demissão,1,13,Até 90 dias
+D01326,C00454,E19,2025-10-24,Pedido de demissão,1,3306,Mais de 2 anos
+D01327,C03099,E07,2025-10-24,Pedido de demissão,1,3,Até 90 dias
+D01328,C00547,E03,2025-10-25,Dispensa sem justa causa,0,2744,Mais de 2 anos
+D01329,C01623,E07,2025-10-25,Acordo,1,815,Mais de 2 anos
+D01330,C02168,E18,2025-10-25,Pedido de demissão,1,466,1 a 2 anos
+D01331,C02458,E10,2025-10-25,Pedido de demissão,1,324,181 dias a 1 ano
+D01332,C02896,E19,2025-10-25,Pedido de demissão,1,101,91 a 180 dias
+D01333,C03009,E06,2025-10-25,Término de experiência,0,48,Até 90 dias
+D01334,C02988,E06,2025-10-26,Pedido de demissão,1,58,Até 90 dias
+D01335,C00505,E02,2025-10-27,Pedido de demissão,1,3019,Mais de 2 anos
+D01336,C02837,E10,2025-10-27,Pedido de demissão,1,132,91 a 180 dias
+D01337,C02939,E10,2025-10-27,Pedido de demissão,1,83,Até 90 dias
+D01338,C01459,E03,2025-10-28,Pedido de demissão,1,918,Mais de 2 anos
+D01339,C01912,E19,2025-10-28,Pedido de demissão,1,602,1 a 2 anos
+D01340,C01921,E01,2025-10-28,Pedido de demissão,1,598,1 a 2 anos
+D01341,C03030,E19,2025-10-28,Pedido de demissão,1,40,Até 90 dias
+D01342,C02573,E19,2025-10-30,Pedido de demissão,1,265,181 dias a 1 ano
+D01343,C00211,E14,2025-10-31,Dispensa sem justa causa,0,4950,Mais de 2 anos
+D01344,C00396,E01,2025-10-31,Pedido de demissão,1,3684,Mais de 2 anos
+D01345,C01937,E19,2025-10-31,Pedido de demissão,1,588,1 a 2 anos
+D01346,C02397,E12,2025-10-31,Pedido de demissão,1,358,181 dias a 1 ano
+D01347,C01659,E19,2025-11-01,Pedido de demissão,1,793,Mais de 2 anos
+D01348,C02791,E19,2025-11-01,Dispensa sem justa causa,0,153,91 a 180 dias
+D01349,C00549,E10,2025-11-02,Pedido de demissão,1,2741,Mais de 2 anos
+D01350,C01701,E10,2025-11-02,Pedido de demissão,1,767,Mais de 2 anos
+D01351,C03014,E19,2025-11-02,Pedido de demissão,1,51,Até 90 dias
+D01352,C01589,E10,2025-11-04,Pedido de demissão,1,849,Mais de 2 anos
+D01353,C03128,E19,2025-11-04,Pedido de demissão,1,1,Até 90 dias
+D01354,C02983,E06,2025-11-05,Pedido de demissão,1,70,Até 90 dias
+D01355,C03118,E10,2025-11-05,Pedido de demissão,1,7,Até 90 dias
+D01356,C00118,E19,2025-11-06,Acordo,1,5504,Mais de 2 anos
+D01357,C03102,E17,2025-11-06,Pedido de demissão,1,15,Até 90 dias
+D01358,C01118,E20,2025-11-08,Pedido de demissão,1,1371,Mais de 2 anos
+D01359,C01883,E07,2025-11-09,Dispensa sem justa causa,0,632,1 a 2 anos
+D01360,C02600,E04,2025-11-09,Dispensa sem justa causa,0,261,181 dias a 1 ano
+D01361,C02334,E04,2025-11-11,Acordo,1,395,1 a 2 anos
+D01362,C02847,E16,2025-11-11,Pedido de demissão,1,142,91 a 180 dias
+D01363,C02535,E10,2025-11-12,Acordo,1,300,181 dias a 1 ano
+D01364,C03155,E06,2025-11-12,Pedido de demissão,1,1,Até 90 dias
+D01365,C01621,E05,2025-11-13,Pedido de demissão,1,836,Mais de 2 anos
+D01366,C01847,E06,2025-11-13,Pedido de demissão,1,657,1 a 2 anos
+D01367,C02948,E10,2025-11-14,Pedido de demissão,1,98,91 a 180 dias
+D01368,C02409,E11,2025-11-15,Pedido de demissão,1,366,1 a 2 anos
+D01369,C02446,E06,2025-11-15,Dispensa sem justa causa,0,351,181 dias a 1 ano
+D01370,C02985,E05,2025-11-15,Pedido de demissão,1,79,Até 90 dias
+D01371,C01086,E18,2025-11-16,Dispensa sem justa causa,0,1413,Mais de 2 anos
+D01372,C00413,E18,2025-11-18,Dispensa sem justa causa,0,3607,Mais de 2 anos
+D01373,C02218,E10,2025-11-18,Dispensa sem justa causa,0,464,1 a 2 anos
+D01374,C00499,E10,2025-11-19,Pedido de demissão,1,3062,Mais de 2 anos
+D01375,C00645,E14,2025-11-19,Pedido de demissão,1,2232,Mais de 2 anos
+D01376,C01283,E03,2025-11-20,Pedido de demissão,1,1078,Mais de 2 anos
+D01377,C03026,E19,2025-11-20,Pedido de demissão,1,64,Até 90 dias
+D01378,C03042,E06,2025-11-20,Pedido de demissão,1,59,Até 90 dias
+D01379,C02189,E08,2025-11-23,Pedido de demissão,1,485,1 a 2 anos
+D01380,C02689,E05,2025-11-23,Pedido de demissão,1,237,181 dias a 1 ano
+D01381,C03141,E19,2025-11-24,Término de experiência,0,18,Até 90 dias
+D01382,C03179,E19,2025-11-24,Pedido de demissão,1,6,Até 90 dias
+D01383,C00018,E20,2025-11-25,Acordo,1,6598,Mais de 2 anos
+D01384,C00362,E18,2025-11-25,Pedido de demissão,1,3961,Mais de 2 anos
+D01385,C01160,E13,2025-11-26,Dispensa sem justa causa,0,1299,Mais de 2 anos
+D01386,C03086,E10,2025-11-26,Pedido de demissão,1,43,Até 90 dias
+D01387,C03143,E10,2025-11-26,Pedido de demissão,1,20,Até 90 dias
+D01388,C02978,E19,2025-11-27,Dispensa sem justa causa,0,93,91 a 180 dias
+D01389,C03092,E17,2025-11-27,Pedido de demissão,1,42,Até 90 dias
+D01390,C00347,E02,2025-11-28,Dispensa sem justa causa,0,4041,Mais de 2 anos
+D01391,C02477,E16,2025-11-28,Acordo,1,351,181 dias a 1 ano
+D01392,C02732,E08,2025-11-28,Dispensa sem justa causa,0,214,181 dias a 1 ano
+D01393,C02940,E12,2025-11-28,Dispensa sem justa causa,0,115,91 a 180 dias
+D01394,C03121,E19,2025-11-28,Pedido de demissão,1,29,Até 90 dias
+D01395,C02584,E07,2025-11-29,Pedido de demissão,1,290,181 dias a 1 ano
+D01396,C03098,E06,2025-11-30,Pedido de demissão,1,40,Até 90 dias
+D01397,C01282,E15,2025-12-02,Dispensa sem justa causa,0,1092,Mais de 2 anos
+D01398,C01387,E08,2025-12-02,Pedido de demissão,1,1002,Mais de 2 anos
+D01399,C02572,E19,2025-12-02,Pedido de demissão,1,298,181 dias a 1 ano
+D01400,C00276,E14,2025-12-03,Pedido de demissão,1,4549,Mais de 2 anos
+D01401,C02897,E01,2025-12-03,Pedido de demissão,1,140,91 a 180 dias
+D01402,C02961,E16,2025-12-04,Pedido de demissão,1,110,91 a 180 dias
+D01403,C03055,E03,2025-12-04,Pedido de demissão,1,63,Até 90 dias
+D01404,C03202,E04,2025-12-05,Pedido de demissão,1,6,Até 90 dias
+D01405,C01688,E07,2025-12-06,Dispensa sem justa causa,0,812,Mais de 2 anos
+D01406,C03112,E07,2025-12-07,Término de experiência,0,41,Até 90 dias
+D01407,C01421,E05,2025-12-09,Pedido de demissão,1,984,Mais de 2 anos
+D01408,C03117,E05,2025-12-11,Pedido de demissão,1,43,Até 90 dias
+D01409,C03120,E16,2025-12-11,Término de experiência,0,43,Até 90 dias
+D01410,C00528,E18,2025-12-12,Pedido de demissão,1,2883,Mais de 2 anos
+D01411,C00943,E04,2025-12-12,Pedido de demissão,1,1687,Mais de 2 anos
+D01412,C02476,E15,2025-12-12,Dispensa sem justa causa,0,365,181 dias a 1 ano
+D01413,C02655,E05,2025-12-12,Pedido de demissão,1,273,181 dias a 1 ano
+D01414,C00556,E19,2025-12-13,Pedido de demissão,1,2722,Mais de 2 anos
+D01415,C02832,E03,2025-12-13,Pedido de demissão,1,181,181 dias a 1 ano
+D01416,C03169,E12,2025-12-13,Término de experiência,0,28,Até 90 dias
+D01417,C03170,E19,2025-12-13,Pedido de demissão,1,27,Até 90 dias
+D01418,C03207,E13,2025-12-13,Pedido de demissão,1,13,Até 90 dias
+D01419,C03043,E13,2025-12-14,Pedido de demissão,1,83,Até 90 dias
+D01420,C03048,E19,2025-12-14,Pedido de demissão,1,78,Até 90 dias
+D01421,C03183,E02,2025-12-15,Pedido de demissão,1,26,Até 90 dias
+D01422,C00723,E20,2025-12-16,Pedido de demissão,1,2061,Mais de 2 anos
+D01423,C01280,E05,2025-12-16,Dispensa sem justa causa,0,1107,Mais de 2 anos
+D01424,C02505,E10,2025-12-16,Pedido de demissão,1,354,181 dias a 1 ano
+D01425,C03008,E04,2025-12-17,Dispensa sem justa causa,0,101,91 a 180 dias
+D01426,C03130,E12,2025-12-17,Pedido de demissão,1,44,Até 90 dias
+D01427,C03215,E11,2025-12-17,Dispensa sem justa causa,0,13,Até 90 dias
+D01428,C01334,E10,2025-12-18,Acordo,1,1053,Mais de 2 anos
+D01429,C03168,E10,2025-12-18,Término de experiência,0,33,Até 90 dias
+D01430,C00639,E05,2025-12-21,Dispensa sem justa causa,0,2280,Mais de 2 anos
+D01431,C00936,E18,2025-12-21,Dispensa sem justa causa,0,1709,Mais de 2 anos
+D01432,C01129,E01,2025-12-21,Acordo,1,1389,Mais de 2 anos
+D01433,C03087,E10,2025-12-21,Pedido de demissão,1,68,Até 90 dias
+D01434,C02249,E15,2025-12-22,Pedido de demissão,1,477,1 a 2 anos
+D01435,C01453,E17,2025-12-23,Acordo,1,977,Mais de 2 anos
+D01436,C02547,E07,2025-12-23,Pedido de demissão,1,333,181 dias a 1 ano
+D01437,C01480,E10,2025-12-24,Acordo,1,962,Mais de 2 anos
+D01438,C03078,E19,2025-12-25,Pedido de demissão,1,76,Até 90 dias
+D01439,C01471,E04,2025-12-26,Dispensa sem justa causa,0,970,Mais de 2 anos
+D01440,C01479,E16,2025-12-26,Dispensa sem justa causa,0,965,Mais de 2 anos
+D01441,C02769,E07,2025-12-26,Pedido de demissão,1,222,181 dias a 1 ano
+D01442,C03194,E19,2025-12-26,Pedido de demissão,1,29,Até 90 dias
+D01443,C03229,E14,2025-12-26,Dispensa sem justa causa,0,11,Até 90 dias
+D01444,C00566,E20,2025-12-27,Pedido de demissão,1,2670,Mais de 2 anos
+D01445,C01055,E18,2025-12-27,Pedido de demissão,1,1507,Mais de 2 anos
+D01446,C03211,E19,2025-12-27,Término de experiência,0,25,Até 90 dias
+D01447,C03243,E10,2025-12-27,Pedido de demissão,1,1,Até 90 dias
+D01448,C00958,E07,2025-12-28,Pedido de demissão,1,1685,Mais de 2 anos
+D01449,C01258,E16,2025-12-28,Pedido de demissão,1,1155,Mais de 2 anos
+D01450,C03066,E18,2025-12-29,Término de experiência,0,85,Até 90 dias
+D01451,C03073,E18,2025-12-29,Pedido de demissão,1,82,Até 90 dias
+D01452,C02455,E10,2025-12-30,Pedido de demissão,1,392,1 a 2 anos
+D01453,C02868,E19,2025-12-31,Pedido de demissão,1,181,181 dias a 1 ano

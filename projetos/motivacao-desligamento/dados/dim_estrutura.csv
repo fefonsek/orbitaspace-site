@@ -1,0 +1,21 @@
+id_estrutura,unidade,tipo_unidade,cidade,gerencia,area,centro_custo,gestor_codigo,vigente_de,vigente_ate
+E01,L1,Loja,Campo Lírio,L1 Vendas,Vendas,CC-101,G01,2024-01-01,2025-12-31
+E02,L1,Loja,Campo Lírio,L1 Operações,Operações,CC-102,G02,2024-01-01,2025-12-31
+E03,L2,Loja,Serra Verdana,L2 Vendas,Vendas,CC-103,G03,2024-01-01,2025-12-31
+E04,L2,Loja,Serra Verdana,L2 Operações,Operações,CC-104,G04,2024-01-01,2025-12-31
+E05,L3,Loja,Lagoa Tingui,L3 Vendas,Vendas,CC-105,G05,2024-01-01,2025-12-31
+E06,L3,Loja,Lagoa Tingui,L3 Operações,Operações,CC-106,G06,2024-01-01,2025-12-31
+E07,L4,Loja,Vale do Junco,L4 Vendas,Vendas,CC-107,G07,2024-01-01,2025-12-31
+E08,L4,Loja,Vale do Junco,L4 Operações,Operações,CC-108,G08,2024-01-01,2025-12-31
+E09,L5,Loja,Pedra Moura,L5 Vendas,Vendas,CC-109,G09,2024-01-01,2025-06-30
+E10,L5,Loja,Pedra Moura,L5 Vendas,Vendas,CC-109,G20,2025-07-01,2025-12-31
+E11,L5,Loja,Pedra Moura,L5 Operações,Operações,CC-110,G10,2024-01-01,2025-12-31
+E12,L6,Loja,Rio Claraval,L6 Vendas,Vendas,CC-111,G11,2024-01-01,2025-12-31
+E13,L6,Loja,Rio Claraval,L6 Operações,Operações,CC-112,G12,2024-01-01,2025-12-31
+E14,L7,Loja,Morro Anil,L7 Vendas,Vendas,CC-113,G13,2024-01-01,2025-12-31
+E15,L7,Loja,Morro Anil,L7 Operações,Operações,CC-114,G14,2024-01-01,2025-12-31
+E16,L8,Loja,Ponte Serena,L8 Vendas,Vendas,CC-115,G15,2024-01-01,2025-12-31
+E17,L8,Loja,Ponte Serena,L8 Operações,Operações,CC-116,G16,2024-01-01,2025-12-31
+E18,CD,Centro de distribuição,Campo Lírio,CD Recebimento,Recebimento,CC-117,G17,2024-01-01,2025-12-31
+E19,CD,Centro de distribuição,Campo Lírio,CD Expedição,Expedição,CC-118,G18,2024-01-01,2025-12-31
+E20,ESC,Escritório central,Campo Lírio,ESC Administrativo,Administrativo,CC-119,G19,2024-01-01,2025-12-31

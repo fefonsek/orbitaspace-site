@@ -1,0 +1,483 @@
+---
+title: "Motivação de desligamento: o que o motivo declarado esconde"
+description: "Dois anos de desligamentos e entrevistas de saída de uma rede de supermercados. Por que as pessoas pedem para sair, onde isso se concentra e onde agir primeiro."
+image: img/capa.png
+image-alt: "Capa do caso: motivação de desligamento na Cestária Supermercados, com o motivo principal das saídas voluntárias em todas as respostas e entre quem deu nota baixa ao gestor"
+categories: [People Analytics, R, Quarto, Rotatividade]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
+frente: [relatorios]
+# Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Ver o código R"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números desta página vêm de resultados/desligamento.rds, gravado por
+# scripts/analise.R a partir das seis tabelas de dados/.
+caso <- "."
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/analise.R"))
+res <- ler_desligamento(caso, "pt")
+tx <- res$tx
+preparar_texto(res)
+```
+
+::: aviso-dados
+**Caso fictício.** A Cestária Supermercados, suas lojas, pessoas e entrevistas não existem. Os dados foram gerados do zero por um script em R, com padrões de tamanho conhecido. O método é real.
+
+[Baixar o relatório (PDF)](relatorio/relatorio.pdf){download="motivacao-desligamento.pdf"} · [Baixar as prioridades por gerência (CSV)](resultados/prioridades_gerencias.csv){download="prioridades_gerencias.csv"}
+:::
+
+## A pergunta
+
+A Cestária é uma rede de supermercados do interior de Minas Gerais, com `r num(res$lojas)` lojas, um centro de distribuição e um escritório central, e cerca de `r num(round(res$hc_medio, -1))` pessoas no quadro. Em 2024 e 2025, `r num(res$saidas_total)` pessoas saíram da empresa.
+
+A taxa de desligamento ficou parada: em média, `r pct(an$taxa[1], 2)` do quadro saiu a cada mês em 2024 e `r pct(an$taxa[2], 2)` em 2025, uma diferença que o acaso explica (p = `r num(res$teste_anos$p.value, 2)`). A composição, porém, mudou. As saídas voluntárias subiram de `r pct(an$taxa_vol[1], 2)` para `r pct(an$taxa_vol[2], 2)` ao mês, e as dispensas caíram quase na mesma medida.
+
+::: so-computador
+```{r}
+#| label: mensal
+#| echo: false
+#| fig-cap: "Taxa de desligamento mês a mês, de janeiro de 2024 a dezembro de 2025: desligamentos ÷ headcount médio do mês. A linha cinza é o total; a azul, só as saídas voluntárias (pedido de demissão ou acordo)."
+#| fig-alt: "Duas linhas mês a mês. O total oscila entre cerca de 3% e 4% nos dois anos, sem tendência. A linha das saídas voluntárias fica perto de 2% em 2024 e um pouco acima disso em 2025."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_mensal(res)
+salvar_capa(res, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: mensal-celular
+#| echo: false
+#| fig-cap: "Taxa de desligamento mês a mês, de janeiro de 2024 a dezembro de 2025: desligamentos ÷ headcount médio do mês. A linha cinza é o total; a azul, só as saídas voluntárias (pedido de demissão ou acordo)."
+#| fig-alt: "Duas linhas mês a mês. O total oscila entre cerca de 3% e 4% nos dois anos, sem tendência. A linha das saídas voluntárias fica perto de 2% em 2024 e um pouco acima disso em 2025."
+#| fig-width: 4.5
+#| fig-height: 3.6
+#| lightbox:
+#|   group: celular
+grafico_mensal(res, celular = TRUE)
+```
+:::
+
+Com o total estável, a rotatividade não parecia ser assunto. A diretoria fez outras duas perguntas: por que as pessoas pedem para sair, e onde agir primeiro? Para responder, a entrevista de desligamento, que a empresa já fazia e ninguém lia junto com o resto, foi cruzada com o quadro mês a mês e com os desligamentos.
+
+## O que os dados mostram
+
+- **O motivo declarado esconde o motivo real.** "Salário e benefícios" é o motivo mais citado por quem pede para sair (`r pct(motivo(pg, "Salário e benefícios"))`). Entre quem deu nota 1 ou 2 ao gestor, porém, "liderança e gestor" passa à frente, com `r pct(motivo(pn, "Liderança e gestor"))` contra `r pct(motivo(pn, "Salário e benefícios"))`.
+- **As saídas nos primeiros 90 dias cresceram em duas gerências.** No CD Expedição, a parte dos admitidos que saiu por vontade própria até 90 dias foi de `r pct(g90("CD Expedição", 2024), 0)` em 2024 para `r pct(g90("CD Expedição", 2025), 0)` em 2025; na L3 Operações, de `r pct(g90("L3 Operações", 2024), 0)` para `r pct(g90("L3 Operações", 2025), 0)`. Nas demais gerências, o número ficou perto de `r pct(g90("Demais gerências", 2025), 0)`.
+- **A L5 Vendas passou a perder mais gente depois da troca de gestor**, em `r mes_ano(res$troca)`, e "liderança e gestor" virou o motivo de `r pct(tl$pct[tl$depois], 0)` das saídas respondidas dali em diante.
+- **A escala 6x1 no turno da noite concentra "jornada e escala"**, motivo de `r pct(jo$pct[1], 0)` das saídas nesse grupo, contra `r pct(outros_jornada$pct, 0)` no resto.
+- **A idade não explica as saídas.** Os mais jovens saem mais, mas só porque são mais novos de casa; com o tempo de casa no modelo, a diferença some.
+- **A entrevista tem viés de resposta**, mais forte nas saídas involuntárias e na `r unidade_baixa`, mas corrigir esse viés não muda a ordem dos motivos.
+
+## O que o motivo declarado esconde
+
+Quem pede para sair (pedido de demissão ou acordo) responde, na entrevista, um motivo principal e, se quiser, um secundário, numa lista fechada de oito. Foram `r num(res$respondentes)` respostas com motivo nos dois anos.
+
+::: so-computador
+```{r}
+#| label: pareto
+#| echo: false
+#| fig-cap: "Motivo principal das saídas voluntárias, em todas as respostas e só entre quem deu nota 1 ou 2 ao gestor (entre parênteses, o número de respostas). As linhas finas são o intervalo de confiança de 95%."
+#| fig-alt: "Dois gráficos de barras lado a lado, com os mesmos oito motivos. Em todas as respostas, salário e benefícios é a barra maior, e liderança e gestor, em azul, vem bem atrás. Entre quem deu nota 1 ou 2 ao gestor, a barra azul de liderança e gestor passa a ser a maior, com mais do que o dobro de salário e benefícios."
+#| fig-width: 9
+#| fig-height: 3.8
+#| lightbox:
+#|   group: computador
+grafico_pareto(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: pareto-celular
+#| echo: false
+#| fig-cap: "Motivo principal das saídas voluntárias, em todas as respostas e só entre quem deu nota 1 ou 2 ao gestor (entre parênteses, o número de respostas). As linhas finas são o intervalo de confiança de 95%."
+#| fig-alt: "Dois gráficos de barras, um embaixo do outro, com os mesmos oito motivos. Em todas as respostas, salário e benefícios é a barra maior, e liderança e gestor, em azul, vem bem atrás. Entre quem deu nota 1 ou 2 ao gestor, a barra azul de liderança e gestor passa a ser a maior."
+#| fig-width: 4.5
+#| fig-height: 8
+#| lightbox:
+#|   group: celular
+grafico_pareto(res, celular = TRUE)
+```
+:::
+
+No geral, "salário e benefícios" lidera, com `r pct(motivo(pg, "Salário e benefícios"))` das respostas (IC 95% de `r ic(motivo(pg, "Salário e benefícios", "inf"), motivo(pg, "Salário e benefícios", "sup"))`), e "liderança e gestor" aparece com `r pct(motivo(pg, "Liderança e gestor"))`. O retrato muda entre as `r num(pn$total[1])` pessoas que deram nota 1 ou 2 ao gestor: "liderança e gestor" passa a `r pct(motivo(pn, "Liderança e gestor"))` (de `r ic(motivo(pn, "Liderança e gestor", "inf"), motivo(pn, "Liderança e gestor", "sup"))`), e salário cai para `r pct(motivo(pn, "Salário e benefícios"))`.
+
+O salário também esconde a liderança quando aparece junto com a nota baixa. Das `r num(sal_nb$n)` pessoas que deram nota 1 ou 2 ao gestor e declararam salário como motivo principal, `r num(sal_nb$lideranca_secundario)` (`r pct(sal_nb$pct, 0)`) puseram "liderança e gestor" como motivo secundário. Somando principal e secundário, `r pct(lid_qualquer$pct[lid_qualquer$nota_baixa], 0)` de quem deu nota baixa ao gestor fala da liderança, contra `r pct(lid_qualquer$pct[!lid_qualquer$nota_baixa], 0)` entre os demais.
+
+Isso não prova que o gestor causou a saída. Mostra que o motivo declarado, lido sozinho, aponta para salário, enquanto a nota ao gestor e o motivo secundário apontam para a liderança. Salário é a resposta mais fácil de dar numa conversa de saída; por isso a entrevista precisa ser lida com a nota e com o segundo motivo, e não só pelo primeiro.
+
+### Quem respondeu a entrevista
+
+A entrevista não é obrigatória. Responderam `r pct(resp_vol, 0)` de quem pediu para sair e só `r pct(resp_inv, 0)` de quem foi dispensado. Entre as unidades, a `r unidade_baixa` fica bem abaixo das outras, com `r pct(resp_baixa, 0)` de resposta.
+
+::: so-computador
+```{r}
+#| label: resposta
+#| echo: false
+#| fig-cap: "Taxa de resposta da entrevista de desligamento por unidade, em 2024 e 2025, com o intervalo de confiança de 95%. A linha vertical é a taxa da empresa."
+#| fig-alt: "Pontos com barras de intervalo para oito lojas, o centro de distribuição e o escritório. Quase todas as unidades ficam entre 55% e 75% de resposta. A L7, em azul, fica bem abaixo, perto de 37%."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_resposta(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: resposta-celular
+#| echo: false
+#| fig-cap: "Taxa de resposta da entrevista de desligamento por unidade, em 2024 e 2025, com o intervalo de confiança de 95%. A linha vertical é a taxa da empresa."
+#| fig-alt: "Pontos com barras de intervalo para oito lojas, o centro de distribuição e o escritório. Quase todas as unidades ficam entre 55% e 75% de resposta. A L7, em azul, fica bem abaixo, perto de 37%."
+#| fig-width: 4.5
+#| fig-height: 4.4
+#| lightbox:
+#|   group: celular
+grafico_resposta(res, celular = TRUE)
+```
+:::
+
+Como o motivo só é perguntado a quem pede para sair, a diferença entre voluntárias e involuntárias não distorce o retrato dos motivos; a diferença entre unidades, sim. Para ver se ela muda a conclusão, cada resposta foi ponderada pela inversa da taxa de resposta da sua unidade, de modo que a `r unidade_baixa` pese o que pesaria se todos tivessem respondido. Nenhum motivo mudou mais de `r num(pond_max, 1)` ponto percentual, e a ordem ficou a mesma.
+
+::: so-computador
+```{r}
+#| label: ponderacao
+#| echo: false
+res$pareto_ponderado |>
+  transmute(motivo = traduzir(motivo, tx$motivos), sem = pct(pct_sem_peso), com = pct(pct)) |>
+  tabela(tx$nomes_ponderacao, c("l", "r", "r"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: ponderacao-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(res$pareto_ponderado |>
+              transmute(motivo = traduzir(motivo, tx$motivos), sem = pct(pct_sem_peso), com = pct(pct)),
+            tx$nomes_ponderacao))
+```
+:::
+
+A ponderação supõe que, dentro de cada unidade, quem respondeu é parecido com quem não respondeu. Se quem não respondeu na `r unidade_baixa` saiu por motivos diferentes dos de quem respondeu, nenhum peso corrige isso; é a primeira das limitações do caso.
+
+## Onde agir primeiro
+
+### Saídas nos primeiros 90 dias
+
+Entre os `r num(res$coorte[["admitidos_90"]])` admitidos de janeiro de 2024 a 02/10/2025, que já completaram 90 dias de casa, a parte que pediu para sair até o 90º dia subiu em duas gerências e ficou estável no resto. No CD Expedição, foi de `r pct(g90("CD Expedição", 2024), 0)` entre os admitidos de 2024 para `r pct(g90("CD Expedição", 2025), 0)` entre os de 2025 (IC 95% de `r ic(g90("CD Expedição", 2025, "inf"), g90("CD Expedição", 2025, "sup"), 0)`); na L3 Operações, de `r pct(g90("L3 Operações", 2024), 0)` para `r pct(g90("L3 Operações", 2025), 0)` (de `r ic(g90("L3 Operações", 2025, "inf"), g90("L3 Operações", 2025, "sup"), 0)`). Nas demais gerências, de `r pct(g90("Demais gerências", 2024), 0)` para `r pct(g90("Demais gerências", 2025), 0)`.
+
+::: so-computador
+```{r}
+#| label: incidencia
+#| echo: false
+#| fig-cap: "Incidência acumulada da saída voluntária, com a dispensa como risco competitivo, por ano de admissão: a parte dos admitidos que pediu para sair até cada dia de casa. A curva inclui todos os admitidos em 2024 e 2025, também os que ainda não completaram 90 dias, e não trata quem foi dispensado como se continuasse em risco; por isso, aos 90 dias, ela não coincide exatamente com a proporção simples do texto e da tabela, que só conta os admitidos até 02/10/2025. A faixa azul é o intervalo de confiança de 95% de 2025; a linha tracejada marca 90 dias."
+#| fig-alt: "Três gráficos lado a lado. No CD Expedição e na L3 Operações, a curva de 2025, em azul, sobe muito mais rápido que a de 2024, em cinza, e passa dos 35% antes de 90 dias. Nas demais gerências, as duas curvas ficam juntas, abaixo de 20% até 90 dias."
+#| fig-width: 9
+#| fig-height: 3.3
+#| lightbox:
+#|   group: computador
+grafico_incidencia(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: incidencia-celular
+#| echo: false
+#| fig-cap: "Incidência acumulada da saída voluntária, com a dispensa como risco competitivo, por ano de admissão: a parte dos admitidos que pediu para sair até cada dia de casa. A curva inclui todos os admitidos em 2024 e 2025, também os que ainda não completaram 90 dias, e não trata quem foi dispensado como se continuasse em risco; por isso, aos 90 dias, ela não coincide exatamente com a proporção simples do texto e da tabela, que só conta os admitidos até 02/10/2025. A faixa azul é o intervalo de confiança de 95% de 2025; a linha tracejada marca 90 dias."
+#| fig-alt: "Três gráficos, um embaixo do outro. No CD Expedição e na L3 Operações, a curva de 2025, em azul, sobe muito mais rápido que a de 2024, em cinza. Nas demais gerências, as duas curvas ficam juntas."
+#| fig-width: 4.5
+#| fig-height: 7.6
+#| lightbox:
+#|   group: celular
+grafico_incidencia(res, celular = TRUE)
+```
+:::
+
+Num modelo de Cox causa-específico só com os admitidos de 2025, o risco de saída voluntária foi `r num(hr$hr[hr$grupo == "CD Expedição"], 1)` vezes o das demais gerências no CD Expedição (IC 95% de `r num(hr$inf[hr$grupo == "CD Expedição"], 1)` a `r num(hr$sup[hr$grupo == "CD Expedição"], 1)`) e `r num(hr$hr[hr$grupo == "L3 Operações"], 1)` vezes na L3 Operações (de `r num(hr$inf[hr$grupo == "L3 Operações"], 1)` a `r num(hr$sup[hr$grupo == "L3 Operações"], 1)`).
+
+Sair nos primeiros 90 dias costuma ter mais a ver com a chegada do que com o mercado: integração, escala informada na contratação, primeira liderança. As duas gerências não trocaram de gestor, e a entrevista de quem sai tão cedo é curta; o próximo passo é ouvir os admitidos dessas duas áreas antes de completarem 90 dias.
+
+### A troca de gestor na L5 Vendas
+
+A L5 Vendas trocou de gestor em `r mes_ano(res$troca)`. Para separar o efeito da troca do que aconteceu na empresa toda no mesmo período, a L5 foi comparada com as outras sete gerências de Vendas, que não trocaram de gestor.
+
+::: so-computador
+```{r}
+#| label: troca
+#| echo: false
+#| fig-cap: "Saídas voluntárias por 100 pessoas, em média móvel de três meses: L5 Vendas, em azul, e as outras sete gerências de Vendas juntas, em cinza. A marca vertical é a troca de gestor da L5."
+#| fig-alt: "Duas linhas mês a mês. Até a troca de gestor, as duas andam juntas, perto de 2 saídas por 100 pessoas. Depois da troca, a linha azul da L5 Vendas sobe e termina acima de 7, enquanto a cinza fica perto de 2."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_troca(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: troca-celular
+#| echo: false
+#| fig-cap: "Saídas voluntárias por 100 pessoas, em média móvel de três meses: L5 Vendas, em azul, e as outras sete gerências de Vendas juntas, em cinza. A marca vertical é a troca de gestor da L5."
+#| fig-alt: "Duas linhas mês a mês. Até a troca de gestor, as duas andam juntas, perto de 2 saídas por 100 pessoas. Depois da troca, a linha azul da L5 Vendas sobe muito, e a cinza fica perto de 2."
+#| fig-width: 4.5
+#| fig-height: 3.8
+#| lightbox:
+#|   group: celular
+grafico_troca(res, celular = TRUE)
+```
+:::
+
+Antes da troca, a L5 perdia `r pct(taxa_troca("L5 Vendas", FALSE), 1)` do quadro por mês em saídas voluntárias, e as outras gerências de Vendas, `r pct(taxa_troca("Outras gerências de Vendas", FALSE), 1)`. Depois, a L5 foi a `r pct(taxa_troca("L5 Vendas", TRUE), 1)`, e as outras, a `r pct(taxa_troca("Outras gerências de Vendas", TRUE), 1)`. Descontada a mudança das outras gerências, a taxa da L5 ficou `r num(rr$rr, 1)` vezes maior depois da troca (IC 95% de `r num(rr$inf, 1)` a `r num(rr$sup, 1)`, modelo de `r rr$modelo`).
+
+O motivo acompanha: antes da troca, "liderança e gestor" apareceu em menos de 10 das `r num(tl$n[!tl$depois])` respostas da L5; depois, em `r num(tl$x[tl$depois])` das `r num(tl$n[tl$depois])` (`r pct(tl$pct[tl$depois], 0)`, de `r ic(tl$inf[tl$depois], tl$sup[tl$depois], 0)`). É uma associação no tempo, e não a prova de que o novo gestor é a causa: são só seis meses, e outra coisa pode ter mudado na loja ao mesmo tempo. Mas é o sinal mais forte do caso, e o mais barato de verificar, numa conversa com a equipe e com o gestor.
+
+### Escala 6x1 no turno da noite
+
+```{r}
+#| label: jornada-texto
+#| include: false
+noite <- jo |> filter(grupo == "Noite, 6x1")
+```
+
+Na escala 6x1 do turno da noite, que é a da reposição das lojas e de parte do CD, "jornada e escala" é o motivo de `r pct(noite$pct, 0)` das saídas voluntárias respondidas (de `r ic(noite$inf, noite$sup, 0)`), contra `r pct(outros_jornada$pct, 0)` nas outras combinações de turno e escala. A taxa de saída voluntária também é a maior: `r pct(noite$taxa_vol, 2)` do grupo por mês.
+
+::: so-computador
+```{r}
+#| label: jornada
+#| echo: false
+#| fig-cap: "Parte das saídas voluntárias respondidas com \"jornada e escala\" como motivo principal, por turno e escala, com o intervalo de confiança de 95% (entre parênteses, o número de respostas)."
+#| fig-alt: "Quatro barras horizontais. A da noite na escala 6x1, em azul, chega a cerca de 40%. As outras três, em cinza, ficam abaixo de 10%."
+#| fig-width: 9
+#| fig-height: 2.3
+#| lightbox:
+#|   group: computador
+grafico_jornada(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: jornada-celular
+#| echo: false
+#| fig-cap: "Parte das saídas voluntárias respondidas com \"jornada e escala\" como motivo principal, por turno e escala, com o intervalo de confiança de 95% (entre parênteses, o número de respostas)."
+#| fig-alt: "Quatro barras horizontais. A da noite na escala 6x1, em azul, chega a cerca de 40%. As outras três, em cinza, ficam abaixo de 10%."
+#| fig-width: 4.5
+#| fig-height: 3
+#| lightbox:
+#|   group: celular
+grafico_jornada(res, celular = TRUE)
+```
+:::
+
+A noite em outras escalas (12x36 no CD, 5x2 em algumas lojas) não tem o mesmo problema. O que pesa é a combinação da noite com a folga única na semana, e isso aponta para uma decisão de escala, e não de salário.
+
+### Prioridades por gerência
+
+As três frentes acima viram uma lista. Em 2025, cada gerência recebeu uma prioridade:
+
+- **Alta:** a taxa de saída voluntária ou a parte dos admitidos que saiu até 90 dias fica acima da empresa mesmo no limite inferior do intervalo de confiança.
+- **Média:** as duas ficam acima da empresa na estimativa, ou "liderança e gestor" ou "jornada e escala" ficam acima da empresa no limite inferior do intervalo.
+- **Acompanhar:** o resto.
+
+Dentro de cada nível, a ordem é a das saídas voluntárias acima do esperado pela taxa da empresa. A lista completa, com os intervalos, está no CSV do topo da página; nenhum número de grupo com menos de 10 pessoas aparece nela.
+
+`r frase_acompanhar`
+
+::: so-computador
+```{r}
+#| label: prioridades
+#| echo: false
+tabela(prioridades_fmt(res), tx$nomes_prioridades, c("r", "l", "l", "l", "r", "r", "r", "r"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: prioridades-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(prioridades_fmt(res) |> mutate(gerencia = paste0(ordem, ". ", gerencia)) |> select(-ordem),
+            tx$nomes_prioridades[-1]))
+```
+:::
+
+## O que não explica: a idade
+
+Olhando só a idade, os mais jovens saem mais: a chance de uma pessoa de 18 a 24 anos pedir para sair num mês é `r num(oi$or[1], 2)` vezes a de quem tem de 35 a 44 (IC 95% de `r num(oi$inf[1], 2)` a `r num(oi$sup[1], 2)`). Mas os mais jovens são, em média, os mais novos de casa, e o tempo de casa é o que pesa: com ele no modelo, a razão cai para `r num(oi$or[2], 2)` (de `r num(oi$inf[2], 2)` a `r num(oi$sup[2], 2)`), e a faixa etária como um todo deixa de fazer diferença (p = `r num(res$idade_p_ajustado, 2)`).
+
+É um achado nulo que importa: uma política "para reter os jovens" atacaria o alvo errado. O ponto de atenção são os primeiros meses de casa, de qualquer idade.
+
+## Limitações
+
+- **Dados fictícios.** Os padrões foram plantados por um gerador, e a análise os encontrou sem ler o gabarito. Com dados reais, os números seriam outros; o método é o mesmo.
+- **Viés de resposta.** A ponderação corrige a diferença de resposta entre unidades, mas supõe que, dentro de cada unidade, quem respondeu é parecido com quem não respondeu. Isso não pode ser verificado com estes dados.
+- **Associação não é causa.** A comparação da L5 com as outras gerências de Vendas supõe que, sem a troca, a L5 teria seguido a mesma tendência delas. Com seis meses depois da troca, o intervalo ainda é largo.
+- **Motivo declarado.** A lista é fechada, e cada pessoa escolhe um motivo principal; é o que ela diz, e não necessariamente o que pesou.
+- **Janela de 90 dias.** Os admitidos depois de 02/10/2025 ficam fora dessa conta, porque ainda não completaram a janela.
+- **Muitas comparações.** No cruzamento de motivo com gerência, só contam como destaque os resíduos ajustados de valor absoluto 3 ou mais.
+
+## Método
+
+As etapas abaixo estão no código, com o trecho de cada uma recolhido; as tabelas técnicas ficam no fim da seção.
+
+1. **Classificar as saídas.** Voluntária é o pedido de demissão; involuntária, a dispensa sem justa causa e o término de experiência. O acordo é uma categoria própria e entra como voluntária na divisão em duas (`r num(res$saidas_vol)` voluntárias e `r num(res$saidas_total - res$saidas_vol)` involuntárias nos dois anos).
+2. **Taxa de desligamento.** Desligamentos do mês ÷ headcount médio do mês, em que o headcount médio é a média entre o quadro do primeiro e do último dia. A fórmula clássica de turnover usa no numerador a média entre admissões e desligamentos. No ano, as duas dão quase o mesmo: a taxa de desligamento foi de `r pct(an$taxa_ano[1])` em 2024 e `r pct(an$taxa_ano[2])` em 2025, e o turnover clássico, de `r pct(an$turnover_classico_ano[1])` e `r pct(an$turnover_classico_ano[2])`. Os intervalos das taxas são exatos de Poisson, por pessoa-mês.
+3. **Saídas até 90 dias.** Entre os admitidos de janeiro de 2024 a 02/10/2025 (`r num(res$coorte[["admitidos_90"]])` pessoas), quem pediu para sair até o 90º dia de casa. Quem foi dispensado antes dos 90 dias conta como "não saiu voluntariamente".
+4. **Motivos.** Pareto do motivo principal entre quem pediu para sair e respondeu, no geral e com nota 1 ou 2 ao gestor; proporções com intervalo de Wilson.
+5. **Taxa de resposta e ponderação.** Taxa de resposta por tipo de saída e por unidade, e o Pareto ponderado pela inversa da taxa de resposta da unidade.
+6. **Motivo × gerência.** Qui-quadrado de independência (`r num(res$qui$estatistica, 1)` com `r num(res$qui$gl)` graus de liberdade), com os três motivos menos citados juntos em "outros motivos" e o p calculado por simulação (p = `r num(res$qui$p, 3)`), porque `r pct(100 * res$qui$esperado_menor_5, 0)` das células têm frequência esperada menor que 5. Destaque só para resíduos ajustados com valor absoluto 3 ou mais: `r paste0(destaques$gerencia, " em \"", tolower(destaques$motivo), "\" (", num(destaques$residuo, 1), ")", collapse = " e ")`.
+7. **Incidência acumulada e Cox causa-específico.** Tempo do dia da admissão até a saída, para os admitidos em 2024 e 2025, com a saída involuntária como risco competitivo (estimador de Aalen-Johansen, `survfit` do pacote survival com o status como fator). No lugar do teste de Gray, que exige um pacote que não está instalado, um modelo de Cox causa-específico: a gerência como um todo está associada ao risco de saída voluntária (teste da razão de verossimilhança, `r num(res$teste_gerencia$chi, 1)` com `r num(res$teste_gerencia$gl)` graus de liberdade, `r if (res$teste_gerencia$p < 0.001) "p < 0,001" else paste("p =", num(res$teste_gerencia$p, 3))`).
+8. **Troca de gestor.** Saídas voluntárias por gerência de Vendas e mês, com a exposição em pessoa-mês, num modelo de Poisson com a gerência, o período (antes ou depois de `r mes_ano(res$troca)`) e a interação da L5 com o período depois da troca (diferença em diferenças). O modelo binomial negativo entraria se a dispersão passasse de 1,2; ela foi de `r num(rr$dispersao, 2)`.
+9. **Regressão logística.** Saída voluntária até 90 dias, com o grupo de gerência, o ano de admissão e a interação dos dois, a noite na escala 6x1 e a faixa etária.
+10. **Confundimento pela idade.** Regressão logística por pessoa-mês da saída voluntária no mês, com a faixa etária sozinha e depois com a faixa de tempo de casa.
+11. **Prioridades.** Os critérios da seção anterior, aplicados a 2025, com as contagens de grupos com menos de 10 pessoas trocadas por "<10".
+
+```{r}
+#| label: etapa-1-taxa
+#| eval: false
+#| code-summary: "Ver o código R: taxa de desligamento"
+```
+
+```{r}
+#| label: etapa-2-noventa-dias
+#| eval: false
+#| code-summary: "Ver o código R: saídas até 90 dias"
+```
+
+```{r}
+#| label: etapa-3-motivos
+#| eval: false
+#| code-summary: "Ver o código R: motivos"
+```
+
+```{r}
+#| label: etapa-4-resposta
+#| eval: false
+#| code-summary: "Ver o código R: taxa de resposta e ponderação"
+```
+
+```{r}
+#| label: etapa-5-motivo-gerencia
+#| eval: false
+#| code-summary: "Ver o código R: motivo × gerência"
+```
+
+```{r}
+#| label: etapa-6-incidencia
+#| eval: false
+#| code-summary: "Ver o código R: incidência acumulada e Cox"
+```
+
+```{r}
+#| label: etapa-7-troca-gestor
+#| eval: false
+#| code-summary: "Ver o código R: troca de gestor"
+```
+
+```{r}
+#| label: etapa-8-jornada
+#| eval: false
+#| code-summary: "Ver o código R: escala e turno"
+```
+
+```{r}
+#| label: etapa-9-regressao
+#| eval: false
+#| code-summary: "Ver o código R: regressões"
+```
+
+```{r}
+#| label: etapa-10-prioridades
+#| eval: false
+#| code-summary: "Ver o código R: prioridades"
+```
+
+::: {.callout-note collapse="true"}
+## Tabelas técnicas
+
+**Regressão logística: saída voluntária até 90 dias** (`r num(res$modelos$n_90)` admitidos; referências: demais gerências, admitidos em 2024, dia ou outras escalas, 35 a 44 anos).
+
+```{r}
+#| label: tabela-or-90
+#| echo: false
+termos_90 <- c(
+  'relevel(factor(grupo), "Demais gerências")CD Expedição' = "CD Expedição",
+  'relevel(factor(grupo), "Demais gerências")L3 Operações' = "L3 Operações",
+  "factor(ano_admissao)2025" = "Admitido em 2025",
+  "noite_6x1TRUE" = "Noite, escala 6x1",
+  'relevel(factor(faixa_etaria), "35 a 44")18 a 24' = "18 a 24 anos",
+  'relevel(factor(faixa_etaria), "35 a 44")25 a 34' = "25 a 34 anos",
+  'relevel(factor(faixa_etaria), "35 a 44")45 ou mais' = "45 anos ou mais",
+  'relevel(factor(grupo), "Demais gerências")CD Expedição:factor(ano_admissao)2025' = "CD Expedição × 2025",
+  'relevel(factor(grupo), "Demais gerências")L3 Operações:factor(ano_admissao)2025' = "L3 Operações × 2025")
+or_fmt(res, res$or_90, termos_90) |> tabela(tx$nomes_or, c("l", "r", "r", "r"))
+```
+
+**Faixa etária, sem e com o tempo de casa** (`r num(res$modelos$n_pm)` pessoas-mês; referência: 35 a 44 anos).
+
+```{r}
+#| label: tabela-or-idade
+#| echo: false
+res$or_idade |>
+  transmute(modelo = if_else(modelo == "Bruto", "Só a faixa etária", "Com o tempo de casa"),
+            faixa = paste(faixa, "anos"), or = num(or, 2), ic = paste0(num(inf, 2), " a ", num(sup, 2)),
+            p = if_else(p < 0.001, "< 0,001", num(p, 3))) |>
+  tabela(c("Modelo", "Faixa etária", "Razão de chances", "IC 95%", "p"), c("l", "l", "r", "r", "r"))
+```
+
+**Taxa de resposta por tipo de saída.**
+
+```{r}
+#| label: tabela-resposta
+#| echo: false
+rt |>
+  transmute(grupo = if_else(voluntaria, tx$voluntarias, tx$involuntarias), saidas = num(saidas),
+            responderam = num(responderam), taxa = paste0(pct(pct), " (", ic(inf, sup), ")")) |>
+  tabela(tx$nomes_resposta, c("l", "r", "r", "r"))
+```
+:::
+
+## O que o caso demonstra
+
+- **Ler a entrevista junto com o resto.** O motivo declarado, sozinho, apontava para salário; cruzado com a nota ao gestor e com o motivo secundário, apontou para a liderança.
+- **Olhar a composição, e não só o total.** Uma taxa estável escondia mais saídas voluntárias e saídas cada vez mais cedo em duas gerências.
+- **Comparar com um controle.** A troca de gestor da L5 foi medida contra as outras gerências de Vendas, e não só contra o próprio passado.
+- **Dizer o que os dados não sustentam.** O viés de resposta foi medido e corrigido, a idade foi descartada como explicação, e nenhuma associação foi tratada como causa.
+- **Uma base pronta para o painel.** As seis tabelas formam um modelo dimensional, que a próxima etapa do caso usa num painel de turnover em Power BI.
+
+::: cta-final
+## Sua empresa faz entrevista de desligamento, mas ninguém lê junto com o resto?
+
+Me conte como funciona hoje e eu digo o que dá para cruzar.
+
+[Fale comigo](../../contato.qmd){.btn .btn-primary}
+:::

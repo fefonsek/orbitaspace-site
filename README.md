@@ -183,6 +183,39 @@ render de uma língua apaga a saída padrão do arquivo) e descarta o `_freeze/`
 das três páginas. As tabelas brutas e o gabarito não são publicados; o site
 publica só os PDFs e os CSVs de casos.
 
+## Caso Motivação de desligamento (Cestária Supermercados)
+
+O caso fica em `projetos/motivacao-desligamento/`, na frente `relatorios`, por
+enquanto só em português (ES e EN entram depois que o texto em PT for
+aprovado). É a etapa 1 de 2: a etapa 2 é um painel de turnover em Power BI com
+a mesma base.
+
+- `dados/` tem a base fictícia num esquema estrela pronto para o Power BI:
+  `dim_colaborador`, `dim_estrutura` (uma linha por gerência e vigência de
+  gestor), `dim_tempo`, `fato_headcount_mensal` (pessoa × mês),
+  `fato_desligamentos` e `fato_entrevista_desligamento`. A base vai para o
+  repositório, mas não é publicada no site.
+- **O gerador e o gabarito não ficam neste repositório.** Estão num
+  repositório privado, sem remoto, em `D:\Projetos\cestaria-turnover` (ao
+  lado da pasta do site): `gerar_dados.R` (gera a base com semente fixa e
+  planta seis padrões), `gabarito.rds` (o que foi plantado) e `conferir.R`
+  (compara a análise com o gabarito e para o render se algum padrão não for
+  recuperado). Se o repositório estiver em outro lugar, defina
+  `ORBITA_GERADOR_DESLIGAMENTO`; sem ele, o render pula a conferência com um
+  aviso.
+- `scripts/analise.R` lê só `dados/` e grava `resultados/desligamento.rds` e
+  `resultados/prioridades_gerencias.csv` (só agregados; grupos com menos de 10
+  pessoas viram "<10"). `scripts/rotulos.R` tem os formatos e textos curtos;
+  `scripts/apresentacao.R`, os gráficos, as tabelas e a capa.
+- O relatório em PDF é um projeto Quarto à parte em `relatorio/` (Typst), com
+  o parâmetro `idioma` e o texto em `textos_pt.yml`. Tem quatro páginas
+  (resumo, motivos, onde agir, prioridades) e para com erro se passar disso.
+
+O passo 0d do `render.ps1` roda a análise (e a conferência, se o repositório
+do gerador existir) quando a base ou o script mudaram, refaz o PDF quando os resultados,
+os textos ou os gráficos mudaram e descarta o `_freeze/` da página. O site
+publica só o PDF e o CSV de prioridades.
+
 ## Estrutura
 
 ```text

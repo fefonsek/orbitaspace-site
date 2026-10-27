@@ -1,0 +1,1454 @@
+id_desligamento,respondeu,motivo_principal,motivo_secundario,nota_gestor,nota_ambiente,recomendaria,voltaria
+D00001,Não,,,,,,
+D00002,Sim,Salário e benefícios,,4,4,7,Sim
+D00003,Não,,,,,,
+D00004,Sim,Salário e benefícios,Liderança e gestor,1,3,1,Não
+D00005,Sim,Jornada e escala,,2,2,7,Sim
+D00006,Sim,,,2,4,5,Sim
+D00007,Sim,,,4,4,8,Sim
+D00008,Sim,Deslocamento,Ambiente e equipe,4,4,5,Não
+D00009,Não,,,,,,
+D00010,Sim,Crescimento e carreira,Deslocamento,3,4,9,Sim
+D00011,Sim,,,1,3,2,Não
+D00012,Sim,Liderança e gestor,Jornada e escala,1,2,4,Não
+D00013,Sim,Crescimento e carreira,Jornada e escala,4,5,8,Sim
+D00014,Sim,Salário e benefícios,Deslocamento,3,4,6,Sim
+D00015,Não,,,,,,
+D00016,Sim,Jornada e escala,Liderança e gestor,2,2,0,Sim
+D00017,Sim,Jornada e escala,Ambiente e equipe,5,5,10,Não
+D00018,Não,,,,,,
+D00019,Sim,Liderança e gestor,Crescimento e carreira,1,2,1,Não
+D00020,Sim,Motivos pessoais e família,Crescimento e carreira,4,2,6,Não
+D00021,Sim,Salário e benefícios,Deslocamento,3,4,7,Sim
+D00022,Não,,,,,,
+D00023,Sim,,,1,2,4,Não
+D00024,Sim,Salário e benefícios,Liderança e gestor,1,4,3,Não
+D00025,Não,,,,,,
+D00026,Não,,,,,,
+D00027,Não,,,,,,
+D00028,Sim,Deslocamento,Liderança e gestor,1,2,2,Sim
+D00029,Não,,,,,,
+D00030,Não,,,,,,
+D00031,Sim,,,4,5,8,Sim
+D00032,Sim,Salário e benefícios,Liderança e gestor,4,3,8,Sim
+D00033,Não,,,,,,
+D00034,Sim,Motivos pessoais e família,Jornada e escala,3,3,4,Não
+D00035,Sim,,,4,3,6,Sim
+D00036,Sim,Deslocamento,Jornada e escala,4,3,5,Não
+D00037,Não,,,,,,
+D00038,Não,,,,,,
+D00039,Não,,,,,,
+D00040,Não,,,,,,
+D00041,Sim,Proposta de outra empresa,,4,5,9,Sim
+D00042,Não,,,,,,
+D00043,Sim,Salário e benefícios,,3,5,7,Sim
+D00044,Sim,,,3,3,7,Não
+D00045,Sim,Salário e benefícios,Motivos pessoais e família,4,3,5,Não
+D00046,Sim,,,1,4,4,Não
+D00047,Sim,Deslocamento,,5,4,6,Sim
+D00048,Não,,,,,,
+D00049,Sim,Salário e benefícios,,4,4,8,Sim
+D00050,Sim,Salário e benefícios,Motivos pessoais e família,3,4,3,Não
+D00051,Sim,Ambiente e equipe,Motivos pessoais e família,1,2,4,Não
+D00052,Sim,Deslocamento,,4,4,9,Sim
+D00053,Sim,,,4,5,6,Sim
+D00054,Sim,Jornada e escala,Deslocamento,5,3,9,Sim
+D00055,Não,,,,,,
+D00056,Sim,Motivos pessoais e família,,4,5,6,Não
+D00057,Não,,,,,,
+D00058,Sim,Ambiente e equipe,Motivos pessoais e família,4,4,8,Sim
+D00059,Não,,,,,,
+D00060,Sim,Liderança e gestor,,2,2,6,Não
+D00061,Sim,Jornada e escala,Ambiente e equipe,3,4,4,Não
+D00062,Sim,Liderança e gestor,Crescimento e carreira,1,3,3,Não
+D00063,Não,,,,,,
+D00064,Sim,Jornada e escala,,4,3,5,Não
+D00065,Não,,,,,,
+D00066,Não,,,,,,
+D00067,Não,,,,,,
+D00068,Sim,Jornada e escala,Salário e benefícios,3,4,8,Não
+D00069,Sim,Crescimento e carreira,,4,4,9,Sim
+D00070,Não,,,,,,
+D00071,Sim,,,4,4,9,Não
+D00072,Sim,Proposta de outra empresa,,4,4,5,Não
+D00073,Sim,Salário e benefícios,,4,5,10,Sim
+D00074,Não,,,,,,
+D00075,Não,,,,,,
+D00076,Não,,,,,,
+D00077,Sim,,,3,3,6,Não
+D00078,Sim,Deslocamento,Liderança e gestor,1,2,2,Não
+D00079,Não,,,,,,
+D00080,Sim,,,4,4,9,Não
+D00081,Não,,,,,,
+D00082,Sim,,,4,4,6,Sim
+D00083,Não,,,,,,
+D00084,Não,,,,,,
+D00085,Sim,,,3,3,7,Sim
+D00086,Não,,,,,,
+D00087,Não,,,,,,
+D00088,Sim,Salário e benefícios,Deslocamento,3,3,4,Não
+D00089,Não,,,,,,
+D00090,Não,,,,,,
+D00091,Não,,,,,,
+D00092,Sim,Jornada e escala,,4,3,6,Não
+D00093,Sim,Proposta de outra empresa,,3,2,5,Não
+D00094,Não,,,,,,
+D00095,Sim,,,4,4,9,Sim
+D00096,Sim,,,3,3,6,Sim
+D00097,Não,,,,,,
+D00098,Não,,,,,,
+D00099,Sim,Proposta de outra empresa,Jornada e escala,4,3,5,Sim
+D00100,Sim,Deslocamento,,4,5,8,Não
+D00101,Sim,Motivos pessoais e família,Ambiente e equipe,4,3,6,Não
+D00102,Sim,Motivos pessoais e família,,5,5,10,Não
+D00103,Não,,,,,,
+D00104,Não,,,,,,
+D00105,Não,,,,,,
+D00106,Sim,Jornada e escala,Proposta de outra empresa,4,4,7,Não
+D00107,Sim,,,4,4,9,Sim
+D00108,Sim,Liderança e gestor,Motivos pessoais e família,3,2,4,Não
+D00109,Não,,,,,,
+D00110,Sim,Deslocamento,Salário e benefícios,5,4,9,Sim
+D00111,Não,,,,,,
+D00112,Não,,,,,,
+D00113,Sim,Salário e benefícios,,4,4,8,Sim
+D00114,Sim,Salário e benefícios,Deslocamento,4,4,10,Não
+D00115,Sim,,,3,4,6,Não
+D00116,Sim,,,3,4,5,Não
+D00117,Não,,,,,,
+D00118,Sim,,,4,4,7,Sim
+D00119,Sim,Ambiente e equipe,Jornada e escala,3,4,6,Não
+D00120,Sim,Jornada e escala,Proposta de outra empresa,5,3,7,Sim
+D00121,Sim,Salário e benefícios,,3,4,5,Sim
+D00122,Não,,,,,,
+D00123,Sim,Crescimento e carreira,Jornada e escala,5,4,8,Sim
+D00124,Não,,,,,,
+D00125,Sim,Crescimento e carreira,,3,4,5,Não
+D00126,Sim,,,5,4,9,Sim
+D00127,Sim,,,4,3,8,Sim
+D00128,Não,,,,,,
+D00129,Sim,Salário e benefícios,Jornada e escala,5,4,8,Sim
+D00130,Não,,,,,,
+D00131,Não,,,,,,
+D00132,Sim,Liderança e gestor,,5,2,9,Sim
+D00133,Sim,Deslocamento,Liderança e gestor,3,5,8,Sim
+D00134,Sim,,,1,2,0,Não
+D00135,Sim,Deslocamento,,5,4,8,Sim
+D00136,Sim,,,3,4,5,Não
+D00137,Sim,Proposta de outra empresa,Liderança e gestor,2,1,6,Sim
+D00138,Não,,,,,,
+D00139,Não,,,,,,
+D00140,Sim,Deslocamento,Jornada e escala,4,3,7,Não
+D00141,Sim,Proposta de outra empresa,Jornada e escala,3,4,6,Não
+D00142,Sim,,,5,4,9,Sim
+D00143,Sim,Salário e benefícios,,4,3,9,Não
+D00144,Sim,Salário e benefícios,,4,4,9,Sim
+D00145,Sim,Liderança e gestor,Jornada e escala,5,4,10,Não
+D00146,Não,,,,,,
+D00147,Sim,,,5,4,10,Sim
+D00148,Não,,,,,,
+D00149,Sim,Jornada e escala,,4,5,9,Sim
+D00150,Sim,Salário e benefícios,Liderança e gestor,4,3,5,Sim
+D00151,Não,,,,,,
+D00152,Sim,Salário e benefícios,Liderança e gestor,4,3,5,Sim
+D00153,Sim,Jornada e escala,Motivos pessoais e família,4,3,6,Não
+D00154,Sim,Salário e benefícios,Ambiente e equipe,5,3,8,Sim
+D00155,Sim,Motivos pessoais e família,Proposta de outra empresa,3,5,5,Não
+D00156,Sim,Crescimento e carreira,,3,3,6,Não
+D00157,Sim,Salário e benefícios,,3,4,7,Não
+D00158,Sim,Salário e benefícios,Crescimento e carreira,4,3,4,Não
+D00159,Sim,Proposta de outra empresa,Deslocamento,5,4,5,Não
+D00160,Sim,Salário e benefícios,Liderança e gestor,1,2,1,Não
+D00161,Não,,,,,,
+D00162,Não,,,,,,
+D00163,Sim,Jornada e escala,Ambiente e equipe,4,4,8,Não
+D00164,Não,,,,,,
+D00165,Não,,,,,,
+D00166,Não,,,,,,
+D00167,Sim,Liderança e gestor,Proposta de outra empresa,1,3,1,Sim
+D00168,Não,,,,,,
+D00169,Sim,Motivos pessoais e família,Crescimento e carreira,4,3,3,Não
+D00170,Sim,Proposta de outra empresa,Salário e benefícios,4,2,2,Não
+D00171,Sim,Liderança e gestor,Motivos pessoais e família,2,2,3,Sim
+D00172,Sim,Salário e benefícios,Jornada e escala,4,4,9,Sim
+D00173,Não,,,,,,
+D00174,Sim,Liderança e gestor,Deslocamento,2,2,3,Não
+D00175,Não,,,,,,
+D00176,Não,,,,,,
+D00177,Não,,,,,,
+D00178,Não,,,,,,
+D00179,Sim,Jornada e escala,Crescimento e carreira,5,4,9,Não
+D00180,Não,,,,,,
+D00181,Sim,Liderança e gestor,,1,1,2,Não
+D00182,Não,,,,,,
+D00183,Sim,Salário e benefícios,,5,5,9,Sim
+D00184,Não,,,,,,
+D00185,Sim,Salário e benefícios,,5,3,10,Não
+D00186,Sim,,,4,4,8,Sim
+D00187,Não,,,,,,
+D00188,Sim,,,5,3,9,Sim
+D00189,Sim,Salário e benefícios,Jornada e escala,4,3,7,Sim
+D00190,Não,,,,,,
+D00191,Sim,,,5,3,8,Sim
+D00192,Sim,Deslocamento,Jornada e escala,4,4,6,Sim
+D00193,Não,,,,,,
+D00194,Não,,,,,,
+D00195,Sim,Proposta de outra empresa,Salário e benefícios,3,3,6,Não
+D00196,Sim,Proposta de outra empresa,,4,5,10,Sim
+D00197,Não,,,,,,
+D00198,Sim,Salário e benefícios,Proposta de outra empresa,3,4,6,Não
+D00199,Sim,Crescimento e carreira,,4,4,6,Não
+D00200,Sim,,,5,4,9,Não
+D00201,Não,,,,,,
+D00202,Sim,Salário e benefícios,Liderança e gestor,2,2,7,Sim
+D00203,Não,,,,,,
+D00204,Sim,Proposta de outra empresa,Liderança e gestor,4,4,8,Sim
+D00205,Não,,,,,,
+D00206,Sim,Salário e benefícios,Proposta de outra empresa,4,3,10,Sim
+D00207,Sim,Proposta de outra empresa,Ambiente e equipe,4,4,10,Sim
+D00208,Não,,,,,,
+D00209,Sim,Salário e benefícios,Liderança e gestor,4,3,10,Sim
+D00210,Não,,,,,,
+D00211,Sim,Crescimento e carreira,,3,4,7,Não
+D00212,Sim,Salário e benefícios,Liderança e gestor,2,2,2,Sim
+D00213,Não,,,,,,
+D00214,Não,,,,,,
+D00215,Não,,,,,,
+D00216,Sim,Liderança e gestor,,3,4,4,Não
+D00217,Não,,,,,,
+D00218,Sim,Crescimento e carreira,Salário e benefícios,4,3,10,Sim
+D00219,Não,,,,,,
+D00220,Não,,,,,,
+D00221,Não,,,,,,
+D00222,Não,,,,,,
+D00223,Não,,,,,,
+D00224,Sim,,,4,4,8,Sim
+D00225,Não,,,,,,
+D00226,Sim,Jornada e escala,Ambiente e equipe,1,4,4,Sim
+D00227,Sim,Proposta de outra empresa,,4,3,8,Não
+D00228,Sim,,,1,4,7,Sim
+D00229,Sim,Jornada e escala,Liderança e gestor,2,2,4,Não
+D00230,Sim,,,3,5,7,Sim
+D00231,Sim,,,4,2,7,Sim
+D00232,Sim,Salário e benefícios,,2,2,3,Não
+D00233,Sim,Jornada e escala,Motivos pessoais e família,5,4,10,Sim
+D00234,Não,,,,,,
+D00235,Sim,,,3,2,6,Não
+D00236,Sim,Proposta de outra empresa,Salário e benefícios,5,3,9,Sim
+D00237,Não,,,,,,
+D00238,Não,,,,,,
+D00239,Não,,,,,,
+D00240,Sim,,,5,4,10,Sim
+D00241,Sim,Jornada e escala,Liderança e gestor,4,3,7,Sim
+D00242,Não,,,,,,
+D00243,Sim,Salário e benefícios,,4,3,7,Sim
+D00244,Sim,Jornada e escala,,3,3,5,Não
+D00245,Sim,Proposta de outra empresa,Deslocamento,4,4,5,Sim
+D00246,Não,,,,,,
+D00247,Sim,Proposta de outra empresa,Liderança e gestor,2,2,5,Não
+D00248,Sim,Salário e benefícios,Ambiente e equipe,4,5,6,Não
+D00249,Não,,,,,,
+D00250,Sim,,,3,4,6,Sim
+D00251,Não,,,,,,
+D00252,Sim,Deslocamento,Jornada e escala,3,4,8,Sim
+D00253,Sim,Deslocamento,Jornada e escala,3,4,5,Não
+D00254,Sim,Liderança e gestor,,3,2,6,Não
+D00255,Sim,Salário e benefícios,,3,2,5,Não
+D00256,Sim,,,3,4,7,Sim
+D00257,Não,,,,,,
+D00258,Não,,,,,,
+D00259,Não,,,,,,
+D00260,Não,,,,,,
+D00261,Não,,,,,,
+D00262,Sim,Salário e benefícios,,2,5,8,Sim
+D00263,Sim,Jornada e escala,Proposta de outra empresa,4,5,10,Sim
+D00264,Não,,,,,,
+D00265,Sim,,,4,4,7,Não
+D00266,Sim,Proposta de outra empresa,Salário e benefícios,1,3,4,Não
+D00267,Sim,Salário e benefícios,,4,4,9,Sim
+D00268,Sim,Jornada e escala,Salário e benefícios,4,4,9,Sim
+D00269,Sim,Crescimento e carreira,Deslocamento,4,4,7,Sim
+D00270,Sim,Proposta de outra empresa,Jornada e escala,4,5,6,Não
+D00271,Não,,,,,,
+D00272,Sim,,,5,3,7,Não
+D00273,Não,,,,,,
+D00274,Sim,Jornada e escala,Liderança e gestor,4,5,7,Sim
+D00275,Sim,,,3,4,8,Sim
+D00276,Sim,,,3,4,6,Não
+D00277,Não,,,,,,
+D00278,Não,,,,,,
+D00279,Não,,,,,,
+D00280,Sim,,,4,5,10,Sim
+D00281,Sim,Crescimento e carreira,Liderança e gestor,1,3,3,Não
+D00282,Não,,,,,,
+D00283,Sim,Jornada e escala,Liderança e gestor,4,4,6,Não
+D00284,Sim,Proposta de outra empresa,Salário e benefícios,3,4,5,Não
+D00285,Não,,,,,,
+D00286,Não,,,,,,
+D00287,Sim,Crescimento e carreira,,4,3,8,Sim
+D00288,Não,,,,,,
+D00289,Sim,Crescimento e carreira,Jornada e escala,4,4,8,Sim
+D00290,Sim,Deslocamento,Ambiente e equipe,4,3,8,Sim
+D00291,Não,,,,,,
+D00292,Sim,Deslocamento,Jornada e escala,5,5,10,Sim
+D00293,Não,,,,,,
+D00294,Sim,Liderança e gestor,Proposta de outra empresa,3,2,5,Não
+D00295,Sim,,,1,3,5,Sim
+D00296,Sim,Deslocamento,,3,4,6,Não
+D00297,Sim,Salário e benefícios,Proposta de outra empresa,3,3,3,Não
+D00298,Sim,Liderança e gestor,Ambiente e equipe,1,2,5,Não
+D00299,Não,,,,,,
+D00300,Não,,,,,,
+D00301,Sim,Salário e benefícios,Liderança e gestor,3,5,6,Sim
+D00302,Não,,,,,,
+D00303,Não,,,,,,
+D00304,Não,,,,,,
+D00305,Sim,,,4,5,10,Sim
+D00306,Não,,,,,,
+D00307,Sim,Liderança e gestor,,2,2,3,Sim
+D00308,Sim,Salário e benefícios,Liderança e gestor,3,2,7,Sim
+D00309,Não,,,,,,
+D00310,Não,,,,,,
+D00311,Não,,,,,,
+D00312,Não,,,,,,
+D00313,Sim,Proposta de outra empresa,,5,3,6,Sim
+D00314,Sim,Proposta de outra empresa,Deslocamento,3,4,7,Sim
+D00315,Sim,Liderança e gestor,Jornada e escala,1,1,2,Sim
+D00316,Sim,Crescimento e carreira,,5,4,6,Não
+D00317,Não,,,,,,
+D00318,Sim,,,3,2,7,Sim
+D00319,Sim,Liderança e gestor,Ambiente e equipe,1,4,2,Não
+D00320,Sim,Jornada e escala,Ambiente e equipe,3,4,6,Não
+D00321,Sim,Liderança e gestor,,2,3,5,Não
+D00322,Não,,,,,,
+D00323,Não,,,,,,
+D00324,Não,,,,,,
+D00325,Não,,,,,,
+D00326,Não,,,,,,
+D00327,Sim,Liderança e gestor,,2,4,5,Não
+D00328,Sim,Liderança e gestor,Salário e benefícios,3,2,1,Sim
+D00329,Não,,,,,,
+D00330,Sim,Salário e benefícios,,1,3,2,Não
+D00331,Sim,,,4,4,6,Não
+D00332,Não,,,,,,
+D00333,Sim,Crescimento e carreira,Motivos pessoais e família,4,4,8,Sim
+D00334,Sim,Jornada e escala,Ambiente e equipe,3,5,10,Sim
+D00335,Sim,Proposta de outra empresa,,3,4,8,Sim
+D00336,Sim,,,4,3,8,Sim
+D00337,Sim,Salário e benefícios,Liderança e gestor,1,1,3,Não
+D00338,Sim,,,2,2,3,Não
+D00339,Não,,,,,,
+D00340,Não,,,,,,
+D00341,Sim,,,1,2,4,Não
+D00342,Não,,,,,,
+D00343,Sim,Salário e benefícios,Proposta de outra empresa,5,4,10,Sim
+D00344,Sim,Salário e benefícios,,5,3,10,Não
+D00345,Sim,Salário e benefícios,Liderança e gestor,5,4,7,Sim
+D00346,Sim,Motivos pessoais e família,,4,3,8,Não
+D00347,Sim,Jornada e escala,Deslocamento,4,4,7,Sim
+D00348,Sim,Salário e benefícios,,2,3,5,Não
+D00349,Sim,,,4,4,8,Sim
+D00350,Não,,,,,,
+D00351,Não,,,,,,
+D00352,Sim,,,1,2,4,Sim
+D00353,Não,,,,,,
+D00354,Não,,,,,,
+D00355,Sim,Crescimento e carreira,,4,3,6,Não
+D00356,Não,,,,,,
+D00357,Não,,,,,,
+D00358,Sim,Deslocamento,,5,3,6,Sim
+D00359,Sim,Liderança e gestor,,2,2,1,Não
+D00360,Não,,,,,,
+D00361,Sim,Salário e benefícios,,5,3,8,Sim
+D00362,Não,,,,,,
+D00363,Não,,,,,,
+D00364,Não,,,,,,
+D00365,Não,,,,,,
+D00366,Sim,Liderança e gestor,,2,3,4,Não
+D00367,Não,,,,,,
+D00368,Sim,Salário e benefícios,Jornada e escala,4,3,5,Não
+D00369,Sim,Crescimento e carreira,Liderança e gestor,4,3,6,Não
+D00370,Sim,Crescimento e carreira,Proposta de outra empresa,4,5,5,Sim
+D00371,Sim,Ambiente e equipe,Liderança e gestor,4,4,7,Sim
+D00372,Não,,,,,,
+D00373,Sim,Motivos pessoais e família,Ambiente e equipe,4,4,9,Sim
+D00374,Sim,,,3,4,6,Não
+D00375,Não,,,,,,
+D00376,Sim,Salário e benefícios,Liderança e gestor,4,3,8,Sim
+D00377,Sim,Proposta de outra empresa,,4,3,8,Sim
+D00378,Sim,,,4,4,4,Não
+D00379,Sim,Proposta de outra empresa,,3,5,7,Sim
+D00380,Não,,,,,,
+D00381,Não,,,,,,
+D00382,Não,,,,,,
+D00383,Não,,,,,,
+D00384,Não,,,,,,
+D00385,Não,,,,,,
+D00386,Sim,Jornada e escala,Motivos pessoais e família,2,3,6,Não
+D00387,Não,,,,,,
+D00388,Sim,,,1,2,0,Não
+D00389,Sim,Salário e benefícios,Liderança e gestor,4,3,7,Sim
+D00390,Sim,Jornada e escala,,3,3,6,Não
+D00391,Não,,,,,,
+D00392,Não,,,,,,
+D00393,Não,,,,,,
+D00394,Sim,Liderança e gestor,Salário e benefícios,4,4,6,Não
+D00395,Sim,Liderança e gestor,,1,3,3,Não
+D00396,Sim,Deslocamento,Crescimento e carreira,4,4,8,Sim
+D00397,Não,,,,,,
+D00398,Sim,Proposta de outra empresa,Liderança e gestor,2,2,5,Não
+D00399,Sim,Salário e benefícios,Liderança e gestor,1,1,6,Não
+D00400,Sim,Crescimento e carreira,Jornada e escala,4,4,7,Sim
+D00401,Não,,,,,,
+D00402,Não,,,,,,
+D00403,Sim,,,3,4,6,Não
+D00404,Sim,,,1,1,3,Não
+D00405,Sim,,,4,4,7,Sim
+D00406,Sim,,,4,3,5,Não
+D00407,Sim,Jornada e escala,Motivos pessoais e família,4,4,3,Não
+D00408,Sim,Liderança e gestor,Deslocamento,1,3,1,Não
+D00409,Sim,Salário e benefícios,Proposta de outra empresa,4,5,7,Sim
+D00410,Sim,Jornada e escala,Proposta de outra empresa,3,5,8,Sim
+D00411,Sim,Jornada e escala,,5,3,10,Sim
+D00412,Sim,Deslocamento,Jornada e escala,1,2,2,Não
+D00413,Sim,Ambiente e equipe,,3,3,6,Não
+D00414,Não,,,,,,
+D00415,Sim,,,4,3,7,Sim
+D00416,Não,,,,,,
+D00417,Sim,,,3,4,6,Não
+D00418,Não,,,,,,
+D00419,Não,,,,,,
+D00420,Sim,Ambiente e equipe,Liderança e gestor,1,4,1,Sim
+D00421,Sim,Salário e benefícios,,5,3,7,Sim
+D00422,Sim,,,3,2,1,Sim
+D00423,Sim,Crescimento e carreira,Proposta de outra empresa,4,4,7,Sim
+D00424,Não,,,,,,
+D00425,Sim,Liderança e gestor,,4,3,6,Não
+D00426,Sim,,,2,3,5,Sim
+D00427,Não,,,,,,
+D00428,Não,,,,,,
+D00429,Sim,Salário e benefícios,Jornada e escala,4,4,8,Sim
+D00430,Não,,,,,,
+D00431,Sim,Salário e benefícios,Motivos pessoais e família,4,3,1,Não
+D00432,Sim,,,1,2,1,Não
+D00433,Sim,Salário e benefícios,Motivos pessoais e família,5,3,10,Sim
+D00434,Não,,,,,,
+D00435,Não,,,,,,
+D00436,Sim,Deslocamento,,3,4,6,Sim
+D00437,Sim,Crescimento e carreira,Jornada e escala,3,4,6,Sim
+D00438,Sim,,,3,4,5,Não
+D00439,Sim,,,3,4,5,Não
+D00440,Não,,,,,,
+D00441,Sim,Jornada e escala,Proposta de outra empresa,4,4,7,Sim
+D00442,Sim,,,4,4,5,Não
+D00443,Sim,,,4,5,8,Sim
+D00444,Sim,Proposta de outra empresa,Jornada e escala,4,4,10,Sim
+D00445,Sim,,,3,3,5,Não
+D00446,Sim,Deslocamento,,4,4,8,Sim
+D00447,Sim,,,4,3,5,Não
+D00448,Sim,Salário e benefícios,,5,4,10,Sim
+D00449,Sim,Salário e benefícios,,1,3,0,Sim
+D00450,Não,,,,,,
+D00451,Sim,,,4,2,3,Sim
+D00452,Sim,Salário e benefícios,,2,2,1,Não
+D00453,Sim,Motivos pessoais e família,Crescimento e carreira,4,3,7,Sim
+D00454,Sim,,,5,5,9,Sim
+D00455,Sim,Proposta de outra empresa,Salário e benefícios,4,4,8,Sim
+D00456,Sim,,,2,2,5,Sim
+D00457,Sim,Ambiente e equipe,Jornada e escala,5,5,10,Sim
+D00458,Sim,Deslocamento,,3,4,5,Não
+D00459,Sim,,,4,3,10,Sim
+D00460,Sim,,,4,3,4,Não
+D00461,Não,,,,,,
+D00462,Sim,Ambiente e equipe,Liderança e gestor,3,5,8,Sim
+D00463,Sim,Liderança e gestor,Jornada e escala,5,3,7,Sim
+D00464,Sim,,,2,5,4,Não
+D00465,Não,,,,,,
+D00466,Sim,Proposta de outra empresa,Salário e benefícios,4,3,7,Sim
+D00467,Não,,,,,,
+D00468,Sim,Proposta de outra empresa,,3,3,4,Não
+D00469,Sim,Salário e benefícios,,4,5,9,Sim
+D00470,Não,,,,,,
+D00471,Sim,Liderança e gestor,,2,3,5,Não
+D00472,Sim,Liderança e gestor,Crescimento e carreira,2,3,2,Não
+D00473,Sim,Salário e benefícios,Motivos pessoais e família,3,2,4,Não
+D00474,Sim,Proposta de outra empresa,Motivos pessoais e família,3,4,10,Sim
+D00475,Não,,,,,,
+D00476,Não,,,,,,
+D00477,Sim,Jornada e escala,Salário e benefícios,4,4,5,Não
+D00478,Sim,,,4,3,8,Não
+D00479,Não,,,,,,
+D00480,Não,,,,,,
+D00481,Sim,Salário e benefícios,Proposta de outra empresa,3,3,9,Sim
+D00482,Não,,,,,,
+D00483,Não,,,,,,
+D00484,Sim,Salário e benefícios,Proposta de outra empresa,4,5,7,Sim
+D00485,Não,,,,,,
+D00486,Não,,,,,,
+D00487,Sim,,,4,5,7,Sim
+D00488,Sim,Salário e benefícios,,4,4,9,Sim
+D00489,Sim,Motivos pessoais e família,,4,4,8,Não
+D00490,Sim,Proposta de outra empresa,,4,3,8,Sim
+D00491,Sim,Motivos pessoais e família,,5,3,7,Sim
+D00492,Não,,,,,,
+D00493,Sim,,,3,5,7,Não
+D00494,Não,,,,,,
+D00495,Sim,Motivos pessoais e família,Jornada e escala,4,4,10,Sim
+D00496,Sim,Salário e benefícios,Jornada e escala,3,3,2,Sim
+D00497,Sim,Motivos pessoais e família,Deslocamento,4,4,7,Sim
+D00498,Sim,Salário e benefícios,Motivos pessoais e família,4,4,7,Sim
+D00499,Não,,,,,,
+D00500,Não,,,,,,
+D00501,Sim,,,4,4,10,Não
+D00502,Sim,Salário e benefícios,Deslocamento,5,4,10,Não
+D00503,Sim,Liderança e gestor,Proposta de outra empresa,2,3,3,Não
+D00504,Sim,Salário e benefícios,,3,3,6,Sim
+D00505,Não,,,,,,
+D00506,Sim,Liderança e gestor,Deslocamento,3,4,7,Sim
+D00507,Sim,Liderança e gestor,Deslocamento,3,2,7,Sim
+D00508,Não,,,,,,
+D00509,Sim,,,1,3,1,Não
+D00510,Sim,Proposta de outra empresa,,5,2,8,Sim
+D00511,Sim,Motivos pessoais e família,,4,4,7,Sim
+D00512,Sim,Salário e benefícios,,4,4,6,Não
+D00513,Sim,Ambiente e equipe,Liderança e gestor,1,2,3,Sim
+D00514,Não,,,,,,
+D00515,Sim,Liderança e gestor,,4,5,8,Sim
+D00516,Sim,Motivos pessoais e família,,4,4,5,Sim
+D00517,Não,,,,,,
+D00518,Sim,,,4,4,7,Não
+D00519,Sim,,,3,4,6,Sim
+D00520,Sim,Salário e benefícios,,5,4,9,Não
+D00521,Sim,Motivos pessoais e família,Ambiente e equipe,4,5,9,Sim
+D00522,Sim,Crescimento e carreira,Proposta de outra empresa,4,5,7,Sim
+D00523,Não,,,,,,
+D00524,Sim,Motivos pessoais e família,,5,5,10,Não
+D00525,Não,,,,,,
+D00526,Sim,Deslocamento,,4,5,7,Sim
+D00527,Não,,,,,,
+D00528,Sim,Ambiente e equipe,Liderança e gestor,2,2,5,Sim
+D00529,Sim,Proposta de outra empresa,,3,3,7,Não
+D00530,Não,,,,,,
+D00531,Não,,,,,,
+D00532,Sim,Proposta de outra empresa,,4,4,8,Não
+D00533,Sim,,,4,4,10,Sim
+D00534,Não,,,,,,
+D00535,Sim,Proposta de outra empresa,Liderança e gestor,4,5,8,Sim
+D00536,Sim,Salário e benefícios,Liderança e gestor,1,2,2,Não
+D00537,Não,,,,,,
+D00538,Sim,Proposta de outra empresa,Salário e benefícios,3,3,7,Não
+D00539,Sim,Jornada e escala,Liderança e gestor,4,3,7,Sim
+D00540,Não,,,,,,
+D00541,Sim,Salário e benefícios,,4,5,6,Não
+D00542,Sim,Jornada e escala,Proposta de outra empresa,5,4,6,Não
+D00543,Sim,Jornada e escala,,2,2,1,Não
+D00544,Não,,,,,,
+D00545,Sim,Salário e benefícios,Motivos pessoais e família,5,5,10,Sim
+D00546,Não,,,,,,
+D00547,Não,,,,,,
+D00548,Não,,,,,,
+D00549,Não,,,,,,
+D00550,Sim,Motivos pessoais e família,Crescimento e carreira,4,4,5,Sim
+D00551,Sim,Liderança e gestor,,1,3,4,Não
+D00552,Não,,,,,,
+D00553,Não,,,,,,
+D00554,Sim,Salário e benefícios,,3,4,7,Sim
+D00555,Sim,Jornada e escala,Ambiente e equipe,5,3,6,Não
+D00556,Sim,Proposta de outra empresa,Motivos pessoais e família,3,3,5,Não
+D00557,Sim,Salário e benefícios,Liderança e gestor,5,4,10,Sim
+D00558,Não,,,,,,
+D00559,Não,,,,,,
+D00560,Não,,,,,,
+D00561,Sim,Jornada e escala,Liderança e gestor,2,3,8,Sim
+D00562,Sim,Liderança e gestor,Ambiente e equipe,3,3,3,Não
+D00563,Sim,Ambiente e equipe,Deslocamento,4,3,7,Sim
+D00564,Sim,,,3,5,9,Sim
+D00565,Sim,Crescimento e carreira,Liderança e gestor,1,3,4,Não
+D00566,Não,,,,,,
+D00567,Sim,Liderança e gestor,,1,2,3,Sim
+D00568,Sim,Jornada e escala,Liderança e gestor,4,4,8,Sim
+D00569,Não,,,,,,
+D00570,Sim,Deslocamento,Motivos pessoais e família,4,4,6,Não
+D00571,Não,,,,,,
+D00572,Sim,Jornada e escala,Liderança e gestor,4,3,8,Sim
+D00573,Sim,,,3,3,6,Não
+D00574,Sim,Liderança e gestor,Proposta de outra empresa,2,2,5,Não
+D00575,Não,,,,,,
+D00576,Não,,,,,,
+D00577,Sim,Proposta de outra empresa,,5,5,10,Sim
+D00578,Sim,Salário e benefícios,,1,2,1,Não
+D00579,Não,,,,,,
+D00580,Sim,Crescimento e carreira,Ambiente e equipe,5,4,9,Sim
+D00581,Não,,,,,,
+D00582,Sim,,,4,4,5,Não
+D00583,Sim,,,4,4,8,Sim
+D00584,Sim,Ambiente e equipe,Motivos pessoais e família,5,3,9,Sim
+D00585,Sim,Salário e benefícios,Jornada e escala,3,4,7,Sim
+D00586,Não,,,,,,
+D00587,Sim,,,4,4,7,Sim
+D00588,Sim,,,4,3,5,Sim
+D00589,Sim,,,1,3,2,Não
+D00590,Sim,Proposta de outra empresa,,5,2,7,Sim
+D00591,Não,,,,,,
+D00592,Sim,,,5,4,10,Sim
+D00593,Sim,Liderança e gestor,Jornada e escala,4,3,7,Sim
+D00594,Não,,,,,,
+D00595,Não,,,,,,
+D00596,Não,,,,,,
+D00597,Não,,,,,,
+D00598,Não,,,,,,
+D00599,Sim,Crescimento e carreira,,5,4,8,Sim
+D00600,Não,,,,,,
+D00601,Sim,,,4,4,10,Sim
+D00602,Não,,,,,,
+D00603,Não,,,,,,
+D00604,Não,,,,,,
+D00605,Sim,,,2,3,6,Não
+D00606,Sim,Deslocamento,Salário e benefícios,3,4,8,Sim
+D00607,Não,,,,,,
+D00608,Sim,,,4,5,9,Sim
+D00609,Sim,Liderança e gestor,Crescimento e carreira,2,2,7,Sim
+D00610,Sim,,,4,5,10,Não
+D00611,Não,,,,,,
+D00612,Sim,Ambiente e equipe,,4,3,6,Não
+D00613,Não,,,,,,
+D00614,Sim,Ambiente e equipe,Liderança e gestor,5,3,9,Sim
+D00615,Não,,,,,,
+D00616,Sim,Jornada e escala,Liderança e gestor,2,3,3,Não
+D00617,Sim,Salário e benefícios,,5,5,6,Não
+D00618,Sim,Jornada e escala,Ambiente e equipe,5,4,10,Sim
+D00619,Sim,Proposta de outra empresa,Deslocamento,4,4,9,Não
+D00620,Não,,,,,,
+D00621,Não,,,,,,
+D00622,Sim,Motivos pessoais e família,,4,3,7,Sim
+D00623,Não,,,,,,
+D00624,Sim,Liderança e gestor,,1,3,3,Não
+D00625,Sim,Liderança e gestor,Crescimento e carreira,4,4,10,Sim
+D00626,Não,,,,,,
+D00627,Sim,,,2,1,3,Sim
+D00628,Não,,,,,,
+D00629,Sim,,,4,3,7,Sim
+D00630,Não,,,,,,
+D00631,Sim,Jornada e escala,Ambiente e equipe,3,4,7,Sim
+D00632,Não,,,,,,
+D00633,Não,,,,,,
+D00634,Sim,Salário e benefícios,Liderança e gestor,2,3,3,Não
+D00635,Não,,,,,,
+D00636,Não,,,,,,
+D00637,Sim,Jornada e escala,,3,5,9,Sim
+D00638,Sim,Jornada e escala,Salário e benefícios,4,4,7,Não
+D00639,Sim,Deslocamento,,1,3,3,Não
+D00640,Sim,Proposta de outra empresa,Salário e benefícios,3,5,6,Não
+D00641,Não,,,,,,
+D00642,Sim,Motivos pessoais e família,Salário e benefícios,4,3,7,Não
+D00643,Sim,Deslocamento,,4,5,9,Sim
+D00644,Sim,Salário e benefícios,Motivos pessoais e família,4,1,5,Não
+D00645,Não,,,,,,
+D00646,Sim,Crescimento e carreira,Salário e benefícios,2,2,4,Não
+D00647,Sim,Salário e benefícios,Jornada e escala,3,5,8,Sim
+D00648,Não,,,,,,
+D00649,Sim,Liderança e gestor,Crescimento e carreira,2,3,6,Sim
+D00650,Sim,,,3,3,6,Sim
+D00651,Sim,Proposta de outra empresa,Liderança e gestor,2,3,3,Não
+D00652,Não,,,,,,
+D00653,Sim,Jornada e escala,Ambiente e equipe,1,3,3,Não
+D00654,Sim,Salário e benefícios,Deslocamento,3,4,4,Não
+D00655,Sim,Salário e benefícios,,3,3,5,Não
+D00656,Sim,Jornada e escala,,5,3,7,Sim
+D00657,Não,,,,,,
+D00658,Sim,Salário e benefícios,Crescimento e carreira,5,5,10,Sim
+D00659,Não,,,,,,
+D00660,Não,,,,,,
+D00661,Sim,Proposta de outra empresa,,4,4,8,Sim
+D00662,Sim,Crescimento e carreira,Motivos pessoais e família,4,4,7,Não
+D00663,Não,,,,,,
+D00664,Não,,,,,,
+D00665,Sim,,,5,5,10,Sim
+D00666,Sim,Salário e benefícios,Deslocamento,3,3,6,Não
+D00667,Sim,Proposta de outra empresa,Motivos pessoais e família,2,3,7,Sim
+D00668,Sim,,,3,4,6,Não
+D00669,Não,,,,,,
+D00670,Não,,,,,,
+D00671,Sim,Deslocamento,Salário e benefícios,3,4,8,Não
+D00672,Sim,,,4,5,7,Sim
+D00673,Sim,Proposta de outra empresa,Jornada e escala,4,4,10,Sim
+D00674,Sim,Salário e benefícios,Liderança e gestor,3,4,7,Não
+D00675,Sim,Salário e benefícios,Liderança e gestor,2,2,3,Não
+D00676,Não,,,,,,
+D00677,Não,,,,,,
+D00678,Sim,Salário e benefícios,,4,3,6,Não
+D00679,Não,,,,,,
+D00680,Sim,Crescimento e carreira,Ambiente e equipe,3,2,5,Não
+D00681,Sim,Salário e benefícios,Proposta de outra empresa,4,4,10,Sim
+D00682,Não,,,,,,
+D00683,Sim,,,5,4,7,Sim
+D00684,Sim,Salário e benefícios,Liderança e gestor,5,4,7,Sim
+D00685,Não,,,,,,
+D00686,Não,,,,,,
+D00687,Sim,Deslocamento,Salário e benefícios,2,2,5,Não
+D00688,Sim,Jornada e escala,Salário e benefícios,4,5,7,Sim
+D00689,Não,,,,,,
+D00690,Sim,Liderança e gestor,Proposta de outra empresa,1,2,5,Sim
+D00691,Não,,,,,,
+D00692,Não,,,,,,
+D00693,Não,,,,,,
+D00694,Sim,Ambiente e equipe,Motivos pessoais e família,3,3,5,Não
+D00695,Sim,Salário e benefícios,Jornada e escala,4,3,5,Não
+D00696,Não,,,,,,
+D00697,Sim,Salário e benefícios,Deslocamento,4,3,5,Não
+D00698,Sim,,,3,3,6,Não
+D00699,Sim,,,4,4,10,Sim
+D00700,Não,,,,,,
+D00701,Não,,,,,,
+D00702,Sim,,,4,3,8,Sim
+D00703,Sim,Proposta de outra empresa,Motivos pessoais e família,4,3,5,Não
+D00704,Sim,,,4,3,9,Não
+D00705,Sim,Jornada e escala,,4,3,8,Sim
+D00706,Não,,,,,,
+D00707,Sim,,,4,5,10,Sim
+D00708,Sim,Deslocamento,Salário e benefícios,3,5,5,Não
+D00709,Não,,,,,,
+D00710,Sim,Salário e benefícios,Liderança e gestor,3,4,7,Sim
+D00711,Não,,,,,,
+D00712,Sim,Proposta de outra empresa,,4,3,7,Não
+D00713,Sim,,,3,4,6,Não
+D00714,Sim,,,4,4,8,Sim
+D00715,Sim,,,4,4,4,Não
+D00716,Sim,Proposta de outra empresa,Crescimento e carreira,4,4,9,Sim
+D00717,Não,,,,,,
+D00718,Não,,,,,,
+D00719,Sim,Jornada e escala,,4,5,10,Não
+D00720,Não,,,,,,
+D00721,Não,,,,,,
+D00722,Não,,,,,,
+D00723,Não,,,,,,
+D00724,Sim,Deslocamento,Liderança e gestor,1,2,2,Sim
+D00725,Sim,Salário e benefícios,Ambiente e equipe,3,3,7,Sim
+D00726,Não,,,,,,
+D00727,Não,,,,,,
+D00728,Não,,,,,,
+D00729,Sim,Salário e benefícios,Liderança e gestor,3,2,6,Não
+D00730,Sim,Salário e benefícios,,4,3,3,Sim
+D00731,Não,,,,,,
+D00732,Não,,,,,,
+D00733,Sim,Salário e benefícios,Deslocamento,4,4,8,Não
+D00734,Não,,,,,,
+D00735,Sim,Jornada e escala,Liderança e gestor,1,2,3,Sim
+D00736,Não,,,,,,
+D00737,Sim,Proposta de outra empresa,,3,3,7,Sim
+D00738,Não,,,,,,
+D00739,Sim,Salário e benefícios,Liderança e gestor,4,4,7,Sim
+D00740,Sim,,,5,3,9,Sim
+D00741,Não,,,,,,
+D00742,Não,,,,,,
+D00743,Sim,,,5,5,10,Sim
+D00744,Não,,,,,,
+D00745,Não,,,,,,
+D00746,Sim,,,5,4,10,Sim
+D00747,Sim,,,4,4,5,Não
+D00748,Não,,,,,,
+D00749,Sim,,,4,4,10,Sim
+D00750,Não,,,,,,
+D00751,Sim,,,3,3,9,Sim
+D00752,Sim,Salário e benefícios,Ambiente e equipe,4,5,10,Não
+D00753,Não,,,,,,
+D00754,Sim,Salário e benefícios,,2,2,3,Sim
+D00755,Sim,Salário e benefícios,Jornada e escala,3,2,4,Não
+D00756,Sim,Jornada e escala,Liderança e gestor,4,4,6,Não
+D00757,Sim,Jornada e escala,Ambiente e equipe,4,3,7,Sim
+D00758,Não,,,,,,
+D00759,Sim,Deslocamento,Liderança e gestor,2,1,3,Não
+D00760,Sim,Motivos pessoais e família,,3,3,7,Sim
+D00761,Sim,Salário e benefícios,Ambiente e equipe,2,4,7,Sim
+D00762,Sim,,,4,3,9,Sim
+D00763,Não,,,,,,
+D00764,Sim,Liderança e gestor,Ambiente e equipe,3,4,7,Sim
+D00765,Sim,Salário e benefícios,,1,3,2,Sim
+D00766,Sim,,,4,2,6,Não
+D00767,Sim,,,2,2,1,Não
+D00768,Sim,Salário e benefícios,Proposta de outra empresa,3,5,8,Sim
+D00769,Não,,,,,,
+D00770,Não,,,,,,
+D00771,Não,,,,,,
+D00772,Sim,Deslocamento,,5,5,8,Sim
+D00773,Não,,,,,,
+D00774,Não,,,,,,
+D00775,Sim,,,5,3,10,Sim
+D00776,Sim,Proposta de outra empresa,Motivos pessoais e família,2,4,4,Não
+D00777,Sim,Crescimento e carreira,,3,3,5,Não
+D00778,Não,,,,,,
+D00779,Não,,,,,,
+D00780,Sim,,,3,4,5,Sim
+D00781,Sim,Salário e benefícios,Crescimento e carreira,3,5,6,Não
+D00782,Não,,,,,,
+D00783,Sim,Crescimento e carreira,,3,3,6,Não
+D00784,Não,,,,,,
+D00785,Sim,Salário e benefícios,Deslocamento,4,4,7,Sim
+D00786,Sim,Jornada e escala,Salário e benefícios,5,4,8,Sim
+D00787,Sim,Salário e benefícios,Liderança e gestor,1,1,7,Sim
+D00788,Não,,,,,,
+D00789,Sim,Liderança e gestor,Ambiente e equipe,2,3,3,Não
+D00790,Sim,Jornada e escala,Ambiente e equipe,3,3,7,Sim
+D00791,Sim,Liderança e gestor,Crescimento e carreira,4,4,10,Sim
+D00792,Não,,,,,,
+D00793,Sim,Jornada e escala,,4,4,5,Não
+D00794,Sim,,,5,3,9,Sim
+D00795,Não,,,,,,
+D00796,Não,,,,,,
+D00797,Sim,Ambiente e equipe,Motivos pessoais e família,4,4,5,Sim
+D00798,Sim,,,2,2,2,Não
+D00799,Não,,,,,,
+D00800,Sim,Salário e benefícios,,4,5,10,Sim
+D00801,Sim,Proposta de outra empresa,Salário e benefícios,5,2,9,Sim
+D00802,Não,,,,,,
+D00803,Sim,Liderança e gestor,Jornada e escala,2,2,8,Sim
+D00804,Sim,Liderança e gestor,Ambiente e equipe,2,4,6,Não
+D00805,Não,,,,,,
+D00806,Não,,,,,,
+D00807,Não,,,,,,
+D00808,Não,,,,,,
+D00809,Sim,,,3,4,4,Não
+D00810,Sim,Salário e benefícios,Jornada e escala,3,3,3,Sim
+D00811,Não,,,,,,
+D00812,Sim,Salário e benefícios,Liderança e gestor,2,2,2,Não
+D00813,Não,,,,,,
+D00814,Não,,,,,,
+D00815,Sim,Proposta de outra empresa,,4,3,7,Sim
+D00816,Sim,Salário e benefícios,Jornada e escala,3,4,5,Não
+D00817,Não,,,,,,
+D00818,Sim,Salário e benefícios,Motivos pessoais e família,4,4,3,Não
+D00819,Não,,,,,,
+D00820,Não,,,,,,
+D00821,Não,,,,,,
+D00822,Sim,Motivos pessoais e família,,3,3,5,Não
+D00823,Não,,,,,,
+D00824,Sim,Salário e benefícios,Crescimento e carreira,4,3,6,Não
+D00825,Não,,,,,,
+D00826,Não,,,,,,
+D00827,Sim,,,3,4,3,Sim
+D00828,Não,,,,,,
+D00829,Não,,,,,,
+D00830,Sim,Proposta de outra empresa,Motivos pessoais e família,3,4,6,Sim
+D00831,Não,,,,,,
+D00832,Não,,,,,,
+D00833,Sim,Crescimento e carreira,,5,3,7,Sim
+D00834,Sim,,,4,4,9,Não
+D00835,Sim,Liderança e gestor,Jornada e escala,3,3,6,Não
+D00836,Sim,,,2,3,4,Não
+D00837,Sim,Salário e benefícios,Liderança e gestor,1,3,3,Sim
+D00838,Sim,Salário e benefícios,Ambiente e equipe,2,2,3,Não
+D00839,Sim,Crescimento e carreira,Proposta de outra empresa,4,2,7,Sim
+D00840,Não,,,,,,
+D00841,Sim,Motivos pessoais e família,Ambiente e equipe,3,4,7,Sim
+D00842,Sim,Proposta de outra empresa,Deslocamento,3,4,7,Não
+D00843,Sim,Salário e benefícios,Liderança e gestor,3,3,7,Sim
+D00844,Não,,,,,,
+D00845,Sim,,,4,3,10,Sim
+D00846,Sim,Jornada e escala,Salário e benefícios,4,3,9,Não
+D00847,Não,,,,,,
+D00848,Sim,Liderança e gestor,,2,3,5,Não
+D00849,Não,,,,,,
+D00850,Sim,Proposta de outra empresa,,4,4,10,Sim
+D00851,Não,,,,,,
+D00852,Não,,,,,,
+D00853,Sim,Salário e benefícios,Proposta de outra empresa,5,2,7,Sim
+D00854,Sim,Proposta de outra empresa,,3,4,8,Sim
+D00855,Sim,,,4,3,6,Não
+D00856,Sim,Salário e benefícios,,4,5,9,Sim
+D00857,Não,,,,,,
+D00858,Sim,Jornada e escala,Motivos pessoais e família,1,2,0,Não
+D00859,Sim,Ambiente e equipe,Crescimento e carreira,4,3,6,Não
+D00860,Sim,Jornada e escala,,4,3,4,Não
+D00861,Sim,,,2,4,5,Não
+D00862,Sim,Proposta de outra empresa,Liderança e gestor,2,4,3,Não
+D00863,Não,,,,,,
+D00864,Não,,,,,,
+D00865,Sim,Jornada e escala,Liderança e gestor,1,3,3,Não
+D00866,Sim,,,4,4,8,Sim
+D00867,Sim,Salário e benefícios,,4,4,8,Sim
+D00868,Não,,,,,,
+D00869,Sim,Liderança e gestor,,1,2,0,Sim
+D00870,Não,,,,,,
+D00871,Sim,Salário e benefícios,,4,5,10,Sim
+D00872,Sim,Crescimento e carreira,Deslocamento,4,4,6,Não
+D00873,Sim,Crescimento e carreira,Ambiente e equipe,3,4,6,Não
+D00874,Sim,Deslocamento,Jornada e escala,4,4,9,Sim
+D00875,Sim,Crescimento e carreira,,4,4,10,Sim
+D00876,Não,,,,,,
+D00877,Não,,,,,,
+D00878,Sim,Salário e benefícios,Motivos pessoais e família,5,4,4,Não
+D00879,Sim,,,2,3,2,Sim
+D00880,Não,,,,,,
+D00881,Não,,,,,,
+D00882,Não,,,,,,
+D00883,Sim,Motivos pessoais e família,Crescimento e carreira,4,4,7,Sim
+D00884,Sim,Jornada e escala,,1,4,3,Não
+D00885,Sim,Liderança e gestor,Salário e benefícios,2,3,3,Não
+D00886,Não,,,,,,
+D00887,Não,,,,,,
+D00888,Sim,Motivos pessoais e família,Crescimento e carreira,5,2,7,Sim
+D00889,Sim,Deslocamento,,4,4,6,Não
+D00890,Não,,,,,,
+D00891,Sim,Ambiente e equipe,Motivos pessoais e família,3,5,6,Não
+D00892,Não,,,,,,
+D00893,Sim,Liderança e gestor,Ambiente e equipe,2,4,5,Não
+D00894,Não,,,,,,
+D00895,Não,,,,,,
+D00896,Sim,Motivos pessoais e família,,4,4,6,Não
+D00897,Sim,Ambiente e equipe,Liderança e gestor,1,2,2,Sim
+D00898,Sim,Liderança e gestor,Salário e benefícios,3,4,7,Sim
+D00899,Sim,Liderança e gestor,Crescimento e carreira,3,4,8,Sim
+D00900,Sim,Salário e benefícios,,3,2,4,Não
+D00901,Não,,,,,,
+D00902,Sim,Ambiente e equipe,,1,3,5,Não
+D00903,Não,,,,,,
+D00904,Sim,Proposta de outra empresa,Motivos pessoais e família,3,3,6,Não
+D00905,Não,,,,,,
+D00906,Sim,Salário e benefícios,Liderança e gestor,2,2,2,Não
+D00907,Sim,Jornada e escala,Crescimento e carreira,4,2,3,Não
+D00908,Sim,Liderança e gestor,Salário e benefícios,1,3,3,Não
+D00909,Sim,Jornada e escala,,2,2,4,Não
+D00910,Sim,Jornada e escala,,3,5,6,Não
+D00911,Sim,Salário e benefícios,Ambiente e equipe,5,4,10,Sim
+D00912,Sim,,,2,5,6,Não
+D00913,Sim,Salário e benefícios,Ambiente e equipe,4,3,8,Sim
+D00914,Sim,Jornada e escala,Liderança e gestor,4,3,7,Sim
+D00915,Não,,,,,,
+D00916,Sim,Jornada e escala,Crescimento e carreira,3,4,6,Não
+D00917,Sim,Salário e benefícios,Proposta de outra empresa,4,3,4,Não
+D00918,Sim,Proposta de outra empresa,Crescimento e carreira,4,4,10,Sim
+D00919,Sim,,,4,4,9,Sim
+D00920,Sim,Salário e benefícios,,4,5,9,Sim
+D00921,Sim,Crescimento e carreira,Motivos pessoais e família,2,3,4,Não
+D00922,Não,,,,,,
+D00923,Não,,,,,,
+D00924,Não,,,,,,
+D00925,Sim,Jornada e escala,Proposta de outra empresa,4,4,8,Sim
+D00926,Não,,,,,,
+D00927,Não,,,,,,
+D00928,Não,,,,,,
+D00929,Sim,,,1,3,2,Não
+D00930,Não,,,,,,
+D00931,Não,,,,,,
+D00932,Sim,Ambiente e equipe,Jornada e escala,1,3,3,Não
+D00933,Sim,Proposta de outra empresa,,4,5,10,Não
+D00934,Sim,,,4,3,9,Não
+D00935,Sim,Salário e benefícios,Crescimento e carreira,3,4,9,Sim
+D00936,Sim,,,3,4,8,Sim
+D00937,Não,,,,,,
+D00938,Sim,,,5,5,8,Sim
+D00939,Sim,Liderança e gestor,Deslocamento,2,1,4,Não
+D00940,Sim,Deslocamento,Salário e benefícios,4,4,7,Não
+D00941,Não,,,,,,
+D00942,Sim,,,3,3,5,Não
+D00943,Não,,,,,,
+D00944,Sim,Proposta de outra empresa,Liderança e gestor,1,2,4,Sim
+D00945,Não,,,,,,
+D00946,Sim,Salário e benefícios,Motivos pessoais e família,3,3,3,Não
+D00947,Não,,,,,,
+D00948,Sim,Liderança e gestor,Jornada e escala,1,3,5,Não
+D00949,Não,,,,,,
+D00950,Não,,,,,,
+D00951,Sim,Deslocamento,Motivos pessoais e família,4,5,7,Não
+D00952,Não,,,,,,
+D00953,Não,,,,,,
+D00954,Sim,Salário e benefícios,Liderança e gestor,3,2,5,Não
+D00955,Não,,,,,,
+D00956,Sim,Salário e benefícios,,3,4,9,Sim
+D00957,Sim,Proposta de outra empresa,,3,4,10,Sim
+D00958,Sim,Crescimento e carreira,Deslocamento,4,4,8,Sim
+D00959,Não,,,,,,
+D00960,Sim,Crescimento e carreira,Salário e benefícios,3,4,3,Não
+D00961,Sim,Crescimento e carreira,Deslocamento,3,5,7,Sim
+D00962,Sim,Crescimento e carreira,Ambiente e equipe,3,4,10,Sim
+D00963,Não,,,,,,
+D00964,Sim,Salário e benefícios,Liderança e gestor,2,3,6,Não
+D00965,Sim,,,4,3,7,Não
+D00966,Sim,Jornada e escala,,5,3,8,Sim
+D00967,Sim,,,5,5,10,Não
+D00968,Sim,Proposta de outra empresa,,5,3,10,Sim
+D00969,Sim,,,4,3,6,Não
+D00970,Não,,,,,,
+D00971,Sim,Salário e benefícios,,5,4,9,Sim
+D00972,Sim,Proposta de outra empresa,,5,2,7,Sim
+D00973,Não,,,,,,
+D00974,Não,,,,,,
+D00975,Sim,,,5,3,7,Sim
+D00976,Sim,Salário e benefícios,,4,4,9,Sim
+D00977,Sim,Proposta de outra empresa,Ambiente e equipe,4,4,8,Sim
+D00978,Não,,,,,,
+D00979,Sim,,,2,2,6,Sim
+D00980,Sim,Salário e benefícios,Crescimento e carreira,4,3,5,Não
+D00981,Sim,Jornada e escala,Motivos pessoais e família,3,5,6,Não
+D00982,Não,,,,,,
+D00983,Não,,,,,,
+D00984,Sim,Crescimento e carreira,Proposta de outra empresa,3,5,7,Não
+D00985,Sim,Salário e benefícios,,4,4,10,Sim
+D00986,Sim,Proposta de outra empresa,Crescimento e carreira,4,4,8,Sim
+D00987,Sim,Motivos pessoais e família,,5,3,8,Sim
+D00988,Sim,,,5,4,10,Sim
+D00989,Não,,,,,,
+D00990,Não,,,,,,
+D00991,Sim,Ambiente e equipe,,5,5,9,Não
+D00992,Sim,Proposta de outra empresa,,3,4,5,Não
+D00993,Não,,,,,,
+D00994,Não,,,,,,
+D00995,Sim,Liderança e gestor,Crescimento e carreira,2,3,6,Sim
+D00996,Não,,,,,,
+D00997,Não,,,,,,
+D00998,Sim,Crescimento e carreira,,3,4,4,Não
+D00999,Sim,Deslocamento,Proposta de outra empresa,4,4,8,Sim
+D01000,Não,,,,,,
+D01001,Sim,Liderança e gestor,,5,4,8,Sim
+D01002,Não,,,,,,
+D01003,Sim,Proposta de outra empresa,Crescimento e carreira,4,4,6,Não
+D01004,Sim,Proposta de outra empresa,Salário e benefícios,4,3,7,Sim
+D01005,Sim,,,4,5,9,Sim
+D01006,Não,,,,,,
+D01007,Não,,,,,,
+D01008,Não,,,,,,
+D01009,Sim,Jornada e escala,Ambiente e equipe,3,4,7,Sim
+D01010,Não,,,,,,
+D01011,Sim,Deslocamento,Jornada e escala,4,3,5,Não
+D01012,Não,,,,,,
+D01013,Sim,Crescimento e carreira,Ambiente e equipe,3,2,5,Não
+D01014,Não,,,,,,
+D01015,Sim,Jornada e escala,Liderança e gestor,1,3,4,Não
+D01016,Sim,Ambiente e equipe,Crescimento e carreira,4,5,5,Não
+D01017,Não,,,,,,
+D01018,Não,,,,,,
+D01019,Sim,Crescimento e carreira,Deslocamento,2,2,3,Sim
+D01020,Sim,,,4,3,5,Não
+D01021,Sim,,,5,4,9,Sim
+D01022,Não,,,,,,
+D01023,Não,,,,,,
+D01024,Não,,,,,,
+D01025,Não,,,,,,
+D01026,Não,,,,,,
+D01027,Sim,Proposta de outra empresa,,4,3,7,Não
+D01028,Sim,,,3,3,6,Não
+D01029,Sim,Jornada e escala,Liderança e gestor,1,3,0,Sim
+D01030,Sim,,,1,3,1,Sim
+D01031,Sim,,,4,4,9,Não
+D01032,Não,,,,,,
+D01033,Sim,Jornada e escala,Deslocamento,4,3,4,Não
+D01034,Sim,Ambiente e equipe,Jornada e escala,4,4,8,Sim
+D01035,Não,,,,,,
+D01036,Sim,Liderança e gestor,,2,3,4,Não
+D01037,Não,,,,,,
+D01038,Sim,Proposta de outra empresa,Jornada e escala,4,4,7,Não
+D01039,Não,,,,,,
+D01040,Não,,,,,,
+D01041,Sim,,,4,2,6,Não
+D01042,Não,,,,,,
+D01043,Sim,Jornada e escala,Ambiente e equipe,4,4,6,Não
+D01044,Sim,Crescimento e carreira,Salário e benefícios,4,4,7,Não
+D01045,Não,,,,,,
+D01046,Sim,Salário e benefícios,Ambiente e equipe,5,3,10,Sim
+D01047,Não,,,,,,
+D01048,Não,,,,,,
+D01049,Sim,Salário e benefícios,,5,4,8,Sim
+D01050,Sim,Salário e benefícios,Deslocamento,1,3,5,Não
+D01051,Sim,Proposta de outra empresa,,4,4,7,Não
+D01052,Não,,,,,,
+D01053,Não,,,,,,
+D01054,Sim,,,2,4,4,Não
+D01055,Não,,,,,,
+D01056,Sim,Proposta de outra empresa,,4,5,8,Não
+D01057,Sim,,,4,5,10,Sim
+D01058,Sim,Liderança e gestor,Ambiente e equipe,1,3,1,Sim
+D01059,Sim,Salário e benefícios,,4,4,5,Sim
+D01060,Sim,Salário e benefícios,Liderança e gestor,1,2,4,Não
+D01061,Não,,,,,,
+D01062,Sim,Jornada e escala,,5,5,10,Sim
+D01063,Não,,,,,,
+D01064,Sim,Crescimento e carreira,,2,2,3,Sim
+D01065,Sim,,,4,4,8,Sim
+D01066,Não,,,,,,
+D01067,Não,,,,,,
+D01068,Sim,Jornada e escala,,5,4,9,Sim
+D01069,Sim,Motivos pessoais e família,Crescimento e carreira,5,4,9,Não
+D01070,Sim,Proposta de outra empresa,Salário e benefícios,4,3,7,Sim
+D01071,Sim,Liderança e gestor,,1,2,2,Não
+D01072,Não,,,,,,
+D01073,Sim,,,5,4,7,Sim
+D01074,Sim,Jornada e escala,Crescimento e carreira,2,2,5,Sim
+D01075,Sim,Motivos pessoais e família,,4,4,7,Não
+D01076,Sim,Jornada e escala,Liderança e gestor,5,5,10,Sim
+D01077,Sim,Crescimento e carreira,Liderança e gestor,4,3,7,Não
+D01078,Não,,,,,,
+D01079,Sim,Ambiente e equipe,Motivos pessoais e família,1,3,2,Não
+D01080,Não,,,,,,
+D01081,Não,,,,,,
+D01082,Sim,,,1,2,1,Sim
+D01083,Sim,Proposta de outra empresa,Crescimento e carreira,4,3,9,Sim
+D01084,Sim,Salário e benefícios,Ambiente e equipe,1,2,2,Sim
+D01085,Sim,Liderança e gestor,Motivos pessoais e família,4,5,8,Sim
+D01086,Sim,,,4,4,8,Sim
+D01087,Sim,Liderança e gestor,Salário e benefícios,2,3,5,Sim
+D01088,Não,,,,,,
+D01089,Sim,Proposta de outra empresa,,5,4,9,Sim
+D01090,Sim,Salário e benefícios,Proposta de outra empresa,4,5,8,Não
+D01091,Não,,,,,,
+D01092,Sim,Motivos pessoais e família,,4,3,5,Sim
+D01093,Não,,,,,,
+D01094,Sim,Liderança e gestor,Motivos pessoais e família,2,3,6,Sim
+D01095,Não,,,,,,
+D01096,Sim,Jornada e escala,Proposta de outra empresa,4,5,7,Sim
+D01097,Não,,,,,,
+D01098,Sim,Jornada e escala,Salário e benefícios,4,4,7,Sim
+D01099,Sim,Liderança e gestor,Deslocamento,2,3,3,Não
+D01100,Não,,,,,,
+D01101,Sim,,,4,4,8,Não
+D01102,Sim,Salário e benefícios,Crescimento e carreira,4,4,7,Sim
+D01103,Sim,Crescimento e carreira,Jornada e escala,4,3,6,Não
+D01104,Sim,Motivos pessoais e família,Crescimento e carreira,5,5,10,Sim
+D01105,Sim,,,3,4,5,Não
+D01106,Sim,Deslocamento,Motivos pessoais e família,4,4,9,Sim
+D01107,Sim,Salário e benefícios,,3,3,6,Não
+D01108,Sim,Deslocamento,Motivos pessoais e família,1,1,4,Não
+D01109,Sim,Crescimento e carreira,Motivos pessoais e família,4,5,8,Sim
+D01110,Sim,Jornada e escala,Crescimento e carreira,4,4,6,Sim
+D01111,Sim,Jornada e escala,Liderança e gestor,2,4,5,Não
+D01112,Sim,Deslocamento,Jornada e escala,4,5,9,Sim
+D01113,Sim,Liderança e gestor,,1,3,3,Sim
+D01114,Sim,Salário e benefícios,Liderança e gestor,2,3,4,Não
+D01115,Não,,,,,,
+D01116,Não,,,,,,
+D01117,Sim,Liderança e gestor,Motivos pessoais e família,2,2,4,Não
+D01118,Não,,,,,,
+D01119,Sim,Deslocamento,Proposta de outra empresa,4,4,9,Sim
+D01120,Não,,,,,,
+D01121,Sim,Jornada e escala,,5,4,10,Sim
+D01122,Sim,,,4,5,9,Sim
+D01123,Não,,,,,,
+D01124,Sim,Jornada e escala,,5,4,7,Não
+D01125,Sim,Liderança e gestor,Proposta de outra empresa,1,2,3,Não
+D01126,Sim,Salário e benefícios,Motivos pessoais e família,3,4,5,Não
+D01127,Não,,,,,,
+D01128,Não,,,,,,
+D01129,Sim,,,5,4,9,Sim
+D01130,Sim,Deslocamento,Liderança e gestor,4,5,6,Não
+D01131,Sim,,,1,3,4,Não
+D01132,Sim,Ambiente e equipe,Crescimento e carreira,4,4,10,Não
+D01133,Sim,Proposta de outra empresa,Deslocamento,4,4,8,Sim
+D01134,Sim,Crescimento e carreira,Proposta de outra empresa,5,5,10,Sim
+D01135,Sim,Liderança e gestor,Crescimento e carreira,4,3,6,Não
+D01136,Sim,,,2,2,1,Não
+D01137,Não,,,,,,
+D01138,Sim,,,3,4,5,Não
+D01139,Sim,Liderança e gestor,,2,2,5,Não
+D01140,Não,,,,,,
+D01141,Não,,,,,,
+D01142,Sim,Proposta de outra empresa,Jornada e escala,5,3,8,Sim
+D01143,Sim,,,3,4,7,Sim
+D01144,Sim,,,5,4,9,Sim
+D01145,Sim,,,5,4,7,Sim
+D01146,Não,,,,,,
+D01147,Sim,Salário e benefícios,Liderança e gestor,1,3,1,Não
+D01148,Sim,Liderança e gestor,,5,4,7,Sim
+D01149,Sim,Liderança e gestor,Deslocamento,4,4,7,Sim
+D01150,Sim,Crescimento e carreira,,5,5,8,Sim
+D01151,Sim,Proposta de outra empresa,Ambiente e equipe,5,3,9,Não
+D01152,Sim,Liderança e gestor,,3,3,6,Sim
+D01153,Sim,Salário e benefícios,,3,3,6,Sim
+D01154,Sim,Jornada e escala,Proposta de outra empresa,2,1,2,Não
+D01155,Não,,,,,,
+D01156,Sim,Ambiente e equipe,,2,4,6,Não
+D01157,Sim,Deslocamento,Liderança e gestor,2,2,5,Não
+D01158,Sim,Liderança e gestor,Ambiente e equipe,1,2,2,Sim
+D01159,Sim,Jornada e escala,,4,5,9,Sim
+D01160,Não,,,,,,
+D01161,Sim,Salário e benefícios,,3,3,7,Sim
+D01162,Sim,,,4,4,9,Não
+D01163,Não,,,,,,
+D01164,Sim,Salário e benefícios,,4,4,8,Sim
+D01165,Sim,Proposta de outra empresa,Crescimento e carreira,4,5,7,Não
+D01166,Não,,,,,,
+D01167,Sim,Salário e benefícios,Crescimento e carreira,3,3,8,Sim
+D01168,Não,,,,,,
+D01169,Sim,Liderança e gestor,Motivos pessoais e família,2,2,5,Sim
+D01170,Não,,,,,,
+D01171,Não,,,,,,
+D01172,Sim,Deslocamento,Salário e benefícios,3,3,9,Sim
+D01173,Não,,,,,,
+D01174,Sim,Salário e benefícios,,5,4,9,Sim
+D01175,Sim,Salário e benefícios,Liderança e gestor,2,2,6,Sim
+D01176,Sim,Jornada e escala,Motivos pessoais e família,4,4,7,Sim
+D01177,Não,,,,,,
+D01178,Não,,,,,,
+D01179,Sim,Salário e benefícios,Liderança e gestor,1,3,3,Não
+D01180,Sim,Deslocamento,,5,2,5,Não
+D01181,Sim,Proposta de outra empresa,,3,3,7,Sim
+D01182,Sim,Crescimento e carreira,Jornada e escala,3,3,6,Não
+D01183,Sim,Salário e benefícios,Proposta de outra empresa,4,4,7,Sim
+D01184,Não,,,,,,
+D01185,Sim,Liderança e gestor,Deslocamento,1,3,5,Não
+D01186,Não,,,,,,
+D01187,Sim,Proposta de outra empresa,,4,3,9,Sim
+D01188,Não,,,,,,
+D01189,Sim,Crescimento e carreira,Ambiente e equipe,5,4,9,Sim
+D01190,Sim,,,1,3,3,Sim
+D01191,Sim,,,2,2,4,Não
+D01192,Não,,,,,,
+D01193,Sim,Salário e benefícios,Liderança e gestor,1,3,3,Sim
+D01194,Não,,,,,,
+D01195,Sim,Ambiente e equipe,,3,5,8,Sim
+D01196,Não,,,,,,
+D01197,Não,,,,,,
+D01198,Sim,Liderança e gestor,,2,2,3,Não
+D01199,Sim,Deslocamento,Proposta de outra empresa,4,4,8,Sim
+D01200,Não,,,,,,
+D01201,Sim,Deslocamento,Motivos pessoais e família,4,4,5,Sim
+D01202,Sim,Deslocamento,Motivos pessoais e família,3,4,7,Sim
+D01203,Sim,Crescimento e carreira,Salário e benefícios,3,3,4,Sim
+D01204,Sim,,,3,5,8,Não
+D01205,Sim,Ambiente e equipe,,2,3,5,Não
+D01206,Sim,Jornada e escala,,3,4,6,Não
+D01207,Não,,,,,,
+D01208,Sim,Salário e benefícios,Motivos pessoais e família,4,4,6,Sim
+D01209,Não,,,,,,
+D01210,Não,,,,,,
+D01211,Sim,Jornada e escala,Proposta de outra empresa,3,4,7,Sim
+D01212,Sim,Jornada e escala,Proposta de outra empresa,2,3,1,Sim
+D01213,Não,,,,,,
+D01214,Sim,Jornada e escala,Crescimento e carreira,4,4,7,Sim
+D01215,Sim,Salário e benefícios,Crescimento e carreira,3,3,5,Não
+D01216,Não,,,,,,
+D01217,Não,,,,,,
+D01218,Não,,,,,,
+D01219,Sim,Salário e benefícios,,5,4,10,Não
+D01220,Sim,,,3,3,5,Não
+D01221,Sim,Jornada e escala,,4,3,8,Sim
+D01222,Sim,,,4,3,7,Sim
+D01223,Sim,Crescimento e carreira,Ambiente e equipe,3,4,6,Não
+D01224,Sim,Proposta de outra empresa,Jornada e escala,3,5,10,Sim
+D01225,Não,,,,,,
+D01226,Sim,Motivos pessoais e família,,3,4,7,Não
+D01227,Sim,Proposta de outra empresa,Motivos pessoais e família,2,2,5,Sim
+D01228,Sim,Jornada e escala,Liderança e gestor,3,4,7,Não
+D01229,Sim,Deslocamento,Crescimento e carreira,4,4,9,Sim
+D01230,Não,,,,,,
+D01231,Sim,Motivos pessoais e família,Proposta de outra empresa,4,2,8,Sim
+D01232,Sim,,,3,3,4,Sim
+D01233,Não,,,,,,
+D01234,Sim,Salário e benefícios,Crescimento e carreira,3,4,5,Não
+D01235,Não,,,,,,
+D01236,Não,,,,,,
+D01237,Não,,,,,,
+D01238,Sim,Ambiente e equipe,,3,5,9,Sim
+D01239,Sim,Proposta de outra empresa,Jornada e escala,1,2,6,Não
+D01240,Não,,,,,,
+D01241,Não,,,,,,
+D01242,Sim,Proposta de outra empresa,,5,5,7,Não
+D01243,Não,,,,,,
+D01244,Sim,Deslocamento,,4,4,3,Sim
+D01245,Sim,,,1,4,4,Não
+D01246,Sim,Proposta de outra empresa,,5,4,10,Sim
+D01247,Não,,,,,,
+D01248,Sim,Liderança e gestor,Crescimento e carreira,1,2,2,Não
+D01249,Sim,,,4,3,7,Sim
+D01250,Sim,,,4,3,7,Sim
+D01251,Sim,Salário e benefícios,Deslocamento,2,3,4,Sim
+D01252,Sim,,,4,2,3,Não
+D01253,Sim,Proposta de outra empresa,,4,2,7,Sim
+D01254,Sim,Liderança e gestor,,1,3,2,Sim
+D01255,Sim,Jornada e escala,Liderança e gestor,4,4,6,Não
+D01256,Não,,,,,,
+D01257,Sim,Crescimento e carreira,Salário e benefícios,4,5,10,Sim
+D01258,Sim,Liderança e gestor,,4,4,6,Não
+D01259,Sim,Ambiente e equipe,Liderança e gestor,3,4,4,Não
+D01260,Sim,Deslocamento,Motivos pessoais e família,3,4,10,Sim
+D01261,Sim,Liderança e gestor,Crescimento e carreira,1,3,5,Não
+D01262,Não,,,,,,
+D01263,Sim,Liderança e gestor,,4,5,9,Sim
+D01264,Não,,,,,,
+D01265,Sim,Liderança e gestor,Deslocamento,2,3,7,Sim
+D01266,Não,,,,,,
+D01267,Não,,,,,,
+D01268,Sim,Deslocamento,,3,5,10,Sim
+D01269,Não,,,,,,
+D01270,Sim,Liderança e gestor,Motivos pessoais e família,1,2,5,Não
+D01271,Sim,Salário e benefícios,,4,3,6,Não
+D01272,Sim,,,5,4,9,Sim
+D01273,Sim,,,3,4,4,Não
+D01274,Não,,,,,,
+D01275,Não,,,,,,
+D01276,Sim,Liderança e gestor,Deslocamento,1,3,6,Não
+D01277,Sim,Crescimento e carreira,Ambiente e equipe,3,3,6,Não
+D01278,Não,,,,,,
+D01279,Não,,,,,,
+D01280,Sim,Liderança e gestor,,1,1,2,Não
+D01281,Sim,Jornada e escala,,4,2,5,Não
+D01282,Não,,,,,,
+D01283,Não,,,,,,
+D01284,Sim,Salário e benefícios,Liderança e gestor,4,2,5,Não
+D01285,Sim,Ambiente e equipe,Proposta de outra empresa,4,4,5,Não
+D01286,Não,,,,,,
+D01287,Não,,,,,,
+D01288,Não,,,,,,
+D01289,Sim,Proposta de outra empresa,Jornada e escala,5,4,9,Sim
+D01290,Sim,,,4,5,9,Sim
+D01291,Sim,Jornada e escala,Ambiente e equipe,4,4,7,Sim
+D01292,Sim,,,4,3,7,Não
+D01293,Não,,,,,,
+D01294,Sim,,,3,4,6,Não
+D01295,Sim,Liderança e gestor,Crescimento e carreira,4,5,9,Não
+D01296,Sim,Motivos pessoais e família,Salário e benefícios,3,4,3,Não
+D01297,Sim,Salário e benefícios,Proposta de outra empresa,2,1,3,Não
+D01298,Sim,Liderança e gestor,Jornada e escala,1,3,4,Sim
+D01299,Sim,Proposta de outra empresa,,4,3,8,Sim
+D01300,Sim,Salário e benefícios,Jornada e escala,5,3,8,Sim
+D01301,Sim,,,4,4,8,Sim
+D01302,Não,,,,,,
+D01303,Sim,Liderança e gestor,Jornada e escala,4,3,5,Não
+D01304,Sim,Salário e benefícios,,4,4,7,Não
+D01305,Não,,,,,,
+D01306,Não,,,,,,
+D01307,Não,,,,,,
+D01308,Sim,,,3,4,5,Não
+D01309,Não,,,,,,
+D01310,Sim,Motivos pessoais e família,Liderança e gestor,4,3,8,Sim
+D01311,Sim,Salário e benefícios,Proposta de outra empresa,5,3,8,Sim
+D01312,Sim,Salário e benefícios,,4,4,4,Não
+D01313,Sim,Crescimento e carreira,Ambiente e equipe,4,5,7,Sim
+D01314,Não,,,,,,
+D01315,Não,,,,,,
+D01316,Sim,Crescimento e carreira,,5,5,10,Não
+D01317,Sim,Deslocamento,Proposta de outra empresa,4,3,7,Sim
+D01318,Não,,,,,,
+D01319,Sim,,,1,3,3,Não
+D01320,Não,,,,,,
+D01321,Sim,Deslocamento,,4,4,6,Sim
+D01322,Não,,,,,,
+D01323,Sim,Crescimento e carreira,Liderança e gestor,2,2,5,Não
+D01324,Não,,,,,,
+D01325,Sim,Salário e benefícios,Crescimento e carreira,3,3,1,Não
+D01326,Sim,Jornada e escala,Motivos pessoais e família,5,5,10,Sim
+D01327,Sim,Deslocamento,Liderança e gestor,4,4,9,Sim
+D01328,Não,,,,,,
+D01329,Sim,Crescimento e carreira,Deslocamento,4,4,8,Sim
+D01330,Sim,Motivos pessoais e família,,3,4,8,Não
+D01331,Sim,Liderança e gestor,Motivos pessoais e família,1,3,2,Não
+D01332,Sim,Proposta de outra empresa,Crescimento e carreira,4,5,7,Sim
+D01333,Não,,,,,,
+D01334,Sim,Jornada e escala,Motivos pessoais e família,1,4,5,Não
+D01335,Sim,Ambiente e equipe,Motivos pessoais e família,5,4,5,Sim
+D01336,Não,,,,,,
+D01337,Sim,Liderança e gestor,Ambiente e equipe,1,3,4,Não
+D01338,Sim,Ambiente e equipe,Proposta de outra empresa,4,4,10,Não
+D01339,Sim,Liderança e gestor,Jornada e escala,1,2,0,Não
+D01340,Sim,Deslocamento,Motivos pessoais e família,5,5,10,Sim
+D01341,Sim,Liderança e gestor,Jornada e escala,2,3,4,Não
+D01342,Não,,,,,,
+D01343,Sim,,,5,4,9,Sim
+D01344,Sim,Crescimento e carreira,Liderança e gestor,1,3,2,Não
+D01345,Não,,,,,,
+D01346,Sim,Crescimento e carreira,,4,3,7,Sim
+D01347,Não,,,,,,
+D01348,Sim,,,1,2,0,Sim
+D01349,Sim,Liderança e gestor,Ambiente e equipe,3,3,6,Sim
+D01350,Sim,Jornada e escala,,3,4,7,Sim
+D01351,Sim,Deslocamento,Ambiente e equipe,4,3,5,Sim
+D01352,Sim,Liderança e gestor,Motivos pessoais e família,2,2,5,Não
+D01353,Sim,Jornada e escala,Deslocamento,3,4,5,Sim
+D01354,Sim,Motivos pessoais e família,Deslocamento,5,5,7,Sim
+D01355,Não,,,,,,
+D01356,Sim,Crescimento e carreira,Liderança e gestor,2,3,9,Não
+D01357,Não,,,,,,
+D01358,Sim,Liderança e gestor,,1,2,5,Não
+D01359,Sim,,,2,3,2,Não
+D01360,Sim,,,5,4,10,Sim
+D01361,Sim,Proposta de outra empresa,Salário e benefícios,3,3,6,Sim
+D01362,Sim,Proposta de outra empresa,Motivos pessoais e família,3,3,5,Não
+D01363,Sim,Liderança e gestor,Salário e benefícios,1,2,1,Não
+D01364,Não,,,,,,
+D01365,Sim,Salário e benefícios,Liderança e gestor,5,3,7,Sim
+D01366,Sim,Salário e benefícios,Proposta de outra empresa,4,4,8,Sim
+D01367,Sim,Liderança e gestor,Deslocamento,2,3,3,Não
+D01368,Sim,Liderança e gestor,,5,4,10,Sim
+D01369,Não,,,,,,
+D01370,Sim,Deslocamento,Jornada e escala,3,4,7,Sim
+D01371,Não,,,,,,
+D01372,Não,,,,,,
+D01373,Sim,,,1,3,0,Sim
+D01374,Sim,Liderança e gestor,Deslocamento,2,2,5,Não
+D01375,Não,,,,,,
+D01376,Não,,,,,,
+D01377,Sim,Motivos pessoais e família,Crescimento e carreira,3,4,7,Sim
+D01378,Sim,Jornada e escala,Liderança e gestor,3,3,4,Não
+D01379,Sim,Salário e benefícios,Ambiente e equipe,1,2,2,Não
+D01380,Não,,,,,,
+D01381,Não,,,,,,
+D01382,Sim,Proposta de outra empresa,Jornada e escala,3,3,4,Não
+D01383,Sim,Jornada e escala,Crescimento e carreira,5,4,8,Sim
+D01384,Sim,Salário e benefícios,Jornada e escala,5,3,10,Sim
+D01385,Não,,,,,,
+D01386,Sim,Liderança e gestor,Deslocamento,1,2,1,Não
+D01387,Sim,Liderança e gestor,,1,3,1,Sim
+D01388,Não,,,,,,
+D01389,Sim,Jornada e escala,Ambiente e equipe,1,2,1,Não
+D01390,Não,,,,,,
+D01391,Sim,Ambiente e equipe,Liderança e gestor,1,4,3,Não
+D01392,Sim,,,4,4,7,Sim
+D01393,Não,,,,,,
+D01394,Não,,,,,,
+D01395,Sim,Jornada e escala,Motivos pessoais e família,4,4,7,Sim
+D01396,Sim,Deslocamento,,3,4,8,Sim
+D01397,Não,,,,,,
+D01398,Sim,Salário e benefícios,Jornada e escala,4,3,5,Não
+D01399,Sim,Liderança e gestor,,2,3,4,Não
+D01400,Não,,,,,,
+D01401,Não,,,,,,
+D01402,Sim,Liderança e gestor,Salário e benefícios,1,3,4,Não
+D01403,Sim,Salário e benefícios,,5,3,8,Sim
+D01404,Sim,Deslocamento,Salário e benefícios,4,4,8,Sim
+D01405,Não,,,,,,
+D01406,Sim,,,4,5,8,Sim
+D01407,Não,,,,,,
+D01408,Sim,Deslocamento,,5,4,9,Sim
+D01409,Não,,,,,,
+D01410,Sim,Proposta de outra empresa,,5,5,8,Sim
+D01411,Sim,Crescimento e carreira,Deslocamento,4,4,8,Sim
+D01412,Não,,,,,,
+D01413,Sim,Liderança e gestor,,2,2,3,Sim
+D01414,Sim,Jornada e escala,,1,3,1,Não
+D01415,Sim,Crescimento e carreira,Proposta de outra empresa,4,3,5,Sim
+D01416,Sim,,,4,4,7,Sim
+D01417,Não,,,,,,
+D01418,Sim,Jornada e escala,Liderança e gestor,3,4,5,Não
+D01419,Sim,Liderança e gestor,Deslocamento,1,3,2,Não
+D01420,Não,,,,,,
+D01421,Sim,Ambiente e equipe,Liderança e gestor,5,2,8,Sim
+D01422,Sim,Salário e benefícios,Jornada e escala,4,5,7,Sim
+D01423,Sim,,,3,5,7,Sim
+D01424,Sim,Liderança e gestor,Deslocamento,2,2,2,Não
+D01425,Não,,,,,,
+D01426,Não,,,,,,
+D01427,Não,,,,,,
+D01428,Sim,Proposta de outra empresa,,5,3,9,Sim
+D01429,Sim,,,3,3,5,Não
+D01430,Não,,,,,,
+D01431,Não,,,,,,
+D01432,Sim,Proposta de outra empresa,,5,5,10,Sim
+D01433,Sim,Motivos pessoais e família,,4,3,7,Não
+D01434,Sim,Proposta de outra empresa,,3,4,6,Sim
+D01435,Sim,Salário e benefícios,Liderança e gestor,2,4,6,Sim
+D01436,Sim,Salário e benefícios,Motivos pessoais e família,5,4,10,Sim
+D01437,Sim,Liderança e gestor,Proposta de outra empresa,1,1,2,Não
+D01438,Sim,Deslocamento,Crescimento e carreira,4,4,7,Sim
+D01439,Não,,,,,,
+D01440,Sim,,,2,3,3,Não
+D01441,Sim,Crescimento e carreira,Proposta de outra empresa,4,3,5,Não
+D01442,Sim,Proposta de outra empresa,Crescimento e carreira,4,5,9,Sim
+D01443,Não,,,,,,
+D01444,Sim,Liderança e gestor,,2,2,4,Sim
+D01445,Sim,Proposta de outra empresa,Ambiente e equipe,3,5,6,Sim
+D01446,Não,,,,,,
+D01447,Sim,Liderança e gestor,Crescimento e carreira,1,4,3,Não
+D01448,Sim,Liderança e gestor,Jornada e escala,2,2,5,Não
+D01449,Sim,Crescimento e carreira,Salário e benefícios,4,3,5,Não
+D01450,Não,,,,,,
+D01451,Sim,Motivos pessoais e família,,4,5,6,Não
+D01452,Não,,,,,,
+D01453,Sim,Salário e benefícios,Deslocamento,5,4,9,Sim

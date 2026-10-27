@@ -36,6 +36,12 @@ project:
     - projetos/auditoria-alimentacao/resultados/casos_revisar.csv
     - projetos/auditoria-alimentacao/resultados/casos_revisar_es.csv
     - projetos/auditoria-alimentacao/resultados/casos_revisar_en.csv
+    # Caso Motivação de desligamento: capa, relatório em PDF e prioridades por
+    # gerência para baixar. A base (dados/) fica no repositório, mas não vai
+    # para o site; o gerador e o gabarito (_gerador/) nem vão para o Git.
+    - projetos/motivacao-desligamento/img/
+    - projetos/motivacao-desligamento/relatorio/relatorio.pdf
+    - projetos/motivacao-desligamento/resultados/prioridades_gerencias.csv
   post-render: scripts/aviso_render.py
 
 profile:

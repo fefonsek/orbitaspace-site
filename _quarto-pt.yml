@@ -5,8 +5,10 @@ project:
     - "*.qmd"
     - "!es/"
     - "!en/"
-    # O relatório em PDF do caso Auditoria é um projeto à parte (render.ps1).
+    # Os relatórios em PDF dos casos Auditoria e Motivação de desligamento são
+    # projetos à parte (render.ps1).
     - "!projetos/auditoria-alimentacao/relatorio/"
+    - "!projetos/motivacao-desligamento/relatorio/"
 
 lang: pt-BR
 
