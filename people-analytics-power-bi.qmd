@@ -4,8 +4,8 @@ description: "Painéis de RH em Power BI com os dados que a sua empresa já tem:
 title-block-banner: false
 # Landing page (anúncios do Google): só em PT, fora do menu e das listagens,
 # mas no sitemap. Roteiro em _rascunhos/landing_people_analytics.md.
-# Os quatro botões de WhatsApp ("Conversar no WhatsApp" no topo, depois do
-# caso e no fim; "Pedir uma proposta no WhatsApp" em Investimento) usam a
+# Os quatro botões de WhatsApp ("Conversar no WhatsApp" no topo, depois dos
+# dois exemplos e no fim; "Pedir uma proposta no WhatsApp" em Investimento) usam a
 # referência [whatsapp], no fim do arquivo, com a classe fixa cta-whatsapp-rh
 # (conversão do Google Ads).
 # Tag do Google Ads e conversão no clique dos botões: só nas landing pages. A lista
@@ -47,6 +47,26 @@ Separando as ausências curtas, que a liderança do dia a dia influencia, das lo
 {{< painel-pbi titulo="Painel interativo do Radar de Absenteísmo no Power BI" botao="Explorar o painel interativo" imagem="projetos/radar-absenteismo/img/01_visao_executiva.jpg" imagem-mini="projetos/radar-absenteismo/img/01_visao_executiva_mini.jpg" alt="Visão executiva do painel Radar de Absenteísmo, com a taxa mensal e a taxa de curta duração" >}}
 
 [Ver o caso completo](projetos/radar-absenteismo/index.qmd)
+:::
+
+::: landing-secao
+## Outro exemplo: quando o motivo declarado esconde o motivo real
+
+Na Cestária Supermercados, uma rede fictícia com cerca de 1.800 pessoas, a rotatividade ficou estável por dois anos, e "salário e benefícios" era o motivo de saída mais citado. Cruzando a entrevista de desligamento com a nota que cada pessoa deu ao gestor, o retrato mudou: entre quem deu nota 1 ou 2, liderança e gestor foi o motivo principal em 45% das respostas, contra 21% de salário.
+
+Os mesmos dados mostraram onde agir primeiro: duas gerências perdendo gente nos primeiros 90 dias e uma gerência que passou a perder mais pessoas depois da troca de gestor.
+
+```{=html}
+<figure class="landing-figura">
+<picture>
+<source media="(max-width: 600px)" srcset="projetos/motivacao-desligamento/img/pareto-celular.png">
+<img src="projetos/motivacao-desligamento/img/pareto.png" width="1296" height="547" loading="lazy" alt="Dois gráficos de barras com os motivos de saída voluntária. Em todas as respostas, salário e benefícios é o motivo mais citado. Entre quem deu nota 1 ou 2 ao gestor, liderança e gestor, em azul, passa a ser o maior, com mais do que o dobro de salário.">
+</picture>
+<figcaption>Motivo principal das saídas voluntárias, em todas as respostas e só entre quem deu nota 1 ou 2 ao gestor. Dados fictícios.</figcaption>
+</figure>
+```
+
+[Ver o caso completo](projetos/motivacao-desligamento/index.qmd)
 
 [Conversar no WhatsApp][whatsapp]
 :::
@@ -57,7 +77,7 @@ Separando as ausências curtas, que a liderança do dia a dia influencia, das lo
 Cada empresa tem as suas perguntas, e o painel é montado a partir delas. Os indicadores mais pedidos:
 
 - **Absenteísmo:** taxa geral e separada em curta e longa duração, por área, turno, gestor e motivo.
-- **Turnover:** desligamentos voluntários e involuntários, tempo de casa de quem sai e onde a rotatividade se concentra.
+- **Turnover:** desligamentos voluntários e involuntários, tempo de casa de quem sai e onde a rotatividade se concentra ([veja um caso](projetos/motivacao-desligamento/index.qmd){.landing-link-discreto}).
 - **Headcount e movimentação:** quadro por área, admissões, desligamentos e transferências mês a mês.
 - **Horas extras e banco de horas:** onde a jornada está estourando e quanto isso custa.
 - **Afastamentos e acidentes:** frequência, duração e relação com tempo de empresa e função.

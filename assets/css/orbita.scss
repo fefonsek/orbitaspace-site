@@ -983,6 +983,16 @@ p:has(> .landing-info) { max-width: none; text-wrap: balance; }
   &:focus-visible { outline: 2px solid $azul-medio; outline-offset: 2px; }
 }
 .painel-pbi-clique + p { margin-top: 0.25rem; }
+
+// Segundo exemplo da landing de People Analytics: o Pareto do caso Motivação
+// de desligamento como imagem fixa (uma versão empilhada para o celular).
+.landing-figura {
+  margin: 1.25rem 0 0.75rem;
+  img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 0.85rem; color: $text-muted; margin-top: 0.4rem; }
+}
+// Link discreto dentro de um item de lista ("veja um caso").
+.landing-link-discreto { font-size: 0.9em; color: $text-muted; }
 .landing-perguntas h3 { font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; }
 .landing-fecho {
   padding: 2rem 0 1rem;

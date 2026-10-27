@@ -107,6 +107,7 @@ Quem pede para sair (pedido de demissão ou acordo) responde, na entrevista, um 
 #| lightbox:
 #|   group: computador
 grafico_pareto(res)
+salvar_pareto(res, "img")
 ```
 :::
 

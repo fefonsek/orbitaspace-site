@@ -139,6 +139,20 @@ grafico_pareto <- function(res, celular = FALSE) {
           panel.spacing.x = unit(1.6, "lines"), panel.spacing.y = unit(1, "lines"))
 }
 
+# O mesmo Pareto como imagem fixa, para a landing de People Analytics
+# (people-analytics-power-bi.qmd): img/pareto.png e img/pareto-celular.png,
+# com fundo transparente. A página do caso em PT grava as duas a cada render.
+salvar_pareto <- function(res, pasta = "img") {
+  dir.create(pasta, showWarnings = FALSE)
+  for (celular in c(FALSE, TRUE)) {
+    arquivo <- file.path(pasta, if (celular) "pareto-celular.png" else "pareto.png")
+    ragg::agg_png(arquivo, width = if (celular) 4.5 else 9, height = if (celular) 8 else 3.8, units = "in",
+                  res = 144, background = "transparent")
+    print(grafico_pareto(res, celular = celular))
+    grDevices::dev.off()
+  }
+}
+
 ## ---- grafico-resposta ----
 # Taxa de resposta da entrevista por unidade, com o intervalo de 95%. A
 # unidade com a menor taxa em azul.

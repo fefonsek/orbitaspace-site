@@ -343,6 +343,11 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
     iframe só é inserido no clique (script em `assets/html/idiomas.html`).
     No celular e sem JavaScript, o clique abre o painel numa nova aba. A
     página do Radar continua com o iframe direto (sem `imagem`).
+  - O segundo exemplo, ligado ao turnover, é o caso Motivação de desligamento,
+    com o Pareto como imagem fixa (`projetos/motivacao-desligamento/img/pareto.png`
+    e `pareto-celular.png`, gravadas pela página do caso a cada render). Os
+    números do texto da landing são fixos: se a base do caso mudar, atualize
+    à mão.
 - **Bordão e faixa de arte no fim das páginas:** o filtro
   `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
   dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa
