@@ -185,10 +185,12 @@ publica só os PDFs e os CSVs de casos.
 
 ## Caso Motivação de desligamento (Cestária Supermercados)
 
-O caso fica em `projetos/motivacao-desligamento/`, na frente `relatorios`, por
-enquanto só em português (ES e EN entram depois que o texto em PT for
-aprovado). É a etapa 1 de 2: a etapa 2 é um painel de turnover em Power BI com
-a mesma base.
+O caso existe em três línguas: `projetos/motivacao-desligamento/`,
+`es/proyectos/motivos-de-salida/` e `en/projects/turnover-exit-reasons/`,
+ligadas pela chave `desligamento` do `_traducoes.yml`, na frente `relatorios`.
+A base, os scripts e os resultados ficam só na pasta em português; as páginas
+em ES e EN leem os mesmos arquivos e gravam a própria capa. É a etapa 1 de 2:
+a etapa 2 é um painel de turnover em Power BI com a mesma base.
 
 - `dados/` tem a base fictícia num esquema estrela pronto para o Power BI:
   `dim_colaborador`, `dim_estrutura` (uma linha por gerência e vigência de
@@ -205,11 +207,16 @@ a mesma base.
   aviso.
 - `scripts/analise.R` lê só `dados/` e grava `resultados/desligamento.rds` e
   `resultados/prioridades_gerencias.csv` (só agregados; grupos com menos de 10
-  pessoas viram "<10"). `scripts/rotulos.R` tem os formatos e textos curtos;
+  pessoas viram "<10"). `scripts/traduzir_prioridades.R` grava o mesmo CSV em
+  ES e EN (`prioridades_gerencias_es.csv` e `_en.csv`). `scripts/rotulos.R`
+  tem os formatos e textos curtos das três línguas (inclusive os nomes das
+  gerências: "CD Expedição" vira "CD Despacho" e "DC Shipping");
   `scripts/apresentacao.R`, os gráficos, as tabelas e a capa.
 - O relatório em PDF é um projeto Quarto à parte em `relatorio/` (Typst), com
-  o parâmetro `idioma` e o texto em `textos_pt.yml`. Tem quatro páginas
-  (resumo, motivos, onde agir, prioridades) e para com erro se passar disso.
+  o parâmetro `idioma` e o texto em `textos_pt.yml`, `textos_es.yml` e
+  `textos_en.yml`. Gera `relatorio.pdf`, `relatorio-es.pdf` e
+  `relatorio-en.pdf`, cada um com quatro páginas (resumo, motivos, onde agir,
+  prioridades), e para com erro se algum passar disso.
 
 O passo 0d do `render.ps1` roda a análise (e a conferência, se o repositório
 do gerador existir) quando a base ou o script mudaram, refaz o PDF quando os resultados,

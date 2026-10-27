@@ -1,0 +1,68 @@
+# Texto do relatório em PDF, em espanhol. Trechos entre chaves são R,
+# preenchidos com os valores do .rds (ver relatorio.qmd e scripts/apresentacao.R).
+
+titulo: "Motivos de desvinculación"
+subtitulo: "Cestária Supermercados · Desvinculaciones y entrevistas de salida, 2024 y 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Caso ficticio: empresa, personas y datos ficticios. El método es real."
+de: "de"
+
+manchete: "El motivo declarado no siempre es el motivo real: entre quienes dieron nota 1 o 2 a su líder, liderazgo y jefatura es el motivo de {pct(motivo(pn, \"Liderança e gestor\"), 0)} de las salidas voluntarias, y el salario, de {pct(motivo(pn, \"Salário e benefícios\"), 0)}."
+
+s_resumo: "Resumen"
+resumo: |
+  La tasa de desvinculación de Cestária se mantuvo estable: {pct(an$taxa[1], 2)} de la dotación salió por mes en 2024 y {pct(an$taxa[2], 2)} en 2025. La dirección preguntó por qué las personas renuncian y dónde actuar primero.
+
+  - **El motivo declarado esconde el motivo real.** "Salario y beneficios" es el motivo más citado ({pct(motivo(pg, "Salário e benefícios"), 0)}), pero, entre quienes dieron nota 1 o 2 a su líder, "liderazgo y jefatura" pasa al frente: {pct(motivo(pn, "Liderança e gestor"), 0)} frente a {pct(motivo(pn, "Salário e benefícios"), 0)}.
+  - **Las salidas en los primeros 90 días crecieron en dos gerencias:** en {gerencia("CD Expedição")}, de {pct(g90("CD Expedição", 2024), 0)} a {pct(g90("CD Expedição", 2025), 0)} del personal contratado; en {gerencia("L3 Operações")}, de {pct(g90("L3 Operações", 2024), 0)} a {pct(g90("L3 Operações", 2025), 0)}.
+  - **{gerencia("L5 Vendas")} pierde más personas desde el cambio de líder**, en {mes_ano(res$troca)}: la tasa quedó {num(rr$rr, 1)} veces por encima de lo esperado según las otras gerencias de Ventas.
+  - **La escala 6x1 nocturna (seis días de trabajo y uno de descanso) concentra "jornada y escala"**, motivo de {pct(jo$pct[1], 0)} de las salidas allí, frente a {pct(outros_jornada$pct, 0)} en el resto.
+  - **La edad no explica las salidas:** el efecto desaparece cuando la antigüedad entra en el modelo.
+
+s_contexto: "La pregunta"
+contexto: |
+  Cestária tiene {num(res$lojas)} tiendas, un centro de distribución (CD) y una oficina central (OC), y cerca de {num(round(res$hc_medio, -1))} personas. En 2024 y 2025, {num(res$saidas_total)} personas salieron. El total casi no cambió, una diferencia compatible con el azar ({p_valor(res$teste_anos$p.value)}), pero las salidas voluntarias subieron de {pct(an$taxa_vol[1], 2)} a {pct(an$taxa_vol[2], 2)} al mes, y los despidos bajaron casi en la misma medida. Para responder a la dirección, la entrevista de salida se cruzó con la dotación mes a mes y con las desvinculaciones.
+
+s_motivos: "Lo que esconde el motivo declarado"
+motivos: |
+  Hubo {num(res$respondentes)} respuestas de quienes renunciaron (renuncia o acuerdo mutuo). En general, el salario lidera, con {pct(motivo(pg, "Salário e benefícios"))} (IC 95% de {ic(motivo(pg, "Salário e benefícios", "inf"), motivo(pg, "Salário e benefícios", "sup"))}). Entre las {num(pn$total[1])} personas que dieron nota 1 o 2 a su líder, "liderazgo y jefatura" sube a {pct(motivo(pn, "Liderança e gestor"))} (de {ic(motivo(pn, "Liderança e gestor", "inf"), motivo(pn, "Liderança e gestor", "sup"))}). De las {num(sal_nb$n)} personas con nota baja que declararon el salario, {pct(sal_nb$pct, 0)} pusieron el liderazgo como motivo secundario.
+
+  Esto no prueba que el líder haya causado la salida. Muestra que el motivo principal, leído solo, apunta al salario, mientras que la nota y el segundo motivo apuntan al liderazgo.
+
+s_resposta: "Quién respondió"
+resposta: |
+  Respondieron {pct(resp_vol, 0)} de quienes renunciaron y {pct(resp_inv, 0)} de quienes fueron despedidos; la {unidade_baixa} quedó en {pct(resp_baixa, 0)}. El motivo solo se pregunta a quien renuncia; la diferencia entre unidades se corrigió ponderando cada respuesta por la inversa de la tasa de respuesta de la unidad. Ningún motivo cambió más de {num(pond_max, 1)} punto porcentual, y el orden se mantuvo. La ponderación supone que, dentro de cada unidad, quien respondió se parece a quien no respondió.
+
+s_onde: "Dónde actuar primero"
+s_90: "Salidas en los primeros 90 días"
+noventa: |
+  Entre las contrataciones hasta el 02/10/2025, la parte que renunció hasta los 90 días fue, en {gerencia("CD Expedição")}, de {pct(g90("CD Expedição", 2024), 0)} (contrataciones de 2024) a {pct(g90("CD Expedição", 2025), 0)} (de 2025), y en {gerencia("L3 Operações")}, de {pct(g90("L3 Operações", 2024), 0)} a {pct(g90("L3 Operações", 2025), 0)}; en las demás, de {pct(g90("Demais gerências", 2024), 0)} a {pct(g90("Demais gerências", 2025), 0)}. En 2025, el riesgo fue {num(hr$hr[hr$grupo == "CD Expedição"], 1)} y {num(hr$hr[hr$grupo == "L3 Operações"], 1)} veces el de las demás gerencias (Cox de causa específica). El gráfico muestra la incidencia acumulada, con todas las contrataciones y el despido como riesgo competitivo; por eso, a los 90 días, no coincide exactamente con esas proporciones.
+
+s_troca: "El cambio de líder en L5 Ventas"
+troca: |
+  Antes del cambio, la L5 perdía {pct(taxa_troca("L5 Vendas", FALSE), 1)} de su dotación por mes en salidas voluntarias; después, {pct(taxa_troca("L5 Vendas", TRUE), 1)}. Las otras gerencias de Ventas pasaron de {pct(taxa_troca("Outras gerências de Vendas", FALSE), 1)} a {pct(taxa_troca("Outras gerências de Vendas", TRUE), 1)}. Descontado eso, la tasa de la L5 quedó {num(rr$rr, 1)} veces más alta (IC 95% de {num_ic(rr$inf, rr$sup)}). "Liderazgo y jefatura" pasó de menos de 10 de las {num(tl$n[!tl$depois])} respuestas a {num(tl$x[tl$depois])} de las {num(tl$n[tl$depois])}. Es una asociación en el tiempo, con solo seis meses de datos después del cambio.
+
+s_jornada: "La escala 6x1 en el turno nocturno"
+jornada: |
+  "Jornada y escala" es el motivo de {pct(jo$pct[1], 0)} de las salidas voluntarias en la noche con escala 6x1 (de {ic(jo$inf[1], jo$sup[1], 0)}), frente a {pct(outros_jornada$pct, 0)} en las otras combinaciones. La noche en otras escalas no tiene el mismo problema: pesa el único día libre a la semana.
+
+s_prioridades: "Prioridades por gerencia"
+prioridades: |
+  En 2025. **Alta:** la tasa voluntaria o las salidas hasta 90 días quedan por encima de la empresa ({pct(res$empresa_vol, 2)} al mes y {pct(res$empresa_90, 0)}) incluso en el límite inferior del intervalo de 95%. **Media:** las dos por encima en la estimación, o un motivo (liderazgo, jornada) por encima de la empresa en el límite inferior. Las demás gerencias quedan en "Seguimiento" y están en el CSV, con los intervalos; ningún grupo con menos de 10 personas aparece. {frase_acompanhar}
+
+s_acoes: "Qué hacer"
+acoes: |
+  - **{gerencia("CD Expedição")} y {gerencia("L3 Operações")}:** escuchar a las personas contratadas antes de los 90 días y revisar la integración y la escala informada en la contratación.
+  - **{gerencia("L5 Vendas")}:** conversación estructurada con el equipo y con el nuevo líder, y seguimiento mensual de la tasa frente a las otras tiendas.
+  - **Noche con escala 6x1:** estudiar otra escala para la reposición nocturna, empezando por las gerencias con más salidas.
+  - **Entrevista:** pedir siempre el motivo secundario y la nota al líder, y buscar más respuestas en la {unidade_baixa}.
+
+s_limitacoes: "Limitaciones"
+limitacoes: |
+  - Datos ficticios: los patrones los plantó un generador, y el análisis los encontró sin leer la clave de respuestas.
+  - Sesgo de respuesta: la ponderación solo corrige la diferencia entre unidades.
+  - Asociación no es causa: la comparación de la L5 supone que habría seguido la tendencia de las otras gerencias de Ventas sin el cambio.
+  - El motivo es autodeclarado, de una lista cerrada; las contrataciones posteriores al 02/10/2025 quedan fuera de la ventana de 90 días.
+
+nota: |
+  El método completo, las regresiones y el código R están en la página del caso, en orbitaspace.com.br/es/proyectos/motivos-de-salida.

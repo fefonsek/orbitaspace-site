@@ -6,6 +6,7 @@ image-alt: "Capa do caso: motivação de desligamento na Cestária Supermercados
 categories: [People Analytics, R, Quarto, Rotatividade]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
 frente: [relatorios]
+traducao: desligamento
 # Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
 lightbox: true
 format:
@@ -49,7 +50,7 @@ preparar_texto(res)
 
 A Cestária é uma rede de supermercados do interior de Minas Gerais, com `r num(res$lojas)` lojas, um centro de distribuição e um escritório central, e cerca de `r num(round(res$hc_medio, -1))` pessoas no quadro. Em 2024 e 2025, `r num(res$saidas_total)` pessoas saíram da empresa.
 
-A taxa de desligamento ficou parada: em média, `r pct(an$taxa[1], 2)` do quadro saiu a cada mês em 2024 e `r pct(an$taxa[2], 2)` em 2025, uma diferença que o acaso explica (p = `r num(res$teste_anos$p.value, 2)`). A composição, porém, mudou. As saídas voluntárias subiram de `r pct(an$taxa_vol[1], 2)` para `r pct(an$taxa_vol[2], 2)` ao mês, e as dispensas caíram quase na mesma medida.
+A taxa de desligamento ficou parada: em média, `r pct(an$taxa[1], 2)` do quadro saiu a cada mês em 2024 e `r pct(an$taxa[2], 2)` em 2025, uma diferença compatível com o acaso (p = `r num(res$teste_anos$p.value, 2)`). A composição, porém, mudou. As saídas voluntárias subiram de `r pct(an$taxa_vol[1], 2)` para `r pct(an$taxa_vol[2], 2)` ao mês, e as dispensas caíram quase na mesma medida.
 
 ::: so-computador
 ```{r}

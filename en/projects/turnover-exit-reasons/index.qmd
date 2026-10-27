@@ -1,0 +1,479 @@
+---
+title: "Why people leave: what the stated reason hides"
+description: "Two years of separations and exit interviews at a supermarket chain. Why people resign, where it concentrates and where to act first."
+image: img/capa.png
+image-alt: "Case cover: why people leave Cestária Supermercados, with the main reason for voluntary exits in all responses and among those who rated their manager low"
+categories: [People Analytics, R, Quarto, Turnover]
+# Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
+frente: [relatorios]
+traducao: desligamento
+# Tapping a chart opens it full screen (on a phone they are small).
+lightbox: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the R code"
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números vêm dos mesmos resultados da versão em português; os textos
+# curtos e os formatos do inglês, de scripts/rotulos.R.
+caso <- "../../../projetos/motivacao-desligamento"
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+read_chunk(file.path(caso, "scripts/analise.R"))
+res <- ler_desligamento(caso, "en")
+tx <- res$tx
+preparar_texto(res)
+noite <- jo |> filter(grupo == "Noite, 6x1")
+```
+
+::: aviso-dados
+**Fictional case.** Cestária Supermercados, its stores, people and interviews do not exist. The data was generated from scratch by an R script, with patterns of known size. The method is real.
+
+[Download the report (PDF)](../../../projetos/motivacao-desligamento/relatorio/relatorio-en.pdf){download="why-people-leave.pdf"} · [Download the priorities by department (CSV)](../../../projetos/motivacao-desligamento/resultados/prioridades_gerencias_en.csv){download="department_priorities.csv"}
+:::
+
+## The question
+
+Cestária is a supermarket chain in inland Minas Gerais, Brazil, with `r num(res$lojas)` stores (L1 to L8), a distribution center (DC) and a headquarters office (HQ), and about `r num(round(res$hc_medio, -1))` people on staff. In 2024 and 2025, `r num(res$saidas_total)` people left the company.
+
+The separation rate did not move: on average, `r pct(an$taxa[1], 2)` of the workforce left each month in 2024 and `r pct(an$taxa[2], 2)` in 2025, a difference consistent with chance (`r p_valor(res$teste_anos$p.value)`). The mix, however, did change. Voluntary exits rose from `r pct(an$taxa_vol[1], 2)` to `r pct(an$taxa_vol[2], 2)` a month, and dismissals fell by almost the same amount.
+
+::: so-computador
+```{r}
+#| label: mensal
+#| echo: false
+#| fig-cap: "Monthly separation rate, January 2024 to December 2025: separations ÷ average headcount for the month. The gray line is the total; the blue one, voluntary exits only (resignation or mutual agreement)."
+#| fig-alt: "Two monthly lines. The total moves between about 3% and 4% in both years, with no trend. The voluntary exit line stays near 2% in 2024 and slightly above that in 2025."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_mensal(res)
+salvar_capa(res, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: mensal-celular
+#| echo: false
+#| fig-cap: "Monthly separation rate, January 2024 to December 2025: separations ÷ average headcount for the month. The gray line is the total; the blue one, voluntary exits only (resignation or mutual agreement)."
+#| fig-alt: "Two monthly lines. The total moves between about 3% and 4% in both years, with no trend. The voluntary exit line stays near 2% in 2024 and slightly above that in 2025."
+#| fig-width: 4.5
+#| fig-height: 3.6
+#| lightbox:
+#|   group: celular
+grafico_mensal(res, celular = TRUE)
+```
+:::
+
+With a stable total, turnover did not look like an issue. Leadership asked two other questions instead: why do people resign, and where should we act first? To answer them, the exit interview, which the company already ran and nobody read alongside anything else, was crossed with the monthly headcount and the separations.
+
+## What the data shows
+
+- **The stated reason hides the real one.** "Pay and benefits" is the reason most often given by people who resign (`r pct(motivo(pg, "Salário e benefícios"))`). Among those who rated their manager 1 or 2, however, "leadership and manager" moves ahead, at `r pct(motivo(pn, "Liderança e gestor"))` against `r pct(motivo(pn, "Salário e benefícios"))`.
+- **Exits in the first 90 days grew in two departments.** In `r gerencia("CD Expedição")`, the share of new hires who resigned within 90 days went from `r pct(g90("CD Expedição", 2024), 0)` in 2024 to `r pct(g90("CD Expedição", 2025), 0)` in 2025; in `r gerencia("L3 Operações")`, from `r pct(g90("L3 Operações", 2024), 0)` to `r pct(g90("L3 Operações", 2025), 0)`. In the other departments, the figure stayed near `r pct(g90("Demais gerências", 2025), 0)`.
+- **`r gerencia("L5 Vendas")` started losing more people after its manager changed**, in `r mes_ano(res$troca)`, and "leadership and manager" became the reason for `r pct(tl$pct[tl$depois], 0)` of the exits answered from then on.
+- **The 6x1 schedule on the night shift concentrates "hours and schedule"**, the reason for `r pct(jo$pct[1], 0)` of exits in that group, against `r pct(outros_jornada$pct, 0)` everywhere else. The 6x1 schedule means six days on and one day off.
+- **Age does not explain the exits.** Younger people leave more, but only because they have less tenure; with tenure in the model, the difference disappears.
+- **The interview has response bias**, stronger for involuntary exits and at `r unidade_baixa`, but correcting for it does not change the order of the reasons.
+
+## What the stated reason hides
+
+People who resign (resignation or mutual agreement) give, in the interview, a main reason and, optionally, a secondary one, from a closed list of eight. There were `r num(res$respondentes)` responses with a reason over the two years.
+
+::: so-computador
+```{r}
+#| label: pareto
+#| echo: false
+#| fig-cap: "Main reason for voluntary exits, in all responses and only among those who rated their manager 1 or 2 (number of responses in parentheses). The thin lines are the 95% confidence interval."
+#| fig-alt: "Two bar charts side by side, with the same eight reasons. In all responses, pay and benefits is the longest bar, and leadership and manager, in blue, is well behind. Among those who rated their manager 1 or 2, the blue leadership and manager bar becomes the longest, more than twice pay and benefits."
+#| fig-width: 9
+#| fig-height: 3.8
+#| lightbox:
+#|   group: computador
+grafico_pareto(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: pareto-celular
+#| echo: false
+#| fig-cap: "Main reason for voluntary exits, in all responses and only among those who rated their manager 1 or 2 (number of responses in parentheses). The thin lines are the 95% confidence interval."
+#| fig-alt: "Two bar charts, one below the other, with the same eight reasons. In all responses, pay and benefits is the longest bar, and leadership and manager, in blue, is well behind. Among those who rated their manager 1 or 2, the blue leadership and manager bar becomes the longest."
+#| fig-width: 4.5
+#| fig-height: 8
+#| lightbox:
+#|   group: celular
+grafico_pareto(res, celular = TRUE)
+```
+:::
+
+Overall, "pay and benefits" leads, with `r pct(motivo(pg, "Salário e benefícios"))` of responses (95% CI `r ic(motivo(pg, "Salário e benefícios", "inf"), motivo(pg, "Salário e benefícios", "sup"))`), and "leadership and manager" comes in at `r pct(motivo(pg, "Liderança e gestor"))`. The picture changes among the `r num(pn$total[1])` people who rated their manager 1 or 2: "leadership and manager" rises to `r pct(motivo(pn, "Liderança e gestor"))` (`r ic(motivo(pn, "Liderança e gestor", "inf"), motivo(pn, "Liderança e gestor", "sup"))`), and pay drops to `r pct(motivo(pn, "Salário e benefícios"))`.
+
+Pay also hides leadership when it comes with a low rating. Of the `r num(sal_nb$n)` people who rated their manager 1 or 2 and gave pay as their main reason, `r num(sal_nb$lideranca_secundario)` (`r pct(sal_nb$pct, 0)`) gave "leadership and manager" as their secondary reason. Counting main and secondary reasons together, `r pct(lid_qualquer$pct[lid_qualquer$nota_baixa], 0)` of those who rated their manager low mention leadership, against `r pct(lid_qualquer$pct[!lid_qualquer$nota_baixa], 0)` of everyone else.
+
+This does not prove that the manager caused the exit. It shows that the stated reason, read on its own, points to pay, while the manager rating and the secondary reason point to leadership. Pay is the easiest answer to give in an exit conversation; that is why the interview has to be read together with the rating and the second reason, not by the first reason alone.
+
+### Who answered the interview
+
+The interview is not mandatory. Of those who resigned, `r pct(resp_vol, 0)` answered it, against only `r pct(resp_inv, 0)` of those who were dismissed. Among sites, `r unidade_baixa` is well below the others, with a `r pct(resp_baixa, 0)` response rate.
+
+::: so-computador
+```{r}
+#| label: resposta
+#| echo: false
+#| fig-cap: "Exit interview response rate by site, in 2024 and 2025, with the 95% confidence interval. The vertical line is the company rate."
+#| fig-alt: "Points with interval bars for eight stores, the distribution center and the headquarters. Almost all sites fall between 55% and 75%. L7, in blue, is well below, near 37%."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_resposta(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: resposta-celular
+#| echo: false
+#| fig-cap: "Exit interview response rate by site, in 2024 and 2025, with the 95% confidence interval. The vertical line is the company rate."
+#| fig-alt: "Points with interval bars for eight stores, the distribution center and the headquarters. Almost all sites fall between 55% and 75%. L7, in blue, is well below, near 37%."
+#| fig-width: 4.5
+#| fig-height: 4.4
+#| lightbox:
+#|   group: celular
+grafico_resposta(res, celular = TRUE)
+```
+:::
+
+Because the reason is only asked of people who resign, the gap between voluntary and involuntary exits does not distort the picture of reasons; the gap between sites does. To see whether it changes the conclusion, each response was weighted by the inverse of its site's response rate, so that `r unidade_baixa` counts as much as it would if everyone had answered. No reason moved by more than `r num(pond_max, 1)` percentage point, and the order stayed the same.
+
+::: so-computador
+```{r}
+#| label: ponderacao
+#| echo: false
+res$pareto_ponderado |>
+  transmute(motivo = traduzir(motivo, tx$motivos), sem = pct(pct_sem_peso), com = pct(pct)) |>
+  tabela(tx$nomes_ponderacao, c("l", "r", "r"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: ponderacao-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(res$pareto_ponderado |>
+              transmute(motivo = traduzir(motivo, tx$motivos), sem = pct(pct_sem_peso), com = pct(pct)),
+            tx$nomes_ponderacao))
+```
+:::
+
+The weighting assumes that, within each site, the people who answered are similar to those who did not. If those who did not answer at `r unidade_baixa` left for different reasons than those who did, no weight can fix that; it is the first of the case's limitations.
+
+## Where to act first
+
+### Exits in the first 90 days
+
+Among the `r num(res$coorte[["admitidos_90"]])` people hired from January 2024 to October 2, 2025, who have already reached 90 days of tenure, the share who resigned by day 90 rose in two departments and held steady everywhere else. In `r gerencia("CD Expedição")`, it went from `r pct(g90("CD Expedição", 2024), 0)` among 2024 hires to `r pct(g90("CD Expedição", 2025), 0)` among 2025 hires (95% CI `r ic(g90("CD Expedição", 2025, "inf"), g90("CD Expedição", 2025, "sup"), 0)`); in `r gerencia("L3 Operações")`, from `r pct(g90("L3 Operações", 2024), 0)` to `r pct(g90("L3 Operações", 2025), 0)` (`r ic(g90("L3 Operações", 2025, "inf"), g90("L3 Operações", 2025, "sup"), 0)`). In the other departments, from `r pct(g90("Demais gerências", 2024), 0)` to `r pct(g90("Demais gerências", 2025), 0)`.
+
+::: so-computador
+```{r}
+#| label: incidencia
+#| echo: false
+#| fig-cap: "Cumulative incidence of voluntary exit, with dismissal as a competing risk, by hiring year: the share of new hires who resigned by each day of tenure. The curve includes everyone hired in 2024 and 2025, including those who have not yet reached 90 days, and does not treat dismissed people as if they were still at risk; that is why, at 90 days, it does not exactly match the simple proportion in the text and the table, which only counts people hired up to October 2, 2025. The blue band is the 95% confidence interval for 2025; the dashed line marks 90 days."
+#| fig-alt: "Three charts side by side. In DC Shipping and L3 Operations, the 2025 curve, in blue, rises much faster than the 2024 one, in gray, and passes 35% before 90 days. In the other departments, the two curves stay together, below 20% up to 90 days."
+#| fig-width: 9
+#| fig-height: 3.3
+#| lightbox:
+#|   group: computador
+grafico_incidencia(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: incidencia-celular
+#| echo: false
+#| fig-cap: "Cumulative incidence of voluntary exit, with dismissal as a competing risk, by hiring year: the share of new hires who resigned by each day of tenure. The curve includes everyone hired in 2024 and 2025, including those who have not yet reached 90 days, and does not treat dismissed people as if they were still at risk; that is why, at 90 days, it does not exactly match the simple proportion in the text and the table, which only counts people hired up to October 2, 2025. The blue band is the 95% confidence interval for 2025; the dashed line marks 90 days."
+#| fig-alt: "Three charts, one below the other. In DC Shipping and L3 Operations, the 2025 curve, in blue, rises much faster than the 2024 one, in gray. In the other departments, the two curves stay together."
+#| fig-width: 4.5
+#| fig-height: 7.6
+#| lightbox:
+#|   group: celular
+grafico_incidencia(res, celular = TRUE)
+```
+:::
+
+In a cause-specific Cox model with 2025 hires only, the risk of voluntary exit was `r num(hr$hr[hr$grupo == "CD Expedição"], 1)` times that of the other departments in `r gerencia("CD Expedição")` (95% CI `r num_ic(hr$inf[hr$grupo == "CD Expedição"], hr$sup[hr$grupo == "CD Expedição"])`) and `r num(hr$hr[hr$grupo == "L3 Operações"], 1)` times in `r gerencia("L3 Operações")` (`r num_ic(hr$inf[hr$grupo == "L3 Operações"], hr$sup[hr$grupo == "L3 Operações"])`).
+
+Leaving in the first 90 days usually has more to do with onboarding than with the job market: the induction, the schedule described at hiring, the first manager. Neither department changed managers, and the interview of someone who leaves that early is short; the next step is to listen to new hires in those two areas before they reach 90 days.
+
+### The manager change in L5 Sales
+
+`r gerencia("L5 Vendas")` changed managers in `r mes_ano(res$troca)`. To separate the effect of the change from what happened across the company in the same period, L5 was compared with the other seven Sales departments, which kept their managers.
+
+::: so-computador
+```{r}
+#| label: troca
+#| echo: false
+#| fig-cap: "Voluntary exits per 100 people, three-month moving average: L5 Sales, in blue, and the other seven Sales departments combined, in gray. The vertical mark is the L5 manager change."
+#| fig-alt: "Two monthly lines. Until the manager change, they move together, near 2 exits per 100 people. After the change, the blue L5 Sales line rises and ends above 7, while the gray one stays near 2."
+#| fig-width: 9
+#| fig-height: 3.4
+#| lightbox:
+#|   group: computador
+grafico_troca(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: troca-celular
+#| echo: false
+#| fig-cap: "Voluntary exits per 100 people, three-month moving average: L5 Sales, in blue, and the other seven Sales departments combined, in gray. The vertical mark is the L5 manager change."
+#| fig-alt: "Two monthly lines. Until the manager change, they move together, near 2 exits per 100 people. After the change, the blue L5 Sales line rises sharply, and the gray one stays near 2."
+#| fig-width: 4.5
+#| fig-height: 3.8
+#| lightbox:
+#|   group: celular
+grafico_troca(res, celular = TRUE)
+```
+:::
+
+Before the change, L5 lost `r pct(taxa_troca("L5 Vendas", FALSE), 1)` of its staff a month to voluntary exits, and the other Sales departments, `r pct(taxa_troca("Outras gerências de Vendas", FALSE), 1)`. Afterward, L5 went to `r pct(taxa_troca("L5 Vendas", TRUE), 1)`, and the others, to `r pct(taxa_troca("Outras gerências de Vendas", TRUE), 1)`. Netting out the change in the other departments, the L5 rate was `r num(rr$rr, 1)` times higher after the manager change (95% CI `r num_ic(rr$inf, rr$sup)`, `r if (rr$modelo == "Poisson") "Poisson" else "negative binomial"` model).
+
+The reason follows: before the change, "leadership and manager" came up in fewer than 10 of the `r num(tl$n[!tl$depois])` L5 responses; afterward, in `r num(tl$x[tl$depois])` of `r num(tl$n[tl$depois])` (`r pct(tl$pct[tl$depois], 0)`, `r ic(tl$inf[tl$depois], tl$sup[tl$depois], 0)`). It is an association in time, not proof that the new manager is the cause: there are only six months of data, and something else may have changed at the store at the same time. But it is the strongest signal in the case, and the cheapest to check, in a conversation with the team and with the manager.
+
+### The 6x1 schedule on the night shift
+
+On the 6x1 night shift, which covers restocking at the stores and part of the DC, "hours and schedule" is the reason for `r pct(noite$pct, 0)` of the voluntary exits answered (`r ic(noite$inf, noite$sup, 0)`), against `r pct(outros_jornada$pct, 0)` in the other shift and schedule combinations. The voluntary exit rate is also the highest: `r pct(noite$taxa_vol, 2)` of the group a month.
+
+::: so-computador
+```{r}
+#| label: jornada
+#| echo: false
+#| fig-cap: "Share of voluntary exits answered with \"hours and schedule\" as the main reason, by shift and schedule, with the 95% confidence interval (number of responses in parentheses)."
+#| fig-alt: "Four horizontal bars. The night 6x1 schedule bar, in blue, reaches about 40%. The other three, in gray, stay below 10%."
+#| fig-width: 9
+#| fig-height: 2.3
+#| lightbox:
+#|   group: computador
+grafico_jornada(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: jornada-celular
+#| echo: false
+#| fig-cap: "Share of voluntary exits answered with \"hours and schedule\" as the main reason, by shift and schedule, with the 95% confidence interval (number of responses in parentheses)."
+#| fig-alt: "Four horizontal bars. The night 6x1 schedule bar, in blue, reaches about 40%. The other three, in gray, stay below 10%."
+#| fig-width: 4.5
+#| fig-height: 3
+#| lightbox:
+#|   group: celular
+grafico_jornada(res, celular = TRUE)
+```
+:::
+
+Night work on other schedules (12x36 at the DC, 5x2 at some stores) does not have the same problem. What weighs is the combination of night work with a single day off a week, and that points to a scheduling decision, not a pay decision.
+
+### Priorities by department
+
+The three fronts above become a list. For 2025, each department received a priority:
+
+- **High:** the voluntary exit rate or the share of new hires who left within 90 days is above the company even at the lower bound of the confidence interval.
+- **Medium:** both are above the company in the point estimate, or "leadership and manager" or "hours and schedule" are above the company at the lower bound of the interval.
+- **Monitor:** everything else.
+
+Within each level, the order follows voluntary exits above what the company rate would predict. The full list, with the intervals, is in the CSV at the top of the page; no figure for a group of fewer than 10 people appears in it.
+
+`r frase_acompanhar`
+
+::: so-computador
+```{r}
+#| label: prioridades
+#| echo: false
+tabela(prioridades_fmt(res), tx$nomes_prioridades, c("r", "l", "l", "l", "r", "r", "r", "r"))
+```
+:::
+
+::: so-celular
+```{r}
+#| label: prioridades-cartoes
+#| echo: false
+#| output: asis
+cat(cartoes(prioridades_fmt(res) |> mutate(gerencia = paste0(ordem, ". ", gerencia)) |> select(-ordem),
+            tx$nomes_prioridades[-1]))
+```
+:::
+
+## What does not explain it: age
+
+Looking at age alone, younger people leave more: the odds of someone aged 18 to 24 resigning in a given month are `r num(oi$or[1], 2)` times those of someone aged 35 to 44 (95% CI `r num_ic(oi$inf[1], oi$sup[1], 2)`). But younger people have, on average, the least tenure, and tenure is what matters: with it in the model, the ratio drops to `r num(oi$or[2], 2)` (`r num_ic(oi$inf[2], oi$sup[2], 2)`), and age group as a whole stops making a difference (`r p_valor(res$idade_p_ajustado)`).
+
+It is a null finding that matters: a policy "to retain young people" would aim at the wrong target. The point of attention is the first months on the job, at any age.
+
+## Limitations
+
+- **Fictional data.** The patterns were planted by a generator, and the analysis found them without reading the answer key. With real data, the figures would differ; the method is the same.
+- **Response bias.** The weighting corrects the difference in response between sites, but assumes that, within each site, the people who answered are similar to those who did not. That cannot be checked with this data.
+- **Association is not causation.** The comparison of L5 with the other Sales departments assumes that, without the change, L5 would have followed the same trend as they did. With six months after the change, the interval is still wide.
+- **Stated reason.** The list is closed, and each person picks one main reason; it is what they say, not necessarily what weighed most.
+- **90-day window.** People hired after October 2, 2025 are left out of that count, because they have not yet completed the window.
+- **Many comparisons.** In the reason by department cross-tab, only adjusted residuals with an absolute value of 3 or more count as standouts.
+
+## Method
+
+The steps are in the code, each one in a collapsed block; the technical tables are at the end of the section.
+
+1. **Classify exits.** Voluntary means resignation; involuntary means dismissal without cause and end of probation. Mutual agreement is its own category and counts as voluntary in the two-way split (`r num(res$saidas_vol)` voluntary and `r num(res$saidas_total - res$saidas_vol)` involuntary over the two years).
+2. **Separation rate.** Separations in the month ÷ average headcount for the month, where average headcount is the mean of the headcount on the first and last day. The classic turnover formula uses the average of hires and separations as the numerator. Over a year, the two give almost the same result: the separation rate was `r pct(an$taxa_ano[1])` in 2024 and `r pct(an$taxa_ano[2])` in 2025, and classic turnover, `r pct(an$turnover_classico_ano[1])` and `r pct(an$turnover_classico_ano[2])`. Rate intervals are exact Poisson intervals, per person-month.
+3. **Exits within 90 days.** Among people hired from January 2024 to October 2, 2025 (`r num(res$coorte[["admitidos_90"]])`), those who resigned by day 90 of tenure. Anyone dismissed before 90 days counts as "did not resign".
+4. **Reasons.** Pareto of the main reason among people who resigned and answered, overall and with a manager rating of 1 or 2; proportions with Wilson intervals.
+5. **Response rate and weighting.** Response rate by exit type and by site, and the Pareto weighted by the inverse of the site's response rate.
+6. **Reason by department.** Chi-square test of independence (`r num(res$qui$estatistica, 1)` with `r num(res$qui$gl)` degrees of freedom), with the three least cited reasons combined into "other reasons" and the p-value computed by simulation (`r p_valor(res$qui$p, 3)`), because `r pct(100 * res$qui$esperado_menor_5, 0)` of the cells have an expected frequency below 5. Standouts only for adjusted residuals with an absolute value of 3 or more: `r paste0(gerencia(destaques$gerencia), " in \"", tolower(traduzir(destaques$motivo, tx$motivos)), "\" (", num(destaques$residuo, 1), ")", collapse = " and ")`.
+7. **Cumulative incidence and cause-specific Cox.** Time from hiring day to exit, for people hired in 2024 and 2025, with involuntary exit as a competing risk (Aalen-Johansen estimator, `survfit` from the survival package with the status as a factor). In place of Gray's test, which needs a package that is not installed, a cause-specific Cox model: department as a whole is associated with the risk of voluntary exit (likelihood ratio test, `r num(res$teste_gerencia$chi, 1)` with `r num(res$teste_gerencia$gl)` degrees of freedom, `r p_valor(res$teste_gerencia$p, 3)`).
+8. **Manager change.** Voluntary exits by Sales department and month, with exposure in person-months, in a Poisson model with department, period (before or after `r mes_ano(res$troca)`) and the interaction of L5 with the post-change period (difference in differences). The negative binomial model would be used if dispersion exceeded 1.2; it was `r num(rr$dispersao, 2)`.
+9. **Logistic regression.** Resignation within 90 days, with the department group, hiring year and their interaction, the night 6x1 schedule and age group.
+10. **Confounding by age.** Person-month logistic regression of resignation in the month, with age group alone and then with tenure band.
+11. **Priorities.** The criteria from the previous section, applied to 2025, with figures for groups of fewer than 10 people replaced by "<10".
+
+```{r}
+#| label: etapa-1-taxa
+#| eval: false
+#| code-summary: "Show the R code: separation rate"
+```
+
+```{r}
+#| label: etapa-2-noventa-dias
+#| eval: false
+#| code-summary: "Show the R code: exits within 90 days"
+```
+
+```{r}
+#| label: etapa-3-motivos
+#| eval: false
+#| code-summary: "Show the R code: reasons"
+```
+
+```{r}
+#| label: etapa-4-resposta
+#| eval: false
+#| code-summary: "Show the R code: response rate and weighting"
+```
+
+```{r}
+#| label: etapa-5-motivo-gerencia
+#| eval: false
+#| code-summary: "Show the R code: reason by department"
+```
+
+```{r}
+#| label: etapa-6-incidencia
+#| eval: false
+#| code-summary: "Show the R code: cumulative incidence and Cox"
+```
+
+```{r}
+#| label: etapa-7-troca-gestor
+#| eval: false
+#| code-summary: "Show the R code: manager change"
+```
+
+```{r}
+#| label: etapa-8-jornada
+#| eval: false
+#| code-summary: "Show the R code: schedule and shift"
+```
+
+```{r}
+#| label: etapa-9-regressao
+#| eval: false
+#| code-summary: "Show the R code: regressions"
+```
+
+```{r}
+#| label: etapa-10-prioridades
+#| eval: false
+#| code-summary: "Show the R code: priorities"
+```
+
+::: {.callout-note collapse="true"}
+## Technical tables
+
+**Logistic regression: resignation within 90 days** (`r num(res$modelos$n_90)` new hires; reference levels: other departments, hired in 2024, day or other schedules, aged 35 to 44).
+
+```{r}
+#| label: tabela-or-90
+#| echo: false
+termos_90 <- c(
+  'relevel(factor(grupo), "Demais gerências")CD Expedição' = gerencia("CD Expedição"),
+  'relevel(factor(grupo), "Demais gerências")L3 Operações' = gerencia("L3 Operações"),
+  "factor(ano_admissao)2025" = "Hired in 2025",
+  "noite_6x1TRUE" = "Night, 6x1 schedule",
+  'relevel(factor(faixa_etaria), "35 a 44")18 a 24' = "Aged 18 to 24",
+  'relevel(factor(faixa_etaria), "35 a 44")25 a 34' = "Aged 25 to 34",
+  'relevel(factor(faixa_etaria), "35 a 44")45 ou mais' = "Aged 45 or older",
+  'relevel(factor(grupo), "Demais gerências")CD Expedição:factor(ano_admissao)2025' = paste(gerencia("CD Expedição"), "× 2025"),
+  'relevel(factor(grupo), "Demais gerências")L3 Operações:factor(ano_admissao)2025' = paste(gerencia("L3 Operações"), "× 2025"))
+or_fmt(res, res$or_90, termos_90) |> tabela(tx$nomes_or, c("l", "r", "r", "r"))
+```
+
+**Age group, without and with tenure** (`r num(res$modelos$n_pm)` person-months; reference: aged 35 to 44).
+
+```{r}
+#| label: tabela-or-idade
+#| echo: false
+res$or_idade |>
+  transmute(modelo = if_else(modelo == "Bruto", "Age group only", "With tenure"),
+            faixa = paste("Aged", sub(" a ", " to ", sub("ou mais", "or older", faixa))), or = num(or, 2),
+            ic = num_ic(inf, sup, 2), p = p_tab(p)) |>
+  tabela(c("Model", "Age group", "Odds ratio", "95% CI", "p"), c("l", "l", "r", "r", "r"))
+```
+
+**Response rate by exit type.**
+
+```{r}
+#| label: tabela-resposta
+#| echo: false
+rt |>
+  transmute(grupo = if_else(voluntaria, tx$voluntarias, tx$involuntarias), saidas = num(saidas),
+            responderam = num(responderam), taxa = paste0(pct(pct), " (", ic(inf, sup), ")")) |>
+  tabela(tx$nomes_resposta, c("l", "r", "r", "r"))
+```
+:::
+
+## What the case shows
+
+- **Read the interview with everything else.** The stated reason, on its own, pointed to pay; crossed with the manager rating and the secondary reason, it pointed to leadership.
+- **Look at the mix, not just the total.** A stable rate hid more voluntary exits and earlier and earlier exits in two departments.
+- **Compare against a control.** The L5 manager change was measured against the other Sales departments, not just against its own past.
+- **Say what the data does not support.** Response bias was measured and corrected, age was ruled out as an explanation, and no association was treated as a cause.
+- **A dataset ready for the dashboard.** The six tables form a dimensional model, which the next stage of the case uses in a Power BI turnover dashboard.
+
+::: cta-final
+## Does your company run exit interviews that nobody reads alongside anything else?
+
+Tell me how it works today and I will tell you what can be crossed.
+
+[Get in touch](../../contact.qmd){.btn .btn-primary}
+:::

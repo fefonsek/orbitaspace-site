@@ -1,0 +1,20 @@
+rank,department,site,priority,signals,average_headcount,voluntary_exits,monthly_voluntary_rate_pct,rate_ci95_low,rate_ci95_high,hires,exits_within_90_days_pct,exits_90_ci95_low,exits_90_ci95_high,response_rate_pct,leadership_manager_pct,hours_schedule_pct,average_manager_rating
+1,DC Shipping,DC,High,Voluntary rate; Exits within 90 days,278,107,3.21,2.63,3.88,121,38.8,30.6,47.7,62.9,15.9,19.5,3.2
+2,L5 Sales,L5,High,Voluntary rate; Leadership and manager,82,38,3.85,2.73,5.29,20,25.0,11.2,46.9,75.5,54.8,9.7,2.5
+3,L3 Operations,L3,High,Exits within 90 days,91,31,2.84,1.93,4.03,37,40.5,26.3,56.5,57.1,8.3,29.2,3.4
+4,L1 Operations,L1,Medium,Voluntary rate (point estimate); Exits within 90 days (point estimate),53,23,3.60,2.28,5.41,20,30.0,14.5,51.9,76.7,5.6,22.2,3.7
+5,L2 Operations,L2,Monitor,Hours and schedule (reason by department),53,18,2.82,1.67,4.46,18,5.6,1.0,25.8,64.0,23.1,30.8,3.4
+6,L3 Sales,L3,Monitor,,107,32,2.50,1.71,3.53,32,18.8,8.9,35.3,68.2,20.8,12.5,3.4
+7,L8 Sales,L8,Monitor,,83,24,2.42,1.55,3.60,20,20.0,8.1,41.6,74.2,26.3,0.0,3.4
+8,L6 Operations,L6,Monitor,,55,15,2.28,1.28,3.77,17,23.5,9.6,47.3,77.8,30.8,23.1,3.1
+9,L5 Operations,L5,Monitor,,54,14,2.18,1.19,3.66,14,21.4,7.6,47.6,54.2,<10,<10,2.9
+10,L4 Sales,L4,Monitor,,83,22,2.20,1.38,3.34,21,28.6,13.8,50.0,71.0,21.1,10.5,3.5
+11,L8 Operations,L8,Monitor,,55,13,1.99,1.06,3.40,17,11.8,3.3,34.3,60.0,<10,<10,3.2
+12,L1 Sales,L1,Monitor,,83,21,2.11,1.31,3.23,24,16.7,6.7,35.9,64.7,26.7,0.0,3.1
+13,L6 Sales,L6,Monitor,,83,21,2.11,1.31,3.22,21,19.0,7.7,40.0,53.3,6.7,0.0,3.2
+14,L7 Operations,L7,Monitor,,55,13,1.97,1.05,3.37,14,21.4,7.6,47.6,22.2,<10,<10,<10
+15,L4 Operations,L4,Monitor,,54,12,1.85,0.95,3.22,15,6.7,1.2,29.8,84.2,0.0,25.0,3.2
+16,L2 Sales,L2,Monitor,,82,20,2.02,1.23,3.12,30,13.3,5.3,29.7,68.6,11.1,22.2,3.6
+17,L7 Sales,L7,Monitor,,84,16,1.58,0.90,2.56,18,5.6,1.0,25.8,32.0,<10,<10,<10
+18,DC Receiving,DC,Monitor,,194,47,2.01,1.48,2.68,62,17.7,10.2,29.0,62.2,8.1,8.1,3.5
+19,HQ Administration,HQ,Monitor,,159,18,0.94,0.56,1.49,23,4.3,0.8,21.0,72.0,15.4,15.4,3.4

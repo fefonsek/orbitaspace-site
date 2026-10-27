@@ -194,8 +194,21 @@ bloco(t$prioridades)
 ```
 
 ```{r}
-prioridades_fmt(res, pdf = TRUE) |>
-  tabela(tx$nomes_prioridades_pdf, c("r", "l", "l", "l", "r", "r", "r"))
+#| output: asis
+# Tabela de prioridades em Typst direto: a gerência e a prioridade não quebram
+# de linha, os sinais ficam com o espaço que sobra, e os números à direita.
+# (A tabela do Markdown divide as larguras por igual e embola os cabeçalhos.)
+prior_pdf <- prioridades_fmt(res, pdf = TRUE)
+celula <- \(x, inteira = FALSE) paste0("[", esc_typst(if (inteira) gsub(" ", "~", x) else x), "]")
+linhas <- apply(prior_pdf, 1, \(l) paste(c(celula(l[1]), celula(l[2], TRUE), celula(l[3], TRUE), celula(l[4]),
+                                            celula(l[5], TRUE), celula(l[6], TRUE), celula(l[7], TRUE)),
+                                          collapse = ", "))
+typst(paste0(
+  '#text(size: 8.5pt)[#table(columns: (auto, auto, auto, 1fr, auto, auto, auto), ',
+  'align: (right, left, left, left, right, right, right), inset: (x: 5pt, y: 4.5pt),\n',
+  "  ", paste(vapply(tx$nomes_prioridades_pdf, \(x) celula(x), ""), collapse = ", "), ",\n",
+  paste0("  ", linhas, ",", collapse = "\n"),
+  "\n)]"))
 ```
 
 # `r t$s_acoes`

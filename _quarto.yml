@@ -40,8 +40,14 @@ project:
     # gerência para baixar. A base (dados/) fica no repositório, mas não vai
     # para o site; o gerador e o gabarito (_gerador/) nem vão para o Git.
     - projetos/motivacao-desligamento/img/
+    - es/proyectos/motivos-de-salida/img/
+    - en/projects/turnover-exit-reasons/img/
     - projetos/motivacao-desligamento/relatorio/relatorio.pdf
+    - projetos/motivacao-desligamento/relatorio/relatorio-es.pdf
+    - projetos/motivacao-desligamento/relatorio/relatorio-en.pdf
     - projetos/motivacao-desligamento/resultados/prioridades_gerencias.csv
+    - projetos/motivacao-desligamento/resultados/prioridades_gerencias_es.csv
+    - projetos/motivacao-desligamento/resultados/prioridades_gerencias_en.csv
   post-render: scripts/aviso_render.py
 
 profile:

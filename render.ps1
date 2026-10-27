@@ -130,28 +130,37 @@ foreach ($congelado in "_freeze\$auditoria", "_freeze\es\proyectos\auditoria-ali
     }
 }
 
-# 0d. Caso Motivação de desligamento (por enquanto só em PT): a análise
-#     (scripts/analise.R) roda só quando a base (dados/) ou o script mudaram.
+# 0d. Caso Motivação de desligamento (PT, ES e EN): a análise
+#     (scripts/analise.R) e o CSV de prioridades em ES e EN
+#     (scripts/traduzir_prioridades.R) rodam só quando a base (dados/) ou os
+#     scripts mudaram.
 #     A conferência com o gabarito (conferir.R) roda junto. O gerador da base
 #     e o gabarito ficam num repositório privado, fora do site: a pasta
 #     cestaria-turnover ao lado do site, ou ORBITA_GERADOR_DESLIGAMENTO. Sem
 #     ele, a conferência é pulada com um aviso; se um padrão plantado não for
 #     recuperado, o render para.
-#     O relatório em PDF (relatorio/, Typst) é refeito quando os resultados,
-#     os textos ou os gráficos mudaram, e para com erro se passar de 4 páginas.
+#     O relatório em PDF (relatorio/, Typst) é refeito nas três línguas quando
+#     os resultados, os textos ou os gráficos mudaram, e para com erro se algum
+#     passar de 4 páginas. O PT é gerado por último: o render de uma língua
+#     apaga a saída padrão (relatorio.pdf) do mesmo arquivo.
 #     Os dados não são gerados de novo aqui: para isso, rode o gerar_dados.R
 #     do repositório privado.
 $desligamento = "projetos\motivacao-desligamento"
 $geradorDes = if ($env:ORBITA_GERADOR_DESLIGAMENTO) { $env:ORBITA_GERADOR_DESLIGAMENTO } else { Join-Path (Split-Path $PSScriptRoot -Parent) "cestaria-turnover" }
 $rdsDes = "$desligamento\resultados\desligamento.rds"
-$fontesDes = @(Get-ChildItem "$desligamento\dados\*.csv") + @(Get-Item "$desligamento\scripts\analise.R")
-if (-not (Test-Path $rdsDes) -or ($fontesDes | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsDes).LastWriteTime })) {
+$fontesDes = @(Get-ChildItem "$desligamento\dados\*.csv") + @(Get-Item "$desligamento\scripts\analise.R",
+    "$desligamento\scripts\traduzir_prioridades.R", "$desligamento\scripts\rotulos.R")
+$csvDesTraduzidos = "$desligamento\resultados\prioridades_gerencias_es.csv", "$desligamento\resultados\prioridades_gerencias_en.csv"
+$faltaCsvDes = $csvDesTraduzidos | Where-Object { -not (Test-Path $_) }
+if ($faltaCsvDes -or -not (Test-Path $rdsDes) -or ($fontesDes | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsDes).LastWriteTime })) {
     $rscript = Get-ChildItem "$env:ProgramFiles\R\R-*\bin\Rscript.exe" -ErrorAction SilentlyContinue |
         Sort-Object FullName | Select-Object -Last 1
     if (-not $rscript) { Write-Host "Rscript não encontrado em $env:ProgramFiles\R." -ForegroundColor Red; exit 1 }
     Write-Host "`n=== Caso Motivação de desligamento: rodando a análise ===" -ForegroundColor Cyan
     & $rscript.FullName "$desligamento\scripts\analise.R"
     if ($LASTEXITCODE -ne 0) { Write-Host "Falha na análise do caso Motivação de desligamento." -ForegroundColor Red; exit 1 }
+    & $rscript.FullName "$desligamento\scripts\traduzir_prioridades.R"
+    if ($LASTEXITCODE -ne 0) { Write-Host "Falha ao traduzir as prioridades do caso Motivação de desligamento." -ForegroundColor Red; exit 1 }
     if (Test-Path "$geradorDes\conferir.R") {
         & $rscript.FullName "$geradorDes\conferir.R"
         if ($LASTEXITCODE -ne 0) { Write-Host "A análise não recuperou algum padrão plantado (veja acima)." -ForegroundColor Red; exit 1 }
@@ -161,7 +170,7 @@ if (-not (Test-Path $rdsDes) -or ($fontesDes | Where-Object { $_.LastWriteTime -
 }
 $fontesPdfDes = @(Get-Item $rdsDes, "$desligamento\relatorio\relatorio.qmd", "$desligamento\scripts\apresentacao.R",
     "$desligamento\scripts\rotulos.R") + @(Get-ChildItem "$desligamento\relatorio\textos_*.yml")
-$pdfsDes = [ordered]@{ pt = "relatorio.pdf" }
+$pdfsDes = [ordered]@{ es = "relatorio-es.pdf"; en = "relatorio-en.pdf"; pt = "relatorio.pdf" }
 $refazerPdfDes = $false
 foreach ($arquivo in $pdfsDes.Values) {
     $pdf = "$desligamento\relatorio\$arquivo"
@@ -181,7 +190,7 @@ if ($refazerPdfDes) {
 }
 $ultimaDes = (Get-ChildItem "$desligamento\resultados\*", "$desligamento\scripts\*" |
     Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
-foreach ($congelado in @("_freeze\$desligamento")) {
+foreach ($congelado in "_freeze\$desligamento", "_freeze\es\proyectos\motivos-de-salida", "_freeze\en\projects\turnover-exit-reasons") {
     $jsonDes = "$congelado\index\execute-results\html.json"
     if ((Test-Path $jsonDes) -and (Get-Item $jsonDes).LastWriteTime -lt $ultimaDes) {
         Remove-Item $congelado -Recurse -Force

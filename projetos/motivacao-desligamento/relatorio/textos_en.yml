@@ -1,0 +1,68 @@
+# Texto do relatório em PDF, em inglês. Trechos entre chaves são R,
+# preenchidos com os valores do .rds (ver relatorio.qmd e scripts/apresentacao.R).
+
+titulo: "Why people leave"
+subtitulo: "Cestária Supermercados · Separations and exit interviews, 2024 and 2025"
+autor: "Felipe Fonseca · Orbita Space"
+rodape: "Fictional case: fictional company, people and data. The method is real."
+de: "of"
+
+manchete: "The stated reason is not always the real one: among those who rated their manager 1 or 2, leadership and manager is the reason for {pct(motivo(pn, \"Liderança e gestor\"), 0)} of voluntary exits, and pay, for {pct(motivo(pn, \"Salário e benefícios\"), 0)}."
+
+s_resumo: "Summary"
+resumo: |
+  The Cestária separation rate held steady: {pct(an$taxa[1], 2)} of the workforce left each month in 2024 and {pct(an$taxa[2], 2)} in 2025. Leadership asked why people resign and where to act first.
+
+  - **The stated reason hides the real one.** "Pay and benefits" is the reason most often given ({pct(motivo(pg, "Salário e benefícios"), 0)}), but, among those who rated their manager 1 or 2, "leadership and manager" moves ahead: {pct(motivo(pn, "Liderança e gestor"), 0)} against {pct(motivo(pn, "Salário e benefícios"), 0)}.
+  - **Exits in the first 90 days grew in two departments:** in {gerencia("CD Expedição")}, from {pct(g90("CD Expedição", 2024), 0)} to {pct(g90("CD Expedição", 2025), 0)} of new hires; in {gerencia("L3 Operações")}, from {pct(g90("L3 Operações", 2024), 0)} to {pct(g90("L3 Operações", 2025), 0)}.
+  - **{gerencia("L5 Vendas")} has been losing more people since its manager changed**, in {mes_ano(res$troca)}: its rate was {num(rr$rr, 1)} times what the other Sales departments would predict.
+  - **The night 6x1 schedule (six days on, one day off) concentrates "hours and schedule"**, the reason for {pct(jo$pct[1], 0)} of exits there, against {pct(outros_jornada$pct, 0)} everywhere else.
+  - **Age does not explain the exits:** the effect disappears once tenure enters the model.
+
+s_contexto: "The question"
+contexto: |
+  Cestária has {num(res$lojas)} stores, a distribution center (DC) and a headquarters office (HQ), and about {num(round(res$hc_medio, -1))} people. In 2024 and 2025, {num(res$saidas_total)} people left. The total barely changed, a difference consistent with chance ({p_valor(res$teste_anos$p.value)}), but voluntary exits rose from {pct(an$taxa_vol[1], 2)} to {pct(an$taxa_vol[2], 2)} a month, and dismissals fell by almost the same amount. To answer leadership, the exit interview was crossed with the monthly headcount and the separations.
+
+s_motivos: "What the stated reason hides"
+motivos: |
+  There were {num(res$respondentes)} responses from people who resigned (resignation or mutual agreement). Overall, pay leads, at {pct(motivo(pg, "Salário e benefícios"))} (95% CI {ic(motivo(pg, "Salário e benefícios", "inf"), motivo(pg, "Salário e benefícios", "sup"))}). Among the {num(pn$total[1])} people who rated their manager 1 or 2, "leadership and manager" rises to {pct(motivo(pn, "Liderança e gestor"))} ({ic(motivo(pn, "Liderança e gestor", "inf"), motivo(pn, "Liderança e gestor", "sup"))}). Of the {num(sal_nb$n)} people with a low rating who gave pay as their reason, {pct(sal_nb$pct, 0)} gave leadership as their secondary reason.
+
+  This does not prove that the manager caused the exit. It shows that the main reason, read on its own, points to pay, while the rating and the second reason point to leadership.
+
+s_resposta: "Who answered"
+resposta: |
+  Of those who resigned, {pct(resp_vol, 0)} answered, against {pct(resp_inv, 0)} of those who were dismissed; {unidade_baixa} came in at {pct(resp_baixa, 0)}. The reason is only asked of people who resign; the gap between sites was corrected by weighting each response by the inverse of its site's response rate. No reason moved by more than {num(pond_max, 1)} percentage point, and the order stayed the same. The weighting assumes that, within each site, the people who answered are similar to those who did not.
+
+s_onde: "Where to act first"
+s_90: "Exits in the first 90 days"
+noventa: |
+  Among people hired up to October 2, 2025, the share who resigned within 90 days went, in {gerencia("CD Expedição")}, from {pct(g90("CD Expedição", 2024), 0)} (2024 hires) to {pct(g90("CD Expedição", 2025), 0)} (2025 hires), and in {gerencia("L3 Operações")}, from {pct(g90("L3 Operações", 2024), 0)} to {pct(g90("L3 Operações", 2025), 0)}; in the others, from {pct(g90("Demais gerências", 2024), 0)} to {pct(g90("Demais gerências", 2025), 0)}. In 2025, the risk was {num(hr$hr[hr$grupo == "CD Expedição"], 1)} and {num(hr$hr[hr$grupo == "L3 Operações"], 1)} times that of the other departments (cause-specific Cox). The chart shows cumulative incidence, with all hires and dismissal as a competing risk; that is why, at 90 days, it does not exactly match these proportions.
+
+s_troca: "The manager change in L5 Sales"
+troca: |
+  Before the change, L5 lost {pct(taxa_troca("L5 Vendas", FALSE), 1)} of its staff a month to voluntary exits; afterward, {pct(taxa_troca("L5 Vendas", TRUE), 1)}. The other Sales departments went from {pct(taxa_troca("Outras gerências de Vendas", FALSE), 1)} to {pct(taxa_troca("Outras gerências de Vendas", TRUE), 1)}. Netting that out, the L5 rate was {num(rr$rr, 1)} times higher (95% CI {num_ic(rr$inf, rr$sup)}). "Leadership and manager" went from fewer than 10 of the {num(tl$n[!tl$depois])} responses to {num(tl$x[tl$depois])} of {num(tl$n[tl$depois])}. It is an association in time, with only six months of data after the change.
+
+s_jornada: "The 6x1 schedule on the night shift"
+jornada: |
+  "Hours and schedule" is the reason for {pct(jo$pct[1], 0)} of voluntary exits on the night 6x1 schedule ({ic(jo$inf[1], jo$sup[1], 0)}), against {pct(outros_jornada$pct, 0)} in the other combinations. Night work on other schedules does not have the same problem: what weighs is the single day off a week.
+
+s_prioridades: "Priorities by department"
+prioridades: |
+  For 2025. **High:** the voluntary rate or exits within 90 days are above the company ({pct(res$empresa_vol, 2)} a month and {pct(res$empresa_90, 0)}) even at the lower bound of the 95% interval. **Medium:** both above in the point estimate, or a reason (leadership, schedule) above the company at the lower bound. The other departments are at "Monitor" and are in the CSV, with the intervals; no group of fewer than 10 people appears. {frase_acompanhar}
+
+s_acoes: "What to do"
+acoes: |
+  - **{gerencia("CD Expedição")} and {gerencia("L3 Operações")}:** listen to new hires before 90 days and review onboarding and the schedule described at hiring.
+  - **{gerencia("L5 Vendas")}:** a structured conversation with the team and with the new manager, and monthly tracking of the rate against the other stores.
+  - **Night 6x1 schedule:** study another schedule for night restocking, starting with the departments with the most exits.
+  - **Interview:** always ask for the secondary reason and the manager rating, and seek more responses at {unidade_baixa}.
+
+s_limitacoes: "Limitations"
+limitacoes: |
+  - Fictional data: the patterns were planted by a generator, and the analysis found them without reading the answer key.
+  - Response bias: the weighting only corrects the gap between sites.
+  - Association is not causation: the L5 comparison assumes it would have followed the trend of the other Sales departments without the change.
+  - The reason is self-reported, from a closed list; people hired after October 2, 2025 fall outside the 90-day window.
+
+nota: |
+  The full method, the regressions and the R code are on the case page, at orbitaspace.com.br/en/projects/turnover-exit-reasons.

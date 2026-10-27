@@ -55,7 +55,7 @@ preparar_texto <- function(res, envir = parent.frame()) {
   v$frase_acompanhar <- paste(vapply(seq_len(nrow(acomp)), function(i) {
     a <- acomp[i, ]
     motivo_r <- sub(" \\(.*", "", strsplit(a$sinais, "; ")[[1]][1])
-    tx$frase_acompanhar(a$gerencia, traduzir(motivo_r, tx$motivos), tx$pct(a$taxa_vol, 2), tx$pct(res$empresa_vol, 2),
+    tx$frase_acompanhar(tx$gerencia(a$gerencia), traduzir(motivo_r, tx$motivos), tx$pct(a$taxa_vol, 2), tx$pct(res$empresa_vol, 2),
                         a$taxa_vol > res$empresa_vol, tx$pct(a$pct_90, 0), tx$pct(res$empresa_90, 0),
                         a$pct_90 > res$empresa_90)
   }, ""), collapse = " ")
@@ -67,7 +67,7 @@ preparar_texto <- function(res, envir = parent.frame()) {
     "a idade perde o efeito com o tempo de casa" = oi$inf[2] < 1 & oi$sup[2] > 1,
     "antes da troca, a L5 tem menos de 10 respostas com liderança" = tl$x[!tl$depois] < 10
   )
-  list2env(c(v, tx[c("num", "pct", "ic", "mes_ano")]), envir = envir)
+  list2env(c(v, tx[c("num", "pct", "ic", "num_ic", "p_valor", "p_tab", "mes_ano", "gerencia")]), envir = envir)
   invisible(v)
 }
 
@@ -146,7 +146,7 @@ grafico_resposta <- function(res, celular = FALSE) {
   tx <- res$tx
   tam <- tamanhos(celular)
   d <- res$resposta_unidade |>
-    mutate(destaque = pct == min(pct), unidade = fct_rev(unidade))
+    mutate(destaque = pct == min(pct), unidade = fct_rev(factor(tx$unidade(unidade), tx$unidade(levels(unidade)))))
   ggplot(d, aes(pct, unidade, colour = destaque)) +
     geom_vline(xintercept = 100 * sum(d$responderam) / sum(d$saidas), colour = cor[["cinza_claro"]], linewidth = 0.6) +
     geom_errorbar(aes(xmin = inf, xmax = sup), orientation = "y", width = 0, linewidth = 0.9) +
@@ -166,7 +166,7 @@ grafico_incidencia <- function(res, celular = FALSE) {
   tam <- tamanhos(celular)
   grupos <- c("CD Expedição", "L3 Operações", "Demais gerências")
   d <- res$incidencia |>
-    mutate(grupo = factor(traduzir(grupo, tx$grupos), traduzir(grupos, tx$grupos)),
+    mutate(grupo = factor(tx$gerencia(grupo), tx$gerencia(grupos)),
            coorte = factor(ano_admissao))
   # Rótulo na ponta de cada curva: 2025 um pouco acima, 2024 um pouco abaixo,
   # para não se sobreporem quando as duas curvas terminam perto.
@@ -198,7 +198,7 @@ grafico_troca <- function(res, celular = FALSE) {
   d <- res$troca_mensal |>
     filter(!is.na(taxa_mm3)) |>
     mutate(data = mes_data(ano_mes), destaque = grupo == res$gerencia_troca,
-           rotulo = traduzir(grupo, tx$grupos))
+           rotulo = tx$gerencia(grupo))
   ponta <- d |> filter(data == max(data))
   troca <- res$troca
   topo <- max(d$taxa_mm3) * 1.12
@@ -270,8 +270,9 @@ prioridades_fmt <- function(res, pdf = FALSE) {
   if (pdf) pr <- pr |> filter(prioridade != "Acompanhar")
   menos <- \(valor, n) if_else(n < 10, tx$menos_de_10, valor)
   d <- pr |>
-    transmute(ordem = tx$num(ordem), gerencia, prioridade = traduzir(prioridade, tx$prioridades),
-              sinais = vapply(strsplit(sinais, "; "), \(s) paste(traduzir(s, tx$sinais), collapse = "; "), ""),
+    transmute(ordem = tx$num(ordem), gerencia = tx$gerencia(gerencia),
+              prioridade = traduzir(prioridade, tx$prioridades),
+              sinais = vapply(strsplit(sinais, "; "), \(s) paste(tx$sinal(s), collapse = "; "), ""),
               taxa = tx$pct(taxa_vol, 2),
               noventa = menos(tx$pct(pct_90, 0), admitidos),
               resposta = menos(tx$pct(resposta, 0), saidas),
@@ -286,8 +287,7 @@ or_fmt <- function(res, tab, nomes_termos) {
   tab |>
     mutate(termo = nomes_termos[termo]) |>
     filter(!is.na(termo)) |>
-    transmute(termo, or = tx$num(or, 2), ic = paste0(tx$num(inf, 2), " a ", tx$num(sup, 2)),
-              p = if_else(p < 0.001, "< 0,001", tx$num(p, 3)))
+    transmute(termo, or = tx$num(or, 2), ic = tx$num_ic(inf, sup, 2), p = tx$p_tab(p))
 }
 
 ## ---- capa ----

@@ -9,6 +9,7 @@ listing:
     - "proyectos/tesis-rotacion/index.qmd"
     - "proyectos/gobernanza-indicadores/index.qmd"
     - "proyectos/auditoria-alimentacion/index.qmd"
+    - "proyectos/motivos-de-salida/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

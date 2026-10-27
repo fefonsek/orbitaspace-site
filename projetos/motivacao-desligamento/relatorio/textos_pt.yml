@@ -21,7 +21,7 @@ resumo: |
 
 s_contexto: "A pergunta"
 contexto: |
-  A Cestária tem {num(res$lojas)} lojas, um centro de distribuição e um escritório central, e cerca de {num(round(res$hc_medio, -1))} pessoas. Em 2024 e 2025, {num(res$saidas_total)} pessoas saíram. O total ficou parado (p = {num(res$teste_anos$p.value, 2)}), mas as saídas voluntárias subiram de {pct(an$taxa_vol[1], 2)} para {pct(an$taxa_vol[2], 2)} ao mês, e as dispensas caíram quase na mesma medida. Para responder à diretoria, a entrevista de desligamento foi cruzada com o quadro mês a mês e com os desligamentos.
+  A Cestária tem {num(res$lojas)} lojas, um centro de distribuição e um escritório central, e cerca de {num(round(res$hc_medio, -1))} pessoas. Em 2024 e 2025, {num(res$saidas_total)} pessoas saíram. O total quase não mudou, uma diferença compatível com o acaso (p = {num(res$teste_anos$p.value, 2)}), mas as saídas voluntárias subiram de {pct(an$taxa_vol[1], 2)} para {pct(an$taxa_vol[2], 2)} ao mês, e as dispensas caíram quase na mesma medida. Para responder à diretoria, a entrevista de desligamento foi cruzada com o quadro mês a mês e com os desligamentos.
 
 s_motivos: "O que o motivo declarado esconde"
 motivos: |

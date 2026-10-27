@@ -1,4 +1,4 @@
-# Caso Motivação de desligamento (PT; ES e EN depois). Com freeze: auto, o Quarto só roda
+# Caso Motivação de desligamento (PT, ES e EN). Com freeze: auto, o Quarto só roda
 # o R desta página de novo quando o index.qmd muda; quando os resultados ou os
 # scripts mudam, o render.ps1 descarta o resultado guardado em _freeze/.
 execute:
