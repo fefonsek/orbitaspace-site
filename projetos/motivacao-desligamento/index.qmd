@@ -3,9 +3,9 @@ title: "Motivação de desligamento: o que o motivo declarado esconde"
 description: "Dois anos de desligamentos e entrevistas de saída de uma rede de supermercados. Por que as pessoas pedem para sair, onde isso se concentra e onde agir primeiro."
 image: img/capa.png
 image-alt: "Capa do caso: motivação de desligamento na Cestária Supermercados, com o motivo principal das saídas voluntárias em todas as respostas e entre quem deu nota baixa ao gestor"
-categories: [People Analytics, R, Quarto, Rotatividade]
+categories: [People Analytics, Power BI, R, Quarto, Rotatividade]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
-frente: [relatorios]
+frente: [relatorios, paineis]
 traducao: desligamento
 # Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
 lightbox: true
@@ -82,6 +82,12 @@ grafico_mensal(res, celular = TRUE)
 :::
 
 Com o total estável, a rotatividade não parecia ser assunto. A diretoria fez outras duas perguntas: por que as pessoas pedem para sair, e onde agir primeiro? Para responder, a entrevista de desligamento, que a empresa já fazia e ninguém lia junto com o resto, foi cruzada com o quadro mês a mês e com os desligamentos.
+
+## Explore o painel
+
+O relatório abaixo virou um painel interativo: filtre por ano, unidade e gerência, troque o recorte das respostas e veja a troca de gestor da L5 Vendas mês a mês. Taxas ao mês, com o equivalente no ano. Os dados são fictícios.
+
+{{< painel-pbi chave="painel-pbi-cestaria" titulo="Painel interativo de turnover da Cestária no Power BI" botao="Explorar o painel interativo" imagem="../../assets/img/painel-turnover-visao-executiva.png" alt="Visão executiva do painel de turnover da Cestária: headcount médio, taxas de desligamento e de saída voluntária ao mês, a taxa mês a mês de 2024 e 2025 e a composição das saídas por tipo" >}}
 
 ## O que os dados mostram
 
@@ -474,7 +480,7 @@ rt |>
 - **Olhar a composição, e não só o total.** Uma taxa estável escondia mais saídas voluntárias e saídas cada vez mais cedo em duas gerências.
 - **Comparar com um controle.** A troca de gestor da L5 foi medida contra as outras gerências de Vendas, e não só contra o próprio passado.
 - **Dizer o que os dados não sustentam.** O viés de resposta foi medido e corrigido, a idade foi descartada como explicação, e nenhuma associação foi tratada como causa.
-- **Uma base pronta para o painel.** As seis tabelas formam um modelo dimensional, que a próxima etapa do caso usa num painel de turnover em Power BI.
+- **Do relatório ao painel.** O mesmo método virou um painel em Power BI (modelo estrela com mudança de gestor tratada no tempo, 65 medidas DAX, segurança por unidade) que bate com o relatório número a número.
 
 ::: cta-final
 ## Sua empresa faz entrevista de desligamento, mas ninguém lê junto com o resto?

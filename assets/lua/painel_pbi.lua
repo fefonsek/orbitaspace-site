@@ -1,7 +1,9 @@
 -- Shortcode {{< painel-pbi titulo="..." botao="..." >}}: painel do Power BI
 -- publicado na web ("Publicar na Web").
 --
--- O link fica num lugar só: a chave painel-pbi do _quarto.yml.
+-- O link fica num lugar só: uma chave do _quarto.yml. Sem chave="...", usa
+-- painel-pbi (o Radar); com chave="painel-pbi-cestaria", o painel de turnover.
+--   chave:  nome da chave do _quarto.yml com o link (padrão: painel-pbi)
 -- No computador, mostra o painel num iframe; no celular (até 600 px), troca
 -- o iframe por um botão que abre o painel em tela cheia numa nova aba.
 --   titulo: nome do iframe lido por leitores de tela
@@ -25,9 +27,13 @@ end
 
 return {
   ["painel-pbi"] = function(_args, kwargs, meta)
-    local url = escapar(pandoc.utils.stringify(meta["painel-pbi"] or ""))
+    local chave = pandoc.utils.stringify(kwargs["chave"] or "")
+    if chave == "" then
+      chave = "painel-pbi"
+    end
+    local url = escapar(pandoc.utils.stringify(meta[chave] or ""))
     if url == "" then
-      error("painel-pbi: falta o link na chave painel-pbi do _quarto.yml")
+      error("painel-pbi: falta o link na chave " .. chave .. " do _quarto.yml")
     end
     local titulo = texto(kwargs, "titulo")
     local botao = texto(kwargs, "botao")

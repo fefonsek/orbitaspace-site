@@ -3,9 +3,9 @@ title: "Motivos de desvinculación: lo que esconde el motivo declarado"
 description: "Dos años de desvinculaciones y entrevistas de salida de una cadena de supermercados. Por qué las personas renuncian, dónde se concentra y dónde actuar primero."
 image: img/capa.png
 image-alt: "Portada del caso: motivos de desvinculación en Cestária Supermercados, con el motivo principal de las salidas voluntarias en todas las respuestas y entre quienes dieron nota baja al líder"
-categories: [People Analytics, R, Quarto, Rotación]
+categories: [People Analytics, Power BI, R, Quarto, Rotación]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
-frente: [relatorios]
+frente: [relatorios, paineis]
 traducao: desligamento
 # Tocar un gráfico lo abre en pantalla completa (en el celular quedan pequeños).
 lightbox: true
@@ -83,6 +83,14 @@ grafico_mensal(res, celular = TRUE)
 :::
 
 Con el total estable, la rotación no parecía un tema. La dirección hizo otras dos preguntas: ¿por qué las personas renuncian?, y ¿dónde actuar primero? Para responder, la entrevista de salida, que la empresa ya hacía y nadie leía junto con lo demás, se cruzó con la dotación mes a mes y con las desvinculaciones.
+
+## Explora el tablero
+
+El informe de abajo se convirtió en un tablero interactivo: filtra por año, unidad y gerencia, cambia el recorte de las respuestas y sigue el cambio de líder de la L5 Ventas mes a mes. Tasas al mes, con el equivalente anual. Los datos son ficticios.
+
+{{< painel-pbi chave="painel-pbi-cestaria" titulo="Tablero interactivo de rotación de Cestária en Power BI" botao="Explorar el tablero interactivo" imagem="../../../assets/img/painel-turnover-visao-executiva.png" alt="Vista ejecutiva del tablero de rotación de Cestária: dotación media, tasas de desvinculación y de salida voluntaria al mes, la tasa mes a mes de 2024 y 2025 y la composición de las salidas por tipo" >}}
+
+[Tablero en portugués.]{.nota-idioma .nota-painel}
 
 ## Lo que muestran los datos
 
@@ -468,7 +476,7 @@ rt |>
 - **Mirar la composición, y no solo el total.** Una tasa estable escondía más salidas voluntarias y salidas cada vez más tempranas en dos gerencias.
 - **Comparar con un control.** El cambio de líder de la L5 se midió frente a las otras gerencias de Ventas, y no solo frente a su propio pasado.
 - **Decir lo que los datos no sostienen.** El sesgo de respuesta se midió y se corrigió, la edad se descartó como explicación, y ninguna asociación se trató como causa.
-- **Una base lista para el tablero.** Las seis tablas forman un modelo dimensional, que la próxima etapa del caso usa en un tablero de rotación en Power BI.
+- **Del informe al tablero.** El mismo método se convirtió en un tablero en Power BI (modelo estrella con el cambio de líder tratado en el tiempo, 65 medidas DAX, seguridad por unidad) que coincide con el informe número por número.
 
 ::: cta-final
 ## ¿Tu empresa hace entrevistas de salida, pero nadie las lee junto con lo demás?

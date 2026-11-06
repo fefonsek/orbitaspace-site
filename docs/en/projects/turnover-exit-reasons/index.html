@@ -208,6 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Why people leave: what the stated reason hides</h1>
   <div class="quarto-categories">
     <div class="quarto-category">People Analytics</div>
+    <div class="quarto-category">Power BI</div>
     <div class="quarto-category">R</div>
     <div class="quarto-category">Quarto</div>
     <div class="quarto-category">Turnover</div>
@@ -274,6 +275,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>With a stable total, turnover did not look like an issue. Leadership asked two other questions instead: why do people resign, and where should we act first? To answer them, the exit interview, which the company already ran and nobody read alongside anything else, was crossed with the monthly headcount and the separations.</p>
+</section>
+<section id="explore-the-dashboard" class="level2">
+<h2 data-anchor-id="explore-the-dashboard">Explore the dashboard</h2>
+<p>The report below became an interactive dashboard: filter by year, unit and department, switch the slice of answers and follow the L5 Sales manager change month by month. Monthly rates, with the yearly equivalent. The data is fictional.</p>
+<div class="painel-pbi-clique" data-src="https://app.powerbi.com/view?r=eyJrIjoiODFmZWE1N2QtZmY1NC00ZjE5LWIyNWItMDZhYTAwNWQzNDIwIiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" data-titulo="Interactive Cestária turnover dashboard in Power BI">
+<a class="painel-pbi-capa" href="https://app.powerbi.com/view?r=eyJrIjoiODFmZWE1N2QtZmY1NC00ZjE5LWIyNWItMDZhYTAwNWQzNDIwIiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" target="_blank" rel="noopener"><img src="../../../assets/img/painel-turnover-visao-executiva.png?v=e5ebeb6a" srcset="../../../assets/img/painel-turnover-visao-executiva.png 640w, ../../../assets/img/painel-turnover-visao-executiva.png 1600w" sizes="(max-width: 600px) 100vw, 800px" alt="Executive view of the Cestária turnover dashboard: average headcount, monthly separation and voluntary exit rates, the month-by-month rate for 2024 and 2025 and the mix of exits by type" width="1600" height="900" loading="lazy"><span class="btn btn-primary painel-pbi-abrir">Explore the interactive dashboard</span></a>
+</div>
+<p><span class="nota-idioma nota-painel">Dashboard in Portuguese.</span></p>
 </section>
 <section id="what-the-data-shows" class="level2">
 <h2 data-anchor-id="what-the-data-shows">What the data shows</h2>
@@ -1384,7 +1393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Look at the mix, not just the total.</strong> A stable rate hid more voluntary exits and earlier and earlier exits in two departments.</li>
 <li><strong>Compare against a control.</strong> The L5 manager change was measured against the other Sales departments, not just against its own past.</li>
 <li><strong>Say what the data does not support.</strong> Response bias was measured and corrected, age was ruled out as an explanation, and no association was treated as a cause.</li>
-<li><strong>A dataset ready for the dashboard.</strong> The six tables form a dimensional model, which the next stage of the case uses in a Power BI turnover dashboard.</li>
+<li><strong>From report to dashboard.</strong> The same method became a Power BI dashboard (star schema with manager changes tracked over time, 65 DAX measures, row-level security by unit) that matches the report number for number.</li>
 </ul>
 </section>
 <section id="does-your-company-run-exit-interviews-that-nobody-reads-alongside-anything-else" class="level2 cta-final">

@@ -55,6 +55,9 @@ profile:
 
 website:
   site-url: https://orbitaspace.com.br
+  # Páginas com draft: true continuam sendo geradas em docs/, mas ficam fora
+  # do sitemap, da busca e das listagens, e nenhum link do site leva a elas.
+  draft-mode: unlinked
   favicon: assets/img/favicon-32.png
   open-graph: true
   # Imagem de compartilhamento padrão; a página do Radar usa a capa do painel.
@@ -89,3 +92,6 @@ shortcodes:
 # Link "Publicar na Web" do painel do Radar, usado pelo shortcode
 # {{< painel-pbi >}} nas três páginas do projeto (veja o README).
 painel-pbi: "https://app.powerbi.com/view?r=eyJrIjoiZjViNTBjOWEtNmQ3OC00ODc5LWI3MzItYTA3NWUxNDc1YzU4IiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9"
+# Link "Publicar na Web" do painel de turnover da Cestária (caso Motivação de
+# desligamento), usado com {{< painel-pbi chave="painel-pbi-cestaria" >}}.
+painel-pbi-cestaria: "https://app.powerbi.com/view?r=eyJrIjoiODFmZWE1N2QtZmY1NC00ZjE5LWIyNWItMDZhYTAwNWQzNDIwIiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9"

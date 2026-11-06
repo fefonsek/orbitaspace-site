@@ -285,6 +285,11 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   cabeçalho (`false` esconde).
   - O link "Publicar na Web" do Power BI fica num lugar só: a chave
     `painel-pbi` do `_quarto.yml`. Para trocar o painel, troque esse link.
+  - O argumento opcional `chave="..."` escolhe outra chave do `_quarto.yml`
+    (sem ele, vale `painel-pbi`). O painel de turnover do caso Motivação de
+    desligamento usa `chave="painel-pbi-cestaria"`, nas três línguas da página
+    do caso e na landing de People Analytics, sempre com a imagem antes do
+    clique.
   - O shortcode `{{< painel-pbi titulo="..." botao="..." >}}`
     (`assets/lua/painel_pbi.lua`) monta a seção: no computador, um iframe
     16:9 mais 60 px para a barra inferior do Power BI; no celular (até
@@ -344,10 +349,10 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
     No celular e sem JavaScript, o clique abre o painel numa nova aba. A
     página do Radar continua com o iframe direto (sem `imagem`).
   - O segundo exemplo, ligado ao turnover, é o caso Motivação de desligamento,
-    com o Pareto como imagem fixa (`projetos/motivacao-desligamento/img/pareto.png`
-    e `pareto-celular.png`, gravadas pela página do caso a cada render). Os
-    números do texto da landing são fixos: se a base do caso mudar, atualize
-    à mão.
+    com o painel de turnover da Cestária no mesmo formato clicável
+    (`chave="painel-pbi-cestaria"`, imagem `assets/img/painel-turnover-visao-executiva.png`,
+    o print da visão executiva). Os números do texto da landing são fixos: se
+    a base do caso mudar, atualize à mão.
 - **Bordão e faixa de arte no fim das páginas:** o filtro
   `assets/lua/faixa.lua` acrescenta no fim de cada página o bordão do lado de
   dados ("Decifre os sinais dos seus dados.", na língua da página) e a faixa

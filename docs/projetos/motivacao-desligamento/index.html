@@ -208,6 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Motivação de desligamento: o que o motivo declarado esconde</h1>
   <div class="quarto-categories">
     <div class="quarto-category">People Analytics</div>
+    <div class="quarto-category">Power BI</div>
     <div class="quarto-category">R</div>
     <div class="quarto-category">Quarto</div>
     <div class="quarto-category">Rotatividade</div>
@@ -274,6 +275,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Com o total estável, a rotatividade não parecia ser assunto. A diretoria fez outras duas perguntas: por que as pessoas pedem para sair, e onde agir primeiro? Para responder, a entrevista de desligamento, que a empresa já fazia e ninguém lia junto com o resto, foi cruzada com o quadro mês a mês e com os desligamentos.</p>
+</section>
+<section id="explore-o-painel" class="level2">
+<h2 data-anchor-id="explore-o-painel">Explore o painel</h2>
+<p>O relatório abaixo virou um painel interativo: filtre por ano, unidade e gerência, troque o recorte das respostas e veja a troca de gestor da L5 Vendas mês a mês. Taxas ao mês, com o equivalente no ano. Os dados são fictícios.</p>
+<div class="painel-pbi-clique" data-src="https://app.powerbi.com/view?r=eyJrIjoiODFmZWE1N2QtZmY1NC00ZjE5LWIyNWItMDZhYTAwNWQzNDIwIiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" data-titulo="Painel interativo de turnover da Cestária no Power BI">
+<a class="painel-pbi-capa" href="https://app.powerbi.com/view?r=eyJrIjoiODFmZWE1N2QtZmY1NC00ZjE5LWIyNWItMDZhYTAwNWQzNDIwIiwidCI6IjQ3NGQxNmE5LTM1OGUtNDg3Ny04MTE1LWYwZTZlZGIxOWVhYyJ9" target="_blank" rel="noopener"><img src="../../assets/img/painel-turnover-visao-executiva.png?v=e5ebeb6a" srcset="../../assets/img/painel-turnover-visao-executiva.png 640w, ../../assets/img/painel-turnover-visao-executiva.png 1600w" sizes="(max-width: 600px) 100vw, 800px" alt="Visão executiva do painel de turnover da Cestária: headcount médio, taxas de desligamento e de saída voluntária ao mês, a taxa mês a mês de 2024 e 2025 e a composição das saídas por tipo" width="1600" height="900" loading="lazy"><span class="btn btn-primary painel-pbi-abrir">Explorar o painel interativo</span></a>
+</div>
 </section>
 <section id="o-que-os-dados-mostram" class="level2">
 <h2 data-anchor-id="o-que-os-dados-mostram">O que os dados mostram</h2>
@@ -1391,7 +1399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Olhar a composição, e não só o total.</strong> Uma taxa estável escondia mais saídas voluntárias e saídas cada vez mais cedo em duas gerências.</li>
 <li><strong>Comparar com um controle.</strong> A troca de gestor da L5 foi medida contra as outras gerências de Vendas, e não só contra o próprio passado.</li>
 <li><strong>Dizer o que os dados não sustentam.</strong> O viés de resposta foi medido e corrigido, a idade foi descartada como explicação, e nenhuma associação foi tratada como causa.</li>
-<li><strong>Uma base pronta para o painel.</strong> As seis tabelas formam um modelo dimensional, que a próxima etapa do caso usa num painel de turnover em Power BI.</li>
+<li><strong>Do relatório ao painel.</strong> O mesmo método virou um painel em Power BI (modelo estrela com mudança de gestor tratada no tempo, 65 medidas DAX, segurança por unidade) que bate com o relatório número a número.</li>
 </ul>
 </section>
 <section id="sua-empresa-faz-entrevista-de-desligamento-mas-ninguém-lê-junto-com-o-resto" class="level2 cta-final">

@@ -56,15 +56,7 @@ Na Cestária Supermercados, uma rede fictícia com cerca de 1.800 pessoas, a rot
 
 Os mesmos dados mostraram onde agir primeiro: duas gerências perdendo gente nos primeiros 90 dias e uma gerência que passou a perder mais pessoas depois da troca de gestor.
 
-```{=html}
-<figure class="landing-figura">
-<picture>
-<source media="(max-width: 600px)" srcset="projetos/motivacao-desligamento/img/pareto-celular.png">
-<img src="projetos/motivacao-desligamento/img/pareto.png" width="1296" height="547" loading="lazy" alt="Dois gráficos de barras com os motivos de saída voluntária. Em todas as respostas, salário e benefícios é o motivo mais citado. Entre quem deu nota 1 ou 2 ao gestor, liderança e gestor, em azul, passa a ser o maior, com mais do que o dobro de salário.">
-</picture>
-<figcaption>Motivo principal das saídas voluntárias, em todas as respostas e só entre quem deu nota 1 ou 2 ao gestor. Dados fictícios.</figcaption>
-</figure>
-```
+{{< painel-pbi chave="painel-pbi-cestaria" titulo="Painel interativo de turnover da Cestária no Power BI" botao="Explorar o painel interativo" imagem="assets/img/painel-turnover-visao-executiva.png" alt="Visão executiva do painel de turnover da Cestária: headcount médio, taxas de desligamento e de saída voluntária ao mês, a taxa mês a mês de 2024 e 2025 e a composição das saídas por tipo" >}}
 
 [Ver o caso completo](projetos/motivacao-desligamento/index.qmd)
 

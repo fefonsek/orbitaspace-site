@@ -62,6 +62,8 @@ def marcadores_pendentes() -> list[str]:
 
 
 SUFIXO_QUARTO = " – Orbita Space"  # o Quarto junta o título do site com meia-risca
+# Nas páginas em revealjs (apresentações), o Quarto põe o nome do site na frente.
+PREFIXO_QUARTO = "Orbita Space – "
 TITULOS = re.compile(
     r'(<title>)(.*?)(</title>)|(<meta (?:property|name)="(?:og|twitter):title" content=")(.*?)(")',
     re.DOTALL,
@@ -69,7 +71,12 @@ TITULOS = re.compile(
 
 
 def corrigir_titulos() -> int:
-    """Troca o separador "–" que o Quarto põe no título da aba por "·"."""
+    """Troca o separador "–" que o Quarto põe no título da aba por "·".
+
+    Nas páginas html o nome do site vem no fim ("Título – Orbita Space"); nas
+    apresentações em revealjs, no começo ("Orbita Space – Título"). Nos dois
+    casos o título fica "Título · Orbita Space".
+    """
     alterados = 0
 
     def trocar(m: re.Match) -> str:
@@ -77,6 +84,8 @@ def corrigir_titulos() -> int:
         if texto.endswith(SUFIXO_QUARTO):
             base = texto[: -len(SUFIXO_QUARTO)]
             texto = base if "Orbita Space" in base else base + " · Orbita Space"
+        elif texto.startswith(PREFIXO_QUARTO):
+            texto = texto[len(PREFIXO_QUARTO):] + " · Orbita Space"
         return abre + texto + fecha
 
     for arquivo in DOCS.rglob("*.html"):

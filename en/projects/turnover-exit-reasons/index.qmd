@@ -3,9 +3,9 @@ title: "Why people leave: what the stated reason hides"
 description: "Two years of separations and exit interviews at a supermarket chain. Why people resign, where it concentrates and where to act first."
 image: img/capa.png
 image-alt: "Case cover: why people leave Cestária Supermercados, with the main reason for voluntary exits in all responses and among those who rated their manager low"
-categories: [People Analytics, R, Quarto, Turnover]
+categories: [People Analytics, Power BI, R, Quarto, Turnover]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas, indicadores e/ou relatorios.
-frente: [relatorios]
+frente: [relatorios, paineis]
 traducao: desligamento
 # Tapping a chart opens it full screen (on a phone they are small).
 lightbox: true
@@ -83,6 +83,14 @@ grafico_mensal(res, celular = TRUE)
 :::
 
 With a stable total, turnover did not look like an issue. Leadership asked two other questions instead: why do people resign, and where should we act first? To answer them, the exit interview, which the company already ran and nobody read alongside anything else, was crossed with the monthly headcount and the separations.
+
+## Explore the dashboard
+
+The report below became an interactive dashboard: filter by year, unit and department, switch the slice of answers and follow the L5 Sales manager change month by month. Monthly rates, with the yearly equivalent. The data is fictional.
+
+{{< painel-pbi chave="painel-pbi-cestaria" titulo="Interactive Cestária turnover dashboard in Power BI" botao="Explore the interactive dashboard" imagem="../../../assets/img/painel-turnover-visao-executiva.png" alt="Executive view of the Cestária turnover dashboard: average headcount, monthly separation and voluntary exit rates, the month-by-month rate for 2024 and 2025 and the mix of exits by type" >}}
+
+[Dashboard in Portuguese.]{.nota-idioma .nota-painel}
 
 ## What the data shows
 
@@ -468,7 +476,7 @@ rt |>
 - **Look at the mix, not just the total.** A stable rate hid more voluntary exits and earlier and earlier exits in two departments.
 - **Compare against a control.** The L5 manager change was measured against the other Sales departments, not just against its own past.
 - **Say what the data does not support.** Response bias was measured and corrected, age was ruled out as an explanation, and no association was treated as a cause.
-- **A dataset ready for the dashboard.** The six tables form a dimensional model, which the next stage of the case uses in a Power BI turnover dashboard.
+- **From report to dashboard.** The same method became a Power BI dashboard (star schema with manager changes tracked over time, 65 DAX measures, row-level security by unit) that matches the report number for number.
 
 ::: cta-final
 ## Does your company run exit interviews that nobody reads alongside anything else?
