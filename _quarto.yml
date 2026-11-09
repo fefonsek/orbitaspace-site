@@ -71,6 +71,10 @@ website:
 
 format:
   html:
+    # <link rel="canonical"> em cada página. O Quarto escreve o endereço com
+    # "index.html"; o scripts/pos_render.py troca pelo endereço da pasta
+    # (com barra no final) e confere que cada página do sitemap aponta para si.
+    canonical-url: true
     theme: assets/css/orbita.scss
     highlight-style: monochrome
     toc: false

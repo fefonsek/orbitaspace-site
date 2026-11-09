@@ -61,7 +61,7 @@
 <p>Terceiro, <strong>combine quem pode mudar uma definição e como a mudança é registrada</strong>. Uma regra simples, aprovada pela diretoria, evita que a próxima versão nasça em silêncio dentro de uma planilha.</p>
 <p>Depois disso, o painel volta a fazer o papel dele: mostrar um número em que todos confiam, para que a reunião seja sobre o que fazer.</p>
 <hr>
-<p>O caso completo, com o inventário dos 40 indicadores, as fichas técnicas e as três definições calculadas lado a lado, está em <a href="../../../projetos/governanca-indicadores/index.html">Um número, três respostas</a>.</p>
+<p>O caso completo, com o inventário dos 40 indicadores, as fichas técnicas e as três definições calculadas lado a lado, está em <a href="../../../projetos/governanca-indicadores/">Um número, três respostas</a>.</p>
 <p>Se na sua empresa o mesmo indicador também tem mais de uma versão, <a href="../../../contato.html">me conta como funciona hoje</a>. Eu te digo por onde começar.</p>
 
 
@@ -85,7 +85,7 @@
 
 <p>Você já deve ter visto esta cena. Fecha o ano, a taxa de absenteísmo sai igual à do ano anterior, alguém escreve “estável” no relatório e o assunto sai da pauta. Faz sentido: se o número não mudou, por que gastar tempo com ele?</p>
 <p>Porque um número parado pode ser a soma de coisas andando em direções opostas.</p>
-<p>No <a href="../../../projetos/radar-absenteismo/index.html">Radar de Absenteísmo</a>, um painel que construí sobre uma empresa fictícia, a taxa foi de 3,772% em 2024 para 3,774% em 2025. Uma diferença de dois milésimos de ponto percentual. Se o relatório parasse aí, a conclusão seria “nada mudou”. Mas mudou bastante coisa.</p>
+<p>No <a href="../../../projetos/radar-absenteismo/">Radar de Absenteísmo</a>, um painel que construí sobre uma empresa fictícia, a taxa foi de 3,772% em 2024 para 3,774% em 2025. Uma diferença de dois milésimos de ponto percentual. Se o relatório parasse aí, a conclusão seria “nada mudou”. Mas mudou bastante coisa.</p>
 <section id="separe-o-que-o-gestor-controla-do-que-ele-não-controla" class="level2">
 <h2 data-anchor-id="separe-o-que-o-gestor-controla-do-que-ele-não-controla">Separe o que o gestor controla do que ele não controla</h2>
 <p>O primeiro passo é dividir a taxa em duas partes:</p>
@@ -159,7 +159,7 @@
 <p>Decompor mostra de onde vem a variação, não por que ela aconteceu. Saber que a curta duração subiu 8% fora das doenças infecciosas é o começo da investigação, não o fim. No caso do Radar, o passo seguinte mostrou que a piora estava concentrada em duas equipes do turno da noite; mas isso é assunto para outro texto.</p>
 <p>Se você acompanha absenteísmo na sua empresa, vale o exercício: pegue a taxa dos dois últimos anos e separe curta e longa duração. Pode ser que o seu “estável” também esteja escondendo alguma coisa.</p>
 <hr>
-<p><em>Os dados deste texto são fictícios, gerados para o projeto Radar de Absenteísmo. <a href="../../../projetos/radar-absenteismo/index.html">Ver o projeto</a></em></p>
+<p><em>Os dados deste texto são fictícios, gerados para o projeto Radar de Absenteísmo. <a href="../../../projetos/radar-absenteismo/">Ver o projeto</a></em></p>
 
 
 </section>

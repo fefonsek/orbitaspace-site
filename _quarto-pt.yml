@@ -16,7 +16,7 @@ website:
   title: "Orbita Space"
   description: "Orbita Space: consultoria de dados de Felipe Fonseca. Painéis em Power BI, análise estatística e indicadores."
   navbar:
-    logo-href: /index.html
+    logo-href: /
     logo-alt: "Orbita Space, página inicial"
     left:
       - href: index.qmd
@@ -34,9 +34,9 @@ website:
     right:
       - href: index.qmd
         text: PT
-      - href: /es/index.html
+      - href: /es/
         text: ES
-      - href: /en/index.html
+      - href: /en/
         text: EN
   page-footer:
     background: "#1a1a2e"
@@ -46,5 +46,5 @@ website:
     # Frase da Saline Astral, com link para a página na mesma língua.
     # Na própria página da Saline aparece a frase espelhada, que leva à página
     # inicial (.rodape-dados); a troca é feita em assets/css/orbita.scss.
-    center: "[Também crio música e conteúdos de autoconhecimento como <a href=\"/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conheça*]{.rodape-saline}[Também trabalho com dados e estatística como <a href=\"/index.html\"><strong>Felipe Fonseca</strong></a> → *Conheça*]{.rodape-dados}"
+    center: "[Também crio música e conteúdos de autoconhecimento como <a href=\"/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conheça*]{.rodape-saline}[Também trabalho com dados e estatística como <a href=\"/\"><strong>Felipe Fonseca</strong></a> → *Conheça*]{.rodape-dados}"
     right: "[[WhatsApp](https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pelo%20site%20da%20Orbita%20Space.) · [E-mail](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-marca-felipe}[[E-mail](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"

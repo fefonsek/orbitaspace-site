@@ -58,7 +58,26 @@ Roda sozinho no fim de todo `render.ps1`:
 - **Páginas:** confere se cada página de `_traducoes.yml` existe e está no
   sitemap.
 - **Títulos:** troca a meia-risca que o Quarto põe como separador no título
-  da aba por um ponto médio: "Projetos · Orbita Space".
+  da aba por um ponto médio: "Projetos · Orbita Space". Vale também para as
+  apresentações em revealjs, em que o Quarto põe o nome do site na frente.
+- **Um endereço por página (sem `index.html`):** cada página de uma pasta tem
+  um endereço só, o da pasta com barra no final
+  (`https://orbitaspace.com.br/en/projects/kpi-governance/`), para o Google
+  não ver a mesma página com e sem `index.html`.
+  - O Quarto sempre escreve `index.html` nos links para um `index.qmd` (menu,
+    listagens, links entre páginas) e não tem opção para mudar isso. Os
+    `.qmd` continuam apontando para `index.qmd`, para o Quarto conferir se a
+    página existe, e o script tira o `index.html` do fim dos links internos
+    em `docs/`: HTML, sitemap, `<link>` dos feeds e `href` da busca. O
+    `<guid>` dos feeds fica como está, para os leitores de RSS não
+    repetirem posts antigos.
+  - Endereços escritos à mão já usam a pasta: o menu, o logo e o rodapé nos
+    `_quarto-*.yml` (`/`, `/es/`, `/en/`) e as páginas em `_traducoes.yml`,
+    que viram os links hreflang e o seletor de idioma.
+  - `canonical-url: true` no `_quarto.yml` põe `<link rel="canonical">` em
+    cada página. O script confere que cada página do sitemap aponta para o
+    próprio endereço e que não sobrou link interno para `index.html`; se
+    sobrar, é erro.
 - **Sufixo de versão nas imagens:** toda imagem passa a ser carregada como
   `foto.jpg?v=a21fb6a1`, onde o código é um resumo (hash) do conteúdo do
   arquivo. Quando uma imagem é trocada, o código muda e o navegador baixa a

@@ -63,6 +63,14 @@ def rel(p: Path) -> str:
     return p.relative_to(DOCS).as_posix()
 
 
+def url(p: Path) -> str:
+    """Endereço público da página: a pasta, com barra no final, no lugar de index.html."""
+    caminho = rel(p)
+    if caminho == "index.html" or caminho.endswith("/index.html"):
+        caminho = caminho[: -len("index.html")]
+    return URL_SITE + "/" + caminho
+
+
 def idioma(p: Path) -> str:
     topo = rel(p).split("/")[0]
     return topo if topo in ("es", "en") else "pt"
@@ -132,23 +140,23 @@ def main() -> int:
 
     # 4. hreflang
     print("\n== 4. hreflang ==")
-    por_url = {URL_SITE + "/" + rel(p): p for p in dados}
+    por_url = {url(p): p for p in dados}
     com_hreflang = 0
     for p, c in dados.items():
         if not c.hreflang:
             print(f"  sem hreflang (esperado só em post sem tradução): {rel(p)}")
             continue
         com_hreflang += 1
-        proprio = URL_SITE + "/" + rel(p)
+        proprio = url(p)
         codigos = set(c.hreflang)
         if codigos != {"pt-BR", "es", "en", "x-default"}:
             problemas.append(f"hreflang incompleto em {rel(p)}: {sorted(codigos)}")
         if proprio not in c.hreflang.values():
             problemas.append(f"hreflang de {rel(p)} não inclui a própria página")
-        for codigo, url in c.hreflang.items():
-            destino = por_url.get(url)
+        for codigo, endereco in c.hreflang.items():
+            destino = por_url.get(endereco)
             if destino is None:
-                problemas.append(f"hreflang {codigo} de {rel(p)} aponta para página inexistente: {url}")
+                problemas.append(f"hreflang {codigo} de {rel(p)} aponta para página inexistente: {endereco}")
                 continue
             if proprio not in dados[destino].hreflang.values():
                 problemas.append(f"hreflang sem volta: {rel(p)} -> {rel(destino)}")

@@ -10,6 +10,13 @@
 5. Leva para logo depois de <head> os blocos marcados com
    <!-- inicio-do-head --> ... <!-- /inicio-do-head --> (a tag do Google Ads
    da landing de TCC), que o Quarto põe no fim do cabeçalho.
+6. Tira o "index.html" do fim dos links internos (menu, listagens, links
+   entre páginas, canônica, sitemap, feed e busca), para que cada página tenha
+   um endereço só: a pasta com barra no final (/en/projects/kpi-governance/).
+   O Quarto sempre escreve "index.html" nos links para um index.qmd e não tem
+   opção para mudar isso, então a troca é feita aqui. Depois confere que cada
+   página do sitemap tem <link rel="canonical"> apontando para si mesma e que
+   não sobrou nenhum link interno para "index.html".
 
 Uso: python scripts/pos_render.py <pasta com sitemap-pt.xml, sitemap-es.xml, sitemap-en.xml>
 """
@@ -29,6 +36,17 @@ MARCADORES = re.compile(r"V[ÍI]DEO AQUI|LINK DO REPOSIT[ÓO]RIO", re.IGNORECASE
 VERMELHO, NORMAL = "\033[91m", "\033[0m"
 
 
+def url_da_pasta(url: str) -> str:
+    """Tira o "index.html" do fim de um endereço: /x/index.html -> /x/."""
+    return url[: -len("index.html")] if url.endswith("/index.html") else url
+
+
+def arquivo_da_url(caminho: str) -> Path:
+    """Arquivo em docs/ que o servidor entrega para o caminho (/x/ -> x/index.html)."""
+    caminho = caminho.lstrip("/")
+    return DOCS / (caminho + "index.html" if caminho == "" or caminho.endswith("/") else caminho)
+
+
 def juntar_sitemaps(pasta: Path) -> set[str]:
     ET.register_namespace("", NS)
     raiz = ET.Element(f"{{{NS}}}urlset")
@@ -36,7 +54,10 @@ def juntar_sitemaps(pasta: Path) -> set[str]:
     for idioma in ("pt", "es", "en"):
         arvore = ET.parse(pasta / f"sitemap-{idioma}.xml")
         for url in arvore.getroot().findall(f"{{{NS}}}url"):
-            loc = url.findtext(f"{{{NS}}}loc")
+            elemento = url.find(f"{{{NS}}}loc")
+            loc = url_da_pasta(elemento.text) if elemento is not None and elemento.text else None
+            if loc:
+                elemento.text = loc
             if loc and loc not in vistos:
                 vistos.add(loc)
                 raiz.append(url)
@@ -155,6 +176,74 @@ def versionar_imagens() -> tuple[int, list[str]]:
     return trocas, sorted(nao_encontradas)
 
 
+# Link interno que termina em "index.html", relativo ou com o endereço do site,
+# com ou sem #âncora/?parâmetros. Links para outros sites não entram.
+LINK_INDEX = re.compile(
+    r"""(?P<attr>(?<![\w-])href=)(?P<q>["'])"""
+    r"""(?P<base>(?:https://orbitaspace\.com\.br/|(?![a-z][a-z0-9+.-]*:|//))[^"'?#\s]*?)"""
+    r"""index\.html(?P<resto>[?#][^"']*)?(?P=q)""",
+    re.IGNORECASE,
+)
+# No feed: <link>...index.html</link>. O <guid> fica como está, para que os
+# leitores de RSS não mostrem os posts antigos como novos.
+LINK_INDEX_FEED = re.compile(r"(<link>)(https://orbitaspace\.com\.br/[^<]*?/)index\.html(</link>)")
+# Na busca (search.json): "href": "en/projects/kpi-governance/index.html#secao".
+LINK_INDEX_BUSCA = re.compile(r'("href":\s*")((?:[^"\\]*/)?)index\.html([#?][^"\\]*)?(")')
+CANONICA = re.compile(r'<link rel="canonical" href="([^"]*)"')
+
+
+def normalizar_links() -> int:
+    """Troca .../index.html por .../ nos links internos de docs/."""
+    alterados = 0
+
+    def trocar(m: re.Match) -> str:
+        base = m.group("base")
+        if base and not base.endswith("/"):
+            return m.group(0)  # ex.: "meu-index.html", outro arquivo
+        q = m.group("q")
+        return f'{m.group("attr")}{q}{base or "./"}{m.group("resto") or ""}{q}'
+
+    for arquivo in DOCS.rglob("*"):
+        if "site_libs" in arquivo.parts or arquivo.suffix not in (".html", ".xml", ".json"):
+            continue
+        original = arquivo.read_text(encoding="utf-8")
+        if arquivo.suffix == ".json":
+            if arquivo.name != "search.json":
+                continue
+            novo = LINK_INDEX_BUSCA.sub(lambda m: m.group(1) + (m.group(2) or "./") + (m.group(3) or "") + m.group(4), original)
+        else:
+            novo = LINK_INDEX.sub(trocar, original)
+            if arquivo.suffix == ".xml":
+                novo = LINK_INDEX_FEED.sub(r"\1\2\3", novo)
+        if novo != original:
+            arquivo.write_text(novo, encoding="utf-8")
+            alterados += 1
+    return alterados
+
+
+def conferir_enderecos(no_sitemap: set[str]) -> list[str]:
+    """Canônica de cada página do sitemap e links internos que ainda usam index.html."""
+    problemas = []
+    for loc in sorted(no_sitemap):
+        if loc.endswith("index.html"):
+            problemas.append(f"sitemap com index.html: {loc}")
+        arquivo = arquivo_da_url(loc[len(URL_SITE):])
+        if not arquivo.is_file():
+            continue  # já aparece como "arquivo ausente"
+        canonicas = CANONICA.findall(arquivo.read_text(encoding="utf-8"))
+        if canonicas != [loc]:
+            problemas.append(f"canônica errada em {loc}: {canonicas or 'nenhuma'}")
+    for arquivo in sorted(DOCS.rglob("*.html")):
+        if "site_libs" in arquivo.parts:
+            continue
+        for m in LINK_INDEX.finditer(arquivo.read_text(encoding="utf-8")):
+            base = m.group("base")
+            if not base or base.endswith("/"):
+                problemas.append(f"link para index.html em {arquivo.relative_to(DOCS).as_posix()}: {m.group(0)}")
+                break
+    return problemas
+
+
 INICIO_DO_HEAD = re.compile(r"[ \t]*<!-- inicio-do-head\b.*?<!-- /inicio-do-head -->[ \t]*\r?\n?", re.DOTALL)
 
 
@@ -197,7 +286,7 @@ def main() -> int:
     no_sitemap = juntar_sitemaps(Path(sys.argv[1]))
     faltando = []
     for caminho in paginas_esperadas():
-        if not (DOCS / caminho.lstrip("/")).is_file():
+        if not arquivo_da_url(caminho).is_file():
             faltando.append(f"arquivo ausente: docs{caminho}")
         if URL_SITE + caminho not in no_sitemap:
             faltando.append(f"fora do sitemap: {caminho}")
@@ -210,6 +299,8 @@ def main() -> int:
     print("\nPáginas HTML geradas:", ", ".join(f"{k}: {v}" for k, v in contagem.items()))
     print(f"Sitemap: {len(no_sitemap)} endereços.")
 
+    print(f"Links sem index.html (endereço da pasta): {normalizar_links()} arquivos.")
+    faltando += conferir_enderecos(no_sitemap)
     print(f"Títulos corrigidos (separador do Quarto): {corrigir_titulos()} páginas.")
     print(f"Blocos levados para o início do <head>: {mover_para_inicio_do_head()} páginas.")
     versionadas, sem_arquivo = versionar_imagens()

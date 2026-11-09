@@ -6,21 +6,21 @@
 # leva para o blog do outro idioma.
 
 inicio:
-  pt: /index.html
-  es: /es/index.html
-  en: /en/index.html
+  pt: /
+  es: /es/
+  en: /en/
 projetos:
   pt: /projetos.html
   es: /es/proyectos.html
   en: /en/projects.html
 radar:
-  pt: /projetos/radar-absenteismo/index.html
-  es: /es/proyectos/radar-ausentismo/index.html
-  en: /en/projects/absenteeism-radar/index.html
+  pt: /projetos/radar-absenteismo/
+  es: /es/proyectos/radar-ausentismo/
+  en: /en/projects/absenteeism-radar/
 tcc:
-  pt: /projetos/caso-tcc-rotatividade/index.html
-  es: /es/proyectos/tesis-rotacion/index.html
-  en: /en/projects/thesis-turnover/index.html
+  pt: /projetos/caso-tcc-rotatividade/
+  es: /es/proyectos/tesis-rotacion/
+  en: /en/projects/thesis-turnover/
 servicos:
   pt: /servicos.html
   es: /es/servicios.html
@@ -38,26 +38,26 @@ contato:
   es: /es/contacto.html
   en: /en/contact.html
 indicadores:
-  pt: /projetos/governanca-indicadores/index.html
-  es: /es/proyectos/gobernanza-indicadores/index.html
-  en: /en/projects/kpi-governance/index.html
+  pt: /projetos/governanca-indicadores/
+  es: /es/proyectos/gobernanza-indicadores/
+  en: /en/projects/kpi-governance/
 auditoria:
-  pt: /projetos/auditoria-alimentacao/index.html
-  es: /es/proyectos/auditoria-alimentacion/index.html
-  en: /en/projects/meal-allowance-audit/index.html
+  pt: /projetos/auditoria-alimentacao/
+  es: /es/proyectos/auditoria-alimentacion/
+  en: /en/projects/meal-allowance-audit/
 post-absenteismo:
-  pt: /blog/posts/taxa-estavel-esconde-piora/index.html
-  es: /es/blog/posts/tasa-estable-esconde-empeoramiento/index.html
-  en: /en/blog/posts/stable-rate-turn-for-the-worse/index.html
+  pt: /blog/posts/taxa-estavel-esconde-piora/
+  es: /es/blog/posts/tasa-estable-esconde-empeoramiento/
+  en: /en/blog/posts/stable-rate-turn-for-the-worse/
 post-indicadores:
-  pt: /blog/posts/cada-area-calcula-do-seu-jeito/index.html
-  es: /es/blog/posts/cada-area-calcula-a-su-manera/index.html
-  en: /en/blog/posts/same-kpi-different-numbers/index.html
+  pt: /blog/posts/cada-area-calcula-do-seu-jeito/
+  es: /es/blog/posts/cada-area-calcula-a-su-manera/
+  en: /en/blog/posts/same-kpi-different-numbers/
 saline:
   pt: /saline-astral.html
   es: /es/saline-astral.html
   en: /en/saline-astral.html
 desligamento:
-  pt: /projetos/motivacao-desligamento/index.html
-  es: /es/proyectos/motivos-de-salida/index.html
-  en: /en/projects/turnover-exit-reasons/index.html
+  pt: /projetos/motivacao-desligamento/
+  es: /es/proyectos/motivos-de-salida/
+  en: /en/projects/turnover-exit-reasons/
