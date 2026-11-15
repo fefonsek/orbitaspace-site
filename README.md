@@ -252,8 +252,11 @@ publica só o PDF e o CSV de prioridades.
   rodapé, CNPJ, e-mail e o fim do título das abas (`website.title`).
 - Na página inicial, o texto visível não usa "consultor" nem "consultoria";
   essas palavras ficam só no título de SEO e na meta description.
-- **Rodapé** (fora das páginas da Saline): quatro linhas à esquerda (nome e
-  profissão; Orbita Space com logo e CNPJ; e-mail e Instagram; redes, menor).
+- **Rodapé** (fora das páginas da Saline): nome e profissão à esquerda,
+  Orbita Space com logo e CNPJ no centro (`.rodape-cnpj`, dentro do `center`
+  do `page-footer`) e os links à direita; a frase da Saline fica numa linha
+  própria, embaixo. O CSS usa `display: contents` na coluna do centro para
+  separar o CNPJ (primeira linha) da frase (linha de baixo).
 - **Mentoria em grupo:** por enquanto só lista de espera, pelo WhatsApp, no
   cartão `#mentoria` da página inicial (o botão "Conhecer a mentoria" leva
   até ele).
@@ -341,7 +344,9 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
   vêm de `_rascunhos/saline_astral_es_en.md`.
   - O visual próprio vem de `body-classes: pagina-saline` no cabeçalho e das
     regras `.pagina-saline` e `.saline-*` em `assets/css/orbita.scss`.
-  - Topo: o logo, à esquerda, com link para a página inicial da mesma língua;
+  - Topo: o logo, à esquerda, com link para a página inicial da mesma língua,
+    e o nome "Saline Astral" no lugar de "Felipe Fonseca" (troca feita pelo
+    script de `assets/html/idiomas.html`; sem JavaScript, fica o nome do site);
     do menu fica só "Início", que o script de `assets/html/idiomas.html` faz
     apontar para a própria página da Saline e marca como atual; o seletor
     PT | ES | EN fica à direita. Sem hambúrguer no celular.
@@ -352,6 +357,18 @@ _rascunhos/                                  rascunhos de texto (fora do Git)
     e Instagram da Saline). A frase da Saline dá lugar à frase espelhada,
     "Também trabalho com dados e estatística como Felipe Fonseca", que leva à
     página inicial da mesma língua (`.rodape-saline` e `.rodape-dados`).
+  - Seções **Artes** e **Poemas**, entre Música e o curso: escondidas com
+    `mostrar-artes: false` e `mostrar-poemas: false` no cabeçalho das três
+    páginas, até o conteúdo existir. Para mostrar, troque por `true` e
+    preencha a seção: a galeria das colagens no lugar do comentário de Artes
+    (imagens geradas por `scripts/imagens_artes.py`, nunca copiadas à mão) e
+    cada poema num bloco `::: saline-poema`, com os versos começando por
+    `| ` para manter as quebras de linha. Na página da Saline a linha do CNPJ
+    do rodapé não aparece.
+  - Abaixo do nome, no topo, o apelido ("ou apenas Sal para os íntimos",
+    `.saline-apelido`). Em "Onde acompanhar", um rótulo por tipo de conteúdo
+    (`.saline-canal-tipo`): autoconhecimento em @salineastral (Instagram,
+    TikTok e YouTube); poemas e colagens em @fonsekando (Instagram e TikTok).
   - A playlist do curso fica embutida logo abaixo do texto do curso, no mesmo
     padrão do vídeo do Radar (`youtube-nocookie.com/embed/videoseries?list=`).
   - As duas imagens são geradas por `python scripts/imagens_artes.py` (veja

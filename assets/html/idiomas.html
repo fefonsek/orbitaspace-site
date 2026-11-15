@@ -11,8 +11,10 @@
 // 3. Botão "Copiar e-mail" da página de contato.
 // 4. Fecho (bordão e faixa de arte, de assets/lua/faixa.lua): sai do fim do
 //    conteúdo e vai para logo acima do rodapé, na largura total da tela.
-// 5. Página da Saline Astral: o único item do menu, "Início", leva à própria
-//    página e aparece como atual (o CSS esconde os outros itens).
+// 5. Página da Saline Astral: ao lado do logo, o nome "Saline Astral" no
+//    lugar de "Felipe Fonseca" (o link continua levando à página inicial);
+//    o único item do menu, "Início", leva à própria página e aparece como
+//    atual (o CSS esconde os outros itens).
 // 6. Painel do Power BI que só carrega no clique ({{< painel-pbi imagem=... >}}):
 //    no computador, o clique troca a imagem pelo iframe; no celular (até
 //    600 px), o link abre o painel numa nova aba, como na página do Radar.
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 5. Saline
   if (document.body.classList.contains("pagina-saline")) {
+    var nomeSaline = document.querySelector(".navbar .navbar-title");
+    if (nomeSaline) nomeSaline.textContent = "Saline Astral";
     var inicioSaline = document.querySelector(".navbar .navbar-nav.me-auto .nav-link");
     if (inicioSaline) {
       inicioSaline.href = location.pathname;

@@ -8,11 +8,16 @@ title-block-banner: false
 # seletor de idioma; as regras ficam em .pagina-saline, em assets/css/orbita.scss.
 body-classes: pagina-saline
 traducao: saline
+# Seções Artes e Poemas: escondidas até o conteúdo chegar (veja o README).
+mostrar-artes: false
+mostrar-poemas: false
 ---
 
 ::: saline-abertura
 ::: {}
 [Saline Astral]{.saline-rotulo}
+
+[Saline Astral, ou apenas Sal para os íntimos.]{.saline-apelido}
 
 # Decifre os sinais que vivem em você.
 
@@ -72,6 +77,31 @@ Single "Sexto Sentido"
 [Todos os lançamentos no Spotify](https://open.spotify.com/artist/07bz9fCMgWLo8WP9tietlG)
 :::
 
+::: {.content-visible when-meta="mostrar-artes"}
+::: saline-secao
+## Artes
+
+<!-- Galeria das colagens: entra aqui quando as imagens existirem (veja o README). -->
+:::
+:::
+
+::: {.content-visible when-meta="mostrar-poemas"}
+::: saline-secao
+## Poemas
+
+<!-- Cada poema num bloco como este, com os versos começando por "| " para
+manter as quebras de linha:
+
+::: saline-poema
+### Título do poema
+
+| primeiro verso
+| segundo verso
+:::
+-->
+:::
+:::
+
 ::: saline-secao
 ::: saline-curso
 ![](assets/img/saline/sombras.jpg){.saline-imagem fig-alt="Aquarela de um rosto de perfil envolto por linhas de geometria sagrada" width="800" height="800"}
@@ -99,7 +129,13 @@ Integrar a sombra não é virar uma pessoa melhor. É tornar-se mais inteiro do 
 ::: saline-secao
 ## Onde acompanhar
 
+::: saline-canais
+[Autoconhecimento]{.saline-canal-tipo}
 [Instagram](https://www.instagram.com/salineastral) · [TikTok](https://www.tiktok.com/@salineastral) · [[YouTube](https://www.youtube.com/@SalineAstral): @salineastral]{.saline-sem-quebra}
+
+[Poemas e colagens]{.saline-canal-tipo}
+[Instagram](https://www.instagram.com/fonsekando) · [[TikTok](https://www.tiktok.com/@fonsekando): @fonsekando]{.saline-sem-quebra}
+:::
 :::
 
 ::: saline-fecho

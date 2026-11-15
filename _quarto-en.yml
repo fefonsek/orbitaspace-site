@@ -36,13 +36,14 @@ website:
         text: EN
   page-footer:
     background: "#1a1a2e"
-    # Felipe Fonseca: quatro linhas à esquerda (nome, Orbita Space com CNPJ e
-    # logo, e-mail e Instagram, e as redes numa linha menor). Saline Astral:
-    # texto à esquerda e links à direita, como antes.
+    # Felipe Fonseca: nome e profissão à esquerda, Orbita Space com logo e CNPJ
+    # no centro e os links à direita; a frase da Saline fica numa linha
+    # própria, embaixo (assets/css/orbita.scss). Saline Astral: texto à
+    # esquerda e links à direita; a linha do CNPJ não aparece.
     # Cada marca tem o seu texto e os seus links; o CSS mostra os da Saline
     # (.rodape-marca-saline) só nas páginas da Saline.
-    left: "[[Felipe Fonseca · Statistician · Formiga, MG]{.rodape-linha}[<img src=\"/assets/img/logo-branco.png\" class=\"rodape-logo\" alt=\"\" width=\"128\" height=\"128\"> Orbita Space · CNPJ 67.550.599/0001-08]{.rodape-linha}[[felipe.fonseca@orbitaspace.com.br](mailto:felipe.fonseca@orbitaspace.com.br) · [Instagram \\@fefonsek](https://www.instagram.com/fefonsek)]{.rodape-linha}[[WhatsApp](https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-linha .rodape-redes}]{.rodape-marca-felipe}[© 2026 Orbita Space · Saline Astral · Planet Earth]{.rodape-marca-saline}"
+    left: "[Felipe Fonseca · Statistician · Formiga, MG]{.rodape-marca-felipe}[© 2026 Orbita Space · Saline Astral · Planet Earth]{.rodape-marca-saline}"
     # Frase da Saline Astral, com link para a página na mesma língua. Na própria
     # página da Saline aparece a frase espelhada (.rodape-dados).
-    center: "[I also make music and self-knowledge content as <a href=\"/en/saline-astral.html\"><strong>Saline Astral</strong></a> → *Discover*]{.rodape-saline}[I also work with data and statistics as <a href=\"/en/\"><strong>Felipe Fonseca</strong></a> → *Discover*]{.rodape-dados}"
-    right: "[[Email](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"
+    center: "[<img src=\"/assets/img/logo-branco.png\" class=\"rodape-logo\" alt=\"\" width=\"128\" height=\"128\"> Orbita Space · CNPJ 67.550.599/0001-08]{.rodape-cnpj .rodape-marca-felipe}[I also make art, poems and self-knowledge content as <a href=\"/en/saline-astral.html\"><strong>Saline Astral</strong></a> → *Discover*]{.rodape-saline}[I also work with data and statistics as <a href=\"/en/\"><strong>Felipe Fonseca</strong></a> → *Discover*]{.rodape-dados}"
+    right: "[[WhatsApp](https://wa.me/5537984129390?text=Hi%20Felipe%21%20I%20found%20you%20through%20the%20Orbita%20Space%20website.) · [Email](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-marca-felipe}[[Email](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"

@@ -8,11 +8,16 @@ title-block-banner: false
 # seletor de idioma; as regras ficam em .pagina-saline, em assets/css/orbita.scss.
 body-classes: pagina-saline
 traducao: saline
+# Seções Artes e Poemas: escondidas até o conteúdo chegar (veja o README).
+mostrar-artes: false
+mostrar-poemas: false
 ---
 
 ::: saline-abertura
 ::: {}
 [Saline Astral]{.saline-rotulo}
+
+[Saline Astral, or just Sal (yes, like salt) to close friends.]{.saline-apelido}
 
 # Decode the signals that live within you.
 
@@ -72,6 +77,31 @@ Latest release, "1026"
 [All releases on Spotify](https://open.spotify.com/artist/07bz9fCMgWLo8WP9tietlG)
 :::
 
+::: {.content-visible when-meta="mostrar-artes"}
+::: saline-secao
+## Art
+
+<!-- Galeria das colagens: entra aqui quando as imagens existirem (veja o README). -->
+:::
+:::
+
+::: {.content-visible when-meta="mostrar-poemas"}
+::: saline-secao
+## Poems
+
+<!-- Cada poema num bloco como este, com os versos começando por "| " para
+manter as quebras de linha:
+
+::: saline-poema
+### Título do poema
+
+| primeiro verso
+| segundo verso
+:::
+-->
+:::
+:::
+
 ::: saline-secao
 ::: saline-curso
 ![](../assets/img/saline/sombras.jpg){.saline-imagem fig-alt="Watercolor of a face in profile wrapped in lines of sacred geometry" width="800" height="800"}
@@ -99,7 +129,13 @@ Integrating the shadow is not about becoming a better person. It is about becomi
 ::: saline-secao
 ## Where to follow
 
+::: saline-canais
+[Self-knowledge]{.saline-canal-tipo}
 [Instagram](https://www.instagram.com/salineastral) · [TikTok](https://www.tiktok.com/@salineastral) · [[YouTube](https://www.youtube.com/@SalineAstral): @salineastral]{.saline-sem-quebra}
+
+[Poems and collages]{.saline-canal-tipo}
+[Instagram](https://www.instagram.com/fonsekando) · [[TikTok](https://www.tiktok.com/@fonsekando): @fonsekando]{.saline-sem-quebra}
+:::
 :::
 
 ::: saline-fecho

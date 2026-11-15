@@ -125,36 +125,40 @@ p, li { max-width: 72ch; }
   a { color: $branco; }
   a:hover { color: $lavanda; }
 }
-// A frase da Saline Astral (centro do rodapé) vira uma linha própria, abaixo
-// do endereço e dos contatos, em qualquer largura.
-.nav-footer .nav-footer-center {
+// Primeira linha: nome à esquerda, Orbita Space com logo e CNPJ no centro e
+// os links à direita. A coluna do centro também guarda a frase da Saline
+// Astral; com display: contents, cada parte vira um item próprio da linha
+// flexível do rodapé: o CNPJ fica entre a esquerda e a direita, e a frase
+// desce para uma linha própria, embaixo, em qualquer largura.
+.nav-footer .nav-footer-left { order: 1; }
+.nav-footer .nav-footer-right { order: 3; }
+.nav-footer .nav-footer-center,
+.nav-footer .nav-footer-center > p { display: contents; }
+.nav-footer .nav-footer-center { font-size: 0.825em; }
+.rodape-cnpj {
+  order: 2;
+  flex: 0 1 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.rodape-logo { height: 1.15em; width: auto; vertical-align: -0.2em; margin-right: 0.35em; }
+.rodape-saline, .rodape-dados {
   order: 10;
   flex: 1 1 100%;
-  min-height: 0;
   margin: 1rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid rgba($lavanda, 0.2);
   text-align: center;
-  // Menor que a linha de cima (endereço e contatos, 0,825em).
-  font-size: 0.75em;
-  p { max-width: none; }
+  // 0,75em do rodapé: menor que a linha de cima (0,825em).
+  font-size: calc(0.75em / 0.825);
+}
+@media (max-width: 575.98px) {
+  // No celular, as três partes da primeira linha ficam uma embaixo da outra.
+  .rodape-cnpj { flex: 1 1 100%; padding: 0; margin-bottom: 1em; }
 }
 // Frase espelhada (dados e estatística), texto e links da Saline: só
-// aparecem na página da Saline.
+// aparecem na página da Saline (lá, a linha do CNPJ some).
 .rodape-dados, .rodape-marca-saline { display: none; }
-
-// Rodapé de Felipe Fonseca: quatro linhas à esquerda (nome, Orbita Space com
-// CNPJ e logo, e-mail e Instagram, redes numa linha menor). A coluna da
-// direita só tem os links da Saline, então fora da página da Saline ela some
-// e a da esquerda ocupa a largura toda.
-.rodape-marca-felipe .rodape-linha { display: block; }
-.rodape-marca-felipe .rodape-linha + .rodape-linha { margin-top: 0.2rem; }
-.rodape-marca-felipe .rodape-redes { margin-top: 0.6rem !important; font-size: 0.85em; color: rgba($lavanda, 0.85); }
-.rodape-logo { height: 1.15em; width: auto; vertical-align: -0.2em; margin-right: 0.35em; }
-body:not(.pagina-saline) .nav-footer {
-  .nav-footer-left { flex: 1 1 100%; text-align: left; }
-  .nav-footer-right { display: none; }
-}
 
 // Botões.
 .btn { border-radius: 999px; text-decoration: none; }
@@ -808,6 +812,27 @@ body.pagina-saline {
 
 // "YouTube: @salineastral" (Onde acompanhar) não quebra no meio.
 .saline-sem-quebra { white-space: nowrap; }
+
+// Apelido logo abaixo do nome, no topo: tom de conversa, discreto.
+.saline-apelido {
+  display: block;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: $lavanda;
+  margin: -0.35rem 0 1.1rem;
+}
+
+// Onde acompanhar: um rótulo por tipo de conteúdo, com os perfis embaixo.
+// Mesmo desenho dos rótulos pequenos, mas sem SemiBold (só eles usam).
+.saline-canais p + p { margin-top: 1.25rem; }
+.saline-canal-tipo {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $azul-suave;
+  margin-bottom: 0.3rem;
+}
 
 // Rótulos pequenos: os únicos em SemiBold.
 .saline-rotulo {
