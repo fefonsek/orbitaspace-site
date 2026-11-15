@@ -1,9 +1,9 @@
 ---
-title: "Employee turnover in supermarkets: statistical consulting for an undergraduate thesis"
+title: "Employee turnover in supermarkets: statistical analysis for an undergraduate thesis"
 subtitle: "From the Google Forms export to the thesis tables, with every decision explained."
-description: "Fictional consulting case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R."
+description: "Fictional statistical analysis case for an undergraduate thesis: from the survey to the thesis tables, with the whole analysis in R."
 image: img/capa.png
-image-alt: "Case cover: employee turnover in supermarkets, statistical consulting for an undergraduate thesis, with the chart of each factor's effect on the intention to leave"
+image-alt: "Case cover: employee turnover in supermarkets, statistical analysis for an undergraduate thesis, with the chart of each factor's effect on the intention to leave"
 categories: [R, Statistics, Survey, Thesis]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
 frente: [pesquisas]

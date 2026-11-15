@@ -8,8 +8,10 @@ project:
 
 website:
   title: "Orbita Space"
-  description: "Orbita Space: consultoría de datos de Felipe Fonseca. Tableros en Power BI, análisis estadístico e indicadores."
+  description: "Felipe Fonseca: consultoría en datos y Power BI. Orbita Space."
   navbar:
+    # Nome ao lado do logo da Orbita; o título das abas continua "Orbita Space".
+    title: "Felipe Fonseca"
     logo-href: /es/
     logo-alt: "Orbita Space, página de inicio"
     left:
@@ -34,10 +36,13 @@ website:
         text: EN
   page-footer:
     background: "#1a1a2e"
+    # Felipe Fonseca: quatro linhas à esquerda (nome, Orbita Space com CNPJ e
+    # logo, e-mail e Instagram, e as redes numa linha menor). Saline Astral:
+    # texto à esquerda e links à direita, como antes.
     # Cada marca tem o seu texto e os seus links; o CSS mostra os da Saline
     # (.rodape-marca-saline) só nas páginas da Saline.
-    left: "[© 2026 Orbita Space · Felipe Fonseca · Formiga, MG, Brasil]{.rodape-marca-felipe}[© 2026 Orbita Space · Saline Astral · Planeta Tierra]{.rodape-marca-saline}"
+    left: "[[Felipe Fonseca · Estadístico · Formiga, MG]{.rodape-linha}[<img src=\"/assets/img/logo-branco.png\" class=\"rodape-logo\" alt=\"\" width=\"128\" height=\"128\"> Orbita Space · CNPJ 67.550.599/0001-08]{.rodape-linha}[[felipe.fonseca@orbitaspace.com.br](mailto:felipe.fonseca@orbitaspace.com.br) · [Instagram \\@fefonsek](https://www.instagram.com/fefonsek)]{.rodape-linha}[[WhatsApp](https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-linha .rodape-redes}]{.rodape-marca-felipe}[© 2026 Orbita Space · Saline Astral · Planeta Tierra]{.rodape-marca-saline}"
     # Frase da Saline Astral, com link para a página na mesma língua. Na própria
     # página da Saline aparece a frase espelhada (.rodape-dados).
     center: "[También creo música y contenidos de autoconocimiento como <a href=\"/es/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conócela*]{.rodape-saline}[También trabajo con datos y estadística como <a href=\"/es/\"><strong>Felipe Fonseca</strong></a> → *Descubre*]{.rodape-dados}"
-    right: "[[WhatsApp](https://wa.me/5537984129390?text=%C2%A1Hola%2C%20Felipe%21%20Llegu%C3%A9%20por%20el%20sitio%20de%20Orbita%20Space.) · [Correo](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-marca-felipe}[[Correo](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"
+    right: "[[Correo](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"

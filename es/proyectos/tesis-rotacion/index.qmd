@@ -1,9 +1,9 @@
 ---
-title: "Rotación en supermercados: consultoría estadística para una tesis de grado"
+title: "Rotación en supermercados: análisis estadístico para una tesis de grado"
 subtitle: "Del archivo de Google Forms a las tablas de la tesis, con cada decisión explicada."
-description: "Caso ficticio de consultoría para una tesis de grado: del cuestionario a las tablas de la tesis, con todo el análisis en R."
+description: "Caso ficticio de análisis estadístico para una tesis de grado: del cuestionario a las tablas de la tesis, con todo el análisis en R."
 image: img/capa.png
-image-alt: "Portada del caso: rotación en supermercados, consultoría estadística para una tesis de grado, con el gráfico del efecto de cada factor en la intención de irse"
+image-alt: "Portada del caso: rotación en supermercados, análisis estadístico para una tesis de grado, con el gráfico del efecto de cada factor en la intención de irse"
 categories: [R, Estadística, Cuestionario, Tesis]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
 frente: [pesquisas]

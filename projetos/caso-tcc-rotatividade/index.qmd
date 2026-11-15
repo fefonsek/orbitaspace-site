@@ -1,9 +1,9 @@
 ---
-title: "Rotatividade em supermercados: consultoria estatística para um TCC"
+title: "Rotatividade em supermercados: análise estatística para um TCC"
 subtitle: "Do arquivo do Google Forms às tabelas do trabalho, com cada decisão explicada."
-description: "Caso fictício de consultoria para um TCC: do questionário às tabelas do trabalho, com toda a análise em R."
+description: "Caso fictício de análise estatística para um TCC: do questionário às tabelas do trabalho, com toda a análise em R."
 image: img/capa.png
-image-alt: "Capa do caso: rotatividade em supermercados, consultoria estatística para um TCC, com o gráfico do efeito de cada fator na intenção de sair"
+image-alt: "Capa do caso: rotatividade em supermercados, análise estatística para um TCC, com o gráfico do efeito de cada fator na intenção de sair"
 categories: [R, Estatística, Questionário, TCC]
 # Frente de serviço, para o filtro de Projetos: paineis, pesquisas e/ou indicadores.
 frente: [pesquisas]

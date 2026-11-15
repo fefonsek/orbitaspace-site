@@ -1,22 +1,58 @@
 ---
 traducao: inicio
-pagetitle: "Orbita Space · Felipe Fonseca, Consultor de Datos"
-description: "Orbita Space, consultoría de datos de Felipe Fonseca, con base en Brasil. Tableros en Power BI, análisis estadístico para tesis, consultoría en indicadores e informes y auditorías de datos, con atención remota."
+pagetitle: "Felipe Fonseca | Consultoría en Datos y Power BI para Empresas"
+description: "Consultoría en datos para empresas: indicadores, tableros en Power BI, auditoría de pagos y decisiones basadas en números."
 page-layout: full
 title-block-banner: false
 ---
 
 ::: {.hero .container-lg}
-# Orbita Space
+# Felipe Fonseca
 
-[por Felipe Fonseca · Consultor de Datos | Estadística y BI]{.hero-titulo}
+[[Estadístico ·]{.titulo-parte} [datos que impulsan decisiones]{.titulo-parte}]{.hero-titulo}
 
-[Ayudo a empresas e investigadores a pasar de una hoja de cálculo con números sueltos a una respuesta clara: un tablero que muestra dónde actuar, un análisis que resiste la revisión de un jurado, un indicador que todos calculan de la misma manera, un informe que responde a una pregunta concreta.]{.hero-frase}
+[Ayudo a empresas a crecer con procesos mejores y números confiables, y enseño a gerentes a hacer lo mismo.]{.hero-frase}
 
 ::: botoes
-[Ver proyectos](proyectos.qmd){.btn .btn-primary}
-[Escríbeme](contacto.qmd){.btn .btn-outline-primary}
+[Quiero conversar](https://wa.me/5537984129390?text=Hola+Felipe+vine+por+el+sitio+y+quiero+conversar+sobre+los+numeros+de+mi+empresa){.btn .btn-primary}
+[Conocer la mentoría](#mentoria){.btn .btn-outline-primary}
 :::
+:::
+
+::: {.secao .container-lg}
+## Sobre mí
+
+Soy estadístico por la UFOP y estudiante de maestría en Administración en el IFMG. Tengo más de cinco años de experiencia en el mercado, en las áreas de tecnología, gestión y ventas, y trabajé como analista de datos construyendo tableros en Power BI y organizando indicadores de gestión. Hoy ayudo a empresas de cualquier lugar, de forma presencial o a distancia, a transformar procesos y hojas de cálculo dispersas en números confiables, y números confiables en mejores decisiones.
+:::
+
+::: {.secao .container-lg}
+## Cómo puedo ayudar
+
+::: {.grade .grade-ofertas}
+::: {.cartao .cartao-oferta}
+### Proyectos a medida
+
+[Lo hago contigo.]{.cartao-lema}
+
+Diagnóstico, organización de los datos, indicadores, tableros en Power BI y auditoría de pagos y beneficios. Para quien necesita resultados rápidos y no tiene tiempo ni equipo para hacerlo solo.
+
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Hola+Felipe+quiero+agendar+una+conversacion+de+30+minutos){.btn .btn-primary}
+:::
+
+::: {.cartao .cartao-oferta #mentoria}
+[Lista de espera]{.etiqueta}
+
+### Mentoría en grupo
+
+[Te enseño a resolverlo.]{.cartao-lema}
+
+Encuentros en grupo para gerentes y dueños de empresas que quieren entender sus propios números, armar sus indicadores y decidir con más seguridad. Se está formando el primer grupo.
+
+[Entrar en la lista de espera](https://wa.me/5537984129390?text=Hola+Felipe+quiero+saber+del+proximo+grupo+de+la+mentoria){.btn .btn-primary}
+:::
+:::
+
+[Ver todos los servicios](servicios.qmd){.mais}
 :::
 
 ::: {.secao .container-lg}
@@ -37,32 +73,4 @@ Empresa y datos ficticios; método, modelado y análisis reales.
 [Ver el proyecto](proyectos/radar-ausentismo/index.qmd){.btn .btn-primary}
 :::
 :::
-:::
-
-::: {.secao .container-lg}
-## Lo que hago
-
-::: grade
-::: cartao
-### [Tableros en Power BI](servicios.qmd#tableros)
-Del dato crudo al tablero publicado: modelado, DAX, Power Query, diseño y documentación.
-:::
-
-::: cartao
-### [Análisis estadístico para investigaciones académicas](servicios.qmd#investigaciones)
-Planificación, análisis e interpretación de resultados para tesis de grado, maestría y doctorado.
-:::
-
-::: cartao
-### [Consultoría en indicadores](servicios.qmd#indicadores)
-Definir qué medir, cómo calcularlo y quién responde por cada número.
-:::
-
-::: cartao
-### [Informes y auditorías de datos](servicios.qmd#informes)
-Una respuesta precisa sobre un problema concreto, con un informe en HTML y PDF y la lista de casos a revisar.
-:::
-:::
-
-[Ver servicios](servicios.qmd){.mais}
 :::

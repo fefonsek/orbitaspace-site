@@ -96,7 +96,9 @@ def corrigir_titulos() -> int:
 
     Nas páginas html o nome do site vem no fim ("Título – Orbita Space"); nas
     apresentações em revealjs, no começo ("Orbita Space – Título"). Nos dois
-    casos o título fica "Título · Orbita Space".
+    casos o título fica "Título · Orbita Space". Um título que já traz uma das
+    marcas (Orbita Space ou Felipe Fonseca, como o da página inicial) fica
+    como está.
     """
     alterados = 0
 
@@ -104,7 +106,8 @@ def corrigir_titulos() -> int:
         abre, texto, fecha = (m.group(1), m.group(2), m.group(3)) if m.group(1) else (m.group(4), m.group(5), m.group(6))
         if texto.endswith(SUFIXO_QUARTO):
             base = texto[: -len(SUFIXO_QUARTO)]
-            texto = base if "Orbita Space" in base else base + " · Orbita Space"
+            com_marca = "Orbita Space" in base or "Felipe Fonseca" in base
+            texto = base if com_marca else base + " · Orbita Space"
         elif texto.startswith(PREFIXO_QUARTO):
             texto = texto[len(PREFIXO_QUARTO):] + " · Orbita Space"
         return abre + texto + fecha

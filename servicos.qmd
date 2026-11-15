@@ -49,7 +49,7 @@ Primeiro leio o projeto e entendo o objetivo e as hipóteses. Combinamos o plano
 :::
 
 ::: servico
-## Consultoria em indicadores {#indicadores}
+## Indicadores de gestão {#indicadores}
 
 ### Para quem é
 

@@ -1,22 +1,58 @@
 ---
 traducao: inicio
-pagetitle: "Orbita Space · Felipe Fonseca, Consultor de Dados"
-description: "Orbita Space, consultoria de dados de Felipe Fonseca em Formiga, MG. Painéis em Power BI, análise estatística para pesquisas acadêmicas, consultoria em indicadores e relatórios e auditorias de dados, com atendimento remoto."
+pagetitle: "Felipe Fonseca | Consultoria em Dados e Power BI para Empresas em MG"
+description: "Consultoria em dados para empresas de Minas Gerais: indicadores, painéis em Power BI, auditoria de pagamentos e decisões com base em números."
 page-layout: full
 title-block-banner: false
 ---
 
 ::: {.hero .container-lg}
-# Orbita Space
+# Felipe Fonseca
 
-[por Felipe Fonseca · Consultor de Dados | Estatística e BI]{.hero-titulo}
+[Estatístico · dados que viram decisão]{.hero-titulo}
 
-[Ajudo empresas e pesquisadores a sair da planilha com números soltos e chegar a uma resposta clara: um painel que mostra onde agir, uma análise que se sustenta numa banca, um indicador que todo mundo calcula do mesmo jeito, um relatório que responde a uma pergunta concreta.]{.hero-frase}
+[Ajudo empresas a crescer com processos melhores e números confiáveis, e ensino gestores a fazer o mesmo.]{.hero-frase}
 
 ::: botoes
-[Ver projetos](projetos.qmd){.btn .btn-primary}
-[Fale comigo](contato.qmd){.btn .btn-outline-primary}
+[Quero conversar](https://wa.me/5537984129390?text=Ola+Felipe+vim+pelo+site+e+quero+conversar+sobre+os+numeros+da+minha+empresa){.btn .btn-primary}
+[Conhecer a mentoria](#mentoria){.btn .btn-outline-primary}
 :::
+:::
+
+::: {.secao .container-lg}
+## Sobre
+
+Sou estatístico pela UFOP e mestrando em Administração no IFMG. Tenho mais de cinco anos de experiência no mercado, nas áreas de tecnologia, gestão e vendas, e atuei como analista de dados construindo painéis em Power BI e organizando indicadores de gestão. Hoje ajudo empresas de qualquer lugar, presencial ou a distância, a transformar processos e planilhas espalhadas em números confiáveis, e números confiáveis em decisões melhores.
+:::
+
+::: {.secao .container-lg}
+## Como eu posso ajudar
+
+::: {.grade .grade-ofertas}
+::: {.cartao .cartao-oferta}
+### Projetos sob medida
+
+[Eu faço com você.]{.cartao-lema}
+
+Diagnóstico, organização dos dados, indicadores, painéis em Power BI e auditoria de pagamentos e benefícios. Para quem precisa de resultado rápido e não tem tempo ou equipe para fazer sozinho.
+
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Ola+Felipe+quero+marcar+uma+conversa+de+30+minutos){.btn .btn-primary}
+:::
+
+::: {.cartao .cartao-oferta #mentoria}
+[Lista de espera]{.etiqueta}
+
+### Mentoria em grupo
+
+[Eu ensino você a resolver.]{.cartao-lema}
+
+Encontros em grupo para gestores e donos de empresa que querem entender os próprios números, montar seus indicadores e decidir com mais segurança. A primeira turma está sendo formada.
+
+[Entrar na lista de espera](https://wa.me/5537984129390?text=Ola+Felipe+quero+saber+da+proxima+turma+da+mentoria){.btn .btn-primary}
+:::
+:::
+
+[Ver todos os serviços](servicos.qmd){.mais}
 :::
 
 ::: {.secao .container-lg}
@@ -37,32 +73,4 @@ Empresa e dados fictícios; método, modelagem e análise reais.
 [Ver o projeto](projetos/radar-absenteismo/index.qmd){.btn .btn-primary}
 :::
 :::
-:::
-
-::: {.secao .container-lg}
-## O que eu faço
-
-::: grade
-::: cartao
-### [Painéis em Power BI](servicos.qmd#paineis)
-Do dado bruto ao painel publicado: modelagem, DAX, Power Query, design e documentação.
-:::
-
-::: cartao
-### [Análise estatística para pesquisas acadêmicas](servicos.qmd#pesquisas)
-Planejamento, análise e interpretação dos resultados de TCC, dissertação e tese.
-:::
-
-::: cartao
-### [Consultoria em indicadores](servicos.qmd#indicadores)
-Definir o que medir, como calcular e quem responde por cada número.
-:::
-
-::: cartao
-### [Relatórios e auditorias de dados](servicos.qmd#relatorios)
-Uma resposta precisa sobre um problema concreto, com relatório em HTML e PDF e a lista de casos para revisar.
-:::
-:::
-
-[Ver serviços](servicos.qmd){.mais}
 :::

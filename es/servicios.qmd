@@ -50,7 +50,7 @@ Primero leo el proyecto y entiendo el objetivo y las hipótesis. Acordamos el pl
 :::
 
 ::: servico
-## Consultoría en indicadores {#indicadores}
+## Indicadores de gestión {#indicadores}
 
 ### Para quién es
 

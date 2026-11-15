@@ -60,6 +60,8 @@ Roda sozinho no fim de todo `render.ps1`:
 - **Títulos:** troca a meia-risca que o Quarto põe como separador no título
   da aba por um ponto médio: "Projetos · Orbita Space". Vale também para as
   apresentações em revealjs, em que o Quarto põe o nome do site na frente.
+  Um título que já traz "Orbita Space" ou "Felipe Fonseca" (o da página
+  inicial) fica como está.
 - **Um endereço por página (sem `index.html`):** cada página de uma pasta tem
   um endereço só, o da pasta com barra no final
   (`https://orbitaspace.com.br/en/projects/kpi-governance/`), para o Google
@@ -241,6 +243,20 @@ O passo 0d do `render.ps1` roda a análise (e a conferência, se o repositório
 do gerador existir) quando a base ou o script mudaram, refaz o PDF quando os resultados,
 os textos ou os gráficos mudaram e descarta o `_freeze/` da página. O site
 publica só o PDF e o CSV de prioridades.
+
+## Marca
+
+- **Felipe Fonseca** é o nome principal: título da página inicial e nome no
+  menu (`navbar.title` nos `_quarto-*.yml`), ao lado do logo da Orbita.
+- **Orbita Space** é a empresa por trás do trabalho: logo no menu e no
+  rodapé, CNPJ, e-mail e o fim do título das abas (`website.title`).
+- Na página inicial, o texto visível não usa "consultor" nem "consultoria";
+  essas palavras ficam só no título de SEO e na meta description.
+- **Rodapé** (fora das páginas da Saline): quatro linhas à esquerda (nome e
+  profissão; Orbita Space com logo e CNPJ; e-mail e Instagram; redes, menor).
+- **Mentoria em grupo:** por enquanto só lista de espera, pelo WhatsApp, no
+  cartão `#mentoria` da página inicial (o botão "Conhecer a mentoria" leva
+  até ele).
 
 ## Estrutura
 

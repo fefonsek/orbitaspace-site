@@ -50,7 +50,7 @@ First I read your proposal and understand the goal and the hypotheses. We agree 
 :::
 
 ::: servico
-## KPI consulting {#kpis}
+## Management KPIs {#kpis}
 
 ### Who it is for
 

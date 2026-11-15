@@ -1,22 +1,58 @@
 ---
 traducao: inicio
-pagetitle: "Orbita Space · Felipe Fonseca, Data Consultant"
-description: "Orbita Space is Felipe Fonseca's data consultancy, based in Brazil. Power BI dashboards, statistical analysis for theses and dissertations, KPI consulting, and data reports and audits, all done remotely."
+pagetitle: "Felipe Fonseca | Data and Power BI Consulting for Businesses"
+description: "Data consulting for businesses: KPIs, Power BI dashboards, payment audits and data-driven decisions."
 page-layout: full
 title-block-banner: false
 ---
 
 ::: {.hero .container-lg}
-# Orbita Space
+# Felipe Fonseca
 
-[by Felipe Fonseca · Data Consultant | Statistics and BI]{.hero-titulo}
+[[Statistician ·]{.titulo-parte} [data that drives decisions]{.titulo-parte}]{.hero-titulo}
 
-[I help companies and researchers get from a spreadsheet full of loose numbers to a clear answer: a dashboard that shows where to act, an analysis that holds up in front of a thesis committee, a KPI that everyone calculates the same way, a report that answers a concrete question.]{.hero-frase}
+[I help companies grow with better processes and reliable numbers, and I teach managers to do the same.]{.hero-frase}
 
 ::: botoes
-[See projects](projects.qmd){.btn .btn-primary}
-[Get in touch](contact.qmd){.btn .btn-outline-primary}
+[Let's talk](https://wa.me/5537984129390?text=Hi+Felipe+I+found+your+website+and+want+to+talk+about+my+business+numbers){.btn .btn-primary}
+[About the mentoring](#mentoria){.btn .btn-outline-primary}
 :::
+:::
+
+::: {.secao .container-lg}
+## About
+
+I'm a statistician (UFOP) and a master's student in Business Administration at IFMG. I have more than five years of industry experience in technology, management and sales, and I worked as a data analyst building Power BI dashboards and organizing management KPIs. Today I help companies anywhere, in person or remotely, turn scattered processes and spreadsheets into reliable numbers, and reliable numbers into better decisions.
+:::
+
+::: {.secao .container-lg}
+## How I can help
+
+::: {.grade .grade-ofertas}
+::: {.cartao .cartao-oferta}
+### Custom projects
+
+[I do it with you.]{.cartao-lema}
+
+Diagnosis, data organization, KPIs, Power BI dashboards, and payment and benefits audits. For those who need results fast and don't have the time or the team to do it alone.
+
+[Book a 30-min call](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+book+a+30+minute+call){.btn .btn-primary}
+:::
+
+::: {.cartao .cartao-oferta #mentoria}
+[Waitlist]{.etiqueta}
+
+### Group mentoring
+
+[I teach you to solve it.]{.cartao-lema}
+
+Group sessions for managers and business owners who want to understand their own numbers, build their KPIs and make decisions with more confidence. The first cohort is now forming.
+
+[Join the waitlist](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+know+about+the+next+mentoring+cohort){.btn .btn-primary}
+:::
+:::
+
+[See all services](services.qmd){.mais}
 :::
 
 ::: {.secao .container-lg}
@@ -37,32 +73,4 @@ Fictional company and data; real method, modeling and analysis.
 [See the project](projects/absenteeism-radar/index.qmd){.btn .btn-primary}
 :::
 :::
-:::
-
-::: {.secao .container-lg}
-## What I do
-
-::: grade
-::: cartao
-### [Power BI dashboards](services.qmd#dashboards)
-From raw data to a published dashboard: data modeling, DAX, Power Query, design and documentation.
-:::
-
-::: cartao
-### [Statistical analysis for academic research](services.qmd#research)
-Planning, analysis and interpretation of results for undergraduate theses, master's theses and doctoral dissertations.
-:::
-
-::: cartao
-### [KPI consulting](services.qmd#kpis)
-Deciding what to measure, how to calculate it and who owns each number.
-:::
-
-::: cartao
-### [Data reports and audits](services.qmd#reports)
-A precise answer about a concrete problem, with a report in HTML and PDF and a list of cases to review.
-:::
-:::
-
-[See services](services.qmd){.mais}
 :::
