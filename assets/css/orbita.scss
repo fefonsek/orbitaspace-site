@@ -544,6 +544,89 @@ $cinza-escuro-texto: #4a4a63;
   ul { padding-left: 1.2rem; }
 }
 
+// Serviços em caminhos (Projetos sob medida, Mentoria em grupo, Pesquisas
+// acadêmicas). Dentro do caminho de projetos, cada frente é um cartão
+// .servico com título h3 (âncora da frente) e subtítulos h4.
+.caminho {
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid $lavanda;
+  &:first-of-type { border-top: 0; padding-top: 1rem; }
+  > h2 { margin-top: 0.25rem; border-bottom: 0; padding-bottom: 0; font-size: 1.9rem; }
+  > h3 { margin-top: 2.25rem; }
+  > .btn, > p > .btn { margin-top: 0.75rem; }
+  .etiqueta { margin-bottom: 0.25rem; }
+}
+.caminho-lema { display: block; font-size: 1.15rem; font-weight: 500; color: $azul-link; margin-top: -0.25rem; }
+.caminho-formato { @extend .destaque-suave; margin: 1.5rem 0 0.5rem; max-width: 46rem; p:last-child { margin-bottom: 0; } }
+.servico > h3 { margin-top: 0; font-size: 1.35rem; text-transform: none; letter-spacing: 0; color: $azul-profundo; font-weight: 600; }
+.servico h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; color: $azul-link; margin-top: 1.5rem; }
+
+// "Como funciona": passos numerados numa linha do tempo vertical.
+.passos > ol {
+  list-style: none;
+  counter-reset: passo;
+  padding-left: 0;
+  margin: 1rem 0 0;
+  max-width: 46rem;
+  > li {
+    counter-increment: passo;
+    position: relative;
+    padding: 0 0 1.4rem 3.25rem;
+    min-height: 2.25rem;
+    // Círculo com o número do passo.
+    &::before {
+      content: counter(passo);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      background: $azul-medio;
+      color: $branco;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    // Fio que liga um passo ao seguinte.
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 1.05rem;
+      top: 2.3rem;
+      bottom: 0.2rem;
+      width: 2px;
+      background: $lavanda;
+    }
+    > p:first-child, &:not(:has(> p)) { padding-top: 0.3rem; }
+    strong { color: $azul-profundo; }
+    // Lista dos encontros dentro de um passo.
+    ol { list-style: decimal; padding-left: 1.25rem; margin: 0.5rem 0 0; }
+    ol li { padding: 0; margin-bottom: 0.15rem; }
+  }
+}
+
+// Pesquisas acadêmicas: as duas modalidades lado a lado.
+.caminho .landing-modalidades {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+  max-width: 46rem;
+}
+.botoes .ver-projetos { margin: 0; }
+// Serviços: o description do cabeçalho é só para SEO (tem os termos de
+// busca); na página, a abertura faz a introdução.
+.servicos-caminhos .quarto-title .description { display: none; }
+
+@media (max-width: 600px) {
+  .caminho .landing-modalidades { grid-template-columns: minmax(0, 1fr); }
+  .caminho > h2 { font-size: 1.6rem; }
+  .passos > ol > li { padding-left: 2.85rem; }
+}
+
 // Chamada final para o contato.
 .cta-final {
   background: $azul-profundo;

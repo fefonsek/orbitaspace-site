@@ -2,26 +2,50 @@
 title: "Services"
 description: "Orbita Space services: Power BI dashboards, statistical analysis for theses and dissertations, and KPI consulting. Remote work, pricing on request."
 traducao: servicos
+# O description fica só para SEO; a abertura da página faz a introdução.
+body-classes: servicos-caminhos
 image: ../assets/img/compartilhamento-site.jpg
 ---
 
-Four lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards.
+Two paths for your company to make decisions with its own numbers: I do it with you, or I teach you to do it.
+
+::: {.caminho #projects}
+## Custom projects
+
+[I do it with you.]{.caminho-lema}
+
+For those who need results fast and don't have the time or the team to do it alone.
+
+### How it works
+
+::: passos
+1. **A free 30-minute call.** You tell me about the problem and we see together whether it makes sense to work together.
+2. **Diagnosis and proposal.** I look at the data and spreadsheets you already have and send a proposal with a fixed scope, timeline and price.
+3. **Kickoff.** We sign a confidentiality agreement and you give me access to the data.
+4. **Building with previews.** A short weekly call to show progress and adjust course early.
+5. **Delivery and walkthrough.** I deliver the dashboard, report or audit in a meeting where I explain how to read and use it. One round of adjustments is included.
+6. **Ongoing support, if you want it.** Monthly support to keep the numbers up to date.
+:::
+
+[Book a 30-min call](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+book+a+30+minute+call){.btn .btn-primary}
+
+### What a project can include
 
 ::: servico
-## Power BI dashboards {#dashboards}
+### Power BI dashboards {#dashboards}
 
-### Who it is for
+#### Who it is for
 
 Companies and teams that already have data (ERP, spreadsheets, timekeeping systems, APIs) and want to track what matters without building reports by hand every month.
 
-### What I deliver
+#### What I deliver
 
 - A clean data model, with documented DAX measures.
 - Data preparation and refresh in Power Query.
 - A dashboard designed for decisions: a few pages, each answering one question.
 - Documentation of the calculation rules, so the numbers do not depend on me.
 
-### How I work
+#### How I work
 
 I start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory.
 
@@ -29,40 +53,19 @@ I start with the questions the dashboard has to answer and the data sources avai
 :::
 
 ::: servico
-## Statistical analysis for academic research {#research}
+### Management KPIs {#kpis}
 
-### Who it is for
-
-Undergraduate, master's and doctoral students and researchers who need to analyze the data for a thesis or dissertation, in any field.
-
-### What I deliver
-
-- The right methods for your question and your type of data.
-- Analysis done in R or Python, with the code included.
-- Tables and charts ready for the text, in the required format.
-- A plain-language explanation of the results, so you can defend your work with confidence.
-
-### How I work
-
-First I read your proposal and understand the goal and the hypotheses. We agree on the analysis plan before running anything. You follow every step and can ask anything you like; the research stays yours.
-
-{{< ver-projetos pesquisas >}}
-:::
-
-::: servico
-## Management KPIs {#kpis}
-
-### Who it is for
+#### Who it is for
 
 Companies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.
 
-### What I deliver
+#### What I deliver
 
 - KPI definitions: what to measure and why.
 - A definition sheet for each KPI, with formula, source, frequency, target and owner.
 - Governance rules: who can change a definition and how changes are recorded.
 
-### How I work
+#### How I work
 
 I talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.
 
@@ -70,30 +73,77 @@ I talk to the people who produce the numbers and the people who use them, review
 :::
 
 ::: servico
-## Data reports and audits {#reports}
+### Data reports and audits {#reports}
 
-### Who it is for
+#### Who it is for
 
 Companies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.
 
-### What I deliver
+#### What I deliver
 
 - An analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.
 - A list of cases to review, ranked by risk and by amount.
 - Practical recommendations and KPIs to keep track of the problem afterward.
 - The analysis code, so you can rerun the report whenever you want.
 
-### How I work
+#### How I work
 
 I start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process.
 
 {{< ver-projetos relatorios >}}
 :::
 
-::: cta-final
-## Pricing on request
+[Book a 30-min call](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+book+a+30+minute+call){.btn .btn-primary}
+:::
 
-Tell me what you need and I will reply with a proposal.
+::: {.caminho #mentoria}
+[Waitlist]{.etiqueta}
+
+## Group mentoring
+
+[I teach you to solve it.]{.caminho-lema}
+
+For managers and business owners who want to understand their own numbers, build their KPIs and make decisions with more confidence, without depending on anyone.
+
+::: caminho-formato
+**Format:** 6 weekly 90-minute sessions, online and live, in small groups, always with exercises using your own company's data. Pricing on request.
+:::
+
+### How it works
+
+::: passos
+1. **Waitlist.** You join through WhatsApp and get notified about the next cohort.
+2. **Free open class.** Before each cohort, an open class so you can get to know the method.
+3. **Founding cohort.** 5 to 10 people, with a special founder rate.
+4. **The 6 sessions.**
+    1. What to measure in your business.
+    2. Organize the data in a reliable spreadsheet.
+    3. Build your KPIs.
+    4. A simple dashboard to track them.
+    5. Read the numbers and decide.
+    6. Create a tracking routine.
+5. **Between sessions.** A group to ask questions and share with the cohort.
+6. **Wrap-up.** Each participant presents their own dashboard and leaves with a routine to follow on their own.
+:::
+
+[Join the waitlist](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+know+about+the+next+mentoring+cohort){.btn .btn-primary}
+:::
+
+::: {.caminho .caminho-curto #research}
+## For academic research
+
+For students and researchers working on an undergraduate thesis, master's thesis or paper: I guide you and run the statistical analysis with you, with a report and a walkthrough so you can understand and defend the results.
+
+::: botoes
+<a href="/analise-estatistica-tcc.html" class="btn btn-primary">See how it works</a>
+{{< ver-projetos pesquisas >}}
+:::
+
+[Page in Portuguese.]{.nota-idioma}
+:::
+
+::: cta-final
+## Didn't find what you're looking for? Let's talk
 
 [Get in touch](contact.qmd){.btn .btn-primary}
 :::

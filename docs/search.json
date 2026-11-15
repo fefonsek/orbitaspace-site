@@ -4,42 +4,35 @@
     "href": "en/services.html",
     "title": "Services",
     "section": "",
-    "text": "Four lines of work, all with the same care: understand the question before touching the data, and deliver something you can use and maintain afterwards."
+    "text": "Two paths for your company to make decisions with its own numbers: I do it with you, or I teach you to do it."
   },
   {
-    "objectID": "en/services.html#dashboards",
-    "href": "en/services.html#dashboards",
+    "objectID": "en/services.html#custom-projects",
+    "href": "en/services.html#custom-projects",
     "title": "Services",
-    "section": "Power BI dashboards",
-    "text": "Power BI dashboards\n\nWho it is for\nCompanies and teams that already have data (ERP, spreadsheets, timekeeping systems, APIs) and want to track what matters without building reports by hand every month.\n\n\nWhat I deliver\n\nA clean data model, with documented DAX measures.\nData preparation and refresh in Power Query.\nA dashboard designed for decisions: a few pages, each answering one question.\nDocumentation of the calculation rules, so the numbers do not depend on me.\n\n\n\nHow I work\nI start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory.\nSee dashboard projects"
+    "section": "Custom projects",
+    "text": "Custom projects\nI do it with you.\nFor those who need results fast and don’t have the time or the team to do it alone.\n\nHow it works\n\n\nA free 30-minute call. You tell me about the problem and we see together whether it makes sense to work together.\nDiagnosis and proposal. I look at the data and spreadsheets you already have and send a proposal with a fixed scope, timeline and price.\nKickoff. We sign a confidentiality agreement and you give me access to the data.\nBuilding with previews. A short weekly call to show progress and adjust course early.\nDelivery and walkthrough. I deliver the dashboard, report or audit in a meeting where I explain how to read and use it. One round of adjustments is included.\nOngoing support, if you want it. Monthly support to keep the numbers up to date.\n\n\nBook a 30-min call\n\n\nWhat a project can include\n\n\nPower BI dashboards\n\nWho it is for\nCompanies and teams that already have data (ERP, spreadsheets, timekeeping systems, APIs) and want to track what matters without building reports by hand every month.\n\n\nWhat I deliver\n\nA clean data model, with documented DAX measures.\nData preparation and refresh in Power Query.\nA dashboard designed for decisions: a few pages, each answering one question.\nDocumentation of the calculation rules, so the numbers do not depend on me.\n\n\n\nHow I work\nI start with the questions the dashboard has to answer and the data sources available. I show a first prototype early, adjust it with the people who will use it, and only then polish the design. I have built dashboards for working hours with overtime alerts, legal department KPIs fed by an API, fleet violations and PPE inventory.\nSee dashboard projects\n\n\n\nManagement KPIs\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.\nSee KPI projects\n\n\n\nData reports and audits\n\nWho it is for\nCompanies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.\n\n\nWhat I deliver\n\nAn analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.\nA list of cases to review, ranked by risk and by amount.\nPractical recommendations and KPIs to keep track of the problem afterward.\nThe analysis code, so you can rerun the report whenever you want.\n\n\n\nHow I work\nI start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process.\nSee reports and audits\n\n\nBook a 30-min call"
   },
   {
-    "objectID": "en/services.html#research",
-    "href": "en/services.html#research",
+    "objectID": "en/services.html#group-mentoring",
+    "href": "en/services.html#group-mentoring",
     "title": "Services",
-    "section": "Statistical analysis for academic research",
-    "text": "Statistical analysis for academic research\n\nWho it is for\nUndergraduate, master’s and doctoral students and researchers who need to analyze the data for a thesis or dissertation, in any field.\n\n\nWhat I deliver\n\nThe right methods for your question and your type of data.\nAnalysis done in R or Python, with the code included.\nTables and charts ready for the text, in the required format.\nA plain-language explanation of the results, so you can defend your work with confidence.\n\n\n\nHow I work\nFirst I read your proposal and understand the goal and the hypotheses. We agree on the analysis plan before running anything. You follow every step and can ask anything you like; the research stays yours.\nSee research projects"
+    "section": "Group mentoring",
+    "text": "Group mentoring\nI teach you to solve it.\nFor managers and business owners who want to understand their own numbers, build their KPIs and make decisions with more confidence, without depending on anyone.\n\nFormat: 6 weekly 90-minute sessions, online and live, in small groups, always with exercises using your own company’s data. Pricing on request.\n\n\nHow it works\n\n\nWaitlist. You join through WhatsApp and get notified about the next cohort.\nFree open class. Before each cohort, an open class so you can get to know the method.\nFounding cohort. 5 to 10 people, with a special founder rate.\nThe 6 sessions.\n\nWhat to measure in your business.\nOrganize the data in a reliable spreadsheet.\nBuild your KPIs.\nA simple dashboard to track them.\nRead the numbers and decide.\nCreate a tracking routine.\n\nBetween sessions. A group to ask questions and share with the cohort.\nWrap-up. Each participant presents their own dashboard and leaves with a routine to follow on their own.\n\n\nJoin the waitlist"
   },
   {
-    "objectID": "en/services.html#kpis",
-    "href": "en/services.html#kpis",
+    "objectID": "en/services.html#for-academic-research",
+    "href": "en/services.html#for-academic-research",
     "title": "Services",
-    "section": "Management KPIs",
-    "text": "Management KPIs\n\nWho it is for\nCompanies where each department calculates the same KPI its own way, or that track many numbers without knowing which ones actually drive decisions.\n\n\nWhat I deliver\n\nKPI definitions: what to measure and why.\nA definition sheet for each KPI, with formula, source, frequency, target and owner.\nGovernance rules: who can change a definition and how changes are recorded.\n\n\n\nHow I work\nI talk to the people who produce the numbers and the people who use them, review what already exists and propose a lean set. At Prumo Engenharia I curated and governed KPIs across several departments; that is where the method comes from.\nSee KPI projects"
+    "section": "For academic research",
+    "text": "For academic research\nFor students and researchers working on an undergraduate thesis, master’s thesis or paper: I guide you and run the statistical analysis with you, with a report and a walkthrough so you can understand and defend the results.\n\nSee how it works See research projects\n\nPage in Portuguese."
   },
   {
-    "objectID": "en/services.html#reports",
-    "href": "en/services.html#reports",
+    "objectID": "en/services.html#didnt-find-what-youre-looking-for-lets-talk",
+    "href": "en/services.html#didnt-find-what-youre-looking-for-lets-talk",
     "title": "Services",
-    "section": "Data reports and audits",
-    "text": "Data reports and audits\n\nWho it is for\nCompanies that need a precise answer about a concrete problem: a cost that went up without explanation, a benefit paid outside the rules, a process that leaks money somewhere. Also for teams that already have a dashboard and want to go beyond it on a specific question.\n\n\nWhat I deliver\n\nAn analytical report in HTML and PDF, with numbers, charts and conclusions written for decision-makers.\nA list of cases to review, ranked by risk and by amount.\nPractical recommendations and KPIs to keep track of the problem afterward.\nThe analysis code, so you can rerun the report whenever you want.\n\n\n\nHow I work\nI start by understanding the business rule and where the data come from. I cross-check the sources, test each rule and separate objective errors from what only deserves a second look. Before pointing to any amount, I validate the conclusions with the people who know the process.\nSee reports and audits"
-  },
-  {
-    "objectID": "en/services.html#pricing-on-request",
-    "href": "en/services.html#pricing-on-request",
-    "title": "Services",
-    "section": "Pricing on request",
-    "text": "Pricing on request\nTell me what you need and I will reply with a proposal.\nGet in touch"
+    "section": "Didn’t find what you’re looking for? Let’s talk",
+    "text": "Didn’t find what you’re looking for? Let’s talk\nGet in touch"
   },
   {
     "objectID": "en/projects.html",

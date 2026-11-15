@@ -2,25 +2,49 @@
 title: "Serviços"
 description: "Serviços da Orbita Space: painéis em Power BI, análise estatística para TCC, dissertação e tese, e consultoria em indicadores. Atendimento remoto, orçamento sob consulta."
 traducao: servicos
+# O description fica só para SEO; a abertura da página faz a introdução.
+body-classes: servicos-caminhos
 ---
 
-Quatro frentes de trabalho, todas com o mesmo cuidado: entender a pergunta antes de mexer nos dados e entregar algo que você consiga usar e manter depois.
+Dois caminhos para a sua empresa decidir com os próprios números: eu faço com você, ou eu ensino você a fazer.
+
+::: {.caminho #projetos}
+## Projetos sob medida
+
+[Eu faço com você.]{.caminho-lema}
+
+Para quem precisa de resultado rápido e não tem tempo ou equipe para fazer sozinho.
+
+### Como funciona
+
+::: passos
+1. **Conversa de 30 minutos, gratuita.** Você me conta o problema e vemos juntos se faz sentido trabalhar.
+2. **Diagnóstico e proposta.** Olho os dados e as planilhas que existem e envio uma proposta com escopo, prazo e preço fechado.
+3. **Início.** Assinatura do acordo de confidencialidade e acesso aos dados.
+4. **Construção com prévias.** Uma conversa curta por semana para mostrar o andamento e ajustar o rumo cedo.
+5. **Entrega e devolutiva.** Entrego o painel, relatório ou auditoria numa reunião em que explico como ler e usar. Uma rodada de ajustes está incluída.
+6. **Acompanhamento, se você quiser.** Sustentação mensal para manter os números atualizados.
+:::
+
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Ola+Felipe+quero+marcar+uma+conversa+de+30+minutos){.btn .btn-primary}
+
+### O que pode entrar num projeto
 
 ::: servico
-## Painéis em Power BI {#paineis}
+### Painéis em Power BI {#paineis}
 
-### Para quem é
+#### Para quem é
 
 Empresas e áreas que já têm dados (ERP, planilhas, sistemas de ponto, APIs) e querem acompanhar o que importa sem montar relatório à mão todo mês.
 
-### O que eu entrego
+#### O que eu entrego
 
 - Modelo de dados organizado, com as medidas em DAX documentadas.
 - Tratamento e atualização dos dados em Power Query.
 - Painel desenhado para a decisão: poucas páginas, cada uma respondendo uma pergunta.
 - Documentação das regras de cálculo, para que o número não dependa de mim.
 
-### Como eu trabalho
+#### Como eu trabalho
 
 Começo pelas perguntas que o painel precisa responder e pelas fontes de dados disponíveis. Mostro um primeiro protótipo cedo, ajusto com quem vai usar e só então refino o visual. Já construí painéis de jornada de trabalho com alertas de excesso de horas, de indicadores jurídicos com dados vindos por API, de infrações da frota e de inventário de EPIs.
 
@@ -28,40 +52,19 @@ Começo pelas perguntas que o painel precisa responder e pelas fontes de dados d
 :::
 
 ::: servico
-## Análise estatística para pesquisas acadêmicas {#pesquisas}
+### Indicadores de gestão {#indicadores}
 
-### Para quem é
-
-Estudantes e pesquisadores de graduação, mestrado e doutorado que precisam analisar dados de TCC, dissertação ou tese, em qualquer área.
-
-### O que eu entrego
-
-- Escolha dos métodos adequados à pergunta e ao tipo de dado.
-- Análise feita em R ou Python, com o código entregue.
-- Tabelas e gráficos prontos para o texto, no padrão exigido.
-- Explicação dos resultados em linguagem clara, para você defender o trabalho com segurança.
-
-### Como eu trabalho
-
-Primeiro leio o projeto e entendo o objetivo e as hipóteses. Combinamos o plano de análise antes de rodar qualquer coisa. Você acompanha cada etapa e pode perguntar o que quiser; a pesquisa continua sendo sua.
-
-{{< ver-projetos pesquisas >}}
-:::
-
-::: servico
-## Indicadores de gestão {#indicadores}
-
-### Para quem é
+#### Para quem é
 
 Empresas em que cada área calcula o mesmo indicador de um jeito, ou que acompanham muitos números e não sabem quais orientam decisões.
 
-### O que eu entrego
+#### O que eu entrego
 
 - Definição dos KPIs: o que medir e por quê.
 - Ficha de cada indicador, com fórmula, fonte, periodicidade, meta e responsável.
 - Regras de governança: quem pode mudar uma definição e como as mudanças são registradas.
 
-### Como eu trabalho
+#### Como eu trabalho
 
 Converso com quem produz e com quem usa os números, levanto o que já existe e proponho um conjunto enxuto. Na Prumo Engenharia, fiz curadoria e governança de indicadores de várias áreas; é desse trabalho que vem o método.
 
@@ -69,30 +72,95 @@ Converso com quem produz e com quem usa os números, levanto o que já existe e 
 :::
 
 ::: servico
-## Relatórios e auditorias de dados {#relatorios}
+### Relatórios e auditorias de dados {#relatorios}
 
-### Para quem é
+#### Para quem é
 
 Empresas que precisam de uma resposta precisa sobre um problema concreto: um custo que subiu sem explicação, um benefício pago fora da regra, um processo que perde dinheiro em algum ponto. Também para quem já tem um painel e quer ir além dele numa pergunta específica.
 
-### O que eu entrego
+#### O que eu entrego
 
 - Relatório analítico em HTML e PDF, com números, gráficos e conclusões escritos para quem decide.
 - Lista de casos para revisão, ordenada por risco e por valor.
 - Recomendações práticas e indicadores para acompanhar o problema depois.
 - O código da análise, para repetir o relatório quando quiser.
 
-### Como eu trabalho
+#### Como eu trabalho
 
 Começo entendendo a regra do negócio e de onde vêm os dados. Cruzo as bases, confiro cada regra e separo o que é erro objetivo do que só merece uma segunda olhada. Antes de apontar qualquer valor, valido as conclusões com quem conhece o processo.
 
 {{< ver-projetos relatorios >}}
 :::
 
-::: cta-final
-## Orçamento sob consulta
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Ola+Felipe+quero+marcar+uma+conversa+de+30+minutos){.btn .btn-primary}
+:::
 
-Me conte o que você precisa e eu respondo com uma proposta.
+::: {.caminho #mentoria}
+[Lista de espera]{.etiqueta}
+
+## Mentoria em grupo
+
+[Eu ensino você a resolver.]{.caminho-lema}
+
+Para gestores e donos de empresa que querem entender os próprios números, montar seus indicadores e decidir com mais segurança, sem depender de ninguém.
+
+::: caminho-formato
+**Formato:** 6 encontros semanais de 1h30, online e ao vivo, em grupos pequenos, sempre com exercícios usando os dados da sua própria empresa. Investimento sob consulta.
+:::
+
+### Como funciona
+
+::: passos
+1. **Lista de espera.** Você entra pelo WhatsApp e recebe o aviso da próxima turma.
+2. **Aula aberta gratuita.** Antes de cada turma, uma aula aberta para você conhecer o método.
+3. **Turma fundadora.** De 5 a 10 pessoas, com condição especial de fundador.
+4. **Os 6 encontros.**
+    1. O que medir no seu negócio.
+    2. Organizar os dados numa planilha confiável.
+    3. Montar os seus indicadores.
+    4. Um painel simples para acompanhar.
+    5. Ler os números e decidir.
+    6. Criar a rotina de acompanhamento.
+5. **Entre os encontros.** Um grupo para tirar dúvidas e trocar com a turma.
+6. **Encerramento.** Cada participante apresenta o próprio painel e sai com uma rotina para seguir sozinho.
+:::
+
+[Entrar na lista de espera](https://wa.me/5537984129390?text=Ola+Felipe+quero+saber+da+proxima+turma+da+mentoria){.btn .btn-primary}
+:::
+
+::: {.caminho .caminho-curto #pesquisas}
+## Para pesquisas acadêmicas
+
+Para estudantes e pesquisadores de TCC, dissertação ou artigo: eu oriento e faço a análise estatística com você, com relatório e devolutiva para você entender e defender os resultados.
+
+::: landing-modalidades
+::: landing-modalidade
+### Aulas por hora
+
+[R$\ 100 por hora]{.landing-preco}
+
+Para tirar dúvidas pontuais, entender qual teste usar ou aprender a rodar e interpretar a sua própria análise.
+:::
+
+::: landing-modalidade
+### Projeto completo
+
+[A partir de R$\ 900]{.landing-preco}
+
+Valor fechado: análise descritiva e até três testes, relatório técnico, devolutiva por vídeo e uma rodada de ajustes, em 10 dias úteis.
+:::
+:::
+
+Dissertação, artigo ou pesquisa maior? Também atendo, com orçamento próprio.
+
+::: botoes
+[Ver como funciona](analise-estatistica-tcc.qmd){.btn .btn-primary}
+{{< ver-projetos pesquisas >}}
+:::
+:::
+
+::: cta-final
+## Não encontrou o que procura? Vamos conversar
 
 [Fale comigo](contato.qmd){.btn .btn-primary}
 :::

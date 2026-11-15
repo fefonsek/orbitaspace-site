@@ -2,26 +2,50 @@
 title: "Servicios"
 description: "Servicios de Orbita Space: tableros en Power BI, análisis estadístico para tesis de grado, maestría y doctorado, y consultoría en indicadores. Atención remota, presupuesto a pedido."
 traducao: servicos
+# O description fica só para SEO; a abertura da página faz a introdução.
+body-classes: servicos-caminhos
 image: ../assets/img/compartilhamento-site.jpg
 ---
 
-Cuatro líneas de trabajo con el mismo cuidado: entender la pregunta antes de tocar los datos y entregar algo que puedas usar y mantener después.
+Dos caminos para que tu empresa decida con sus propios números: lo hago contigo, o te enseño a hacerlo.
+
+::: {.caminho #proyectos}
+## Proyectos a medida
+
+[Lo hago contigo.]{.caminho-lema}
+
+Para quien necesita resultados rápidos y no tiene tiempo ni equipo para hacerlo solo.
+
+### Cómo funciona
+
+::: passos
+1. **Conversación de 30 minutos, gratuita.** Me cuentas el problema y vemos juntos si tiene sentido trabajar.
+2. **Diagnóstico y propuesta.** Reviso los datos y las hojas de cálculo que existen y te envío una propuesta con alcance, plazo y precio cerrado.
+3. **Inicio.** Firma del acuerdo de confidencialidad y acceso a los datos.
+4. **Construcción con avances.** Una conversación corta por semana para mostrar el avance y corregir el rumbo a tiempo.
+5. **Entrega y presentación de resultados.** Entrego el tablero, informe o auditoría en una reunión en la que explico cómo leerlo y usarlo. Incluye una ronda de ajustes.
+6. **Acompañamiento, si lo quieres.** Soporte mensual para mantener los números actualizados.
+:::
+
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Hola+Felipe+quiero+agendar+una+conversacion+de+30+minutos){.btn .btn-primary}
+
+### Qué puede incluir un proyecto
 
 ::: servico
-## Tableros en Power BI {#tableros}
+### Tableros en Power BI {#tableros}
 
-### Para quién es
+#### Para quién es
 
 Empresas y áreas que ya tienen datos (ERP, hojas de cálculo, sistemas de asistencia, API) y quieren seguir lo que importa sin armar informes a mano cada mes.
 
-### Qué entrego
+#### Qué entrego
 
 - Modelo de datos ordenado, con las medidas DAX documentadas.
 - Limpieza y actualización de los datos en Power Query.
 - Tablero diseñado para decidir: pocas páginas, cada una responde una pregunta.
 - Documentación de las reglas de cálculo, para que el número no dependa de mí.
 
-### Cómo trabajo
+#### Cómo trabajo
 
 Empiezo por las preguntas que el tablero tiene que responder y por las fuentes de datos disponibles. Muestro un primer prototipo pronto, lo ajusto con quienes lo van a usar y solo entonces pulo el diseño. Ya construí tableros de jornada laboral con alertas de exceso de horas, de indicadores jurídicos con datos recibidos por API, de infracciones de la flota y de inventario de equipos de protección personal (EPP).
 
@@ -29,40 +53,19 @@ Empiezo por las preguntas que el tablero tiene que responder y por las fuentes d
 :::
 
 ::: servico
-## Análisis estadístico para investigaciones académicas {#investigaciones}
+### Indicadores de gestión {#indicadores}
 
-### Para quién es
-
-Estudiantes e investigadores de grado, maestría y doctorado que necesitan analizar los datos de su tesis, en cualquier área.
-
-### Qué entrego
-
-- Elección de los métodos adecuados a la pregunta y al tipo de dato.
-- Análisis hecho en R o Python, con el código incluido.
-- Tablas y gráficos listos para el texto, en el formato que se exija.
-- Explicación de los resultados en lenguaje claro, para que defiendas el trabajo con seguridad.
-
-### Cómo trabajo
-
-Primero leo el proyecto y entiendo el objetivo y las hipótesis. Acordamos el plan de análisis antes de correr cualquier cosa. Acompañas cada etapa y puedes preguntar lo que quieras; la investigación sigue siendo tuya.
-
-{{< ver-projetos pesquisas >}}
-:::
-
-::: servico
-## Indicadores de gestión {#indicadores}
-
-### Para quién es
+#### Para quién es
 
 Empresas donde cada área calcula el mismo indicador a su manera, o que siguen muchos números sin saber cuáles orientan decisiones.
 
-### Qué entrego
+#### Qué entrego
 
 - Definición de los KPI: qué medir y por qué.
 - Ficha técnica de cada indicador, con fórmula, fuente, periodicidad, meta y responsable.
 - Reglas de gobernanza: quién puede cambiar una definición y cómo se registran los cambios.
 
-### Cómo trabajo
+#### Cómo trabajo
 
 Converso con quienes producen y con quienes usan los números, reviso lo que ya existe y propongo un conjunto acotado. En Prumo Engenharia hice la curaduría y la gobernanza de indicadores de varias áreas; de ese trabajo viene el método.
 
@@ -70,30 +73,77 @@ Converso con quienes producen y con quienes usan los números, reviso lo que ya 
 :::
 
 ::: servico
-## Informes y auditorías de datos {#informes}
+### Informes y auditorías de datos {#informes}
 
-### Para quién es
+#### Para quién es
 
 Empresas que necesitan una respuesta precisa sobre un problema concreto: un costo que subió sin explicación, un beneficio pagado fuera de la regla, un proceso que pierde dinero en algún punto. También para quienes ya tienen un tablero y quieren ir más allá en una pregunta específica.
 
-### Qué entrego
+#### Qué entrego
 
 - Informe analítico en HTML y PDF, con números, gráficos y conclusiones escritos para quien decide.
 - Lista de casos para revisión, ordenada por riesgo y por valor.
 - Recomendaciones prácticas e indicadores para seguir el problema después.
 - El código del análisis, para repetir el informe cuando quieras.
 
-### Cómo trabajo
+#### Cómo trabajo
 
 Empiezo por entender la regla del negocio y de dónde vienen los datos. Cruzo las bases, reviso cada regla y separo lo que es un error objetivo de lo que solo merece una segunda mirada. Antes de señalar cualquier valor, valido las conclusiones con quienes conocen el proceso.
 
 {{< ver-projetos relatorios >}}
 :::
 
-::: cta-final
-## Presupuesto a pedido
+[Conversar 30 minutos](https://wa.me/5537984129390?text=Hola+Felipe+quiero+agendar+una+conversacion+de+30+minutos){.btn .btn-primary}
+:::
 
-Cuéntame qué necesitas y te respondo con una propuesta.
+::: {.caminho #mentoria}
+[Lista de espera]{.etiqueta}
+
+## Mentoría en grupo
+
+[Te enseño a resolverlo.]{.caminho-lema}
+
+Para gerentes y dueños de empresas que quieren entender sus propios números, armar sus indicadores y decidir con más seguridad, sin depender de nadie.
+
+::: caminho-formato
+**Formato:** 6 encuentros semanales de 1h30, en línea y en vivo, en grupos pequeños, siempre con ejercicios usando los datos de tu propia empresa. Inversión a consultar.
+:::
+
+### Cómo funciona
+
+::: passos
+1. **Lista de espera.** Te anotas por WhatsApp y recibes el aviso del próximo grupo.
+2. **Clase abierta gratuita.** Antes de cada grupo, una clase abierta para que conozcas el método.
+3. **Grupo fundador.** De 5 a 10 personas, con una condición especial de fundador.
+4. **Los 6 encuentros.**
+    1. Qué medir en tu negocio.
+    2. Organizar los datos en una hoja de cálculo confiable.
+    3. Armar tus indicadores.
+    4. Un tablero simple para hacer seguimiento.
+    5. Leer los números y decidir.
+    6. Crear la rutina de seguimiento.
+5. **Entre encuentros.** Un grupo para resolver dudas e intercambiar con los compañeros.
+6. **Cierre.** Cada participante presenta su propio tablero y sale con una rutina para seguir por su cuenta.
+:::
+
+[Entrar en la lista de espera](https://wa.me/5537984129390?text=Hola+Felipe+quiero+saber+del+proximo+grupo+de+la+mentoria){.btn .btn-primary}
+:::
+
+::: {.caminho .caminho-curto #investigaciones}
+## Para investigaciones académicas
+
+Para estudiantes e investigadores de tesis de grado, tesis de maestría o artículo: te oriento y hago el análisis estadístico contigo, con un informe y una reunión de cierre para que entiendas y defiendas los resultados.
+
+::: botoes
+<a href="/analise-estatistica-tcc.html" class="btn btn-primary">Ver cómo funciona</a>
+{{< ver-projetos pesquisas >}}
+:::
+
+[Página en portugués.]{.nota-idioma}
+:::
+
+::: cta-final
+## ¿No encontraste lo que buscas? Hablemos
 
 [Escríbeme](contacto.qmd){.btn .btn-primary}
 :::

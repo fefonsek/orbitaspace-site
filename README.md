@@ -261,6 +261,22 @@ publica só o PDF e o CSV de prioridades.
   cartão `#mentoria` da página inicial (o botão "Conhecer a mentoria" leva
   até ele).
 
+## Página de Serviços
+
+`servicos.qmd`, `es/servicios.qmd` e `en/services.qmd` em três caminhos:
+
+- **Projetos sob medida** (`#projetos`, `#proyectos`, `#projects`): passos de
+  "Como funciona" numa linha do tempo (`::: passos`, lista numerada), as três
+  frentes para empresas em cartões `.servico` (título h3 com a âncora de
+  sempre: `#paineis`, `#indicadores`, `#relatorios` e equivalentes em ES/EN) e
+  o botão "Conversar 30 minutos" depois dos passos e no fim do bloco.
+- **Mentoria em grupo** (`#mentoria`): formato, passos e lista de espera.
+- **Para pesquisas acadêmicas** (`#pesquisas`, `#investigaciones`,
+  `#research`, as âncoras antigas da frente de pesquisa): em PT, as duas
+  modalidades com os mesmos valores da página do TCC (atualize os dois
+  lugares juntos); em ES e EN, só o texto e o link para a página do TCC, em
+  português.
+
 ## Estrutura
 
 ```text
