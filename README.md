@@ -261,6 +261,33 @@ publica só o PDF e o CSV de prioridades.
   cartão `#mentoria` da página inicial (o botão "Conhecer a mentoria" leva
   até ele).
 
+## Caso Mentoria (Padaria Grão Dourado)
+
+`projetos/mentoria-padaria/` (PT), `es/proyectos/mentoria-panaderia/` e
+`en/projects/mentoring-bakery/`: exemplo de encontro da mentoria, com dados
+fictícios, na frente `mentoria` do filtro de Projetos.
+
+- `scripts/gerar_dados.R` (semente fixa) grava `dados/gabarito.csv` e
+  `dados/planilha_baguncada.xlsx`. Não roda no render; rode à mão para
+  refazer os dados.
+- `scripts/organizar.R` limpa a planilha bagunçada e para com erro se o
+  resultado não bater com o gabarito; `scripts/indicadores.R` calcula os três
+  indicadores e a faixa de economia (`resultados/padaria.rds`);
+  `scripts/planilha_modelo.R` grava as planilhas modelo das três línguas em
+  `resultados/`. O `render.ps1` roda os três quando os dados ou os scripts
+  mudam.
+- `scripts/conferir_planilha.R` calcula as fórmulas das planilhas modelo com o
+  pycel (`scripts/calcular_planilha.py`; `pip install pycel`, ou a pasta do
+  pacote em `ORBITA_PYCEL`) e compara com a página. Sem o pycel, o render
+  pula a conferência com um aviso.
+- As planilhas modelo só usam SUMIFS, IF, SUM e contas por linha, para
+  funcionar no Excel e no Google Planilhas. `scripts/xlsx.R` grava os .xlsx
+  sem as relações para arquivos ausentes que o openxlsx 4.2.8.1 deixa.
+- "Margem", e não "lucro", sempre que o valor não desconta aluguel,
+  salários e energia (indicador 3: participação na margem total).
+- Em inglês, as fornadas aparecem como 6 a.m., 10 a.m., 2 p.m. e 5 p.m.
+  (texto, gráficos e planilha); em PT e ES, 6h, 10h, 14h e 17h.
+
 ## Página de Serviços
 
 `servicos.qmd`, `es/servicios.qmd` e `en/services.qmd` em três caminhos:

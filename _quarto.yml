@@ -48,6 +48,15 @@ project:
     - projetos/motivacao-desligamento/resultados/prioridades_gerencias.csv
     - projetos/motivacao-desligamento/resultados/prioridades_gerencias_es.csv
     - projetos/motivacao-desligamento/resultados/prioridades_gerencias_en.csv
+    # Caso Mentoria (Padaria Grão Dourado): capa gerada pela página e a
+    # planilha modelo para baixar. A planilha bagunçada e os CSVs (dados/)
+    # ficam no repositório, mas não vão para o site.
+    - projetos/mentoria-padaria/img/
+    - es/proyectos/mentoria-panaderia/img/
+    - en/projects/mentoring-bakery/img/
+    - projetos/mentoria-padaria/resultados/planilha_modelo_padaria.xlsx
+    - projetos/mentoria-padaria/resultados/planilla_modelo_panaderia.xlsx
+    - projetos/mentoria-padaria/resultados/template_bakery.xlsx
   post-render: scripts/aviso_render.py
 
 profile:

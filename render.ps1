@@ -198,6 +198,47 @@ foreach ($congelado in "_freeze\$desligamento", "_freeze\es\proyectos\motivos-de
     }
 }
 
+# 0e. Caso Mentoria, Padaria Grão Dourado (PT, ES e EN): a organização da
+#     planilha bagunçada (scripts/organizar.R, que confere o resultado com o
+#     gabarito), os indicadores (scripts/indicadores.R) e as planilhas modelo
+#     (scripts/planilha_modelo.R) rodam só quando os dados ou os scripts
+#     mudaram. Depois, scripts/conferir_planilha.R calcula as fórmulas das
+#     planilhas com o pycel e compara com os números da página; sem Python com
+#     o pycel (pip install pycel, ou a pasta em ORBITA_PYCEL), a conferência é
+#     pulada com um aviso. Os dados não são gerados de novo aqui: para isso,
+#     rode scripts/gerar_dados.R (semente fixa).
+$mentoria = "projetos\mentoria-padaria"
+$rdsMentoria = "$mentoria\resultados\padaria.rds"
+$fontesMentoria = @(Get-Item "$mentoria\dados\planilha_baguncada.xlsx", "$mentoria\dados\gabarito.csv") +
+    @(Get-ChildItem "$mentoria\scripts\*" -Exclude "gerar_dados.R", "apresentacao.R")
+if (-not (Test-Path $rdsMentoria) -or ($fontesMentoria | Where-Object { $_.LastWriteTime -gt (Get-Item $rdsMentoria).LastWriteTime })) {
+    $rscript = Get-ChildItem "$env:ProgramFiles\R\R-*\bin\Rscript.exe" -ErrorAction SilentlyContinue |
+        Sort-Object FullName | Select-Object -Last 1
+    if (-not $rscript) { Write-Host "Rscript não encontrado em $env:ProgramFiles\R." -ForegroundColor Red; exit 1 }
+    Write-Host "`n=== Caso Mentoria: organizando a planilha e calculando os indicadores ===" -ForegroundColor Cyan
+    foreach ($etapa in "organizar.R", "indicadores.R", "planilha_modelo.R") {
+        & $rscript.FullName "$mentoria\scripts\$etapa"
+        if ($LASTEXITCODE -ne 0) { Write-Host "Falha em $etapa do caso Mentoria." -ForegroundColor Red; exit 1 }
+    }
+    if ($env:ORBITA_PYCEL) { $env:PYTHONPATH = $env:ORBITA_PYCEL }
+    & python -c "import pycel" 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        & $rscript.FullName "$mentoria\scripts\conferir_planilha.R"
+        if ($LASTEXITCODE -ne 0) { Write-Host "A planilha modelo não bate com a página (veja acima)." -ForegroundColor Red; exit 1 }
+    } else {
+        Write-Host "Caso Mentoria: pycel não encontrado; conferência da planilha modelo pulada." -ForegroundColor Yellow
+    }
+}
+$ultimaMentoria = (Get-ChildItem "$mentoria\resultados\*", "$mentoria\scripts\*" |
+    Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
+foreach ($congelado in "_freeze\$mentoria", "_freeze\es\proyectos\mentoria-panaderia", "_freeze\en\projects\mentoring-bakery") {
+    $jsonMentoria = "$congelado\index\execute-results\html.json"
+    if ((Test-Path $jsonMentoria) -and (Get-Item $jsonMentoria).LastWriteTime -lt $ultimaMentoria) {
+        Remove-Item $congelado -Recurse -Force
+        Write-Host "Caso Mentoria: $congelado descartado; a página será refeita."
+    }
+}
+
 # 1. Limpa a saída anterior (assim páginas removidas não ficam esquecidas).
 if (Test-Path docs) { Remove-Item docs -Recurse -Force }
 

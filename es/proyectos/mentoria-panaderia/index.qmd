@@ -1,0 +1,206 @@
+---
+title: "Ejemplo de encuentro de la mentoría: los 3 números de una panadería"
+description: "Un ejercicio de la mentoría en grupo: la hoja de cálculo desordenada de una panadería ficticia, los tres indicadores que salen de ella y la decisión que cambian. Con hoja de cálculo modelo para descargar."
+image: img/capa.png
+image-alt: "Portada del ejemplo de la mentoría: los 3 números de una panadería, con el gráfico del sobrante del pan francés por horneada, mayor en la horneada de las 17h"
+categories: [Mentoría, Indicadores, Hoja de cálculo, Pequeños negocios]
+# Frente de servicio, para el filtro de Proyectos.
+frente: [mentoria]
+traducao: mentoria-padaria
+lightbox: true
+execute:
+  echo: false
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Los números de esta página vienen de resultados/padaria.rds (versión en
+# portugués del caso), grabado por scripts/indicadores.R.
+caso <- "../../../projetos/mentoria-padaria"
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+res <- ler_padaria(caso, "es")
+tx <- res$tx
+num <- tx$num; pct <- tx$pct; reais <- tx$reais
+taxa <- function(p, f) res$sobra$taxa[res$sobra$produto == p & res$sobra$fornada == f]
+mg <- function(p, coluna) res$margem[[coluna]][res$margem$produto == p]
+salvar_capa(res, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+
+::: aviso-dados
+**Material de ejemplo de la mentoría, con datos ficticios.** La Padaria Grão Dourado no existe. Los números se generaron con un script, con patrones conocidos, para el ejercicio.
+
+[Descargar la hoja de cálculo modelo (.xlsx)](../../../projetos/mentoria-padaria/resultados/planilla_modelo_panaderia.xlsx){download="planilla_modelo_panaderia.xlsx"}
+:::
+
+## El ejercicio
+
+En la mentoría en grupo, del segundo al quinto encuentro, cada participante recorre el mismo camino con los datos de su propia empresa: organizar la hoja de cálculo, armar los indicadores, leer los números y decidir. Esta página muestra ese camino con un ejemplo.
+
+La dueña de la Grão Dourado registra la producción y las ventas en una hoja de cálculo desde hace años. La panadería siempre está llena, pero la ganancia no acompaña, y cada tarde sobra pan en el mostrador. Su pregunta es simple: ¿dónde está el dinero que no aparece?
+
+## La hoja de cálculo tal como es
+
+Son `r num(res$dias)` días, del 2 de marzo al 24 de mayo de 2026, con una hoja por mes. Las primeras filas de marzo:
+
+```{r}
+#| label: baguncada
+tabela_baguncada(res) |> kable(align = "l")
+```
+
+[La hoja de cálculo original está en portugués.]{.nota-idioma}
+
+Lo que complica cualquier cuenta:
+
+- la fecha aparece una sola vez, combinada sobre las filas del día, y en formatos distintos ("02/03", "2026-03-03", "4 mar");
+- el mismo producto escrito de varias formas ("Pão francês", "Pao Frances", "francês"), y lo mismo con las horneadas ("6h", "06:00", "6 h");
+- precio y costo a veces como número y a veces como texto con "R$";
+- una fila con el total de la semana en medio de la tabla;
+- en abril, las columnas vienen en otro orden.
+
+## Organizando
+
+La hoja organizada tiene una fila por día, producto y horneada, siempre con las mismas columnas: fecha, día de la semana, horneada (6h, 10h, 14h o 17h), producto, cuánto se produjo, cuánto se vendió, precio y costo de una unidad. Son `r num(res$linhas)` filas.
+
+El costo es el de ingredientes y empaque. El alquiler, los salarios y la energía quedan fuera, porque no cambian con una horneada más o menos.
+
+## Los tres números
+
+### 1. Tasa de sobrante por horneada y producto
+
+El sobrante es lo que se produjo y no se vendió. Dividido por lo producido, muestra dónde se hace pan de más.
+
+::: so-computador
+```{r}
+#| label: sobra
+#| fig-cap: "Tasa de sobrante por producto y horneada, en las 12 semanas: sobrante ÷ producido. Cuanto más oscuro, más sobrante. En blanco: horneada en la que el producto no se hace."
+#| fig-alt: "Cuadrícula con los seis productos en las filas y las cuatro horneadas en las columnas. El pan francés sobra poco por la mañana y mucho en la horneada de las 17h. La berlinesa sobra cerca de la mitad en las dos horneadas. El pan de queso casi no sobra."
+#| fig-width: 7.5
+#| fig-height: 3.6
+#| lightbox:
+#|   group: computador
+grafico_sobra(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: sobra-celular
+#| fig-cap: "Tasa de sobrante por producto y horneada, en las 12 semanas: sobrante ÷ producido. Cuanto más oscuro, más sobrante. En blanco: horneada en la que el producto no se hace."
+#| fig-alt: "Cuadrícula con los seis productos en las filas y las cuatro horneadas en las columnas. El pan francés sobra poco por la mañana y mucho en la horneada de las 17h. La berlinesa sobra cerca de la mitad en las dos horneadas. El pan de queso casi no sobra."
+#| fig-width: 4.8
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_sobra(res, celular = TRUE)
+```
+:::
+
+El pan francés sobra `r pct(taxa("frances", "6h"))` en la horneada de las 6h y `r pct(taxa("frances", "17h"))` en la de las 17h: de los cerca de `r num(res$fr17$produzido_dia)` panes horneados a las 17h, solo `r num(res$fr17$vendido_dia)` se venden por día. La berlinesa sobra cerca de la mitad en las dos horneadas. El pan de queso, en cambio, se vende prácticamente todo, `r pct(100 - res$queijo$taxa, 1)` de lo que se produce.
+
+### 2. Margen real por producto
+
+La cuenta que hacía la dueña era precio menos costo de cada unidad vendida. El margen real descuenta también el costo de lo que sobró: ingreso menos el costo de todo lo producido.
+
+::: so-computador
+```{r}
+#| label: margem
+#| fig-cap: "Margen aparente (precio menos costo solo de las unidades vendidas) y margen real (ingreso menos el costo de todo lo producido), por producto, en las 12 semanas."
+#| fig-alt: "Barras dobles por producto. En casi todos, el margen real queda un poco por debajo del aparente. En la berlinesa, el margen aparente supera los 12 mil reales y el real queda cerca de 1,6 mil."
+#| fig-width: 8
+#| fig-height: 3.8
+#| lightbox:
+#|   group: computador
+grafico_margem(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: margem-celular
+#| fig-cap: "Margen aparente (precio menos costo solo de las unidades vendidas) y margen real (ingreso menos el costo de todo lo producido), por producto, en las 12 semanas."
+#| fig-alt: "Barras dobles por producto. En casi todos, el margen real queda un poco por debajo del aparente. En la berlinesa, el margen aparente supera los 12 mil reales y el real queda cerca de 1,6 mil."
+#| fig-width: 4.8
+#| fig-height: 5
+#| lightbox:
+#|   group: celular
+grafico_margem(res, celular = TRUE)
+```
+:::
+
+Con la cuenta anterior, la berlinesa dejaba `r reais(mg("sonho", "margem_aparente"))` en 12 semanas. Descontado el sobrante, deja `r reais(mg("sonho", "margem"))`: casi todo lo que gana se va en lo que queda en el mostrador.
+
+### 3. Participación en el margen total
+
+Sumados, los márgenes reales llegan a `r reais(res$lucro_total)` en 12 semanas. De ese valor la panadería paga el alquiler, los salarios y la energía. Cuánto viene de cada producto:
+
+::: so-computador
+```{r}
+#| label: participacao
+#| fig-cap: "Participación de cada producto en el margen total de las 12 semanas (suma de los márgenes reales, antes de alquiler, salarios y energía)."
+#| fig-alt: "Barras horizontales. El pan de queso tiene la mayor participación en el margen total, seguido del salado horneado y del pan francés. La berlinesa tiene menos del 1%."
+#| fig-width: 7.5
+#| fig-height: 3.2
+#| lightbox:
+#|   group: computador
+grafico_participacao(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: participacao-celular
+#| fig-cap: "Participación de cada producto en el margen total de las 12 semanas (suma de los márgenes reales, antes de alquiler, salarios y energía)."
+#| fig-alt: "Barras horizontales. El pan de queso tiene la mayor participación en el margen total, seguido del salado horneado y del pan francés. La berlinesa tiene menos del 1%."
+#| fig-width: 4.8
+#| fig-height: 3.8
+#| lightbox:
+#|   group: celular
+grafico_participacao(res, celular = TRUE)
+```
+:::
+
+El pan de queso, que se vende todo, aporta `r pct(mg("queijo", "participacao"), 1)` del margen total, más que el pan francés, que ocupa mucho más horno. La berlinesa, que la dueña consideraba un producto estrella, aporta `r pct(mg("sonho", "participacao"), 1)`.
+
+## La decisión
+
+Los tres números apuntan al mismo lugar: el horno de las 17h está horneando pan francés que no se vende, mientras falta pan de queso. La decisión del ejercicio es reducir a la mitad la horneada de pan francés de las 17h, de cerca de `r num(res$fr17$produzido_dia)` a `r num(res$fr17$produzido_dia / 2)` panes, y usar ese horno para una horneada de `r num(res$queijo$lote)` panes de queso.
+
+El recorte tiene un costo, y entra en la cuenta: en `r num(res$fr17$dias_falta)` de los `r num(res$dias)` días, la demanda de las 17h superó la mitad de la horneada, y la panadería dejaría de vender cerca de `r num(res$fr17$perdido_dia)` panes por día. Aun así, el ahorro en lo que deja de sobrar es mayor que esa pérdida.
+
+Para el pan de queso nuevo, la cuenta usa un rango: por la tarde la demanda es menor que por la mañana, así que la estimación va de vender la mitad a vender el 80% de esa horneada.
+
+::: destaque-suave
+**Ahorro estimado: de `r reais(res$faixa[["baixa"]])` a `r reais(res$faixa[["alta"]])` por mes.** Los números varían de un negocio a otro: lo que vale aquí es el método, no el valor.
+:::
+
+Antes de cambiar la rutina, la dueña prueba durante dos semanas y sigue los mismos tres números en la hoja de cálculo.
+
+## Hazlo con tus números
+
+La hoja de cálculo modelo tiene la hoja de registros ya organizada, con las 12 semanas de la Grão Dourado como ejemplo, y la hoja de indicadores con los tres números calculados con fórmulas simples. Borra las filas de ejemplo y registra las tuyas: los indicadores se actualizan solos. Funciona en Excel y en Google Sheets.
+
+[Descargar la hoja de cálculo modelo (.xlsx)](../../../projetos/mentoria-padaria/resultados/planilla_modelo_panaderia.xlsx){.btn .btn-primary download="planilla_modelo_panaderia.xlsx"}
+
+::: aviso-dados
+**Material de ejemplo de la mentoría, con datos ficticios.**
+:::
+
+::: cta-final
+## ¿Quieres hacer esto con los números de tu empresa?
+
+La mentoría en grupo está formando el primer grupo: seis encuentros para organizar tus datos, armar tus indicadores y decidir con más seguridad.
+
+[Entrar en la lista de espera](https://wa.me/5537984129390?text=Hola+Felipe+quiero+saber+del+proximo+grupo+de+la+mentoria){.btn .btn-primary}
+:::

@@ -10,6 +10,7 @@ listing:
     - "projetos/governanca-indicadores/index.qmd"
     - "projetos/auditoria-alimentacao/index.qmd"
     - "projetos/motivacao-desligamento/index.qmd"
+    - "projetos/mentoria-padaria/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

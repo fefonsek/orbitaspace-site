@@ -10,6 +10,7 @@ listing:
     - "projects/kpi-governance/index.qmd"
     - "projects/meal-allowance-audit/index.qmd"
     - "projects/turnover-exit-reasons/index.qmd"
+    - "projects/mentoring-bakery/index.qmd"
   type: grid
   grid-columns: 2
   fields: [image, title, description, categories]

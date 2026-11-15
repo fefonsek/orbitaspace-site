@@ -1,0 +1,6 @@
+# Caso Mentoria (Padaria Grão Dourado), PT, ES e EN. Com freeze: auto, o Quarto
+# só roda o R desta página de novo quando o index.qmd muda; quando os dados,
+# os resultados ou os scripts mudam, o render.ps1 descarta o resultado
+# guardado em _freeze/.
+execute:
+  freeze: auto

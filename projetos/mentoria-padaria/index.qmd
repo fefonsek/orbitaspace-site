@@ -1,0 +1,205 @@
+---
+title: "Exemplo de encontro da mentoria: os 3 números de uma padaria"
+description: "Um exercício da mentoria em grupo: a planilha bagunçada de uma padaria fictícia, os três indicadores que saem dela e a decisão que eles mudam. Com planilha modelo para baixar."
+image: img/capa.png
+image-alt: "Capa do exemplo da mentoria: os 3 números de uma padaria, com o gráfico da sobra do pão francês por fornada, maior na fornada das 17h"
+categories: [Mentoria, Indicadores, Planilha, Pequenos negócios]
+# Frente de serviço, para o filtro de Projetos.
+frente: [mentoria]
+traducao: mentoria-padaria
+# Tocar num gráfico abre em tela cheia (no celular eles ficam pequenos).
+lightbox: true
+execute:
+  echo: false
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    dev: ragg_png
+    dev.args: { bg: transparent }
+    fig.align: center
+---
+
+```{r}
+#| label: preparo
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# Os números desta página vêm de resultados/padaria.rds, gravado por
+# scripts/indicadores.R a partir da planilha organizada.
+caso <- "."
+source(file.path(caso, "scripts/rotulos.R"))
+source(file.path(caso, "scripts/apresentacao.R"))
+res <- ler_padaria(caso, "pt")
+tx <- res$tx
+num <- tx$num; pct <- tx$pct; reais <- tx$reais
+taxa <- function(p, f) res$sobra$taxa[res$sobra$produto == p & res$sobra$fornada == f]
+mg <- function(p, coluna) res$margem[[coluna]][res$margem$produto == p]
+salvar_capa(res, "img/capa.png", logo = file.path(caso, "../../assets/img/logo-branco.png"))
+```
+
+::: aviso-dados
+**Material de exemplo da mentoria, com dados fictícios.** A Padaria Grão Dourado não existe. Os números foram gerados por um script, com padrões conhecidos, para o exercício.
+
+[Baixar a planilha modelo (.xlsx)](resultados/planilha_modelo_padaria.xlsx){download="planilha_modelo_padaria.xlsx"}
+:::
+
+## O exercício
+
+Na mentoria em grupo, do segundo ao quinto encontro, cada participante percorre o mesmo caminho com os dados da própria empresa: organizar a planilha, montar os indicadores, ler os números e decidir. Esta página mostra esse caminho num exemplo.
+
+A dona da Grão Dourado anota a produção e as vendas numa planilha há anos. A padaria vive cheia, mas o lucro não acompanha, e todo fim de tarde sobra pão no balcão. A pergunta dela é simples: onde está o dinheiro que não aparece?
+
+## A planilha como ela é
+
+São `r num(res$dias)` dias, de 2 de março a 24 de maio de 2026, numa aba por mês. As primeiras linhas de março:
+
+```{r}
+#| label: baguncada
+tabela_baguncada(res) |> kable(align = "l")
+```
+
+O que atrapalha qualquer conta:
+
+- a data aparece uma vez só, mesclada sobre as linhas do dia, e em formatos diferentes ("02/03", "2026-03-03", "4 mar");
+- o mesmo produto escrito de vários jeitos ("Pão francês", "Pao Frances", "francês"), e o mesmo vale para as fornadas ("6h", "06:00", "6 h");
+- preço e custo às vezes como número, às vezes como texto com "R$";
+- uma linha de total da semana no meio da tabela;
+- em abril, as colunas vêm em outra ordem.
+
+## Organizando
+
+A planilha organizada tem uma linha por dia, produto e fornada, sempre com as mesmas colunas: data, dia da semana, fornada (6h, 10h, 14h ou 17h), produto, quanto foi produzido, quanto foi vendido, preço e custo de uma unidade. São `r num(res$linhas)` linhas.
+
+O custo é o de ingredientes e embalagem. Aluguel, salários e energia ficam de fora, porque não mudam com uma fornada a mais ou a menos.
+
+## Os três números
+
+### 1. Taxa de sobra por fornada e produto
+
+A sobra é o que foi produzido e não foi vendido. Dividida pelo que foi produzido, mostra onde se faz pão demais.
+
+::: so-computador
+```{r}
+#| label: sobra
+#| fig-cap: "Taxa de sobra por produto e fornada, nas 12 semanas: sobra ÷ produzido. Quanto mais escuro, mais sobra. Em branco: fornada em que o produto não é feito."
+#| fig-alt: "Grade com os seis produtos nas linhas e as quatro fornadas nas colunas. O pão francês sobra pouco de manhã e muito na fornada das 17h. O sonho sobra perto de metade nas duas fornadas. O pão de queijo quase não sobra."
+#| fig-width: 7.5
+#| fig-height: 3.6
+#| lightbox:
+#|   group: computador
+grafico_sobra(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: sobra-celular
+#| fig-cap: "Taxa de sobra por produto e fornada, nas 12 semanas: sobra ÷ produzido. Quanto mais escuro, mais sobra. Em branco: fornada em que o produto não é feito."
+#| fig-alt: "Grade com os seis produtos nas linhas e as quatro fornadas nas colunas. O pão francês sobra pouco de manhã e muito na fornada das 17h. O sonho sobra perto de metade nas duas fornadas. O pão de queijo quase não sobra."
+#| fig-width: 4.8
+#| fig-height: 4.2
+#| lightbox:
+#|   group: celular
+grafico_sobra(res, celular = TRUE)
+```
+:::
+
+O pão francês sobra `r pct(taxa("frances", "6h"))` na fornada das 6h e `r pct(taxa("frances", "17h"))` na das 17h: dos cerca de `r num(res$fr17$produzido_dia)` pães assados às 17h, só `r num(res$fr17$vendido_dia)` saem por dia. O sonho sobra perto de metade nas duas fornadas. Já o pão de queijo vende praticamente tudo, `r pct(100 - res$queijo$taxa, 1)` do que é produzido.
+
+### 2. Margem real por produto
+
+A conta que a dona fazia era preço menos custo de cada unidade vendida. A margem real desconta também o custo do que sobrou: receita menos o custo de tudo o que foi produzido.
+
+::: so-computador
+```{r}
+#| label: margem
+#| fig-cap: "Margem aparente (preço menos custo só das unidades vendidas) e margem real (receita menos o custo de tudo o que foi produzido), por produto, nas 12 semanas."
+#| fig-alt: "Barras duplas por produto. Para quase todos, a margem real fica pouco abaixo da aparente. No sonho, a margem aparente passa de 12 mil reais e a real fica perto de 1,6 mil."
+#| fig-width: 8
+#| fig-height: 3.8
+#| lightbox:
+#|   group: computador
+grafico_margem(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: margem-celular
+#| fig-cap: "Margem aparente (preço menos custo só das unidades vendidas) e margem real (receita menos o custo de tudo o que foi produzido), por produto, nas 12 semanas."
+#| fig-alt: "Barras duplas por produto. Para quase todos, a margem real fica pouco abaixo da aparente. No sonho, a margem aparente passa de 12 mil reais e a real fica perto de 1,6 mil."
+#| fig-width: 4.8
+#| fig-height: 5
+#| lightbox:
+#|   group: celular
+grafico_margem(res, celular = TRUE)
+```
+:::
+
+Pela conta antiga, o sonho rendia `r reais(mg("sonho", "margem_aparente"))` em 12 semanas. Descontada a sobra, rende `r reais(mg("sonho", "margem"))`: quase tudo o que ele ganha vai embora no que fica no balcão.
+
+### 3. Participação na margem total
+
+Somadas, as margens reais chegam a `r reais(res$lucro_total)` em 12 semanas. É desse valor que a padaria paga aluguel, salários e energia. Quanto vem de cada produto:
+
+::: so-computador
+```{r}
+#| label: participacao
+#| fig-cap: "Participação de cada produto na margem total das 12 semanas (soma das margens reais, antes de aluguel, salários e energia)."
+#| fig-alt: "Barras horizontais. O pão de queijo tem a maior participação na margem total, seguido do salgado assado e do pão francês. O sonho tem menos de 1%."
+#| fig-width: 7.5
+#| fig-height: 3.2
+#| lightbox:
+#|   group: computador
+grafico_participacao(res)
+```
+:::
+
+::: so-celular
+```{r}
+#| label: participacao-celular
+#| fig-cap: "Participação de cada produto na margem total das 12 semanas (soma das margens reais, antes de aluguel, salários e energia)."
+#| fig-alt: "Barras horizontais. O pão de queijo tem a maior participação na margem total, seguido do salgado assado e do pão francês. O sonho tem menos de 1%."
+#| fig-width: 4.8
+#| fig-height: 3.8
+#| lightbox:
+#|   group: celular
+grafico_participacao(res, celular = TRUE)
+```
+:::
+
+O pão de queijo, que vende tudo, responde por `r pct(mg("queijo", "participacao"), 1)` da margem total, mais que o pão francês, que ocupa muito mais forno. O sonho, que a dona considerava um carro-chefe, responde por `r pct(mg("sonho", "participacao"), 1)`.
+
+## A decisão
+
+Os três números apontam para o mesmo lugar: o forno das 17h está assando pão francês que não vende, enquanto o pão de queijo falta. A decisão do exercício é cortar pela metade a fornada das 17h de pão francês, de cerca de `r num(res$fr17$produzido_dia)` para `r num(res$fr17$produzido_dia / 2)` pães, e usar esse forno para uma fornada de `r num(res$queijo$lote)` pães de queijo.
+
+O corte tem um custo, e ele entra na conta: em `r num(res$fr17$dias_falta)` dos `r num(res$dias)` dias, a procura das 17h passou de metade da fornada, e a padaria deixaria de vender cerca de `r num(res$fr17$perdido_dia)` pães por dia. Mesmo assim, a economia com o que deixa de sobrar é maior que essa perda.
+
+Para o pão de queijo novo, a conta usa uma faixa: à tarde a procura é menor que de manhã, então a estimativa vai de vender metade a vender 80% dessa fornada.
+
+::: destaque-suave
+**Economia estimada: de `r reais(res$faixa[["baixa"]])` a `r reais(res$faixa[["alta"]])` por mês.** Os números variam de negócio para negócio: o que vale aqui é o método, não o valor.
+:::
+
+Antes de mudar a rotina, a dona testa por duas semanas e acompanha os mesmos três números na planilha.
+
+## Faça com os seus números
+
+A planilha modelo tem a aba de lançamentos já organizada, com as 12 semanas da Grão Dourado como exemplo, e a aba de indicadores com os três números calculados por fórmulas simples. Apague as linhas de exemplo e lance as suas: os indicadores se atualizam sozinhos. Funciona no Excel e no Google Planilhas.
+
+[Baixar a planilha modelo (.xlsx)](resultados/planilha_modelo_padaria.xlsx){.btn .btn-primary download="planilha_modelo_padaria.xlsx"}
+
+::: aviso-dados
+**Material de exemplo da mentoria, com dados fictícios.**
+:::
+
+::: cta-final
+## Quer fazer isso com os números da sua empresa?
+
+A mentoria em grupo está formando a primeira turma: seis encontros para organizar os seus dados, montar os seus indicadores e decidir com mais segurança.
+
+[Entrar na lista de espera](https://wa.me/5537984129390?text=Ola+Felipe+quero+saber+da+proxima+turma+da+mentoria){.btn .btn-primary}
+:::
