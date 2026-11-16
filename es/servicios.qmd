@@ -126,6 +126,8 @@ Para gerentes y dueños de empresas que quieren entender sus propios números, a
 6. **Cierre.** Cada participante presenta su propio tablero y sale con una rutina para seguir por su cuenta.
 :::
 
+[Mira un ejemplo de encuentro: los 3 números de una panadería](proyectos/mentoria-panaderia/index.qmd){.mais}
+
 [Entrar en la lista de espera](https://wa.me/5537984129390?text=Hola+Felipe+quiero+saber+del+proximo+grupo+de+la+mentoria){.btn .btn-primary}
 :::
 

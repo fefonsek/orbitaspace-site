@@ -126,6 +126,8 @@ For managers and business owners who want to understand their own numbers, build
 6. **Wrap-up.** Each participant presents their own dashboard and leaves with a routine to follow on their own.
 :::
 
+[See a sample session: the 3 numbers of a bakery](projects/mentoring-bakery/index.qmd){.mais}
+
 [Join the waitlist](https://wa.me/5537984129390?text=Hi+Felipe+I+want+to+know+about+the+next+mentoring+cohort){.btn .btn-primary}
 :::
 

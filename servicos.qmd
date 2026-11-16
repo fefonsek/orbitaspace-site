@@ -125,6 +125,8 @@ Para gestores e donos de empresa que querem entender os próprios números, mont
 6. **Encerramento.** Cada participante apresenta o próprio painel e sai com uma rotina para seguir sozinho.
 :::
 
+[Veja um exemplo de encontro: os 3 números de uma padaria](projetos/mentoria-padaria/index.qmd){.mais}
+
 [Entrar na lista de espera](https://wa.me/5537984129390?text=Ola+Felipe+quero+saber+da+proxima+turma+da+mentoria){.btn .btn-primary}
 :::
 
