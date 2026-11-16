@@ -41,6 +41,8 @@ website:
       - href: /en/
         text: EN
   page-footer:
+    # Link para a Política de Privacidade (/privacidade/, só em PT) no fim dos
+    # links das duas marcas, em todas as páginas.
     background: "#1a1a2e"
     # Felipe Fonseca: nome e profissão à esquerda, Orbita Space com logo e CNPJ
     # no centro e os links à direita; a frase da Saline fica numa linha
@@ -53,4 +55,4 @@ website:
     # Na própria página da Saline aparece a frase espelhada, que leva à página
     # inicial (.rodape-dados); a troca é feita em assets/css/orbita.scss.
     center: "[<img src=\"/assets/img/logo-branco.png\" class=\"rodape-logo\" alt=\"\" width=\"128\" height=\"128\"> Orbita Space · CNPJ 67.550.599/0001-08]{.rodape-cnpj .rodape-marca-felipe}[Também crio artes, poemas e conteúdos de autoconhecimento como <a href=\"/saline-astral.html\"><strong>Saline Astral</strong></a> → *Conheça*]{.rodape-saline}[Também trabalho com dados e estatística como <a href=\"/\"><strong>Felipe Fonseca</strong></a> → *Conheça*]{.rodape-dados}"
-    right: "[[WhatsApp](https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pelo%20site%20da%20Orbita%20Space.) · [E-mail](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek)]{.rodape-marca-felipe}[[E-mail](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral)]{.rodape-marca-saline}"
+    right: "[[WhatsApp](https://wa.me/5537984129390?text=Ol%C3%A1%2C%20Felipe%21%20Vim%20pelo%20site%20da%20Orbita%20Space.) · [E-mail](mailto:felipe.fonseca@orbitaspace.com.br) · [LinkedIn](https://www.linkedin.com/in/fpzfonseca) · [GitHub](https://github.com/fefonsek) · [YouTube](https://www.youtube.com/@fefonsek) · [TikTok](https://www.tiktok.com/@fefonsek) · [Instagram](https://www.instagram.com/fefonsek) · <a href=\"/privacidade/\">Política&nbsp;de&nbsp;Privacidade</a>]{.rodape-marca-felipe}[[E-mail](mailto:saline.astral@orbitaspace.com.br) · [YouTube](https://www.youtube.com/@SalineAstral) · [TikTok](https://www.tiktok.com/@salineastral) · [Instagram](https://www.instagram.com/salineastral) · <a href=\"/privacidade/\">Política&nbsp;de&nbsp;Privacidade</a>]{.rodape-marca-saline}"

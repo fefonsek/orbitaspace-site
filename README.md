@@ -261,6 +261,15 @@ publica só o PDF e o CSV de prioridades.
   cartão `#mentoria` da página inicial (o botão "Conhecer a mentoria" leva
   até ele).
 
+## Política de Privacidade
+
+`privacidade/index.qmd`, no endereço `/privacidade/` (canônica com barra no
+final). Só em português: o texto é o de Felipe, sem mudanças; ao atualizar,
+troque também a data de "Última atualização". O link fica no fim dos links do
+rodapé, nas duas marcas (Felipe Fonseca e Saline) e nas três línguas; em ES e
+EN, com o aviso "(página en portugués)" / "(page in Portuguese)". É `<a>` em
+HTML no `page-footer` dos `_quarto-*.yml`.
+
 ## Caso Mentoria (Padaria Grão Dourado)
 
 `projetos/mentoria-padaria/` (PT), `es/proyectos/mentoria-panaderia/` e

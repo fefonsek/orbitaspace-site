@@ -1,0 +1,73 @@
+---
+title: "Política de Privacidade"
+# Página numa subpasta: a imagem padrão de compartilhamento precisa do "../".
+image: ../assets/img/compartilhamento-site.jpg
+# Só em português por enquanto. Endereço: /privacidade/ (pasta com index),
+# com a canônica com barra no final. O texto é o enviado por Felipe, sem
+# mudanças; ao atualizar, troque também a data de "Última atualização".
+# Sem description: o subtítulo que o Quarto mostra abaixo do título ficaria
+# fora do texto da política.
+---
+
+**Última atualização:** 16 de novembro de 2026
+
+Esta política explica como Felipe Fonseca coleta, usa e protege os dados pessoais de quem entra em contato pelos formulários, redes sociais e canais de atendimento ligados a este site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).
+
+## Quem é o responsável pelos dados
+
+Felipe Luiz Fonseca, inscrito no CNPJ 67.550.599/0001-08, com atuação em Formiga, Minas Gerais.\
+Contato para assuntos de privacidade: felipe.fonseca@orbitaspace.com.br
+
+## Quais dados coletamos
+
+Quando você preenche um formulário de contato ou de diagnóstico, podemos coletar:
+
+- nome;
+- número de telefone (WhatsApp);
+- nome da empresa, cargo e cidade;
+- as respostas que você der às perguntas do formulário.
+
+## Para que usamos os dados
+
+Usamos os seus dados apenas para:
+
+- entrar em contato com você sobre o diagnóstico ou o serviço que você solicitou;
+- entender as necessidades da sua empresa e preparar a conversa;
+- agendar reuniões e enviar informações relacionadas ao que você pediu.
+
+Não vendemos, alugamos nem compartilhamos os seus dados com terceiros para fins de marketing.
+
+## Base legal
+
+Os dados são tratados com base no seu consentimento, dado ao preencher o formulário, e, quando for o caso, para a execução de procedimentos preliminares a um contrato solicitado por você.
+
+## Compartilhamento
+
+Os dados podem passar por plataformas usadas no atendimento, como TikTok, Instagram e WhatsApp, que seguem as suas próprias políticas de privacidade. Fora isso, os dados só são compartilhados se houver obrigação legal ou ordem de autoridade competente.
+
+## Confidencialidade das informações da sua empresa
+
+Informações sobre a sua empresa compartilhadas durante o diagnóstico são tratadas com confidencialidade e não são divulgadas publicamente. Antes de qualquer análise, registramos por escrito o que pode e o que não pode ser acessado.
+
+## Por quanto tempo guardamos
+
+Mantemos os dados pelo tempo necessário para o atendimento e o relacionamento com você. Se não houver continuidade, eles são excluídos em até 12 meses após o último contato, ou antes, se você pedir.
+
+## Seus direitos
+
+Você pode, a qualquer momento, pedir para:
+
+- confirmar se tratamos os seus dados e acessá-los;
+- corrigir dados incompletos ou desatualizados;
+- excluir os seus dados;
+- revogar o seu consentimento.
+
+Para isso, basta enviar um e-mail para felipe.fonseca@orbitaspace.com.br. Respondemos em até 15 dias.
+
+## Segurança
+
+Adotamos medidas razoáveis para proteger os seus dados contra acesso não autorizado, perda ou uso indevido.
+
+## Alterações
+
+Esta política pode ser atualizada. A data da última atualização fica sempre no topo da página.
