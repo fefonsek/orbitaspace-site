@@ -265,10 +265,13 @@ publica só o PDF e o CSV de prioridades.
 
 `privacidade/index.qmd`, no endereço `/privacidade/` (canônica com barra no
 final). Só em português: o texto é o de Felipe, sem mudanças; ao atualizar,
-troque também a data de "Última atualização". O link fica no fim dos links do
-rodapé, nas duas marcas (Felipe Fonseca e Saline) e nas três línguas; em ES e
-EN, com o aviso "(página en portugués)" / "(page in Portuguese)". É `<a>` em
-HTML no `page-footer` dos `_quarto-*.yml`.
+troque também a data de "Última atualização". O link fica numa linha própria
+no fim do rodapé, centralizada, abaixo da frase da Saline e no mesmo tamanho
+dela, em todas as páginas (as duas marcas) e nas três línguas; em ES e EN,
+com o aviso "(página en portugués)" / "(page in Portuguese)". É um `<span>`
+com o estilo no próprio atributo, no fim do `center` do `page-footer` dos
+`_quarto-*.yml`: assim a mudança fica só no rodapé, sem trocar a folha de
+estilo (e o `<head>`) de todas as páginas.
 
 ## Caso Mentoria (Padaria Grão Dourado)
 

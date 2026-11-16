@@ -24,6 +24,7 @@ Quando você preenche um formulário de contato ou de diagnóstico, podemos cole
 
 - nome;
 - número de telefone (WhatsApp);
+- e-mail;
 - nome da empresa, cargo e cidade;
 - as respostas que você der às perguntas do formulário.
 
@@ -31,7 +32,7 @@ Quando você preenche um formulário de contato ou de diagnóstico, podemos cole
 
 Usamos os seus dados apenas para:
 
-- entrar em contato com você sobre o diagnóstico ou o serviço que você solicitou;
+- entrar em contato com você, por WhatsApp ou e-mail, sobre o diagnóstico ou o serviço que você solicitou;
 - entender as necessidades da sua empresa e preparar a conversa;
 - agendar reuniões e enviar informações relacionadas ao que você pediu.
 
@@ -43,7 +44,7 @@ Os dados são tratados com base no seu consentimento, dado ao preencher o formul
 
 ## Compartilhamento
 
-Os dados podem passar por plataformas usadas no atendimento, como TikTok, Instagram e WhatsApp, que seguem as suas próprias políticas de privacidade. Fora isso, os dados só são compartilhados se houver obrigação legal ou ordem de autoridade competente.
+Os dados podem passar por plataformas usadas no atendimento, como TikTok, Instagram, WhatsApp e serviços de e-mail, que seguem as suas próprias políticas de privacidade. Fora isso, os dados só são compartilhados se houver obrigação legal ou ordem de autoridade competente.
 
 ## Confidencialidade das informações da sua empresa
 
