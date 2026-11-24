@@ -214,8 +214,15 @@ body.pagina-mini-kit main.content {
 .prompt-nota { display: block; margin-top: 0.25rem; font-style: italic; }
 .prompt > p:has(> .prompt-nota) { margin: 1rem 0 0 !important; }
 
-/* Link para a versão da planilha com exemplo, abaixo do botão. */
-.mini-kit-planilha-exemplo { margin-top: -0.25rem; }
+/* Botões para baixar as planilhas: lado a lado no computador, um embaixo do
+   outro no celular (largura toda, pela regra .mini-kit-botao .btn). */
+.mini-kit-botoes-planilha { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.mini-kit-planilha-ajuda { margin-top: 0; }
+
+/* Prompt 8: botão secundário para baixar a planilha, antes do bloco. */
+.prompt-download { margin: 0 0 0.5rem !important; }
+.prompt-download .btn { font-size: 17px; min-height: 48px; padding: 0.6rem 1.3rem; white-space: normal; }
+.prompt-download-ajuda { margin: 0 0 1rem !important; }
 
 /* Botões grandes e fáceis de tocar. */
 .mini-kit-botao { margin: 1.75rem 0 1rem; }
@@ -252,6 +259,7 @@ body.pagina-mini-kit main.content {
   .prompt { padding: 1rem 0.9rem 1.1rem; }
   .prompt-texto { padding: 0.85rem 0.8rem; border-left-width: 3px; }
   .copiar-prompt { width: 100%; }
+  .prompt-download .btn { width: 100%; }
   .mini-kit-botao .btn { width: 100%; }
   .mini-kit-como-usar { padding: 1.25rem 1.15rem 0.25rem; }
 }

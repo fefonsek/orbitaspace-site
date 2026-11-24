@@ -75,13 +75,28 @@ local function botao_planilha()
     return html('<p class="mini-kit-botao"><span class="btn btn-outline-primary btn-lg disabled" ' ..
       'aria-disabled="true">Planilha em breve</span></p>')
   end
-  local exemplo = ""
+  -- Os arquivos ficam no próprio site (mini-kit/arquivos/): o atributo
+  -- download faz o navegador baixar em vez de tentar abrir.
+  local botoes = '<a class="btn btn-primary btn-lg botao-planilha" href="' .. escapar(url) ..
+    '" download>Baixar a planilha em branco&nbsp;(.xlsx)</a>'
   if campos.link_planilha_exemplo ~= "" then
-    exemplo = '<p class="mini-kit-planilha-exemplo"><a href="' .. escapar(campos.link_planilha_exemplo) ..
-      '" target="_blank" rel="noopener">Ver a versão com exemplo preenchido</a></p>'
+    botoes = botoes .. '<a class="btn btn-outline-primary btn-lg botao-planilha-exemplo" href="' ..
+      escapar(campos.link_planilha_exemplo) .. '" download>Baixar a versão com exemplo&nbsp;(.xlsx)</a>'
   end
-  return html('<p class="mini-kit-botao"><a class="btn btn-primary btn-lg botao-planilha" href="' ..
-    escapar(url) .. '" target="_blank" rel="noopener">Fazer minha cópia da planilha</a></p>' .. exemplo)
+  return html('<p class="mini-kit-botao mini-kit-botoes-planilha">' .. botoes .. '</p>\n' ..
+    '<p class="mini-kit-planilha-ajuda">Funciona no Excel e no Google Planilhas. No Google, abra o Drive, ' ..
+    'faça o upload do arquivo e abra com o Google Planilhas.</p>')
+end
+
+-- Prompt 8: botão secundário (contorno) para baixar a planilha em branco, com
+-- a linha de ajuda. Com link_planilha vazio, nada aparece.
+local function botao_planilha_prompt8()
+  local url = campos.link_planilha
+  if url == "" then return {} end
+  return html('<p class="prompt-download"><a class="btn btn-outline-primary botao-planilha-prompt8" href="' ..
+    escapar(url) .. '" download>Baixar a planilha em branco&nbsp;(.xlsx)</a></p>\n' ..
+    '<p class="prompt-download-ajuda">Baixe, preencha a aba Indicadores com os seus cards e anexe o arquivo ' ..
+    'na conversa. <a href="#planilha">Veja como a planilha funciona.</a></p>')
 end
 
 local function botao_pre_venda()
@@ -140,6 +155,7 @@ end
 local function trocar_blocos(div)
   if div.identifier == "bloco-video" then return bloco_video() end
   if div.identifier == "botao-planilha" then return botao_planilha() end
+  if div.identifier == "botao-planilha-prompt8" then return botao_planilha_prompt8() end
   if div.identifier == "botao-pre-venda" then return botao_pre_venda() end
   if div.identifier == "frase-pre-venda" then return frase_pre_venda(div) end
 end

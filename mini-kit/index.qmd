@@ -12,6 +12,10 @@ draft: true
 image: ../assets/img/compartilhamento-site.jpg
 body-classes: pagina-mini-kit
 css: mini-kit.css
+# As planilhas para baixar (links link_planilha e link_planilha_exemplo) vão
+# para docs/mini-kit/arquivos/.
+resources:
+  - arquivos/*.xlsx
 filters:
   - mini-kit.lua
 
@@ -25,8 +29,10 @@ filters:
 #     a frase de preços sai e fica "A pré-venda abre em breve...".
 #   link_kit vazio: o botão da pré-venda abre o link_whatsapp. Quando a página
 #     do kit existir, use "https://orbitaspace.com.br/kit/".
-#   link_planilha: a planilha padrão em branco (link "fazer uma cópia" do Drive).
-#   link_planilha_exemplo vazio: o link para a versão com exemplo não aparece.
+#   link_planilha: a planilha padrão em branco, para baixar (arquivo em
+#     mini-kit/arquivos/). Vazio: o botão mostra "Planilha em breve", e o botão
+#     do prompt 8 não aparece.
+#   link_planilha_exemplo: a versão com exemplo. Vazio: o botão dela não aparece.
 # ano: entra no título (pelo {{< meta ano >}}) e no texto; o ano anterior
 #   (usado em "os números de 2026", por exemplo) é calculado. Não pode ficar
 #   vazio.
@@ -34,8 +40,8 @@ filters:
 ano: "2027"
 link_whatsapp: "https://wa.me/5537984129390?text=KIT"
 link_kit: ""
-link_planilha: ""
-link_planilha_exemplo: ""
+link_planilha: "arquivos/planilha_padrao_indicadores.xlsx"
+link_planilha_exemplo: "arquivos/planilha_padrao_indicadores_exemplo.xlsx"
 link_video: ""
 data_lancamento: ""
 preco_cheio: ""
@@ -66,7 +72,7 @@ O ano está fechando, e é agora que se decide o que acompanhar em [ano]{.campo}
 2. Copie um prompt por vez, na ordem, e troque o que está entre colchetes pelas informações da sua empresa.
 3. Faça tudo na mesma conversa, do primeiro ao décimo prompt. Assim a IA vai lembrando do que você contou.
 4. Leia cada resposta com olhar crítico. Se algo não combina com a sua realidade, diga isso a ela e peça outra sugestão.
-5. Antes do prompt 8, faça a sua cópia da [planilha padrão](#planilha), que está no final desta página. Os prompts 8 e 9 encaixam e conferem os seus indicadores nela.
+5. Antes do prompt 8, baixe a [planilha padrão](#planilha), que está no final desta página. Os prompts 8 e 9 encaixam e conferem os seus indicadores nela.
 :::
 
 ## Antes de começar {#antes-de-comecar}
@@ -199,6 +205,9 @@ Neste começo, o card não leva meta. Uma meta boa nasce do histórico: com os r
 ### 8. Adapte a planilha padrão
 
 [Para os seus indicadores caberem numa estrutura que depois vira painel.]{.prompt-serve}
+
+::: {#botao-planilha-prompt8}
+:::
 
 ```{.texto-prompt}
 Vou te enviar a planilha padrão que vou usar [anexe o arquivo da planilha]. Ela tem as abas Indicadores e Lançamentos, e as colunas já têm nome.

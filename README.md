@@ -293,10 +293,11 @@ iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
 - **Campos:** ficam no front matter de `mini-kit/index.qmd`. Campo vazio
   esconde a parte que depende dele:
   - `link_video` (endereço do YouTube): vazio, o vídeo não aparece;
-  - `link_planilha` (link "fazer uma cópia" do Google Drive da planilha padrão
-    em branco): vazio, o botão mostra "Planilha em breve";
-  - `link_planilha_exemplo` (a versão com exemplo): vazio, o link "Ver a
-    versão com exemplo preenchido" não aparece;
+  - `link_planilha` (`arquivos/planilha_padrao_indicadores.xlsx`, a planilha
+    padrão em branco, para baixar): vazio, o botão do fim da página mostra
+    "Planilha em breve" e o botão do prompt 8 não aparece;
+  - `link_planilha_exemplo` (`arquivos/planilha_padrao_indicadores_exemplo.xlsx`):
+    vazio, o botão da versão com exemplo não aparece;
   - `data_lancamento`, `preco_cheio`, `preco_pre_venda`, `data_fim_pre_venda`:
     com qualquer um vazio, a frase de preços vira "A pré-venda abre em
     breve..."; escreva os valores como devem aparecer ("19/01/2027", "R$97");
@@ -312,21 +313,26 @@ iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
   `index.qmd`; ao mudar um número, mude nos dois). No computador, a tabela usa
   a largura da página (`.column-page`), e as larguras das colunas vêm da linha
   de traços da tabela.
-- **Planilha padrão:** gerada por `mini-kit/planilha/gerar_planilha_padrao.py`
-  (Python com openpyxl). Uso: `python mini-kit/planilha/gerar_planilha_padrao.py
-  <pasta de saída>`, que grava `planilha_padrao_indicadores.xlsx` (em branco) e
-  `planilha_padrao_indicadores_exemplo.xlsx`. Os `.xlsx` ficam fora do Git e
-  fora de `docs/` (o link oficial é o do Drive): suba os dois no Drive e use
-  os links de cópia em `link_planilha` e `link_planilha_exemplo`. Abas:
-  Leia-me, Indicadores (um card por linha), Lançamentos (uma linha por
-  período e indicador) e Painel (último resultado de cada indicador, com a
-  cor da situação). A versão de exemplo traz os 3 indicadores gerais (CX,
-  quanto do faturado virou caixa; TM, ticket médio; SP, saldo projetado para
-  30 dias), com lançamentos fictícios de março a outubro de 2026. As
-  fórmulas funcionam no Excel 2010 em diante e no Google Planilhas.
+- **Planilha padrão:** as duas planilhas ficam no próprio site, para baixar:
+  `mini-kit/arquivos/planilha_padrao_indicadores.xlsx` (em branco) e
+  `mini-kit/arquivos/planilha_padrao_indicadores_exemplo.xlsx`, versionadas. O
+  `resources: arquivos/*.xlsx` do front matter copia as duas para
+  `docs/mini-kit/arquivos/`, e os botões usam o atributo `download`. O
+  gerador é `mini-kit/planilha/gerar_planilha_padrao.py` (Python com
+  openpyxl); para atualizar as planilhas, rode-o com essa pasta como saída:
+  `python mini-kit/planilha/gerar_planilha_padrao.py mini-kit/arquivos`.
+  (O `.gitignore` de `mini-kit/planilha/` só ignora `.xlsx` gerados naquela
+  pasta.) Abas: Leia-me, Indicadores (um card por linha), Lançamentos (uma
+  linha por período e indicador) e Painel (último resultado de cada
+  indicador, com a cor da situação). A versão de exemplo traz os 3
+  indicadores gerais (CX, quanto do faturado virou caixa; TM, ticket médio;
+  SP, saldo projetado para 30 dias), com lançamentos fictícios de março a
+  outubro de 2026. As fórmulas funcionam no Excel 2010 em diante e no Google
+  Planilhas.
 - **Sem analytics:** a página não tem a tag do Google Ads. Os cliques são
-  medidos pelos pedidos com "KIT" no WhatsApp e pelas cópias da planilha no
-  Drive; quando `/kit/` existir, os links para a Kiwify levam UTM.
+  medidos pelos pedidos com "KIT" no WhatsApp. Com as planilhas no próprio
+  site, os downloads não são contados (o GitHub Pages não tem relatório de
+  acessos). Quando `/kit/` existir, os links para a Kiwify levam UTM.
 
 ## Caso Mentoria (Padaria Grão Dourado)
 
