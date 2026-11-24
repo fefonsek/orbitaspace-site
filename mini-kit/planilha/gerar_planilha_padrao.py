@@ -111,7 +111,7 @@ def gerar(caminho, exemplo):
         ("Tolerância de ação", "A partir de quanto de piora ele vira vermelho e pede ação imediata."),
         ("Meta", "Fica vazia neste começo. Com pelo menos 12 meses de lançamentos, dá para ver o padrão da empresa, os meses fortes e os fracos, e definir metas por período com base no quanto você quer crescer no ano seguinte."),
         ("Funciona em", None),
-        ("", "Google Planilhas e Excel. Para usar no Google Drive: Arquivo > Fazer uma cópia."),
+        ("", "Excel e Google Planilhas. No Google, faça o upload do arquivo no Drive e abra com o Google Planilhas."),
     ]
     for rot, txt in blocos:
         if txt is None:

@@ -95,8 +95,8 @@ local function botao_planilha_prompt8()
   if url == "" then return {} end
   return html('<p class="prompt-download"><a class="btn btn-outline-primary botao-planilha-prompt8" href="' ..
     escapar(url) .. '" download>Baixar a planilha em branco&nbsp;(.xlsx)</a></p>\n' ..
-    '<p class="prompt-download-ajuda">Baixe, preencha a aba Indicadores com os seus cards e anexe o arquivo ' ..
-    'na conversa. <a href="#planilha">Veja como a planilha funciona.</a></p>')
+    '<p class="prompt-download-ajuda">Baixe a planilha em branco e anexe o arquivo na conversa: a IA vai ' ..
+    'te mostrar como preencher. <a href="#planilha">Veja como a planilha funciona.</a></p>')
 end
 
 local function botao_pre_venda()
