@@ -1,0 +1,405 @@
+---
+title: "10 prompts para descobrir os indicadores da sua empresa"
+subtitle: "Por Felipe Fonseca, estatístico, especialista em gestão de indicadores"
+# Página oculta, só em português, em https://orbitaspace.com.br/mini-kit/.
+# draft: true com draft-mode: unlinked (em _quarto.yml): a página é gerada em
+# docs/ e abre pelo link, mas fica fora do sitemap, da busca e das listagens.
+# O filtro mini-kit.lua acrescenta <meta name="robots" content="noindex, nofollow">.
+# Nenhuma outra página leva a ela e ela não entra no _traducoes.yml; sem
+# tradução, os botões ES e EN levam às páginas iniciais em espanhol e inglês.
+draft: true
+# Página numa subpasta: a imagem padrão de compartilhamento precisa do "../".
+image: ../assets/img/compartilhamento-site.jpg
+body-classes: pagina-mini-kit
+css: mini-kit.css
+filters:
+  - mini-kit.lua
+
+# ---------------------------------------------------------------------------
+# CAMPOS DA PÁGINA. Troque só o que está entre aspas; o texto não precisa
+# mudar. Escreva datas e preços do jeito que devem aparecer (ex.: "19/01/2027",
+# "R$97"). Campo vazio ("") esconde a parte que depende dele:
+#   link_video vazio: o vídeo não aparece.
+#   link_planilha vazio: o botão mostra "Planilha em breve".
+#   data_lancamento, preco_cheio, preco_pre_venda ou data_fim_pre_venda vazio:
+#     a frase de preços sai e fica "A pré-venda abre em breve...".
+#   link_kit vazio: o botão da pré-venda abre o link_whatsapp. Quando a página
+#     do kit existir, use "https://orbitaspace.com.br/kit/".
+# ---------------------------------------------------------------------------
+link_whatsapp: "https://wa.me/5537984129390?text=KIT"
+link_kit: ""
+link_planilha: ""
+link_video: ""
+data_lancamento: ""
+preco_cheio: ""
+preco_pre_venda: ""
+data_fim_pre_venda: ""
+---
+
+::: {.mini-kit-sumario}
+[Nesta página:]{.mini-kit-sumario-rotulo}
+[Antes de começar](#antes-de-comecar)
+[Os 10 prompts](#os-10-prompts)
+[Exemplo](#exemplo)
+[Planilha](#planilha)
+[Próximo passo](#proximo-passo)
+:::
+
+Se você toca uma empresa, já mede um monte de coisa de cabeça. Sabe quando o mês foi bom, sente quando o caixa aperta, percebe quando um cliente sumiu. O problema é que a cabeça não guarda histórico, e costuma lembrar do que doeu mais, não do que importa mais.
+
+Este material é o primeiro passo para sair do "eu acho" e chegar a uma lista curta de números que mostram como a sua empresa está de verdade. Você não precisa saber estatística nem Excel avançado. Precisa de uns 30 minutos, de uma inteligência artificial gratuita aberta no celular ou no computador e de sinceridade para responder sobre o seu negócio.
+
+::: {#bloco-video}
+:::
+
+::: {.mini-kit-como-usar}
+**Como usar:**
+
+1. Abra o Claude, o ChatGPT ou o Copilot. A versão gratuita de qualquer um serve.
+2. Copie um prompt por vez, na ordem, e troque o que está entre colchetes pelas informações da sua empresa.
+3. Faça tudo na mesma conversa, do primeiro ao décimo prompt. Assim a IA vai lembrando do que você contou.
+4. Leia cada resposta com olhar crítico. Se algo não combina com a sua realidade, diga isso a ela e peça outra sugestão.
+5. No fim, passe os indicadores escolhidos para a mini-planilha que está no final desta página.
+:::
+
+## Antes de começar {#antes-de-comecar}
+
+Cinco cuidados que levam um minuto e protegem a sua empresa e os seus clientes.
+
+1. **Nada de dados pessoais.** Não cole nome, CPF, telefone ou endereço de cliente ou funcionário. Se precisar citar alguém, use códigos como "Cliente 01" ou "Vendedor A". Isso é o que a LGPD pede, e também é bom senso.
+2. **Totais em vez de listas.** Para estes prompts, a IA não precisa ver cada venda. "Vendi R\$80 mil em outubro" basta.
+3. **Sem senhas e sem dados bancários.** Nem contratos inteiros. Se quiser ajuda com um documento, descreva o que ele diz.
+4. **A IA sugere, você decide.** Ela erra, e erra com confiança. Confira todo número e toda fórmula antes de usar para decidir alguma coisa.
+5. **Olhe as configurações.** Na maioria das ferramentas dá para impedir que as suas conversas sejam usadas para treinar a IA. Vale a pena ativar.
+
+## Os 10 prompts {#os-10-prompts}
+
+::: {.prompt}
+### 1. Apresente a sua empresa
+
+[Para a IA entender o negócio antes de sugerir qualquer coisa.]{.prompt-serve}
+
+```{.texto-prompt}
+Quero sua ajuda para descobrir quais indicadores devo acompanhar na minha empresa. Antes de sugerir qualquer coisa, entenda o meu negócio.
+
+Minha empresa é [o que faz], em [cidade ou região], com [número] funcionários.
+Faturamos por mês, em média, cerca de [valor ou faixa].
+A gente ganha dinheiro com [como vende: balcão, entrega, contrato, serviço avulso...].
+Os maiores gastos são [principais custos].
+Meus clientes são principalmente [quem compra].
+
+Por enquanto, só me confirme em poucas linhas o que entendeu e me pergunte o que ficou faltando.
+```
+:::
+
+::: {.prompt}
+### 2. Conte o que tira o seu sono
+
+[Para transformar incômodo em problema com nome.]{.prompt-serve}
+
+```{.texto-prompt}
+Agora, os três problemas de gestão que mais me preocupam hoje:
+1. [problema]
+2. [problema]
+3. [problema]
+
+Para cada um, me ajude a entender: é mais um problema de vendas, de caixa, de operação ou de cliente? E o que provavelmente está por trás dele? Seja direto e use exemplos do meu tipo de negócio.
+```
+:::
+
+::: {.prompt}
+### 3. Peça sugestões de indicadores
+
+[Para ter opções antes de escolher.]{.prompt-serve}
+
+```{.texto-prompt}
+Para cada um dos três problemas, sugira até 3 indicadores que me ajudariam a enxergar o que está acontecendo. Para cada indicador, diga em uma linha:
+- o nome
+- o que ele mostra
+- por que ele ajuda nesse problema
+
+Prefira indicadores simples, que uma empresa do meu tamanho consiga calcular sem sistema caro.
+```
+:::
+
+::: {.prompt}
+### 4. Escolha os 5 que importam agora
+
+[Para não tentar medir tudo e acabar não medindo nada.]{.prompt-serve}
+
+```{.texto-prompt}
+Dessa lista, me ajude a escolher os 5 indicadores mais importantes para começar. Critérios: que tenham a ver com os meus problemas, que eu consiga calcular com os dados que já tenho e que eu possa agir quando o número piorar.
+
+Mostre os 5 escolhidos e explique em uma frase por que cada um entrou, e por que os outros ficaram de fora por enquanto.
+```
+:::
+
+::: {.prompt}
+### 5. Entenda a conta de cada um
+
+[Para saber exatamente o que está sendo medido.]{.prompt-serve}
+
+```{.texto-prompt}
+Para cada um dos 5 indicadores, escreva a fórmula em linguagem simples, como se estivesse explicando para alguém que não gosta de matemática. Dê um exemplo com números inventados para cada um.
+
+Exemplo do formato: "Ticket médio = total vendido no mês ÷ número de vendas no mês. Se vendi R$50.000 em 400 vendas, meu ticket médio é R$125."
+```
+:::
+
+::: {.prompt}
+### 6. Descubra de onde vem cada dado
+
+[Para o indicador não morrer por falta de informação.]{.prompt-serve}
+
+```{.texto-prompt}
+Hoje eu registro as informações da empresa assim: [caderno, sistema de vendas, planilha, extrato do banco, relatório da maquininha, nada...].
+
+Para cada um dos 5 indicadores, diga de onde eu tiro o dado, quem na empresa deveria anotar e com que frequência. Se algum dado eu ainda não tenho, me diga o jeito mais simples de começar a registrar.
+```
+:::
+
+::: {.prompt}
+### 7. Defina meta e sinal de alerta
+
+[Para saber quando o número está bom, quando preocupa e quando pede ação.]{.prompt-serve}
+
+```{.texto-prompt}
+Agora quero definir meta e sinal de alerta para cada indicador. Os números que tenho dos últimos meses são: [valores que você souber; se não souber, escreva "não tenho histórico"].
+
+Para cada indicador, sugira:
+- uma meta realista para os próximos 3 meses
+- o valor a partir do qual devo ficar atento (amarelo)
+- o valor que pede ação imediata (vermelho)
+
+Se eu não tiver histórico, me diga como definir uma meta provisória e quando revisá-la.
+```
+:::
+
+::: {.prompt}
+### 8. Desenhe a planilha
+
+[Para montar a estrutura antes de digitar qualquer número.]{.prompt-serve}
+
+```{.texto-prompt}
+Quero acompanhar esses 5 indicadores numa planilha simples de [Excel ou Google Sheets]. Me diga como organizar:
+- quais abas criar
+- quais colunas cada aba precisa ter
+- o que eu digito e o que deve ser calculado sozinho
+
+Quero o mínimo de abas possível. Mostre a estrutura em formato de tabela.
+```
+:::
+
+::: {.prompt}
+### 9. Peça as fórmulas
+
+[Para a planilha fazer a conta por você.]{.prompt-serve}
+
+```{.texto-prompt}
+Agora escreva as fórmulas para calcular cada indicador, usando a estrutura que você sugeriu. Use as fórmulas em português do [Excel ou Google Sheets].
+
+Para cada fórmula, diga em qual célula ela entra e explique em uma frase o que ela faz. Evite fórmulas complicadas: prefira SOMASES, MÉDIASES, SE e divisões simples.
+```
+:::
+
+::: {.prompt}
+### 10. Crie a sua rotina de 30 minutos
+
+[Para o número virar decisão toda semana.]{.prompt-serve}
+
+```{.texto-prompt}
+Para fechar, monte a pauta de uma reunião semanal de 30 minutos para olhar esses 5 indicadores com [quem participa: sócio, gerente, equipe].
+
+Quero saber o que olhar primeiro, quanto tempo gastar em cada parte, que perguntas fazer quando um número estiver no vermelho e como registrar o que foi decidido. Escreva de um jeito que eu possa imprimir e deixar na mesa.
+```
+:::
+
+## Exemplo: a Pedra Lisa Materiais de Construção {#exemplo}
+
+::: {.aviso-dados}
+Empresa e números fictícios, criados para este exemplo.
+:::
+
+**O que o dono contou à IA (prompts 1 e 2):** loja de materiais de construção com 12 funcionários, faturamento de cerca de R\$180 mil por mês, venda no balcão e com entrega. Os clientes são pedreiros, pequenas construtoras e famílias em reforma. Os três problemas: "vendo bem, mas falta dinheiro no fim do mês", "tem muito produto parado no depósito" e "as entregas atrasam e o cliente reclama".
+
+**O que a IA ajudou a enxergar (prompt 2):** o primeiro problema é de caixa, não de vendas. As construtoras compram a prazo e pagam com atraso, então o faturamento cresce enquanto o dinheiro demora a entrar. O segundo é de operação e também vira problema de caixa, porque produto parado é dinheiro parado.
+
+**Os 5 indicadores escolhidos (prompts 3 a 7):**
+
+::: {.so-computador .mini-kit-tabela}
+| Indicador | A conta, em linguagem simples | Hoje | Meta em 3 meses | Atenção | Ação imediata |
+|:--------------------------------|:---------------------------------------------|:--------------------|:------------------------|:-----------------------------------------|:--------------------------------|
+| Prazo médio de recebimento | Total a receber ÷ média de vendas por dia | 38\ dias | 30\ dias | acima\ de\ 35 | acima\ de\ 45 |
+| Inadimplência | Vendas a prazo vencidas há mais de 30 dias ÷ total vendido a prazo | 6% | 3% | acima\ de\ 4% | acima\ de\ 7% |
+| Saldo projetado para 30 dias | Dinheiro em caixa hoje + a receber em 30 dias − a pagar em 30 dias | R\$14\ mil | acima\ de R\$25\ mil | abaixo\ de\ R\$20\ mil | negativo |
+| Estoque parado | Valor dos produtos sem venda há mais de 90 dias ÷ valor total do estoque | 22% | 12% | acima\ de\ 15% | acima\ de\ 25% |
+| Entregas no prazo | Entregas feitas no dia combinado ÷ total de entregas | 81% | 92% | abaixo\ de\ 90% | abaixo\ de\ 80% |
+:::
+
+```{=html}
+<div class="so-celular indicador-cartoes">
+<p class="indicador-aviso-meta">As metas são para daqui a 3 meses.</p>
+<div class="indicador-cartao">
+<p class="indicador-nome">Prazo médio de recebimento</p>
+<p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Total a receber ÷ média de vendas por dia</p>
+<dl class="indicador-faixas">
+<div><dt>Hoje</dt><dd>38&nbsp;dias</dd></div>
+<div><dt>Meta</dt><dd>30&nbsp;dias</dd></div>
+<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;35</dd></div>
+<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;45</dd></div>
+</dl>
+</div>
+<div class="indicador-cartao">
+<p class="indicador-nome">Inadimplência</p>
+<p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Vendas a prazo vencidas há mais de 30 dias ÷ total vendido a prazo</p>
+<dl class="indicador-faixas">
+<div><dt>Hoje</dt><dd>6%</dd></div>
+<div><dt>Meta</dt><dd>3%</dd></div>
+<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;4%</dd></div>
+<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;7%</dd></div>
+</dl>
+</div>
+<div class="indicador-cartao">
+<p class="indicador-nome">Saldo projetado para 30 dias</p>
+<p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Dinheiro em caixa hoje + a receber em 30 dias − a pagar em 30 dias</p>
+<dl class="indicador-faixas">
+<div><dt>Hoje</dt><dd>R$14&nbsp;mil</dd></div>
+<div><dt>Meta</dt><dd>acima&nbsp;de R$25&nbsp;mil</dd></div>
+<div><dt>Atenção</dt><dd>abaixo&nbsp;de R$20&nbsp;mil</dd></div>
+<div><dt>Ação imediata</dt><dd>negativo</dd></div>
+</dl>
+</div>
+<div class="indicador-cartao">
+<p class="indicador-nome">Estoque parado</p>
+<p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Valor dos produtos sem venda há mais de 90 dias ÷ valor total do estoque</p>
+<dl class="indicador-faixas">
+<div><dt>Hoje</dt><dd>22%</dd></div>
+<div><dt>Meta</dt><dd>12%</dd></div>
+<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;15%</dd></div>
+<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;25%</dd></div>
+</dl>
+</div>
+<div class="indicador-cartao">
+<p class="indicador-nome">Entregas no prazo</p>
+<p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Entregas feitas no dia combinado ÷ total de entregas</p>
+<dl class="indicador-faixas">
+<div><dt>Hoje</dt><dd>81%</dd></div>
+<div><dt>Meta</dt><dd>92%</dd></div>
+<div><dt>Atenção</dt><dd>abaixo&nbsp;de&nbsp;90%</dd></div>
+<div><dt>Ação imediata</dt><dd>abaixo&nbsp;de&nbsp;80%</dd></div>
+</dl>
+</div>
+</div>
+```
+
+**O que ficou de fora, por enquanto (prompt 4):** o faturamento mensal, porque o dono já acompanha; e a margem por produto, porque a loja ainda não registra o custo de cada item. A IA sugeriu começar a anotar esse custo nas notas de compra para incluir a margem daqui a três meses.
+
+**A rotina (prompt 10):** toda segunda, das 8h às 8h30, o dono e o gerente olham os 5 números, começam pelo que estiver vermelho, decidem no máximo duas ações com responsável e prazo, e anotam tudo numa folha que fica na pasta da reunião.
+
+Repare que nenhum desses indicadores exige sistema caro. Todos saem do caderno de vendas, do extrato do banco e da agenda de entregas. O que muda é olhar para eles toda semana.
+
+## A mini-planilha {#planilha}
+
+Para você sentir o gosto de ver o seu próprio número na tela, preparei uma planilha com 3 indicadores que servem para qualquer empresa, de qualquer setor:
+
+- **Quanto do faturado virou caixa:** total recebido no mês ÷ total vendido no mês. Responde: "Estou vendendo ou estou recebendo?"
+- **Ticket médio:** total vendido no mês ÷ número de vendas. Responde: "Cada cliente está comprando mais ou menos?"
+- **Saldo projetado para 30 dias:** caixa hoje + a receber em 30 dias − a pagar em 30 dias. Responde: "Vou fechar o próximo mês no azul?"
+
+Você digita seis números por mês e o painel calcula sozinho, com sinal verde, amarelo e vermelho. Vem uma cópia preenchida com o exemplo e uma em branco para você usar.
+
+::: {#botao-planilha}
+:::
+
+[Estes são 3 indicadores gerais. Os 10 prompts te levam aos 5 que são da sua empresa.]{.mini-kit-nota}
+
+::: {.cta-final .mini-kit-proximo}
+## E agora, o que fazer com esses números? {#proximo-passo}
+
+Se você chegou até aqui, já tem uma lista de indicadores que fazem sentido para a sua empresa. Isso é mais do que a maioria dos negócios tem. O próximo passo é transformar essa lista num painel que se atualiza sozinho e numa rotina que você consiga manter.
+
+É para isso que estou preparando o **Kit de Indicadores com IA**: em 7 dias, você sai com 5 indicadores definidos, um painel em planilha funcionando e uma reunião semanal de 30 minutos para decidir com base em números. Aulas curtas, prompts prontos e planilhas que você só precisa preencher.
+
+::: {#frase-pre-venda}
+Lançamento em [data_lancamento]{.campo}. Na pré-venda, o kit sai de [preco_cheio]{.campo} por [preco_pre_venda]{.campo}, até [data_fim_pre_venda]{.campo} ou enquanto houver vagas.
+:::
+
+Quem entra na pré-venda também participa de um encontro ao vivo comigo para tirar dúvidas.
+
+::: {#botao-pre-venda}
+:::
+:::
+
+::: {.mini-kit-assinatura}
+Felipe Fonseca, estatístico, especialista em gestão de indicadores. Ajudo donos de pequenas e médias empresas a decidir com dados, sem complicação.
+
+\@fefonsek no [Instagram](https://www.instagram.com/fefonsek), [TikTok](https://www.tiktok.com/@fefonsek) e [YouTube](https://www.youtube.com/@fefonsek) · [felipe.fonseca@orbitaspace.com.br](mailto:felipe.fonseca@orbitaspace.com.br)
+
+Orbita Space · CNPJ [67.550.599/0001-08]{style="white-space: nowrap;"} · Os dados da empresa Pedra Lisa usados neste material são fictícios.
+:::
+
+```{=html}
+<script>
+// Botão "Copiar prompt": copia o texto do bloco (sem o destaque dos
+// colchetes) e mostra "Copiado!" por 2 segundos. Se o navigator.clipboard
+// falhar (navegador antigo ou página fora de https), tenta o método antigo;
+// se também falhar, seleciona o texto para a pessoa copiar à mão.
+(function () {
+  function copiarAntigo(texto) {
+    var area = document.createElement("textarea");
+    area.value = texto;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.top = "0";
+    area.style.left = "-9999px";
+    document.body.appendChild(area);
+    area.select();
+    area.setSelectionRange(0, texto.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(area);
+    return ok;
+  }
+  function selecionar(el) {
+    var faixa = document.createRange();
+    faixa.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(faixa);
+  }
+  function avisar(botao, mensagem, copiou) {
+    clearTimeout(botao._tempo);
+    botao.textContent = mensagem;
+    botao.classList.toggle("copiado", copiou);
+    var aviso = botao.parentNode.querySelector(".copiar-aviso");
+    if (aviso) aviso.textContent = copiou ? "Prompt copiado" : "";
+    botao._tempo = setTimeout(function () {
+      botao.textContent = "Copiar prompt";
+      botao.classList.remove("copiado");
+      if (aviso) aviso.textContent = "";
+    }, 2000);
+  }
+  document.querySelectorAll(".copiar-prompt").forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      var bloco = document.getElementById(botao.getAttribute("data-alvo"));
+      var texto = bloco.textContent;
+      function reserva() {
+        if (copiarAntigo(texto)) {
+          avisar(botao, "Copiado!", true);
+        } else {
+          selecionar(bloco);
+          avisar(botao, "Selecione e copie", false);
+        }
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(texto).then(function () {
+          avisar(botao, "Copiado!", true);
+        }, reserva);
+      } else {
+        reserva();
+      }
+    });
+  });
+})();
+</script>
+```

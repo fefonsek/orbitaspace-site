@@ -1,0 +1,213 @@
+/* Estilos só da página do mini-kit (mini-kit/index.qmd). Ficam fora de
+   assets/css/orbita.scss para não trocar a folha de estilo do resto do site.
+   Paleta do site: #1a1a2e (azul profundo), #3473C0 (azul médio), #2f6cb6
+   (azul dos links), #7a90c4 (azul suave), #cacfee (lavanda), #f6f4f1 (creme).
+   Celular primeiro: corpo do texto com 18 px no mínimo. */
+
+/* Com draft: true o Quarto mostra a faixa "Rascunho" no topo. A página é
+   oculta, mas está publicada de propósito: a faixa não aparece. */
+#quarto-draft-alert { display: none !important; }
+
+body.pagina-mini-kit main.content {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.pagina-mini-kit .quarto-title h1.title {
+  font-size: 2.1rem;
+  line-height: 1.2;
+}
+.pagina-mini-kit .quarto-title .subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a1a2e;
+  margin-top: 0.75rem;
+}
+
+.pagina-mini-kit main.content h2 {
+  margin-top: 3.25rem;
+  margin-bottom: 1.25rem;
+}
+.pagina-mini-kit main.content p,
+.pagina-mini-kit main.content li { margin-bottom: 1rem; }
+.pagina-mini-kit main.content ol,
+.pagina-mini-kit main.content ul { padding-left: 1.5rem; }
+
+/* Sumário: atalhos em forma de pílula, que quebram linha no celular. */
+.mini-kit-sumario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 2rem;
+}
+.mini-kit-sumario p { display: contents; }
+.mini-kit-sumario-rotulo { font-weight: 500; margin-right: 0.25rem; }
+.mini-kit-sumario a {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #7a90c4;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1a1a2e;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.mini-kit-sumario a:hover,
+.mini-kit-sumario a:focus { background: #cacfee; }
+
+/* "Como usar": quadro claro com os 5 passos. */
+.mini-kit-como-usar {
+  background: #ffffff;
+  border: 1px solid #cacfee;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+  margin: 2rem 0;
+}
+.mini-kit-como-usar > p:first-child { margin-bottom: 0.5rem; }
+
+/* Cada prompt: cartão com título, "para que serve", texto e botão. */
+.prompt {
+  background: #ffffff;
+  border: 1px solid #cacfee;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 0 0 1.75rem;
+}
+.prompt h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.3rem;
+}
+.prompt-serve {
+  display: block;
+  font-style: italic;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+.prompt > p:has(> .prompt-serve) { margin-bottom: 1rem; }
+
+/* Texto do prompt: quebra linha como o original e nunca rola de lado. */
+.prompt-texto {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #1a1a2e;
+  background: #f6f4f1;
+  border-left: 4px solid #7a90c4;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1rem 1.1rem;
+  margin: 0 0 1rem;
+}
+.prompt-texto mark {
+  background: #cacfee;
+  color: #1a1a2e;
+  font-weight: 500;
+  padding: 0 0.15em;
+  border-radius: 0.2em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.prompt-acoes { margin: 0 !important; }
+.copiar-prompt {
+  min-width: 11rem;
+  min-height: 48px;
+  font-size: 18px;
+}
+.copiar-prompt.copiado,
+.copiar-prompt.copiado:hover {
+  background: #1a1a2e;
+  border-color: #1a1a2e;
+  color: #ffffff;
+}
+.copiar-aviso {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Pedra Lisa: tabela no computador, cartões no celular (.so-computador e
+   .so-celular vêm de orbita.scss). */
+/* As larguras das colunas (16,5 / 23 / 10,5 / 12,5 / 21 / 16,5%) vêm da
+   linha de traços da tabela em index.qmd: o Pandoc as grava num <colgroup>.
+   Atenção e Ação imediata cabem numa linha; os valores usam espaço não
+   separável e só "acima de R$25 mil" (Meta) pode quebrar antes do "R$". */
+.mini-kit-tabela table { font-size: 16px; width: 100%; table-layout: fixed; }
+.mini-kit-tabela th, .mini-kit-tabela td { padding: 0.6rem 0.45rem; }
+.mini-kit-tabela td:first-child { font-weight: 500; }
+
+.indicador-cartao {
+  background: #ffffff;
+  border: 1px solid #cacfee;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 0 0 1rem;
+}
+.indicador-nome {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem !important;
+}
+.indicador-conta { margin: 0 0 0.9rem !important; }
+.indicador-rotulo,
+.indicador-faixas dt {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #3a4a6b;
+}
+.indicador-faixas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  margin: 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid #cacfee;
+}
+.indicador-faixas dd { margin: 0; font-weight: 500; }
+.indicador-aviso-meta { margin: 0 0 1rem !important; }
+
+/* Botões grandes e fáceis de tocar. */
+.mini-kit-botao { margin: 1.75rem 0 1rem; }
+.mini-kit-botao .btn {
+  font-size: 18px;
+  min-height: 52px;
+  padding: 0.8rem 1.6rem;
+  white-space: normal;
+}
+.mini-kit-botao .btn.disabled {
+  opacity: 1;
+  color: #3a4a6b;
+  border-color: #7a90c4;
+  background: #ffffff;
+}
+.mini-kit-nota { display: block; }
+
+/* Próximo passo: quadro azul profundo (.cta-final de orbita.scss). */
+.mini-kit-proximo { margin-top: 3.5rem; }
+.mini-kit-proximo h2 { margin-top: 0 !important; }
+.mini-kit-proximo p { color: #ffffff; }
+.mini-kit-proximo strong { color: #ffffff; }
+
+/* Assinatura da página, acima do rodapé do site. */
+.mini-kit-assinatura {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #cacfee;
+}
+.mini-kit-assinatura p { margin-bottom: 0.6rem !important; }
+
+@media (max-width: 767.98px) {
+  .pagina-mini-kit .quarto-title h1.title { font-size: 1.75rem; }
+  .prompt { padding: 1rem 0.9rem 1.1rem; }
+  .prompt-texto { padding: 0.85rem 0.8rem; border-left-width: 3px; }
+  .copiar-prompt { width: 100%; }
+  .mini-kit-botao .btn { width: 100%; }
+  .mini-kit-como-usar { padding: 1.25rem 1.15rem 0.25rem; }
+}

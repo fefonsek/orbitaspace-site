@@ -273,6 +273,42 @@ com o estilo no próprio atributo, no fim do `center` do `page-footer` dos
 `_quarto-*.yml`: assim a mudança fica só no rodapé, sem trocar a folha de
 estilo (e o `<head>`) de todas as páginas.
 
+## Mini-kit (página oculta)
+
+`mini-kit/index.qmd`, no endereço `/mini-kit/` (canônica com barra no final):
+"10 prompts para descobrir os indicadores da sua empresa", material gratuito
+que leva à pré-venda do Kit de Indicadores com IA. Só em português, sem
+tradução e sem entrada no `_traducoes.yml` (ES e EN levam às páginas
+iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
+
+- **Oculta:** `draft: true` (com o `draft-mode: unlinked` do `_quarto.yml`)
+  deixa a página fora do sitemap, da busca e das listagens, mas ela é gerada
+  em `docs/` e vai para o ar. O filtro `mini-kit/mini-kit.lua` acrescenta
+  `<meta name="robots" content="noindex, nofollow">`, e o `mini-kit.css`
+  esconde a faixa "Rascunho" que o Quarto põe nas páginas com `draft: true`.
+- **Campos:** ficam no front matter de `mini-kit/index.qmd`. Campo vazio
+  esconde a parte que depende dele:
+  - `link_video` (endereço do YouTube): vazio, o vídeo não aparece;
+  - `link_planilha` (link "fazer uma cópia" do Google Drive): vazio, o botão
+    mostra "Planilha em breve";
+  - `data_lancamento`, `preco_cheio`, `preco_pre_venda`, `data_fim_pre_venda`:
+    com qualquer um vazio, a frase de preços vira "A pré-venda abre em
+    breve..."; escreva os valores como devem aparecer ("19/01/2027", "R$97");
+  - `link_kit`: vazio, o botão da pré-venda abre o `link_whatsapp` (mensagem
+    "KIT"); quando a página do kit existir, use `https://orbitaspace.com.br/kit/`.
+- **Prompts:** cada bloco ```` ```{.texto-prompt} ```` vira texto com quebra de
+  linha (sem rolagem lateral), com os `[colchetes]` destacados e o botão
+  "Copiar prompt" (script no fim do `index.qmd`, com alternativa para
+  navegadores sem `navigator.clipboard`).
+- **Estilos:** ficam em `mini-kit/mini-kit.css`, e não em `orbita.scss`, para
+  não trocar a folha de estilo das outras páginas. A tabela da Pedra Lisa
+  aparece no computador e vira cartões no celular (os dois estão no
+  `index.qmd`; ao mudar um número, mude nos dois). As larguras das colunas
+  vêm da linha de traços da tabela.
+- **Sem analytics:** a página não tem a tag do Google Ads. Os cliques são
+  medidos pelos pedidos com "KIT" no WhatsApp e pelas cópias da planilha no
+  Drive; quando `/kit/` existir, os links para a Kiwify levam UTM.
+
 ## Caso Mentoria (Padaria Grão Dourado)
 
 `projetos/mentoria-padaria/` (PT), `es/proyectos/mentoria-panaderia/` e
@@ -330,6 +366,7 @@ assets/html/idiomas.html                     seletor PT | ES | EN, faixa de idio
 assets/lua/                                  filtro de hreflang, shortcodes da galeria e das frentes
 assets/html/frentes.html                     filtro da página de Projetos por frente de serviço
 blog/posts/                                  posts em português
+privacidade/, mini-kit/                      Política de Privacidade e mini-kit (página oculta)
 docs/                                        site gerado (é o que vai ao ar; não edite à mão)
 _rascunhos/                                  rascunhos de texto (fora do Git)
 ```
