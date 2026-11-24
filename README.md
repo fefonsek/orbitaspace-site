@@ -276,7 +276,7 @@ estilo (e o `<head>`) de todas as páginas.
 ## Mini-kit (página oculta)
 
 `mini-kit/index.qmd`, no endereço `/mini-kit/` (canônica com barra no final):
-"10 prompts para descobrir os indicadores da sua empresa", material gratuito
+"10 prompts para descobrir os indicadores da sua empresa para 2027", material gratuito
 que leva à pré-venda do Kit de Indicadores com IA. Só em português, sem
 tradução e sem entrada no `_traducoes.yml` (ES e EN levam às páginas
 iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
@@ -286,11 +286,17 @@ iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
   em `docs/` e vai para o ar. O filtro `mini-kit/mini-kit.lua` acrescenta
   `<meta name="robots" content="noindex, nofollow">`, e o `mini-kit.css`
   esconde a faixa "Rascunho" que o Quarto põe nas páginas com `draft: true`.
+- **Ano:** o campo `ano` ("2027") entra no título, pelo shortcode
+  `{{< meta ano >}}` do Quarto (assim chega também ao `og:title`, a prévia do
+  link no WhatsApp), e no texto, por `[ano]{.campo}`; `[ano_anterior]{.campo}`
+  é o ano menos 1 (o filtro calcula). Para o ano seguinte, troque só o campo.
 - **Campos:** ficam no front matter de `mini-kit/index.qmd`. Campo vazio
   esconde a parte que depende dele:
   - `link_video` (endereço do YouTube): vazio, o vídeo não aparece;
-  - `link_planilha` (link "fazer uma cópia" do Google Drive): vazio, o botão
-    mostra "Planilha em breve";
+  - `link_planilha` (link "fazer uma cópia" do Google Drive da planilha padrão
+    em branco): vazio, o botão mostra "Planilha em breve";
+  - `link_planilha_exemplo` (a versão com exemplo): vazio, o link "Ver a
+    versão com exemplo preenchido" não aparece;
   - `data_lancamento`, `preco_cheio`, `preco_pre_venda`, `data_fim_pre_venda`:
     com qualquer um vazio, a frase de preços vira "A pré-venda abre em
     breve..."; escreva os valores como devem aparecer ("19/01/2027", "R$97");
@@ -303,8 +309,23 @@ iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
 - **Estilos:** ficam em `mini-kit/mini-kit.css`, e não em `orbita.scss`, para
   não trocar a folha de estilo das outras páginas. A tabela da Pedra Lisa
   aparece no computador e vira cartões no celular (os dois estão no
-  `index.qmd`; ao mudar um número, mude nos dois). As larguras das colunas
-  vêm da linha de traços da tabela.
+  `index.qmd`; ao mudar um número, mude nos dois). No computador, a tabela usa
+  a largura da página (`.column-page`), e as larguras das colunas vêm da linha
+  de traços da tabela.
+- **Planilha padrão:** `Rscript mini-kit/planilha/gerar_planilha.R` grava
+  `planilha_padrao_indicadores.xlsx` (em branco) e
+  `planilha_padrao_indicadores_exemplo.xlsx` (3 indicadores gerais, março a
+  outubro de 2026, dados fictícios) em `mini-kit/planilha/`. Os `.xlsx` ficam
+  fora do Git e fora de `docs/` (o link oficial é o do Drive); suba os dois no
+  Drive e use os links de cópia nos campos. Abas: Leia-me, Indicadores (um
+  card por linha), Lançamentos (uma linha por período e indicador) e Painel.
+  As regras das contas estão no início do script. As fórmulas não usam
+  matriz, mas usam MÁXIMOSES: funcionam no Google Planilhas e no Excel 2019
+  ou mais recente. Para conferir:
+  `python mini-kit/planilha/conferir_planilha.py` (pycel; a pasta do pacote
+  pode vir de `ORBITA_PYCEL`), que refaz as regras em Python e compara célula
+  a célula. O script usa `salvar_xlsx()` de
+  `projetos/mentoria-padaria/scripts/xlsx.R`.
 - **Sem analytics:** a página não tem a tag do Google Ads. Os cliques são
   medidos pelos pedidos com "KIT" no WhatsApp e pelas cópias da planilha no
   Drive; quando `/kit/` existir, os links para a Kiwify levam UTM.

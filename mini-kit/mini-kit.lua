@@ -7,10 +7,15 @@
 --    (sem rolagem lateral), com o que está entre [colchetes] destacado, e o
 --    botão "Copiar prompt" (o script fica no fim de index.qmd).
 -- 3. Os campos do front matter (link_whatsapp, link_kit, link_planilha,
---    data_lancamento, preco_cheio, preco_pre_venda, data_fim_pre_venda e
---    link_video) preenchem os blocos #bloco-video, #botao-planilha,
---    #frase-pre-venda e #botao-pre-venda. Campo vazio esconde a parte que
---    depende dele ou mostra a versão "em breve".
+--    link_planilha_exemplo, data_lancamento, preco_cheio, preco_pre_venda,
+--    data_fim_pre_venda e link_video) preenchem os blocos #bloco-video,
+--    #botao-planilha, #frase-pre-venda e #botao-pre-venda. Campo vazio esconde
+--    a parte que depende dele ou mostra a versão "em breve".
+-- 4. O campo ano entra em cada [ano]{.campo} do texto, e
+--    [ano_anterior]{.campo} é o ano menos 1. No título, o ano entra pelo
+--    shortcode {{< meta ano >}} do próprio Quarto, que também chega ao
+--    og:title (a prévia do link no WhatsApp); trocar o título neste filtro não
+--    chegaria lá.
 
 local campos = {}
 
@@ -70,8 +75,13 @@ local function botao_planilha()
     return html('<p class="mini-kit-botao"><span class="btn btn-outline-primary btn-lg disabled" ' ..
       'aria-disabled="true">Planilha em breve</span></p>')
   end
+  local exemplo = ""
+  if campos.link_planilha_exemplo ~= "" then
+    exemplo = '<p class="mini-kit-planilha-exemplo"><a href="' .. escapar(campos.link_planilha_exemplo) ..
+      '" target="_blank" rel="noopener">Ver a versão com exemplo preenchido</a></p>'
+  end
   return html('<p class="mini-kit-botao"><a class="btn btn-primary btn-lg botao-planilha" href="' ..
-    escapar(url) .. '" target="_blank" rel="noopener">Fazer minha cópia da planilha</a></p>')
+    escapar(url) .. '" target="_blank" rel="noopener">Fazer minha cópia da planilha</a></p>' .. exemplo)
 end
 
 local function botao_pre_venda()
@@ -94,25 +104,37 @@ local function frase_pre_venda(div)
         "A pré-venda abre em breve. Me chama no WhatsApp para garantir o preço de lançamento.") })
     end
   end
-  -- Todos preenchidos: cada [nome]{.campo} vira o valor do campo.
-  return pandoc.walk_block(pandoc.Div(div.content), {
-    Span = function(span)
-      if span.classes:includes("campo") then
-        return pandoc.Str(campos[pandoc.utils.stringify(span.content)] or "")
-      end
-    end,
-  }).content
+  -- Todos preenchidos: cada [nome]{.campo} vira o valor do campo (trocar_campo).
+  return div.content
+end
+
+-- [nome]{.campo} -> valor do campo. Nome desconhecido ou campo vazio param o
+-- render, para nunca sair o nome do campo na página.
+local function trocar_campo(span)
+  if not span.classes:includes("campo") then return nil end
+  local nome = pandoc.utils.stringify(span.content)
+  local valor = campos[nome]
+  if valor == nil or valor == "" then
+    error("mini-kit: campo [" .. nome .. "] desconhecido ou vazio")
+  end
+  return pandoc.Str(valor)
 end
 
 local function ler_campos(meta)
-  for _, nome in ipairs({ "link_whatsapp", "link_kit", "link_planilha", "link_video",
-                          "data_lancamento", "preco_cheio", "preco_pre_venda", "data_fim_pre_venda" }) do
+  for _, nome in ipairs({ "link_whatsapp", "link_kit", "link_planilha", "link_planilha_exemplo", "link_video",
+                          "data_lancamento", "preco_cheio", "preco_pre_venda", "data_fim_pre_venda", "ano" }) do
     campos[nome] = texto(meta[nome])
   end
   if campos.link_whatsapp == "" then
     error("mini-kit: o campo link_whatsapp não pode ficar vazio")
   end
+  local ano = tonumber(campos.ano)
+  if not ano or not campos.ano:match("^%d%d%d%d$") then
+    error("mini-kit: o campo ano precisa ser um ano com 4 dígitos, como \"2027\"")
+  end
+  campos.ano_anterior = tostring(ano - 1)
   quarto.doc.include_text("in-header", '<meta name="robots" content="noindex, nofollow">')
+  return meta
 end
 
 local function trocar_blocos(div)
@@ -129,4 +151,5 @@ end
 return {
   { Meta = ler_campos },
   { Div = trocar_blocos, CodeBlock = trocar_codigo },
+  { Span = trocar_campo },
 }

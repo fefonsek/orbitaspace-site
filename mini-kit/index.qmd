@@ -1,5 +1,5 @@
 ---
-title: "10 prompts para descobrir os indicadores da sua empresa"
+title: "10 prompts para descobrir os indicadores da sua empresa para {{< meta ano >}}"
 subtitle: "Por Felipe Fonseca, estatístico, especialista em gestão de indicadores"
 # Página oculta, só em português, em https://orbitaspace.com.br/mini-kit/.
 # draft: true com draft-mode: unlinked (em _quarto.yml): a página é gerada em
@@ -25,10 +25,17 @@ filters:
 #     a frase de preços sai e fica "A pré-venda abre em breve...".
 #   link_kit vazio: o botão da pré-venda abre o link_whatsapp. Quando a página
 #     do kit existir, use "https://orbitaspace.com.br/kit/".
+#   link_planilha: a planilha padrão em branco (link "fazer uma cópia" do Drive).
+#   link_planilha_exemplo vazio: o link para a versão com exemplo não aparece.
+# ano: entra no título (pelo {{< meta ano >}}) e no texto; o ano anterior
+#   (usado em "os números de 2026", por exemplo) é calculado. Não pode ficar
+#   vazio.
 # ---------------------------------------------------------------------------
+ano: "2027"
 link_whatsapp: "https://wa.me/5537984129390?text=KIT"
 link_kit: ""
 link_planilha: ""
+link_planilha_exemplo: ""
 link_video: ""
 data_lancamento: ""
 preco_cheio: ""
@@ -47,7 +54,7 @@ data_fim_pre_venda: ""
 
 Se você toca uma empresa, já mede um monte de coisa de cabeça. Sabe quando o mês foi bom, sente quando o caixa aperta, percebe quando um cliente sumiu. O problema é que a cabeça não guarda histórico, e costuma lembrar do que doeu mais, não do que importa mais.
 
-Este material é o primeiro passo para sair do "eu acho" e chegar a uma lista curta de números que mostram como a sua empresa está de verdade. Você não precisa saber estatística nem Excel avançado. Precisa de uns 30 minutos, de uma inteligência artificial gratuita aberta no celular ou no computador e de sinceridade para responder sobre o seu negócio.
+O ano está fechando, e é agora que se decide o que acompanhar em [ano]{.campo}. Este material é o primeiro passo para sair do "eu acho" e chegar a uma lista curta de números que mostram como a sua empresa está de verdade. Você não precisa saber estatística nem Excel avançado. Precisa de uns 30 minutos, de uma inteligência artificial gratuita aberta no celular ou no computador e de sinceridade para responder sobre o seu negócio.
 
 ::: {#bloco-video}
 :::
@@ -59,7 +66,7 @@ Este material é o primeiro passo para sair do "eu acho" e chegar a uma lista cu
 2. Copie um prompt por vez, na ordem, e troque o que está entre colchetes pelas informações da sua empresa.
 3. Faça tudo na mesma conversa, do primeiro ao décimo prompt. Assim a IA vai lembrando do que você contou.
 4. Leia cada resposta com olhar crítico. Se algo não combina com a sua realidade, diga isso a ela e peça outra sugestão.
-5. No fim, passe os indicadores escolhidos para a mini-planilha que está no final desta página.
+5. Antes do prompt 8, faça a sua cópia da [planilha padrão](#planilha), que está no final desta página. Os prompts 8 e 9 encaixam e conferem os seus indicadores nela.
 :::
 
 ## Antes de começar {#antes-de-comecar}
@@ -143,6 +150,8 @@ Mostre os 5 escolhidos e explique em uma frase por que cada um entrou, e por que
 Para cada um dos 5 indicadores, escreva a fórmula em linguagem simples, como se estivesse explicando para alguém que não gosta de matemática. Dê um exemplo com números inventados para cada um.
 
 Exemplo do formato: "Ticket médio = total vendido no mês ÷ número de vendas no mês. Se vendi R$50.000 em 400 vendas, meu ticket médio é R$125."
+
+Essa explicação é a memória de cálculo do indicador: guarde, ela vai para o card.
 ```
 :::
 
@@ -159,47 +168,68 @@ Para cada um dos 5 indicadores, diga de onde eu tiro o dado, quem na empresa dev
 :::
 
 ::: {.prompt}
-### 7. Defina meta e sinal de alerta
+### 7. Monte o card de cada indicador
 
-[Para saber quando o número está bom, quando preocupa e quando pede ação.]{.prompt-serve}
+[Para todo mundo na empresa ler o número do mesmo jeito.]{.prompt-serve}
 
 ```{.texto-prompt}
-Agora quero definir meta e sinal de alerta para cada indicador. Os números que tenho dos últimos meses são: [valores que você souber; se não souber, escreva "não tenho histórico"].
+Agora monte um card para cada um dos 5 indicadores, com estes campos:
+- Nome
+- Para que serve: a pergunta que ele responde
+- Memória de cálculo: a conta, de onde vem cada número e um exemplo
+- Fonte do dado e quem registra
+- Polaridade: quanto maior, melhor, ou quanto menor, melhor
+- Periodicidade: diária, semanal ou mensal
+- Referência: a média dos últimos 3 períodos, enquanto não houver meta
+- Tolerância: quanto o número pode piorar em relação à referência antes de virar alerta (atenção) e a partir de quanto pede ação imediata, na mesma unidade do indicador
 
-Para cada indicador, sugira:
-- uma meta realista para os próximos 3 meses
-- o valor a partir do qual devo ficar atento (amarelo)
-- o valor que pede ação imediata (vermelho)
-
-Se eu não tiver histórico, me diga como definir uma meta provisória e quando revisá-la.
+Não defina meta agora. Tenho registros de [quantos meses de histórico eu tenho; se não tiver, escreva "nenhum"]. Mostre cada card em formato de tabela.
 ```
 :::
 
-::: {.prompt}
-### 8. Desenhe a planilha
+O card é a certidão do indicador. Fica escrito o que o número mede, como é calculado, de onde vem e como ler. Assim, quando alguém olhar o número daqui a seis meses, vai entender a mesma coisa que você entende hoje, e a conta não muda toda vez que muda quem calcula.
 
-[Para montar a estrutura antes de digitar qualquer número.]{.prompt-serve}
+::: {.mini-kit-destaque}
+**E a meta?**
 
-```{.texto-prompt}
-Quero acompanhar esses 5 indicadores numa planilha simples de [Excel ou Google Sheets]. Me diga como organizar:
-- quais abas criar
-- quais colunas cada aba precisa ter
-- o que eu digito e o que deve ser calculado sozinho
-
-Quero o mínimo de abas possível. Mostre a estrutura em formato de tabela.
-```
+Neste começo, o card não leva meta. Uma meta boa nasce do histórico: com os resultados registrados dia a dia e mês a mês, dá para ver o padrão atual da empresa, os meses fortes e os fracos, e então definir metas por período com base no quanto você quer crescer no ano seguinte. Para isso, são precisos pelo menos 12 meses de registros, porque só um ano inteiro mostra a sazonalidade. Se você já tem os números de [ano_anterior]{.campo}, eles servem de base para as metas de [ano]{.campo}. Se ainda não tem, [ano]{.campo} é o ano de construir esse histórico.
 :::
 
 ::: {.prompt}
-### 9. Peça as fórmulas
+### 8. Adapte a planilha padrão
 
-[Para a planilha fazer a conta por você.]{.prompt-serve}
+[Para os seus indicadores caberem numa estrutura que depois vira painel.]{.prompt-serve}
 
 ```{.texto-prompt}
-Agora escreva as fórmulas para calcular cada indicador, usando a estrutura que você sugeriu. Use as fórmulas em português do [Excel ou Google Sheets].
+Vou te enviar a planilha padrão que vou usar [anexe o arquivo da planilha]. Ela tem as abas Indicadores e Lançamentos, e as colunas já têm nome.
 
-Para cada fórmula, diga em qual célula ela entra e explique em uma frase o que ela faz. Evite fórmulas complicadas: prefira SOMASES, MÉDIASES, SE e divisões simples.
+Regras:
+- não crie colunas nem abas novas;
+- não renomeie, não apague e não mude a ordem das colunas;
+- se um indicador não couber exatamente, adapte o jeito de lançar o dado, não a planilha, e me diga o que adaptou.
+
+Com os 5 cards que montamos, me mostre como preencher a aba Indicadores, uma linha por indicador, e o que devo lançar na aba Lançamentos a cada período.
 ```
+
+[Se a sua IA não aceitar anexo, copie e cole os nomes das colunas das duas abas no lugar do arquivo.]{.prompt-nota}
+:::
+
+::: {.prompt}
+### 9. Confira as fórmulas
+
+[Para entender a conta que a planilha faz por você.]{.prompt-serve}
+
+```{.texto-prompt}
+A planilha já vem com fórmulas nas colunas Resultado, Referência e Situação da aba Lançamentos. Estou usando o [Excel ou Google Sheets].
+
+Para cada fórmula, me explique em uma frase o que ela faz. Depois, confira se ela funciona para cada um dos meus 5 indicadores. Se algum precisar de ajuste, mostre a fórmula ajustada e em qual coluna ela entra, sem criar colunas novas e sem mudar o nome de nenhuma. Prefira fórmulas simples: SOMASES, MÉDIASES, SE e divisões.
+```
+
+[Se a sua IA não leu o arquivo, cole junto as fórmulas da primeira linha da aba Lançamentos.]{.prompt-nota}
+:::
+
+::: {.mini-kit-destaque}
+Cada indicador tem o seu jeito, e alguns vão pedir ajustes: uma conta diferente, um dado que ainda não existe, uma periodicidade que não combina com a dos outros. Cada caso é um caso. Neste primeiro momento, a ideia é manter o padrão da planilha e começar com indicadores simples. O ajuste fino vem depois, com o número já rodando.
 :::
 
 ::: {.prompt}
@@ -226,71 +256,97 @@ Empresa e números fictícios, criados para este exemplo.
 
 **Os 5 indicadores escolhidos (prompts 3 a 7):**
 
-::: {.so-computador .mini-kit-tabela}
-| Indicador | A conta, em linguagem simples | Hoje | Meta em 3 meses | Atenção | Ação imediata |
-|:--------------------------------|:---------------------------------------------|:--------------------|:------------------------|:-----------------------------------------|:--------------------------------|
-| Prazo médio de recebimento | Total a receber ÷ média de vendas por dia | 38\ dias | 30\ dias | acima\ de\ 35 | acima\ de\ 45 |
-| Inadimplência | Vendas a prazo vencidas há mais de 30 dias ÷ total vendido a prazo | 6% | 3% | acima\ de\ 4% | acima\ de\ 7% |
-| Saldo projetado para 30 dias | Dinheiro em caixa hoje + a receber em 30 dias − a pagar em 30 dias | R\$14\ mil | acima\ de R\$25\ mil | abaixo\ de\ R\$20\ mil | negativo |
-| Estoque parado | Valor dos produtos sem venda há mais de 90 dias ÷ valor total do estoque | 22% | 12% | acima\ de\ 15% | acima\ de\ 25% |
-| Entregas no prazo | Entregas feitas no dia combinado ÷ total de entregas | 81% | 92% | abaixo\ de\ 90% | abaixo\ de\ 80% |
+::: {.so-computador .mini-kit-tabela .column-page}
+| Indicador | A conta, em linguagem simples | Polaridade | Periodicidade | Referência | Hoje | Tolerância |
+|:--------------------------|:-----------------------------------------|:---------------------|:-------------------------|:-------------------|:----------------|:---------------------------------------------|
+| Prazo médio de recebimento | Total a receber ÷ média de vendas por dia | Menor é melhor | Mensal | 34\ dias | 38\ dias | atenção: 3\ dias\ a\ mais<br>ação: 8\ dias\ a\ mais |
+| Inadimplência | Vendas a prazo vencidas há mais de 30 dias ÷ total vendido a prazo | Menor é melhor | Mensal | 4,5% | 6% | atenção: 1\ ponto\ a\ mais<br>ação: 2\ pontos\ a\ mais |
+| Saldo projetado para 30 dias | Dinheiro em caixa hoje + a receber em 30 dias − a pagar em 30 dias | Maior é melhor | Semanal | R\$22\ mil | R\$14\ mil | atenção: R\$4\ mil\ a\ menos<br>ação: R\$8\ mil\ a\ menos |
+| Estoque parado | Valor dos produtos sem venda há mais de 90 dias ÷ valor total do estoque | Menor é melhor | Mensal | 20% | 22% | atenção: 3\ pontos\ a\ mais<br>ação: 6\ pontos\ a\ mais |
+| Entregas no prazo | Entregas feitas no dia combinado ÷ total de entregas | Maior é melhor | Semanal | 85% | 81% | atenção: 3\ pontos\ a\ menos<br>ação: 6\ pontos\ a\ menos |
 :::
 
 ```{=html}
 <div class="so-celular indicador-cartoes">
-<p class="indicador-aviso-meta">As metas são para daqui a 3 meses.</p>
 <div class="indicador-cartao">
 <p class="indicador-nome">Prazo médio de recebimento</p>
 <p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Total a receber ÷ média de vendas por dia</p>
 <dl class="indicador-faixas">
+<div><dt>Polaridade</dt><dd>Menor é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Mensal</dd></div>
+<div><dt>Referência</dt><dd>34&nbsp;dias</dd></div>
 <div><dt>Hoje</dt><dd>38&nbsp;dias</dd></div>
-<div><dt>Meta</dt><dd>30&nbsp;dias</dd></div>
-<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;35</dd></div>
-<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;45</dd></div>
+<div class="indicador-tolerancia"><dt>Tolerância</dt><dd>Atenção: 3&nbsp;dias&nbsp;a&nbsp;mais<br>Ação imediata: 8&nbsp;dias&nbsp;a&nbsp;mais</dd></div>
 </dl>
 </div>
 <div class="indicador-cartao">
 <p class="indicador-nome">Inadimplência</p>
 <p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Vendas a prazo vencidas há mais de 30 dias ÷ total vendido a prazo</p>
 <dl class="indicador-faixas">
+<div><dt>Polaridade</dt><dd>Menor é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Mensal</dd></div>
+<div><dt>Referência</dt><dd>4,5%</dd></div>
 <div><dt>Hoje</dt><dd>6%</dd></div>
-<div><dt>Meta</dt><dd>3%</dd></div>
-<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;4%</dd></div>
-<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;7%</dd></div>
+<div class="indicador-tolerancia"><dt>Tolerância</dt><dd>Atenção: 1&nbsp;ponto&nbsp;a&nbsp;mais<br>Ação imediata: 2&nbsp;pontos&nbsp;a&nbsp;mais</dd></div>
 </dl>
 </div>
 <div class="indicador-cartao">
 <p class="indicador-nome">Saldo projetado para 30 dias</p>
 <p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Dinheiro em caixa hoje + a receber em 30 dias − a pagar em 30 dias</p>
 <dl class="indicador-faixas">
+<div><dt>Polaridade</dt><dd>Maior é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Semanal</dd></div>
+<div><dt>Referência</dt><dd>R$22&nbsp;mil</dd></div>
 <div><dt>Hoje</dt><dd>R$14&nbsp;mil</dd></div>
-<div><dt>Meta</dt><dd>acima&nbsp;de R$25&nbsp;mil</dd></div>
-<div><dt>Atenção</dt><dd>abaixo&nbsp;de R$20&nbsp;mil</dd></div>
-<div><dt>Ação imediata</dt><dd>negativo</dd></div>
+<div class="indicador-tolerancia"><dt>Tolerância</dt><dd>Atenção: R$4&nbsp;mil&nbsp;a&nbsp;menos<br>Ação imediata: R$8&nbsp;mil&nbsp;a&nbsp;menos</dd></div>
 </dl>
 </div>
 <div class="indicador-cartao">
 <p class="indicador-nome">Estoque parado</p>
 <p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Valor dos produtos sem venda há mais de 90 dias ÷ valor total do estoque</p>
 <dl class="indicador-faixas">
+<div><dt>Polaridade</dt><dd>Menor é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Mensal</dd></div>
+<div><dt>Referência</dt><dd>20%</dd></div>
 <div><dt>Hoje</dt><dd>22%</dd></div>
-<div><dt>Meta</dt><dd>12%</dd></div>
-<div><dt>Atenção</dt><dd>acima&nbsp;de&nbsp;15%</dd></div>
-<div><dt>Ação imediata</dt><dd>acima&nbsp;de&nbsp;25%</dd></div>
+<div class="indicador-tolerancia"><dt>Tolerância</dt><dd>Atenção: 3&nbsp;pontos&nbsp;a&nbsp;mais<br>Ação imediata: 6&nbsp;pontos&nbsp;a&nbsp;mais</dd></div>
 </dl>
 </div>
 <div class="indicador-cartao">
 <p class="indicador-nome">Entregas no prazo</p>
 <p class="indicador-conta"><span class="indicador-rotulo">A conta</span>Entregas feitas no dia combinado ÷ total de entregas</p>
 <dl class="indicador-faixas">
+<div><dt>Polaridade</dt><dd>Maior é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Semanal</dd></div>
+<div><dt>Referência</dt><dd>85%</dd></div>
 <div><dt>Hoje</dt><dd>81%</dd></div>
-<div><dt>Meta</dt><dd>92%</dd></div>
-<div><dt>Atenção</dt><dd>abaixo&nbsp;de&nbsp;90%</dd></div>
-<div><dt>Ação imediata</dt><dd>abaixo&nbsp;de&nbsp;80%</dd></div>
+<div class="indicador-tolerancia"><dt>Tolerância</dt><dd>Atenção: 3&nbsp;pontos&nbsp;a&nbsp;menos<br>Ação imediata: 6&nbsp;pontos&nbsp;a&nbsp;menos</dd></div>
 </dl>
 </div>
 </div>
 ```
+
+Com essas tolerâncias, hoje o saldo projetado está no vermelho; o prazo de recebimento, a inadimplência e as entregas, no amarelo; e o estoque parado, no verde.
+
+**O card do prazo médio de recebimento (prompt 7):**
+
+```{=html}
+<div class="card-indicador">
+<p class="card-indicador-rotulo">Card do indicador</p>
+<dl>
+<div><dt>Nome</dt><dd>Prazo médio de recebimento</dd></div>
+<div><dt>Para que serve</dt><dd>Quantos dias, em média, a loja leva para receber o que vende?</dd></div>
+<div><dt>Memória de cálculo</dt><dd>Total a receber no último dia do mês ÷ média de vendas por dia no mês. O total a receber sai do caderno de vendas a prazo; a média de vendas por dia é o total vendido no mês ÷ 30. Exemplo: R$228&nbsp;mil a receber ÷ R$6&nbsp;mil por dia = 38&nbsp;dias.</dd></div>
+<div><dt>Fonte do dado e quem registra</dt><dd>Caderno de vendas a prazo e extrato do banco. O gerente fecha os números no último dia útil do mês.</dd></div>
+<div><dt>Polaridade</dt><dd>Menor é melhor</dd></div>
+<div><dt>Periodicidade</dt><dd>Mensal</dd></div>
+<div><dt>Referência</dt><dd>34&nbsp;dias (média dos últimos 3 meses)</dd></div>
+<div><dt>Tolerância</dt><dd>Atenção: mais de 3&nbsp;dias acima da referência (acima de 37&nbsp;dias).<br>Ação imediata: 8&nbsp;dias ou mais acima da referência (42&nbsp;dias ou mais).</dd></div>
+</dl>
+</div>
+```
+
+A Pedra Lisa ainda não tem metas. A loja registra as vendas no caderno desde março de [ano_anterior]{.campo}. Quando fechar 12 meses de registros, vai usar esse histórico para definir as metas.
 
 **O que ficou de fora, por enquanto (prompt 4):** o faturamento mensal, porque o dono já acompanha; e a margem por produto, porque a loja ainda não registra o custo de cada item. A IA sugeriu começar a anotar esse custo nas notas de compra para incluir a margem daqui a três meses.
 
@@ -298,15 +354,20 @@ Empresa e números fictícios, criados para este exemplo.
 
 Repare que nenhum desses indicadores exige sistema caro. Todos saem do caderno de vendas, do extrato do banco e da agenda de entregas. O que muda é olhar para eles toda semana.
 
-## A mini-planilha {#planilha}
+## A planilha padrão {#planilha}
 
-Para você sentir o gosto de ver o seu próprio número na tela, preparei uma planilha com 3 indicadores que servem para qualquer empresa, de qualquer setor:
+É nela que os seus indicadores viram rotina. Os prompts 8 e 9 encaixam e conferem os seus cards nesta estrutura, que funciona no Google Planilhas e no Excel (2019 ou mais recente) e depois vira painel. São quatro abas:
+
+- **Leia-me:** como usar, em poucas linhas.
+- **Indicadores:** um card por linha, com a conta, a polaridade, a periodicidade, as tolerâncias, a fonte do dado e o responsável. A meta fica vazia até você ter 12 meses de histórico.
+- **Lançamentos:** uma linha por período e indicador. Você digita o numerador e o denominador, e a planilha calcula o resultado, a referência (a média dos últimos 3 lançamentos) e a situação: verde, amarelo ou vermelho.
+- **Painel:** o último resultado de cada indicador, com a cor da situação.
+
+Vem em duas versões: uma em branco, para os seus indicadores, e uma com alguns meses de exemplo de 3 indicadores que servem para qualquer empresa, de qualquer setor:
 
 - **Quanto do faturado virou caixa:** total recebido no mês ÷ total vendido no mês. Responde: "Estou vendendo ou estou recebendo?"
 - **Ticket médio:** total vendido no mês ÷ número de vendas. Responde: "Cada cliente está comprando mais ou menos?"
 - **Saldo projetado para 30 dias:** caixa hoje + a receber em 30 dias − a pagar em 30 dias. Responde: "Vou fechar o próximo mês no azul?"
-
-Você digita seis números por mês e o painel calcula sozinho, com sinal verde, amarelo e vermelho. Vem uma cópia preenchida com o exemplo e uma em branco para você usar.
 
 ::: {#botao-planilha}
 :::

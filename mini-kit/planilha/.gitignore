@@ -1,0 +1,3 @@
+# As planilhas geradas por gerar_planilha.R ficam fora do Git: o link oficial
+# é o do Google Drive (campo link_planilha de mini-kit/index.qmd).
+*.xlsx
