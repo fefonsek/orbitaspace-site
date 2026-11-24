@@ -1,3 +1,4 @@
-# As planilhas geradas por gerar_planilha.R ficam fora do Git: o link oficial
-# é o do Google Drive (campo link_planilha de mini-kit/index.qmd).
+# Os .xlsx gerados por gerar_planilha_padrao.py ficam fora do Git e fora de
+# docs/: o link oficial é o do Google Drive (campos link_planilha e
+# link_planilha_exemplo de mini-kit/index.qmd).
 *.xlsx

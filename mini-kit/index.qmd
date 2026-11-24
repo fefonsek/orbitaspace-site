@@ -356,14 +356,14 @@ Repare que nenhum desses indicadores exige sistema caro. Todos saem do caderno d
 
 ## A planilha padrão {#planilha}
 
-É nela que os seus indicadores viram rotina. Os prompts 8 e 9 encaixam e conferem os seus cards nesta estrutura, que funciona no Google Planilhas e no Excel (2019 ou mais recente) e depois vira painel. São quatro abas:
+É nela que os seus indicadores viram rotina. Os prompts 8 e 9 encaixam e conferem os seus cards nesta estrutura, que funciona no Google Planilhas e no Excel e depois vira painel. São quatro abas:
 
 - **Leia-me:** como usar, em poucas linhas.
 - **Indicadores:** um card por linha, com a conta, a polaridade, a periodicidade, as tolerâncias, a fonte do dado e o responsável. A meta fica vazia até você ter 12 meses de histórico.
 - **Lançamentos:** uma linha por período e indicador. Você digita o numerador e o denominador, e a planilha calcula o resultado, a referência (a média dos últimos 3 lançamentos) e a situação: verde, amarelo ou vermelho.
 - **Painel:** o último resultado de cada indicador, com a cor da situação.
 
-Vem em duas versões: uma em branco, para os seus indicadores, e uma com alguns meses de exemplo de 3 indicadores que servem para qualquer empresa, de qualquer setor:
+Vem em duas versões: uma em branco, para os seus indicadores, e uma de exemplo, com lançamentos fictícios de março a outubro de 2026 para 3 indicadores que servem para qualquer empresa, de qualquer setor:
 
 - **Quanto do faturado virou caixa:** total recebido no mês ÷ total vendido no mês. Responde: "Estou vendendo ou estou recebendo?"
 - **Ticket médio:** total vendido no mês ÷ número de vendas. Responde: "Cada cliente está comprando mais ou menos?"

@@ -312,20 +312,18 @@ iniciais). O link é enviado pelo WhatsApp; nenhuma página do site leva a ela.
   `index.qmd`; ao mudar um número, mude nos dois). No computador, a tabela usa
   a largura da página (`.column-page`), e as larguras das colunas vêm da linha
   de traços da tabela.
-- **Planilha padrão:** `Rscript mini-kit/planilha/gerar_planilha.R` grava
-  `planilha_padrao_indicadores.xlsx` (em branco) e
-  `planilha_padrao_indicadores_exemplo.xlsx` (3 indicadores gerais, março a
-  outubro de 2026, dados fictícios) em `mini-kit/planilha/`. Os `.xlsx` ficam
-  fora do Git e fora de `docs/` (o link oficial é o do Drive); suba os dois no
-  Drive e use os links de cópia nos campos. Abas: Leia-me, Indicadores (um
-  card por linha), Lançamentos (uma linha por período e indicador) e Painel.
-  As regras das contas estão no início do script. As fórmulas não usam
-  matriz, mas usam MÁXIMOSES: funcionam no Google Planilhas e no Excel 2019
-  ou mais recente. Para conferir:
-  `python mini-kit/planilha/conferir_planilha.py` (pycel; a pasta do pacote
-  pode vir de `ORBITA_PYCEL`), que refaz as regras em Python e compara célula
-  a célula. O script usa `salvar_xlsx()` de
-  `projetos/mentoria-padaria/scripts/xlsx.R`.
+- **Planilha padrão:** gerada por `mini-kit/planilha/gerar_planilha_padrao.py`
+  (Python com openpyxl). Uso: `python mini-kit/planilha/gerar_planilha_padrao.py
+  <pasta de saída>`, que grava `planilha_padrao_indicadores.xlsx` (em branco) e
+  `planilha_padrao_indicadores_exemplo.xlsx`. Os `.xlsx` ficam fora do Git e
+  fora de `docs/` (o link oficial é o do Drive): suba os dois no Drive e use
+  os links de cópia em `link_planilha` e `link_planilha_exemplo`. Abas:
+  Leia-me, Indicadores (um card por linha), Lançamentos (uma linha por
+  período e indicador) e Painel (último resultado de cada indicador, com a
+  cor da situação). A versão de exemplo traz os 3 indicadores gerais (CX,
+  quanto do faturado virou caixa; TM, ticket médio; SP, saldo projetado para
+  30 dias), com lançamentos fictícios de março a outubro de 2026. As
+  fórmulas funcionam no Excel 2010 em diante e no Google Planilhas.
 - **Sem analytics:** a página não tem a tag do Google Ads. Os cliques são
   medidos pelos pedidos com "KIT" no WhatsApp e pelas cópias da planilha no
   Drive; quando `/kit/` existir, os links para a Kiwify levam UTM.
